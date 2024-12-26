@@ -1609,72 +1609,76 @@ function submitaddform(b) {
 
 									<div class="card-body p-0">
 										<div class="table-responsive">
-											<table class="table">
-												<thead >
+											<div
+												style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
+												<table class="table">
+													<thead
+														style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 
-													<tr>
-														<th rowspan="2">Asset Srl Num</th>
-														<th rowspan="2">Asset Name</th>
-														<th rowspan="2">Category</th>
-														<th rowspan="2">Employee Id</th>
-														<th rowspan="2">Current Book Value</th>
-														<th rowspan="2">Market Value</th>
-														<th rowspan="2">Transfer Status</th>
-														<th rowspan="2">Verification Status</th>
-														<th rowspan="2">Select</th>
-													</tr>
-												</thead>
-												<tbody id="associatemonthly">
+														<tr>
+															<th rowspan="2">Asset Srl No</th>
+															<th rowspan="2">Asset Name</th>
+															<th rowspan="2">Category</th>
+															<th rowspan="2">Employee Id</th>
+															<th rowspan="2">Current Book Value</th>
+															<th rowspan="2">Market Value</th>
+															<th rowspan="2">Transfer Status</th>
+															<th rowspan="2">Verification Status</th>
+															<th rowspan="2">Select</th>
+														</tr>
+													</thead>
+													<tbody id="associatemonthly">
 
-													<tr th:each="Bamdocmana : ${BAMInventorymaster}">
-														<td th:text="${Bamdocmana?.asst_srl_npo}"></td>
-														<td th:text="${Bamdocmana?.asst_name}"></td>
-														<td th:text="${Bamdocmana?.asst_category}"></td>
-														<td th:text="${Bamdocmana?.from_emp_id}"></td>
-														<td th:text="${Bamdocmana?.cur_book_value_xfr_date}"
-															style="text-align: right;"></td>
-														<td th:text="${Bamdocmana?.market_value}"
-															style="text-align: right;"></td>
-														<td th:text="${Bamdocmana?.transaction_detail}"></td>
-														<th:block th:switch="${Bamdocmana?.del_flg}">
-															<td th:case="'Y'" style="color: green;">Verified</td>
-															<td th:case="'N'" style="color: red;">Unverified</td>
-															<td th:case="null" style="color: red;">Unknown</td>
-														</th:block>
+														<tr th:each="Bamdocmana : ${BAMInventorymaster}">
+															<td th:text="${Bamdocmana?.asst_srl_npo}"></td>
+															<td th:text="${Bamdocmana?.asst_name}"></td>
+															<td th:text="${Bamdocmana?.asst_category}"></td>
+															<td th:text="${Bamdocmana?.from_emp_id}"></td>
+															<td th:text="${Bamdocmana?.cur_book_value_xfr_date}"
+																style="text-align: right;"></td>
+															<td th:text="${Bamdocmana?.market_value}"
+																style="text-align: right;"></td>
+															<td th:text="${Bamdocmana?.transaction_detail}"></td>
+															<th:block th:switch="${Bamdocmana?.del_flg}">
+																<td th:case="'Y'" style="color: green;">Verified</td>
+																<td th:case="'N'" style="color: red;">Unverified</td>
+																<td th:case="null" style="color: red;">Unknown</td>
+															</th:block>
 
-														<th:block th:switch="${Bamdocmana?.del_flg}">
-															<td th:case="'Y'"><input type="radio"
-																th:id="${Bamdocmana?.asst_srl_npo}"
-																onclick="Headcode(this)"></td>
-															<td th:case="'Y'"><input type="radiO"
-																th:id="${Bamdocmana?.asst_srl_npo}"
-																onclick="Headcoderrr(this)"></td>
-															<td th:case="'N'">
-																<button class="btn btn-secondary dropdown-toggle"
-																	type="button" th:id="${Bamdocmana?.asst_srl_npo}"
-																	title="Action"
-																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
-																	data-toggle="dropdown" aria-haspopup="true"
-																	aria-expanded="false" onclick="Headcode1(this)">
-																	Verify</button>
+															<th:block th:switch="${Bamdocmana?.del_flg}">
+																<td th:case="'Y'"><input type="radio"
+																	th:id="${Bamdocmana?.asst_srl_npo}"
+																	onclick="Headcode(this)"></td>
+																<td th:case="'Y'"><input type="radiO"
+																	th:id="${Bamdocmana?.asst_srl_npo}"
+																	onclick="Headcoderrr(this)"></td>
+																<td th:case="'N'">
+																	<button class="btn btn-secondary dropdown-toggle"
+																		type="button" th:id="${Bamdocmana?.asst_srl_npo}"
+																		title="Action"
+																		style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
+																		data-toggle="dropdown" aria-haspopup="true"
+																		aria-expanded="false" onclick="Headcode1(this)">
+																		Verify</button>
 
-															</td>
-															<td th:case="null">
-																<button class="btn btn-secondary dropdown-toggle"
-																	type="button" th:id="${Bamdocmana?.asst_srl_npo}"
-																	title="Action"
-																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
-																	data-toggle="dropdown" aria-haspopup="true"
-																	aria-expanded="false" onclick="Headcode(this)">Modify</button>
-
-
-															</td>
-														</th:block>
+																</td>
+																<td th:case="null">
+																	<button class="btn btn-secondary dropdown-toggle"
+																		type="button" th:id="${Bamdocmana?.asst_srl_npo}"
+																		title="Action"
+																		style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
+																		data-toggle="dropdown" aria-haspopup="true"
+																		aria-expanded="false" onclick="Headcode(this)">Modify</button>
 
 
-													</tr>
-												</tbody>
-											</table>
+																</td>
+															</th:block>
+
+
+														</tr>
+													</tbody>
+												</table>
+											</div>
 										</div>
 									</div>
 
@@ -2494,7 +2498,7 @@ function submitaddform(b) {
 				<!-- **************************edit********************************* -->
 
 
-				<div class="container-fluid content"  
+				<div class="container-fluid content"
 					th:if="${formmode}=='edit' OR ${formmode}=='verify'">
 					<div class="row" style="margin-top: -40px;">
 
@@ -2504,13 +2508,17 @@ function submitaddform(b) {
 							<div class="associateProfileList mt-4">
 								<div class="card">
 									<div class="card-header p-1">
-																			<div class="d-flex justify-content-between align-items-center">
-																				<div class="float-left">
-																					<h3 th:if="${formmode}=='edit'" class="btn btn-sm headerbutton ">INVENTORY TRANSFER - EDIT</h3>
-																					<h3 th:if="${formmode}=='verify'" class="btn btn-sm headerbutton ">INVENTORY TRANSFER - VERIFY</h3>
-																				</div>
-																			</div>
-																		</div>
+										<div class="d-flex justify-content-between align-items-center">
+											<div class="float-left">
+												<h3 th:if="${formmode}=='edit'"
+													class="btn btn-sm headerbutton ">INVENTORY TRANSFER -
+													EDIT</h3>
+												<h3 th:if="${formmode}=='verify'"
+													class="btn btn-sm headerbutton ">INVENTORY TRANSFER -
+													VERIFY</h3>
+											</div>
+										</div>
+									</div>
 
 									<div class="card-body">
 										<div class="form-group">
@@ -2992,7 +3000,8 @@ function submitaddform(b) {
 										</div>
 
 									</div>
-									<div class="card-footer text-center p-0" style="margin-top: -20px;">
+									<div class="card-footer text-center p-0"
+										style="margin-top: -20px;">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>

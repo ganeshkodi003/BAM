@@ -535,11 +535,12 @@ td input {
 								<div class="card">
 									<div class="card-header p-0 ">
 										<div class="float-left">
-											<h4 th:if="${formmode}=='add'" class="headerh6 p-1 pt-2">Transaction Master</h4>
-											<h4 th:if="${formmode}=='list'"class="headerh6 p-1 pt-2">List of Transaction
+											<h4 th:if="${formmode}=='add'" class="headerh6 p-1 pt-2">Transaction
 												Master</h4>
-											<h4 th:if="${formmode}=='view'"class="headerh6 p-1 pt-2" >View of Transaction
-												Master</h4>
+											<h4 th:if="${formmode}=='list'" class="headerh6 p-1 pt-2">List
+												of Transaction Master</h4>
+											<h4 th:if="${formmode}=='view'" class="headerh6 p-1 pt-2">View
+												of Transaction Master</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right">
 											<button type="button"
@@ -550,6 +551,20 @@ td input {
 												class="btn btn-xs  headerbutton btns text-white" id="btnAdd"
 												onclick="listpara();"
 												style="font-size: 15px; width: -70px; size: 100px;">List</button>
+										</div>
+										<div class="col-sm-2"
+											style="margin-left: 500px; margin-top: 7px">
+											<select style="width: 100%" onchange="genflows(this)"
+												name="process" id="process"
+												class="form-control form-control-sm" required>
+												<option value="">SELECT</option>
+												<option value="Acquisition">Acquisition</option>
+												<option value="Depreciation">Depreciation</option>
+												<option value="Transfer">Transfer</option>
+												<option value="Sale">Sale</option>
+												<option value="Writeoff">Write Off</option>
+											</select>
+
 										</div>
 									</div>
 
@@ -762,19 +777,7 @@ td input {
 
 										</div>
 
-										<div class="col-sm-2" style="margin-left: 500px;">
-											<select style="width: 100%" onchange="genflows(this)"
-												name="process" id="process"
-												class="form-control form-control-sm" required>
-												<option value="">SELECT</option>
-												<option value="Acquisition">Acquisition</option>
-												<option value="Depreciation">Depreciation</option>
-												<option value="Transfer">Transfer</option>
-												<option value="Sale">Sale</option>
-												<option value="Writeoff">Write Off</option>
-											</select>
 
-										</div>
 
 										<fieldset id="tableset" style="display: none">
 											<div class="table-responsive mt-3">
@@ -1095,18 +1098,18 @@ td input {
 									</div>
 
 
-									<div class="card-footer text-center p-1">
-										<button type="button" class="btn headerbutton text-white" id="btnHome"
-											onclick="home();">Home</button>
+									<div class="card-footer text-center p-0">
+										<button type="button" class="btn headerbutton text-white"
+											id="btnHome" onclick="home();">Home</button>
 										<button type="button" th:if="${formmode}== 'add'"
 											class="btn headerbutton" onclick="addSubmit();"
 											id="btnSubmit">Submit</button>
-										<button type="button" class="btn headerbutton text-white" id="btnBack"
-											onclick="back();">Back</button>
+										<button type="button" class="btn headerbutton text-white"
+											id="btnBack" onclick="back();">Back</button>
 
 									</div>
 									<!-- Conditionally display the table based on formmode  view-->
-									<div class="table-responsive"
+									<!-- <div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
 										<table
 											class="table no-border-table table-bordered  table-hover table-sm"
@@ -1129,7 +1132,7 @@ td input {
 													readonly></td>
 												<td class="col-sm-2" style="text-align: right;"><font
 													size="2"><B>Verify User :</B></font></td>
-												<!--  th:value="${BamTransactionmaster?.verify_user}" -->
+												 th:value="${BamTransactionmaster?.verify_user}"
 												<td class="col-sm-2" style="width: 112px;"><input
 													type="text" id="verifyuser" name="verify_user"
 													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
@@ -1152,15 +1155,64 @@ td input {
 													readonly></td>
 												<td style="text-align: right;"><font size="2"><B>Verify
 															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${BamTransactionmaster?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td style="width: 112px"></td>
 											</tr>
 
 										</table>
 
+									</div> -->
+
+									<div class="content m-2 " style="padding: 15px;"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
+
+
+										<div class="row formline">
+											<label class="col-sm-2">Entry User</label>
+											<div class="col-sm-2">
+												<input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BamTransactionmaster?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
+											</div>
+											<label class="col-sm-2">Modify User</label>
+											<div class="col-sm-2">
+												<input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BamTransactionmaster?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</div>
+											<label class="col-sm-2">Verify User</label>
+											<div class="col-sm-2">
+												<input
+													type="text" id="verifyuser" name="verify_user"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
+											</div>
+										</div>
+										<div class="row formline mt-2">
+											<label class="col-sm-2">Entry Time</label>
+											<div class="col-sm-2">
+												<input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BamTransactionmaster?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
+											</div>
+											<label class="col-sm-2">Modify Time</label>
+											<div class="col-sm-2">
+												<input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BamTransactionmaster?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
+											</div>
+											<label class="col-sm-2">Verify Time</label>
+											<div class="col-sm-2">
+												
+											</div>
+										</div>
 									</div>
 
 								</div>
