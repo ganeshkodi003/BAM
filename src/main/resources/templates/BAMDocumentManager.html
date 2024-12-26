@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="/webjars/font-awesome/5.9.0/css/all.min.css"
 	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
@@ -542,7 +543,7 @@ td {
 							method="post" autocomplete="off" id="Bamdocumentmanager"
 							enctype="multipart/form-data">
 							<!-- Other fields -->
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
@@ -826,7 +827,7 @@ td {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											btn headerbutton onclick="submitaddform(this);"
+											class="btn headerbutton" onclick="submitaddform(this);"
 											form="Bamdocumentmanager" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -905,7 +906,7 @@ td {
 						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
 							method="post" autocomplete="off" id="Bamdocumentmanager">
 
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
@@ -1183,7 +1184,7 @@ td {
 
 
 										<button th:if="${formmode}=='verify'" type="button"
-											btn headerbutton
+											class="btn headerbutton"
 											onclick="submitverifyform(this);" form="Bamdocumentmanager"
 											id="btnSubmit" th:attr="data-formmode='edit'">Verify</button>
 
@@ -1263,7 +1264,7 @@ td {
 						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
 							method="post" autocomplete="off" id="Bamdocumentmanager">
 
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
@@ -1529,7 +1530,7 @@ td {
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											btn headerbutton
+											class="btn headerbutton"
 											onclick="submiteditform(this);" form="Bamdocumentmanager"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 

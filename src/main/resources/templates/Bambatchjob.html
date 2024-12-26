@@ -498,7 +498,7 @@ td {
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
-											<h4 style="font-family: verdana;">BATCH JOB SCHEDULER</h4>
+											<h4 class="headerh6 ">BATCH JOB SCHEDULER</h4>
 										</div>
 									</div>
 
@@ -627,7 +627,7 @@ td {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											btn headerbutton onclick="submitaddform(this);"
+											class="btn headerbutton" onclick="submitaddform(this);"
 											form="BAMBatchjobs" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -656,10 +656,10 @@ td {
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
-											<h4 th:if="${formmode}=='edit'" style="font-family: verdana;">INVENTORY
+											<h4 th:if="${formmode}=='edit'" class="headerh6 ">INVENTORY
 												MASTER - Edit</h4>
 											<h4 th:if="${formmode}=='verify'"
-												style="font-family: verdana;">INVENTORY MASTER - Edit</h4>
+												class="headerh6 ">INVENTORY MASTER - Edit</h4>
 										</div>
 									</div>
 
