@@ -83,7 +83,7 @@
         }
 
         fieldset {
-            border: 1px solid #CCC;
+            
             border-radius: 5px;
             padding: 10px;
             margin-top: 10px;
@@ -144,6 +144,10 @@
         width: 500px !important;
         height: 500px !important;
     }
+    
+    canvas{
+    border:1px solid black;
+    }
     </style>
 
     <script th:inline="javascript">
@@ -174,15 +178,18 @@
                                 <div class="card">
                                     <div class="card-header" style="background-color: #BBC3CB;">
                                         <div class="float-left">
-                                            <h3>Categories - pie chart</h3>
+                                            <h3>Categories -pie chart</h3>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <fieldset>
     									<div class="form-inline">
-    									
-        								<label for="month" class="mr-2">Select YEAR:</label>
-        								<select name="year" id="year" class="form-control form-control-sm" style="margin-left:250px; width:250px;">
+    									<div class="col-sm-2"></div>
+    									<div class="col-sm-2">
+        								<label for="month" class="mr-2">Select Year:</label>
+        								</div>
+        								 <div class="col-sm-3">
+        								<select name="year" id="year" class="form-control form-control-sm" style="margin-left:100px; width:250px;">
 								            <option value="">Select</option>
 								            <option value="2015">2015</option>
 								            <option value="2016">2016</option>
@@ -195,6 +202,7 @@
 								            <option value="2023">2023</option>
 								            <option value="2024">2024</option>
         								</select>
+        								</div>
     									</div>
 									</fieldset>
                                         
@@ -206,12 +214,14 @@
                                                     </b></p>
                                             </div>
                                         </fieldset>
-                                        <div class="card-footer text-center" style="background-color: #BBC3CB;">
+                                       
+                                    </div>
+                                    <div class="card-footer text-center" style="background-color: #BBC3CB;">
                                             <button type="button" class="btn headerbutton" id="btnHome" onclick="home()">Home</button>
                                             <button type="button" class="btn headerbutton" id="btnBack" onclick="back()">Back</button>
                                         </div>
-                                    </div>
                                 </div>
+                                 
                             </form>
                         </div>
                     </div>

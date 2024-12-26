@@ -84,7 +84,7 @@
         }
 
         fieldset {
-            border: 1px solid #CCC;
+            
             border-radius: 5px;
             padding: 10px;
             margin-top: 10px;
@@ -154,16 +154,16 @@
                                 <div class="card">
                                     <div class="card-header" style="background-color: #BBC3CB;">
                                         <div class="float-left">
-                                            <h3>Location -Bar chart</h3>
+                                            <h3>Location-Bar chart</h3>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <fieldset>
                                             <div class="form-group mb-0">
                                                 <div class="row formline">
-                                          
-                                                    <div class="col-sm-3">
-                                                        <label for="year">Select a Year :</label>
+                                          			 <div class="col-sm-3"></div>
+                                                    <div class="col-sm-2">
+                                                        <label for="year">Select Year :</label>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <select name="year" id="year" class="form-control form-control-sm">
@@ -184,13 +184,14 @@
                                             </div>
                                         </fieldset>
                                         <fieldset style=" width: 55%; transform: translateX(280px);">
-                                            <canvas id="myBarChart" width="400" height="400"></canvas>
+                                            <canvas id="myBarChart" width="400" height="400" style="margin-left:100px"></canvas>
                                         </fieldset>
-                                        <div class="card-footer text-center" style="background-color: #BBC3CB;">
+                                        
+                                    </div>
+                                    <div class="card-footer text-center" style="background-color: #BBC3CB;">
                                             <button type="button" class="btn headerbutton" id="btnHome" onclick="home()">Home</button>
                                             <button type="button" class="btn headerbutton" id="btnBack" onclick="back()">Back</button>
                                         </div>
-                                    </div>
                                 </div>
                             </form>
                         </div>

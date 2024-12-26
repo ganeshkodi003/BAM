@@ -1,58 +1,64 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
-		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
-	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
 
 
-	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
 
-	<style>
-		.customcol {
-			padding-left: 0px;
-			padding-right: 0px;
-		}
+<style>
+.customcol {
+	padding-left: 0px;
+	padding-right: 0px;
+}
 
-		table {
-			border-collapse: collapse;
-			border: 1px solid black;
-			border-color: #e9ecef;
-		}
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	border-color: #e9ecef;
+}
 
-		.modal-backdrop {
-			background-color: +;
-			zoom: 1;
-		}
+.modal-backdrop {
+	background-color: +;
+	zoom: 1;
+}
 
-		.addedit {
-			color: #007bff;
-		}
-	</style>
-	<script>
+.addedit {
+	color: #007bff;
+}
+</style>
+<script>
 	function home() {
-			location.href = 'Dashboard'
-		}
-	
-		function back() {
-			window.history.back();
-		}
-		</script>
+		location.href = 'Dashboard'
+	}
+
+	function back() {
+		window.history.back();
+	}
+</script>
 </head>
 
 <body>
@@ -65,11 +71,11 @@
 				<div class="container content" th:fragment="reportcontent">
 					<div class="row">
 						<div class="col-sm-12 customcol">
-							<div class="card" style="width: 1200px;margin-right:100px;margin-left:-150px">
-								<div class="card-header border-bottom-0" >
+							<div class="card"
+								style="width: 1400px; margin-right: 100px; margin-left: -150px">
+								<div class="card-header border-bottom-0">
 									<div class="float-left">
-										<h4 class="headerh6 ">BAM
-											Audits</h4>
+										<h4 class="headerh6 ">BAM Audits</h4>
 									</div>
 
 								</div>
@@ -79,7 +85,7 @@
 											<thead style="background-color: #f2f2f2;">
 
 												<tr>
-													<th rowspan="2">Audit Srl Num</th>
+													<th rowspan="2">Audit Srl No</th>
 													<th rowspan="2">Audit Date</th>
 													<th rowspan="2">AuditUser Id</th>
 													<th rowspan="2">AuditUser Name</th>
@@ -105,18 +111,20 @@
 										</table>
 									</div>
 								</div>
+								<div class="card-footer text-center"
+								style="background-color: #BBC3CB; width: 1400px">
+								<button type="button" class="btn headerbutton" id="btnHome"
+									onclick="home();">Home</button>
+								<button type="button" class="btn headerbutton" id="btnBack"
+									onclick="back();">Back</button>
+
 							</div>
+							</div>
+							
 						</div>
 					</div>
 				</div>
-				<div class="card-footer text-center"
-                      style="background-color: #BBC3CB;margin-left: -11px;width:1200px">
-										<button type="button" class="btn headerbutton" id="btnHome"
-											onclick="home();">Home</button>
-										<button type="button" class="btn headerbutton" id="btnBack"
-											onclick="back();">Back</button>
 
-									</div>
 			</div>
 		</div>
 	</div>
