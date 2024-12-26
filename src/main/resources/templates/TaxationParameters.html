@@ -103,7 +103,7 @@ label {
 nav {
 	border-bottom: 2px solid grey;
 }
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -112,15 +112,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -765,7 +765,7 @@ document.addEventListener("DOMContentLoaded", function() {
 									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
-									<button type="button" class="btn btn-xs btn-primary"
+									<button type="button" btn headerbutton
 										id="btnSubmit" style="width: 120px" onclick="addTaxData();">Submit</button>
 
 								
@@ -918,11 +918,11 @@ document.addEventListener("DOMContentLoaded", function() {
 									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
-			<button type="button" class="btn btn-xs btn-primary"  th:if="${formmode}=='edit'"  th:attr="groupn= ${paramview.get(0).group_name}" 
+			<button type="button" btn headerbutton  th:if="${formmode}=='edit'"  th:attr="groupn= ${paramview.get(0).group_name}" 
 		id="btnSubmit" style="width: 120px" onclick="modifyTaxData(this);">Submit</button>
-			<button type="button" class="btn btn-xs btn-primary"  th:if="${formmode}=='verify'"  th:attr="groupn= ${paramview.get(0).group_name}" 
+			<button type="button" btn headerbutton  th:if="${formmode}=='verify'"  th:attr="groupn= ${paramview.get(0).group_name}" 
 		id="btnSubmit" style="width: 120px" onclick="verifyParamData(this);">Submit</button>
-			<button type="button" class="btn btn-xs btn-primary"  th:if="${formmode}=='delete'"  th:attr="groupn= ${paramview.get(0).group_name}" 
+			<button type="button" btn headerbutton  th:if="${formmode}=='delete'"  th:attr="groupn= ${paramview.get(0).group_name}" 
 		id="btnSubmit" style="width: 120px" onclick="delParamData(this);">Submit</button>
 
 								

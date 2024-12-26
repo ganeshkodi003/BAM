@@ -89,7 +89,7 @@ nav {
 
 	$(function() {
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -233,7 +233,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.organisation}" id="orgName"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -242,7 +242,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.category} "
 														id="category" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -254,7 +254,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.resource_id}" id="resourceId"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -264,7 +264,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.resource_name}"
 														id="resourceName" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -275,7 +275,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.first_name}"
 														id="firstName" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -285,7 +285,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.middle_name}" id="middleName"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 											</div>
 
@@ -297,7 +297,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.last_name}"
 														id="lastName" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -306,7 +306,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.short_name}"
 														id="shortName" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -318,7 +318,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.employee_ref}"
 														id="empReference" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -328,7 +328,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.employee_id}" id="empId"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -339,7 +339,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.doj}"
 														id="doj" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -348,7 +348,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.dob}"
 														id="dob" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -358,7 +358,7 @@ nav {
 
 												<div class="col-sm-3">
 													<select id="group" th:value="${associateMaster.groups}"
-														class="form-control form-control-sm" disabled>
+														class="form-control form-control-sm" readonly>
 
 														<option value="OTR">OTR</option>
 
@@ -394,7 +394,7 @@ nav {
 												</div>
 												<div class="col-sm-3">
 													<select id="team" th:value="${associateMaster.team}"
-														class="form-control form-control-sm" disabled>
+														class="form-control form-control-sm" readonly>
 														<option value="BLRS">BLRS</option>
 
 														<option value="BTM">BTM</option>
@@ -462,7 +462,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.report_mgr_id}"
 														id="repManagerId" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -472,7 +472,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.report_mgr_name}"
 														id="repManagerName" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -483,7 +483,7 @@ nav {
 												<div class="col-sm-3">
 													<select th:value="${associateMaster.design}"
 														id="designation" class="form-control form-control-sm"
-														disabled>
+														readonly>
 														<option value="DIR">DIR</option>
 
 														<option value="CEO">CEO</option>
@@ -525,7 +525,7 @@ nav {
 												</div>
 												<div class="col-sm-3">
 													<select th:value="${associateMaster.role}" id="role"
-														class="form-control form-control-sm" disabled>
+														class="form-control form-control-sm" readonly>
 														<option value="ADM">ADM</option>
 
 														<option value="OPR">OPR</option>
@@ -556,7 +556,7 @@ nav {
 												<div class="col-sm-3">
 													<select th:value="${associateMaster.qual}"
 														id="qualification" class="form-control form-control-sm"
-														disabled>
+														readonly>
 														<option value="B.COM">B.COM</option>
 
 														<option value="B.E">B.E</option>
@@ -590,7 +590,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.addl_qual}"
 														id="addQualification" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -601,7 +601,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.skill_set}"
 														id="skillSet" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -610,7 +610,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.expertise}"
 														id="expertise" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -621,7 +621,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.pancard}"
 														id="panCard" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -630,7 +630,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.aadhar}"
 														id="aadharCard" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -641,7 +641,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.passport}"
 														id="passport" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -651,7 +651,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.driving_license}"
 														id="drivingLicense" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -661,7 +661,7 @@ nav {
 
 												<div class="col-sm-3">
 													<select th:value="${associateMaster.gender}" id="gender"
-														class="form-control form-control-sm" disabled>
+														class="form-control form-control-sm" readonly>
 														<option value="Male">Male</option>
 
 														<option value="F">F</option>
@@ -680,7 +680,7 @@ nav {
 												<div class="col-sm-3">
 													<select th:value="${associateMaster.blood_group}"
 														id="bloodGroup" class="form-control form-control-sm"
-														disabled>
+														readonly>
 														<option value="A+">A+</option>
 
 														<option value="B+">B+</option>
@@ -712,7 +712,7 @@ nav {
 												<div class="col-sm-3">
 													<select th:value="${associateMaster.marital_status}"
 														id="maritalStatus" class="form-control form-control-sm"
-														disabled>
+														readonly>
 														<option value="S">S</option>
 														<option value="M">M</option>
 														<option value="D">D</option>
@@ -725,7 +725,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.dependants}"
 														id="dependants" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -736,7 +736,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.mobile}"
 														id="mobileNo" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -745,7 +745,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.alt_mobile}"
 														id="alterMobileNo" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -756,7 +756,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.access_id}"
 														id="accessId" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -765,7 +765,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.email}"
 														id="email" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -776,7 +776,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.addr1}"
 														id="address1" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -785,7 +785,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.addr2}"
 														id="address2" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -796,7 +796,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.city}"
 														id="city" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -805,7 +805,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.state}"
 														id="state" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -816,7 +816,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.country}"
 														id="country" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -826,7 +826,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.postal_code}" id="ZIPCode"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -837,7 +837,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.loc_addr1}"
 														id="localAddress1" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -846,7 +846,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.loc_addr2}"
 														id="localAddress2" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -857,7 +857,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.loc_city}"
 														id="city1" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -866,7 +866,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.loc_state}"
 														id="state1" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -878,7 +878,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.loc_country}" id="country1"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -888,7 +888,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.loc_postal_code}"
 														id="ZIPCode1" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 
@@ -902,7 +902,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.user_cont_person}"
 														id="emgContactPerson" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -912,7 +912,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.cont_person_no}"
 														id="alterMobileNo" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -923,7 +923,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.password}"
 														id="password" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -932,7 +932,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.life_of_pw}"
 														id="lifeofPassword" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -945,7 +945,7 @@ nav {
 														th:value="${associateMaster.acct_expy_date}"
 														id="accountexpiryDate"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -957,7 +957,7 @@ nav {
 														th:value="${associateMaster.pw_expy_date}"
 														id="passwordexpiryDate"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -969,7 +969,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.user_remarks}" id="remarks"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -979,7 +979,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.organisation}"
 														id="disableFlag" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -991,7 +991,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.dis_start_date}"
 														id="disableStartDate" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1001,7 +1001,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.dis_end_date}"
 														id="disableEndDate" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -1012,7 +1012,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.login_low}"
 														id="loginTimeLow" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1021,7 +1021,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.login_high}"
 														id="loginTimeHigh" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -1033,7 +1033,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.virtual_flg}"
 														id="virtualStatus" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1043,7 +1043,7 @@ nav {
 													<input type="text"
 														th:value="${associateMaster.login_status}"
 														id="loginStatus" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -1054,7 +1054,7 @@ nav {
 												<div class="col-sm-3">
 													<select id="channel"
 														th:value="${associateMaster.channel_id}"
-														class="form-control form-control-sm" disabled>
+														class="form-control form-control-sm" readonly>
 
 														<option value="ALL">ALL</option>
 
@@ -1070,7 +1070,7 @@ nav {
 												<div class="col-sm-3">
 													<input type="text" th:value="${associateMaster.locked_flg}"
 														id="locked" class="form-control form-control-sm"
-														autocomplete="off" disabled />
+														autocomplete="off" readonly />
 												</div>
 											</div>
 										</div>

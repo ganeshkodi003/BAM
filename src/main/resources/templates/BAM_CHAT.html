@@ -108,7 +108,7 @@ fieldset {
 	background-color: transparent;
 	opacity: 1;
 } */
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -117,15 +117,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -287,7 +287,7 @@ function listpara() {
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 
-								<button type="button" class="btn btn-xs btn-primary"
+								<button type="button" btn headerbutton
 									id="btnSubmit1" onclick="addSubmit();">Submit</button>
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>

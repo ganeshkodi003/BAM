@@ -60,7 +60,7 @@
 	box-shadow: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -69,15 +69,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -118,13 +118,13 @@ $(document)
 										'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 										.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-											.prop('disabled', false);
+											.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-											'disabled', true);
+											'readonly', true);
 									$tbody.find('.no-result')
 											.remove();
 									$tbody.find('tr').show();
@@ -214,37 +214,37 @@ $(document)
 											<tr class="filters">
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Invoice No" disabled></th>
+															placeholder="Invoice No" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Date" disabled></th>
+															placeholder="Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Ack Flag" disabled></th>
+															placeholder="Ack Flag" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Ack Date" disabled></th>
+															placeholder="Ack Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Payment Date" disabled></th>
+															placeholder="Payment Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Invoice Amount" disabled></th>
+															placeholder="Invoice Amount" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="TDS" disabled></th>
+															placeholder="TDS" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Net Amount" disabled></th>
+															placeholder="Net Amount" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Bank" disabled></th>
+															placeholder="Bank" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Employee Name" disabled></th>
+															placeholder="Employee Name" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Service Provider" disabled></th>
+															placeholder="Service Provider" readonly></th>
 										
 														<th>Status</th>
 													</tr>				

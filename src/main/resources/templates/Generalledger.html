@@ -100,7 +100,7 @@ tr td:first-child:before {
 	border: unset !important;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -109,15 +109,15 @@ tr td:first-child:before {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -291,13 +291,13 @@ tr td:first-child:before {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -599,7 +599,7 @@ tr td:first-child:before {
 
 									<div class="card-footer  text-center">
 
-										<button type="button" class="btn btn-xs btn-primary"
+										<button type="button" btn headerbutton
 											style="width: 120px" onclick="home()" id="btnHome">Home</button>
 
 										<a class="btn btn-xs btn-primary text-white" style="width: 120px"
@@ -616,21 +616,21 @@ tr td:first-child:before {
 											style="width: 120px" onclick="userList();">List</a>
 
 										<button th:if="${formmode}== 'add'" type="button"
-											class="btn btn-xs btn-primary" form="RefCodeMaster"
+											btn headerbutton form="RefCodeMaster"
 											id="btnSubmit" onclick="submitform(this);" style="width: 120px"
 											th:attr="data-formmode=${formmode}">Submit</button>
 
-										<button type="button" class="btn btn-xs btn-primary"
+										<button type="button" btn headerbutton
 											id="btnEdit" th:if="${formmode}=='edit'"
 											th:attr="data-formmode=${formmode}" style="width: 120px"
 											onclick="modifyUserData(this);">Submit</button>
 
 										<button th:if="${formmode}== 'delete'" type="button"
-											class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+											btn headerbutton form="AdminAssociateProfile"
 											id="btnSubmit" onclick="deleteUserData(this);" style="width: 120px"
 											th:attr="data-formmode=${formmode}">Submit</button>
 
-										<button type="button" class="btn btn-xs btn-primary"
+										<button type="button" btn headerbutton
 											style="width: 120px" id="btnBack" onclick="back();">Back</button>
 									</div>
 
@@ -667,21 +667,21 @@ tr td:first-child:before {
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control"
-																	placeholder="Sr.No" disabled></th>
+																	placeholder="Sr.No" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="GL Code" disabled></th>
+																	placeholder="GL Code" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="GL Description" disabled></th>
+																	placeholder="GL Description" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="GL Type" disabled></th>
+																	placeholder="GL Type" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="GL Type Desc" disabled></th>
+																	placeholder="GL Type Desc" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Module" disabled></th>
+																	placeholder="Module" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Remarks" disabled></th>
+																	placeholder="Remarks" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Select" disabled></th>
+																	placeholder="Select" readonly></th>
 															</tr>
 														</thead>
 

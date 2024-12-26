@@ -2343,6 +2343,7 @@ pre code {
 
 .table-bordered thead td, .table-bordered thead th {
 	border-bottom-width: 1px
+	
 }
 
 .table-borderless tbody+tbody, .table-borderless td, .table-borderless th,
@@ -7914,7 +7915,7 @@ none
 }
 
 .card-header {
-	background-color: #f26223;
+	background-color: #f26223 !important;
 	font-size: 14px;
 	font-family: sans-serif;
 	font-style: times new roman;
@@ -7922,9 +7923,9 @@ none
 	margin-bottom: 0;
 }
 
-.card-header:first-child {
+/* .card-header:first-child {
 	border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
-}
+} */
 
 .card-header+.list-group .list-group-item:first-child {
 	border-top: 0
@@ -15963,7 +15964,7 @@ b, strong {
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
 	margin: 0px 0;
 	font-weight: 500;
-	font-size: 15px;
+	font-size: 20px;
 	font-family: Roboto, sans-serif;
 	
 }
@@ -16038,6 +16039,7 @@ b, strong {
 
 table {
 	background:white !important;
+	border : 2px solid black;
 }
 
 table th {
@@ -16135,4 +16137,13 @@ input {
 
 .form-control[readonly]{
 	background-color : #f2f2f2;
+}
+
+.cardheader {
+	background-color: #f26223 !important;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-style: times new roman;
+	color: white !important;
+	margin-bottom: 0;
 }

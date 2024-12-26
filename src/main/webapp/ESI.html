@@ -87,7 +87,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -96,15 +96,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -240,13 +240,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -555,7 +555,7 @@ fieldset {
 											+ "'>"
 											+ prevText + "</span></a>"
 											: (hideIfNoPrevNext ? ""
-													: "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
+													: "<a class='ui-datepicker-prev ui-corner-all ui-state-readonly' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
 															+ (isRTL ? "e"
 																	: "w")
 															+ "'>"
@@ -583,7 +583,7 @@ fieldset {
 											+ "'>"
 											+ nextText + "</span></a>"
 											: (hideIfNoPrevNext ? ""
-													: "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
+													: "<a class='ui-datepicker-next ui-corner-all ui-state-readonly' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
 															+ (isRTL ? "w"
 																	: "e")
 															+ "'>"

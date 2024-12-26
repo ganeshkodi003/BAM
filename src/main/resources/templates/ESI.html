@@ -87,7 +87,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -96,15 +96,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -245,13 +245,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -452,28 +452,28 @@ fieldset {
 															<tr class="filters">
 
 																<th><input type="text" class="form-control" style="width:120px;"
-																	placeholder="EMPLOYEE ID" disabled></th>
+																	placeholder="EMPLOYEE ID" readonly></th>
 																<th><input type="text" class="form-control" style="width:180px;"
-																	placeholder="EMPLOYEE NAME" disabled></th>
+																	placeholder="EMPLOYEE NAME" readonly></th>
 																<th><input type="text" class="form-control" 
-																	style="width: 120px;" placeholder="DESIGNATION" disabled></th>
+																	style="width: 120px;" placeholder="DESIGNATION" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 60px;" placeholder="MONTH" disabled></th>
+																	style="width: 60px;" placeholder="MONTH" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 160px;" placeholder="INSURANCE NO" disabled></th>
+																	style="width: 160px;" placeholder="INSURANCE NO" readonly></th>
 																
 																<th><input type="text" class="form-control"
 																	style="width: 110px;" placeholder="GROSS SALARY"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 130px;" placeholder="EMP CONT 3.25%"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 130px;" placeholder="EMP CONT0.75%"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 190px;" placeholder="TOTAL CONTRIBUTION 4%"
-																	disabled></th>
+																	readonly></th>
 
 															</tr>
 														</thead>
@@ -555,28 +555,28 @@ fieldset {
 															<tr class="filters">
 
 																<th><input type="text" class="form-control" style="width:120px;"
-																	placeholder="EMPLOYEE ID" disabled></th>
+																	placeholder="EMPLOYEE ID" readonly></th>
 																<th><input type="text" class="form-control" style="width:180px;"
-																	placeholder="EMPLOYEE NAME" disabled></th>
+																	placeholder="EMPLOYEE NAME" readonly></th>
 																<th><input type="text" class="form-control" 
-																	style="width: 120px;" placeholder="DESIGNATION" disabled></th>
+																	style="width: 120px;" placeholder="DESIGNATION" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 60px;" placeholder="MONTH" disabled></th>
+																	style="width: 60px;" placeholder="MONTH" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 160px;" placeholder="INSURANCE NO" disabled></th>
+																	style="width: 160px;" placeholder="INSURANCE NO" readonly></th>
 																
 																<th><input type="text" class="form-control"
 																	style="width: 110px;" placeholder="GROSS SALARY"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 130px;" placeholder="EMP CONT 3.25%"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 130px;" placeholder="EMP CONT0.75%"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 190px;" placeholder="TOTAL CONTRIBUTION 4%"
-																	disabled></th>
+																	readonly></th>
 
 															</tr>
 														</thead>
@@ -698,7 +698,7 @@ fieldset {
 												<label class="">emp_id</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.emp_no}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.emp_no}" readonly/>
 												
 											</div>
 											
@@ -706,7 +706,7 @@ fieldset {
 											<label>emp_name</label>
 											</div>
 											<div class="col-sm-2">
-											<input class="baratyh"id="emp_name" th:value="${editing?.emp_name}" disabled/>
+											<input class="baratyh"id="emp_name" th:value="${editing?.emp_name}" readonly/>
 											</div>
 											
 											
@@ -722,7 +722,7 @@ fieldset {
 												<label class="">Designation</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.emp_desig}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.emp_desig}" readonly/>
 												
 											</div>
 											
@@ -730,7 +730,7 @@ fieldset {
 											<label>Month</label>
 											</div>
 											<div class="col-sm-2">
-											<input class="baratyh"id="salary_month"  name="salary_month" th:value="${editing?.salary_month}" disabled/>
+											<input class="baratyh"id="salary_month"  name="salary_month" th:value="${editing?.salary_month}" readonly/>
 											</div>
 											
 											
@@ -746,7 +746,7 @@ fieldset {
 												<label class="">URN</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.urn_no}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.urn_no}" readonly/>
 												
 											</div>
 											
@@ -891,7 +891,7 @@ fieldset {
 													+ prevText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-prev ui-corner-all ui-state-readonly' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "e"
 																			: "w")
 																	+ "'>"
@@ -921,7 +921,7 @@ fieldset {
 													+ nextText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-next ui-corner-all ui-state-readonly' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "w"
 																			: "e")
 																	+ "'>"

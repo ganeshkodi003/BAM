@@ -58,7 +58,7 @@
 	color: red;
 	padding-left: 10px;
 }
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -67,15 +67,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 .formline {
@@ -117,7 +117,7 @@ nav {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -173,7 +173,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -363,13 +363,13 @@ nav {
 															'.filterable'), $filters = $panel
 															.find('.filters input'), $tbody = $panel
 															.find('.table tbody');
-													if ($filters.prop('disabled') == true) {
+													if ($filters.prop('readonly') == true) {
 														$filters
-																.prop('disabled', false);
+																.prop('readonly', false);
 														$filters.first().focus();
 													} else {
 														$filters.val('').prop(
-																'disabled', true);
+																'readonly', true);
 														$tbody.find('.no-result')
 																.remove();
 														$tbody.find('tr').show();
@@ -458,17 +458,17 @@ nav {
 								<thead>
 									<tr class="filters">
 										<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="SL.NO" disabled></th>
+																	placeholder="SL.NO" readonly></th>
 										<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Document Type" disabled></th>
+																	placeholder="Document Type" readonly></th>
 										<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Document Group" disabled></th>
+																	placeholder="Document Group" readonly></th>
 										<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Document Id" disabled></th>
+																	placeholder="Document Id" readonly></th>
 										<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Document Name" disabled></th>
+																	placeholder="Document Name" readonly></th>
 										<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Remarks" disabled></th>
+																	placeholder="Remarks" readonly></th>
 										<th>Select</th>
 									</tr>
 								</thead>

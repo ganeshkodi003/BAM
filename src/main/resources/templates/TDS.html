@@ -120,7 +120,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -129,15 +129,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -281,13 +281,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -896,53 +896,53 @@ function back2(){
 														<thead>
 															<tr class="filters">
 
-																<th><input type="text" class="form-control" style="width:46px;font-weight:bold;" placeholder="Srl No" disabled></th>
+																<th><input type="text" class="form-control" style="width:46px;font-weight:bold;" placeholder="Srl No" readonly></th>
 																<th><input type="text" class="form-control" style="width:240px;font-weight:bold;"
-																	placeholder=" PAN Name" disabled></th>
+																	placeholder=" PAN Name" readonly></th>
 																<th><input type="text" class="form-control" 
-																	style="width: 70px;font-weight:bold;" placeholder="PAN No" disabled></th>
+																	style="width: 70px;font-weight:bold;" placeholder="PAN No" readonly></th>
 																	<th><input type="text" class="form-control" 
-																	style="width: 70px;font-weight:bold;" placeholder="EMP No" disabled></th>
+																	style="width: 70px;font-weight:bold;" placeholder="EMP No" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 110px;font-weight:bold;" placeholder="Date Of Credit" disabled></th>
+																	style="width: 110px;font-weight:bold;" placeholder="Date Of Credit" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 140px;font-weight:bold;" placeholder="Amount Paid/Credit" disabled></th>
+																	style="width: 140px;font-weight:bold;" placeholder="Amount Paid/Credit" readonly></th>
 																
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="Rate Of Tds"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="TDS Amount"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 80px;font-weight:bold;" placeholder="BSR Code"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="Challan No"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="Bank Name"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control	"
 																	style="width: 120px;font-weight:bold;" placeholder="Challan Amount"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 145px;font-weight:bold;" placeholder="TDS Remitted Date"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 80px;font-weight:bold;" placeholder="REF No"
-																	disabled></th>
+																	readonly></th>
 																
 																<th><input type="text" class="form-control"
 																	style="width:170px;font-weight:bold;" placeholder="VR No"
-																	disabled></th>
+																	readonly></th>
 																	
 																	<th><input type="text" class="form-control"
 																	style="width: 50px;font-weight:bold;" placeholder="Form No"
-																	disabled></th>
+																	readonly></th>
 																	<th><input type="text" class="form-control"
 																	style="width: 50px;font-weight:bold;" placeholder="select"
-																	disabled></th>
+																	readonly></th>
 																
 
 															</tr>
@@ -1016,53 +1016,53 @@ function back2(){
 														<thead>
 															<tr class="filters">
 
-																<th><input type="text" class="form-control" style="width:46px;font-weight:bold;" placeholder="Srl No" disabled></th>
+																<th><input type="text" class="form-control" style="width:46px;font-weight:bold;" placeholder="Srl No" readonly></th>
 																<th><input type="text" class="form-control" style="width:240px;font-weight:bold;"
-																	placeholder="PAN Name" disabled></th>
+																	placeholder="PAN Name" readonly></th>
 																<th><input type="text" class="form-control" 
-																	style="width: 80px;font-weight:bold;" placeholder="PAN No" disabled></th>
+																	style="width: 80px;font-weight:bold;" placeholder="PAN No" readonly></th>
 																	<th><input type="text" class="form-control" 
-																	style="width: 80px;font-weight:bold;" placeholder="Emp No" disabled></th>
+																	style="width: 80px;font-weight:bold;" placeholder="Emp No" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 110px;font-weight:bold;" placeholder="Date Of Credit" disabled></th>
+																	style="width: 110px;font-weight:bold;" placeholder="Date Of Credit" readonly></th>
 																<th><input type="text" class="form-control"
-																	style="width: 140px;font-weight:bold;" placeholder="Amount Paid/Credit" disabled></th>
+																	style="width: 140px;font-weight:bold;" placeholder="Amount Paid/Credit" readonly></th>
 																
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="Rate Of Tds"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 100px;font-weight:bold;" placeholder="TDS Amount"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 80px;font-weight:bold;" placeholder="BSR Code"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="Challan No"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 90px;font-weight:bold;" placeholder="Bank Name"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 120px;font-weight:bold;" placeholder="Challan Amount"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 145px;font-weight:bold;" placeholder="TDS Remitted Date"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control"
 																	style="width: 60px;font-weight:bold;" placeholder="REF No"
-																	disabled></th>
+																	readonly></th>
 																
 																<th><input type="text" class="form-control"
 																	style="width: 60px;font-weight:bold;" placeholder="VR No"
-																	disabled></th>
+																	readonly></th>
 																	
 																	<th><input type="text" class="form-control"
 																	style="width: 50px;font-weight:bold;" placeholder="Form No"
-																	disabled></th>
+																	readonly></th>
 																	<th><input type="text" class="form-control"
 																	style="width: 60px;font-weight:bold;" placeholder="Select"
-																	disabled></th>
+																	readonly></th>
 																
 															</tr>
 														</thead>
@@ -2276,7 +2276,7 @@ function back2(){
 												<label class="">emp_id</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.emp_no}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.emp_no}" readonly/>
 												
 											</div>
 											
@@ -2284,7 +2284,7 @@ function back2(){
 											<label>emp_name</label>
 											</div>
 											<div class="col-sm-2">
-											<input class="baratyh"id="emp_name" th:value="${editing?.emp_name}" disabled/>
+											<input class="baratyh"id="emp_name" th:value="${editing?.emp_name}" readonly/>
 											</div>
 											
 											
@@ -2300,7 +2300,7 @@ function back2(){
 												<label class="">Designation</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.emp_desig}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.emp_desig}" readonly/>
 												
 											</div>
 											
@@ -2308,7 +2308,7 @@ function back2(){
 											<label>Month</label>
 											</div>
 											<div class="col-sm-2">
-											<input class="baratyh"id="salary_month"  name="salary_month" th:value="${editing?.salary_month}" disabled/>
+											<input class="baratyh"id="salary_month"  name="salary_month" th:value="${editing?.salary_month}" readonly/>
 											</div>
 											
 											
@@ -2324,7 +2324,7 @@ function back2(){
 												<label class="">URN</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.urn_no}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.urn_no}" readonly/>
 												
 											</div>
 											
@@ -2469,7 +2469,7 @@ function back2(){
 													+ prevText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-prev ui-corner-all ui-state-readonly' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "e"
 																			: "w")
 																	+ "'>"
@@ -2499,7 +2499,7 @@ function back2(){
 													+ nextText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-next ui-corner-all ui-state-readonly' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "w"
 																			: "e")
 																	+ "'>"

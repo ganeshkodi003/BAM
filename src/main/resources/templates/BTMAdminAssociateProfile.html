@@ -87,7 +87,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -96,15 +96,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -326,13 +326,13 @@ function cancel(a) {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -430,25 +430,25 @@ function cancel(a) {
 																<tr class="filters">
 
 																	<th><input type="text" class="form-control"
-																		placeholder="S.NO" disabled></th>
+																		placeholder="S.NO" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Resource Id" disabled></th>
+																		placeholder="Resource Id" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Name" disabled></th>
+																		placeholder="Name" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Designation" disabled></th>
+																		placeholder="Designation" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="category" disabled></th>
+																		placeholder="category" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Mobile" disabled></th>
+																		placeholder="Mobile" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Official Emailid" disabled></th>
+																		placeholder="Official Emailid" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Personal Emailid" disabled ></th>
+																		placeholder="Personal Emailid" readonly ></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Profile Status" disabled></th>
+																		placeholder="Profile Status" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Select" disabled></th>
+																		placeholder="Select" readonly></th>
 																</tr>
 															</thead>
 
@@ -647,12 +647,12 @@ function cancel(a) {
 											</div>
 											<div class="col-4 col-lg-2">
 												<select id="category" th:if="${formmode}=='view' "
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 												</select> <select name="category" id="category"
 													th:if="${formmode}=='add'" onchange="getddl1()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="CON" id="Consultancy">CON</option>
 													<option value="MGR" id="Manager">MGR</option>
 													<option value="LEA" id="Leaders">LEA</option>
@@ -664,7 +664,7 @@ function cancel(a) {
 												</select> <select name="category" id="category"
 													th:if="${formmode}=='edit'" onchange="getddl1()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.category}=='CON'"
 														value="CON" id="Consultancy">CON</option>
@@ -689,10 +689,10 @@ function cancel(a) {
 													<option
 														th:selected="${adminAssociateProfile?.category}=='FUN'"
 														value="FUN" id="Functional Consultants">FUN</option>
-												</select><select name="category" disabled id="category"
+												</select><select name="category" readonly id="category"
 													th:if=" ${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl1()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.category}=='CON'"
 														value="CON" id="Consultancy">CON</option>
@@ -721,7 +721,7 @@ function cancel(a) {
 
 											</div>
 											<div class="col-4 col-lg-1">
-												<input id="Ddl1" disabled />
+												<input id="Ddl1" readonly />
 											</div>
 										</div>
 										<div class="row formline">
@@ -1114,7 +1114,7 @@ function cancel(a) {
 												<Select id="bank" name="bank" th:if="${formmode}=='add'"
 													onchange="getddl2()" class="form-control form-control-sm"
 													autocomplete="off" >
-													<option value="" disabled selected>--SELECT--</option>
+													<option value="" readonly selected>--SELECT--</option>
 
 													<option value="CB" 
 														id="Canara Bank">CB</option>
@@ -1165,7 +1165,7 @@ function cancel(a) {
 												<Select id="bank" name="bank" th:if="${formmode}=='edit'"
 													onchange="getddl2()" class="form-control form-control-sm"
 													autocomplete="off" >
-													<option value="" disabled selected>--SELECT--</option>
+													<option value="" readonly selected>--SELECT--</option>
 
 													<option th:selected="${adminAssociateProfile?.bank}=='CB'"
 														value="Canara Bank">CB</option>
@@ -1214,8 +1214,8 @@ function cancel(a) {
 												
 												<Select id="bank" name="bank" th:if="${formmode}=='verify'"
 													onchange="getddl2()" class="form-control form-control-sm"
-													autocomplete="off" disabled >
-													<option value="" disabled selected>--SELECT--</option>
+													autocomplete="off" readonly >
+													<option value="" readonly selected>--SELECT--</option>
 
 													<option th:selected="${adminAssociateProfile?.bank}=='CB'"
 														value="Canara Bank">CB</option>
@@ -1264,8 +1264,8 @@ function cancel(a) {
 												
 												<Select id="bank" name="bank" th:if="${formmode}=='delete'"
 													onchange="getddl2()" class="form-control form-control-sm"
-													autocomplete="off" disabled >
-													<option value="" disabled selected>--SELECT--</option>
+													autocomplete="off" readonly >
+													<option value="" readonly selected>--SELECT--</option>
 
 													<option th:selected="${adminAssociateProfile?.bank}=='CB'"
 														value="Canara Bank">CB</option>
@@ -1314,8 +1314,8 @@ function cancel(a) {
 												
 												<Select id="bank" name="bank" th:if="${formmode}=='cancel'"
 													onchange="getddl2()" class="form-control form-control-sm"
-													autocomplete="off" disabled >
-													<option value="" disabled selected>--SELECT--</option>
+													autocomplete="off" readonly >
+													<option value="" readonly selected>--SELECT--</option>
 
 													<option th:selected="${adminAssociateProfile?.bank}=='CB'"
 														value="Canara Bank">CB</option>
@@ -1364,8 +1364,8 @@ function cancel(a) {
 												
 												<Select id="bank" name="bank" th:if="${formmode}=='listview'"
 													onchange="getddl2()" class="form-control form-control-sm"
-													autocomplete="off" disabled >
-													<option value="" disabled selected>--SELECT--</option>
+													autocomplete="off" readonly >
+													<option value="" readonly selected>--SELECT--</option>
 
 													<option th:selected="${adminAssociateProfile?.bank}=='CB'"
 														value="Canara Bank">CB</option>
@@ -1415,7 +1415,7 @@ function cancel(a) {
 											</div>
 
 											<div class="col-sm-2">
-												<input id="Ddl2" disabled />
+												<input id="Ddl2" readonly />
 											</div>
 
 											<div class="col-4 col-lg-2">
@@ -1455,7 +1455,7 @@ function cancel(a) {
 											</div>
 
 											<div class="col-sm-2">
-												<input id="Ddl3" disabled />
+												<input id="Ddl3" readonly />
 											</div>
 										</div>
 										<div class="row formline">
@@ -1535,13 +1535,13 @@ function cancel(a) {
 
 											<div class="col-4 col-lg-2">
 												<select th:if="${formmode}=='view' " id="designation"
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 													<option value="DIR">DIR</option>
 												</select> <select name="design" id="designation"
 													th:if="${formmode}=='add'" onchange="getddl4()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="DIR" id="Director">DIR</option>
 													<option value="CEO" id="Chief Executive Officer">CEO</option>
 													<option value="SPM" id="Senior Project Manager">SPM</option>
@@ -1563,7 +1563,7 @@ function cancel(a) {
 												</select> <select name="design" id="designation"
 													th:if="${formmode}=='edit'" onchange="getddl4()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.design}=='DIR'"
 														value="DIR" id="Director">DIR</option>
@@ -1618,10 +1618,10 @@ function cancel(a) {
 														<option
 														th:selected="${adminAssociateProfile?.design}=='RM'"
 														value="RM" id="Relationship Manager">RM</option>
-												</select> <select name="design" disabled id="designation"
+												</select> <select name="design" readonly id="designation"
 													th:if=" ${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl4()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.design}=='DIR'"
 														value="DIR" id="Director">DIR</option>
@@ -1680,7 +1680,7 @@ function cancel(a) {
 											</div>
 
 											<div class="col-sm-2">
-												<input id="Ddl4" disabled />
+												<input id="Ddl4" readonly />
 											</div>
 
 
@@ -1689,12 +1689,12 @@ function cancel(a) {
 											</div>
 											<div class="col-4 col-lg-2">
 												<select th:if="${formmode}=='view'" id="role"
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 													<option value="ADM">ADM</option>
 												</select> <select name="role" id="role" th:if="${formmode}=='add'"
 													onchange="getddl5()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="ADM" id="Administration">ADM</option>
 													<option value="OPR" id="Operations">OPR</option>
 													<option value="INQ" id="Inquiries">INQ</option>
@@ -1707,7 +1707,7 @@ function cancel(a) {
 													<option value="MNT" id="Maintenance">MNT</option>
 												</select> <select name="role" id="role" th:if="${formmode}=='edit'"
 													onchange="getddl5()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option th:selected="${adminAssociateProfile?.role}=='ADM'"
 														value="ADM" id="Administration">ADM</option>
 													<option th:selected="${adminAssociateProfile?.role}=='OPR'"
@@ -1728,10 +1728,10 @@ function cancel(a) {
 														value="SWE" id="Software Engineer">SWE</option>
 													<option th:selected="${adminAssociateProfile?.role}=='MNT'"
 														value="MNT" id="Maintenance">MNT</option>
-												</select><select disabled name="role" id="role"
+												</select><select readonly name="role" id="role"
 													th:if="${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl5()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option th:selected="${adminAssociateProfile?.role}=='ADM'"
 														value="ADM" id="Administration">ADM</option>
 													<option th:selected="${adminAssociateProfile?.role}=='OPR'"
@@ -1755,7 +1755,7 @@ function cancel(a) {
 												</select>
 											</div>
 											<div class="col-sm-2">
-												<input id="Ddl5" disabled />
+												<input id="Ddl5" readonly />
 											</div>
 										</div>
 										<div class="row formline">
@@ -1765,13 +1765,13 @@ function cancel(a) {
 
 											<div class="col-4 col-lg-2">
 												<select id="qualification" th:if="${formmode}=='view' "
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 													<option value="B.COM">B.COM</option>
 												</select> <select name="qual" id="qualification"
 													th:if="${formmode}=='add'" onchange="getddl6()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="B.COM" id="Bachelor of Commerce">B.COM</option>
 													<option value="B.E" id="Bacheler of Engineering">B.E</option>
 													<option value="B.B.A"
@@ -1790,7 +1790,7 @@ function cancel(a) {
 												</select> <select name="qual" id="qualification"
 													th:if="${formmode}=='edit'" onchange="getddl6()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.qual}=='B.COM'"
 														value="B.COM" id="Bachelor of Commerce">B.COM</option>
@@ -1826,10 +1826,10 @@ function cancel(a) {
 													<option
 														th:selected="${adminAssociateProfile?.qual}=='M.B.A'"
 														value="M.B.A" id="Master of Business Administration">M.B.A</option>
-												</select><select disabled name="qual" id="qualification"
+												</select><select readonly name="qual" id="qualification"
 													th:if="${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl6()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.qual}=='B.COM'"
 														value="B.COM" id="Bachelor of Commerce">B.COM</option>
@@ -1868,7 +1868,7 @@ function cancel(a) {
 												</select>
 											</div>
 											<div class="col-sm-2">
-												<input id="Ddl6" disabled />
+												<input id="Ddl6" readonly />
 											</div>
 
 											<div class="col-4 col-lg-2">
@@ -2133,7 +2133,7 @@ function cancel(a) {
 
 											<div class="col-4 col-lg-2">
 												<select th:if="${formmode}=='view' " id="gender"
-													class="form-control form-control-sm" disabled="disabled">
+													class="form-control form-control-sm" readonly="readonly">
 												</select> <select name="gender" id="gender"
 													th:if="${formmode}=='add'" onchange="getddl7()"
 													class="form-control form-control-sm">
@@ -2156,7 +2156,7 @@ function cancel(a) {
 													<option
 														th:selected="${adminAssociateProfile?.gender}=='Others'"
 														id="Others" value="Others">Others</option>
-												</select><select disabled
+												</select><select readonly
 													th:if="${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													id="gender" class="form-control form-control-sm"
 													name="gender">
@@ -2177,20 +2177,20 @@ function cancel(a) {
 												</select>
 											</div>
 											<div class="col-sm-2">
-												<input id="Ddl7" disabled />
+												<input id="Ddl7" readonly />
 											</div>
 											<div class="col-4 col-lg-2">
 												<label for="bloodGroup">Blood Group</label>
 											</div>
 											<div class="col-4 col-lg-2">
 												<select id="blood_group" th:if="${formmode}=='view' "
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 													<option value="A+">A+</option>
 												</select> <select name="blood_group" id="blood_group"
 													th:if="${formmode}=='add'" onchange="getddl8()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="A+" id="A positive">A+</option>
 													<option value="B+" id="B positive">B+</option>
 													<option value="O+" id="O positive">O+</option>
@@ -2204,7 +2204,7 @@ function cancel(a) {
 												</select> <select name="blood_group" id="blood_group"
 													th:if="${formmode}=='edit'" onchange="getddl8()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.blood_group}=='A+'"
 														value="A+" id="A positive">A+</option>
@@ -2235,10 +2235,10 @@ function cancel(a) {
 													<option
 														th:selected="${adminAssociateProfile?.blood_group}=='B1+'"
 														value="B1+" id="B1 Positive">B1+</option>
-												</select> <select disabled name="blood_group" id="blood_group"
+												</select> <select readonly name="blood_group" id="blood_group"
 													th:if="${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl8()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.blood_group}=='A+'"
 														value="A+" id="A positive">A+</option>
@@ -2272,7 +2272,7 @@ function cancel(a) {
 												</select>
 											</div>
 											<div class="col-sm-2">
-												<input id="Ddl8" disabled />
+												<input id="Ddl8" readonly />
 											</div>
 										</div>
 										<div class="row formline">
@@ -2282,22 +2282,22 @@ function cancel(a) {
 
 											<div class="col-4 col-lg-2">
 												<select th:if="${formmode}=='view' " id="marital_statusview"
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 													<option value="S" id="Single">S</option>
 													<option value="M" id="Married">M</option>
 													<option value="D" id="Divorce">D</option>
 												</select> <select name="marital_status" id="marital_statusadd"
 													th:if="${formmode}=='add'" onchange="getddl9()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="S" id="Single">S</option>
 													<option value="M" id="Married">M</option>
 													<option value="D" id="Divorce">D</option>
 												</select> <select name="marital_status" id="marital_status"
 													th:if="${formmode}=='edit'" onchange="getddl9()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.marital_status}=='S'"
 														value="S" id="Single">S</option>
@@ -2307,11 +2307,11 @@ function cancel(a) {
 													<option
 														th:selected="${adminAssociateProfile?.marital_status}=='D'"
 														value="D" id="Divorce">D</option>
-												</select><select disabled name="marital_status" id="marital_status"
+												</select><select readonly name="marital_status" id="marital_status"
 													th:if="${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl9()" class="form-control form-control-sm">
 
-													<option selected disabled>--SELECT--</option>
+													<option selected readonly>--SELECT--</option>
 
 													<option
 														th:selected="${adminAssociateProfile?.marital_status}=='S'"
@@ -2325,7 +2325,7 @@ function cancel(a) {
 												</select>
 											</div>
 											<div class="col-sm-2">
-												<input id="Ddl9" disabled>
+												<input id="Ddl9" readonly>
 											</div>
 											<div class="col-4 col-lg-2">
 												<label for="dependants">Dependants</label>
@@ -3600,19 +3600,19 @@ function cancel(a) {
 
 											<div class="col-4 col-lg-2">
 												<select th:if="${formmode}=='view' " id="channel_id"
-													class="form-control form-control-sm" disabled="disabled">
-													<option disabled selected>--SELECT--</option>
+													class="form-control form-control-sm" readonly="readonly">
+													<option readonly selected>--SELECT--</option>
 												</select> <select name="channel_id" id="channel_id"
 													th:if="${formmode}=='add'" onchange="getddl10()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option value="ALL" id="ALL">ALL</option>
 													<option value="MOB" id="Mobile Solutions">MOB</option>
 													<option value="WEB" id="Web">WEB</option>
 												</select> <select name="channel_id" id="channel_id"
 													th:if="${formmode}=='edit'" onchange="getddl10()"
 													class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.channel_id}=='ALL'"
 														value="ALL" id="ALL">ALL</option>
@@ -3622,10 +3622,10 @@ function cancel(a) {
 													<option
 														th:selected="${adminAssociateProfile?.channel_id}=='WEB'"
 														value="WEB" id="Web">WEB</option>
-												</select><select disabled name="channel_id" id="channel_id"
+												</select><select readonly name="channel_id" id="channel_id"
 													th:if="${formmode}=='delete' OR ${formmode}=='listview' OR ${formmode}=='verify' OR ${formmode}=='cancel'"
 													onchange="getddl10()" class="form-control form-control-sm">
-													<option disabled selected>--SELECT--</option>
+													<option readonly selected>--SELECT--</option>
 													<option
 														th:selected="${adminAssociateProfile?.channel_id}=='ALL'"
 														value="ALL" id="ALL">ALL</option>
@@ -3638,7 +3638,7 @@ function cancel(a) {
 												</select>
 											</div>
 											<div class="col-sm-2">
-												<input id="Ddl10" disabled />
+												<input id="Ddl10" readonly />
 											</div>
 											<div class="col-4 col-lg-2">
 												<label for="locked">Locked</label>
@@ -3704,27 +3704,27 @@ function cancel(a) {
 										onclick="listUser();">list</a>
 
 									<button th:if="${formmode}== 'add'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="submitform(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'edit'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="ModifyUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'verify'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="VerifyUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'delete'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="deleteUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'cancel'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="can(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 

@@ -98,7 +98,7 @@ nav {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -154,7 +154,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -365,7 +365,7 @@ var status = f.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select id="associateName" class="form-control form-control-sm" required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option th:each="monitoringparam : ${profileManagers}"
 																th:value="${monitoringparam.emp_id}"
 																th:text="${monitoringparam.emp_id+' '+monitoringparam.emp_name}"></option>
@@ -373,7 +373,7 @@ var status = f.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}" >
 										<select name="arr.reportto" id="associateName" class="form-control form-control-sm" required>
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option selected
 																th:value="${session.USERID}"
 																th:text="${session.USERID+' '+session.USERNAME}"></option>
@@ -390,13 +390,13 @@ var status = f.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select id="status" class="form-control form-control-sm"required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option value="Completed">Completed</option>
 										</select>
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}">
 										<select id="status" class="form-control form-control-sm"required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option value="Pending">Pending</option>
 										</select>
 									</div>
@@ -411,7 +411,7 @@ var status = f.value;
 									</div>
 									<div class="col-sm-3">
 										<select id="type" class="form-control form-control-sm"required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option value="Pdf">PDF</option>
 											<option value="Excel">Excel</option>
 										</select>

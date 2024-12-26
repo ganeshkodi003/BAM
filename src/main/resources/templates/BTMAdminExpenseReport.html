@@ -77,7 +77,7 @@
 			border-bottom: none;
 		}
 
-		.filterable .filters input[disabled] {
+		.filterable .filters input[readonly] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -86,15 +86,15 @@
 			height: auto;
 		}
 
-		.filterable .filters input[disabled]::-webkit-input-placeholder {
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]::-moz-placeholder {
+		.filterable .filters input[readonly]::-moz-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]:-ms-input-placeholder {
+		.filterable .filters input[readonly]:-ms-input-placeholder {
 			color: #333;
 		}
 	</style>
@@ -259,13 +259,13 @@
 									'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 											.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-										.prop('disabled', false);
+										.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-										'disabled', true);
+										'readonly', true);
 									$tbody.find('.no-result')
 										.remove();
 									$tbody.find('tr').show();
@@ -351,22 +351,22 @@
 															<tr class="filters">
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Srlno" disabled></th>
+																		placeholder="Srlno" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Associate Id" disabled></th>
+																		placeholder="Associate Id" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Name" disabled></th>
+																		placeholder="Name" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Designation" disabled></th>
+																		placeholder="Designation" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Group" disabled></th>
+																		placeholder="Group" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Amount" disabled></th>
+																		placeholder="Amount" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>
@@ -725,9 +725,9 @@
 
 									<div class="card-footer text-center" >
 										<button type="button" th:if=" ${formmode}=='view'"
-											class="btn btn-xs btn-primary" onclick="home();" id="btnHome">Home</button>
+											btn headerbutton onclick="home();" id="btnHome">Home</button>
 
-										<button type="button" class="btn btn-xs btn-primary" th:if="${formmode}=='view'"
+										<button type="button" btn headerbutton th:if="${formmode}=='view'"
 											id="btnback" onclick="back();">Back</button>
 									</div>
 									<!---------------------Expenses Details form Starts-------------------------------------------------->

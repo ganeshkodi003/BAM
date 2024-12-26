@@ -214,7 +214,7 @@ fieldset {
 	opacity: 1;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -223,15 +223,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -343,7 +343,7 @@ fieldset {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -406,13 +406,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -503,10 +503,10 @@ fieldset {
 
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Year" disabled></th>
+																	placeholder="Year" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Month" disabled></th>
+																	placeholder="Month" readonly></th>
 
 																<th>Select</th>
 

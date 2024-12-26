@@ -214,7 +214,7 @@ background-clip: padding-box;
 											            rowHtml += '<td><input type="text" id="dutyDates" name="leave_date" readonly class="form-control" value="' + dateList[i] + '"></td>';
 											            rowHtml += '<td><input type="text" id="dutyDays" name="leave_day" readonly class="form-control" value="' + dayinword + '"></td>';
 											            rowHtml += '<td><input type="text" id="leaveDesc" readonly class="form-control" value="' + leaveDesc + '"></td>';
-											            rowHtml += '<td class="text-center"><input type="checkbox" id="' + i + '" class="messageCheckbox" onchange="checkvalue(this)" disabled></td>';
+											            rowHtml += '<td class="text-center"><input type="checkbox" id="' + i + '" class="messageCheckbox" onchange="checkvalue(this)" readonly></td>';
 											            rowHtml += '<td><input type="text" id="leave_counter' + i + '" name="leave_counter" readonly class="form-control w-50 tableData" value="1.0"></td>';
 											            
 											          
@@ -225,8 +225,8 @@ background-clip: padding-box;
 											            // Append the constructed row to the table
 											            $('#leaveTable').append(rowHtml);
 											        }
-												$("#0").attr("disabled", false);
-												$("#"+result+"").attr("disabled", false);
+												$("#0").attr("readonly", false);
+												$("#"+result+"").attr("readonly", false);
 											}
 								   	
 										   	
@@ -510,13 +510,13 @@ background-clip: padding-box;
 							</div>
 							</div>
 							<div class="card-footer text-center">
-								<button class="btn btn-xs btn-primary" id="btnHome"
+								<button btn headerbutton id="btnHome"
 									onclick="home();">Home</button>
 
-								<button type="button" class="btn btn-xs btn-primary"
+								<button type="button" btn headerbutton
 									id="btnSubmit1" onclick="addSubmit();">Submit</button>
 
-								<button class="btn btn-xs btn-primary" id="btnBack"
+								<button btn headerbutton id="btnBack"
 									onclick="back();">Back</button>
 							</div>
 						</div>

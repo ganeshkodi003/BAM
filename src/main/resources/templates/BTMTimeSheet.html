@@ -372,12 +372,12 @@ function edittimesheet(a){
 										</div>
 									</div>
 									<div class="card-footer bg-white border-top-0 text-center" >
-										<button  th:if="${formmode}=='list' OR ${formmode}=='list1'" class="btn btn-xs btn-primary" 
+										<button  th:if="${formmode}=='list' OR ${formmode}=='list1'" btn headerbutton 
 										onclick="home(this);" id="btnHome">Home</button>
 										<a type="button"  th:if="${formmode}=='list'"
 												class="btn btn-xs btn-primary text-white" id="btnAdd"
 												onclick="adduser();">Assign</a>
-										<button  th:if="${formmode}=='list' OR ${formmode}=='list1'" class="btn btn-xs btn-primary" 
+										<button  th:if="${formmode}=='list' OR ${formmode}=='list1'" btn headerbutton 
 										id="btnBack" onclick="back();">Back</button>
 									</div>
 								</div>
@@ -642,12 +642,12 @@ function edittimesheet(a){
 									</div>
 									<div class="card-footer text-center border-top-0 bg-white"
 										style="background-color: unset">
-										<button class="btn btn-xs btn-primary" onclick="home(this);"
+										<button btn headerbutton onclick="home(this);"
 											id="btnModify">Home</button>
-										<button type="button" class="btn btn-xs btn-primary" onclick="submitForm(this);"
+										<button type="button" btn headerbutton onclick="submitForm(this);"
 											id="btnSubmit">Submit</button>
 											
-										<button class="btn btn-xs btn-primary" form="userProfile"
+										<button btn headerbutton form="userProfile"
 											id="btnSubmit" onclick="back();">Back</button>
 									</div>
 								</div>

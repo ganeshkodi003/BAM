@@ -94,7 +94,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -103,15 +103,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -140,7 +140,7 @@ td {
 
 	$(function() {
 
-		$("#disableDate").datepicker({
+		$("#readonlyate").datepicker({
 			changeMonth : true,
 			changeYear : true,
 			dateFormat : "yyyy",
@@ -343,13 +343,13 @@ td {
 														'.filterable'), $filters = $panel
 														.find('.filters input'), $tbody = $panel
 														.find('.table tbody');
-												if ($filters.prop('disabled') == true) {
+												if ($filters.prop('readonly') == true) {
 													$filters
-															.prop('disabled', false);
+															.prop('readonly', false);
 													$filters.first().focus();
 												} else {
 													$filters.val('').prop(
-															'disabled', true);
+															'readonly', true);
 													$tbody.find('.no-result')
 															.remove();
 													$tbody.find('tr').show();
@@ -569,7 +569,7 @@ td {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitaddform(this);" form="BamAcquisition"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -676,7 +676,7 @@ td {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitaddform(this);" form="BamAcquisition"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -788,7 +788,7 @@ td {
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitaddform(this);" form="BamAcquisition"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -807,7 +807,7 @@ td {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${BamAcquisition?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -816,7 +816,7 @@ td {
                 <input type="text" id="modifyuser" name="modify_user" 
                           th:value="${BamAcquisition?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -825,7 +825,7 @@ td {
                 <input type="text" id="verifyuser" name="verify_user" 
                          
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -836,7 +836,7 @@ td {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${BamAcquisition?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -845,7 +845,7 @@ td {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${BamAcquisition?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -854,7 +854,7 @@ td {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${BamAcquisition?.verify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         

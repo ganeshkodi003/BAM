@@ -73,7 +73,7 @@
 			background-color: unset !important;
 		}
 
-		.filterable .filters input[disabled] {
+		.filterable .filters input[readonly] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -82,15 +82,15 @@
 			height: auto;
 		}
 
-		.filterable .filters input[disabled]::-webkit-input-placeholder {
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]::-moz-placeholder {
+		.filterable .filters input[readonly]::-moz-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]:-ms-input-placeholder {
+		.filterable .filters input[readonly]:-ms-input-placeholder {
 			color: #333;
 		}
 
@@ -167,13 +167,13 @@
 									'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 											.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-										.prop('disabled', false);
+										.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-										'disabled', true);
+										'readonly', true);
 									$tbody.find('.no-result')
 										.remove();
 									$tbody.find('tr').show();
@@ -850,21 +850,21 @@
 													<tr class="filters">
 
 														<th><input type="text" class="form-control" placeholder="Srl No"
-																disabled></th>
+																readonly></th>
 														<th><input type="text" class="form-control" placeholder="Emp ID"
-																disabled></th>
+																readonly></th>
 														<th><input type="text" class="form-control"
-																placeholder="Emp Name" disabled></th>
+																placeholder="Emp Name" readonly></th>
 														<th><input type="text" class="form-control"
-																placeholder="Designation" disabled></th>
+																placeholder="Designation" readonly></th>
 														<th><input type="text" class="form-control"
-																placeholder="No.of Days" disabled></th>
+																placeholder="No.of Days" readonly></th>
 														<th><input type="text" class="form-control"
-																placeholder="Leave From" disabled></th>
+																placeholder="Leave From" readonly></th>
 														<th><input type="text" class="form-control"
-																placeholder="Leave To" disabled></th>
+																placeholder="Leave To" readonly></th>
 														<th><input type="text" class="form-control" placeholder="Select"
-																disabled></th>
+																readonly></th>
 
 													</tr>
 												</thead>
@@ -957,18 +957,18 @@
 												style="cursor: pointer; background: #f2f2f5; width: 100%;">
 
 												<label>Ref No:<input type="text"
-														th:value="${leaveMaster?.leave_reference}" disabled></label>
+														th:value="${leaveMaster?.leave_reference}" readonly></label>
 
 												<label>Leave Count:<input type="text"
-														th:value="${leaveMaster?.no_of_days}" disabled></label>
+														th:value="${leaveMaster?.no_of_days}" readonly></label>
 												<label>From
 													Date:<input type="text"
 														th:value="${#dates.format(leaveMaster?.from_date,'dd-MM-yyyy')}"
-														id="fromDate" disabled>
+														id="fromDate" readonly>
 
 												</label> <label>To Date:<input type="text"
 														th:value="${#dates.format(leaveMaster?.to_date,'dd-MM-yyyy')}"
-														id="toDate" disabled></label>
+														id="toDate" readonly></label>
 											</div>
 
 
@@ -1070,18 +1070,18 @@
 												style="cursor: pointer; background: #f2f2f5; width: 100%;">
 
 												<label>Ref No:<input type="text"
-														th:value="${leaveMaster?.leave_reference}" disabled></label>
+														th:value="${leaveMaster?.leave_reference}" readonly></label>
 
 												<label>Leave Count:<input type="text"
-														th:value="${leaveMaster?.no_of_days}" disabled></label>
+														th:value="${leaveMaster?.no_of_days}" readonly></label>
 												<label>From
 													Date:<input type="text"
 														th:value="${#dates.format(leaveMaster?.from_date,'dd-MM-yyyy')}"
-														id="fromDate" disabled>
+														id="fromDate" readonly>
 
 												</label> <label>To Date:<input type="text"
 														th:value="${#dates.format(leaveMaster?.to_date,'dd-MM-yyyy')}"
-														id="toDate" disabled></label>
+														id="toDate" readonly></label>
 											</div>
 
 

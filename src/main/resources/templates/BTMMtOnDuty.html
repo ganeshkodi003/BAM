@@ -81,7 +81,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -90,15 +90,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -213,13 +213,13 @@ nav {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -430,25 +430,25 @@ nav {
 														<th>Srlno</th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Emp ID" disabled></th>
+															placeholder="Emp ID" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Emp Name" disabled></th>
+															placeholder="Emp Name" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="OD Reference" disabled></th>
+															placeholder="OD Reference" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="From Date" disabled></th>
+															placeholder="From Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="To Date" disabled></th>
+															placeholder="To Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="No.of Days" disabled></th>
+															placeholder="No.of Days" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Status" disabled></th>
+															placeholder="Status" readonly></th>
 														<th>Select</th>
 
 													</tr>
@@ -692,12 +692,12 @@ nav {
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 
-										<button type="button" class="btn btn-xs btn-primary"
+										<button type="button" btn headerbutton
 											id="btnApprove" form="LeaveMaster"
 											th:attr="data-ref1 = ${MtOnDuty?.leave_ref}"
 											onclick="approveAdd(this);">Accept</button>
 
-										<button type="button" class="btn btn-xs btn-primary"
+										<button type="button" btn headerbutton
 											id="btnReject" th:attr="data-ref1 = ${MtOnDuty?.leave_ref}"
 											form="LeaveMaster" onclick="rejectAdd(this);">Reject</button>
 

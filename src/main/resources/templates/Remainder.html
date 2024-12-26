@@ -78,7 +78,7 @@
 			/* Display the counter */
 		}
 
-		.filterable .filters input[disabled] {
+		.filterable .filters input[readonly] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -87,15 +87,15 @@
 			height: auto;
 		}
 
-		.filterable .filters input[disabled]::-webkit-input-placeholder {
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]::-moz-placeholder {
+		.filterable .filters input[readonly]::-moz-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]:-ms-input-placeholder {
+		.filterable .filters input[readonly]:-ms-input-placeholder {
 			color: #333;
 		}
 	</style>
@@ -126,13 +126,13 @@
 									'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 											.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-										.prop('disabled', false);
+										.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-										'disabled', true);
+										'readonly', true);
 									$tbody.find('.no-result')
 										.remove();
 									$tbody.find('tr').show();
@@ -467,38 +467,38 @@
 																<th>S.No</th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="PO No" disabled></th>
+																		placeholder="PO No" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="PO Date" disabled></th>
+																		placeholder="PO Date" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Employee Name" disabled></th>
+																		placeholder="Employee Name" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Employee Number" disabled></th>
+																		placeholder="Employee Number" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Rate" disabled></th>
+																		placeholder="Rate" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Bill Total Amount" disabled></th>
+																		placeholder="Bill Total Amount" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Delivrey Date" disabled></th>
+																		placeholder="Delivrey Date" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Month" disabled></th>
+																		placeholder="Month" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Project Manager" disabled></th>
+																		placeholder="Project Manager" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Project Manager Mail" disabled>
+																		placeholder="Project Manager Mail" readonly>
 																</th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Location" disabled></th>
+																		placeholder="Location" readonly></th>
 
 																<th onclick="selectall(this)"><input
 																		id="selectAllCheckboxId" type="checkbox" hidden><span>&#10003;</span></th>
@@ -552,7 +552,7 @@
 															<div class="col-sm-2">
 																<select id="from_id" autocomplete="off"
 																	class="form-control form-control-sm">
-																	<option disabled selected>--select--</option>
+																	<option readonly selected>--select--</option>
 																	<option>accts@bornfire.in</option>
 																	<option>admin@bornfire.in</option>
 																	<option>HR@bornfire.in</option>
@@ -577,11 +577,11 @@
 
 											</div>
 											<div class="card-footer text-center bg-white border-top-0">
-												<button class="btn btn-xs btn-primary" onclick="verify(this);"
+												<button btn headerbutton onclick="verify(this);"
 													id="btnHome">Home</button>
-												<button class="btn btn-xs btn-primary" onclick="mail(this);"
+												<button btn headerbutton onclick="mail(this);"
 													id="btnHome">Send Mail</button>
-												<button class="btn btn-xs btn-primary" id="btnBack">Back</button>
+												<button btn headerbutton id="btnBack">Back</button>
 											</div>
 										</div>
 									</div>
@@ -1467,12 +1467,12 @@
 
 												<div th:if="${formmode}=='add' OR ${formmode}=='edit'">
 													<button th:if="${formmode}== 'add'" type="button"
-														class="btn btn-xs btn-primary" form="resourceProfile"
+														btn headerbutton form="resourceProfile"
 														id="btnSubmit" onclick="submitform(this);"
 														th:attr="data-formmode=${formmode}">Submit</button>
 
 													<button th:if=" ${formmode}=='edit'" type="button"
-														class="btn btn-xs btn-primary" form="resourceProfile"
+														btn headerbutton form="resourceProfile"
 														id="btnSubmit" onclick="submiteditform(this);"
 														th:attr="data-formmode=${formmode},data-po_id=${invoiceMasterList.po_id}">Submit</button>
 												</div>

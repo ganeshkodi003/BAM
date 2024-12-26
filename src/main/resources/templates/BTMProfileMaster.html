@@ -103,7 +103,7 @@ fieldset {
 	background-color: transparent;
 	opacity: 1;
 } */
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -112,15 +112,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -129,7 +129,7 @@ fieldset {
 
 	$(function() {
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,

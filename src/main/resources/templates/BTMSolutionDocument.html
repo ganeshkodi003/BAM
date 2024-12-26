@@ -79,7 +79,7 @@
 .dataTables_wrapper .dataTables_paginate .paginate_button {
 	padding: 0px;
 }
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -88,15 +88,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
@@ -127,7 +127,7 @@ nav {
         .pagination button:hover {
             background-color: #45a049;
         }
-        .pagination button.disabled {
+        .pagination button.readonly {
             background-color: #ccc;
             cursor: not-allowed;
         }
@@ -147,13 +147,13 @@ nav {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -313,8 +313,8 @@ $(document).ready( function () {
             });
 
             document.getElementById('page-info').textContent = `Page ${currentPage} of ${totalPages}`;
-            document.getElementById('prev-btn').classList.toggle('disabled', currentPage === 1);
-            document.getElementById('next-btn').classList.toggle('disabled', currentPage === totalPages);
+            document.getElementById('prev-btn').classList.toggle('readonly', currentPage === 1);
+            document.getElementById('next-btn').classList.toggle('readonly', currentPage === totalPages);
         }
 
      
@@ -388,11 +388,11 @@ $(document).ready( function () {
             <table class="table">
                 <thead>
                     <tr class="filters">
-                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocRefNo" disabled></th>
-                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocId" disabled></th>
-                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocType" disabled></th>
-                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocFormat" disabled></th>
-                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocName" disabled></th>
+                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocRefNo" readonly></th>
+                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocId" readonly></th>
+                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocType" readonly></th>
+                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocFormat" readonly></th>
+                        <th><input type="text" class="form-control font-weight-bold" placeholder="DocName" readonly></th>
                         <th>Select</th>
                     </tr>
                 </thead>

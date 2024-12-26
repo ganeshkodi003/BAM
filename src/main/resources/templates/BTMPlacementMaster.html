@@ -729,12 +729,12 @@ fieldset {
 
 											<div th:if="${formmode}=='add' OR ${formmode}=='edit'">
 												<button th:if="${formmode}== 'add'" type="button"
-													class="btn btn-xs btn-primary" form="placementProfile"
+													btn headerbutton form="placementProfile"
 													id="btnSubmit" onclick="submitform(this);"
 													th:attr="data-formmode=${formmode}">Submit</button>
 
 												<button th:if=" ${formmode}=='edit'" type="button"
-													class="btn btn-xs btn-primary" form="placementProfile"
+													btn headerbutton form="placementProfile"
 													id="btnSubmit" onclick="submiteditform(this);"
 													th:attr="data-formmode=${formmode}">Submit</button>
 											</div>

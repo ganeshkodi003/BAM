@@ -119,7 +119,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -128,15 +128,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -1345,14 +1345,14 @@ $(document).ready(
 													type="text" id="entryuser" name="entry_user"
 													th:value="${paramview1?.entry_user}"
 													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													disabled></td>
+													readonly></td>
 												<td class="col-sm-2" style="text-align: right;"><font
 													size="2"><B>Modify User :</B></font></td>
 												<td class="col-sm-2" style="width: 112px;"><input
 													type="text" id="modifyuser" name="modify_user"
 													th:value="${paramview1?.modify_user}"
 													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													disabled></td>
+													readonly></td>
 												<td class="col-sm-2" style="text-align: right;"><font
 													size="2"><B>Verify User :</B></font></td>
 												<!-- 
@@ -1360,7 +1360,7 @@ $(document).ready(
 												<td class="col-sm-2" style="width: 112px;"><input
 													type="text" id="paramview1" name="verify_user"
 													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													disabled></td>
+													readonly></td>
 											</tr>
 											<tr>
 												<td style="text-align: right;"><font size="2"><B>Entry
@@ -1369,21 +1369,21 @@ $(document).ready(
 													id="entrytime" name="entry_time"
 													th:value="${paramview1?.entry_time}"
 													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													disabled></td>
+													readonly></td>
 												<td style="text-align: right;"><font size="2"><B>Modify
 															Time :</B></font></td>
 												<td style="width: 112px"><input type="text"
 													id="modifytime" name="modify_time"
 													th:value="${paramview1?.modify_time}"
 													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													disabled></td>
+													readonly></td>
 												<td style="text-align: right;"><font size="2"><B>Verify
 															Time :</B></font></td>
 												<td style="width: 112px"><input type="text"
 													id="verifytime" name="verify_time"
 													th:value="${paramview1?.verify_time}"
 													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													disabled></td>
+													readonly></td>
 											</tr>
 
 										</table>

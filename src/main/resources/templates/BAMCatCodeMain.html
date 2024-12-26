@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
@@ -23,7 +24,7 @@
 	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 <script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
@@ -43,14 +44,15 @@
 	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
 <style>
-
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .btns {
 	float: right;
 	margin: 5px;
@@ -93,7 +95,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -102,36 +104,39 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
 
 
 <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th,td {
-            border: 1px solid #dcdcdc;
-                 }
-        td {
-            border-top: 1px solid #dcdcdc;
-        }
-    </style>
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+}
+
+th, td {
+	border: 1px solid #dcdcdc;
+}
+
+td {
+	border-top: 1px solid #dcdcdc;
+}
+</style>
 <script th:inline="javascript">
 		/*<![CDATA[*/
 	
@@ -278,13 +283,13 @@ nav {
 														'.filterable'), $filters = $panel
 														.find('.filters input'), $tbody = $panel
 														.find('.table tbody');
-												if ($filters.prop('disabled') == true) {
+												if ($filters.prop('readonly') == true) {
 													$filters
-															.prop('disabled', false);
+															.prop('readonly', false);
 													$filters.first().focus();
 												} else {
 													$filters.val('').prop(
-															'disabled', true);
+															'readonly', true);
 													$tbody.find('.no-result')
 															.remove();
 													$tbody.find('tr').show();
@@ -369,9 +374,9 @@ nav {
 						
 						
 	</script>
-	
-	 					
-	</head>
+
+
+</head>
 <title>BAM</title>
 
 <body>
@@ -388,22 +393,25 @@ nav {
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-									<div class="card-header d-flex justify-content-between">
+									<div class="card-header ">
 										<h4
-											style="font-family: verdana; font-size: x-large; font-style: inherit;">CATEGORY
+											class="headerh6 ">CATEGORY
 											CODE MAINTENANCE</h4>
 									</div>
 
 									<div class="card-body p-0">
 										<div class="table-responsive">
-											<table class="table">
+											<table class="table table-bordered">
 												<thead>
 
 													<tr>
 														<th rowspan="2">Srl. No</th>
-														<th colspan="2" style="text-align: center;background-color: #f2f2f2;">Head</th>
-														<th colspan="2" style="text-align: center;background-color: #f2f2f2;">Category</th>
-														<th colspan="2" style="text-align: center;background-color: #f2f2f2;">Sub-Category</th>
+														<th colspan="2"
+															style="text-align: center;">Head</th>
+														<th colspan="2"
+															style="text-align: center;">Category</th>
+														<th colspan="2"
+															style="text-align: center;">Sub-Category</th>
 														<th rowspan="2">Asset Code</th>
 														<!--
 														<th rowspan="2">Depreciation Method</th>
@@ -440,12 +448,12 @@ nav {
 														<td th:text="${Bamcatcode?.depreciation_method}"></td>
 														<td th:text="${Bamcatcode?.depreciation_percentage}"></td>
 														<td th:text="${Bamcatcode?.asset_account_number}"></td>-->
-														
+
 														<td th:text="${Bamcatcode?.depreciation_fund_account}"></td>
 														<td th:text="${Bamcatcode?.depreciation_pandl_account}"></td>
 														<td><input type="radio"
-															th:id="${Bamcatcode?.asset_code}" onclick="Headcode(this)">
-														</td>
+															th:id="${Bamcatcode?.asset_code}"
+															onclick="Headcode(this)"></td>
 
 
 													</tr>
@@ -486,26 +494,26 @@ nav {
 
 									<div class="card-body">
 										<div class="form-group">
-																<div class="row formline">
+											<div class="row formline">
 												<div class="col-sm-2">
 													<label for="solid">Serial No</label>
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" 
-													th:value="${Bamcategorycodemain.sl_no}" 
-													class="form-control form-control-sm" id="sl_no" name="sl_no" readonly>
+													<input type="text" th:value="${Bamcategorycodemain.sl_no}"
+														class="form-control form-control-sm" id="sl_no"
+														name="sl_no" readonly>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="location">Sol Id</label>
 												</div>
 												<div class="col-sm-3">
-												<input type="text" 
-													th:value="${Bamcategorycodemain.solid}" 
-													class="form-control form-control-sm" id="solid" name="solid" >
-												
-												
+													<input type="text" th:value="${Bamcategorycodemain.solid}"
+														class="form-control form-control-sm" id="solid"
+														name="solid">
+
+
 												</div>
 											</div>
 											<div class="row formline">
@@ -514,20 +522,23 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-    												<select id="staticSelect" name="head_code" class="form-control form-control-sm" disabled>
-            										<option th:text="${Bamcategorycodemain.head_code}"></option>
-            										<option value="Furniture&Fittings">A</option>
-            										<option value="Machinery&Plant">B</option>
-            										<option value="Premises">C</option>
-       												</select>
+													<select id="staticSelect" name="head_code"
+														class="form-control form-control-sm" readonly>
+														<option th:text="${Bamcategorycodemain.head_code}"></option>
+														<option value="Furniture&Fittings">A</option>
+														<option value="Machinery&Plant">B</option>
+														<option value="Premises">C</option>
+													</select>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="head_description">Head Description</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="staticTextBox1" name="head_description" 
-													th:value="${Bamcategorycodemain.head_description}" readonly>
+													<input type="text" class="form-control form-control-sm"
+														id="staticTextBox1" name="head_description"
+														th:value="${Bamcategorycodemain.head_description}"
+														readonly>
 												</div>
 											</div>
 											<div class="row formline">
@@ -536,20 +547,22 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-    												<select id="dynamicSelect1" name="category_code" class="form-control form-control-sm" disabled >
-            										<option th:text="${Bamcategorycodemain.category_code}"></option>
-        											</select>
+													<select id="dynamicSelect1" name="category_code"
+														class="form-control form-control-sm" readonly>
+														<option th:text="${Bamcategorycodemain.category_code}"></option>
+													</select>
 												</div>
-												
+
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="category_description">Category
 														Description</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="dynamicTextBox11"
-													 name="category_description" 
-													th:value="${Bamcategorycodemain.category_description}" readonly>
+													<input type="text" class="form-control form-control-sm"
+														id="dynamicTextBox11" name="category_description"
+														th:value="${Bamcategorycodemain.category_description}"
+														readonly>
 												</div>
 											</div>
 											<div class="row formline">
@@ -558,9 +571,10 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-    												<select id="dynamicSelect2" name="sub_category_code" class="form-control form-control-sm" disabled>
-            										<option th:text="${Bamcategorycodemain.sub_category_code}"></option>
-        											</select>
+													<select id="dynamicSelect2" name="sub_category_code"
+														class="form-control form-control-sm" readonly>
+														<option th:text="${Bamcategorycodemain.sub_category_code}"></option>
+													</select>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -568,8 +582,10 @@ nav {
 														Description</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="dynamicTextBox2"  name="sub_category_description" 
-													th:value="${Bamcategorycodemain.sub_category_description}" readonly>
+													<input type="text" class="form-control form-control-sm"
+														id="dynamicTextBox2" name="sub_category_description"
+														th:value="${Bamcategorycodemain.sub_category_description}"
+														readonly>
 												</div>
 											</div>
 
@@ -582,7 +598,8 @@ nav {
 													<input type="text"
 														th:value="${Bamcategorycodemain.asset_code}"
 														id="asset_code" class="form-control form-control-sm"
-														autocomplete="off" name="asset_code" required="required" readonly/>
+														autocomplete="off" name="asset_code" required="required"
+														readonly />
 												</div>
 												<!--
 												<div class="col-sm-1"></div>
@@ -616,39 +633,39 @@ nav {
 												</div>-->
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
-																									
+
 													<label for="depreciation_fund_account">Depreciation
 														Fund Account</label>
 												</div>
 
 												<div class="col-sm-3">
 													<input type="text"
-													oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
 														th:value="${Bamcategorycodemain?.depreciation_fund_account}"
 														id="depreciation_fund_account"
 														class="form-control form-control-sm"
-														name="depreciation_fund_account" autocomplete="off" required="required" />
+														name="depreciation_fund_account" autocomplete="off"
+														required="required" />
 												</div>
-												</div> 
 											</div>
-											<div class="row formline">
-<div class="col-sm-2">
-													<label for="depreciation_pandl_account">Depreciation
-														P & L Account</label>
-												</div>
-												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamcategorycodemain?.depreciation_pandl_account}"
-														id="depreciation_pandl_account"
-														class="form-control form-control-sm"
-														name="depreciation_pandl_account" autocomplete="off" />
-												</div>
-												<div class="col-sm-1"></div>
-												
-												<div class="col-sm-2">
-												</div>
-										
-												<!-- 
+										</div>
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="depreciation_pandl_account">Depreciation
+													P & L Account</label>
+											</div>
+											<div class="col-sm-3">
+												<input type="text"
+													th:value="${Bamcategorycodemain?.depreciation_pandl_account}"
+													id="depreciation_pandl_account"
+													class="form-control form-control-sm"
+													name="depreciation_pandl_account" autocomplete="off" />
+											</div>
+											<div class="col-sm-1"></div>
+
+											<div class="col-sm-2"></div>
+
+											<!-- 
 											</div>
 											
 											<div class="row formline">
@@ -682,87 +699,80 @@ nav {
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary"
+											class="btn btn-xs headerbutton"
 											onclick="submiteditform(this);" form="Bamcategorycodemain"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
-											
+
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary" 	th:value="${Bamcategorycodemain?.sl_no}"
-											onclick="Deleteform(this);" 
-											id="deleteSubmit" th:attr="data-formmode='edit'">Delete</button>
+											class="btn btn-xs headerbutton"
+											th:value="${Bamcategorycodemain?.sl_no}"
+											onclick="Deleteform(this);" id="deleteSubmit"
+											th:attr="data-formmode='edit'">Delete</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
 									<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:object="${entryuser}"th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-    <table class="table no-border-table table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${entryuser?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${entryuser?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <!-- 
+									<div class="table-responsive" th:object="${entryuser}"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
+										<table
+											class="table no-border-table table-bordered  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${entryuser?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${entryuser?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
+												<!-- 
                           -->
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                th:value="${entryuser?.verify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${entryuser?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${entryuser?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${entryuser?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-        </tr>
-        
-    </table>
-								</div>
-									
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													th:value="${entryuser?.verify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${entryuser?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${entryuser?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${entryuser?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+
+										</table>
+									</div>
+
 								</div>
 							</div>
 						</form>
@@ -787,15 +797,16 @@ nav {
 
 									<div class="card-body">
 										<div class="form-group">
-										<div class="row formline">
+											<div class="row formline">
 												<div class="col-sm-2">
 													<label for="solid">SOL ID</label>
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="solid" name="solid">
+													<input type="text" class="form-control form-control-sm"
+														id="solid" name="solid">
 												</div>
-												
+
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="asset_account_number">ASSET ACCOUNT
@@ -808,10 +819,10 @@ nav {
 														class="form-control form-control-sm" autocomplete="off"
 														name="asset_account_number" />
 												</div>
-												
-												
-												
-												
+
+
+
+
 												<!--
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -835,20 +846,22 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-    												<select id="staticSelect" name="head_code" class="form-control form-control-sm" >
-            										<option value="">Please Select</option>
-            										<option value="Furniture&Fittings">A</option>
-            										<option value="Machinery&Plant">B</option>
-            										<option value="Premises">C</option>
-            										<option value="Premises Under Construction">D</option>
-       												</select>
+													<select id="staticSelect" name="head_code"
+														class="form-control form-control-sm">
+														<option value="">Please Select</option>
+														<option value="Furniture&Fittings">A</option>
+														<option value="Machinery&Plant">B</option>
+														<option value="Premises">C</option>
+														<option value="Premises Under Construction">D</option>
+													</select>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="head_description">HEAD DESCRIPTION</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="staticTextBox" name="head_description" readonly>
+													<input type="text" class="form-control form-control-sm"
+														id="staticTextBox" name="head_description" readonly>
 												</div>
 											</div>
 											<div class="row formline">
@@ -857,9 +870,10 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-    												<select id="dynamicSelect1" name="category_code" class="form-control form-control-sm">
-            										<!-- Options will be populated dynamically based on the static select -->
-        											</select>
+													<select id="dynamicSelect1" name="category_code"
+														class="form-control form-control-sm">
+														<!-- Options will be populated dynamically based on the static select -->
+													</select>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -867,7 +881,8 @@ nav {
 														DESCRIPTION</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="dynamicTextBox1" name="category_description" readonly>
+													<input type="text" class="form-control form-control-sm"
+														id="dynamicTextBox1" name="category_description" readonly>
 												</div>
 											</div>
 											<div class="row formline">
@@ -876,9 +891,10 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-    												<select id="dynamicSelect2" class="form-control form-control-sm">
-            										<!-- Options will be populated dynamically based on the second select -->
-        											</select>
+													<select id="dynamicSelect2"
+														class="form-control form-control-sm">
+														<!-- Options will be populated dynamically based on the second select -->
+													</select>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -886,7 +902,9 @@ nav {
 														DESCRIPTION</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" class="form-control form-control-sm" id="dynamicTextBox2" name="sub_category_description"  readonly>											
+													<input type="text" class="form-control form-control-sm"
+														id="dynamicTextBox2" name="sub_category_description"
+														readonly>
 												</div>
 											</div>
 
@@ -896,14 +914,14 @@ nav {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														id="asset_code" class="form-control form-control-sm"
-														autocomplete="off" name="asset_code" readonly />
+													<input type="text" id="asset_code"
+														class="form-control form-control-sm" autocomplete="off"
+														name="asset_code" readonly />
 												</div>
-												
-												
-												
-												
+
+
+
+
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="depreciation_pandl_account">DEPRECIATION
@@ -916,8 +934,8 @@ nav {
 														class="form-control form-control-sm"
 														name="depreciation_pandl_account" autocomplete="off" />
 												</div>
-												
-												
+
+
 												<!-- 
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -940,9 +958,9 @@ nav {
 												</div>
 												-->
 											</div>
-											
-											
-											
+
+
+
 											<!-- 
 											<div class="row formline">
 												<div class="col-sm-2">
@@ -970,7 +988,7 @@ nav {
 														name="asset_account_number" />
 												</div>
 											</div> -->
-											
+
 											<div class="row formline">
 												<div class="col-sm-2">
 													<label for="depreciation_fund_account">DEPRECIATION
@@ -984,93 +1002,78 @@ nav {
 														class="form-control form-control-sm"
 														name="depreciation_fund_account" autocomplete="off" />
 												</div>
-												
+
 											</div>
 										</div>
 
 									</div>
 									<div class="card-footer text-center">
-
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
-
-
-
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary"
-											onclick="submitaddform(this);" form="Bamcategorycodemain"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
-
+											class="btn btn-xs headerbutton" onclick="submitaddform(this);"
+											form="Bamcategorycodemain" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
-
 									</div>
 									<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-    <table class="table  table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${BAMInventorymaster?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${BAMInventorymaster?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <!-- 
+									<div class="table-responsive"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
+										<table class="table  table-bordered  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BAMInventorymaster?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BAMInventorymaster?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
+												<!-- 
                          th:value="${BAMInventorymaster?.verify_user}" -->
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${BAMInventorymaster?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${BAMInventorymaster?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${BAMInventorymaster?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-        </tr>
-        
-    </table>
-								</div>
-									
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BAMInventorymaster?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BAMInventorymaster?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${BAMInventorymaster?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+
+										</table>
+									</div>
+
 								</div>
 							</div>
 						</form>
@@ -1080,7 +1083,7 @@ nav {
 		</div>
 	</div>
 
-<script>
+	<script>
         // Function to set options dynamically for the first dynamic select
         function setDynamicOptions1(condition) {
             const selectElement = document.getElementById('dynamicSelect1');
@@ -1380,8 +1383,8 @@ nav {
 			<div class="modal-content">
 				<div class="menu-title-header">
 					<div class="modal-title" id="exampleModalLabel"
-						style="text-align: center; color: black;font-family: verdana;font-size: medium;
-						font-weight: bold;">BANK NAME</div>
+						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">BANK
+						NAME</div>
 				</div>
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">

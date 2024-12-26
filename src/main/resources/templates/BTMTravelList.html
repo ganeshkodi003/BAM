@@ -96,7 +96,7 @@ legend {
     border-bottom: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -105,15 +105,15 @@ legend {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -122,7 +122,7 @@ legend {
 
 	$(function() {
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -168,13 +168,13 @@ legend {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -263,25 +263,25 @@ legend {
 																<th>SrlNo</th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Travel Req Date" disabled></th>
+																	placeholder="Travel Req Date" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Associate Id" disabled></th>
+																	placeholder="Associate Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Name" disabled></th>
+																	placeholder="Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Designation" disabled></th>
+																	placeholder="Designation" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Project" disabled></th>
+																	placeholder="Project" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Client" disabled></th>
+																	placeholder="Client" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Status" disabled></th>
+																	placeholder="Status" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>
@@ -571,7 +571,7 @@ legend {
 
 												<div class="col-sm-3">
 													<select id="advReq" class="form-control form-control-sm"
-														th:if="${formmode}=='view'" disabled>
+														th:if="${formmode}=='view'" readonly>
 														<option th:value="${adminTravelMaster?.adv_req_flg}">Select</option>
 														<option value="Y">Yes</option>
 														<option value="N">No</option>
@@ -586,7 +586,7 @@ legend {
 
 												<div class="col-sm-3">
 													<select class="form-control form-control-sm" id="currency"
-														th:if="${formmode}=='view'" disabled>
+														th:if="${formmode}=='view'" readonly>
 														<option th:value="${adminTravelMaster?.adv_crncy}">Select</option>
 														<option value="INR">INR</option>
 														<option value="USD">USD</option>

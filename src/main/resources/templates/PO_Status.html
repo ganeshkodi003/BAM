@@ -75,7 +75,7 @@ label {
 	font-size: 16px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -94,15 +94,15 @@ label {
 	
 
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -118,7 +118,7 @@ label {
 	}
 
 	$(function() {
-		$("#disableDate,#disableTilDate,#passExDate,#expiryDate")
+		$("#readonlyate,#disableTilDate,#passExDate,#expiryDate")
 		.datepicker({
 			dateFormat : "dd-mm-yy",
 			changeMonth : true,
@@ -376,13 +376,13 @@ function exportBtn(){
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -498,34 +498,34 @@ function exportBtn(){
 													<tr class="filters">
 														<th class="col-md-1"><input type="number" id="po_no"
 															class="form-control font-weight-bold"
-															placeholder="PO No" disabled style="width: 130px;" ></th>
+															placeholder="PO No" readonly style="width: 130px;" ></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id="po_date"
-															placeholder="PO Date" disabled style="width: 120px;" ></th>
+															placeholder="PO Date" readonly style="width: 120px;" ></th>
 														<th class="col-lg-1.5"><input type="text"
 															class="form-control font-weight-bold" id="emp_name"
-															placeholder="Employee Name" disabled style="width: 130px;"></th>
+															placeholder="Employee Name" readonly style="width: 130px;"></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id="emp_id"
-															placeholder="Employee No" disabled  style="width: 130px;" ></th>
+															placeholder="Employee No" readonly  style="width: 130px;" ></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id=".po_rate_inr"
-															placeholder="PO Rate" disabled  style="width: 130px;"></th>
+															placeholder="PO Rate" readonly  style="width: 130px;"></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id="po_delivery_date"
-															placeholder="Delivery Date" disabled  style="width: 130px;"></th>
+															placeholder="Delivery Date" readonly  style="width: 130px;"></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id="po_month"
-															placeholder="Month" disabled style="width: 130px;"></th>
+															placeholder="Month" readonly style="width: 130px;"></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id="proj_mgr"
-															placeholder="Project Manager" disabled  style="width: 170px;"></th>
+															placeholder="Project Manager" readonly  style="width: 170px;"></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id=" pm_email"
-															placeholder=" Email" disabled  style="width: 220px;"></th>
+															placeholder=" Email" readonly  style="width: 220px;"></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" id="location"
-															placeholder="Locations" disabled></th>	
+															placeholder="Locations" readonly></th>	
 																	
 														
 													</tr>
@@ -737,7 +737,7 @@ function exportBtn(){
 												<label class="col-sm-2">User Disable Date</label>
 												<div class="col-sm-3">
 													<input type="text" th:field="*{disable_start_date}"
-														th:value="${disable_start_date}" id="disableDate"
+														th:value="${disable_start_date}" id="readonlyate"
 														class="form-control form-control-sm" autocomplete="off"
 														readonly required style="background-color:#f9fff6;" />
 												</div>
@@ -870,25 +870,25 @@ function exportBtn(){
 									<div class="card-footer text-center"
 										style="background-color: #ffe4b3">
 
-										<!--<button th:if="${userProfile.entity_flg}=='N'" type="button" class="btn btn-xs btn-primary"
+										<!--<button th:if="${userProfile.entity_flg}=='N'" type="button" btn headerbutton
 								th:attr="data-userid=${userProfile.userid},data-entry_user=${userProfile.entry_user},data-modify_user=${userProfile.modify_user}"
 								onclick="verify(this);" id="btnModify">Verify</button>
 								
 							<button th:if="${formmode}=='edit' AND ${userProfile.entity_flg}=='Y'" type="button"
-								class="btn btn-xs btn-primary" id="btnpassrst"
+								btn headerbutton id="btnpassrst"
 								onclick="passwordReset();">PasswordReset</button>-->
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 
 										<button th:if="${formmode}=='edit'" type="button" style="width: 120px"
-											class="btn btn-xs btn-primary" form="AdminUserProfile"
+											btn headerbutton form="AdminUserProfile"
 											id="btnSubmit" onclick="modifyform()">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											style="width: 120px" onclick="back()">Back</button>
 
 										<button th:if="${formmode}=='add'" type="button" style="width: 120px"
-											class="btn btn-xs btn-primary" form="AdminUserProfile"
+											btn headerbutton form="AdminUserProfile"
 											id="btnSubmit" onclick="submitform()">Submit</button>
 									</div>
 								</div>

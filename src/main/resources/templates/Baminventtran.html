@@ -90,7 +90,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -99,15 +99,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -1601,7 +1601,7 @@ function submitaddform(b) {
 								<div class="panel panel-primary filterable">
 									<div class="card-header d-flex justify-content-between">
 										<h4
-											style="font-family: verdana; font-size: x-large; font-style: inherit;">Inventory
+											class="headerh6 ">Inventory
 											Transfer - List</h4>
 									</div>
 
@@ -2329,7 +2329,7 @@ function submitaddform(b) {
 														</div>
 														<div class="col-sm-3">
 															<select name="depreciation_method" id="dep_method"
-																class="form-control form-control-sm" Disabled>
+																class="form-control form-control-sm" readonly>
 																<option value="">SELECT</option>
 																<option value="SLM">SLM</option>
 																<option value="WDV">WDV</option>
@@ -2451,7 +2451,7 @@ function submitaddform(b) {
 											onclick="home();">Home</button>
 
 
-										<button th:if="${formmode}=='add'" type="button" class="btn btn-xs btn-primary"
+										<button th:if="${formmode}=='add'" type="button" btn headerbutton
 											onclick="submitaddform(this);" form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">
 											Submit
@@ -2983,12 +2983,12 @@ function submitaddform(b) {
 
 <!-- 
 										<button th:if="${formmode}=='edit' AND ${operation} == 'operation'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submiteditform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button> -->
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitverifyform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button>
 
@@ -3007,7 +3007,7 @@ function submitaddform(b) {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${BAMInventorymaster?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -3016,7 +3016,7 @@ function submitaddform(b) {
                 <input type="text" id="modifyuser" name="modify_user" 
                           th:value="${BAMInventorymaster?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -3025,7 +3025,7 @@ function submitaddform(b) {
                 <input type="text" id="verifyuser" name="verify_user" 
                          th:value="${BAMInventorymaster?.verify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -3036,7 +3036,7 @@ function submitaddform(b) {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${BAMInventorymaster?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -3045,7 +3045,7 @@ function submitaddform(b) {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${BAMInventorymaster?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -3054,7 +3054,7 @@ function submitaddform(b) {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${BAMInventorymaster?.verify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         

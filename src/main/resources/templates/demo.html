@@ -52,7 +52,7 @@
 
 			});
 
-			$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+			$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate: new Date(),
 					changeMonth: true,
@@ -108,7 +108,7 @@
 						$('.finuserapply').html(data);
 
 						$(
-							"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+							"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 							.datepicker({
 								changeMonth: true,
 								changeYear: true,
@@ -466,7 +466,7 @@
 												<label class="col-sm-2">User Disable Date</label>
 												<div class="col-sm-3">
 													<input type="text" th:if="${formmode}=='add'"
-														name="disable_start_date" id="disableDate" value=""
+														name="disable_start_date" id="readonlyate" value=""
 														class="form-control form-control-sm" autocomplete="off"
 														readonly />
 												</div>
@@ -601,12 +601,12 @@
 										<div th:if="${formmode}=='add' OR ${formmode}=='edit'">
 
 											<button th:if="${formmode}== 'add'" type="button"
-												class="btn btn-xs btn-primary" form="userProfile" id="btnSubmit"
+												btn headerbutton form="userProfile" id="btnSubmit"
 												onclick="submitAddform();"
 												th:attr="data-formmode=${formmode}">Submit</button>
 
 											<button th:if=" ${formmode}=='edit'" type="button"
-												class="btn btn-xs btn-primary" form="userProfile" id="btnSubmit"
+												btn headerbutton form="userProfile" id="btnSubmit"
 												onclick="submiteditform(this);"
 												th:attr="data-formmode=${formmode}">Submit</button>
 										</div>

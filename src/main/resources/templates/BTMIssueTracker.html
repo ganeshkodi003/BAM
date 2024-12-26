@@ -75,7 +75,7 @@
 			margin-top: -20px;
 		}
 
-		.filterable .filters input[disabled] {
+		.filterable .filters input[readonly] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -84,15 +84,15 @@
 			height: auto;
 		}
 
-		.filterable .filters input[disabled]::-webkit-input-placeholder {
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]::-moz-placeholder {
+		.filterable .filters input[readonly]::-moz-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]:-ms-input-placeholder {
+		.filterable .filters input[readonly]:-ms-input-placeholder {
 			color: #333;
 		}
 
@@ -122,7 +122,7 @@
 
 			});
 
-			$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+			$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate: new Date(),
 					changeMonth: true,
@@ -178,7 +178,7 @@
 						$('.finuserapply').html(data);
 
 						$(
-							"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+							"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 							.datepicker({
 								changeMonth: true,
 								changeYear: true,
@@ -367,13 +367,13 @@ function downFormat() {
 									'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 											.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-										.prop('disabled', false);
+										.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-										'disabled', true);
+										'readonly', true);
 									$tbody.find('.no-result')
 										.remove();
 									$tbody.find('tr').show();
@@ -570,7 +570,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="category">Category</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="CON">CON</option>
 											<option value="GEN">GEN</option>
 											<option value="MRG">MGR</option>
@@ -596,7 +596,7 @@ if (document.getElementById("fd").value == "") {
 
 										</select>
 										<select class="form-control" id="categoryview1" name="category"
-											th:if="${formmode}=='view1'or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1'or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.category}=='MGR'" value="MRG">MGR</option>
 											<option th:selected="${issueview?.category}=='LEA'" value="LEA">LEA</option>
 											<option th:selected="${issueview?.category}=='SES'" value="SES">SES</option>
@@ -617,7 +617,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="group">Group</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="OTR">OTR</option>
 											<option value="PRD">PRD</option>
 											<option value="SER">SER</option>
@@ -653,7 +653,7 @@ if (document.getElementById("fd").value == "") {
 											<option value="XBRL">XBRL</option>
 										</select>
 										<select class="form-control" id="groupsadd" name="groups"
-											th:if="${formmode}=='view1'or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1'or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.groups}=='OTR'" value="OTR">OTR</option>
 											<option th:selected="${issueview?.groups}=='PRD'" value="PRD">PRD</option>
 											<option th:selected="${issueview?.groups}=='SER'" value="SER">SER</option>
@@ -675,7 +675,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="product">Product</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="BAJ">BAJ</option>
 											<option value="BTM">BTM</option>
 											<option value="BLRS">BLRS</option>
@@ -733,7 +733,7 @@ if (document.getElementById("fd").value == "") {
 											<option value="BHDS">BHDS</option>
 										</select>
 										<select class="form-control" id="productadd" name="product"
-											th:if="${formmode}=='view1' or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1' or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.groups}=='BAJ'" value="BAJ">BAJ</option>
 											<option th:selected="${issueview?.product}=='BTM'" value="BTM">BTM</option>
 											<option th:selected="${issueview?.product}=='BLRS'" value="BLRS">BLRS
@@ -784,7 +784,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="module">Module</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Admin">Admin</option>
 											<option value="Maintenance">Maintenance</option>
 											<option value="Operation">Operation</option>
@@ -800,7 +800,7 @@ if (document.getElementById("fd").value == "") {
 											<option value="Reports">Reports</option>
 										</select>
 										<select class="form-control" id="moduleview1" name="module"
-											th:if="${formmode}=='view1' or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1' or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.module}=='Admin'" value="Admin">Admin
 											</option>
 											<option th:selected="${issueview?.module}=='Maintenance'"
@@ -818,7 +818,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="screen">Screen</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Organization Master">Organization Master</option>
 											<option value="Associate Profile">Associate Profile</option>
 											<option value="Profile Master">Profile Master</option>
@@ -856,7 +856,7 @@ if (document.getElementById("fd").value == "") {
 
 										</select>
 										<select class="form-control" id="screenview1" name="screen"
-											th:if="${formmode}=='view1' or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1' or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.screen}=='Organization Master'"
 												value="Organization Master">Organization Master</option>
 											<option th:selected="${issueview?.screen}=='Associate Profile'"
@@ -899,7 +899,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="operation">Operation</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Add">Add</option>
 											<option value="Modify">Modify</option>
 											<option value="List">List</option>
@@ -917,7 +917,7 @@ if (document.getElementById("fd").value == "") {
 											<option value="Delete">Delete</option>
 										</select>
 										<select class="form-control" id="operationview1" name="operation"
-											th:if="${formmode}=='view1' or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1' or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.operation}=='Add'" value="Add">Add
 											</option>
 											<option th:selected="${issueview?.operation}=='Modify'" value="Modify">
@@ -975,13 +975,13 @@ if (document.getElementById("fd").value == "") {
 									</div>
 									<div class="col-sm-3">
 										<input type="text" id="" th:if="${formmode}=='view'"
-											class="form-control form-control-sm" autocomplete="false" disabled />
+											class="form-control form-control-sm" autocomplete="false" readonly />
 										<input type="text" id="dateofissue" name="date_of_issue"
 											th:if="${formmode}=='add'" class="form-control form-control-sm"
 											autocomplete="false" />
 										<input type="text" th:value="${issueview?.date_of_issue}" id="dateofissue"
 											name="date_of_issue" th:if="${formmode}=='view1' or ${formmode}=='modify'"
-											class="form-control form-control-sm" autocomplete="false" disabled />
+											class="form-control form-control-sm" autocomplete="false" readonly />
 									</div>
 								</div>
 							</div>
@@ -991,7 +991,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="employeeId">Reported By </label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Siddhaiyan G">Siddhaiyan G</option>
 										</select>
 
@@ -1002,7 +1002,7 @@ if (document.getElementById("fd").value == "") {
 										</select>
 										<select class="form-control" id="rpt_by_view1" name="rpt_by"
 											th:if="${formmode}=='view1' or ${formmode}=='modify'" th:field="*{rpt_by}"
-											th:value="${rpt_by}" disabled>
+											th:value="${rpt_by}" readonly>
 											<option value="Siddhaiyan G">Siddhaiyan G</option>
 
 											<option value="Parasuraman Cn">Parasuraman Cn</option>
@@ -1161,7 +1161,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="severity">Severity</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Low">Low</option>
 											<option value="Medium">Medium</option>
 											<option value="High">High</option>
@@ -1173,7 +1173,7 @@ if (document.getElementById("fd").value == "") {
 											<option value="High">High</option>
 										</select>
 										<select class="form-control" id="issue_severity_add" name="issue_severity"
-											th:if="${formmode}=='view1' or ${formmode}=='modify'" disabled>
+											th:if="${formmode}=='view1' or ${formmode}=='modify'" readonly>
 											<option th:selected="${issueview?.issue_severity}=='Low'" value="Low">Low
 											</option>
 											<option th:selected="${issueview?.issue_severity}=='Medium'" value="Medium">
@@ -1203,7 +1203,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="assignedTo">Assigned To</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Siddhaiyan G">Siddhaiyan G</option>
 										</select>
 										<select class="form-control" id="assignedtoadd" name="assign_to"
@@ -1213,7 +1213,7 @@ if (document.getElementById("fd").value == "") {
 										</select>
 										<select class="form-control" id="assignedtoview1" name="assign_to"
 											th:if="${formmode}=='view1' or ${formmode}=='modify'"
-											th:field="*{assign_to}" th:value="${assign_to}" disabled>
+											th:field="*{assign_to}" th:value="${assign_to}" readonly>
 											<option value="Siddhaiyan G">Siddhaiyan G</option>
 
 											<option value="Parasuraman Cn">Parasuraman Cn</option>
@@ -1332,7 +1332,7 @@ if (document.getElementById("fd").value == "") {
 											autocomplete="false" />
 										<input type="text" th:value="${issueview?.assign_date}" id="dateofassign"
 											name="assign_date" th:if="${formmode}=='view1' or ${formmode}=='modify'"
-											class="form-control form-control-sm" autocomplete="false" disabled />
+											class="form-control form-control-sm" autocomplete="false" readonly />
 									</div>
 								</div>
 							</div>
@@ -1366,7 +1366,7 @@ if (document.getElementById("fd").value == "") {
 											class="form-control form-control-sm" autocomplete="false" />
 										<input type="text" th:value="${issueview?.del_date}" id="deliverydate"
 											name="del_date" th:if="${formmode}=='view1' or ${formmode}=='modify' "
-											class="form-control form-control-sm" autocomplete="false" disabled />
+											class="form-control form-control-sm" autocomplete="false" readonly />
 									</div>
 								</div>
 							</div>
@@ -1415,7 +1415,7 @@ if (document.getElementById("fd").value == "") {
 										<label for="employeeId">Tested By</label>
 									</div>
 									<div class="col-sm-3">
-										<select class="form-control" th:if="${formmode}=='view'" disabled>
+										<select class="form-control" th:if="${formmode}=='view'" readonly>
 											<option value="Siddhaiyan G">Siddhaiyan G</option>
 										</select>
 										<select class="form-control" id="test_by_add" name="test_by"
@@ -1425,7 +1425,7 @@ if (document.getElementById("fd").value == "") {
 										</select>
 										<select class="form-control" id="test_by_view1" name="test_by"
 											th:if="${formmode}=='view1'" th:field="*{test_by}" th:value="${test_by}"
-											disabled>
+											readonly>
 											<option value="Siddhaiyan G">Siddhaiyan G</option>
 
 											<option value="Parasuraman Cn">Parasuraman Cn</option>
@@ -1744,20 +1744,20 @@ if (document.getElementById("fd").value == "") {
 
 		<div class="card-footer text-center" >
 
-			<button class="btn btn-xs btn-primary" onclick="home(this);" id="btnModify">Home</button>
-			<button class="btn btn-xs btn-primary" th:if="${formmode}=='view'" id="btnpassrst"
+			<button btn headerbutton onclick="home(this);" id="btnModify">Home</button>
+			<button btn headerbutton th:if="${formmode}=='view'" id="btnpassrst"
 				onclick="addissue();">Lodge</button>
-			<button class="btn btn-xs btn-primary" th:if="${formmode}=='view'" id="btnpassrst"
+			<button btn headerbutton th:if="${formmode}=='view'" id="btnpassrst"
 				onclick="modifyinlist();">Modify</button>
-			<button class="btn btn-xs btn-primary" id="btnSubmit" th:if="${formmode}=='view'"
+			<button btn headerbutton id="btnSubmit" th:if="${formmode}=='view'"
 				onclick="listofissue();">List</button>
-			<button class="btn btn-xs btn-primary" form="userProfile" id="btnSubmit" th:if="${formmode}=='view'"
+			<button btn headerbutton form="userProfile" id="btnSubmit" th:if="${formmode}=='view'"
 				onclick="uploadissue(this);">Upload</button>
-			<button class="btn btn-xs btn-primary" th:attr="data-formmode=add" id="btnSubmit" th:if="${formmode}=='add'"
+			<button btn headerbutton th:attr="data-formmode=add" id="btnSubmit" th:if="${formmode}=='add'"
 				onclick="submitform(this);">Submit</button>
-			<button class="btn btn-xs btn-primary" th:attr="data-formmode=modify" form="issues" id="btnSubmit"
+			<button btn headerbutton th:attr="data-formmode=modify" form="issues" id="btnSubmit"
 				th:if="${formmode}=='modify'" onclick="submitmodifyform(this);">Submit</button>
-			<button class="btn btn-xs btn-primary" form="userProfile" id="btnSubmit" onclick="back();">Back</button>
+			<button btn headerbutton form="userProfile" id="btnSubmit" onclick="back();">Back</button>
 		</div>
 		<!--<div class="panel-body mt-4">
 			<div class="p-2" style="background: #dddddd;">
@@ -1824,31 +1824,31 @@ if (document.getElementById("fd").value == "") {
 															<tr class="filters">
 																<th><input type="text" style="width:80px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Ref No" disabled></th>
+																		placeholder="Ref No" readonly></th>
 																<th><input type="text" style="width:120px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Report Date" disabled></th>
+																		placeholder="Report Date" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Reported By" disabled></th>
+																		placeholder="Reported By" readonly></th>
 																<th><input type="text" style="width:100px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Product" disabled></th>
+																		placeholder="Product" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Issue Details" disabled></th>
+																		placeholder="Issue Details" readonly></th>
 																<th><input type="text" style="width:100px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Severity" disabled></th>
+																		placeholder="Severity" readonly></th>
 																<th><input type="text" style="width:120px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Assigned To" disabled></th>
+																		placeholder="Assigned To" readonly></th>
 																<th><input type="text" style="width:110px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Date of Fix" disabled></th>
+																		placeholder="Date of Fix" readonly></th>
 																<th><input type="text" style="width:80px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Status" disabled></th>
+																		placeholder="Status" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>
@@ -1932,31 +1932,31 @@ if (document.getElementById("fd").value == "") {
 															<tr class="filters">
 																<th><input type="text" style="width:80px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Ref No" disabled></th>
+																		placeholder="Ref No" readonly></th>
 																<th><input type="text" style="width:120px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Report Date" disabled></th>
+																		placeholder="Report Date" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Reported By" disabled></th>
+																		placeholder="Reported By" readonly></th>
 																<th><input type="text" style="width:100px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Product" disabled></th>
+																		placeholder="Product" readonly></th>
 																<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Issue Details" disabled></th>
+																		placeholder="Issue Details" readonly></th>
 																<th><input type="text" style="width:100px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Severity" disabled></th>
+																		placeholder="Severity" readonly></th>
 																<th><input type="text" style="width:120px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Assigned To" disabled></th>
+																		placeholder="Assigned To" readonly></th>
 																<th><input type="text" style="width:110px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Date of Fix" disabled></th>
+																		placeholder="Date of Fix" readonly></th>
 																<th><input type="text" style="width:80px;"
 																		class="form-control font-weight-bold"
-																		placeholder="Status" disabled></th>
+																		placeholder="Status" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>
@@ -2040,8 +2040,8 @@ if (document.getElementById("fd").value == "") {
                 
               <button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
-                 <button type="button" class="btn btn-xs btn-primary" id="btndownload" onclick="downFormat(this);">Download Format</button> 
-                 <button type="button" class="btn btn-xs btn-primary" id="btnsubmit" onclick="submituploadform(this);">Submit</button>
+                 <button type="button" btn headerbutton id="btndownload" onclick="downFormat(this);">Download Format</button> 
+                 <button type="button" btn headerbutton id="btnsubmit" onclick="submituploadform(this);">Submit</button>
                  
                   <button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>

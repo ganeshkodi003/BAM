@@ -86,7 +86,7 @@ nav {
 
 	$(function() {
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -142,7 +142,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -361,7 +361,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select id="associateName" class="form-control form-control-sm" required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option th:each="user : ${allusers}"
 																th:value="${user.resource_id}"
 																th:text="${user.resource_id}"></option>
@@ -369,7 +369,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}" >
 										<select name="arr.reportto" id="associateName" class="form-control form-control-sm" required>
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option value="ALL">ALL</option>
 											<option selected
 																th:value="${session.USERID}"
@@ -388,7 +388,7 @@ var report_type=h.value;
 									<div class="col-sm-3">
 										<select class="form-control form-control-sm"id="leave_category"
 											name="leave_category" required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option value="CL">Casual Leave</option>
 										</select>
 									</div>
@@ -404,7 +404,7 @@ var report_type=h.value;
 									
 <div class="col-sm-3">
 										<select name="arr.year" id="year" class="form-control form-control-sm"required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											
 										</select>
 									</div>
@@ -420,7 +420,7 @@ var report_type=h.value;
 									<div class="col-sm-3">
 										<select name="arr.reportType" id="reportType"
 											class="form-control form-control-sm"required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<!--<option value="Word">Word</option>-->
 											<option value="Pdf">PDF</option>
 										<option value="Excel">Excel</option>

@@ -79,7 +79,7 @@ background-color:#BBC3CB;
 	background-color: unset !important;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -88,15 +88,15 @@ background-color:#BBC3CB;
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -122,13 +122,13 @@ background-color:#BBC3CB;
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -217,28 +217,28 @@ background-color:#BBC3CB;
 
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Module" disabled></th>
+																		placeholder="Module" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Option" disabled></th>
+																		placeholder="Option" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Screen Id" disabled></th>
+																		placeholder="Screen Id" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Screen Name" disabled></th>
+																		placeholder="Screen Name" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Operation" disabled></th>
+																		placeholder="Operation" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Email" disabled></th>
+																		placeholder="Email" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="SMS" disabled></th>
+																		placeholder="SMS" readonly></th>
 																	<th><input type="text"
 																		class="form-control font-weight-bold"
-																		placeholder="Alert" disabled></th>
+																		placeholder="Alert" readonly></th>
 
 																</tr>
 															</thead>

@@ -126,7 +126,7 @@ table {
 	counter-increment: Serial;
 	content: counter(Serial);
 } */
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -135,15 +135,15 @@ table {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -188,13 +188,13 @@ table {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -280,21 +280,21 @@ table {
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="S.No" disabled></th>
+																	placeholder="S.No" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Project Id" disabled></th>
+																	placeholder="Project Id" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Project Name" disabled></th>
+																	placeholder="Project Name" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Client Id" disabled></th>
+																	placeholder="Client Id" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Client Name" disabled></th>
+																	placeholder="Client Name" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Country" disabled></th>
+																	placeholder="Country" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="Start Date" disabled></th>
+																	placeholder="Start Date" readonly></th>
 																<th><input type="text" class="form-control font-weight-bold"
-																	placeholder="End Date" disabled></th>
+																	placeholder="End Date" readonly></th>
 																<!--<th style="font-size: .8rem">Status</th>-->
 																<th>Select</th>
 															</tr>
@@ -368,7 +368,7 @@ table {
 												<div class="col-sm-3">
 													<input id="group" class="form-control form-control-sm"
 														th:if="${formmode}=='view'"
-														th:value="${projectList?.groups}" disabled readonly />
+														th:value="${projectList?.groups}" readonly readonly />
 
 												</div>
 												<div class="col-sm-1"></div>
@@ -378,7 +378,7 @@ table {
 												<div class="col-sm-3">
 													<input id="team" class="form-control form-control-sm"
 														th:if="${formmode}=='view'"
-														th:value="${projectList?.team}" disabled readonly>
+														th:value="${projectList?.team}" readonly readonly>
 
 												</div>
 											</div>

@@ -95,7 +95,7 @@
 
 		$(function () {
 			$(
-				"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill,#dateofTravel,#travelReqDate")
+				"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill,#dateofTravel,#travelReqDate")
 				.datepicker({
 					changeMonth: true,
 					changeYear: true,
@@ -851,9 +851,9 @@ function generateRows() {
 													</div>
 													<div class="col-sm-3">
 											 <label th:if="${formmode == 'view' && hasRecords}">
-       									     <input type="radio" name="decision" value="yes" id="noApproval" checked="checked" disabled="disabled" >
+       									     <input type="radio" name="decision" value="yes" id="noApproval" checked="checked" readonly="readonly" >
         									   Yes</label>
-        									   <label th:if="${formmode == 'view' && !hasRecords}"> <input type="radio" name="decision" value="no" checked="checked" disabled="disabled">No </label>
+        									   <label th:if="${formmode == 'view' && !hasRecords}"> <input type="radio" name="decision" value="no" checked="checked" readonly="readonly">No </label>
         									   
         									 <label th:if="${formmode}=='edit'">
        									     <input type="radio" name="decision" value="yes" id="noApproval" onclick="generateRows()">
@@ -913,11 +913,11 @@ function generateRows() {
 										<a class="btn btn-xs btn-primary text-white" id="btnedit"
 											th:if="${formmode}=='view'" onclick="modifyuser();">Modify</a>
 
-										<button class="btn btn-xs btn-primary" th:if=" ${formmode}=='edit'"
+										<button btn headerbutton th:if=" ${formmode}=='edit'"
 											id="btnsubmit" th:attr="data-formmode=${formmode}"
 											form="organizationDetails" onclick="submiteditform(this); approvalstages()">Submit</button>
 
-										<button class="btn btn-xs btn-primary" form="" id="btnback"
+										<button btn headerbutton form="" id="btnback"
 											onclick="back();">Back</button>
 									</div>
 

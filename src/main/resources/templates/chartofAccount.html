@@ -85,7 +85,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -94,15 +94,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -561,7 +561,7 @@ function formatCurrentDate() {
 													</div>
 													<div class="col-sm-2">
 														<select name="" id="Home-currency-code" class="form-control form-control-sm" required>
-														<option disabled selected value="Select">--Select--</option>
+														<option readonly selected value="Select">--Select--</option>
 														</select>
 													</div>
 												</div>
@@ -623,7 +623,7 @@ function formatCurrentDate() {
 													</div>
 													<div class="col-sm-2">
 														<select name="" id="account-type" class="form-control form-control-sm" required>
-														<option disabled selected value="Select">--Select--</option>
+														<option readonly selected value="Select">--Select--</option>
 														</select>
 													</div>
 												</div>
@@ -635,7 +635,7 @@ function formatCurrentDate() {
 													</div>
 													<div class="col-sm-2">
 														<select name="" id="system-transaction" class="form-control form-control-sm" required>
-														<option disabled selected value="Select">--Select--</option>
+														<option readonly selected value="Select">--Select--</option>
 														</select>
 													</div>
 
@@ -645,7 +645,7 @@ function formatCurrentDate() {
 													</div>
 													<div class="col-sm-2">
 														<select name="" id="tran-restriction"class="form-control form-control-sm" required>
-														<option disabled selected value="Select">--Select--</option>
+														<option readonly selected value="Select">--Select--</option>
 														</select>
 													</div>
 												</div>
@@ -657,7 +657,7 @@ function formatCurrentDate() {
 													</div>
 													<div class="col-sm-2">
 														<select name="" id="transaction-type" class="form-control form-control-sm" required>
-														<option disabled selected value="Select">--Select--</option>
+														<option readonly selected value="Select">--Select--</option>
 														</select>
 													</div>
 
@@ -667,7 +667,7 @@ function formatCurrentDate() {
 													</div>
 													<div class="col-sm-2">
 														<select name="" id="add-details-required" class="form-control form-control-sm" required>
-														<option disabled selected value="Select">--Select--</option>
+														<option readonly selected value="Select">--Select--</option>
 														</select>
 													</div>
 												</div>
@@ -951,7 +951,7 @@ function formatCurrentDate() {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary" onclick="submitaddform(this);"
+											btn headerbutton onclick="submitaddform(this);"
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -1244,12 +1244,12 @@ function formatCurrentDate() {
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submiteditform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitverifyform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 

@@ -60,7 +60,7 @@
 	box-shadow: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -69,15 +69,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -119,13 +119,13 @@ $(document)
 										'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 										.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-											.prop('disabled', false);
+											.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-											'disabled', true);
+											'readonly', true);
 									$tbody.find('.no-result')
 											.remove();
 									$tbody.find('tr').show();
@@ -206,37 +206,37 @@ $(document)
 											<tr class="filters">
 												<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="PO No" disabled></th>
+															placeholder="PO No" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="PO Date" disabled></th>
+															placeholder="PO Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Month" disabled></th>
+															placeholder="Month" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Delivery Date" disabled></th>
+															placeholder="Delivery Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Rate" disabled></th>
+															placeholder="Rate" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="GRN No" disabled></th>
+															placeholder="GRN No" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="GRN Date" disabled></th>
+															placeholder="GRN Date" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Actual Efforts" disabled></th>
+															placeholder="Actual Efforts" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Amount" disabled></th>
+															placeholder="Amount" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Invoice No" disabled></th>
+															placeholder="Invoice No" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Invoice Date" disabled></th>
+															placeholder="Invoice Date" readonly></th>
 														<th>Status</th>
 													</tr>			
 										</thead>

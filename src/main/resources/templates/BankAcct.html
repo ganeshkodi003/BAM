@@ -112,7 +112,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -121,15 +121,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -298,13 +298,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -559,27 +559,27 @@ alert(b);
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control" id="myInput" style="width:57px;"
-																	placeholder="SRL NO" disabled></th>		
+																	placeholder="SRL NO" readonly></th>		
 																<th><input type="text" class="form-control" id="myInput" style="width:90px;"
-																	placeholder="TRAN DATE" disabled></th>
+																	placeholder="TRAN DATE" readonly></th>
 																<th><input type="text" class="form-control" style="width:90px;" id="myInput"
-																	placeholder="TRAN TYPE" disabled></th>
+																	placeholder="TRAN TYPE" readonly></th>
 																<th><input type="text" class="form-control" id="myInput" style="width: 130px;" 
-																	 placeholder="BANK NAME" disabled></th>
+																	 placeholder="BANK NAME" readonly></th>
 																<th><input type="text" class="form-control" id="myInput" style="width: 130px;" 
-																	 placeholder="BANK ACCOUNT" disabled></th>
+																	 placeholder="BANK ACCOUNT" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
-																	style="width: 180px;" placeholder="BENIFICIARY ACCOUNT" disabled></th>
+																	style="width: 180px;" placeholder="BENIFICIARY ACCOUNT" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
-																	style="width: 225px;" placeholder="BENIFICIARY NAME" disabled></th>
+																	style="width: 225px;" placeholder="BENIFICIARY NAME" readonly></th>
 																<th><input type="text" class="form-control" id="myInput" style="width: 140px;"
-																	placeholder="TRAN AMOUNT" disabled></th>
+																	placeholder="TRAN AMOUNT" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 130px;" placeholder="IFSC CODE"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 100px;" placeholder="REMARKS"
-																	disabled></th>
+																	readonly></th>
 																<th>Select</th>
 
 															</tr>
@@ -706,7 +706,7 @@ alert(b);
 												<label class="">emp_id</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.emp_no}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.emp_no}" readonly/>
 												
 											</div>
 											
@@ -714,7 +714,7 @@ alert(b);
 											<label>emp_name</label>
 											</div>
 											<div class="col-sm-2">
-											<input class="baratyh"id="emp_name" th:value="${editing?.emp_name}" disabled/>
+											<input class="baratyh"id="emp_name" th:value="${editing?.emp_name}" readonly/>
 											</div>
 											
 											
@@ -730,7 +730,7 @@ alert(b);
 												<label class="">Designation</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.emp_desig}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.emp_desig}" readonly/>
 												
 											</div>
 											
@@ -738,7 +738,7 @@ alert(b);
 											<label>Month</label>
 											</div>
 											<div class="col-sm-2">
-											<input class="baratyh"id="salary_month"  name="salary_month" th:value="${editing?.salary_month}" disabled/>
+											<input class="baratyh"id="salary_month"  name="salary_month" th:value="${editing?.salary_month}" readonly/>
 											</div>
 											
 											
@@ -754,7 +754,7 @@ alert(b);
 												<label class="">URN</label>
 											</div>
 											<div class="col-sm-2">
-												<input class="baratyh"id="emp_no" th:value="${editing?.urn_no}" disabled/>
+												<input class="baratyh"id="emp_no" th:value="${editing?.urn_no}" readonly/>
 												
 											</div>
 											
@@ -899,7 +899,7 @@ alert(b);
 													+ prevText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-prev ui-corner-all ui-state-readonly' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "e"
 																			: "w")
 																	+ "'>"
@@ -929,7 +929,7 @@ alert(b);
 													+ nextText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-next ui-corner-all ui-state-readonly' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "w"
 																			: "e")
 																	+ "'>"

@@ -86,7 +86,7 @@ fieldset {
 <script>
 $(document).ready(function(){
 	$('.mant').css('color', '#fbe4d2');
-	//$('.form-control').attr("disabled", true);
+	//$('.form-control').attr("readonly", true);
 if("admin"=='<%=request.getParameter("types")%>'){
 		
 	$("#tab_logic").attr("readonly", true);
@@ -100,7 +100,7 @@ if("admin"=='<%=request.getParameter("types")%>'){
 
 	$( "#btnmodify" ).click(function() {
 		$('.mant').css('color', 'red');
-		$('.form-control').attr("disabled", false);
+		$('.form-control').attr("readonly", false);
 		$( "#btnmodify" ).hide();
 		
 		
@@ -120,12 +120,12 @@ if("admin"=='<%=request.getParameter("types")%>'){
 	}
 	
 	if("admin"=='<%=request.getParameter("types")%>'){
-		$('.form-control').attr("disabled", true);
+		$('.form-control').attr("readonly", true);
 		
 		$("#btnmod").hide();
 	}
 	if("inquiries"=='<%=request.getParameter("types")%>'){
-		$('.form-control').attr("disabled", true);
+		$('.form-control').attr("readonly", true);
 		
 		$("#btnmod").hide();
 	}
@@ -223,13 +223,13 @@ if("admin"=='<%=request.getParameter("types")%>'){
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -417,8 +417,8 @@ $("#target"+(i+1)).val(newStr1);
 						$("#hours"+i+"").val("00:00");
 						$("#target"+i+"").val("Nil");
 						$("#jobdes"+i+"").val("Nil");
-						//$("#timein"+i+"").attr("disabled", true);
-						/* $("#timeout"+i+"").attr("disabled", true); */
+						//$("#timein"+i+"").attr("readonly", true);
+						/* $("#timeout"+i+"").attr("readonly", true); */
 						$("#target"+i+"").attr("readonly", true);
                  	$("#jobdes"+i+"").attr("readonly", true);
                  	$("#holiday"+i+"").attr("readonly", true);
@@ -1123,12 +1123,12 @@ $("#target"+(i+1)).val(newStr1);
 									</div>
 									<div class="card-footer text-center border-top-0 bg-white"
 										style="background-color: unset">
-										<button class="btn btn-xs btn-primary" onclick="home(this);"
+										<button btn headerbutton onclick="home(this);"
 											id="btnModify">Home</button>
-										<button type="button" class="btn btn-xs btn-primary" onclick="submitForm(this);"
+										<button type="button" btn headerbutton onclick="submitForm(this);"
 											id="btnSubmit">Submit</button>
 											
-										<button class="btn btn-xs btn-primary" form="userProfile"
+										<button btn headerbutton form="userProfile"
 											id="btnSubmit" onclick="back();">Back</button>
 									</div>
 								</div>

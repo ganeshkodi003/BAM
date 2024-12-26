@@ -95,7 +95,7 @@ legend {
     border-bottom: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -104,15 +104,15 @@ legend {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -190,13 +190,13 @@ legend {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -283,31 +283,31 @@ legend {
 															<tr class="filters">
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Emp Id" disabled></th>
+																	placeholder="Emp Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Emp Name" disabled></th>
+																	placeholder="Emp Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Group" disabled></th>
+																	placeholder="Group" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Team" disabled></th>
+																	placeholder="Team" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Start Date" disabled></th>
+																	placeholder="Start Date" readonly></th>
 																<th><input type="text"style="width:200px;"
 																	class="form-control font-weight-bold"
-																	placeholder="Current Assignment" disabled></th>
+																	placeholder="Current Assignment" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Work Details" disabled></th>
+																	placeholder="Work Details" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="End Date" disabled></th>
+																	placeholder="End Date" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Status" disabled></th>
+																	placeholder="Status" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>

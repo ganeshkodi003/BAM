@@ -92,7 +92,7 @@
 	box-shadow: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -101,15 +101,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -218,13 +218,13 @@ $(document)
 										'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 										.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-											.prop('disabled', false);
+											.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-											'disabled', true);
+											'readonly', true);
 									$tbody.find('.no-result')
 											.remove();
 									$tbody.find('tr').show();
@@ -415,40 +415,40 @@ $(document).ready(
                                             <thead>
                                                 <tr class="filters" style="font-size: small;">
                                                     <th class="col-md-2">
-                                                        <input type="" style="width:100px;" class="form-control font-weight-bold" placeholder="PO No" disabled>
+                                                        <input type="" style="width:100px;" class="form-control font-weight-bold" placeholder="PO No" readonly>
                                                     </th>
                                                     <th class="col-md-1">
-                                                        <input type="text" style="width: 124px;" class="form-control font-weight-bold" placeholder="Emp Name" disabled>
+                                                        <input type="text" style="width: 124px;" class="form-control font-weight-bold" placeholder="Emp Name" readonly>
                                                     </th>
                                                     <th class="col-md-1">
-                                                        <input type="text" style="width: 77px;" class="form-control font-weight-bold" placeholder="Emp Id" disabled>
+                                                        <input type="text" style="width: 77px;" class="form-control font-weight-bold" placeholder="Emp Id" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="" style="width: 87px;" class="form-control font-weight-bold" placeholder="GRN No" disabled>
+                                                        <input type="" style="width: 87px;" class="form-control font-weight-bold" placeholder="GRN No" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="text" style="width: 114px;" class="form-control font-weight-bold" placeholder="GRN Month" disabled>
+                                                        <input type="text" style="width: 114px;" class="form-control font-weight-bold" placeholder="GRN Month" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="text" style="width: 99px;" class="form-control font-weight-bold" placeholder="GRN Date" disabled>
+                                                        <input type="text" style="width: 99px;" class="form-control font-weight-bold" placeholder="GRN Date" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="" style="width: 125px;" class="form-control font-weight-bold" placeholder="GRN Amount" disabled>
+                                                        <input type="" style="width: 125px;" class="form-control font-weight-bold" placeholder="GRN Amount" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="" style="width: 94px;" class="form-control font-weight-bold" placeholder="GST-18%" disabled>
+                                                        <input type="" style="width: 94px;" class="form-control font-weight-bold" placeholder="GST-18%" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="text" style="width: 120px;" class="form-control font-weight-bold" placeholder="Total Invoice" disabled>
+                                                        <input type="text" style="width: 120px;" class="form-control font-weight-bold" placeholder="Total Invoice" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="text" style="width: 105px;" class="form-control font-weight-bold" placeholder="Invoice No" disabled>
+                                                        <input type="text" style="width: 105px;" class="form-control font-weight-bold" placeholder="Invoice No" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="text" style="width: 120px;" class="form-control font-weight-bold" placeholder="Invoice Date" disabled>
+                                                        <input type="text" style="width: 120px;" class="form-control font-weight-bold" placeholder="Invoice Date" readonly>
                                                     </th>
                                                     <th>
-                                                        <input type="text" style="width: 70px;" class="form-control font-weight-bold" placeholder="DP No" disabled>
+                                                        <input type="text" style="width: 70px;" class="form-control font-weight-bold" placeholder="DP No" readonly>
                                                     </th>
                                                   
                                                 </tr>

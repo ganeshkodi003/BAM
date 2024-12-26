@@ -112,7 +112,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -121,15 +121,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -319,13 +319,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -836,43 +836,43 @@ function deleteindia(a){
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control" id="myInput" style="width:57px;"
-																	placeholder="SRL NO" disabled></th>		
+																	placeholder="SRL NO" readonly></th>		
 																<th><input type="text" class="form-control" id="myInput" style="width:70px;"
-																	placeholder="TRAN ID" disabled></th>
+																	placeholder="TRAN ID" readonly></th>
 																<th><input type="text" class="form-control" style="width:70px;" id="myInput"
-																	placeholder="TYPE" disabled></th>
+																	placeholder="TYPE" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
-																	 placeholder="CUSTOMER" disabled></th>
+																	 placeholder="CUSTOMER" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
-																	style="width: 160px;" placeholder="CUSTOMER GST NO" disabled></th>
+																	style="width: 160px;" placeholder="CUSTOMER GST NO" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
-																	style="width: 130px;" placeholder="INVOICE NO" disabled></th>
+																	style="width: 130px;" placeholder="INVOICE NO" readonly></th>
 																<th><input type="text" class="form-control" id="myInput" style="width: 110px;"
-																	placeholder="INVOICE DATE" disabled></th>
+																	placeholder="INVOICE DATE" readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 120px;" placeholder="DESCRIPTION"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 150px;" placeholder="INVOICE AMOUNT"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 50px;" placeholder="SGST"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 50px;" placeholder="CGST"
-																	disabled></th>
+																	readonly></th>
 																	<th><input type="text" class="form-control" id="myInput"
 																	style="width: 60px;" placeholder="IGST"
-																	disabled></th>
+																	readonly></th>
 																	<th><input type="text" class="form-control" id="myInput"
 																	style="width: 90px;" placeholder="TOTAL GST"
-																	disabled></th>
+																	readonly></th>
 																	<th><input type="text" class="form-control" id="myInput"
 																	style="width: 110px;" placeholder="TOT INV AMT"
-																	disabled></th>
+																	readonly></th>
 																	<th><input type="text" class="form-control" id="myInput"
 																	style="width:80px;" placeholder="REMARKS"
-																	disabled></th>
+																	readonly></th>
 																<th>Select</th>
 
 															</tr>
@@ -1500,32 +1500,32 @@ function deleteindia(a){
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control" id="myInput" style="width:57px;"
-																	placeholder="SRL NO" disabled></th>		
+																	placeholder="SRL NO" readonly></th>		
 																<th><input type="text" class="form-control" id="myInput" style="width:70px;"
-																	placeholder="TRAN ID" disabled></th>
+																	placeholder="TRAN ID" readonly></th>
 																
 																
 																
 																<th><input type="text" class="form-control" id="myInput"
-																	style="width: 100px;" placeholder="INVOICE NO" disabled></th>
+																	style="width: 100px;" placeholder="INVOICE NO" readonly></th>
 																<th><input type="text" class="form-control" id="myInput" style="width: 110px;"
-																	placeholder="INVOICE DATE" disabled></th>
+																	placeholder="INVOICE DATE" readonly></th>
 																
 																<th><input type="text" class="form-control" id="myInput"
 																	style="width: 120px;" placeholder="INVOICE AMOUNT"
-																	disabled></th>
+																	readonly></th>
 																
 																	
 																	
 																	<th><input type="text" class="form-control" id="myInput"
 																	style="width: 110px;" placeholder="TOT INV AMT"
-																	disabled></th>
+																	readonly></th>
 																	
 																	
 																		
 																	<th><input type="text" class="form-control" id="myInput"
 																	style="width: 110px;" placeholder="uniqueid"
-																	disabled></th>
+																	readonly></th>
 																	
 																	
 																<th>Select</th>
@@ -2258,7 +2258,7 @@ function deleteindia(a){
 													+ prevText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-prev ui-corner-all ui-state-disabled' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-prev ui-corner-all ui-state-readonly' title='"+ prevText +"'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "e"
 																			: "w")
 																	+ "'>"
@@ -2288,7 +2288,7 @@ function deleteindia(a){
 													+ nextText
 													+ "</span></a>"
 													: (hideIfNoPrevNext ? ""
-															: "<a class='ui-datepicker-next ui-corner-all ui-state-disabled' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
+															: "<a class='ui-datepicker-next ui-corner-all ui-state-readonly' title='"+ nextText + "'><span class='ui-icon ui-icon-circle-triangle-"
 																	+ (isRTL ? "w"
 																			: "e")
 																	+ "'>"

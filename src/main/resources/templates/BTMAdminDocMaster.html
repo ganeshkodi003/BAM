@@ -73,7 +73,7 @@
 			margin-top: 10px;
 		}
 
-		.filterable .filters input[disabled] {
+		.filterable .filters input[readonly] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -82,15 +82,15 @@
 			height: auto;
 		}
 
-		.filterable .filters input[disabled]::-webkit-input-placeholder {
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]::-moz-placeholder {
+		.filterable .filters input[readonly]::-moz-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]:-ms-input-placeholder {
+		.filterable .filters input[readonly]:-ms-input-placeholder {
 			color: #333;
 		}
 
@@ -275,13 +275,13 @@
 									'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 											.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-										.prop('disabled', false);
+										.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-										'disabled', true);
+										'readonly', true);
 									$tbody.find('.no-result')
 										.remove();
 									$tbody.find('tr').show();
@@ -792,12 +792,12 @@
 									th:if="${formmode}=='view'" onclick="modifyUser();">Modify</a>
 
 
-								<button type="button" class="btn btn-xs btn-primary" id="btnSubmit"
+								<button type="button" btn headerbutton id="btnSubmit"
 									th:if="${formmode}=='add'" style="width: 120px" th:attr="data-formmode=${formmode}"
 									onclick="addUserData();">Submit</button>
 
 								<button th:if="${formmode}== 'edit'" type="button" style="width: 120px"
-									class="btn btn-xs btn-primary" form="AdminAssociateProfile" id="btnSubmit"
+									btn headerbutton form="AdminAssociateProfile" id="btnSubmit"
 									onclick="ModifyUserData(this);" th:attr="data-formmode=${formmode}">Submit</button>
 
 								<a class="btn btn-xs btn-primary text-white" style="width: 120px"
@@ -833,25 +833,25 @@
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control"
-																		placeholder="EmpId" disabled></th>
+																		placeholder="EmpId" readonly></th>
 																<th><input type="text" class="form-control"
-																		placeholder="EmpName" disabled></th>
+																		placeholder="EmpName" readonly></th>
 
 																<th><input type="text" class="form-control"
-																		placeholder="RefNo" disabled></th>
+																		placeholder="RefNo" readonly></th>
 
 																<th><input type="text" class="form-control"
-																		placeholder="RefId" disabled></th>
+																		placeholder="RefId" readonly></th>
 
 																<th><input type="text" class="form-control"
-																		placeholder="Name" disabled></th>
+																		placeholder="Name" readonly></th>
 																<th><input type="text" class="form-control"
-																		placeholder="Description" disabled></th>
+																		placeholder="Description" readonly></th>
 																<th><input type="text" class="form-control"
-																		placeholder="Type" disabled></th>
+																		placeholder="Type" readonly></th>
 
 																<th><input type="text" class="form-control"
-																		placeholder="Select" disabled></th>
+																		placeholder="Select" readonly></th>
 															</tr>
 														</thead>
 

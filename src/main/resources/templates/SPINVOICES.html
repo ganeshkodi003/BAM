@@ -83,7 +83,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -92,15 +92,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -116,13 +116,13 @@ $(document).ready(
 										'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 										.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-											.prop('disabled', false);
+											.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-											'disabled', true);
+											'readonly', true);
 									$tbody.find('.no-result')
 											.remove();
 									$tbody.find('tr').show();
@@ -227,7 +227,7 @@ $(document).ready(
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -295,7 +295,7 @@ $(document).ready(
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -529,11 +529,11 @@ $(document).ready(
 		
 		   $("#attendanceType").change(function() {
 		    	if($("#attendanceType").val()=="Daily" ){
-		    		$("#associateName").attr("disabled", true);
+		    		$("#associateName").attr("readonly", true);
 		    		
-		    		$("#monthYear").attr("disabled", true);
+		    		$("#monthYear").attr("readonly", true);
 		    		
-		    		$("#year").attr("disabled", true);
+		    		$("#year").attr("readonly", true);
 		    		
 		    		$("#btngenerate").click(function(){
 		    		    
@@ -554,9 +554,9 @@ $(document).ready(
 		    		
 		    	}else if($("#attendanceType").val()=="Associate" ){
 		    		
-		    		$("#dailyDate").attr("disabled", true);
-		    		$("#associateName").attr("disabled", false);
-		    		$("#monthYear").attr("disabled", false);
+		    		$("#dailyDate").attr("readonly", true);
+		    		$("#associateName").attr("readonly", false);
+		    		$("#monthYear").attr("readonly", false);
 		    		
 		    		
 $("#btngenerate").click(function(){
@@ -585,10 +585,10 @@ var report_type = h.value;
 		    	
 else if($("#attendanceType").val()=="Monthly" ){
 		    		
-		    		$("#dailyDate").attr("disabled", true);
-		    		$("#associateName").attr("disabled", true);
-		    		$("#monthYear").attr("disabled", false);
-		    		$("#year").attr("disabled", false);
+		    		$("#dailyDate").attr("readonly", true);
+		    		$("#associateName").attr("readonly", true);
+		    		$("#monthYear").attr("readonly", false);
+		    		$("#year").attr("readonly", false);
 		    		var selectobject=document.getElementById("associateName")
 		    		  for (var i=0; i<selectobject.length; i++){
 		    		  if (selectobject.options[i].value == 'All' )
@@ -687,7 +687,7 @@ var report_type=h.value;
 									<div class="col-sm-3">
 										<select name="sp" id="sp"
 											class="form-control form-control-sm" required>
-											<option value=""disabled selected>Select</option>
+											<option value=""readonly selected>Select</option>
 											<option value="WHITESTONE">WHITESTONE</option>
 											<option value="ASOFT">ASOFT</option>
 											<option value="STACKPOS">STACKPOS</option>
@@ -846,46 +846,46 @@ var report_type=h.value;
 
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="PO No" disabled></th>
+																	placeholder="PO No" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Employee Name" disabled></th>
+																	placeholder="Employee Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Employee Id" disabled></th>
+																	placeholder="Employee Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="GRN No" disabled></th>
+																	placeholder="GRN No" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold" placeholder="GRN Date"
-																	disabled></th>
+																	readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="PO Month" disabled></th>
+																	placeholder="PO Month" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Efforts" disabled></th>
+																	placeholder="Efforts" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP Rate" disabled></th>
+																	placeholder="SP Rate" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP Amount" disabled></th>
+																	placeholder="SP Amount" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP SGST" disabled></th>
+																	placeholder="SP SGST" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP CGST" disabled></th>
+																	placeholder="SP CGST" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP IGST" disabled></th>
+																	placeholder="SP IGST" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP TOT GST" disabled></th>
+																	placeholder="SP TOT GST" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="SP Total Amount" disabled></th>
+																	placeholder="SP Total Amount" readonly></th>
 																
 															</tr>
 														</thead>
@@ -927,7 +927,7 @@ var report_type=h.value;
 											class="form-control form-control-sm">
 												<button type="button" class="btn headerbutton" id="btnHome"
 													th:onclick="home()">Home</button>
-												<button class="btn btn-xs btn-primary"
+												<button btn headerbutton
 												onclick="mail(this);" id="btnHome">Send Mail</button>
 												<button type="button" class="btn headerbutton" id="btnBack"
 													th:onclick="back()">Back</button>

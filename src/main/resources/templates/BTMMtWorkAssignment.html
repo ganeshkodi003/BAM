@@ -88,7 +88,7 @@ legend {
     border-bottom: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -97,15 +97,15 @@ legend {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -271,13 +271,13 @@ var l=document.getElementById("employeeName").value;
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -523,7 +523,7 @@ var l=document.getElementById("employeeName").value;
 															class="form-control form-control-sm" readonly /> <input
 															type="text" id="employeeName" th:if="${formmode}=='add'"
 															name="emp_name" class="form-control form-control-sm"
-															autocomplete="off" required disabled /> <input
+															autocomplete="off" required readonly /> <input
 															type="text" id="employeeName" th:if="${formmode}=='edit'"
 															name="emp_name" class="form-control form-control-sm"
 															th:value="${WorkAssignment?.emp_name}" autocomplete="off"
@@ -916,24 +916,24 @@ var l=document.getElementById("employeeName").value;
 															<tbody class="workDetails">
 																<tr th:if="${formmode}=='view'" class="workDetails">
 																	<td><input type="text" name='' id="assignDate" 
-																		placeholder='dd-mm-yyyy' class="form-control" disabled>
+																		placeholder='dd-mm-yyyy' class="form-control" readonly>
 																	</td>
 																	<td><textarea id="currentAssgn" name=''
-																			class="form-control" disabled></textarea></td>
+																			class="form-control" readonly></textarea></td>
 																	<td><input type="text" name='' id="startDate"
-																		placeholder='dd-mm-yyyy' class="form-control" disabled>
+																		placeholder='dd-mm-yyyy' class="form-control" readonly>
 																	</td>
 																	<td><textarea id="wrkdetail" name=''
-																			class="form-control" disabled></textarea></td>
+																			class="form-control" readonly></textarea></td>
 																	<td><textarea id="constraint" name=''
-																			class="form-control" disabled></textarea></td>
+																			class="form-control" readonly></textarea></td>
 																	<td><textarea id="escalation" name=''
-																			class="form-control" disabled></textarea></td>
+																			class="form-control" readonly></textarea></td>
 																	<td><input type="text" name='' id="endDate"
-																		placeholder='dd-mm-yyyy' class="form-control" disabled>
+																		placeholder='dd-mm-yyyy' class="form-control" readonly>
 																	</td>
 																	<td><select name="mode" id="status"
-																		style="width: 96px;" class="form-control " disabled>
+																		style="width: 96px;" class="form-control " readonly>
 																			<option value="Select">on-Going</option>
 																			<option value="work-in-progress">
 																				Work-in-progress</option>
@@ -1127,13 +1127,13 @@ var l=document.getElementById("employeeName").value;
 												onclick="ListUser();">List</a>
 
 											<button th:if="${formmode}== 'add'" type="button"
-												class="btn btn-xs btn-primary" id="btnAddSubmit"
+												btn headerbutton id="btnAddSubmit"
 												th:attr="data-ref1=${WorkAssignment?.srl_no}"
 												onclick="submitform(this);">Submit</button>
 
 
 											<button th:if="${formmode}== 'edit'" type="button"
-												class="btn btn-xs btn-primary" id="btnSubmit"
+												btn headerbutton id="btnSubmit"
 												th:attr="data-ref1=${WorkAssignment?.srl_no}"
 												onclick="submitEditform(this);">Submit</button>
 
@@ -1177,31 +1177,31 @@ var l=document.getElementById("employeeName").value;
 															<tr class="filters">
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Emp Id" disabled></th>
+																	placeholder="Emp Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Emp Name" disabled></th>
+																	placeholder="Emp Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Group" disabled></th>
+																	placeholder="Group" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Team" disabled></th>
+																	placeholder="Team" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Start Date" disabled></th>
+																	placeholder="Start Date" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Current Assignment" disabled></th>
+																	placeholder="Current Assignment" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Work Details" disabled></th>
+																	placeholder="Work Details" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="End Date" disabled></th>
+																	placeholder="End Date" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Status" disabled></th>
+																	placeholder="Status" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>

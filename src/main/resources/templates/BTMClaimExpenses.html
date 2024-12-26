@@ -737,7 +737,7 @@ input::-webkit-inner-spin-button {
 						<div class="card-footer text-center p-0"
 							>
 							<button th:if="${formmode}=='add'OR ${formmode}=='view'"
-								class="btn btn-xs btn-primary" onclick="home();" id="btnHome">Home</button>
+								btn headerbutton onclick="home();" id="btnHome">Home</button>
 
 							<a th:if="${formmode}=='view'"
 								class="btn btn-xs btn-primary text-white" id="btnNewClaim"
@@ -747,7 +747,7 @@ input::-webkit-inner-spin-button {
 								class="btn btn-xs btn-primary " id="btnSubmit"
 								onclick="submitExpenseForm()">Submit</button>
 
-							<button class="btn btn-xs btn-primary"
+							<button btn headerbutton
 								th:if="${formmode}=='add'OR ${formmode}=='view'" id="btnback"
 								onclick="back();">Back</button>
 						</div>

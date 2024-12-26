@@ -98,7 +98,7 @@ nav {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -154,7 +154,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -374,7 +374,7 @@ nav {
 									
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select id="associateName" class="form-control form-control-sm"  required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option>TESTING</option>
 											<option th:each="monitoringparam : ${profileManagers}"
 																th:value="${monitoringparam.resource_id}"
@@ -385,7 +385,7 @@ nav {
 									
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}" >
 										<select name="arr.reportto" id="associateName" class="form-control form-control-sm" required>
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option selected
 																th:value="${session.USERID}"
 																th:text="${session.USERID+' '+session.USERNAME}"></option>
@@ -422,7 +422,7 @@ nav {
 									</div>
 									<div class="col-sm-2"th:if="${RoleMenu?.role=='ADM'}">
 										<select name="arr.year" id="year" class="form-control form-control-sm"required>
-											<option disabled selected value="">Year</option>
+											<option readonly selected value="">Year</option>
 											<option value="2017">2017</option>
 
 											
@@ -439,7 +439,7 @@ nav {
 									</div>
 									<div class="col-sm-2" th:if="${RoleMenu?.role!='ADM'}">
 										<select name="arr.year" id="year" class="form-control form-control-sm"required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											
 										</select>
 									</div>
@@ -472,7 +472,7 @@ nav {
 									</div>
 									<div class="col-sm-3">
 										<select name="arr.reportto" id="reportto" class="form-control form-control-sm" required >
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option th:each="user : ${allusers}"
 																th:value="${user.resource_id}"
 																th:text="${user.resource_id+' '+user.resource_name}"></option>

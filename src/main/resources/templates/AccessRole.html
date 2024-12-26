@@ -8,6 +8,7 @@
 		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
 	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
 		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+			<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
 		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
 	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
@@ -378,7 +379,7 @@
 													<div class="col-4 col-lg-2">
 														<select id="role_desc" name="role_desc" onchange="menulist()"
 															class="form-control form-control-sm" autocomplete="off"required/>
-															<option disabled selected>--select--</option>
+															<option readonly selected>--select--</option>
 															<option value="Admin" id="Admin">Admin</option>
 															<option value="General" id="General">General</option>
 															<option value="Audit" id="Audit">Audit</option>
@@ -398,7 +399,7 @@
 													<div class="col-4 col-lg-2">
 														<select id="permissions" name="permissions"
 															class="form-control form-control-sm" autocomplete="off" required/>
-															<option value="" disabled selected>--select--</option>
+															<option value="" readonly selected>--select--</option>
 															<option value="read" id="read">Read</option>
 															<option value="write" id="write">Write</option>
 														</select>
@@ -421,7 +422,7 @@
 													<div class="col-4 col-lg-2">
 														<select id="work_class" name="work_class"
 															class="form-control form-control-sm" autocomplete="off" required/>
-															<option value="" disabled selected>--select--</option>
+															<option value="" readonly selected>--select--</option>
 															<option value="maker" id="maker">Maker</option>
 															<option value="checker" id="checker">Checker</option>
 															<option value="reader" id="reader">Reader</option>

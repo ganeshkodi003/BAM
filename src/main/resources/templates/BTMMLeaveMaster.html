@@ -85,7 +85,7 @@
 	background-color: unset !important;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -98,15 +98,15 @@ form div div div div .table {
     margin-bottom: 1rem;
     color: #212529;
 }
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -225,13 +225,13 @@ nav {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -426,40 +426,40 @@ nav {
 														<th>Srlno</th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Emp ID" disabled></th>
+															placeholder="Emp ID" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Emp Name" disabled></th>
+															placeholder="Emp Name" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Leave Reference" disabled></th>
+															placeholder="Leave Reference" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Leave From" disabled></th>
+															placeholder="Leave From" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Leave To" disabled></th>
+															placeholder="Leave To" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="No.of Days" disabled></th>
+															placeholder="No.of Days" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Approval-1" disabled></th>
+															placeholder="Approval-1" readonly></th>
 															<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Approval-2" disabled></th>
+															placeholder="Approval-2" readonly></th>
 															<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Approval-3" disabled></th>
+															placeholder="Approval-3" readonly></th>
 															<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Approval-4" disabled></th>
+															placeholder="Approval-4" readonly></th>
 															<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Approval-5" disabled></th>
+															placeholder="Approval-5" readonly></th>
 																<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Status" disabled></th>
+															placeholder="Status" readonly></th>
 														<th>Select</th>
 
 													</tr>
@@ -717,26 +717,26 @@ nav {
 											</table>
 										</div>
 										<div class="card-footer text-center  " >
-											<button type="button" class="btn btn-xs btn-primary"
+											<button type="button" btn headerbutton
 												id="btnHome" onclick="home();">Home</button>
 
-											<button type="button" class="btn btn-xs btn-primary"
+											<button type="button" btn headerbutton
 												id="btnApprove" form="LeaveMaster" th:if="${approvalstatus}=='No'"
 												th:attr="data-ref1 = ${MtLeaveMaster?.leave_reference}"
 												onclick="approveAdd(this);">Accept</button>
 												
-												<button type="button" class="btn btn-xs btn-primary"  th:if="${approvalstatus}=='Yes'"
+												<button type="button" btn headerbutton  th:if="${approvalstatus}=='Yes'"
 												id="btnApproved" form="LeaveMaster" >Approved</button>
 
-											<button type="button" class="btn btn-xs btn-primary"
+											<button type="button" btn headerbutton
 												id="btnReject"
 												th:attr="data-ref1 = ${MtLeaveMaster?.leave_reference}"   th:if="${pendingstatus}=='No'"
 												form="LeaveMaster" onclick="rejectAdd(this);">Reject</button>
 												
-												<button type="button" class="btn btn-xs btn-primary"   th:if="${pendingstatus}=='Yes'"
+												<button type="button" btn headerbutton   th:if="${pendingstatus}=='Yes'"
 												id="btnRejected" form="LeaveMaster">Rejected</button>
 
-											<button type="button" class="btn btn-xs btn-primary"
+											<button type="button" btn headerbutton
 												id="btnBack" onclick="back();">Back</button>
 										</div>
 									</div>

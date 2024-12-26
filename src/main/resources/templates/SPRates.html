@@ -60,7 +60,7 @@
 	box-shadow: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -69,15 +69,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -119,13 +119,13 @@ $(document)
 										'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 										.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-											.prop('disabled', false);
+											.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-											'disabled', true);
+											'readonly', true);
 									$tbody.find('.no-result')
 											.remove();
 									$tbody.find('tr').show();
@@ -206,37 +206,37 @@ $(document)
 											<tr class="filters">
 												<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Emp Id" disabled></th>
+															placeholder="Emp Id" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Employee Name" disabled></th>
+															placeholder="Employee Name" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Unit" disabled></th>
+															placeholder="Unit" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Infy Rate" disabled></th>
+															placeholder="Infy Rate" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Bornfire Rate" disabled></th>
+															placeholder="Bornfire Rate" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Month" disabled></th>
+															placeholder="Month" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Efforts" disabled></th>
+															placeholder="Efforts" readonly></th>
 																<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="SP Amount" disabled></th>
+															placeholder="SP Amount" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Rate Mode" disabled></th>
+															placeholder="Rate Mode" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Fixed" disabled></th>
+															placeholder="Fixed" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Percentage" disabled></th>
+															placeholder="Percentage" readonly></th>
 														<th>Status</th>
 													</tr>			
 										</thead>

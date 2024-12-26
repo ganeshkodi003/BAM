@@ -82,7 +82,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -91,15 +91,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -247,13 +247,13 @@ nav {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -346,23 +346,23 @@ nav {
 																<tr class="filters">
 
 																	<th><input type="text" class="form-control"
-																		placeholder="S.NO" disabled></th>
+																		placeholder="S.NO" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Resource Id" disabled></th>
+																		placeholder="Resource Id" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Name" disabled></th>
+																		placeholder="Name" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Designation" disabled></th>
+																		placeholder="Designation" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="category" disabled></th>
+																		placeholder="category" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Mobile" disabled></th>
+																		placeholder="Mobile" readonly></th>
 																	<th><input type="text" class="form-control"
-																		placeholder="Email" disabled></th>
+																		placeholder="Email" readonly></th>
 																		<th><input type="text" class="form-control"
-																		placeholder="Profile Status" disabled></th>
+																		placeholder="Profile Status" readonly></th>
 																		<th><input type="text" class="form-control"
-																		placeholder="Select" disabled></th>
+																		placeholder="Select" readonly></th>
 																</tr>
 															</thead>
 
@@ -482,7 +482,7 @@ nav {
 											<div class="col-sm-3">
 
 												<select name="category" id="category"
-													th:if="${formmode}=='view'" class="form-control"disabled>
+													th:if="${formmode}=='view'" class="form-control"readonly>
 
 													<option>SELECT
 													</option>
@@ -789,7 +789,7 @@ nav {
 
 											<div class="col-sm-3">
 												<select th:if="${formmode}=='view'" id="group"
-													class="form-control form-control-sm" name="groups"disabled>
+													class="form-control form-control-sm" name="groups"readonly>
 
 													<option>SELECT</option>
 
@@ -858,7 +858,7 @@ nav {
 											</div>
 											<div class="col-sm-3">
 												<select th:if="${formmode}=='view'" id="team"
-													class="form-control form-control-sm" name="team"disabled>
+													class="form-control form-control-sm" name="team"readonly>
 
 													<option>SELECT</option>
 
@@ -1018,7 +1018,7 @@ nav {
 											<div class="col-sm-3">
 
 												<select th:if="${formmode}=='view'" id="designation"
-													class="form-control form-control-sm" name="design"disabled>
+													class="form-control form-control-sm" name="design"readonly>
 
 													<option>SELECT</option>
 
@@ -1098,7 +1098,7 @@ nav {
 											</div>
 											<div class="col-sm-3">
 												<select th:if="${formmode}=='view'" id="role"
-													class="form-control form-control-sm" name="role"disabled>
+													class="form-control form-control-sm" name="role"readonly>
 
 													<option>SELECT</option>
 
@@ -1157,7 +1157,7 @@ nav {
 
 											<div class="col-sm-3">
 												 <select th:if="${formmode}=='view'" id="qualification"
-													class="form-control form-control-sm" name="qual"disabled>
+													class="form-control form-control-sm" name="qual"readonly>
 
 													<option>SELECT</option>
 
@@ -1391,7 +1391,7 @@ nav {
 
 											<div class="col-sm-3">
 												<select th:if="${formmode}=='view'" id="gender"
-													class="form-control form-control-sm" name="gender"disabled>
+													class="form-control form-control-sm" name="gender"readonly>
 
 													<option>SELECT</option>
 
@@ -1436,7 +1436,7 @@ nav {
 											</div>
 											<div class="col-sm-3">
 												<select id="bloodGroup" th:if="${formmode}=='view'"
-													class="form-control form-control-sm" name="blood_group"disabled>
+													class="form-control form-control-sm" name="blood_group"readonly>
 
 													<option >SELECT
 													</option>
@@ -1500,7 +1500,7 @@ nav {
 
 											<div class="col-sm-3">
 												<select th:if="${formmode}=='view'" id="maritalStatus"
-													class="form-control form-control-sm" name="marital_status"disabled>
+													class="form-control form-control-sm" name="marital_status"readonly>
 
 													<option>SELECT
 													</option>
@@ -2293,7 +2293,7 @@ nav {
 											<div class="col-sm-3">
 
 												<select th:if="${formmode}=='view'" id="channel"
-													class="form-control form-control-sm" name="channel_id"disabled>
+													class="form-control form-control-sm" name="channel_id"readonly>
 													<option >SELECT
 													</option>
 
@@ -2368,17 +2368,17 @@ nav {
 										onclick="deleteUser();">Delete</a>
 
 									<button th:if="${formmode}== 'add'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="submitform(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'edit'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="ModifyUserDate(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'delete'" type="button"
-										class="btn btn-xs btn-primary" form="AdminAssociateProfile"
+										btn headerbutton form="AdminAssociateProfile"
 										id="btnSubmit" onclick="deleteUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 

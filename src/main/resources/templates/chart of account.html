@@ -88,7 +88,7 @@ legend {
     border-bottom: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -97,15 +97,15 @@ legend {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -289,13 +289,13 @@ legend {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -1227,13 +1227,13 @@ legend {
 												
                                         
 											<button th:if="${formmode}== 'add'" type="button"
-												class="btn btn-xs btn-primary" id="btnAddSubmit"
+												btn headerbutton id="btnAddSubmit"
 												 form="mtWorkAssignment"
 												onclick="submitform(this);">Submit</button>
 
 
 											<button th:if="${formmode}== 'edit'" type="button"
-												class="btn btn-xs btn-primary" id="btnSubmit"
+												btn headerbutton id="btnSubmit"
 												form="mtWorkAssignment"
 												onclick="submitEditform(this);">Submit</button>
 
@@ -1277,16 +1277,16 @@ legend {
 															<tr class="filters">
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Asset Serial Number" disabled></th>
+																	placeholder="Asset Serial Number" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Account Number" disabled></th>
+																	placeholder="Account Number" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Sol Id" disabled></th>
+																	placeholder="Sol Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Acc Status" disabled></th>
+																	placeholder="Acc Status" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>

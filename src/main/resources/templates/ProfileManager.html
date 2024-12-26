@@ -962,7 +962,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="emp_id" id="emp_id"
-										th:value="${pmview?.emp_id}" class="form-control-sm" disabled />
+										th:value="${pmview?.emp_id}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -971,7 +971,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="emp_name" id="emp_name"
-										th:value="${pmview?.emp_name}" class="form-control-sm" disabled />
+										th:value="${pmview?.emp_name}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -985,7 +985,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="emp_desig" id="emp_desig"
-										th:value="${pmview?.emp_desig}" class="form-control-sm" disabled />
+										th:value="${pmview?.emp_desig}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -994,7 +994,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="emp_group" id="emp_group"
-										th:value="${pmview?.emp_group}" class="form-control-sm" disabled />
+										th:value="${pmview?.emp_group}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1008,7 +1008,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="dob" id="dob"
-										 class="form-control-sm" 	th:field="*{dob}" disabled />
+										 class="form-control-sm" 	th:field="*{dob}" readonly />
 
 								</div>
 
@@ -1017,7 +1017,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="marital_status" id="marital_status"
-										th:value="${pmview?.marital_status}" class="form-control-sm" disabled />
+										th:value="${pmview?.marital_status}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1031,7 +1031,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="mobile_no" id="mobile_no"
-										th:value="${pmview?.mobile_no}" class="form-control-sm" disabled />
+										th:value="${pmview?.mobile_no}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -1040,7 +1040,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="email_id" id="email_id"
-										th:value="${pmview?.email_id}" class="form-control-sm" disabled />
+										th:value="${pmview?.email_id}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1054,7 +1054,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="passport_no" id="passport_no"
-										th:value="${pmview?.passport_no}" class="form-control-sm" disabled />
+										th:value="${pmview?.passport_no}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -1063,7 +1063,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="addr" id="addr"
-										th:value="${pmview?.addr}" class="form-control-sm" disabled />
+										th:value="${pmview?.addr}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1083,7 +1083,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="academic_qual" id="academic_qual"
-										th:value="${pmview?.academic_qual}" class="form-control-sm" disabled />
+										th:value="${pmview?.academic_qual}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -1092,7 +1092,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="addl_qual" id="addl_qual"
-										th:value="${pmview?.addl_qual}" class="form-control-sm" disabled />
+										th:value="${pmview?.addl_qual}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1106,7 +1106,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="certification" id="certification"
-										th:value="${pmview?.certification}" class="form-control-sm" disabled />
+										th:value="${pmview?.certification}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -1115,7 +1115,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="skill_set" id="skill_set"
-										th:value="${pmview?.skill_set}" class="form-control-sm" disabled />
+										th:value="${pmview?.skill_set}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1129,7 +1129,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="capabilities" id="capabilities"
-										th:value="${pmview?.capabilities}" class="form-control-sm" disabled />
+										th:value="${pmview?.capabilities}" class="form-control-sm" readonly />
 
 								</div>
 
@@ -1138,7 +1138,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="experience" id="experience"
-										th:value="${pmview?.experience}" class="form-control-sm" disabled />
+										th:value="${pmview?.experience}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1153,7 +1153,7 @@ s
 								<div class="col-sm-2">
 									<input type="text" name="project_exposure"
 										id="project_exposure" th:value="${pmview?.project_exposure}"
-										class="form-control-sm" disabled />
+										class="form-control-sm" readonly />
 
 								</div>
 
@@ -1162,7 +1162,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="remarks" id="remarks"
-										th:value="${pmview?.remarks}" class="form-control-sm" disabled />
+										th:value="${pmview?.remarks}" class="form-control-sm" readonly />
 
 								</div>
 							</div>
@@ -1195,22 +1195,22 @@ s
     <!-- Thymeleaf iteration over pmlist -->
   <tr th:each="row : ${pmlist}">
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[0]}" disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[0]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[1]}" disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[1]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[2]}" disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[2]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[3]}" disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[3]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[4]}" disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[4]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[5]}" disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[5]}" readonly />
         </td>
         <!-- Add the minus circle icon for deletion if needed -->
         <!-- <td style="text-align: center;">
@@ -1262,25 +1262,25 @@ s
     <!-- Thymeleaf iteration over pmlist -->
   <tr th:each="row : ${pmlist2}">
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[0]}" disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[0]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[1]}" disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[1]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[2]}" disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[2]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[3]}" disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[3]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[4]}" disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[4]}" readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[5]}" disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[5]}" readonly />
         </td>
         <td style="text-align: center;">
-         <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[6]}" disabled />
+         <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[6]}" readonly />
         </td>
         <!-- Add the minus circle icon for deletion if needed -->
         <!-- <td style="text-align: center;">
@@ -1335,7 +1335,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="emp_id" id="emp_id"
-										th:value="${pmview?.emp_id}" class="form-control-sm"  disabled />
+										th:value="${pmview?.emp_id}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1344,7 +1344,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="emp_name" id="emp_name"
-										th:value="${pmview?.emp_name}" class="form-control-sm"  disabled />
+										th:value="${pmview?.emp_name}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1358,7 +1358,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="emp_desig" id="emp_desig"
-										th:value="${pmview?.emp_desig}" class="form-control-sm"  disabled />
+										th:value="${pmview?.emp_desig}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1367,7 +1367,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="emp_group" id="emp_group"
-										th:value="${pmview?.emp_group}" class="form-control-sm"  disabled />
+										th:value="${pmview?.emp_group}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1381,7 +1381,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="dob" id="dob"
-										 class="form-control-sm" th:field="*{dob}" disabled />
+										 class="form-control-sm" th:field="*{dob}" readonly />
 
 								</div>
 
@@ -1390,7 +1390,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="marital_status" id="marital_status"
-										th:value="${pmview?.marital_status}" class="form-control-sm"  disabled />
+										th:value="${pmview?.marital_status}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1404,7 +1404,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="mobile_no" id="mobile_no"
-										th:value="${pmview?.mobile_no}" class="form-control-sm"  disabled />
+										th:value="${pmview?.mobile_no}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1413,7 +1413,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="email_id" id="email_id"
-										th:value="${pmview?.email_id}" class="form-control-sm"  disabled />
+										th:value="${pmview?.email_id}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1427,7 +1427,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="passport_no" id="passport_no"
-										th:value="${pmview?.passport_no}" class="form-control-sm"  disabled />
+										th:value="${pmview?.passport_no}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1436,7 +1436,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="addr" id="addr"
-										th:value="${pmview?.addr}" class="form-control-sm"  disabled />
+										th:value="${pmview?.addr}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1456,7 +1456,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="academic_qual" id="academic_qual"
-										th:value="${pmview?.academic_qual}" class="form-control-sm"  disabled />
+										th:value="${pmview?.academic_qual}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1465,7 +1465,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="addl_qual" id="addl_qual"
-										th:value="${pmview?.addl_qual}" class="form-control-sm"  disabled />
+										th:value="${pmview?.addl_qual}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1479,7 +1479,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="certification" id="certification"
-										th:value="${pmview?.certification}" class="form-control-sm"  disabled />
+										th:value="${pmview?.certification}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1488,7 +1488,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="skill_set" id="skill_set"
-										th:value="${pmview?.skill_set}" class="form-control-sm"  disabled />
+										th:value="${pmview?.skill_set}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1502,7 +1502,7 @@ s
 
 								<div class="col-sm-2">
 									<input type="text" name="capabilities" id="capabilities"
-										th:value="${pmview?.capabilities}" class="form-control-sm"  disabled />
+										th:value="${pmview?.capabilities}" class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1511,7 +1511,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="experience" id="experience"
-										th:value="${pmview?.experience}" class="form-control-sm"  disabled />
+										th:value="${pmview?.experience}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1526,7 +1526,7 @@ s
 								<div class="col-sm-2">
 									<input type="text" name="project_exposure"
 										id="project_exposure" th:value="${pmview?.project_exposure}"
-										class="form-control-sm"  disabled />
+										class="form-control-sm"  readonly />
 
 								</div>
 
@@ -1535,7 +1535,7 @@ s
 								<div class="col-sm-2">
 
 									<input type="text" name="remarks" id="remarks"
-										th:value="${pmview?.remarks}" class="form-control-sm"  disabled />
+										th:value="${pmview?.remarks}" class="form-control-sm"  readonly />
 
 								</div>
 							</div>
@@ -1567,22 +1567,22 @@ s
 <tbody>
   <tr th:each="row : ${pmlist}">
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[0]}"  disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[0]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[1]}"  disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[1]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[2]}"  disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[2]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[3]}"  disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[3]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[4]}"  disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[4]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[5]}"  disabled />
+            <input type="text" class="form-control input-md" name="prev_orgn_1" th:value="${row[5]}"  readonly />
         </td>
   
         
@@ -1631,25 +1631,25 @@ s
 	 <tbody>
   <tr th:each="row : ${pmlist2}">
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[0]}"  disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[0]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[1]}"  disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[1]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[2]}"  disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[2]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[3]}"  disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[3]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[4]}"  disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[4]}"  readonly />
         </td>
         <td style="text-align: center;">
-            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[5]}"  disabled />
+            <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[5]}"  readonly />
         </td>
         <td style="text-align: center;">
-         <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[6]}"  disabled />
+         <input type="text" class="form-control input-md" name="proj_det_1" th:value="${row[6]}"  readonly />
         </td>
      
        

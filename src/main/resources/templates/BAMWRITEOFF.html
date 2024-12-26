@@ -95,7 +95,7 @@ legend {
     border-bottom: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -104,15 +104,15 @@ legend {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 .form-group {
@@ -224,13 +224,13 @@ legend {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -318,13 +318,13 @@ legend {
 																<th>S NO</th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Asset srl No" disabled></th>
+																	placeholder="Asset srl No" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Asset Name" disabled></th>
+																	placeholder="Asset Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Category" disabled></th>
+																	placeholder="Category" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>
@@ -827,7 +827,7 @@ legend {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${W?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -836,7 +836,7 @@ legend {
                 <input type="text" id="modifyuser" name="modify_user" 
                           th:value="${W?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -846,7 +846,7 @@ legend {
             <td class="col-sm-2" style="width: 112px;">
                 <input type="text" id="verifyuser" name="verify_user" 
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -857,7 +857,7 @@ legend {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${W?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -866,7 +866,7 @@ legend {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${W?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -875,7 +875,7 @@ legend {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${W?.verify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         

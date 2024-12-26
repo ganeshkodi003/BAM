@@ -93,7 +93,7 @@ fieldset {
 	opacity: 1;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -102,15 +102,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -119,7 +119,7 @@ fieldset {
 
 	$(function() {
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -166,13 +166,13 @@ fieldset {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -261,19 +261,19 @@ fieldset {
 												<tr class="filters">
 
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="Emp ID" disabled></th>
+														placeholder="Emp ID" readonly></th>
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="Emp Name" disabled></th>
+														placeholder="Emp Name" readonly></th>
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="OD Reference" disabled></th>
+														placeholder="OD Reference" readonly></th>
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="Record" disabled></th>
+														placeholder="Record" readonly></th>
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="From" disabled></th>
+														placeholder="From" readonly></th>
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="To" disabled></th>
+														placeholder="To" readonly></th>
 													<th><input type="text" class="form-control font-weight-bold"
-														placeholder="No. of Days" disabled></th>
+														placeholder="No. of Days" readonly></th>
 													<th>Select</th>
 												</tr>
 											</thead>
@@ -335,7 +335,7 @@ fieldset {
 													<input type="text" id="employeeId"
 														th:value="${onDutyList?.emp_id}" name="emp_id"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -345,7 +345,7 @@ fieldset {
 													<input type="text" id="employeeName"
 														th:value="${onDutyList?.emp_name}" name="emp_name"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -356,7 +356,7 @@ fieldset {
 													<input type="text" id="designation" name="emp_desig"
 														th:value="${onDutyList?.emp_desig}"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled />
+														readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -366,7 +366,7 @@ fieldset {
 													<input type="text" id="dateOfJoin"
 														th:value="${#dates.format(onDutyList?.date_of_join,'dd-MM-yyyy')}"
 														name="date_of_join" class="form-control form-control-sm"
-														autocomplete="false" disabled />
+														autocomplete="false" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -374,7 +374,7 @@ fieldset {
 													<label for="client">Client</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" id="client" name="client" disabled
+													<input type="text" id="client" name="client" readonly
 														th:value="${onDutyList?.client}"
 														class="form-control form-control-sm" autocomplete="off" />
 												</div>
@@ -384,7 +384,7 @@ fieldset {
 												</div>
 												<div class="col-sm-3">
 													<input name="project" id="project"
-														th:value="${onDutyList?.project}" disabled
+														th:value="${onDutyList?.project}" readonly
 														class="form-control form-control-sm">
 												</div>
 											</div>
@@ -394,7 +394,7 @@ fieldset {
 												</div>
 												<div class="col-sm-3">
 													<input name="od_category" id="category"
-														th:value="${onDutyList?.od_category}" disabled
+														th:value="${onDutyList?.od_category}" readonly
 														class="form-control form-control-sm">
 												</div>
 												<div class="col-sm-1"></div>
@@ -405,7 +405,7 @@ fieldset {
 													<input type="text" id="numOfDays" name="no_of_days"
 														th:value="${onDutyList?.no_of_days}"
 														class="form-control form-control-sm" autocomplete="false"
-														disabled />
+														readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -416,7 +416,7 @@ fieldset {
 													<input type="text" id="fromDate" name="od_from"
 														th:value="${#dates.format(onDutyList?.od_from,'dd-MM-yyyy')}"
 														class="form-control form-control-sm" autocomplete="off"
-														disabled required />
+														readonly required />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -426,7 +426,7 @@ fieldset {
 													<input type="text" id="toDate"
 														th:value="${#dates.format(onDutyList?.od_to,'dd-MM-yyyy')}"
 														name="od_to" class="form-control form-control-sm"
-														autocomplete="false" disabled />
+														autocomplete="false" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -437,7 +437,7 @@ fieldset {
 													<input type="text" id="userId"
 														class="form-control form-control-sm"
 														th:value="${onDutyList?.remarks}" name="remarks"
-														autocomplete="off" disabled required />
+														autocomplete="off" readonly required />
 												</div>
 												<div class="col-sm-6"></div>
 											</div>
@@ -474,10 +474,10 @@ fieldset {
 									</div>
 
 									<div class="card-footer text-center" >
-										<button class="btn btn-xs btn-primary" id="btnHome"
+										<button btn headerbutton id="btnHome"
 											onclick="home()">Home</button>
 
-										<button class="btn btn-xs btn-primary" id="btnBack"
+										<button btn headerbutton id="btnBack"
 											onclick="back()">Back</button>
 									</div>
 								</div>

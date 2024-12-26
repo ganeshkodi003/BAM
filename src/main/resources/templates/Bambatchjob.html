@@ -44,12 +44,14 @@
 
 <style>
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .btns {
 	float: right;
 	margin: 5px;
@@ -92,7 +94,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -101,15 +103,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -135,10 +137,10 @@ td {
 </style>
 <script th:inline="javascript">
 	/*<![CDATA[*/
-function previous(){
-		location.href='Batchjobs?formmode=prev';
+	function previous() {
+		location.href = 'Batchjobs?formmode=prev';
 	}
-		
+
 	$(function() {
 
 		$("#disableStartDate,#disableEndDate").datepicker({
@@ -164,7 +166,7 @@ function previous(){
 	}
 	function Headcode(a) {
 		var headcode = a.id;
-	//	alert(headcode)
+		//	alert(headcode)
 		location.href = 'Batchjobs?formmode=schedule&headcode=' + headcode;
 	}
 
@@ -348,13 +350,13 @@ function previous(){
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -420,16 +422,15 @@ function previous(){
 			</div>
 			<div class="col-sm-10">
 
-				<div class="container-fluid content" th:if="${formmode} == 'list' OR ${formmode} == 'prev'" >
+				<div class="container-fluid content"
+					th:if="${formmode} == 'list' OR ${formmode} == 'prev'">
 					<div class="row">
 						<form action="#" method="post" autocomplete="off"
 							style="width: 100%">
 							<div class="card">
-								<div class="panel panel-primary filterable">
-									<div class="card-header d-flex justify-content-between">
-										<h4
-											style="font-family: verdana; font-size: x-large; font-style: inherit;">Batch
-											Jobs - List</h4>
+								<div class="panel panel-primary filterable ">
+									<div class="card-header cardheader d-flex justify-content-between p-1">
+										<h4 class="headerh6 ">Batch Jobs - List</h4>
 									</div>
 
 									<div class="card-body p-0">
@@ -447,9 +448,10 @@ function previous(){
 													</tr>
 												</thead>
 												<tbody id="associatemonthly">
-												<TR  th:if="${batch} == 'no'" > 
-												<td COLSPAN="6" STYLE="TEXT-ALIGN:CENTER;"  >No Batch job schedule</td>
-												</TR>
+													<TR th:if="${batch} == 'no'">
+														<td COLSPAN="6" STYLE="TEXT-ALIGN: CENTER;">No
+															Batch job schedule</td>
+													</TR>
 													<tr th:each="Bamdocmana, iterStat : ${BAMBatchjobs}"
 														th:with="rowNum=${iterStat.index + 1}">
 														<td th:text="${'JOB00' + rowNum}"></td>
@@ -462,7 +464,7 @@ function previous(){
 
 														<td><input type="radio" th:id="${Bamdocmana?.srl_no}"
 															onclick="Headcode(this)"></td>
-																
+
 													</tr>
 												</tbody>
 											</table>
@@ -473,7 +475,8 @@ function previous(){
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 										<button type="button" class="btn headerbutton" id="btnHome"
-											onclick="previous()"th:if="${formmode}=='list'">Previous BATCH JOBS</button>
+											onclick="previous()" th:if="${formmode}=='list'">Previous
+											BATCH JOBS</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>
@@ -560,7 +563,7 @@ function previous(){
 													<label for="end_date">Last Run Date</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" 
+													<input type="text"
 														th:value="${#dates.format(lastrundate, 'dd-MM-yyyy')}"
 														id="end_date" class="form-control form-control-sm"
 														name="end_date" autocomplete="off" required="required" />
@@ -624,7 +627,7 @@ function previous(){
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary" onclick="submitaddform(this);"
+											btn headerbutton onclick="submitaddform(this);"
 											form="BAMBatchjobs" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -1330,12 +1333,12 @@ function previous(){
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submiteditform(this);" form="BAMBatchjobs"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitverifyform(this);" form="BAMBatchjobs"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -1344,72 +1347,63 @@ function previous(){
 
 									</div>
 								</div>
-																																			<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:object="${entryuser}" >
-    <table class="table no-border-table table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${entryuser?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${entryuser?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                         th:value="${entryuser?.verify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${entryuser?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${entryuser?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${entryuser?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
-            </td>
-        </tr>
-        
-    </table>
-									
-				</div>
-								
+								<!-- Conditionally display the table based on formmode  view-->
+								<div class="table-responsive" th:object="${entryuser}">
+									<table
+										class="table no-border-table table-bordered  table-hover table-sm"
+										style="margin-bottom: 10px; font-size: initial;">
+										<tr>
+											<td class="col-sm-2" style="text-align: right;"><font
+												size="2"><B>Entry User :</B></font></td>
+											<td class="col-sm-2"
+												style="width: 112px; margin-right: 20px;"><input
+												type="text" id="entryuser" name="entry_user"
+												th:value="${entryuser?.entry_user}"
+												style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+												readonly></td>
+											<td class="col-sm-2" style="text-align: right;"><font
+												size="2"><B>Modify User :</B></font></td>
+											<td class="col-sm-2" style="width: 112px;"><input
+												type="text" id="modifyuser" name="modify_user"
+												th:value="${entryuser?.modify_user}"
+												style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+												readonly></td>
+											<td class="col-sm-2" style="text-align: right;"><font
+												size="2"><B>Verify User :</B></font></td>
+											<td class="col-sm-2" style="width: 112px;"><input
+												type="text" id="verifyuser" name="verify_user"
+												th:value="${entryuser?.verify_user}"
+												style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+												readonly></td>
+										</tr>
+										<tr>
+											<td style="text-align: right;"><font size="2"><B>Entry
+														Time :</B></font></td>
+											<td style="width: 112px"><input type="text"
+												id="entrytime" name="entry_time"
+												th:value="${entryuser?.entry_time}"
+												style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+												readonly></td>
+											<td style="text-align: right;"><font size="2"><B>Modify
+														Time :</B></font></td>
+											<td style="width: 112px"><input type="text"
+												id="modifytime" name="modify_time"
+												th:value="${entryuser?.modify_time}"
+												style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+												readonly></td>
+											<td style="text-align: right;"><font size="2"><B>Verify
+														Time :</B></font></td>
+											<td style="width: 112px"><input type="text"
+												id="verifytime" name="verify_time"
+												th:value="${entryuser?.verify_time}"
+												style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+												readonly></td>
+										</tr>
+
+									</table>
+
+								</div>
+
 							</div>
 						</form>
 					</div>

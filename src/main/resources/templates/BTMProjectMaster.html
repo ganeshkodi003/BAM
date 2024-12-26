@@ -107,7 +107,7 @@ fieldset {
 	margin-top: 10px;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -116,15 +116,15 @@ fieldset {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -392,13 +392,13 @@ tr td:first-child:before {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -486,19 +486,19 @@ tr td:first-child:before {
 															<tr class="filters">
 																<th>SL.NO</th>
 																<th><input type="text" class="form-control"
-																	placeholder="Project Id" disabled></th>
+																	placeholder="Project Id" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Project Name" disabled></th>
+																	placeholder="Project Name" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Client Id" disabled></th>
+																	placeholder="Client Id" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Client Name" disabled></th>
+																	placeholder="Client Name" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Country" disabled></th>
+																	placeholder="Country" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="Start Date" disabled></th>
+																	placeholder="Start Date" readonly></th>
 																<th><input type="text" class="form-control"
-																	placeholder="End Date" disabled></th>
+																	placeholder="End Date" readonly></th>
 																<th style="font-size: .8rem">Status</th>
 																<th>Select</th>
 															</tr>
@@ -578,7 +578,7 @@ tr td:first-child:before {
 
 												<div class="col-sm-3">
 													<select id="group" class="form-control form-control-sm"
-														th:if="${formmode}=='view'" disabled="disabled">
+														th:if="${formmode}=='view'" readonly="readonly">
 
 														<option value="OTR">OTR</option>
 														<option value="PRD">PRD</option>
@@ -596,7 +596,7 @@ tr td:first-child:before {
 													</select> <input type="text" id="group"
 														class="form-control form-control-sm"
 														th:value="${adminprojectMaster?.groups}"
-														th:if="${formmode}=='view1'" disabled="disabled">
+														th:if="${formmode}=='view1'" readonly="readonly">
 
 													<select id="group" name="groups"
 														class="form-control form-control-sm"
@@ -645,7 +645,7 @@ tr td:first-child:before {
 												</div>
 												<div class="col-sm-3">
 													<select id="team" class="form-control form-control-sm"
-														th:if="${formmode}=='view'" disabled="disabled">
+														th:if="${formmode}=='view'" readonly="readonly">
 
 														<option value="BLRS">BLRS</option>
 														<option value="BTM">BTM</option>
@@ -1598,17 +1598,17 @@ tr td:first-child:before {
 										onclick="submitAddForm()">Submit</button>
 
 									<button th:if="${formmode}== 'edit'" type="button"
-										class="btn btn-xs btn-primary" id="btnSubmit"
+										btn headerbutton id="btnSubmit"
 										onclick="ModifyUserData();"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'delete'" type="button"
-										class="btn btn-xs btn-primary" form="expenseReport"
+										btn headerbutton form="expenseReport"
 										id="btnSubmit" onclick="deleteUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
 									<button th:if="${formmode}== 'verify'" type="button"
-										class="btn btn-xs btn-primary" form="adminProfileManager"
+										btn headerbutton form="adminProfileManager"
 										id="btnSubmit" onclick="verifyUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 

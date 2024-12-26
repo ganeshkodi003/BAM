@@ -93,7 +93,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -102,15 +102,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -352,13 +352,13 @@ td {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -583,7 +583,7 @@ function handleSelectChange() {
 								<div class="panel panel-primary filterable">
 									<div class="card-header d-flex justify-content-between">
 										<h4
-											style="font-family: verdana; font-size: x-large; font-style: inherit;">Inventory
+											class="headerh6 ">Inventory
 											Transfer - List</h4>
 									</div>
 
@@ -1153,7 +1153,7 @@ function handleSelectChange() {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary" onclick="submitaddform(this);"
+											btn headerbutton onclick="submitaddform(this);"
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -1681,12 +1681,12 @@ function handleSelectChange() {
 
 <!-- 
 										<button th:if="${formmode}=='edit' AND ${operation} == 'operation'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submiteditform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button> -->
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitverifyform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button>
 

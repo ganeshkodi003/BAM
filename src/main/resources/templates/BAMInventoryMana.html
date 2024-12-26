@@ -93,7 +93,7 @@
 			border-bottom: 2px solid grey;
 		}
 
-		.filterable .filters input[disabled] {
+		.filterable .filters input[readonly] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -102,15 +102,15 @@
 			height: auto;
 		}
 
-		.filterable .filters input[disabled]::-webkit-input-placeholder {
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]::-moz-placeholder {
+		.filterable .filters input[readonly]::-moz-placeholder {
 			color: #333;
 		}
 
-		.filterable .filters input[disabled]:-ms-input-placeholder {
+		.filterable .filters input[readonly]:-ms-input-placeholder {
 			color: #333;
 		}
 	</style>
@@ -328,11 +328,11 @@ function submitaddform(b) {
 						if (deprFlag === "N" || deprFlag === "") {
 							//	 alert("empty")
 							deprMethod.value = ""; // Clear the selection
-							deprMethod.disabled = true; // Disable the select element
+							deprMethod.readonly = true; // Disable the select element
 						} else {
 							//alert(deprFlag)
 							//document.getElementById('depr_method').value = response.depreciation_method || '';
-							deprMethod.disabled = false; // Enable the select element
+							deprMethod.readonly = false; // Enable the select element
 						}
 
 					},
@@ -383,29 +383,29 @@ function submitaddform(b) {
 
 			if (deprFlag === "N" || deprFlag === "") {
 				deprMethod.value = ""; // Clear the selection
-				deprMethod.disabled = true; // Disable the select element
+				deprMethod.readonly = true; // Disable the select element
 				depr_freq.value = ""; // Clear the selection
-				depr_freq.disabled = true; // Disable the select element
+				depr_freq.readonly = true; // Disable the select element
 
 				depr_percent.value = ""; // Clear the selection
-				depr_percent.disabled = true; // Disable the select element
+				depr_percent.readonly = true; // Disable the select element
 				acc_depr.value = ""; // Clear the selection
-				acc_depr.disabled = true; // Disable the select element
+				acc_depr.readonly = true; // Disable the select element
 				date_of_last_depr.value = ""; // Clear the selection
-				date_of_last_depr.disabled = true; // Disable the select element
+				date_of_last_depr.readonly = true; // Disable the select element
 				nom_depr_amt.value = ""; // Clear the selection
-				nom_depr_amt.disabled = true; // Disable the select element
+				nom_depr_amt.readonly = true; // Disable the select element
 				depr_rmks.value = ""; // Clear the selection
-				depr_rmks.disabled = true; // Disable the select element
+				depr_rmks.readonly = true; // Disable the select element
 
 			} else if (deprFlag === "Y") {
-				deprMethod.disabled = false;
-				depr_freq.disabled = false; // Enable the select element
-				depr_percent.disabled = false;
-				acc_depr.disabled = false;
-				date_of_last_depr.disabled = false;
-				nom_depr_amt.disabled = false;
-				depr_rmks.disabled = false;
+				deprMethod.readonly = false;
+				depr_freq.readonly = false; // Enable the select element
+				depr_percent.readonly = false;
+				acc_depr.readonly = false;
+				date_of_last_depr.readonly = false;
+				nom_depr_amt.readonly = false;
+				depr_rmks.readonly = false;
 			}
 
 
@@ -426,30 +426,30 @@ function submitaddform(b) {
 
 				if (deprFlag === "N" || deprFlag === "") {
 					deprMethod.value = ""; // Clear the selection
-					deprMethod.disabled = true; // Disable the select element
+					deprMethod.readonly = true; // Disable the select element
 					depr_freq.value = ""; // Clear the selection
-					depr_freq.disabled = true; // Disable the select element
+					depr_freq.readonly = true; // Disable the select element
 
 					depr_percent.value = ""; // Clear the selection
-					depr_percent.disabled = true; // Disable the select element
+					depr_percent.readonly = true; // Disable the select element
 					acc_depr.value = ""; // Clear the selection
-					acc_depr.disabled = true; // Disable the select element
+					acc_depr.readonly = true; // Disable the select element
 					date_of_last_depr.value = ""; // Clear the selection
-					date_of_last_depr.disabled = true; // Disable the select element
+					date_of_last_depr.readonly = true; // Disable the select element
 					nom_depr_amt.value = ""; // Clear the selection
-					nom_depr_amt.disabled = true; // Disable the select element
+					nom_depr_amt.readonly = true; // Disable the select element
 					depr_rmks.value = ""; // Clear the selection
-					depr_rmks.disabled = true; // Disable the select element
+					depr_rmks.readonly = true; // Disable the select element
 
 				} else if (deprFlag === "Y") {
 					//handleSelectChanges();
-					deprMethod.disabled = false;
-					depr_freq.disabled = false; // Enable the select element
-					depr_percent.disabled = false;
-					acc_depr.disabled = false;
-					date_of_last_depr.disabled = false;
-					nom_depr_amt.disabled = false;
-					depr_rmks.disabled = false;
+					deprMethod.readonly = false;
+					depr_freq.readonly = false; // Enable the select element
+					depr_percent.readonly = false;
+					acc_depr.readonly = false;
+					date_of_last_depr.readonly = false;
+					nom_depr_amt.readonly = false;
+					depr_rmks.readonly = false;
 				}
 			}
 
@@ -1693,7 +1693,7 @@ function genflows() {
 								<div class="panel panel-primary filterable">
 									<div class="card-header1 border-bottom-0" >
 										<div class="float-left">
-											<h4 style="font-family: verdana; font-size: x-large; font-style: inherit;">
+											<h4 class="headerh6 ">
 												Inventory Master - List</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right" style="padding: 0 1.25rem 1rem 2rem;">
@@ -2085,7 +2085,7 @@ function genflows() {
 															th:value="${BAMInventorymaster?.depr_percent}"
 															id="depr_percent" class="form-control form-control-sm"
 															name="depr_percent" autocomplete="off" required="required"
-															disabled />
+															readonly />
 													</div>
 												</div>
 
@@ -2458,7 +2458,7 @@ function genflows() {
 														</div>
 														<div class="col-sm-3">
 															<select name="depreciation_method" id="dep_method"
-																class="form-control form-control-sm" Disabled>
+																class="form-control form-control-sm" readonly>
 																<option value="">SELECT</option>
 																<option value="SLM">SLM</option>
 																<option value="WDV">WDV</option>
@@ -2581,7 +2581,7 @@ function genflows() {
 
 
 
-										<button th:if="${formmode}=='add'" type="button" class="btn btn-xs btn-primary"
+										<button th:if="${formmode}=='add'" type="button" btn headerbutton
 											onclick="submitaddform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'">
 											Submit
@@ -2604,7 +2604,7 @@ function genflows() {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${BAMInventorymaster?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -2613,7 +2613,7 @@ function genflows() {
                 <input type="text" id="modifyuser" name="modify_user" 
                        th:value="${BAMInventorymaster?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -2624,7 +2624,7 @@ function genflows() {
                 <input type="text" id="verifyuser" name="verify_user" 
                        th:value="${BAMInventorymaster?.verify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -2635,7 +2635,7 @@ function genflows() {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${BAMInventorymaster?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -2644,7 +2644,7 @@ function genflows() {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${BAMInventorymaster?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -2653,7 +2653,7 @@ function genflows() {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${BAMInventorymaster?.verify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         
@@ -3329,12 +3329,12 @@ function genflows() {
 
 
 
-										<button th:if="${formmode}=='edit'" type="button" class="btn btn-xs btn-primary"
+										<button th:if="${formmode}=='edit'" type="button" btn headerbutton
 											onclick="submiteditform(this);" form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary" onclick="submitverifyform(this);"
+											btn headerbutton onclick="submitverifyform(this);"
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -3353,7 +3353,7 @@ function genflows() {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${BAMInventorymaster?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -3362,7 +3362,7 @@ function genflows() {
                 <input type="text" id="modifyuser" name="modify_user" 
                        th:value="${BAMInventorymaster?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -3373,7 +3373,7 @@ function genflows() {
                 <input type="text" id="verifyuser" name="verify_user" 
                        th:value="${BAMInventorymaster?.verify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -3384,7 +3384,7 @@ function genflows() {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${BAMInventorymaster?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -3393,7 +3393,7 @@ function genflows() {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${BAMInventorymaster?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -3402,7 +3402,7 @@ function genflows() {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${BAMInventorymaster?.modify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         

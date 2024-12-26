@@ -98,7 +98,7 @@ nav {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -154,7 +154,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -350,11 +350,11 @@ nav {
 		
 		   $("#attendanceType").change(function() {
 		    	if($("#attendanceType").val()=="Daily" ){
-		    		$("#associateName").attr("disabled", true);
+		    		$("#associateName").attr("readonly", true);
 		    		
-		    		$("#monthYear").attr("disabled", true);
+		    		$("#monthYear").attr("readonly", true);
 		    		
-		    		$("#year").attr("disabled", true);
+		    		$("#year").attr("readonly", true);
 		    		
 		    		$("#btngenerate").click(function(){
 		    		    
@@ -375,9 +375,9 @@ nav {
 		    		
 		    	}else if($("#attendanceType").val()=="Associate" ){
 		    		
-		    		$("#dailyDate").attr("disabled", true);
-		    		$("#associateName").attr("disabled", false);
-		    		$("#monthYear").attr("disabled", false);
+		    		$("#dailyDate").attr("readonly", true);
+		    		$("#associateName").attr("readonly", false);
+		    		$("#monthYear").attr("readonly", false);
 		    		
 		    		
 $("#btngenerate").click(function(){
@@ -406,10 +406,10 @@ var report_type = h.value;
 		    	
 else if($("#attendanceType").val()=="Monthly" ){
 		    		
-		    		$("#dailyDate").attr("disabled", true);
-		    		$("#associateName").attr("disabled", true);
-		    		$("#monthYear").attr("disabled", false);
-		    		$("#year").attr("disabled", false);
+		    		$("#dailyDate").attr("readonly", true);
+		    		$("#associateName").attr("readonly", true);
+		    		$("#monthYear").attr("readonly", false);
+		    		$("#year").attr("readonly", false);
 		    		var selectobject=document.getElementById("associateName")
 		    		  for (var i=0; i<selectobject.length; i++){
 		    		  if (selectobject.options[i].value == 'All' )
@@ -484,7 +484,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3">
 										<select id="attendanceType" class="form-control form-control-sm" required>
-											<option value=""disabled selected>Select</option>
+											<option value=""readonly selected>Select</option>
 											<option value="Associate">Associate</option>
 											<option value="Daily"  th:if="${RoleMenu?.role=='ADM'}">Daily</option>
 											<option value="Monthly">Monthly</option>
@@ -501,7 +501,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select id="associateName" class="form-control form-control-sm">
-											<option value=""disabled selected>Select</option>
+											<option value=""readonly selected>Select</option>
 											<option value="ALL">ALL</option>
 											<option th:each="user : ${allusers}"
 																th:value="${user.resource_id}"
@@ -510,7 +510,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}">
 										<select id="associateName" class="form-control form-control-sm">
-											<option value=""disabled selected>Select</option>
+											<option value=""readonly selected>Select</option>
 											<option selected
 																th:value="${session.USERID}"
 																th:text="${session.USERID+' '+session.USERNAME}"></option>
@@ -541,7 +541,7 @@ var report_type=h.value;
 									<div class="col-sm-2">
 										<select name="arr.monthYear" id="monthYear"
 											class="form-control form-control-sm">
-											<option value=""disabled selected>Month</option>
+											<option value=""readonly selected>Month</option>
 											<option value="01">January</option>
 											<option value="02">February</option>
 											<option value="03">March</option>
@@ -558,7 +558,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-2">
 										<select name="arr.year" id="year" class="form-control form-control-sm">
-											<option value=""disabled selected>Year</option>
+											<option value=""readonly selected>Year</option>
 											
 										</select>
 									</div>
@@ -574,7 +574,7 @@ var report_type=h.value;
 									<div class="col-sm-3">
 										<select name="arr.reportType" id="reportType"
 											class="form-control form-control-sm" required>
-											<option value=""disabled selected>Select</option>
+											<option value=""readonly selected>Select</option>
 											<option value="Pdf">Pdf</option>
 											<option value="Excel">Excel</option>
 										</select>
@@ -590,7 +590,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select name="arr.reportto" id="reportto" class="form-control form-control-sm" required>
-											<option value="Select"disabled selected>Select</option>
+											<option value="Select"readonly selected>Select</option>
 											<option th:each="user : ${allusers}"
 																th:value="${user.resource_id}"
 																th:text="${user.resource_id+' '+user.resource_name}"></option>
@@ -598,7 +598,7 @@ var report_type=h.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}">
 										<select name="arr.reportto" id="reportto" class="form-control form-control-sm" required>
-											<option  value="Select"disabled selected>Select</option>
+											<option  value="Select"readonly selected>Select</option>
 											<option selected
 																th:value="${session.USERID}"
 																th:text="${session.USERID+' '+session.USERNAME}"></option>

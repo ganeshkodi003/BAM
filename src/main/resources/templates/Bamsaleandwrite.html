@@ -93,7 +93,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -102,15 +102,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -342,13 +342,13 @@ td {
 														'.filterable'), $filters = $panel
 														.find('.filters input'), $tbody = $panel
 														.find('.table tbody');
-												if ($filters.prop('disabled') == true) {
+												if ($filters.prop('readonly') == true) {
 													$filters
-															.prop('disabled', false);
+															.prop('readonly', false);
 													$filters.first().focus();
 												} else {
 													$filters.val('').prop(
-															'disabled', true);
+															'readonly', true);
 													$tbody.find('.no-result')
 															.remove();
 													$tbody.find('tr').show();
@@ -534,7 +534,7 @@ function handleSelectChange() {
 								<div class="panel panel-primary filterable">
 									<div class="card-header d-flex justify-content-between">
 										<h4
-											style="font-family: verdana; font-size: x-large; font-style: inherit;">Sale and writeoff - List</h4>
+											class="headerh6 ">Sale and writeoff - List</h4>
 									</div>
 
 									<div class="card-body p-0">
@@ -1090,7 +1090,7 @@ function handleSelectChange() {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitaddform(this);" form="Bamsaleandwrite"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -1109,7 +1109,7 @@ function handleSelectChange() {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${Bamsaleandwrite?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -1118,7 +1118,7 @@ function handleSelectChange() {
                 <input type="text" id="modifyuser" name="modify_user" 
                           th:value="${Bamsaleandwrite?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -1127,7 +1127,7 @@ function handleSelectChange() {
                 <input type="text" id="verifyuser" name="verify_user" 
                          th:value="${Bamsaleandwrite?.verify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -1138,7 +1138,7 @@ function handleSelectChange() {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${Bamsaleandwrite?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -1147,7 +1147,7 @@ function handleSelectChange() {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${Bamsaleandwrite?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -1156,7 +1156,7 @@ function handleSelectChange() {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${BBamsaleandwrite?.verify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         
@@ -1651,12 +1651,12 @@ function handleSelectChange() {
 
 
 										<!-- <button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submiteditform(this);" form="Bamsaleandwrite"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 											
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitverifyform(this);" form="Bamsaleandwrite"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button> -->
 
@@ -1675,7 +1675,7 @@ function handleSelectChange() {
                 <input type="text" id="entryuser" name="entry_user" 
                        th:value="${Bamsaleandwrite?.entry_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Modify User :</B></font>
@@ -1684,7 +1684,7 @@ function handleSelectChange() {
                 <input type="text" id="modifyuser" name="modify_user" 
                           th:value="${Bamsaleandwrite?.modify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
@@ -1693,7 +1693,7 @@ function handleSelectChange() {
                 <input type="text" id="verifyuser" name="verify_user" 
                          th:value="${Bamsaleandwrite?.verify_user}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         <tr>
@@ -1704,7 +1704,7 @@ function handleSelectChange() {
                 <input type="text" id="entrytime" name="entry_time"
                        th:value="${Bamsaleandwrite?.entry_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Modify Time :</B></font>
@@ -1713,7 +1713,7 @@ function handleSelectChange() {
                 <input type="text" id="modifytime" name="modify_time"
                           th:value="${Bamsaleandwrite?.modify_time}"
                        style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
             <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
@@ -1722,7 +1722,7 @@ function handleSelectChange() {
                 <input type="text" id="verifytime" name="verify_time"
                        th:value="${Bamsaleandwrite?.verify_time}"
                        style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       disabled>
+                       readonly>
             </td>
         </tr>
         

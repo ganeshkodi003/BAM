@@ -91,7 +91,7 @@ fieldset {
 <script>
 $(document).ready(function(){
 	$('.mant').css('color', '#fbe4d2');
-	//$('.form-control').attr("disabled", true);
+	//$('.form-control').attr("readonly", true);
 if("admin"=='<%=request.getParameter("types")%>'){
 		
 	$("#tab_logic").attr("readonly", true);
@@ -105,7 +105,7 @@ if("admin"=='<%=request.getParameter("types")%>'){
 
 	$( "#btnmodify" ).click(function() {
 		$('.mant').css('color', 'red');
-		$('.form-control').attr("disabled", false);
+		$('.form-control').attr("readonly", false);
 		$( "#btnmodify" ).hide();
 		
 		
@@ -125,12 +125,12 @@ if("admin"=='<%=request.getParameter("types")%>'){
 	}
 	
 	if("admin"=='<%=request.getParameter("types")%>'){
-		$('.form-control').attr("disabled", true);
+		$('.form-control').attr("readonly", true);
 		
 		$("#btnmod").hide();
 	}
 	if("inquiries"=='<%=request.getParameter("types")%>'){
-		$('.form-control').attr("disabled", true);
+		$('.form-control').attr("readonly", true);
 		
 		$("#btnmod").hide();
 	}
@@ -221,13 +221,13 @@ if("admin"=='<%=request.getParameter("types")%>'){
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -1335,7 +1335,7 @@ function fnadd(){
 									</div>
 									<div class="col-sm-3" th:if="${formmode}=='Yes'">
 										<select name="year" id="dropdownYear1" class="form-control form-control-sm"required>
-											<option value="" disabled selected>Year</option>
+											<option value="" readonly selected>Year</option>
 											<option value="2023">2023</option>
 											<option value="2024">2024</option>
 											<option value="2025">2025</option>
@@ -1362,7 +1362,7 @@ function fnadd(){
 									<div class="col-sm-3" th:if="${formmode}=='Yes'">
 										<select name="month" id="month1"
 											class="form-control form-control-sm" required>
-											<option value="" disabled selected>Month</option>
+											<option value="" readonly selected>Month</option>
 											<option value="01">January</option>
 											<option value="02">February</option>
 											<option value="03">March</option>
@@ -1523,12 +1523,12 @@ function fnadd(){
 							
 									<div class="card-footer text-center border-top-0 bg-white"
 										style="background-color: unset">
-										<button class="btn btn-xs btn-primary" onclick="home(this);"
+										<button btn headerbutton onclick="home(this);"
 											id="btnModify">Home</button>
-										<button type="button" class="btn btn-xs btn-primary" onclick="fnadd();"
+										<button type="button" btn headerbutton onclick="fnadd();"
 											id="addSubmit">Submit</button>
 											
-										<button class="btn btn-xs btn-primary" form="userProfile"
+										<button btn headerbutton form="userProfile"
 											id="btnSubmit" onclick="back();">Back</button>
 									</div>
 								</div>

@@ -666,25 +666,25 @@ $("#MyModalBank").modal("toggle");
 													<div class="col-sm-4">
 														<select class="form-control" name="example" id="emp_id"
 															onload="assocciate__Click()">
-															<option disabled selected value="0">Employee Id</option>
+															<option readonly selected value="0">Employee Id</option>
 															<option selected th:value="${session.USERID}"
 																th:text="${session.USERID}"></option>
 														</select>
 													</div>
 													<div class="col-sm-4">
-														<!-- <select class="form-control mb-4" disabled="disabled">
+														<!-- <select class="form-control mb-4" readonly="readonly">
 															<option value="" id= "emp_name1">Employee Name</option>
 															<option></option>
 														</select> -->
 
-														<input class="form-control mb-4" disabled="disabled"
+														<input class="form-control mb-4" readonly="readonly"
 															id="emp_name1" placeholder="Employee Name"> </input>
 
 													</div>
 													<div class="col-sm-4">
 														<!-- <select class="form-control mb-4" id="allmonths1" onchange="assocciate__Click()"> -->
 														<select class="form-control mb-4"  id = "Months123" onchange="assocciate__Click()">
-															<option disabled selected value='0' >--Select Month--</option>
+															<option readonly selected value='0' >--Select Month--</option>
 															<option  value='01'>January -[[${Currentyear}]]</option>
 															<option value='02'>February -[[${Currentyear}]]</option>
 															<option value='03'>March -[[${Currentyear}]]</option>

@@ -95,7 +95,7 @@ legend {
     border-bottom: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -104,15 +104,15 @@ legend {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -121,7 +121,7 @@ legend {
 
 	$(function() {
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -169,13 +169,13 @@ legend {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -258,22 +258,22 @@ legend {
 													<tr class="filters">
 														<th><input type="text"
 															class="form-control font-weight-bold" placeholder="Srlno"
-															disabled></th>
+															readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Associate Id" disabled></th>
+															placeholder="Associate Id" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" placeholder="Name"
-															disabled></th>
+															readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Designation" disabled></th>
+															placeholder="Designation" readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold" placeholder="Group"
-															disabled></th>
+															readonly></th>
 														<th><input type="text"
 															class="form-control font-weight-bold"
-															placeholder="Amount" disabled></th>
+															placeholder="Amount" readonly></th>
 														<th>Select</th>
 													</tr>
 												</thead>
@@ -891,9 +891,9 @@ legend {
 									<div class="card-footer text-center"
 										style="background-color: #BBC3CB">
 										<button type="button" th:if="${formmode}=='view'"
-											class="btn btn-xs btn-primary" onclick="home();" id="btnHome">Home</button>
+											btn headerbutton onclick="home();" id="btnHome">Home</button>
 
-										<button type="button" class="btn btn-xs btn-primary"
+										<button type="button" btn headerbutton
 											th:if="${formmode}=='view'" id="btnback" onclick="back();">Back</button>
 									</div>
 								</div>

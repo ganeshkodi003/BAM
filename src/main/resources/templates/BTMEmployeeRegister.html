@@ -108,7 +108,7 @@ nav {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -164,7 +164,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -423,7 +423,7 @@ var reportto=x.value;
 									</div>
 									<div class="col-sm-3">
 										<select name="arr.reportto" id="reportto" class="form-control form-control-sm" required >
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option th:each="user : ${allusers}"
 																th:value="${user.resource_id}"
 																th:text="${user.resource_id+' '+user.resource_name}"></option>

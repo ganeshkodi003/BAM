@@ -98,7 +98,7 @@ nav {
 
 		});
 
-		$("#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+		$("#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 				.datepicker({
 					minDate : new Date(),
 					changeMonth : true,
@@ -154,7 +154,7 @@ nav {
 						$('.finuserapply').html(data);
 
 						$(
-								"#expiryDate,#disableDate,#disableTilDate,#passExDate,#effectiveTill")
+								"#expiryDate,#readonlyate,#disableTilDate,#passExDate,#effectiveTill")
 								.datepicker({
 									changeMonth : true,
 									changeYear : true,
@@ -370,7 +370,7 @@ var report_type = g.value;
 									</div>
 									<div class="col-sm-3">
 									<select name="arr.year" id="year" class="form-control form-control-sm" required>
-									<option selected disabled value="">Year</option>
+									<option selected readonly value="">Year</option>
 										
 									</select>
 									</div>
@@ -385,7 +385,7 @@ var report_type = g.value;
 									</div>
 									<div class="col-sm-3">
 										<select id="detailsRequired" class="form-control form-control-sm" required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option value="Yes">Yes</option>
 											<option value="No">No</option>
 										</select>
@@ -401,7 +401,7 @@ var report_type = g.value;
 									</div>
 									<div class="col-sm-3">
 										<select id="reportType" class="form-control form-control-sm" required>
-											<option disabled selected value="">Select</option>
+											<option readonly selected value="">Select</option>
 											<option value="Pdf">Pdf</option>
 											<option value="Excel">Excel</option>
 										</select>
@@ -417,7 +417,7 @@ var report_type = g.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role=='ADM'}">
 										<select name="arr.reportto" id="reportto" class="form-control form-control-sm" required>
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option th:each="user : ${allusers}"
 																th:value="${user.resource_id}"
 																th:text="${user.resource_id+' '+user.resource_name}"></option>
@@ -425,7 +425,7 @@ var report_type = g.value;
 									</div>
 									<div class="col-sm-3" th:if="${RoleMenu?.role!='ADM'}">
 										<select name="arr.reportto" id="reportto" class="form-control form-control-sm" required>
-											<option disabled selected value="Select">Select</option>
+											<option readonly selected value="Select">Select</option>
 											<option selected
 																th:value="${session.USERID}"
 																th:text="${session.USERID+' '+session.USERNAME}"></option>

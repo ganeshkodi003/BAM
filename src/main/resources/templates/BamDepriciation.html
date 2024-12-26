@@ -85,7 +85,7 @@ nav {
 	border-bottom: 2px solid grey;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -94,15 +94,15 @@ nav {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 </style>
@@ -314,13 +314,13 @@ nav {
 														'.filterable'), $filters = $panel
 														.find('.filters input'), $tbody = $panel
 														.find('.table tbody');
-												if ($filters.prop('disabled') == true) {
+												if ($filters.prop('readonly') == true) {
 													$filters
-															.prop('disabled', false);
+															.prop('readonly', false);
 													$filters.first().focus();
 												} else {
 													$filters.val('').prop(
-															'disabled', true);
+															'readonly', true);
 													$tbody.find('.no-result')
 															.remove();
 													$tbody.find('tr').show();
@@ -394,7 +394,7 @@ nav {
 								<div class="panel panel-primary filterable">
 									<div class="card-header d-flex justify-content-between">
 										<h4
-											style="font-family: verdana; font-size: x-large; font-style: inherit;">Batch Jobs - List</h4>
+											class="headerh6 ">Batch Jobs - List</h4>
 									</div>
 
 									<div class="card-body p-0">
@@ -631,7 +631,7 @@ nav {
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitaddform(this);" form="BAMBatchjobs"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -1382,12 +1382,12 @@ nav {
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submiteditform(this);" form="BAMBatchjobs"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 											
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn btn-xs btn-primary"
+											btn headerbutton
 											onclick="submitverifyform(this);" form="BAMBatchjobs"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 

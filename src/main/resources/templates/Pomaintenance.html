@@ -128,7 +128,7 @@ label {
 	margin-bottom: 0;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -137,15 +137,15 @@ label {
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -506,13 +506,13 @@ $(function() {
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -765,22 +765,22 @@ $(function() {
 
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="PO No" disabled></th>
+																	placeholder="PO No" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="PO Delivery Date" disabled></th>
+																	placeholder="PO Delivery Date" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Employee Name" disabled></th>
+																	placeholder="Employee Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Employee Id" disabled></th>
+																	placeholder="Employee Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Project Manager" disabled></th>
+																	placeholder="Project Manager" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Status" disabled></th>
+																	placeholder="Status" readonly></th>
 
 															</tr>
 														</thead>
@@ -911,7 +911,7 @@ $(function() {
 														<button type="button" class="btn btn-xs btn-primary mr-2"
 															id="btnHome" onclick="home();">Home</button>
 
-														<button type="button" class="btn btn-xs btn-primary"
+														<button type="button" btn headerbutton
 															form="ilist" id="btnSubmit" onclick="submitform(this);"
 															th:attr="data-formmode=modifyI">Submit</button>
 
@@ -1108,7 +1108,7 @@ $(function() {
 												style="background-color: #BBC3CB">
 												<button type="button" class="btn btn-xs btn-primary mr-2"
 													id="btnHome" onclick="home();">Home</button>
-												<button type="button" class="btn btn-xs btn-primary"
+												<button type="button" btn headerbutton
 													id="btnSubmit" th:attr="data-po_id=${poidlist?.po_id}"
 													onclick="fmsubmitform(this);">Submit</button>
 
@@ -1147,27 +1147,27 @@ $(function() {
 
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="PO No" disabled></th>
+																	placeholder="PO No" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="PO Delivery Date" disabled></th>
+																	placeholder="PO Delivery Date" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Employee Name" disabled></th>
+																	placeholder="Employee Name" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Employee Id" disabled></th>
+																	placeholder="Employee Id" readonly></th>
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Project Manager" disabled></th>
+																	placeholder="Project Manager" readonly></th>
 
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Reasons" disabled></th>
+																	placeholder="Reasons" readonly></th>
 
 																<th><input type="text"
 																	class="form-control font-weight-bold"
-																	placeholder="Select" disabled></th>
+																	placeholder="Select" readonly></th>
 															</tr>
 														</thead>
 
@@ -1374,7 +1374,7 @@ $(function() {
 														<button type="button" class="btn btn-xs btn-primary mr-2"
 															id="btnHome" onclick="home();">Home</button>
 
-														<button type="button" class="btn btn-xs btn-primary"
+														<button type="button" btn headerbutton
 															form="resourceProfile" id="btnSubmit"
 															onclick="submitform(this);" th:attr="data-formmode=add">Submit</button>
 
@@ -1417,7 +1417,7 @@ $(function() {
 													<button type="button" class="btn btn-xs btn-primary mr-2"
 														id="btnHome" onclick="home();">Home</button>
 
-													<!--<button type="button" class="btn btn-xs btn-primary"
+													<!--<button type="button" btn headerbutton
 									form="resourceProfile" id="btnSubmit"
 									onclick="subform(this);" 
 									th:attr="data-formmode=${formmode}">Submit</button>-->
@@ -1455,7 +1455,7 @@ $(function() {
 													<button type="button" class="btn btn-xs btn-primary mr-2"
 														id="btnHome" onclick="home();">Home</button>
 
-													<button type="button" class="btn btn-xs btn-primary"
+													<button type="button" btn headerbutton
 														form="resourceProfile" id="btnSubmit"
 														onclick="submituploadform(this);"
 														th:attr="data-formmode=${formmode}">Upload</button>
@@ -1569,7 +1569,7 @@ $(function() {
 														<button type="button" class="btn btn-xs btn-primary mr-2"
 															id="btnHome" onclick="home();">Home</button>
 
-														<button type="button" class="btn btn-xs btn-primary"
+														<button type="button" btn headerbutton
 															form="resourceProfile" id="btnSubmit"
 															onclick="submitform(this);"
 															th:attr="data-formmode=modify">Submit</button>
@@ -1695,7 +1695,7 @@ $(function() {
 														<button type="button" class="btn btn-xs btn-primary mr-2"
 															id="btnHome" onclick="home();">Home</button>
 
-														<button type="button" class="btn btn-xs btn-primary"
+														<button type="button" btn headerbutton
 															form="glist" id="btnSubmit" onclick="submitform(this);"
 															th:attr="data-formmode=modifyg">Submit</button>
 
@@ -1879,7 +1879,7 @@ $(function() {
 														<button type="button" class="btn btn-xs btn-primary mr-2"
 															id="btnHome" onclick="home();">Home</button>
 
-														<button type="button" class="btn btn-xs btn-primary"
+														<button type="button" btn headerbutton
 															form="ilist" id="btnSubmit" onclick="submitform(this);"
 															th:attr="data-formmode=modifyI">Submit</button>
 
@@ -2059,7 +2059,7 @@ $(function() {
 														<button type="button" class="btn btn-xs btn-primary mr-2"
 															id="btnHome" onclick="home();">Home</button>
 
-														<button type="button" class="btn btn-xs btn-primary"
+														<button type="button" btn headerbutton
 															form="resourceProfile" id="btnSubmit"
 															onclick="submitform(this);" th:attr="data-formmode=edit">Submit</button>
 
@@ -2815,28 +2815,28 @@ $(function() {
 												<tr class="filters">
 													<th><input type="text"
 														class="form-control font-weight-bold" placeholder="PO No"
-														disabled style="font-size: 1rem;"></th>
+														readonly style="font-size: 1rem;"></th>
 													<th><input type="text"
 														class="form-control font-weight-bold"
-														placeholder="PO Date" disabled style="font-size: 1rem;"></th>
+														placeholder="PO Date" readonly style="font-size: 1rem;"></th>
 														<th><input type="text"
 														class="form-control font-weight-bold"
-														placeholder="PO Delivery Date" disabled style="font-size: 1rem;"></th>
+														placeholder="PO Delivery Date" readonly style="font-size: 1rem;"></th>
 													<th><input type="text"
 														class="form-control font-weight-bold"
-														placeholder="Employee Id" disabled
+														placeholder="Employee Id" readonly
 														style="font-size: 1rem;"></th>
 													<th><input type="text"
 														class="form-control font-weight-bold"
-														placeholder="Employee Name" disabled
+														placeholder="Employee Name" readonly
 														style="font-size: 1rem;"></th>
 													<th><input type="text"
 														class="form-control font-weight-bold"
-														placeholder="Project Manager" disabled
+														placeholder="Project Manager" readonly
 														style="font-size: 1rem;"></th>
 													<th><input type="text"
 														class="form-control font-weight-bold"
-														placeholder="PM Email Id" disabled
+														placeholder="PM Email Id" readonly
 														style="font-size: 1rem;"></th>
 													<th>Select</th>
 												</tr>

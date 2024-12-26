@@ -88,7 +88,7 @@ label {
 nav {
 	border-bottom: 2px solid grey;
 }
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -101,15 +101,15 @@ nav {
 background-clip: padding-box;
     border: 1px solid #ced4da;}
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 input:focus, textarea:focus{
@@ -309,13 +309,13 @@ background-color:white;
 													'.filterable'), $filters = $panel
 													.find('.filters input'), $tbody = $panel
 													.find('.table tbody');
-											if ($filters.prop('disabled') == true) {
+											if ($filters.prop('readonly') == true) {
 												$filters
-														.prop('disabled', false);
+														.prop('readonly', false);
 												$filters.first().focus();
 											} else {
 												$filters.val('').prop(
-														'disabled', true);
+														'readonly', true);
 												$tbody.find('.no-result')
 														.remove();
 												$tbody.find('tr').show();
@@ -1564,7 +1564,7 @@ var ctc =  $("#costToCompany11").val();
 									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
-									<button type="button" class="btn btn-xs btn-primary" th:if="${formmode}=='add'"
+									<button type="button" btn headerbutton th:if="${formmode}=='add'"
 										id="btnSubmit" style="width: 120px" onclick="addParamData();">Submit</button>
 
 								
@@ -2419,13 +2419,13 @@ var ctc =  $("#costToCompany11").val();
 									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
-									<button type="button" class="btn btn-xs btn-primary" th:if="${formmode}=='add'"
+									<button type="button" btn headerbutton th:if="${formmode}=='add'"
 										id="btnSubmit" style="width: 120px" onclick="addParamData();">Submit</button>
-									<button type="button" class="btn btn-xs btn-primary" th:if="${formmode}=='edit'" th:attr="srl_no= ${paramview.srl_no}"
+									<button type="button" btn headerbutton th:if="${formmode}=='edit'" th:attr="srl_no= ${paramview.srl_no}"
 										id="btnSubmit" style="width: 120px" onclick="editParamData(this);">Submit</button>
-									<button type="button" class="btn btn-xs btn-primary" th:if="${formmode}=='verify'" th:attr="srl_no= ${paramview.srl_no}"
+									<button type="button" btn headerbutton th:if="${formmode}=='verify'" th:attr="srl_no= ${paramview.srl_no}"
 										id="btnSubmit" style="width: 120px" onclick="verifyParamData(this);">Submit</button>
-									<button type="button" class="btn btn-xs btn-primary" th:if="${formmode}=='delete'" th:attr="srl_no= ${paramview.srl_no}"
+									<button type="button" btn headerbutton th:if="${formmode}=='delete'" th:attr="srl_no= ${paramview.srl_no}"
 										id="btnSubmit" style="width: 120px" onclick="del_ParamData(this);">Submit</button>
 
 								

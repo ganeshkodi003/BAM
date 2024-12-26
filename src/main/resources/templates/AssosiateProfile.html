@@ -19,7 +19,7 @@
 	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 <script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
@@ -3025,7 +3025,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 									<div class="col-sm-2">Category</div>
 									<div class="col-sm-2">
 
-										<select id="category" onchange="" name="category" disabled
+										<select id="category" onchange="" name="category" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.category}=='CON'"
 												value="CON">CON</option>
@@ -3206,7 +3206,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="group" onchange="" name="groups" disabled
+										<select id="group" onchange="" name="groups" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.groups}=='OTR'"
 												value="OTR">OTR</option>
@@ -3236,7 +3236,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">Team</div>
 									<div class="col-sm-2">
-										<select id="team" onchange="" name="team" disabled
+										<select id="team" onchange="" name="team" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.team}=='BLRS'"
 												value="BLRS">BLRS</option>
@@ -3325,7 +3325,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="designation" onchange="" name="design" disabled
+										<select id="designation" onchange="" name="design" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.design}=='DIR'"
 												value="DIR">DIR</option>
@@ -3372,7 +3372,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">Role</div>
 									<div class="col-sm-2">
-										<select id="role" onchange="" name="role" disabled
+										<select id="role" onchange="" name="role" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.role}=='ADM'"
 												value="ADM">ADM</option>
@@ -3406,7 +3406,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="qualification" onchange="" name="qual" disabled
+										<select id="qualification" onchange="" name="qual" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.qual}=='B.COM'"
 												value="B.COM">B.COM</option>
@@ -3523,7 +3523,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="gender" onchange="" name="gender" disabled
+										<select id="gender" onchange="" name="gender" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.gender}=='male'"
 												value="male">Male</option>
@@ -3539,7 +3539,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 									<div class="col-sm-2">Blood Group</div>
 									<div class="col-sm-2">
 										<select id="bloodGroup" onchange="" name="blood_group"
-											disabled class="form-control form-control-sm">
+											readonly class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.blood_group}=='A+'"
 												value="A+">A+</option>
 											<option th:selected="${AssosiateVerify?.blood_group}=='A-'"
@@ -3568,7 +3568,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 									<div class="col-sm-2">
 										<select id="maritalStatus" onchange="" name="marital_status"
-											disabled class="form-control form-control-sm">
+											readonly class="form-control form-control-sm">
 											<option
 												th:selected="${AssosiateVerify?.marital_status}=='single'"
 												value="single">Single</option>
@@ -3687,7 +3687,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="country" onchange="" name="country" disabled
+										<select id="country" onchange="" name="country" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.country}=='AF'"
 												value="AF">Afghanistan</option>
@@ -3792,7 +3792,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="country1" onchange="" name="loc_country" disabled
+										<select id="country1" onchange="" name="loc_country" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.loc_country}=='AF'"
 												value="AF">Afghanistan</option>
@@ -4014,7 +4014,7 @@ function validatePasswordFields(oldpass, newpass, conpass) {
 
 
 									<div class="col-sm-2">
-										<select id="channel_id" onchange="" name="channel_id" disabled
+										<select id="channel_id" onchange="" name="channel_id" readonly
 											class="form-control form-control-sm">
 											<option th:selected="${AssosiateVerify?.channel_id}=='All'"
 												value="All">All</option>

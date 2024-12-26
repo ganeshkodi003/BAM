@@ -332,10 +332,10 @@ label {
 											</table>
 										</div>
 										<div class="card-footer border-top-0 bg-white text-center">
-											<button type="button" class="btn btn-xs btn-primary"
+											<button type="button" btn headerbutton
 												id="btnHome" onclick="home();">Home</button>
 
-											<button type="button" class="btn btn-xs btn-primary"
+											<button type="button" btn headerbutton
 												id="btnBack" onclick="home();">Back</button>
 										</div>
 									</div>
@@ -1039,12 +1039,12 @@ label {
 
 										<div th:if="${formmode}=='add' OR ${formmode}=='edit'">
 											<button th:if="${formmode}== 'add'" type="button"
-												class="btn btn-xs btn-primary" form="resourceProfile"
+												btn headerbutton form="resourceProfile"
 												id="btnSubmit" onclick="submitform(this);"
 												th:attr="data-formmode=${formmode}">Submit</button>
 
 											<button th:if=" ${formmode}=='edit'" type="button"
-												class="btn btn-xs btn-primary" form="resourceProfile"
+												btn headerbutton form="resourceProfile"
 												id="btnSubmit" onclick="submiteditform(this);"
 												th:attr="data-formmode=${formmode}">Submit</button>
 										</div>

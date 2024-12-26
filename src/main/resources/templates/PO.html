@@ -60,7 +60,7 @@
 	box-shadow: none;
 }
 
-.filterable .filters input[disabled] {
+.filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
 	cursor: auto;
@@ -69,15 +69,15 @@
 	height: auto;
 }
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
+.filterable .filters input[readonly]::-webkit-input-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]::-moz-placeholder {
+.filterable .filters input[readonly]::-moz-placeholder {
 	color: #333;
 }
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
+.filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
 
@@ -117,13 +117,13 @@ $(document)
 										'.filterable'), $filters = $panel
 										.find('.filters input'), $tbody = $panel
 										.find('.table tbody');
-								if ($filters.prop('disabled') == true) {
+								if ($filters.prop('readonly') == true) {
 									$filters
-											.prop('disabled', false);
+											.prop('readonly', false);
 									$filters.first().focus();
 								} else {
 									$filters.val('').prop(
-											'disabled', true);
+											'readonly', true);
 									$tbody.find('.no-result')
 											.remove();
 									$tbody.find('tr').show();
@@ -203,40 +203,40 @@ $(document)
 											<tr class="filters" style= "width:120px;">
 												<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="PO No" disabled></th>
+															placeholder="PO No" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="PO Date" disabled></th>
+															placeholder="PO Date" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Expiry Date" disabled></th>
+															placeholder="Expiry Date" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="PO Extended" disabled></th>
+															placeholder="PO Extended" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Extension Date" disabled></th>
+															placeholder="Extension Date" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Extended Expiry Date" disabled></th>
+															placeholder="Extended Expiry Date" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Emp Id" disabled></th>
+															placeholder="Emp Id" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Emp Name" disabled></th>
+															placeholder="Emp Name" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Rate" disabled></th>
+															placeholder="Rate" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="PO Value" disabled></th>
+															placeholder="PO Value" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Email Id" disabled></th>
+															placeholder="Email Id" readonly></th>
 														<th><input type="text"style="font-size:0.9rem"
 															class="form-control font-weight-bold"
-															placeholder="Location" disabled></th>
+															placeholder="Location" readonly></th>
 												<th style="font-size:0.9rem">Status</th >
 												
 											</tr>
