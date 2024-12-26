@@ -351,7 +351,7 @@
 											</div>
 										</div>
 
-										<div class="card-footer text-center">
+										<div class="card-footer text-center p-0">
 											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home();">Home</button>
 
@@ -650,7 +650,7 @@
 
 											<div class="col-sm-2"></div>
 											<div class="col-sm-2">
-												<label for="dob">Book value on date of write off</label>
+												<label for="dob">Book value on write off</label>
 											</div>
 											<div class="col-sm-2">
 												<input type="text" id="employeeName" th:if="${formmode}=='view'"
@@ -713,7 +713,7 @@
 
 											<div class="col-sm-2"></div>
 											<div class="col-sm-2">
-												<label for="dob"> Department/Division Name</label>
+												<label for="dob"> Depart/Division Name</label>
 											</div>
 											<div class="col-sm-2">
 												<input type="text" id="employeeName" th:if="${formmode}=='view'"
@@ -771,8 +771,47 @@
 											onclick="back()">Back</button>
 
 									</div>
+									<div class="content m-2 " style="padding: 15px;">
+													<div class="row formline">
+														<label class="col-sm-2">Entry User</label>
+														<div class="col-sm-2">
+															<input type="text"   id="entry_user" name="entry_user" th:value="${W?.entry_user}"
+																class="form-control form-control-sm" autocomplete="off" readonly />
+														</div>
+														<label class="col-sm-2">Modify User</label>
+														<div class="col-sm-2"> 
+															<input type="text"   id="modify_user" name="modify_user" th:value="${W?.modify_user}"
+																class="form-control form-control-sm" autocomplete="off" readonly />
+														</div>
+														<label class="col-sm-2">Verify User</label>
+														<div class="col-sm-2">
+															<input type="text"   id="auth_user" name="auth_user"   th:value="${W?.verify_user}" 
+																class="form-control form-control-sm" autocomplete="off" readonly />
+														</div>
+													</div>
+													<div class="row formline mt-2">
+														<label class="col-sm-2">Entry Time</label>
+														<div class="col-sm-2">
+															<input type="text"  th:value="${W?.entry_time}"
+																id="entry_date" name="entry_time" class="form-control form-control-sm" autocomplete="off"
+																readonly />
+														</div>
+														<label class="col-sm-2">Modify Time</label>
+														<div class="col-sm-2">
+															<input type="text"  th:value="${W?.modify_time}"
+																id="modify_time" name="modify_time" class="form-control form-control-sm" autocomplete="off"
+																readonly />
+														</div>
+														<label class="col-sm-2">Verify Time</label>
+														<div class="col-sm-2">
+															<input type="text" id="auth_time" name="auth_time"
+															th:value="${W?.verify_time}"
+																class="form-control form-control-sm" autocomplete="off" readonly />
+														</div> 
+													</div>
+												</div>
 									<!-- Conditionally display the table based on formmode  view-->
-									<div class="table-responsive"
+									<!--<div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
 										<table class="table  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
@@ -798,8 +837,8 @@
 												<td class="col-sm-2" style="text-align: right;">
 													<font size="2"><B>Verify User :</B></font>
 												</td>
-												<!-- 
-                         th:value="${W?.verify_user}" -->
+												 
+                         th:value="${W?.verify_user}" 
 												<td class="col-sm-2" style="width: 112px;">
 													<input type="text" id="verifyuser" name="verify_user"
 														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
@@ -837,7 +876,7 @@
 											</tr>
 
 										</table>
-									</div>
+									</div>-->
 
 								</div>
 							</form>

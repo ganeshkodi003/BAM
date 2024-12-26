@@ -421,7 +421,7 @@
 								<div class="card-header p-0">
 									<div class="d-flex justify-content-between align-items-center">
 										<div>
-											<h3 class="btn btn-sm mr-2 headerbutton mt-1">ACQUISTION - LIST
+											<h3 class="btn btn-sm headerbutton">ACQUISITION - LIST
 											</h3>
 										</div>
 										<button type="button" class="btn btns btn-filter headerbutton">Filter</button>
@@ -430,22 +430,22 @@
 								<div class="panel panel-primary filterable">
 
 									<div class="card-body p-0">
-										<div class="table-responsive ">
-											<table class="table "> 
+										<div class="table-responsive">
+											<table class="table">
 												<thead>
 													<tr class="filters">
 														<th><input type="text" class="form-control font-weight-bold"
-																placeholder="Srl NO" readonly></th>
+																placeholder="Srl No" readonly></th>
 														<th><input type="text" class="form-control font-weight-bold"
 																placeholder="Asset Name" readonly></th>
 														<th><input type="text" class="form-control font-weight-bold"
-																placeholder="ASSET TYPE" readonly></th>
+																placeholder="Asset Type" readonly></th>
 														<th><input type="text" class="form-control font-weight-bold"
-																placeholder="ORGINAL COST" readonly></th>
+																placeholder="Original Cost" readonly></th>
 														<th><input type="text" class="form-control font-weight-bold"
 																placeholder="DEP.Method" readonly></th>
 														<th><input type="text" class="form-control font-weight-bold"
-																placeholder="Dep.%" readonly></th> 
+																placeholder="Dep.%" readonly></th>
 														<th class="pb-2 ">Select</th>
 													</tr>
 												</thead>
@@ -794,8 +794,44 @@
 											onclick="back();">Back</button>
 
 									</div>
+									<div class="content m-2 " style="padding: 15px;">
+										<div class="row formline">
+											<label class="col-sm-2">Entry User</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_user" name="entry_user" th:value="${BamAcquisition?.entry_user}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Modify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_user" name="modify_user" th:value="${BamAcquisition?.modify_user}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Verify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_user" name="auth_user"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+										</div>
+										<div class="row formline mt-2">
+											<label class="col-sm-2">Entry Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_date" name="entry_time" th:value="${BamAcquisition?.entry_time}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Modify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_time" name="modify_time"  th:value="${BamAcquisition?.modify_time}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Verify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_time" name="auth_time" th:value="${BamAcquisition?.verify_time}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+										</div>
+									</div>
 									<!-- Conditionally display the table based on formmode  view-->
-									<div class="table-responsive"
+									<!--<div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
 										<table class="table no-border-table table-bordered  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
@@ -819,7 +855,7 @@
 												<td class="col-sm-2" style="text-align: right;">
 													<font size="2"><B>Verify User :</B></font>
 												</td>
-												<!-- th:value="${BamAcquisition?.verify_user}" -->
+												 th:value="${BamAcquisition?.verify_user}" 
 												<td class="col-sm-2" style="width: 112px;"><input type="text"
 														id="verifyuser" name="verify_user"
 														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
@@ -854,7 +890,7 @@
 
 										</table>
 
-									</div>
+									</div>-->
 
 								</div>
 							</div>
