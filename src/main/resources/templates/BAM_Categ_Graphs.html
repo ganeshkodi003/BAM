@@ -1,0 +1,304 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css" th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css" th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css" th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+    <script src="/webjars/popper.js/1.14.7/umd/popper.min.js" th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+    <script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+    <script src="/webjars/jquery-form/4.2.2/jquery.form.min.js" th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+    <script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js" th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+    <script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js" th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+    <script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js" th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+    <style>
+        .status-verified {
+            color: green;
+        }
+
+        .status-pending {
+            color: red;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 129%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        .btns {
+            float: right;
+            margin: 5px;
+        }
+
+        .col-sm-5 {
+            padding-bottom: 15px;
+        }
+
+        .list-body {
+            padding: 0px;
+        }
+
+        .error {
+            color: red;
+            padding-left: 10px;
+        }
+
+        .formline {
+            padding-bottom: 4px;
+        }
+
+        #finusertb {
+            width: 460px;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0px;
+        }
+
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            border: 2px solid skyblue !important;
+            border-bottom: unset !important;
+            background-color: unset !important;
+            color: black !important;
+        }
+
+        nav {
+            border-bottom: 2px solid grey;
+        }
+
+        fieldset {
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .filterable .filters input[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: auto;
+            box-shadow: none;
+            padding: 0;
+            height: auto;
+        }
+
+        .filterable .filters input[disabled]::-webkit-input-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]::-moz-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]:-ms-input-placeholder {
+            color: #333;
+        }
+
+        td input {
+            border: 1px solid #ced4da;
+        }
+
+        .total {
+            display: flex;
+            text-align: center;
+            padding-top: 20px;
+            padding-left: 250px;
+        }
+
+        .inp {
+            border: none;
+            outline: none;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        /* Custom CSS to remove space between label and select box */
+        .pr-0 {
+            padding-right: 0 !important;
+        }
+
+        .pl-1 {
+            padding-left: 4px !important;
+        }
+
+        .row.formline {
+            margin-bottom: 0;
+        }
+        #myPieChart {
+        width: 500px !important;
+        height: 500px !important;
+    }
+    </style>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        function home() {
+            location.href = 'Dashboard'
+        }
+
+        function back() {
+            window.history.back();
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <div th:insert="BTMHeaderMenu :: header"></div>
+            </div>
+            <div class="col-sm-10">
+                <div class="container-fluid content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form action="#" th:object="${asset_flows}" method="POST" autocomplete="off" id="asset_flows">
+                                <div class="card">
+                                    <div class="card-header" style="background-color: #BBC3CB;">
+                                        <div class="float-left">
+                                            <h3>Categories - pie chart</h3>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <fieldset>
+    									<div class="form-inline">
+    									
+        								<label for="month" class="mr-2">Select YEAR:</label>
+        								<select name="year" id="year" class="form-control form-control-sm" style="margin-left:250px; width:250px;">
+								            <option value="">Select</option>
+								            <option value="2015">2015</option>
+								            <option value="2016">2016</option>
+								            <option value="2017">2017</option>
+								            <option value="2018">2018</option>
+								            <option value="2019">2019</option>
+								            <option value="2020">2020</option>
+								            <option value="2021">2021</option>
+								            <option value="2022">2022</option>
+								            <option value="2023">2023</option>
+								            <option value="2024">2024</option>
+        								</select>
+    									</div>
+									</fieldset>
+                                        
+                                        <fieldset style="width: 55%; transform: translateX(280px);">
+                                            <canvas id="myPieChart"></canvas>
+                                            <div class="total">
+                                                <p><b>total Value:
+                                                        <input class="inp" type="text" id="total" />
+                                                    </b></p>
+                                            </div>
+                                        </fieldset>
+                                        <div class="card-footer text-center" style="background-color: #BBC3CB;">
+                                            <button type="button" class="btn btn-primary" id="btnHome" onclick="home()">Home</button>
+                                            <button type="button" class="btn btn-primary" id="btnBack" onclick="back()">Back</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var ctx = document.getElementById('myPieChart').getContext('2d');
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Furniture & Fittings', 'Machinery & Plant', 'Premises'],
+                    datasets: [{
+                        data: [0, 0, 0],
+                        backgroundColor: ['#FFC0CB', '#33FF57', '#3357FF'],
+                        borderColor:['#FF5733', '#33FF57', '#3357FF'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (tooltipItem) {
+                                    return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            function updateChart(data) {
+                myPieChart.data.datasets[0].data = data;
+                myPieChart.update();
+            }
+
+            
+            document.getElementById('year').addEventListener('change', function () {
+                var year = this.value;
+                fetchDataAndUpdateChart(year);
+            });
+
+            function fetchDataAndUpdateChart(year) {
+                if (year) {
+                    // Placeholder for fetching data based on selected month and year
+                    // Replace the following with actual data fetching logic
+                    $.ajax({
+                    	type:'GET',
+                    	url:"./Categ_Graphdata",
+                    	data:{year:year},
+                    	success:function(response){
+                    		          var totalinventory=response.totalinventory;
+                    		          //alert(totalinventory);
+                    		          var FurnitureFittings=response.FurnitureFittings;
+                    		          var MachineryPlant= response.MachineryPlant;
+                    		          var Premises= response.Premises;
+                    		          
+                    			if(totalinventory ==0 &&  FurnitureFittings==0 && MachineryPlant==0 && Premises==0 ){
+                    			alert("No Record found in this date");
+                    			location.reload();
+                    		}
+                    	
+                    		else{
+                    		total.value=totalinventory;
+                    		updateChart([FurnitureFittings,MachineryPlant,Premises]);
+                    		}
+                    	},
+                    	error: function(error) {
+                            console.error("Error fetching asset details:", error);
+                          
+                        }
+                    });
+                    }
+                    
+                }
+
+            
+        });
+    </script>
+</body>
+
+</html>

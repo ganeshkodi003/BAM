@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Transfer_Report" pageWidth="5000" pageHeight="5000" orientation="Landscape" columnWidth="4960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="029838d9-80e5-43a6-a08e-d56eaad8b299">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BAM.jrdax"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="FROM_SOL_ID" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM BAM_INVENTORY_TRANSAFER WHERE FROM_SOL_ID =$P{FROM_SOL_ID}]]>
+	</queryString>
+	<field name="ASST_SRL_NPO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_SRL_NPO"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_SRL_NPO"/>
+	</field>
+	<field name="ASST_XFR_REF_NO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_XFR_REF_NO"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_XFR_REF_NO"/>
+	</field>
+	<field name="ASST_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_NAME"/>
+	</field>
+	<field name="ASST_HEAD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_HEAD"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_HEAD"/>
+	</field>
+	<field name="ASST_CATEGORY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_CATEGORY"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_CATEGORY"/>
+	</field>
+	<field name="ASST_SUB_CATEGORY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_SUB_CATEGORY"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_SUB_CATEGORY"/>
+	</field>
+	<field name="ASST_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_TYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_TYPE"/>
+	</field>
+	<field name="ASST_CRNCY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_CRNCY"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_CRNCY"/>
+	</field>
+	<field name="DATE_OF_PURCHASE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DATE_OF_PURCHASE"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATE_OF_PURCHASE"/>
+	</field>
+	<field name="YEAR_OF_PURCHASE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="YEAR_OF_PURCHASE"/>
+		<property name="com.jaspersoft.studio.field.label" value="YEAR_OF_PURCHASE"/>
+	</field>
+	<field name="ORG_COST" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ORG_COST"/>
+		<property name="com.jaspersoft.studio.field.label" value="ORG_COST"/>
+	</field>
+	<field name="LIFE_SPAN_MTH" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="LIFE_SPAN_MTH"/>
+		<property name="com.jaspersoft.studio.field.label" value="LIFE_SPAN_MTH"/>
+	</field>
+	<field name="ASST_EXP_DATE" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_EXP_DATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_EXP_DATE"/>
+	</field>
+	<field name="ASST_RMKS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ASST_RMKS"/>
+		<property name="com.jaspersoft.studio.field.label" value="ASST_RMKS"/>
+	</field>
+	<field name="VENDOR_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VENDOR_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="VENDOR_NAME"/>
+	</field>
+	<field name="PURCHASE_DET" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PURCHASE_DET"/>
+		<property name="com.jaspersoft.studio.field.label" value="PURCHASE_DET"/>
+	</field>
+	<field name="DEPR_FLG" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEPR_FLG"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPR_FLG"/>
+	</field>
+	<field name="DEPR_FREQ" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEPR_FREQ"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPR_FREQ"/>
+	</field>
+	<field name="DEPR_METHOD" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEPR_METHOD"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPR_METHOD"/>
+	</field>
+	<field name="DEPR_PERCENT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="DEPR_PERCENT"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEPR_PERCENT"/>
+	</field>
+	<field name="ACC_DEPR" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="ACC_DEPR"/>
+		<property name="com.jaspersoft.studio.field.label" value="ACC_DEPR"/>
+	</field>
+	<field name="DAT_OF_LAST_DEPR" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DAT_OF_LAST_DEPR"/>
+		<property name="com.jaspersoft.studio.field.label" value="DAT_OF_LAST_DEPR"/>
+	</field>
+	<field name="DATE_OF_ACQN" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DATE_OF_ACQN"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATE_OF_ACQN"/>
+	</field>
+	<field name="DATE_OF_TFR" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="DATE_OF_TFR"/>
+		<property name="com.jaspersoft.studio.field.label" value="DATE_OF_TFR"/>
+	</field>
+	<field name="CUR_BOOK_VALUE_XFR_DATE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="CUR_BOOK_VALUE_XFR_DATE"/>
+		<property name="com.jaspersoft.studio.field.label" value="CUR_BOOK_VALUE_XFR_DATE"/>
+	</field>
+	<field name="MARKET_VALUE" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="MARKET_VALUE"/>
+		<property name="com.jaspersoft.studio.field.label" value="MARKET_VALUE"/>
+	</field>
+	<field name="FROM_CATEGORY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_CATEGORY"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_CATEGORY"/>
+	</field>
+	<field name="FROM_LOC_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_LOC_TYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_LOC_TYPE"/>
+	</field>
+	<field name="FROM_SOL_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_SOL_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_SOL_ID"/>
+	</field>
+	<field name="FROM_EMP_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_EMP_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_EMP_ID"/>
+	</field>
+	<field name="FROM_DEPT_DIV_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_DEPT_DIV_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_DEPT_DIV_NAME"/>
+	</field>
+	<field name="FROM_LOC_ADDR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_LOC_ADDR"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_LOC_ADDR"/>
+	</field>
+	<field name="FROM_LOC_RMKS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="FROM_LOC_RMKS"/>
+		<property name="com.jaspersoft.studio.field.label" value="FROM_LOC_RMKS"/>
+	</field>
+	<field name="TO_CATEGORY" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_CATEGORY"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_CATEGORY"/>
+	</field>
+	<field name="TO_LOC_TYPE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_LOC_TYPE"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_LOC_TYPE"/>
+	</field>
+	<field name="TO_SOL_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_SOL_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_SOL_ID"/>
+	</field>
+	<field name="TO_EMP_ID" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_EMP_ID"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_EMP_ID"/>
+	</field>
+	<field name="TO_DEPT_DIV_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_DEPT_DIV_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_DEPT_DIV_NAME"/>
+	</field>
+	<field name="TO_LOC_ADDR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_LOC_ADDR"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_LOC_ADDR"/>
+	</field>
+	<field name="TO_LOC_RMKS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="TO_LOC_RMKS"/>
+		<property name="com.jaspersoft.studio.field.label" value="TO_LOC_RMKS"/>
+	</field>
+	<field name="ENTRY_USER" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ENTRY_USER"/>
+		<property name="com.jaspersoft.studio.field.label" value="ENTRY_USER"/>
+	</field>
+	<field name="MODIFY_USER" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MODIFY_USER"/>
+		<property name="com.jaspersoft.studio.field.label" value="MODIFY_USER"/>
+	</field>
+	<field name="VERIFY_USER" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VERIFY_USER"/>
+		<property name="com.jaspersoft.studio.field.label" value="VERIFY_USER"/>
+	</field>
+	<field name="ENTRY_TIME" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="ENTRY_TIME"/>
+		<property name="com.jaspersoft.studio.field.label" value="ENTRY_TIME"/>
+	</field>
+	<field name="MODIFY_TIME" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="MODIFY_TIME"/>
+		<property name="com.jaspersoft.studio.field.label" value="MODIFY_TIME"/>
+	</field>
+	<field name="VERIFY_TIME" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="VERIFY_TIME"/>
+		<property name="com.jaspersoft.studio.field.label" value="VERIFY_TIME"/>
+	</field>
+	<field name="DEL_FLG" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DEL_FLG"/>
+		<property name="com.jaspersoft.studio.field.label" value="DEL_FLG"/>
+	</field>
+	<field name="ENTITY_FLG" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ENTITY_FLG"/>
+		<property name="com.jaspersoft.studio.field.label" value="ENTITY_FLG"/>
+	</field>
+	<field name="MODIFY_FLG" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="MODIFY_FLG"/>
+		<property name="com.jaspersoft.studio.field.label" value="MODIFY_FLG"/>
+	</field>
+	<background>
+		<band height="145" splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<summary>
+		<band height="140" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="70" width="1539" height="30" uuid="ef1e1dc8-3a8b-4e68-88a0-da43ea8da0b4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRANSFER REPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="1539" height="30" backcolor="#A6A6A6" uuid="5dd20ebf-c6c3-46be-9309-6558e35cada6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font fontName="Arial" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INVENTORY TRANSFER ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="1539" height="40" uuid="d0f573e6-822e-44e7-bea9-bb9e471c9ef5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="09b4632f-9a4c-4642-8f2e-9ae1933e5c88">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSET SRL NUM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1020" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="db69ea4c-1e0c-451a-8de9-d7497bcde59a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VENDER NAME]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1340" y="120" width="100" height="20" uuid="db87cbd3-ad06-4f3d-87ad-736fd3508841">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FROM_EMP_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1340" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="1b619309-dd7f-43c5-8905-dd9803df34ea">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FROM_EMP_ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="300" y="120" width="120" height="20" uuid="bde16f18-6786-467b-ba87-2659d951e1da">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASST_CRNCY}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="120" width="100" height="20" uuid="c316afef-a71c-496b-baa1-cd974b67ebb8">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASST_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="120" width="100" height="20" uuid="6bd9aed5-285a-4aef-9cbc-6f3af77dab45">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASST_SRL_NPO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="120" width="100" height="20" uuid="5c136fe9-7697-4708-b35b-4ef00ceac8a2">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ASST_TYPE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="9c58a51b-4ad3-418c-83f2-efee5849ed31">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSET TYPE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1440" y="120" width="99" height="20" uuid="5230e40c-8dc3-4522-a348-3da0636d6476">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TO_EMP_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1440" y="100" width="99" height="20" backcolor="#A6A6A6" uuid="ef3f3388-78b3-4316-8f4a-22f2984a4a6e">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO_EMP_ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="920" y="120" width="100" height="20" uuid="83ed8040-b62b-416f-ac21-a2a30d4c36d0">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FROM_LOC_ADDR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="820" y="120" width="100" height="20" uuid="8d89ce16-f0e6-4e3e-9221-4b5d227081da">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MARKET_VALUE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="720" y="120" width="100" height="20" uuid="5bf444df-5b6c-466d-bf05-22a34503989f">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEPR_FREQ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="920" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="32d4d9f5-5415-4a0a-ad9d-2957eb245ada">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURRENT BOOK VALUE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="86ca63de-ac60-4eb4-8471-042e94781bcc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSET NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="300" y="100" width="120" height="20" backcolor="#A6A6A6" uuid="8d7149e8-1007-4a60-be9f-d4b09dfb3469">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ASSET CURRENCY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="720" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="1b72b2ee-8cbf-43b2-a713-9b4488122b38">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPRECIATION FREQUENCY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="620" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="487b0ffb-4509-4df5-96ed-f019418d0aa4">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPRECIATION PERCENTAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="820" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="b74e3211-cab2-46e2-84e4-942336d60ca6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARKET VALUE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1020" y="120" width="100" height="20" uuid="33446029-49b4-41b7-b556-b0c17d9e2788">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{VENDOR_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="620" y="120" width="100" height="20" uuid="34796072-cec4-4195-9f3d-4e7fa31bf665">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEPR_PERCENT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="3e4a9d6e-b2c7-470b-a387-55e539e8e89f">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FROM SOL ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="120" width="100" height="20" uuid="23e9d592-e6d9-447e-bf5e-16919df23e08">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FROM_SOL_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="520" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="890b111d-ed29-481d-98ad-2522b28c4263">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TO SOL ID]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="520" y="120" width="100" height="20" uuid="1ebf2120-3d29-4efa-b318-ae839d953515">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TO_SOL_ID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1120" y="100" width="100" height="20" backcolor="#A6A6A6" uuid="bf0273d9-4a68-4389-9230-f0606cfa8009">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORIGINAL COST]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1120" y="120" width="100" height="20" uuid="da998d3b-18f1-42e4-b1fd-6aa3b804e7b4">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATE_OF_PURCHASE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1220" y="100" width="120" height="20" backcolor="#A6A6A6" uuid="d2c29c42-439d-435b-8667-95306289eb1d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE OF PURCHASE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1220" y="120" width="120" height="20" uuid="f62c38a5-58fb-4d44-9cf1-1f938ccdf7cc">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ORG_COST}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

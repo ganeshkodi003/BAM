@@ -1,0 +1,549 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+<script
+	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<style>
+.card-header1 {
+    padding: 1.75rem 1.25rem;
+    margin-bottom: 0;
+    /* background-color: rgba(0, 0, 0, .03); */
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+.pat{
+
+background-clip: padding-box;
+    border: 1px solid #ced4da;}
+.btns {
+	float: right;
+	margin: 5px;
+}
+
+.col-sm-5 {
+	padding-bottom: 15px;
+}
+
+.list-body {
+	padding: 0px;
+}
+
+.error {
+	color: red;
+	padding-left: 10px;
+}
+
+.formline {
+	padding-bottom: 4px;
+}
+
+#finusertb {
+	width: 460px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px;
+}
+</style>
+
+<script th:inline="javascript">
+	/*<![CDATA[*/
+
+	function home() {
+		location.href = 'Dashboard'
+	}
+
+	function back() {
+		window.history.back();
+	}
+
+	/* ================================ */
+
+	$.datepicker.setDefaults($.datepicker.regional["de"]);
+
+	$(function() {
+		$("#fromDate").datepicker({
+			dateFormat : "dd-M-y",
+			changeMonth : true,
+			numberOfMonths : 1,
+			gotoCurrent : true,
+			//minDate : new Date(),
+			//maxDate : "+1y",
+			onClose : function(selectedDate) {
+				$("#toDate").datepicker("option", "minDate", selectedDate);
+			}
+		});
+	});
+
+	$(function() {
+		$("#toDate").datepicker({
+			dateFormat : "dd-M-y",
+			changeMonth : true,
+			numberOfMonths : 1,
+			gotoCurrent : true,
+			maxDate : "+1y",
+			onClose : function(selectedDate) {
+				$("#fromDate").datepicker("option", "maxDate", selectedDate);
+			}
+		});
+	});
+	 function checkvalue(a) {
+		 let fromdate = $("#fromDate")
+														.val();
+												let todate = $("#toDate").val();
+												const dateA = moment(fromdate,
+														'DD-MMM-YY');
+												const dateB = moment(todate,
+														'DD-MMM-YY');
+												var result = Math.abs(dateA
+														.diff(dateB, 'days'))+1;
+											
+												var inputElements = document.getElementsByClassName('messageCheckbox');
+												for(var i=0; inputElements[i]; ++i){
+												      if(inputElements[i].checked){
+												          
+													 var h= document.getElementById('leave_counter'+i).value= '0.5';
+													 
+												      }else {
+												    	  var h1= document.getElementById('leave_counter'+i).value= '1.0';
+												     
+												}
+												
+												
+												}
+												var check_count=$(":checkbox:checked").length;
+												var value=check_count/2;
+												 $('#numOfDays').val(result-value);
+												
+}
+
+	
+	/* ================================  */
+
+	$(document)
+			.ready(
+					function() {
+
+						$("#fromDate,#toDate")
+								.change(
+										function() {
+											  // var getno_of_days = /*[[${getno_of_days}]]*/;
+										       
+											var approvalValue = [[${Approvalmail}]]
+											$('#leaveTable').html('');
+
+											if ($('#fromDate').val() != ''
+													&& $('#toDate').val() != '') {
+												let fromdate = $("#fromDate")
+														.val();
+												let todate = $("#toDate").val();
+												const dateA = moment(fromdate,
+														'DD-MMM-YY');
+												const dateB = moment(todate,
+														'DD-MMM-YY');
+												var result = Math.abs(dateA
+														.diff(dateB, 'days'));
+
+												$('#numOfDays').val(result + 1);
+
+												var getDaysBetweenDates = function(
+														dateA, dateB) {
+
+													var now = dateA.clone(), dates = [];
+													while (now
+															.isSameOrBefore(dateB)) {
+														dates
+																.push(now 
+																		.format('DD-MMM-YY'));
+														now.add(1, 'days');
+													}
+													return dates;
+												};
+
+												var dateList = getDaysBetweenDates(
+														dateA, dateB);
+
+												 for (var i = 0; i <= result; i++) {
+											            var d = new Date(dateList[i]);
+											            var weekday = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"];
+											            var dayinword = weekday[d.getDay()];
+
+											            var leaveDesc = (dayinword === "SATURDAY" || dayinword === "SUNDAY") ? "WEEK END" : "LEAVE";
+											            var Count = "1.0";
+
+											            // Start building the row HTML
+											            var rowHtml = '<tr>';
+											            rowHtml += '<td><input type="text" id="SrlNo" readonly class="form-control w-50" value="' + (i + 1) + '"></td>';
+											            rowHtml += '<td><input type="text" id="dutyDates" name="leave_date" readonly class="form-control" value="' + dateList[i] + '"></td>';
+											            rowHtml += '<td><input type="text" id="dutyDays" name="leave_day" readonly class="form-control" value="' + dayinword + '"></td>';
+											            rowHtml += '<td><input type="text" id="leaveDesc" readonly class="form-control" value="' + leaveDesc + '"></td>';
+											            rowHtml += '<td class="text-center"><input type="checkbox" id="' + i + '" class="messageCheckbox" onchange="checkvalue(this)" disabled></td>';
+											            rowHtml += '<td><input type="text" id="leave_counter' + i + '" name="leave_counter" readonly class="form-control w-50 tableData" value="1.0"></td>';
+											            
+											          
+
+											            // Close the row HTML
+											            rowHtml += '</tr>';
+
+											            // Append the constructed row to the table
+											            $('#leaveTable').append(rowHtml);
+											        }
+												$("#0").attr("disabled", false);
+												$("#"+result+"").attr("disabled", false);
+											}
+								   	
+										   	
+										});
+						
+						
+						
+					});
+
+
+
+
+
+	function addSubmit() {
+		if ($("#LeaveMaster").valid()) {
+
+			var url = "./leaveMasterAdd?formmode=add";
+			$("#LeaveMaster").attr('action', url);
+
+			var options = {
+				success : showResponse
+			};
+
+			$("#LeaveMaster").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+
+				$("#alertmsg").text(responseText);
+				$('#alert').modal({backdrop: 'static', keyboard: false}, 'show');
+				$('#alert').modal("toggle");
+			};
+			
+		}
+		
+		////Notification Mail Send for Approval
+		
+	     var email1 = $('#appr_email_1').val();
+		  var email2 = $('#appr_email_2').val();
+		  var email3 = $('#appr_email_3').val();
+		  var email4 = $('#appr_email_4').val();
+		  var email5 = $('#appr_email_5').val();
+		  if (email1 || email2 || email3 || email4 || email5) {
+		 
+		 $.ajax({
+				type : 'post',
+				url : "./mailsubmit?email1="+email1+"&email2="+email2+"&email3="+email3+"&email4="+email4+"&email5="+email5,
+				success : function(response) {
+//	alert(response)
+				}
+		 }); 
+		  }
+	};
+	   /*]]>*/
+</script>
+</head>
+<title>BTM</title>
+
+<body >
+	<div th:insert="BTMHeaderMenu :: header"></div>
+
+	<!---------------------User List Ends--------------------------------------------------------->
+	<!---------------------User Edit form Starts-------------------------------------------------->
+	<div class="container content">
+		<div class="row">
+			<div class="col-sm-12">
+				<form action="#" th:object="${LeaveMaster}" method="POST"
+					autocomplete="off" id="LeaveMaster">
+					<div class="card" style="WIDTH: 126%;">
+						<div class="card-header"style="background-color:#BBC3CB;">
+							<div class="float-left">
+								<h3>Leave Master</h3>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-3">
+										<label for="employeeId">Employee Id</label>
+									</div>
+									<div class="col-sm-3">
+
+										<input type="text" id="employeeId"
+											th:value="${profileManager?.employee_id}" name="employee_id"
+											class="form-control form-control-sm" autocomplete="off"
+											readonly /> 
+
+									</div>
+									<div class="col-sm-3">
+										<label for="employeeName">Employee Name</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="employee_name" id="employeeName"
+											th:value="${profileManager?.resource_name}"
+											class="form-control form-control-sm" autocomplete="off"
+											readonly />
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-3">
+										<label for="designation">Designation</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" id="designation"
+											th:value="${profileManager?.design}"
+											class="form-control form-control-sm" name="designation"
+											autocomplete="off" readonly />
+									</div>
+									<div class="col-sm-3">
+										<label for="dateOfJoin">Date Of Joining</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="date_of_join" id="dateOfJoin" 
+											th:value="${#dates.format(profileManager?.doj,'dd-MM-yyyy')}"
+											class="form-control form-control-sm" autocomplete="off"
+											readonly />
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-3">
+										<label for="leaveCategory">Leave Category</label>
+									</div>
+									<div class="col-sm-3">
+										<select class="form-control form-control-sm"
+											name="leave_category" required>
+											<option value="">Select</option>
+											<option value="CL">Casual Leave</option>
+											<option value="ML">Maternity Leave</option>
+											<option value="SL">Sick Leave</option>
+											<option value="PL">Paternity Leave</option>
+											<option value="YL">Yearly Leave</option>
+										</select>
+									</div>
+
+									<div class="col-sm-3">
+										<label for="numOfDays">No Of Days</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="no_of_days" id="numOfDays"
+											class="form-control form-control-sm" autocomplete="off"
+											readonly />
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-3">
+										<label for="fromDate">From Date</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="from_date" id="fromDate"
+											class="form-control form-control-sm" readonly required />
+									</div>
+
+									<div class="col-sm-3">
+										<label for="toDate">To Date</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="to_date" id="toDate"
+											class="form-control form-control-sm" readonly required />
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-3">
+										<label for="reasonLeave">Reason For Leave</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="reason_for_leave" id="reasonLeave"
+											class="form-control form-control-sm" autocomplete="off"
+											required />
+									</div>
+
+									<div class="col-sm-3">
+										<label for="remarks">Remarks</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="remarks" id="remarks"
+											class="form-control form-control-sm" autocomplete="off" />
+									</div>
+								</div>
+							</div>
+							<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-3">
+										<label for="leaveBalance">Remaining Leave Balance</label>
+									</div>
+									<div class="col-sm-3">
+										<input type="text" name="leave_blc" id="leaveBalance"
+											class="form-control form-control-sm" autocomplete="off"
+											readonly />
+									</div>
+									<div class="col-sm-6"></div>
+								</div>
+							</div>
+							<div class="table-responsive mt-4">
+								<table class="table table-bordered" id="tab">
+									<thead>
+										<tr>
+											<th style="width: 100px;">SI.No</th>
+											<th>Date</th>
+											<th>Day</th>
+											<th>Leave Description</th>
+											<th style="width: 100px;">Half Day</th>
+											<th>Count</th>
+											
+										</tr>
+									</thead>
+									<tbody id="leaveTable"></tbody>
+								</table>
+								<div class="card-header1"style="background-color:#BBC3CB;" th:if="${Approvalmail!=0}">
+							<div class="float-left">
+								<h3 style="transform: translateY(-14px);">Approval</h3>
+							</div>
+						</div>
+						<div class="card-body">
+								<div class="form-group mb-0">
+								<div class="row formline">
+									<div class="col-sm-1" th:if="${Approvalmail!=0}">
+										<label for="reasonLeave">Approval 1</label>
+									</div>
+									<div class="col-sm-2" th:if="${Approvalmail!=0}">		
+			<select id="appr_email_1" name="appr_email_1" class="pat" style="width: 100%;background-color: #f9fff6;" required>
+               <option value="">Select an email</option>
+                <th:block th:each="emailss : ${emails}">
+            <option th:value="${emailss.email}" th:text="${emailss.email}"></option>
+            </th:block>
+            </select>
+									</div>
+
+									<div class="col-sm-1" th:if="${Approvalmail!=0} and ${Approvalmail!=1}">
+										<label for="remarks">Approval 2</label>
+									</div>
+									<div class="col-sm-2" th:if="${Approvalmail!=0} and ${Approvalmail!=1}">
+										<select id="appr_email_2" name="appr_email_2" class="pat" style="width: 100%;background-color: #f9fff6;" required>
+               <option value="">Select an email</option>
+                <th:block th:each="emailss : ${emails}">
+            <option th:value="${emailss.email}" th:text="${emailss.email}"></option>
+            </th:block>
+            </select>
+									</div>
+									<div class="col-sm-1"  th:if="${Approvalmail!=0} and ${Approvalmail!=1} and ${Approvalmail!=2}">
+										<label for="remarks">Approval 3</label>
+									</div>
+									<div class="col-sm-2"  th:if="${Approvalmail!=0} and ${Approvalmail!=1} and ${Approvalmail!=2}">
+										<select id="appr_email_3" name="appr_email_3" class="pat" style="width: 100%;background-color: #f9fff6;" required>
+               <option value="">Select an email</option>
+                <th:block th:each="emailss : ${emails}">
+            <option th:value="${emailss.email}" th:text="${emailss.email}"></option>
+            </th:block>
+            </select>
+									</div>
+									<div class="col-sm-1" id="email44" th:if="${Approvalmail!=0} and ${Approvalmail!=1} and ${Approvalmail!=2} and ${Approvalmail!=3} ">
+										<label for="remarks">Approval 4</label>
+									</div>
+									<div class="col-sm-2" id="email44" th:if="${Approvalmail!=0} and ${Approvalmail!=1} and ${Approvalmail!=2} and ${Approvalmail!=3} ">
+										<select id="appr_email_4" name="appr_email_4" class="pat" style="width: 100%;background-color: #f9fff6;" required>
+               <option value="">Select an email</option>
+                <th:block th:each="emailss : ${emails}">
+            <option th:value="${emailss.email}" th:text="${emailss.email}"></option>
+            </th:block>
+            </select>
+									</div>
+									<div class="col-sm-1" th:if="${Approvalmail!=0} and ${Approvalmail!=1} and ${Approvalmail!=2} and ${Approvalmail!=3} and ${Approvalmail!=4}">
+										<label for="remarks">Approval 5</label>
+									</div>
+									<div class="col-sm-2" th:if="${Approvalmail!=0} and ${Approvalmail!=1} and ${Approvalmail!=2} and ${Approvalmail!=3} and ${Approvalmail!=4}">
+										<select id="appr_email_5" name="appr_email_5" class="pat" style="width: 100%;background-color: #f9fff6;" required>
+               <option value="">Select an email</option>
+                <th:block th:each="emailss : ${emails}">
+            <option th:value="${emailss.email}" th:text="${emailss.email}"></option>
+            </th:block>
+            </select>
+									</div>
+								</div>
+							</div>
+							</div>
+							</div>
+							<div class="card-footer text-center"style="background-color:#BBC3CB;">
+								<button class="btn btn-xs btn-primary" id="btnHome"
+									onclick="home();">Home</button>
+
+								<button type="button" class="btn btn-xs btn-primary"
+									id="btnSubmit1" onclick="addSubmit();">Submit</button>
+
+								<button class="btn btn-xs btn-primary" id="btnBack"
+									onclick="back();">Back</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class=" modal fade" id="alert">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+			<div class="menu-title-header">
+					<div class="modal-title" id="exampleModalLabel"
+						style="text-align: center; color: rgb(0, 0, 0);">Bornfire Manager</div>
+				</div>
+				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
+					<p id="alertmsg"></p>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						onclick="back();">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

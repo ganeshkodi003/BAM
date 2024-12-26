@@ -1,0 +1,316 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+
+
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+
+
+</head>
+<title>XBRL</title>
+<style>
+.customcol {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+table {
+	border-collapse: collapse;
+	border: 1px solid black;
+	border-color: #e9ecef;
+}
+
+.modal-backdrop {
+	background-color: +;
+	zoom: 1;
+}
+
+.addedit {
+	color: #007bff;
+}
+</style>
+
+
+<!----------------------------------------Scripts to edit report details-------------------------------------------->
+<script th:inline="javascript">
+	/*<![CDATA[*/
+
+	$(function() {
+
+		$("#repDate").datepicker({
+			changeMonth : true,
+			changeYear : true,
+			maxDate : new Date(),
+			dateFormat : "dd-mm-yy"
+		});
+
+	});
+
+	var permission = /*[[${session.PERMISSIONS}]]*/null;
+
+	function editRecord(a) {
+
+		if (permission == 'W') {
+
+			var url = /*[[@{'/bankmasteredit'}]]*/
+			$("#dataedit").attr('action', url);
+			//Assign selected values to the model box fields
+			$("#repDate").val(a.getAttribute("data-repdate"));
+			$("#tier1").val(a.getAttribute("data-tier1"));
+			$("#tier2").val(a.getAttribute("data-tier2"));
+			$("#tier3").val(a.getAttribute("data-tier3"));
+			$("#basedepositerate").val(a.getAttribute("data-base_deposit_rate"));
+			$("#stareserve").val(a.getAttribute("data-staturoty_reserve"));
+			$("#assignedcapital").val(a.getAttribute("data-assigned_capital"));
+			$("#assigned_capital_fc").val(a.getAttribute("data-assigned_capital_fc"));
+			$("#retained_earnings_fc").val(a.getAttribute("data-retained_earnings_fc"));
+			$("#other_reserves").val(a.getAttribute("data-other_reserves"));
+			$("#capital_base").val(a.getAttribute("data-capital_base"));
+			$("#base_loan_rate").val(a.getAttribute("data-base_loan_rate"));
+
+			$("#addedit").modal("toggle");
+
+			//Make readonly fields
+			$("#repDate").attr("readonly", true);
+
+		}
+
+	};
+	function addRecord() {
+
+		if (permission == 'W') {
+			//Assign action url for the edit/add form
+			var url = /*[[@{'bankmasteradd'}]]*/
+			$("#dataedit").attr('action', url);
+			//Reset form if any data present
+			document.getElementById("dataedit").reset();
+
+			//make readonly false to unique fields
+			//Make readonly fields
+			$("#repDate").attr("readonly", false);
+			$("#tier1").attr("readonly", false);
+			$("#tier2").attr("readonly", false);
+			$("#tier3").attr("readonly", false);
+			$("#basedepositerate").attr("readonly", false);
+			$("#stareserve").attr("readonly", false);
+			$("#assignedcapital").attr("readonly", false);
+			$("#assigned_capital_fc").attr("readonly", false);   
+			$("#retained_earnings_fc").attr("readonly", false);
+			$("#other_reserves").attr("readonly", false);
+			$("#capital_base").attr("readonly", false);
+			$("#base_loan").attr("readonly", false);
+
+			
+			$("#addedit").modal("toggle");
+
+		}
+	};
+
+	function deleteRecord(a) {
+
+		if (permission == 'W') {
+
+			//Assign action url for the edit/add form
+			var url = /*[[@{'bankmasterdelete'}]]*/
+			$("#dataedit").attr('action', url);
+
+			//Assign selected values to the model box fields
+			$("#repDate").val(a.getAttribute("data-repdate"));
+			$("#tier1").val(a.getAttribute("data-tier1"));
+			$("#tier2").val(a.getAttribute("data-tier2"));
+			$("#tier3").val(a.getAttribute("data-tier3"));
+			$("#basedepositerate").val(a.getAttribute("data-base_deposit_rate"));
+			$("#stareserve").val(a.getAttribute("data-staturoty_reserve"));
+			$("#assignedcapital").val(a.getAttribute("data-assigned_capital"));
+			$("#assigned_capital_fc").val(a.getAttribute("data-assigned_capital_fc"));
+			$("#retained_earnings_fc").val(a.getAttribute("data-retained_earnings_fc"));
+			$("#other_reserves").val(a.getAttribute("data-other_reserves"));
+			$("#capital_base").val(a.getAttribute("data-capital_base"));
+
+			$("#datadelete").modal("toggle");
+
+		}
+
+	};
+
+	function submitdataform() {
+  
+		var options = {
+			success : showResponse
+		// post-submit callback 
+		};
+
+		$('#dataedit').ajaxSubmit(options);
+
+		function showResponse(responseText, statusText, xhr, $form) {
+
+			$("#alertmsg").text(responseText);
+
+			if ($('#addedit').is(':visible')) {
+				$('#addedit').modal("hide");
+
+			}
+			;
+			if ($('#datadelete').is(':visible')) {
+				$('#datadelete').modal("hide");
+
+			}
+			;
+			$('#alert').modal("toggle");
+
+		}
+
+	}
+
+	/*]]>*/
+</script>
+<body>
+	<!----------------------------------------------------- Header Section starts ----------------------------------------------------->
+	<div th:insert="XBRLHeaderMenu :: header"></div>
+	<!----------------------------------------------------- Header Section Ends ------------------------------------------------------->
+	<i class="fa fa-question-circle" aria-hidden="true"
+		onclick="docEmb('Report')" id="ques"></i>
+	<div class="container content" th:fragment="reportcontent">
+
+		<div class="row">
+			<div class="col-sm-12 customcol">
+			  <div class="card" style="margin-left: -70px; width: 1400px;">
+					<div class="card-header">
+						<div class="float-left">
+							<h4>Service Audit</h4>
+						</div>
+						
+					</div>
+					<div class="card-body">
+					<div style="overflow-x: auto; border-right: 1px solid #dee2e6">
+						<table class="table table-hover table-sm" id="detailtb" style="width: 2000px;">
+							<thead class="thead-light">
+								<tr>
+									<!-- <th></th> -->
+										<th>Sl No</th>
+								    	<th>Audit Date</th>
+										<th>Entry Id</th>
+										<th>Entry Name</th>
+									    <th>Function</th>
+									    <th>Authoriser</th>
+									    <th>Feild Name</th>
+									    <th>Download Format</th>
+								        <th>Cust Type New</th>
+								        <th>Cust Type Old</th>
+								        <th>Cust Rate New</th>
+								        <th>Cust Rate Old</th>
+								        <th>Acc No New</th>
+								        <th>Acc No Old</th>
+								        <th>Acc Name New</th>
+								        <th>Acc Name Old</th>
+								        <th>Tran Type New</th>
+								        <th>Tran type Old</th>
+								        <th>Tran Stype New</th>
+								        <th>Tran Stype Old</th>
+								        <th>Tran Date New</th>
+								        <th>Tran Date Old</th>
+								        <th>Tran Id New</th>
+								        <th>Tran Id Old</th>
+								        <th>Part Tran Id New</th>
+								        <th>Part Tran Id Old</th>
+								        <th>Part Tran Type New</th>
+								        <th>Part Tran Type Old</th>
+								        <th>Tran Cur New</th>
+								        <th>Tran Cur Old</th>
+								        <th>Tran Amt New</th>
+								        <th>Tran Amt Old</th>
+								        <th>Tran category New</th>
+								        <th>Tran category Old</th>
+                                        <th>Remarks</th>
+								        
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="auditProfile,iterator : ${inlist}"
+									class="userlist" onmouseover="" style="cursor: pointer;">
+								    <td th:text="${auditProfile.sl_no}">123</td>
+                                    <td th:text="${auditProfile.date_delete}"></td>
+                                    <td th:text="${auditProfile.entry_id}">456</td>
+									<td th:text="${auditProfile.entry_name}">TEST</td>
+									<td th:text="${auditProfile.Function}">123</td>
+									<td th:text="${auditProfile.authorizer}">123</td>
+									<td th:text="${auditProfile.feild_name}">123</td>
+									<td th:text="${auditProfile.download_format}">123</td>
+																
+									<td th:text="${auditProfile.cust_type_new}">123</td>
+									<td th:text="${auditProfile.cust_type_old}">123</td>
+									<td th:text="${auditProfile.cust_rating_new}">123</td>
+									<td th:text="${auditProfile.cust_rating_old}">123</td>
+									<td th:text="${auditProfile.acct_no_new}">123</td>
+									<td th:text="${auditProfile.acct_no_old}">123</td>
+									<td th:text="${auditProfile.acct_name_new}">123</td>
+									<td th:text="${auditProfile.acct_name_old}">123</td>
+									<td th:text="${auditProfile.tran_type_new}">123</td>
+									<td th:text="${auditProfile.tran_type_old}">123</td>
+									<td th:text="${auditProfile.tran_sub_type_new}">123</td>
+									<td th:text="${auditProfile.tran_sub_type_old}">123</td>
+									<td th:text="${auditProfile.tran_date_new}">123</td>
+									<td th:text="${auditProfile.tran_date_old}">123</td>
+									<td th:text="${auditProfile.tran_id_new}">123</td>
+									<td th:text="${auditProfile.tran_id_old}">123</td>
+									<td th:text="${auditProfile.part_tran_id_new}">123</td>
+									<td th:text="${auditProfile.part_tran_id_old}">123</td>
+									<td th:text="${auditProfile.part_tran_type_new}">123</td>
+									<td th:text="${auditProfile.part_tran_type_old}">123</td>
+									<td th:text="${auditProfile.tran_crncy_new}">123</td>
+									<td th:text="${auditProfile.tran_crncy_old}">123</td>
+									<td th:text="${auditProfile.tran_amt_new}">123</td>
+									<td th:text="${auditProfile.tran_amt_old}">123</td>
+									<td th:text="${auditProfile.tran_category_new}">123</td>
+									<td th:text="${auditProfile.tran_category_old}">123</td>
+									<td th:text="${auditProfile.remarks}">123</td>
+
+									</th:block>
+								</tr>
+							</tbody>
+						</table>
+</div>
+
+ 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------------------------------- Modal for alert messages-------------------------------->
+	<div class="modal fade" id="alert">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-body" style="text-align: center">
+					<p id="alertmsg"></p>
+					<button type="button" class="btn btn-primary"
+						onclick="location.reload();" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--------------------------------------------------------------- Modal for alert messages-------------------------------->
+</body>
+</html>

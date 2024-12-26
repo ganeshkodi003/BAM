@@ -1,0 +1,221 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css" th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css" th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css" th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+    <script src="/webjars/popper.js/1.14.7/umd/popper.min.js" th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+    <script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+    <script src="/webjars/jquery-form/4.2.2/jquery.form.min.js" th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+    <script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js" th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+    <script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js" th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+    <script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js" th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+    
+    <style>
+    #myBarChart {
+        width: 450px !important;
+        height: 400px !important;
+    }
+
+    /* Ensure the card or the surrounding div does not force resizing */
+    .card-body {
+        overflow: hidden;
+    }
+    
+        .status-verified { color: green; }
+        .status-pending { color: red; }
+        .table-responsive { overflow-x: auto; }
+        .table { width: 129%; margin-bottom: 1rem; color: #212529; }
+        .btns { float: right; margin: 5px; }
+        .col-sm-5 { padding-bottom: 15px; }
+        .list-body { padding: 0px; }
+        .error { color: red; padding-left: 10px; }
+        .formline { padding-bottom: 4px; }
+        #finusertb { width: 460px; }
+        .dataTables_wrapper .dataTables_paginate .paginate_button { padding: 0px; }
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            border: 2px solid skyblue !important;
+            border-bottom: unset !important;
+            background-color: unset !important;
+            color: black !important;
+        }
+        nav { border-bottom: 2px solid grey; }
+        fieldset { border: 1px solid #CCC; border-radius: 5px; padding: 10px; margin-top: 10px; }
+        td input { border: 1px solid #ced4da; }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+         <div class="col-sm-2">
+                <div th:insert="BTMHeaderMenu :: header"></div>
+            </div>
+            <div class="col-sm-10">
+                <div class="container-fluid content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form action="#" method="POST" autocomplete="off" id="Depreciation">
+                                <div class="card">
+                                    <div class="card-header" style="background-color: #BBC3CB;">
+                                        <div class="float-left">
+                                            <h3>Depreciation - Comparison Graph</h3>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <fieldset>
+                                            <div class="form-group mb-0">
+                                                <div class="row formline">
+                                                    <div class="col-sm-3">
+                                                        <label for="year">Select a Year :</label>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <select name="year" id="year" class="form-control form-control-sm">
+                                                            <option value="">Select</option>
+                                                            <option value="2021">2021</option>
+                                                            <option value="2022">2022</option>
+                                                            <option value="2023">2023</option>
+                                                            <option value="2024">2024</option>
+                                                            <option value="2025">2025</option>
+                                                            <option value="2026">2026</option>
+                                                            <option value="2027">2027</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset style="width: 55%; transform: translateX(280px);">
+                                            <canvas id="myBarChart" width="400" height="400"></canvas>
+                                        </fieldset>
+                                        <div class="card-footer text-center" style="background-color: #BBC3CB;">
+                                            <button type="button" class="btn btn-primary" id="btnHome" onclick="home()">Home</button>
+                                            <button type="button" class="btn btn-primary" id="btnBack" onclick="back()">Back</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var ctx = document.getElementById('myBarChart').getContext('2d');
+            var myBarChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    datasets: [
+                        {
+                            label: 'Depreciation Assets',
+                            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                            backgroundColor: 'rgba(0, 51, 153, 1',
+                            borderColor: 'rgba(255, 192, 192, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'Depreciation Cost',
+                            data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                            backgroundColor: 'rgba(255, 159, 64, 255)',
+                            borderColor: 'rgba(255, 159, 64, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Update chart data based on the selected year
+            document.getElementById("year").addEventListener("change", updateChartData);
+
+            function updateChartData() {
+                var year = document.getElementById("year").value;
+                
+                if (year) {
+                    // Example: Fetch new data based on year selection (replace with actual logic)
+                    
+                    
+                    $.ajax({
+                    	type:'GET',
+                    	url:"./Dep_Graphdata",
+                    	data:{year:year},
+                    	success:function(response){
+                    		          var totalinventory=response.totalinventory;
+                    		          var ASSETCOUNTjan=response.finalassetjan;
+                    		          var ASSETCOUNTfeb=response.finalassetfeb;
+                    		          var ASSETCOUNTmar=response.finalassetmar;
+                    		          var ASSETCOUNTapr=response.finalassetapr;
+                    		          var ASSETCOUNTmay=response.finalassetmay;
+                    		          var ASSETCOUNTjun=response.finalassetjun;
+                    		          var ASSETCOUNTjul=response.finalassetjul;
+                    		          var ASSETCOUNTaug=response.finalassetaug;
+                    		          var ASSETCOUNTsep=response.finalassetsep;
+                    		          var ASSETCOUNToct=response.finalassetoct;
+                    		          var ASSETCOUNTnov=response.finalassetnov;
+                    		          var ASSETCOUNTdec=response.finalassetdec;
+                    		          
+                    		          
+                    		          
+                    		          
+                    		          var depjan =response.ASSETDepreciationjan;
+                    		          var depfeb =response.ASSETDepreciationfeb;
+                    		          var depmar =response.ASSETDepreciationmar;
+                    		          var depapr =response.ASSETDepreciationapr;
+                    		          var depmay =response.ASSETDepreciationmay;
+                    		          var depjun =response.ASSETDepreciationjun;
+                    		          var depjul =response.ASSETDepreciationjul;
+                    		          var depaug =response.ASSETDepreciationaug;
+                    		          var depsep =response.ASSETDepreciationsep;
+                    		          var depoct =response.ASSETDepreciationoct;
+                    		          var depnov =response.ASSETDepreciationnov;
+                    		          var depdec =response.ASSETDepreciationdec;
+                    		          var newInitialCostData = [ASSETCOUNTjan,ASSETCOUNTfeb,ASSETCOUNTmar,ASSETCOUNTapr , ASSETCOUNTmay,ASSETCOUNTjun,ASSETCOUNTjul,ASSETCOUNTaug,ASSETCOUNTsep, ASSETCOUNToct,ASSETCOUNTnov,ASSETCOUNTdec];
+                                      var newDepreciationCostData = [depjan,depfeb,depmar,depapr,depmay,depjun,depjul,depaug,depsep,depoct,depnov,depdec];
+                                      
+                                      // Update the chart data
+                                      myBarChart.data.datasets[0].data = newInitialCostData;
+                                      myBarChart.data.datasets[1].data = newDepreciationCostData;
+                                      myBarChart.update();
+                    		          
+                    	},
+                    	error: function(error) {
+                            console.error("Error fetching asset details:", error);
+                          
+                        }
+                    });
+                }
+            }
+            
+            
+        });
+        function home() {
+            location.href = 'Dashboard'
+        }
+
+        function back() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+
+</html>

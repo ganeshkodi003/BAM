@@ -1,0 +1,877 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+<script
+	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+
+<style>
+.btns {
+	float: right;
+	margin: 5px;
+}
+
+.col-sm-5 {
+	padding-bottom: 15px;
+}
+
+.list-body {
+	padding: 0px;
+}
+
+.error {
+	color: red;
+	padding-left: 10px;
+}
+
+.formline {
+	padding-bottom: 4px;
+}
+
+#finusertb {
+	width: 460px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	border: 2px solid skyblue !important;
+	border-bottom: unset !important;
+	background-color: unset !important;
+	color: black !important;
+	background-color: unset !important;
+}
+
+nav {
+	border-bottom: 2px solid grey;
+}
+
+fieldset {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+legend {
+    color: #3C6EAC;
+    font-size: 20px;
+    font-weight: bold !important;
+    text-align: left !important;
+    border-bottom: none;
+}
+
+.filterable .filters input[disabled] {
+	background-color: transparent;
+	border: none;
+	cursor: auto;
+	box-shadow: none;
+	padding: 0;
+	height: auto;
+}
+
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+	color: #333;
+}
+
+.filterable .filters input[disabled]::-moz-placeholder {
+	color: #333;
+}
+
+.filterable .filters input[disabled]:-ms-input-placeholder {
+	color: #333;
+}
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group label, .form-group input, .form-group select {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group input, .form-group select {
+    padding: 5px;
+    flex: 2;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.red-border {
+            border: 1px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            color: #A52A2A;
+        }
+        .red-border div {
+            display: flex;
+            justify-content: space-between;
+        }
+</style>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+	//DatePicker
+	$(function() {
+
+		$("#startDate,#endDate,#proposalDate").datepicker({
+
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : "dd-mm-yy"
+		});
+	});
+
+	function home() {
+		location.href = 'Dashboard'
+	}
+
+	function back() {
+		window.history.back();
+	}
+
+	function adduser() {
+		location.href = 'mtWorkAssignment?formmode=add';
+	}
+
+	function ListUser() {
+		location.href = 'mtWorkAssignment?formmode=list';
+	}
+
+	function modifyUser() {
+		location.href = 'mtWorkAssignment?formmode=list1';
+	}
+
+	function groupDropdown(a) {
+		$("#hideGroup").hide();
+		$("#showGroup").show();
+	}
+
+	function teamDropdown(a) {
+		$("#hideTeam").hide();
+		$("#showTeam").show();
+	}
+
+	$(document).ready(
+			function() {
+				$(".checkToView").on(
+						'click',
+						function() {
+
+							$(this).prop('checked', true);
+
+							var resId = $(this).val();
+
+							var formmode = "view";
+
+							location.href = 'Transfers?formmode='
+									+ formmode + '&AssetNo=' + resId;
+
+						});
+			});
+
+	//Filter Table
+
+	$(document)
+			.ready(
+					function() {
+						$('.filterable .btn-filter')
+								.click(
+										function(event) {
+											event.preventDefault();
+											var $panel = $(this).parents(
+													'.filterable'), $filters = $panel
+													.find('.filters input'), $tbody = $panel
+													.find('.table tbody');
+											if ($filters.prop('disabled') == true) {
+												$filters
+														.prop('disabled', false);
+												$filters.first().focus();
+											} else {
+												$filters.val('').prop(
+														'disabled', true);
+												$tbody.find('.no-result')
+														.remove();
+												$tbody.find('tr').show();
+											}
+										});
+
+						$('.filterable .filters input')
+								.keyup(
+										function(e) {
+											/* Ignore tab key */
+											var code = e.keyCode || e.which;
+											if (code == '9')
+												return;
+											/* Useful DOM data and selectors */
+											var $input = $(this), inputContent = $input
+													.val().toLowerCase(), $panel = $input
+													.parents('.filterable'), column = $panel
+													.find('.filters th')
+													.index($input.parents('th')), $table = $panel
+													.find('.table'), $rows = $table
+													.find('tbody tr');
+											/* Dirtiest filter function ever ;) */
+											var $filteredRows = $rows
+													.filter(function() {
+														var value = $(this)
+																.find('td').eq(
+																		column)
+																.text()
+																.toLowerCase();
+														return value
+																.indexOf(inputContent) === -1;
+													});
+											/* Clean previous no-result if exist */
+											$table.find('tbody .no-result')
+													.remove();
+											/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+											$rows.show();
+											$filteredRows.hide();
+											/* Prepend no-result row if all rows are filtered */
+											if ($filteredRows.length === $rows.length) {
+												$table
+														.find('tbody')
+														.prepend(
+																$('<tr class="no-result text-center"><td colspan="'
+																		+ $table
+																				.find('.filters th').length
+																		+ '">No result found</td></tr>'));
+											}
+										});
+					});
+					
+					function add(){
+						var formmode = "view";
+						var sub="add";
+
+						location.href = 'Transfers?formmode='
+								+ formmode + '&resId=' + resId +'&sub=' +sub;
+						
+					}
+</script>
+
+</head>
+<title>BTM</title>
+
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<div th:insert="BTMHeaderMenu :: header"></div>
+			</div>
+			<div class="col-sm-10">
+
+				<div class="container-fluid"
+					th:if="${formmode}=='list' OR ${formmode}=='list1'">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="container-fluid content">
+								<div class="row">
+									<div class="card w-100">
+
+										<div class="card-body p-0">
+
+											<div class="panel panel-primary filterable">
+												<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+													<h4> TRANSFER LIST</h4>
+													<button
+														class="btn text-white  btn-filter btn-primary">Filter</button>
+												</div>
+
+												<div class="table-responsive">
+													<table class="table bordered">
+														<thead>
+															<tr class="filters">
+																<th><input type="text"
+																	class="form-control font-weight-bold"
+																	placeholder="Asset srl No" disabled></th>
+																<th><input type="text"
+																	class="form-control font-weight-bold"
+																	placeholder="Asset Name" disabled></th>
+																<th><input type="text"
+																	class="form-control font-weight-bold"
+																	placeholder="Employee Id" disabled></th>
+																<th><input type="text"
+																	class="form-control font-weight-bold"
+																	placeholder="Current Book Val" disabled></th>
+																<th><input type="text"
+																	class="form-control font-weight-bold"
+																	placeholder="Asset Currency" disabled></th>
+																<th><input type="text"style="width:200px;"
+																	class="form-control font-weight-bold"
+																	placeholder="Purchase Date" disabled></th>
+																<th><input type="text"style="width:200px;"
+																	class="form-control font-weight-bold"
+																	placeholder="Purchase year" disabled></th>
+																<th>Select</th>
+															</tr>
+														</thead>
+
+														<tbody>
+																<tr th:each="InventoryMaster: ${InventoryMasterlist}">
+																<td th:text="${InventoryMaster?.assetSerialNumber}"></td>
+																<td th:text="${InventoryMaster?.assetName}"></td>
+																<td th:text="${InventoryMaster?.employeeId}"></td>
+																<td th:text="${InventoryMaster?.currentBookValue}"></td>
+																<td th:text="${InventoryMaster?.assetCurrency}"></td>
+																<td th:text="${InventoryMaster?.dateOfLastTransfer}"></td>
+																<td th:text="${InventoryMaster?.yearOfPurchase}"></td>
+																<td><input th:if="${formmode}=='list'"
+																	class="form-control-md checkToView"
+																	th:value="${InventoryMaster?.assetSerialNumber}" type="radio" /></td>
+																</tr>
+										
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+
+										<div class="card-footer text-center"style="background-color:#BBC3CB;">
+											<button type="button" class="btn btn-primary" id="btnHome"
+												onclick="home();">Home</button>
+
+											<button type="button" class="btn btn-primary" id="btnBack"
+												onclick="back();">Back</button>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="container-fluid content" th:if="${formmode}=='view'">
+					<div class="row">
+						<div class="col-sm-12 finuserapply">
+							<form action="#" th:object="${TRAN}" method="POST"
+								class="w-100" autocomplete="off" id="mtWorkAssignment">
+								<div class="card">
+									<div class="card-header"style="background-color:#BBC3CB;">
+										<div class="float-left">
+											<h3 th:if="${formmode}=='view'">INVENTORY TRANSFER</h3>
+										</div>
+										
+									</div>
+										
+										<div class="card-body">
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="employeeId">Asset Serial Number</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeId"
+															th:if="${formmode}=='view'"
+															th:value="${TRAN?.assetSerialNumber}"
+															class="form-control form-control-sm" >
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="employeeName">Transfer-Reference-Number:</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.transferReferenceNumber}"  />
+													</div>
+												</div>
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Asset Name:</label>
+													</div>
+													<div class="col-sm-2">
+														
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.assetName}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Description</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.description}"  /></div>
+												</div>
+												
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Asset Type</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.assetType}"  />													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Asset Currency</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.assetCurrency}"  />
+															</div>
+												</div>
+												
+												
+												
+												
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Date of Purchase</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.dateOfPurchase}"  />
+														</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Year of Purchase</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.yearOfPurchase}"  />
+														
+													</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Original Cost</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.originalCost}"  />
+														</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Life Span (Months)</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+
+															class="form-control form-control-sm"
+															th:value="${TRAN?.lifeSpanMonths}"  />
+																											</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Asset Expiry Date</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.assetExpiryDate}"  />
+														</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Asset Remarks</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.assetRemarks}"  />
+														</div>
+												</div>
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">vendor Name:</label>
+													</div>
+													<div class="col-sm-2">
+														
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.vendorName}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Purchase Details</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+
+															class="form-control form-control-sm"
+															th:value="${TRAN?.purchaseDetails}"  />
+														</div>
+												</div>
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Depreciation Flag</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.depreciationFlag}"  />
+														
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Depreciation Frequency</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.depreciationFrequency}"  />
+														</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Depreciation Method</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.depreciationMethod}"  />
+																											</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Depreciation Percentage</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.depreciationPercentage}"  />
+															</div>
+												</div>
+												
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Accumulated Depreciation</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.accumulatedDepreciation}"  />
+														</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Date of Last Depreciation</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.dateOfLastDepreciation}"  />
+														</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Date of Acquisition</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.dateOfAcquisition}"/>
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Date of Transfer:</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="employeeName"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.originalCost}"  />
+														</div>
+												</div>
+												
+																									
+																					
+													<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">cur Book val on trans date</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${#dates.format(TRAN?.dateOfLastTransfer,'dd-MM-yyyy')}" />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Market value</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.marketValue}"  />
+													</div>
+												</div>
+
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">From Category</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.category}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">From Location Type</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.locationType}"  />
+													</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">From Solid</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.solId}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">From Employee Id</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.employeeId}"  />
+													</div>
+												</div>
+
+
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">From Dep/Division  Name</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.departmentDivisionName}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">From Location Address</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.locationAddress}"  />
+													</div>
+												</div>
+
+
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">From Location Remarks</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.locationRemarks}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">To Categoty</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toCategory}"  />
+													</div>
+												</div>
+
+
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">To Location Type</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toLocationType}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">To Solid</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toSolid}"  />
+													</div>
+												</div>
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">To Employee id</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toEmployeeId}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">To Dep/Division Name</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toDepDivisionName}"  />
+													</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">To Location Address</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toLocationAddress}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">TO Location Remarks</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="designation"
+															class="form-control form-control-sm"
+															th:value="${TRAN?.toLocationRemarks}"  />
+													</div>
+												</div>
+												
+												
+												
+												
+												
+												
+												
+												
+												
+										
+										
+										
+										
+										
+										</div>									
+									
+									
+									
+										<div class="card-footer text-center"style="background-color:#BBC3CB;">
+
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="home()">Home</button>
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="add()">Add</button>
+											<div th:if="${formmode}=='submit'">
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back()">Submit</button>
+											</div>
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back()">Back</button>
+
+									</div>
+								</div>
+							</form>
+			<div class="red-border">
+            <div>
+                <span>Entry User:</span>
+                <span>Modify User:</span>
+                <span>Verify User:&nbsp;&nbsp;&nbsp;</span>
+            </div>
+            <div>
+                <span>Entry Date:</span>
+                <span>Modify Date:</span>
+                <span>Verify Date:;</span>
+            </div>
+        </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,1311 @@
+
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<!-- 
+	CREATED BY : ARANGULAVAN RAJENDRAN
+	USED FOR :Document Master -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+<script
+	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+
+<style>
+.btns {
+	float: right;
+	margin: 5px;
+}
+
+.col-sm-5 {
+	padding-bottom: 15px;
+}
+
+.list-body {
+	padding: 0px;
+}
+
+.error {
+	color: red;
+	padding-left: 10px;
+}
+
+.formline {
+	padding-bottom: 4px;
+}
+
+#finusertb {
+	width: 460px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	border: 2px solid skyblue !important;
+	border-bottom: unset !important;
+	background-color: unset !important;
+	color: black !important;
+	background-color: unset !important;
+}
+
+nav {
+	border-bottom: 2px solid grey;
+}
+
+.filterable .filters input[disabled] {
+	background-color: transparent;
+	border: none;
+	cursor: auto;
+	box-shadow: none;
+	padding: 0;
+	height: auto;
+}
+
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+	color: #333;
+}
+
+.filterable .filters input[disabled]::-moz-placeholder {
+	color: #333;
+}
+
+.filterable .filters input[disabled]:-ms-input-placeholder {
+	color: #333;
+}
+</style>
+
+<style>
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 10px;
+	text-align: left;
+}
+
+th, td {
+	border: 1px solid #dcdcdc;
+}
+
+td {
+	border-top: 1px solid #dcdcdc;
+}
+</style>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+
+	$(function() {
+
+		$("#disableStartDate,#disableEndDate").datepicker({
+			minDate : new Date(),
+			changeMonth : true,
+			changeYear : true,
+			gotoCurrent : true,
+			dateFormat : "dd-mm-yy"
+		});
+
+	});
+
+	function home() {
+		location.href = 'Dashboard'
+	}
+
+	function back() {
+		window.history.back();
+	}
+
+	function codelist() {
+		location.href = 'chartofaccount1?formmode=list';
+	}
+	function Headcode(a) {
+		var headcode = a.id;
+		alert(headcode)
+		location.href = 'chartofaccount1?formmode=edit&headcode=' + headcode;
+	}
+
+	function Headcode1(a) {
+		var headcode = a.id;
+		alert(headcode)
+		location.href = 'chartofaccount1?formmode=verify&headcode='
+				+ headcode;
+	}
+					function Verify() {
+						location.href = 'chartofaccount1?formmode=verify';
+					}
+					function Verifylist(){
+						location.href = 'chartofaccount1?formmode=list';
+					}
+					function modifylist(){
+						location.href = 'chartofaccount1?formmode=list';
+					}
+					function cancellist(){
+						location.href = 'chartofaccount1?formmode=list';
+					}
+	function codeadd() {
+            location.href = 'chartofaccount1?formmode=add';
+        }
+
+	/*]]>*/
+</script>
+<script>
+	$(function() {
+		$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
+			dateFormat : "dd-mm-yy",
+			changeMonth : true,
+			numberOfMonths : 1,
+			gotoCurrent : true
+
+		});
+
+		$(".checkToModify").on(
+				'click',
+				function() {
+
+					$(this).prop('checked', true);
+
+					var formMode = "edit";
+
+					var resId = $(this).val();
+
+					location.href = 'MtAssociateProfile?formmode=' + formMode
+							+ '&resId=' + resId;
+
+				});
+
+	});
+
+	function submiteditform(a) {
+
+		if ($("#BAMInventorymaster").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'edit';
+			var Invtype = 'InvTranadd';
+			alert(formmode);
+			var url = "./InvTranadd?formmode=" + formmode;
+
+			$("#BAMInventorymaster").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#BAMInventorymaster").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
+			}
+			;
+
+		}
+
+	}
+
+	function submitverifyform(a) {
+
+		if ($("#BAMInventorymaster").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'verify';
+			var Invtype = 'InvTranadd';
+			alert(formmode);
+			var url = "./InvTranadd?formmode=" + formmode + "&Invtype="
+					+ Invtype;
+
+			$("#BAMInventorymaster").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#BAMInventorymaster").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
+			}
+			;
+
+		}
+
+	}
+
+	function submitaddform(a) {
+
+		if ($("#BAMInventorymaster").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'add';
+			var Invtype = 'InvTranadd';
+			alert(formmode);
+			var url = "./InvTranadd?formmode=" + formmode + "&Invtype="
+					+ Invtype;
+
+			$("#BAMInventorymaster").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#BAMInventorymaster").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
+			}
+			;
+
+		}
+
+	}
+
+	function submiteditform(a) {
+
+		if ($("#BAMInventorymaster").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'edit';
+			var Invtype = 'InvTranadd';
+			alert(formmode);
+			var url = "./InvTranadd?formmode=" + formmode + "&Invtype="
+					+ Invtype;
+
+			$("#BAMInventorymaster").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#BAMInventorymaster").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
+			}
+			;
+
+		}
+
+	}
+	
+</script>
+<script>
+function formatDate(dateString) {
+    // Parse the date string (expected format yyyy-MM-ddTHH:mm:ss.sssZ or similar)
+    let date = new Date(dateString);
+
+    // Check if the date is valid
+    if (isNaN(date.getTime())) {
+        console.error("Invalid date:", dateString);
+        return null;
+    }
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1; // Months are zero-based
+    let year = date.getFullYear();
+
+    // Pad day and month with leading zeros if necessary
+    if (day < 10) {
+        day = '0' + day;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    // Format the date as dd-MM-yyyy
+    return `${day}-${month}-${year}`;
+}
+
+
+// Function to format date as dd-MM-yyyy
+function formatCurrentDate() {
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth() + 1; // Months are zero-based
+    let year = today.getFullYear();
+
+    // Pad day and month with leading zeros if necessary
+    if (day < 10) {
+        day = '0' + day;
+    }
+    if (month < 10) {
+        month = '0' + month;
+    }
+
+    // Format the date as dd-MM-yyyy
+    return `${day}-${month}-${year}`;
+}function convertToDateInputFormat(dateString) {
+    let parts = dateString.split("-");
+    if (parts.length !== 3) {
+        console.error("Invalid date format:", dateString);
+        return null;
+    }
+
+    let day = parts[0];
+    let month = parts[1];
+    let year = parts[2];
+
+    // Format the date as yyyy-MM-dd
+    return `${year}-${month}-${day}`;
+}
+
+
+</script>
+</head>
+<title>BAM</title>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<div th:insert="BTMHeaderMenu :: header"></div>
+			</div>
+			<div class="col-sm-10">
+
+				<div class="container-fluid content" th:if="${formmode}=='list' OR ${formmode}=='Verifylist'OR ${formmode}=='modifylist' OR ${formmode}=='cancellist'">
+					<div class="row">
+						<form action="#" method="post" autocomplete="off"
+							style="width: 100%">
+							<div class="card">
+								<div class="panel panel-primary filterable">
+									<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+													<h4 th:if="${formmode}=='list'"> Chart of Accounts-LIST</h4>
+													<h4 th:if="${formmode}=='Verifylist'">Chart of Accounts-verify</h4>
+													<h4 th:if="${formmode}=='modifylist'">MODIFY LIST</h4>
+													<h4 th:if="${formmode}=='cancellist'">Delete LIST</h4>
+													<button
+														class="btn text-white  btn-filter btn-primary">Filter</button>
+												</div>
+									<div class="card-header d-flex justify-content-between">
+										
+									</div>
+
+									<div class="card-body p-0">
+										<div class="table-responsive">
+											<table class="table">
+												<thead style="background-color: #f2f2f2;">
+
+													<tr>
+														<th rowspan="2">Asset Srl Num</th>
+														<th rowspan="2">Asset Name</th>
+														<th rowspan="2">Category</th>
+														<th rowspan="2">Employee Id</th>
+														<th rowspan="2">Current Book Value</th>
+														<th rowspan="2">Market Value</th>
+														<th rowspan="2">Transfer Status </th>
+														<th rowspan="2">Verification Status</th>
+														<th rowspan="2">Select</th>
+													</tr>
+												</thead>
+												<tbody id="associatemonthly">
+
+													<tr th:each="Bamdocmana : ${BAMChartOfAccounts}">
+														<td th:text="${Bamdocmana?.asset_serial_no}"></td>
+														<td th:text="${Bamdocmana?.sol_id}"></td>
+														<td th:text="${Bamdocmana?.sol_desc}"></td>
+														<td th:text="${Bamdocmana?.crncy_code}"></td>
+														<td th:text="${Bamdocmana?.home_crncy_ac}"></td>
+														<td th:text="${Bamdocmana?.glsh_code}"></td>
+														<td th:text="${Bamdocmana?.transaction_detail}"></td>
+														<th:block th:switch="${Bamdocmana?.del_flg}">
+															<td th:case="'Y'" style="color: green;">Verified</td>
+															<td th:case="'N'" style="color: red;">Unverified</td>
+															<td th:case="null" style="color: red;">Unknown</td>
+														</th:block>
+														<th:block th:switch="${Bamdocmana?.del_flg}">
+															<td th:case="'Y'"><input type="radio"
+																th:id="${Bamdocmana?.asset_serial_no}"
+																onclick="Headcode(this)"></td>
+															<td th:case="'N'">
+																<button class="btn btn-secondary dropdown-toggle"
+																	type="button" th:id="${Bamdocmana?.asset_serial_no}"
+																	title="Action"
+																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
+																	data-toggle="dropdown" aria-haspopup="true"
+																	aria-expanded="false" onclick="Headcode1(this)">
+																	Verify</button>
+
+															</td>
+															<td th:case="null">
+																<button class="btn btn-secondary dropdown-toggle"
+																	type="button" th:id="${Bamdocmana?.asset_serial_no}"
+																	title="Action"
+																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
+																	data-toggle="dropdown" aria-haspopup="true"
+																	aria-expanded="false" onclick="Headcode(this)">Modify</button>
+
+															</td>
+														</th:block>
+
+
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+
+									<div class="card-footer text-center">
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="home()">Home</button>
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back()">Back</button>
+
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+              <div class="container-fluid content" th:if="${formmode}=='view'">
+					<div class="row">
+						<div class="col-sm-12 finuserapply">
+					<div action="#" th:object="${BAMChartOfAccounts}" method="POST"
+								class="w-100" autocomplete="off" id="BAMChartOfAccounts">
+								<div class="card">
+									<div class="card-header"style="background-color:#BBC3CB;">
+										<div class="float-left">
+											<h3 th:if="${formmode}=='view'">Chart of Accounts</h3>
+											<h3 th:if="${formmode}=='Verify'">Chart of Accounts-VERIFY</h3>
+											
+										</div>
+										</div>
+										<div class="card-body">
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="sol_id">SOL ID</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="sol_id"
+															th:if="${formmode}=='view'"
+															th:value="${ass?.sol_id}"
+															class="form-control form-control-sm"/readonly >
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="sol_desc">Sol Description</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="sol_desc"
+															th:if="${formmode}=='view'"
+															class="form-control form-control-sm"
+															th:value="${ass?.sol_desc}"  />
+													</div>
+												</div>
+												
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="crncy_code">Currency code</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="crncy_code"
+															th:if="${formmode}=='view'"
+															class="form-control form-control-sm"
+															th:value="${ass?.crncy_code}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Home Currency Account</label>
+													</div>
+													<div class="col-sm-2">
+														<select name="" id="Home-currency-code" class="form-control form-control-sm" required>
+														<option disabled selected value="Select">--Select--</option>
+														</select>
+													</div>
+												</div>
+												
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">GLSH code</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="glsh-code"
+															th:if="${formmode}=='view'"
+															class="form-control form-control-sm"
+															th:value="${ass?.assetName}"  />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">GLSH Description</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="glsh-desch"
+															class="form-control form-control-sm">
+													</div>
+												</div>
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Scheme Code</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="scheme-code"
+															class="form-control form-control-sm" />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Scheme Description</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="scheme-description"
+															class="form-control form-control-sm" />
+													</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Product Group</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="product-group"
+															class="form-control form-control-sm" />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Account Type</label>
+													</div>
+													<div class="col-sm-2">
+														<select name="" id="account-type" class="form-control form-control-sm" required>
+														<option disabled selected value="Select">--Select--</option>
+														</select>
+													</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">System Transaction</label>
+													</div>
+													<div class="col-sm-2">
+														<select name="" id="system-transaction" class="form-control form-control-sm" required>
+														<option disabled selected value="Select">--Select--</option>
+														</select>
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Tran Restriction</label>
+													</div>
+													<div class="col-sm-2">
+														<select name="" id="tran-restriction"class="form-control form-control-sm" required>
+														<option disabled selected value="Select">--Select--</option>
+														</select>
+													</div>
+												</div>
+												
+												
+												<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Transaction Type</label>
+													</div>
+													<div class="col-sm-2">
+														<select name="" id="transaction-type" class="form-control form-control-sm" required>
+														<option disabled selected value="Select">--Select--</option>
+														</select>
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Add Details Required</label>
+													</div>
+													<div class="col-sm-2">
+														<select name="" id="add-details-required" class="form-control form-control-sm" required>
+														<option disabled selected value="Select">--Select--</option>
+														</select>
+													</div>
+												</div>
+													<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Additional Details Type</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="product-group"
+															class="form-control form-control-sm" />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Account Balance</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="product-group"
+															class="form-control form-control-sm" />
+				
+													</div>
+												</div>
+												
+
+													<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Balance Type</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="product-group"
+															class="form-control form-control-sm" />
+													</div>
+
+													<div class="col-sm-2"></div>
+													<div class="col-sm-2">
+														<label for="dob">Last Tran Date</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="product-group"
+															class="form-control form-control-sm" />
+				
+													</div>
+												</div>
+												
+												
+													<div class="row formline">
+													<div class="col-sm-2">
+														<label for="designation">Account Status</label>
+													</div>
+													<div class="col-sm-2">
+														<input type="text" id="product-group"
+															class="form-control form-control-sm" />
+													</div>
+												</div>																				
+												</div>
+										<div class="card-footer text-center"style="background-color:#BBC3CB;">
+
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="home()">Home</button>
+										
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="codeadd()">Add</button>
+
+										<button type="button" class="btn btn-primary" id="btnverify"
+											onclick="Verifylist()">Verify</button>
+
+										<button type="button" class="btn btn-primary" id="btnModify"
+											onclick="modifylist()">Modify</button>
+											
+										<button type="button" class="btn btn-primary" id="btnCancel"
+											onclick="cancellist()">Delete</button>
+
+										<button type="button" class="btn btn-primary" id="btnSubmit"
+											onclick="submit()">sumbit</button>
+
+										<button type="button" class="btn btn-primary" id="btnList"
+											onclick="codelist()">List</button>
+
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back()">Back</button>
+
+									</div>
+								</div>
+						    </div>
+						</form>
+					</div>
+				</div>
+				<div class="container-fluid content" th:if="${formmode} == 'add'">
+        <div class="row">
+            <form action="#" th:object="${BAMChartOfAccounts}" class="w-100" method="post" autocomplete="off" id="BAMChartOfAccounts">
+                <div class="associateProfileList mt-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="float-left">
+                                <h4 style="font-family: verdana;">CHART OF ACCOUNTS- Add</h4>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="row formline">
+                                    <div class="col-sm-2">
+                                        <label for="sol_id">SOL ID</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" id="sol_id" name="sol_id" th:field="*{sol_id}" class="form-control form-control-sm" required/>
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-2">
+                                        <label for="sol_desc">Sol Description</label>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" id="sol_desc" name="sol_desc" th:field="*{sol_desc}" class="form-control form-control-sm" required/>
+                                        <span class="error-message text-danger"></span>
+                                    </div>
+                                </div>
+                            </div>       <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="crncy_code">Currency Code</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="crncy_code" name="crncy_code" th:value="${ass?.crncy_code}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="home_crncy_ac">Home Currency Account</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="home_crncy_ac" name="home_crncy_ac" th:value="${ass?.home_crncy_ac}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                    <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="glsh_code">GLSH Code</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="glsh_code" name="glsh_code" th:value="${ass?.glsh_code}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="glsh_desc">GLSH Description</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="glsh_desc" name="glsh_desc" th:value="${ass?.glsh_desc}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                    <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="schm_code">Scheme Code</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="schm_code" name="schm_code" th:value="${ass?.schm_code}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="schm_desc">Scheme Description</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="schm_desc" name="schm_desc" th:value="${ass?.schm_desc}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                    <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="prod_group">Product Group</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="prod_group" name="prod_group" th:value="${ass?.prod_group}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="acc_type">Account Type</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="acc_type" name="acc_type" th:value="${ass?.acc_type}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                    <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="system_tran_flg">System Transaction</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="system_tran_flg" name="system_tran_flg" th:value="${ass?.system_tran_flg}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="tran_restrict_flg">Tran Restriction</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="tran_restrict_flg" name="tran_restrict_flg" th:value="${ass?.tran_restrict_flg}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                    <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="tran_type">Transaction Type</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="tran_type" name="tran_type" th:value="${ass?.tran_type}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="addl_det_req_flg">Add Details Required</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="addl_det_req_flg" name="addl_det_req_flg" th:value="${ass?.addl_det_req_flg}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                    <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="addl_det_type">Additional Details Type</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="addl_det_type" name="addl_det_type" th:value="${ass?.addl_det_type}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="acc_bal">Account Balance</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="number" id="acc_bal" name="acc_bal" th:value="${ass?.acc_bal}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+				                        <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="bal_type">Balance Type</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="bal_type" name="bal_type" th:value="${ass?.bal_type}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="last_tran_date">Last Tran Date</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="date" id="last_tran_date" name="last_tran_date" th:value="${ass?.last_tran_date}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        </div>
+				                        <div class="row formline">
+				                        <div class="col-sm-2">
+				                            <label for="sub_ac_no">Sub Account No</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="sub_ac_no" name="sub_ac_no" th:value="${ass?.sub_ac_no}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                        <div class="col-sm-2"></div>
+				                        <div class="col-sm-2">
+				                            <label for="branch_code">Branch Code</label>
+				                        </div>
+				                        <div class="col-sm-2">
+				                            <input type="text" id="branch_code" name="branch_code" th:value="${ass?.branch_code}" class="form-control form-control-sm" required/>
+				                            <span class="error-message text-danger"></span>
+				                        </div>
+				                    </div>
+
+
+
+										</div>
+
+									</div>
+									<div class="card-footer text-center">
+
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="home();">Home</button>
+
+
+
+										<button th:if="${formmode}=='add'" type="button"
+											class="btn btn-xs btn-primary" onclick="submitaddform(this);"
+											form="BAMInventorymaster" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
+
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back();">Back</button>
+
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+				<!-- **************************edit********************************* -->
+
+
+				<div class="container-fluid content"
+					th:if="${formmode}=='edit' OR ${formmode}=='verify'">
+					<div class="row">
+
+						<form action="#" th:object="${BAMChartOfAccounts}" class="w-100"
+							method="post" autocomplete="off" id="BAMChartOfAccounts">
+
+							<div class="associateProfileList mt-4">
+								<div class="card">
+									<div class="card-header">
+										<div class="float-left">
+											<h4 th:if="${formmode}=='edit'" style="font-family: verdana;">CHART OF ACCOUNT - Edit</h4>
+											<h4 th:if="${formmode}=='verify'"
+												style="font-family: verdana;">CHART OF ACCOUNT - Edit</h4>
+										</div>
+									</div>
+
+									<div class="card-body">
+										<div class="form-group">
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="branch_id">Asset Serial Number</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts.asset_serial_no}"
+														id="asset_serial_no" class="form-control form-control-sm"
+														autocomplete="off" name="asset_serial_no" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="sol_id">Sol Id</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts.sol_id} "
+														id="sol_id" class="form-control form-control-sm"
+														autocomplete="off" name="sol_id"
+														required="required" />
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="sol_desc">Sol Desc</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts.sol_desc}" id="sol_desc"
+														class="form-control form-control-sm" name="sol_desc"
+														autocomplete="off" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="crncy_code">Crncy Code</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts.crncy_code}"
+														id="crncy_code" class="form-control form-control-sm"
+														name="crncy_code" autocomplete="off" />
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="home_crncy_ac">Home Crncy Ac</label>
+												</div>
+
+												<div class="col-sm-3">
+														<input type="text"
+														th:value="${BAMChartOfAccounts.home_crncy_ac}"
+														id="home_crncy_ac" class="form-control form-control-sm"
+														name="home_crncy_ac" autocomplete="off" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="glsh_code">Glsh Code</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts.glsh_code}"
+														id="glsh_code" class="form-control form-control-sm"
+														name="glsh_code" autocomplete="off" required="required" />
+												</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="glsh_desc">Glsh Desc</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+													       th:value="${BAMChartOfAccounts.glsh_desc}"
+													       id="glsh_desc" class="form-control form-control-sm"
+													       autocomplete="off" name="glsh_desc"
+													/>
+
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="schm_code">Schm Code</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+													    th:value="${BAMChartOfAccounts.schm_code}"
+													       id="schm_code" class="form-control form-control-sm"
+													       autocomplete="off" name="schm_code"
+													/>
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="acc_bal">Acc Bal</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="number"
+														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+														th:value="${BAMChartOfAccounts.acc_bal}" id="acc_bal"
+														class="form-control form-control-sm" name="acc_bal"
+														autocomplete="off" required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="schm_desc">schm Desc</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts.schm_desc}"
+														id="schm_desc" class="form-control form-control-sm"
+														autocomplete="off" name="schm_desc"
+														required="required" />
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="prod_group">Prod Group</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														  th:value="${BAMChartOfAccounts.prod_group}"
+														id="prod_group" class="form-control form-control-sm"
+														name="prod_group" autocomplete="off"
+														required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="acc_type">Acc Type</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts?.acc_type}" id="acc_type"
+														class="form-control form-control-sm" name="acc_type"
+														autocomplete="off" required="required" />
+												</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="system_tran_flg">System Tran Flg</label>
+												</div>
+
+												<div class="col-sm-3">
+													<select id="system_tran_flg" name="system_tran_flg" style="width: 100%"
+														th:field="*{system_tran_flg}"
+														th:value="${BAMChartOfAccounts?.system_tran_flg}"
+														class="form-control form-control-sm" required>
+														<option value="">SELECT</option>
+														<option value="Y">Y</option>
+														<option value="N">N</option>
+													</select>		
+													</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="tran_restrict_flg">Tran Restrict flg</label>
+												</div>
+												<div class="col-sm-3">
+													<select id="tran_restrict_flg" name="tran_restrict_flg" style="width: 100%"
+														th:field="*{tran_restrict_flg}"
+														th:value="${BAMChartOfAccounts?.tran_restrict_flg}"
+														class="form-control form-control-sm" required>
+														<option value="">SELECT</option>
+														<option value="Y">Y</option>
+														<option value="N">N</option>
+													</select>
+													</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="tran_type">Tran Type</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts?.tran_type}" id="tran_type"
+														class="form-control form-control-sm" name="tran_type"
+														autocomplete="off" required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="addl_det_req_flg">Addl Det Req Flag</label>
+												</div>
+												<div class="col-sm-3">
+													<select id="addl_det_req_flg" name="addl_det_req_flg" style="width: 100%"
+														th:field="*{addl_det_req_flg}"
+														th:value="${BAMChartOfAccounts?.addl_det_req_flg}"
+														class="form-control form-control-sm" required>
+														<option value="">SELECT</option>
+														<option value="Y">Y</option>
+														<option value="N">N</option>
+													</select>
+												</div>	
+											</div>
+
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="addl_det_type">Addl Det Type</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts?.addl_det_type}"
+														id="addl_det_type" class="form-control form-control-sm"
+														name="addl_det_type" autocomplete="off" required="required" />
+											</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="bal_type">Bal Type</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${BAMChartOfAccounts?.bal_type}"
+														id="bal_type" class="form-control form-control-sm"
+														name="bal_type" autocomplete="off" required="required" />
+												</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="last_tran_date">Last Tran Date</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="date"
+														th:value="${BAMChartOfAccounts?.last_tran_date}" id="last_tran_date"
+														class="form-control form-control-sm" name="last_tran_date"
+														autocomplete="off" required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="acc_status">Acc Status</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="date"        
+													th:value="${BAMChartOfAccounts.acc_status}"
+														id="acc_status" class="form-control form-control-sm"
+														name="acc_status" autocomplete="off"
+														required="required" />
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="card-footer text-center">
+
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="home();">Home</button>
+
+
+
+										<button th:if="${formmode}=='edit'" type="button"
+											class="btn btn-xs btn-primary"
+											onclick="submiteditform(this);" form="BAMInventorymaster"
+											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+
+										<button th:if="${formmode}=='verify'" type="button"
+											class="btn btn-xs btn-primary"
+											onclick="submitverifyform(this);" form="BAMInventorymaster"
+											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back();">Back</button>
+
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+
+
+	<div class="modal fade" id="alert">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="menu-title-header">
+					<div class="modal-title" id="exampleModalLabel"
+						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">BANK
+						NAME</div>
+				</div>
+				<div class="modal-body"
+					style="text-align: center; background-color: #c6ccd2">
+					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						onclick="back();">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="loader1" data-backdrop="static"
+		data-keyboard="false">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content" style="background: transparent;">
+				<div class="modal-body" style="text-align: center">
+					<div>
+						<img th:src=@{/images/loadingapp.gif} id="bfirelogo"
+							style="width: 153px; margin-left: 18px;" alt="Bornfire">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+
+</html>

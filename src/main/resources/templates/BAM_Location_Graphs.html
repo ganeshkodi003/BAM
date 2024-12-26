@@ -1,0 +1,295 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css" th:href="@{/webjars/font-awesome/5.9.0/css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css" th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+    <link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css" th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+    <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+    <script src="/webjars/popper.js/1.14.7/umd/popper.min.js" th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+    <script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+    <script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js" th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+    <script src="/webjars/jquery-form/4.2.2/jquery.form.min.js" th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+    <script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js" th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+    <script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js" th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+    <script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js" th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+
+    <style>
+        .status-verified {
+            color: green;
+        }
+
+        .status-pending {
+            color: red;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table {
+            width: 129%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        .btns {
+            float: right;
+            margin: 5px;
+        }
+
+        .col-sm-5 {
+            padding-bottom: 15px;
+        }
+
+        .list-body {
+            padding: 0px;
+        }
+
+        .error {
+            color: red;
+            padding-left: 10px;
+        }
+
+        .formline {
+            padding-bottom: 4px;
+        }
+
+        #finusertb {
+            width: 460px;
+        }
+
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            padding: 0px;
+        }
+
+        .nav-tabs .nav-item.show .nav-link,
+        .nav-tabs .nav-link.active {
+            border: 2px solid skyblue !important;
+            border-bottom: unset !important;
+            background-color: unset !important;
+            color: black !important;
+            background-color: unset !important;
+        }
+
+        nav {
+            border-bottom: 2px solid grey;
+        }
+
+        fieldset {
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .filterable .filters input[disabled] {
+            background-color: transparent;
+            border: none;
+            cursor: auto;
+            box-shadow: none;
+            padding: 0;
+            height: auto;
+        }
+
+        .filterable .filters input[disabled]::-webkit-input-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]::-moz-placeholder {
+            color: #333;
+        }
+
+        .filterable .filters input[disabled]:-ms-input-placeholder {
+            color: #333;
+        }
+
+        td input {
+            border: 1px solid #ced4da;
+        }
+        
+    /* Add some fixed width and height to the canvas */
+    #myBarChart {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+    /* Ensure the card or the surrounding div does not force resizing */
+    .card-body {
+        overflow: hidden;
+    }
+    </style>
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+
+        function home() {
+            location.href = 'Dashboard'
+        }
+
+        function back() {
+            window.history.back();
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <div th:insert="BTMHeaderMenu :: header"></div>
+            </div>
+            <div class="col-sm-10">
+                <div class="container-fluid content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <form action="#" method="POST" autocomplete="off" id="Depreciation">
+                                <div class="card">
+                                    <div class="card-header" style="background-color: #BBC3CB;">
+                                        <div class="float-left">
+                                            <h3>Location -Bar chart</h3>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <fieldset>
+                                            <div class="form-group mb-0">
+                                                <div class="row formline">
+                                          
+                                                    <div class="col-sm-3">
+                                                        <label for="year">Select a Year :</label>
+                                                    </div>
+                                                    <div class="col-sm-3">
+                                                        <select name="year" id="year" class="form-control form-control-sm">
+                                                            <option value="">Select</option>
+                                                            <option value="2015">2015</option>
+                                                            <option value="2016">2016</option>
+                                                            <option value="2017">2017</option>
+                                                            <option value="2018">2018</option>
+                                                            <option value="2019">2019</option>
+                                                            <option value="2020">2020</option>
+                                                            <option value="2021">2021</option>
+                                                            <option value="2022">2022</option>
+                                                            <option value="2023">2023</option>
+                                                            <option value="2024">2024</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        <fieldset style=" width: 55%; transform: translateX(280px);">
+                                            <canvas id="myBarChart" width="400" height="400"></canvas>
+                                        </fieldset>
+                                        <div class="card-footer text-center" style="background-color: #BBC3CB;">
+                                            <button type="button" class="btn btn-primary" id="btnHome" onclick="home()">Home</button>
+                                            <button type="button" class="btn btn-primary" id="btnBack" onclick="back()">Back</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+     document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById('myBarChart').getContext('2d');
+        var myBarChart = new Chart(ctx, {
+            type: 'bar',  // Use 'bar' type for horizontal bar chart
+            data: {
+                labels: ['office', 'Branch', 'Quaters', 'general'],
+                datasets: [{
+                    label: 'LOCATION',
+                    data: [0, 0, 0, 0],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.9)',
+                        'rgba(54, 162, 235, 0.9)',
+                        'rgba(255, 206, 86, 0.9)',
+                        'rgba(75,192,75,0.9)'],
+                    borderColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75,192,75,0.6)'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'x', // This will flip the axis to make it horizontal
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        }); 
+
+        
+        // You can add additional logic to handle month and year selection here
+        function updateChart(data) {
+            myBarChart.data.datasets[0].data = data;
+            myBarChart.update();
+        }
+        
+
+        document.getElementById('year').addEventListener('change', function () {
+            var year = this.value;
+            fetchDataAndUpdateChart(year);
+        });
+
+        function fetchDataAndUpdateChart(year) {
+            if (year) {
+                // Placeholder for fetching data based on selected month and year
+                // Replace the following with actual data fetching logic
+                
+                $.ajax({
+                    	type:'GET',
+                    	url:"./Location_Graphdata",
+                    	data:{year:year},
+                    	success:function(response){
+                    		          var totalinventory=response.totalinventory;
+                    		          var office=response.office;
+                    		          var branch= response.branch;
+                    		          var quarters= response.quarters;
+                    		          var general= response.general;
+                    		          
+                    		          
+                    			if(totalinventory ==0 &&  office==0 && branch==0 && quarters==0 &&general==0 ){
+                    			alert("No Record found in this date");
+                    			location.reload();
+                    		}
+                    		else{
+                    		//t.value=totalinventory;
+                    		updateChart([office,branch,quarters,general]);
+                    		}
+                    	},
+                    	error: function(error) {
+                            console.error("Error fetching asset details:", error);
+                          
+                        }
+                    });
+
+                
+                
+            }
+        }
+
+        function generateDummyData(month, year) {
+            // Replace this with actual data fetching logic
+            return [Math.random() * 100, Math.random() * 100, Math.random() * 100, Math.random() * 100];
+        }
+
+        
+    });
+    </script>
+</body>
+
+</html>

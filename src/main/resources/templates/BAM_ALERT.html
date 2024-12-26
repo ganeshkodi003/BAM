@@ -1,0 +1,325 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+<script
+	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	
+<style>
+.status-verified {
+	color: green;
+}
+
+.status-pending {
+	color: red; /* or any other color you prefer */
+}
+</style>
+
+<style>
+.table {
+	width: 129%;
+	margin-bottom: 1rem;
+	color: #212529;
+}
+
+.btns {
+	float: right;
+	margin: 5px;
+}
+
+.col-sm-5 {
+	padding-bottom: 15px;
+}
+
+.list-body {
+	padding: 0px;
+}
+
+.error {
+	color: red;
+	padding-left: 10px;
+}
+
+.formline {
+	padding-bottom: 4px;
+}
+
+#finusertb {
+	width: 460px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	border: 2px solid skyblue !important;
+	border-bottom: unset !important;
+	background-color: unset !important;
+	color: black !important;
+	background-color: unset !important;
+}
+
+nav {
+	border-bottom: 2px solid grey;
+}
+
+fieldset {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+}
+
+/* .form-control[readonly] {
+	background-color: transparent;
+	opacity: 1;
+} */
+.filterable .filters input[disabled] {
+	background-color: transparent;
+	border: none;
+	cursor: auto;
+	box-shadow: none;
+	padding: 0;
+	height: auto;
+}
+
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+	color: #333;
+}
+
+.filterable .filters input[disabled]::-moz-placeholder {
+	color: #333;
+}
+
+.filterable .filters input[disabled]:-ms-input-placeholder {
+	color: #333;
+}
+</style>
+
+
+
+<script th:inline="javascript">
+	/*<![CDATA[*/
+
+	
+	function home() {
+		location.href = 'Dashboard'
+	}
+
+	function back() {
+		window.history.back();
+	}
+
+	
+</script>
+
+
+<script>
+function addSubmit(){
+
+    var email1 = $('#appr_email_1').val();
+	  var email2 = $('#appr_email_2').val();
+	  var email3 = $('#appr_email_3').val();
+	  var email4 = $('#appr_email_4').val();
+	  var email5 = "prasanth.m@bornfire.in";
+	  
+	  if(email1==''){
+		alert("Please fill the required field");
+	  }else{
+	 $.ajax({
+			type : 'post',
+			url : "./mailsubmit?email1="+email1+"&email2="+email2+"&email3="+email3+"&email4="+email4+"&email5="+email5,
+			success : function(response) {
+				
+				$("#alertmsg").text(response);
+				$("#alert").modal("toggle");
+			}
+	 }); 
+	  }
+	  
+}
+function listpara() {
+	location.href = 'salary_parameters?formmode=list';
+}
+
+</script>
+
+
+
+
+</head>
+<title>BTM</title>
+
+<body>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-2">
+				<div th:insert="BTMHeaderMenu :: header"></div>
+			</div>
+			<div class="col-sm-10">
+
+				
+
+				<div class="container-fluid content">
+					<div class="row">
+						<div class="col-sm-12">
+							<form action="#"  method="POST"
+								autocomplete="off" id="LeaveMaster">
+								<div class="card">
+
+									<div class="card-header" style="background-color: #BBC3CB;">
+										<div class="float-left">
+											<h3>Alert Process - Add</h3>
+										</div>
+										<div class="btn-group nav-buttons float-right">
+										<button type="button" class="btn btn-xs btn-primary btns"
+											id="btnAdd" onclick="addpara();" th:if="${formmode}=='list'"
+											style="font-size: 15px; width: -70px; size: 100px;" >Add</button>
+											<button type="button" class="btn btn-xs btn-primary btns"
+											id="btnAdd" onclick="listpara();"
+											style="font-size: 15px; width: -70px; size: 100px;">List</button>	
+									</div>
+									</div>
+									<div class="card-body">
+										<div class="form-group mb-0">
+										<div class="row formline">
+										<div class="col-sm-3">
+													<label for="Operation">Operation</label>
+												</div>
+										<div class="col-sm-3" >
+										
+											<select  style="width: 100%" 
+											name="tran_channel" id="tran_channel"
+												class="form-control form-control-sm" required>
+												<option value="">SELECT</option>
+												<option value="Acquisition">Acquisition</option>
+												<option value="Depreciation">Depreciation</option>
+												<option value="Transfer">Transfer</option>
+												<option value="Sale">Sale</option>
+												<option value="Writeoff">Write Off</option>
+											</select>
+
+										</div>
+										</div>
+										<div class="row formline"></div>
+											<div class="row formline">
+												<div class="col-sm-3">
+													<label for="employeeId">Mail Id 1</label>
+												</div>
+												<div class="col-sm-3">
+
+													<input type="email" id="appr_email_1"name="appr_email_1"
+														class="form-control form-control-sm" autocomplete="off" required /> 
+
+												</div>
+												 <div class="col-sm-3">
+													<label for="employeeName">Mail Id 2</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text" name="appr_email_2" id="appr_email_2"
+														
+														class="form-control form-control-sm" autocomplete="false"
+														 />
+												</div> 
+											</div>
+											<div class="row formline">
+												<div class="col-sm-3">
+													<label for="employeeId">Mail Id 3</label>
+												</div>
+												<div class="col-sm-3">
+
+													<input type="email" id="appr_email_3"name="appr_email_3"
+														class="form-control form-control-sm" autocomplete="off" required /> 
+
+												</div>
+												 <div class="col-sm-3">
+													<label for="employeeName">Mail Id 4</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text" name="appr_email_4" id="appr_email_4"
+														
+														class="form-control form-control-sm" autocomplete="false"
+														 />
+												</div> 
+											</div>
+										</div>
+									
+									
+									</div>
+									<div class="card-footer text-center"
+										style="background-color: #BBC3CB;">
+
+										<button type="button" class="btn btn-primary" id="btnHome"
+											onclick="home()">Home</button>
+
+								<button type="button" class="btn btn-xs btn-primary"
+									id="btnSubmit1" onclick="addSubmit();">Submit</button>
+										<button type="button" class="btn btn-primary" id="btnBack"
+											onclick="back()">Back</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+<div class="modal fade" id="alert">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="menu-title-header">
+					<div class="modal-title" id="exampleModalLabel"
+						style="text-align: center; color: white;">CIM FINANCE</div>
+				</div>
+				<div class="modal-body"
+					style="text-align: center; background-color: #c6ccd2">
+					<p id="alertmsg" style="font-size: 16px;"></p>
+					<button type="button" class="btn btn-primary" data-dismiss="modal"
+						style="width: 120px" onclick="back();">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+</html>
