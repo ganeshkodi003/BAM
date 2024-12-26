@@ -399,9 +399,9 @@ nav {
 											</div>
 
 											<div class="card-footer text-center"  >
-												<button type="button" class="btn headerbutton" id="btnHome"
+												<button type="button" class="btn headerbutton btns" id="btnHome"
 													onclick="home()">Home</button>
-												<button type="button" class="btn headerbutton" id="btnBack"
+												<button type="button" class="btn headerbutton btns" id="btnBack"
 													onclick="back()">Back</button>
 											</div>
 										</div>
@@ -2355,7 +2355,7 @@ nav {
 
 								<div class="card-footer text-center" >
 
-									<button type="button"  th:if="${formmode}=='view'"class="btn headerbutton" id="btnHome"
+									<button type="button"  th:if="${formmode}=='view'"class="btn headerbutton btns" id="btnHome"
 										onclick="home()">Home</button>
 
 									<a type="button" th:if="${formmode}=='modify'"
@@ -2382,7 +2382,7 @@ nav {
 										id="btnSubmit" onclick="deleteUserData(this);"
 										th:attr="data-formmode=${formmode}">Submit</button>
 
-									<button type="button" th:if="${formmode}=='view'" class="btn headerbutton" id="btnBack"
+									<button type="button" th:if="${formmode}=='view'" class="btn headerbutton btns" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 							</div>
@@ -2405,7 +2405,7 @@ nav {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
+					<button type="button" class="btn headerbutton btns" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>

@@ -303,7 +303,7 @@
 									<div class="card">
 										<div class="card-header" style="background-color: #BBC3CB;">
 											<h3>ACCESS & ROLE</h3>
-											<button type="button" class="btn headerbutton" onclick="adduser1()" id="page"
+											<button type="button" class="btn headerbutton btns" onclick="adduser1()" id="page"
 												style="width: 120px">Add
 												Role</button>
 										</div>
@@ -342,9 +342,9 @@
 
 										<div class="card">
 											<div class="card-footer text-center" style="background-color: #BBC3CB;">
-												<button type="button" class="btn headerbutton" id="btnHome"
+												<button type="button" class="btn headerbutton btns" id="btnHome"
 													style="width: 120px" onclick="home();">Home</button>
-												<button type="button" class="btn headerbutton" id="btnBack"
+												<button type="button" class="btn headerbutton btns" id="btnBack"
 													style="width: 120px" onclick="back();">Back</button>
 											</div>
 										</div>
@@ -801,11 +801,11 @@
 										</div>-->
 												<BR>
 												<div class="card-footer text-center" style="background-color: #BBC3CB;">
-													<button type="button" class="btn headerbutton" id="btnHome"
+													<button type="button" class="btn headerbutton btns" id="btnHome"
 														style="width: 120px" onclick="home();">Home</button>
-													<button type="button" class="btn headerbutton" id="btnSubmit"
+													<button type="button" class="btn headerbutton btns" id="btnSubmit"
 														style="width: 120px" onclick="submitform();">Submit</button>
-													<button type="button" class="btn headerbutton" id="btnBack"
+													<button type="button" class="btn headerbutton btns" id="btnBack"
 														style="width: 120px" onclick="back();">Back</button>
 												</div>
 											</div>
@@ -920,9 +920,9 @@
 						<a th:value="${msg}"></a>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn headerbutton" onclick="submitformdelete(this);"
+						<button type="button" class="btn headerbutton btns" onclick="submitformdelete(this);"
 							th:attr="data-formmode=delete">Submit</button>
-						<button type="button" class="btn headerbutton" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn headerbutton btns" data-dismiss="modal">Cancel</button>
 					</div>
 				</div>
 			</div>
@@ -937,7 +937,7 @@
 					</div>
 					<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 						<p id="alertmsg" style="font-size: 16px;">Added Successfully</p>
-						<button type="button" class="btn headerbutton" data-dismiss="modal"
+						<button type="button" class="btn headerbutton btns" data-dismiss="modal"
 							onclick="back();">Close</button>
 					</div>
 				</div>

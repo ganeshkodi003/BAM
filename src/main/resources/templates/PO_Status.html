@@ -567,9 +567,9 @@ function exportBtn(){
 
 								<div class="card-footer text-center p-0"
 										style="background-color: #BBC3CB;width: 1500px;margin-left: 125px;">
-									<button type="button" class="btn headerbutton" id="btnHome"
+									<button type="button" class="btn headerbutton btns" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
-									<button type="button" class="btn headerbutton" id="btnBack"
+									<button type="button" class="btn headerbutton btns" id="btnBack"
 										style="width: 120px" onclick="back();">Back</button>
 								</div>
 							</div>
@@ -877,14 +877,14 @@ function exportBtn(){
 							<button th:if="${formmode}=='edit' AND ${userProfile.entity_flg}=='Y'" type="button"
 								btn headerbutton id="btnpassrst"
 								onclick="passwordReset();">PasswordReset</button>-->
-										<button type="button" class="btn headerbutton" id="btnHome"
+										<button type="button" class="btn headerbutton btns" id="btnHome"
 											onclick="home()">Home</button>
 
 										<button th:if="${formmode}=='edit'" type="button" style="width: 120px"
 											btn headerbutton form="AdminUserProfile"
 											id="btnSubmit" onclick="modifyform()">Submit</button>
 
-										<button type="button" class="btn headerbutton" id="btnBack"
+										<button type="button" class="btn headerbutton btns" id="btnBack"
 											style="width: 120px" onclick="back()">Back</button>
 
 										<button th:if="${formmode}=='add'" type="button" style="width: 120px"
@@ -906,7 +906,7 @@ function exportBtn(){
 			<div class="modal-content">
 				<div class="modal-body" style="text-align: center">
 					<p id="alertmsg"></p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
+					<button type="button" class="btn headerbutton btns" data-dismiss="modal"
 						style="width: 120px" onclick="back()">Close</button>
 				</div>
 			</div>

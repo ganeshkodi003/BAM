@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function() {
 							<div class="btn-group nav-buttons float-right"
 								style="padding: 5px;">
 
-								<button class="btn headerbutton" onclick="add();" th:if="${RoleMenu?.role=='ADM'}">Add</button>
+								<button class="btn headerbutton btns" onclick="add();" th:if="${RoleMenu?.role=='ADM'}">Add</button>
 
 
 
@@ -513,8 +513,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" onclick="Back();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" onclick="Back();">Back</button>
 						</div>
 					</div>
 
@@ -535,7 +535,7 @@ document.addEventListener("DOMContentLoaded", function() {
 							<div class="btn-group nav-buttons float-right"
 								style="padding: 5px;">
 
-								<button class="btn headerbutton" onclick="add();" th:if="${RoleMenu?.role=='ADM'}">Add</button>
+								<button class="btn headerbutton btns" onclick="add();" th:if="${RoleMenu?.role=='ADM'}">Add</button>
 
 
 
@@ -585,8 +585,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" onclick="Back();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" onclick="Back();">Back</button>
 						</div>
 					</div>
 
@@ -708,9 +708,9 @@ document.addEventListener("DOMContentLoaded", function() {
 							   </div>
 								</fieldset>
 								<div class="card-footer text-center" style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" id="nextButton">Next</button>
-							<button class="btn headerbutton" onclick="Backadd();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" id="nextButton">Next</button>
+							<button class="btn headerbutton btns" onclick="Backadd();">Back</button>
 						     </div>
 								 </div>
 								 
@@ -940,10 +940,10 @@ document.addEventListener("DOMContentLoaded", function() {
 					
 					</fieldset>
 					<div class="card-footer text-center" style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" id="prevButtons">Previous</button>
-							<button class="btn headerbutton" id="nextButtons">Next</button>
-							<button class="btn headerbutton" onclick="Backadd();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" id="prevButtons">Previous</button>
+							<button class="btn headerbutton btns" id="nextButtons">Next</button>
+							<button class="btn headerbutton btns" onclick="Backadd();">Back</button>
 						</div>
 					</div>		 
 								 
@@ -979,10 +979,10 @@ document.addEventListener("DOMContentLoaded", function() {
 							</fieldset>
 					
 					<div class="card-footer text-center" style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" id="prevButton">Previous</button>
-							<button class="btn headerbutton" onclick="Submitadd();">Submit</button>
-							<button class="btn headerbutton" onclick="Backadd();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" id="prevButton">Previous</button>
+							<button class="btn headerbutton btns" onclick="Submitadd();">Submit</button>
+							<button class="btn headerbutton btns" onclick="Backadd();">Back</button>
 						</div>
 					</div>		 		 
 								 
@@ -1121,9 +1121,9 @@ document.addEventListener("DOMContentLoaded", function() {
 							   </div>
 								</fieldset>
 								<div class="card-footer text-center" style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" id="nextButton">Next</button>
-							<button class="btn headerbutton" onclick="Backadd();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" id="nextButton">Next</button>
+							<button class="btn headerbutton btns" onclick="Backadd();">Back</button>
 						     </div>
 								 </div>
 								
@@ -1354,10 +1354,10 @@ document.addEventListener("DOMContentLoaded", function() {
 					
 					</fieldset>
 					<div class="card-footer text-center" style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" id="prevButtons">Previous</button>
-							<button class="btn headerbutton" id="nextButtons">Next</button>
-							<button class="btn headerbutton" onclick="Backadd();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" id="prevButtons">Previous</button>
+							<button class="btn headerbutton btns" id="nextButtons">Next</button>
+							<button class="btn headerbutton btns" onclick="Backadd();">Back</button>
 						</div>
 					</div>		 
 								 
@@ -1394,10 +1394,10 @@ document.addEventListener("DOMContentLoaded", function() {
 							</fieldset>
 					
 					<div class="card-footer text-center" style="background-color: #e9ecef">
-							<button class="btn headerbutton" onclick="Home();">Home</button>
-							<button class="btn headerbutton" id="prevButton">Previous</button>
-							<button th:attr="data-ref_no=${cvfview.srl_no}" class="btn headerbutton" onclick="Submitemp(this);"  th:if="${submit == cvfview.emb_id}">Submit</button>
-							<button class="btn headerbutton" onclick="Backadd();">Back</button>
+							<button class="btn headerbutton btns" onclick="Home();">Home</button>
+							<button class="btn headerbutton btns" id="prevButton">Previous</button>
+							<button th:attr="data-ref_no=${cvfview.srl_no}" class="btn headerbutton btns" onclick="Submitemp(this);"  th:if="${submit == cvfview.emb_id}">Submit</button>
+							<button class="btn headerbutton btns" onclick="Backadd();">Back</button>
 						</div>
 					</div>		 	
 						</form>
@@ -1418,7 +1418,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
+					<button type="button" class="btn headerbutton btns" data-dismiss="modal"
 						style="width: 120px" onclick="Backadd();">Close</button>
 				</div>
 			</div>

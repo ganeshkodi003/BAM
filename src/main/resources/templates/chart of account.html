@@ -1157,7 +1157,7 @@
 
 										<div class="card-footer text-center p-0">
 
-											<button type="button" class="btn headerbutton" id="btnHome"
+											<button type="button" class="btn headerbutton btns" id="btnHome"
 												onclick="home()">Home</button>
 
 											<a th:if="${formmode}=='view'" type="button" class="btn headerbutton"
@@ -1166,7 +1166,7 @@
 												id="btnApprove" onclick="approveUser();">Verify</a> <a
 												th:if="${formmode}=='view'" type="button" class="btn headerbutton"
 												id="btnModify" onclick="modifyUser();">Modify</a> <a
-												th:if="${formmode}=='view'" class="btn headerbutton" id="btnList"
+												th:if="${formmode}=='view'" class="btn headerbutton btns" id="btnList"
 												onclick="ListUser();">List</a>
 
 
@@ -1262,10 +1262,10 @@
 										</div>
 
 										<div class="card-footer text-center p-0">
-											<button type="button" class="btn headerbutton" id="btnHome"
+											<button type="button" class="btn headerbutton btns" id="btnHome"
 												onclick="home()">Home</button>
 
-											<button type="button" class="btn headerbutton" id="btnBack"
+											<button type="button" class="btn headerbutton btns" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
 									</div>
@@ -1288,7 +1288,7 @@
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
+					<button type="button" class="btn headerbutton btns" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>

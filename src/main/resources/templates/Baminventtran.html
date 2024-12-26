@@ -1679,12 +1679,12 @@ function submitaddform(b) {
 									</div>
 
 									<div class="card-footer text-center">
-										<button type="button" class="btn headerbutton" id="btnHome"
+										<button type="button" class="btn headerbutton btns" id="btnHome"
 											onclick="home()">Home</button>
-										<button type="button" class="btn headerbutton" id="btnHome"
+										<button type="button" class="btn headerbutton btns" id="btnHome"
 											onclick="codeadd()" th:if="${operation} == 'operation'">Add</button>
 
-										<button type="button" class="btn headerbutton" id="btnBack"
+										<button type="button" class="btn headerbutton btns" id="btnBack"
 											onclick="back()">Back</button>
 
 									</div>
@@ -2469,17 +2469,17 @@ function submitaddform(b) {
 									</div>
 									<div class="card-footer text-center">
 
-										<button type="button" class="btn headerbutton" id="btnHome"
+										<button type="button" class="btn headerbutton btns" id="btnHome"
 											onclick="home();">Home</button>
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn headerbutton" onclick="submitaddform(this);"
+											class="btn headerbutton btns" onclick="submitaddform(this);"
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
 
-										<button type="button" class="btn headerbutton" id="btnBack"
+										<button type="button" class="btn headerbutton btns" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
@@ -2994,7 +2994,7 @@ function submitaddform(b) {
 									</div>
 									<div class="card-footer text-center p-0" style="margin-top: -20px;">
 
-										<button type="button" class="btn headerbutton" id="btnHome"
+										<button type="button" class="btn headerbutton btns" id="btnHome"
 											onclick="home();">Home</button>
 
 
@@ -3005,11 +3005,11 @@ function submitaddform(b) {
 											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button> -->
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn headerbutton" onclick="submitverifyform(this);"
+											class="btn headerbutton btns" onclick="submitverifyform(this);"
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
-										<button type="button" class="btn headerbutton" id="btnBack"
+										<button type="button" class="btn headerbutton btns" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
@@ -3094,7 +3094,7 @@ function submitaddform(b) {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
+					<button type="button" class="btn headerbutton btns" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>
