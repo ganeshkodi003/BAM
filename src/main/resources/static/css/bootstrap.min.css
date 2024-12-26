@@ -2312,8 +2312,8 @@ pre code {
 	color: #3a4550
 }
 
-.table td, .table th {
-	padding: .85rem;
+.table td {
+	padding: .55rem;
 	vertical-align: top;
 	/* border-top: 1px solid #495561 */
 }
@@ -16148,5 +16148,8 @@ input {
 	font-style: times new roman;
 	color: white !important;
 	margin-bottom: 0;
+	
+}
+.filterable .filters input[readonly]{
 	
 }

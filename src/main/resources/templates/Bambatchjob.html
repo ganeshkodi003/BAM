@@ -23,7 +23,8 @@
 	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 <script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
@@ -429,28 +430,44 @@ td {
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable ">
-									<div class="card-header cardheader d-flex justify-content-between p-1">
-										<h4 class="headerh6 ">Batch Jobs - List</h4>
-									</div>
+									<div class="card-header p-0">
 
+										<div class="d-flex justify-content-between align-items-center">
+											<div>
+												<h3 class="headerbutton ml-2">BATCH JOBS -LIST</h3>
+											</div>
+											<button type="button"
+												class="btn btns btn-filter headerbutton">Filter</button>
+										</div>
+									</div>
 									<div class="card-body p-0">
 										<div class="table-responsive">
 											<table class="table">
-												<thead style="background-color: #f2f2f2;">
+												<thead  style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;background-color: #f2f2f2;">
 
-													<tr>
-														<th rowspan="2">Job Id</th>
-														<th rowspan="2">Asset Srl No.</th>
-														<th rowspan="2">Frequency</th>
-														<th rowspan="2">Run Date</th>
+													<tr class="filters">
+														<th><input type="text"
+															class="form-control font-weight-bold"
+															placeholder="Job Id" readonly></th>
+														<th><input type="text"
+															class="form-control font-weight-bold"
+															placeholder="Asset Srl No." readonly></th>
+														<th><input type="text"
+															class="form-control font-weight-bold"
+															placeholder="Frequency" readonly></th>
+														<th><input type="text"
+															class="form-control font-weight-bold"
+															placeholder="Run Date" readonly></th>
+
+
 														<th rowspan="2">Status</th>
 														<th rowspan="2">Select</th>
 													</tr>
 												</thead>
 												<tbody id="associatemonthly">
 													<TR th:if="${batch} == 'no'">
-														<td COLSPAN="6" STYLE="TEXT-ALIGN: CENTER;">No
-															Batch job schedule</td>
+														<td COLSPAN="6" STYLE="TEXT-ALIGN: CENTER;">No Batch
+															job schedule</td>
 													</TR>
 													<tr th:each="Bamdocmana, iterStat : ${BAMBatchjobs}"
 														th:with="rowNum=${iterStat.index + 1}">
@@ -471,7 +488,7 @@ td {
 										</div>
 									</div>
 
-									<div class="card-footer text-center">
+									<div class="card-footer text-center p-0">
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 										<button type="button" class="btn headerbutton" id="btnHome"
@@ -494,11 +511,11 @@ td {
 						<form action="#" th:object="${BAMBatchjobs}" class="w-100"
 							method="post" autocomplete="off" id="BAMBatchjobs">
 
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
-											<h4 class="headerh6 ">BATCH JOB SCHEDULER</h4>
+											<h4 class="headerbutton p-1 ">BATCH JOB SCHEDULER</h4>
 										</div>
 									</div>
 
@@ -658,8 +675,8 @@ td {
 										<div class="float-left">
 											<h4 th:if="${formmode}=='edit'" class="headerh6 ">INVENTORY
 												MASTER - Edit</h4>
-											<h4 th:if="${formmode}=='verify'"
-												class="headerh6 ">INVENTORY MASTER - Edit</h4>
+											<h4 th:if="${formmode}=='verify'" class="headerh6 ">INVENTORY
+												MASTER - Edit</h4>
 										</div>
 									</div>
 
@@ -1332,15 +1349,15 @@ td {
 
 
 
-										<button th:if="${formmode}=='edit'" type="button"
-											btn headerbutton
-											onclick="submiteditform(this);" form="BAMBatchjobs"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='edit'" type="button" btn
+											headerbutton onclick="submiteditform(this);"
+											form="BAMBatchjobs" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
-										<button th:if="${formmode}=='verify'" type="button"
-											btn headerbutton
-											onclick="submitverifyform(this);" form="BAMBatchjobs"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='verify'" type="button" btn
+											headerbutton onclick="submitverifyform(this);"
+											form="BAMBatchjobs" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>

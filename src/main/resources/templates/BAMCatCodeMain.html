@@ -9,8 +9,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
-	
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
+
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
@@ -25,7 +26,8 @@
 	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
 <script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
@@ -382,7 +384,7 @@ td {
 
 <body>
 
-	<div class="container-fluid" style="margin-bottom:20px;">
+	<div class="container-fluid" style="margin-bottom: 20px;">
 		<div class="row">
 			<div class="col-sm-2">
 				<div th:insert="BTMHeaderMenu :: header"></div>
@@ -394,25 +396,20 @@ td {
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-									<div class="card-header ">
-										<h4
-											class="headerh6 ">CATEGORY
-											CODE MAINTENANCE</h4>
+									<div class="card-header  ">
+										<h4 class="headerbutton ">CATEGORY CODE MAINTENANCE</h4>
 									</div>
 
 									<div class="card-body p-0">
-										<div class="table-responsive">
+										<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 											<table class="table table-bordered">
-												<thead>
+												<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 
 													<tr>
 														<th rowspan="2">Srl. No</th>
-														<th colspan="2"
-															style="text-align: center;">Head</th>
-														<th colspan="2"
-															style="text-align: center;">Category</th>
-														<th colspan="2"
-															style="text-align: center;">Sub-Category</th>
+														<th colspan="2" style="text-align: center;">Head</th>
+														<th colspan="2" style="text-align: center;">Category</th>
+														<th colspan="2" style="text-align: center;">Sub-Category</th>
 														<th rowspan="2">Asset Code</th>
 														<!--
 														<th rowspan="2">Depreciation Method</th>
@@ -463,7 +460,7 @@ td {
 										</div>
 									</div>
 
-									<div class="card-footer text-center">
+									<div class="card-footer text-center p-0">
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 										<button type="button" class="btn headerbutton" id="btnHome"
@@ -718,60 +715,48 @@ td {
 									<!-- Conditionally display the table based on formmode  view-->
 									<div class="table-responsive" th:object="${entryuser}"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-										<table
-											class="table no-border-table table-bordered  table-hover table-sm"
-											style="margin-bottom: 10px; font-size: initial;">
-											<tr>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Entry User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="entryuser" name="entry_user"
-													th:value="${entryuser?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Modify User :</B></font></td>
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="modifyuser" name="modify_user"
-													th:value="${entryuser?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Verify User :</B></font></td>
-												<!-- 
-                          -->
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="verifyuser" name="verify_user"
-													th:value="${entryuser?.verify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-											</tr>
-											<tr>
-												<td style="text-align: right;"><font size="2"><B>Entry
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="entrytime" name="entry_time"
-													th:value="${entryuser?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Modify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="modifytime" name="modify_time"
-													th:value="${entryuser?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Verify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${entryuser?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-											</tr>
-
-										</table>
+										<div class="content m-2 " style="padding: 15px;">
+											<div class="row formline">
+												<label class="col-sm-2">Entry User</label>
+												<div class="col-sm-2">
+													<input type="text" id="entry_user" name="entry_user"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Modify User</label>
+												<div class="col-sm-2">
+													<input type="text" id="modify_user" name="modify_user"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Verify User</label>
+												<div class="col-sm-2">
+													<input type="text" id="auth_user" name="auth_user"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+											</div>
+											<div class="row formline mt-2">
+												<label class="col-sm-2">Entry Time</label>
+												<div class="col-sm-2">
+													<input type="text" id="entry_date" name="entry_time"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Modify Time</label>
+												<div class="col-sm-2">
+													<input type="text" id="modify_time" name="modify_time"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Verify Time</label>
+												<div class="col-sm-2">
+													<input type="text" id="auth_time" name="auth_time"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+											</div>
+										</div>
 									</div>
 
 								</div>
@@ -788,11 +773,13 @@ td {
 						<form action="#" th:object="${Bamcategorycodemain}" class="w-100"
 							method="post" autocomplete="off" id="Bamcategorycodemain">
 
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
-											<h4>Category Code Maintenance - Add</h4>
+											<h4>
+											CATEGORY CODE MAINTENANCE - ADD
+											</h4>
 										</div>
 									</div>
 
@@ -926,7 +913,7 @@ td {
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="depreciation_pandl_account">DEPRECIATION
-														PANDL ACCOUNT</label>
+														PANDL Act.</label>
 												</div>
 												<div class="col-sm-3">
 													<input type="text"
@@ -993,7 +980,7 @@ td {
 											<div class="row formline">
 												<div class="col-sm-2">
 													<label for="depreciation_fund_account">DEPRECIATION
-														FUND ACCOUNT</label>
+														FUND Act.</label>
 												</div>
 
 												<div class="col-sm-3">
@@ -1012,67 +999,54 @@ td {
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn btn-xs headerbutton" onclick="submitaddform(this);"
-											form="Bamcategorycodemain" id="btnSubmit"
-											th:attr="data-formmode='edit'">Submit</button>
+											class="btn btn-xs headerbutton"
+											onclick="submitaddform(this);" form="Bamcategorycodemain"
+											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 									</div>
 									<!-- Conditionally display the table based on formmode  view-->
-									<div class="table-responsive"
-										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-										<table class="table  table-bordered  table-hover table-sm"
-											style="margin-bottom: 10px; font-size: initial;">
-											<tr>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Entry User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="entryuser" name="entry_user"
-													th:value="${BAMInventorymaster?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Modify User :</B></font></td>
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="modifyuser" name="modify_user"
-													th:value="${BAMInventorymaster?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Verify User :</B></font></td>
-												<!-- 
-                         th:value="${BAMInventorymaster?.verify_user}" -->
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="verifyuser" name="verify_user"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-											</tr>
-											<tr>
-												<td style="text-align: right;"><font size="2"><B>Entry
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="entrytime" name="entry_time"
-													th:value="${BAMInventorymaster?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Modify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="modifytime" name="modify_time"
-													th:value="${BAMInventorymaster?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Verify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${BAMInventorymaster?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-											</tr>
-
-										</table>
+									<div class="content m-2 " style="padding: 15px;">
+										<div class="row formline">
+											<label class="col-sm-2">Entry User</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_user" name="entry_user"
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
+											</div>
+											<label class="col-sm-2">Modify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_user" name="modify_user"
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
+											</div>
+											<label class="col-sm-2">Verify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_user" name="auth_user"
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
+											</div>
+										</div>
+										<div class="row formline mt-2">
+											<label class="col-sm-2">Entry Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_date" name="entry_time"
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
+											</div>
+											<label class="col-sm-2">Modify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_time" name="modify_time"
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
+											</div>
+											<label class="col-sm-2">Verify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_time" name="auth_time"
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
+											</div>
+										</div>
 									</div>
 
 								</div>
