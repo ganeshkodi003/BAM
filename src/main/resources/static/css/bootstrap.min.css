@@ -7921,6 +7921,7 @@ none
 	font-style: times new roman;
 	color: white !important;
 	margin-bottom: 0;
+	padding-left:10px;
 }
 
 /* .card-header:first-child {

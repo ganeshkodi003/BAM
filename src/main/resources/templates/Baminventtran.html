@@ -10,6 +10,8 @@
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="/webjars/font-awesome/5.9.0/css/all.min.css"
 	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
@@ -42,12 +44,14 @@
 
 <style>
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .btns {
 	float: right;
 	margin: 5px;
@@ -1600,15 +1604,13 @@ function submitaddform(b) {
 							<div class="card">
 								<div class="panel panel-primary filterable">
 									<div class="card-header d-flex justify-content-between">
-										<h4
-											class="headerh6 ">Inventory
-											Transfer - List</h4>
+										<h4 class="headerh6 ">Inventory Transfer - List</h4>
 									</div>
 
 									<div class="card-body p-0">
 										<div class="table-responsive">
 											<table class="table">
-												<thead style="background-color: #f2f2f2;">
+												<thead >
 
 													<tr>
 														<th rowspan="2">Asset Srl Num</th>
@@ -1617,7 +1619,7 @@ function submitaddform(b) {
 														<th rowspan="2">Employee Id</th>
 														<th rowspan="2">Current Book Value</th>
 														<th rowspan="2">Market Value</th>
-														<th rowspan="2">Transfer Status </th>
+														<th rowspan="2">Transfer Status</th>
 														<th rowspan="2">Verification Status</th>
 														<th rowspan="2">Select</th>
 													</tr>
@@ -1629,20 +1631,27 @@ function submitaddform(b) {
 														<td th:text="${Bamdocmana?.asst_name}"></td>
 														<td th:text="${Bamdocmana?.asst_category}"></td>
 														<td th:text="${Bamdocmana?.from_emp_id}"></td>
-														<td th:text="${Bamdocmana?.cur_book_value_xfr_date}"style="text-align: right;"></td>
-														<td th:text="${Bamdocmana?.market_value}"style="text-align: right;"></td>
+														<td th:text="${Bamdocmana?.cur_book_value_xfr_date}"
+															style="text-align: right;"></td>
+														<td th:text="${Bamdocmana?.market_value}"
+															style="text-align: right;"></td>
 														<td th:text="${Bamdocmana?.transaction_detail}"></td>
 														<th:block th:switch="${Bamdocmana?.del_flg}">
 															<td th:case="'Y'" style="color: green;">Verified</td>
 															<td th:case="'N'" style="color: red;">Unverified</td>
 															<td th:case="null" style="color: red;">Unknown</td>
 														</th:block>
-														
-														<th:block th:switch="${Bamdocmana?.del_flg}" >
-															<td th:case="'Y'" ><input type="radio" th:id="${Bamdocmana?.asst_srl_npo}" onclick="Headcode(this)"></td>
-															<td th:case="'Y'" ><input type="radiO" th:id="${Bamdocmana?.asst_srl_npo}" onclick="Headcoderrr(this)"></td>
+
+														<th:block th:switch="${Bamdocmana?.del_flg}">
+															<td th:case="'Y'"><input type="radio"
+																th:id="${Bamdocmana?.asst_srl_npo}"
+																onclick="Headcode(this)"></td>
+															<td th:case="'Y'"><input type="radiO"
+																th:id="${Bamdocmana?.asst_srl_npo}"
+																onclick="Headcoderrr(this)"></td>
 															<td th:case="'N'">
-																<button class="btn btn-secondary dropdown-toggle"	type="button" th:id="${Bamdocmana?.asst_srl_npo}"
+																<button class="btn btn-secondary dropdown-toggle"
+																	type="button" th:id="${Bamdocmana?.asst_srl_npo}"
 																	title="Action"
 																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
 																	data-toggle="dropdown" aria-haspopup="true"
@@ -1656,8 +1665,8 @@ function submitaddform(b) {
 																	title="Action"
 																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
 																	data-toggle="dropdown" aria-haspopup="true"
-																	aria-expanded="false" onclick="Headcode(this)" >Modify</button>
-																	
+																	aria-expanded="false" onclick="Headcode(this)">Modify</button>
+
 
 															</td>
 														</th:block>
@@ -1688,29 +1697,25 @@ function submitaddform(b) {
 				<div class="container-fluid content" th:if="${formmode}=='add'">
 					<div class="row">
 
-						<form action="#" th:object="${BAMInventorymaster}" class="w-100" method="post"
-							autocomplete="off" id="BAMInventorymaster">
+						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
+							method="post" autocomplete="off" id="BAMInventorymaster">
 
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
-											<h4 class="headerh6 ">INVENTORY TRANSFER -
-												Add</h4>
+											<h4 class="headerh6 ">INVENTORY TRANSFER - Add</h4>
 										</div>
 									</div>
 									<div class="tab mt-2"
 										style="padding: -1px 8px; position: relative; display: flex; justify-content: space-around; margin-top: 15px; width: 100%">
 										<!-- Tab buttons -->
-										<button type="button" class="tablinks active" onclick="openTab(event, 'tab1')"
-											style="
-    transform: translateY(-47px);
-    margin-right: -140px;
-    ">Inventory-View</button>
-										<button type="button" class="tablinks" onclick="openTab(event, 'tab2')" style="
-    transform: translateY(-47px);
-    margin-right: -125px;
-    ">Depreciation</button>
+										<button type="button" class="tablinks active"
+											onclick="openTab(event, 'tab1')"
+											style="transform: translateY(-47px); margin-right: -140px;">Inventory-View</button>
+										<button type="button" class="tablinks"
+											onclick="openTab(event, 'tab2')"
+											style="transform: translateY(-47px); margin-right: -125px;">Depreciation</button>
 									</div>
 									<div id="tab1" class="tabcontent" style="display: block;">
 										<div class="card-body">
@@ -1724,8 +1729,8 @@ function submitaddform(b) {
 															class="form-control form-control-sm" name="asst_srl_npo"
 															autocomplete="off" onchange="handleSelectChange()">
 															<option value="">Select Asset Serial Number</option>
-															<option th:each="assetSN : ${lists}" th:value="${assetSN}"
-																th:text="${assetSN}"></option>
+															<option th:each="assetSN : ${lists}"
+																th:value="${assetSN}" th:text="${assetSN}"></option>
 															<!--  <th:block th:each="asset : ${assetsrlno}">
          						   <option th:value="${asset.sl_no}" th:text="${asset.sl_no}"></option>
        										 </th:block>-->
@@ -1744,18 +1749,17 @@ function submitaddform(b) {
 													</div>
 												</div>
 												<!-- Hidden fields for gen_depreciation and depreciation_percentage -->
-												<input type="hidden" id="gen_depreciation" name="gen_depreciation"
-													value="" />
-												<input type="hidden" id="depreciation_percentage"
-													name="depreciation_percentage" value="" />
-												<input type="hidden" id="depreciation_method" name="depreciation_method"
-													value="" />
-												<input type="hidden" id="acquis_date" name="acquis_date" value="" />
-												<input type="hidden" id="original_cost" name="original_cost" value="" />
-												<input type="hidden" id="gen_depreciation_value"
-													name="gen_depreciation_value" value="" />
-												<input type="hidden" id="remaining_value" name="remaining_value"
-													value="" />
+												<input type="hidden" id="gen_depreciation"
+													name="gen_depreciation" value="" /> <input type="hidden"
+													id="depreciation_percentage" name="depreciation_percentage"
+													value="" /> <input type="hidden" id="depreciation_method"
+													name="depreciation_method" value="" /> <input
+													type="hidden" id="acquis_date" name="acquis_date" value="" />
+												<input type="hidden" id="original_cost" name="original_cost"
+													value="" /> <input type="hidden"
+													id="gen_depreciation_value" name="gen_depreciation_value"
+													value="" /> <input type="hidden" id="remaining_value"
+													name="remaining_value" value="" />
 												<div class="row formline">
 													<div class="col-sm-2">
 														<label for="asset_category">Asset Name</label>
@@ -1771,7 +1775,8 @@ function submitaddform(b) {
 														<label for="category_desc">Description</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster.acc_depr}"
+														<input type="text"
+															th:value="${BAMInventorymaster.acc_depr}"
 															id="category_desc" class="form-control form-control-sm"
 															name="category_desc" autocomplete="off" readonly />
 													</div>
@@ -1805,9 +1810,9 @@ function submitaddform(b) {
 													<div class="col-sm-3">
 														<input type="date" readonly
 															th:value="${BAMInventorymaster.date_of_purchase}"
-															id="date_of_purchase" class="form-control form-control-sm"
-															autocomplete="off" name="date_of_purchase"
-															required="required" />
+															id="date_of_purchase"
+															class="form-control form-control-sm" autocomplete="off"
+															name="date_of_purchase" required="required" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -1816,9 +1821,9 @@ function submitaddform(b) {
 													<div class="col-sm-3">
 														<input type="text" readonly
 															th:value="${BAMInventorymaster.year_of_purchase}"
-															id="year_of_purchase" class="form-control form-control-sm"
-															autocomplete="off" name="year_of_purchase"
-															required="required" />
+															id="year_of_purchase"
+															class="form-control form-control-sm" autocomplete="off"
+															name="year_of_purchase" required="required" />
 													</div>
 												</div>
 												<div class="row formline">
@@ -1863,9 +1868,9 @@ function submitaddform(b) {
 													</div>
 													<div class="col-sm-3">
 														<input type="text" readonly
-															th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-															class="form-control form-control-sm" name="asst_rmks"
-															autocomplete="off" required="required" />
+															th:value="${BAMInventorymaster?.asst_rmks}"
+															id="asst_rmks" class="form-control form-control-sm"
+															name="asst_rmks" autocomplete="off" required="required" />
 													</div>
 												</div>
 
@@ -1875,7 +1880,8 @@ function submitaddform(b) {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.vendor_name}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.vendor_name}"
 															id="vendor_name" class="form-control form-control-sm"
 															name="vendor_name" autocomplete="off" required="required" />
 													</div>
@@ -1919,8 +1925,9 @@ function submitaddform(b) {
 													</div>
 
 													<div class="col-sm-3">
-														<input id="depr_method" name="depr_method" style="width: 100%"
-															class="form-control form-control-sm" required readonly />
+														<input id="depr_method" name="depr_method"
+															style="width: 100%" class="form-control form-control-sm"
+															required readonly />
 
 													</div>
 													<div class="col-sm-1"></div>
@@ -1954,7 +1961,8 @@ function submitaddform(b) {
 													<div class="col-sm-3">
 														<input type="date" readonly
 															th:value="${BAMInventorymaster?.dat_of_last_depr}"
-															id="dat_of_last_depr" class="form-control form-control-sm"
+															id="dat_of_last_depr"
+															class="form-control form-control-sm"
 															name="dat_of_last_depr" autocomplete="off"
 															required="required" />
 													</div>
@@ -2029,7 +2037,8 @@ function submitaddform(b) {
 														<label for="to_category">To Catogery</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.to_category}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.to_category}"
 															id="to_category" class="form-control form-control-sm"
 															name="to_category" autocomplete="off" required="required" />
 													</div>
@@ -2041,7 +2050,8 @@ function submitaddform(b) {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.from_sol_id}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.from_sol_id}"
 															id="from_sol_id" class="form-control form-control-sm"
 															name="from_sol_id" autocomplete="off" required="required" />
 													</div>
@@ -2050,7 +2060,8 @@ function submitaddform(b) {
 														<label for="to_sol_id">To Sol Id</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.to_sol_id}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.to_sol_id}"
 															id="to_sol_id" class="form-control form-control-sm"
 															name="to_sol_id" autocomplete="off" />
 													</div>
@@ -2059,14 +2070,15 @@ function submitaddform(b) {
 
 												<div class="row formline">
 													<div class="col-sm-2">
-														<label for="from_dept_div_name">From Department/Div
-															Name</label>
+														<label for="from_dept_div_name">From
+															Department/Div Name</label>
 													</div>
 
 													<div class="col-sm-3">
 														<input type="text"
 															th:value="${BAMInventorymaster?.from_dept_div_name}"
-															id="from_dept_div_name" class="form-control form-control-sm"
+															id="from_dept_div_name"
+															class="form-control form-control-sm"
 															name="from_dept_div_name" autocomplete="off"
 															required="required" />
 													</div>
@@ -2078,7 +2090,8 @@ function submitaddform(b) {
 													<div class="col-sm-3">
 														<input type="text"
 															th:value="${BAMInventorymaster?.to_dept_div_name}"
-															id="to_dept_div_name" class="form-control form-control-sm"
+															id="to_dept_div_name"
+															class="form-control form-control-sm"
 															name="to_dept_div_name" autocomplete="off"
 															required="required" />
 													</div>
@@ -2100,7 +2113,8 @@ function submitaddform(b) {
 														<label for="to_loc_rmks">To Location Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.to_loc_rmks}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.to_loc_rmks}"
 															id="to_loc_rmks" class="form-control form-control-sm"
 															name="to_loc_rmks" autocomplete="off" required="required" />
 													</div>
@@ -2123,7 +2137,8 @@ function submitaddform(b) {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.to_loc_type}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.to_loc_type}"
 															id="to_loc_type" class="form-control form-control-sm"
 															name="to_loc_type" autocomplete="off" required="required" />
 													</div>
@@ -2137,7 +2152,8 @@ function submitaddform(b) {
 														<label for="from_emp_id">From Employee Id</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.from_emp_id}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.from_emp_id}"
 															id="from_emp_id" class="form-control form-control-sm"
 															name="from_emp_id" autocomplete="off" />
 													</div>
@@ -2147,7 +2163,8 @@ function submitaddform(b) {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.to_emp_id}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.to_emp_id}"
 															id="to_emp_id" class="form-control form-control-sm"
 															name="to_emp_id" autocomplete="off" required="required" />
 													</div>
@@ -2172,7 +2189,8 @@ function submitaddform(b) {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text" th:value="${BAMInventorymaster?.to_loc_addr}"
+														<input type="text"
+															th:value="${BAMInventorymaster?.to_loc_addr}"
 															id="to_loc_addr" class="form-control form-control-sm"
 															name="to_loc_addr" autocomplete="off" required="required" />
 													</div>
@@ -2192,8 +2210,8 @@ function submitaddform(b) {
 												<div class="form-group mb-0">
 													<div class="row formline">
 														<div class="col-sm-3">
-															<label for="srlNo" style="text-align: right;">Asset Serial
-																No</label>
+															<label for="srlNo" style="text-align: right;">Asset
+																Serial No</label>
 														</div>
 														<div class="col-sm-3">
 
@@ -2235,7 +2253,7 @@ function submitaddform(b) {
 														</div>
 														<div class="col-sm-3">
 															<input type="text" name="originalcost"
-																style="text-align:right" id="originalcost"
+																style="text-align: right" id="originalcost"
 																class="form-control form-control-sm"
 																autocomplete="false" readonly />
 														</div>
@@ -2248,17 +2266,19 @@ function submitaddform(b) {
 														</div>
 														<div class="col-sm-3">
 
-															<input type="text" id="assetcurrency" name="assetcurrency"
+															<input type="text" id="assetcurrency"
+																name="assetcurrency"
 																class="form-control form-control-sm" autocomplete="off"
 																readonly />
 
 														</div>
 														<div class="col-sm-3">
-															<label for="employeeName">Accumulated Depreciation</label>
+															<label for="employeeName">Accumulated
+																Depreciation</label>
 														</div>
 														<div class="col-sm-3">
 															<input type="number" name="accum_depres"
-																style="text-align:right" id="accum_depres"
+																style="text-align: right" id="accum_depres"
 																class="form-control form-control-sm"
 																autocomplete="false" readonly />
 														</div>
@@ -2282,7 +2302,7 @@ function submitaddform(b) {
 														</div>
 														<div class="col-sm-3">
 															<input type="text" name="curr_book_value"
-																style="text-align:right" id="current_book_value"
+																style="text-align: right" id="current_book_value"
 																class="form-control form-control-sm"
 																autocomplete="false" readonly />
 														</div>
@@ -2367,9 +2387,10 @@ function submitaddform(b) {
 														</div>
 														<div class="col-sm-3">
 
-															<input type="text" id="lifeofyear" name="life_span_months"
+															<input type="text" id="lifeofyear"
+																name="life_span_months"
 																class="form-control form-control-sm" autocomplete="off"
-																style="text-align:right" readonly />
+																style="text-align: right" readonly />
 
 														</div>
 														<div class="col-sm-3">
@@ -2408,7 +2429,8 @@ function submitaddform(b) {
 														</div>
 													</div>
 												</div>
-												<div class="card-footer text-center" style="background-color: #BBC3CB;">
+												<div class="card-footer text-center"
+													style="background-color: #BBC3CB;">
 													<button type="button" class="btn btn-sm btn-primary"
 														style="text-align: center;" id="genflow"
 														onclick="genflows();">GENERATE FLOWS</button>
@@ -2416,7 +2438,7 @@ function submitaddform(b) {
 											</fieldset>
 
 
-											<fieldset id="tableset" style="display:none">
+											<fieldset id="tableset" style="display: none">
 												<div class="table-responsive mt-3">
 													<table class="table table-bordered mt-3" id="flowsTable">
 														<thead>
@@ -2451,11 +2473,10 @@ function submitaddform(b) {
 											onclick="home();">Home</button>
 
 
-										<button th:if="${formmode}=='add'" type="button" btn headerbutton
-											onclick="submitaddform(this);" form="BAMInventorymaster" id="btnSubmit"
-											th:attr="data-formmode='edit'">
-											Submit
-										</button>
+										<button th:if="${formmode}=='add'" type="button"
+											class="btn headerbutton" onclick="submitaddform(this);"
+											form="BAMInventorymaster" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
 
 										<button type="button" class="btn headerbutton" id="btnBack"
@@ -2486,8 +2507,8 @@ function submitaddform(b) {
 										<div class="float-left">
 											<h4 th:if="${formmode}=='edit'" class="headerh6 ">INVENTORY
 												TRANSFER - Edit</h4>
-											<h4 th:if="${formmode}=='verify'"
-												class="headerh6 ">INVENTORY TRANSFER - Edit</h4>
+											<h4 th:if="${formmode}=='verify'" class="headerh6 ">INVENTORY
+												TRANSFER - Edit</h4>
 										</div>
 									</div>
 
@@ -2546,10 +2567,9 @@ function submitaddform(b) {
 
 												<div class="col-sm-3">
 													<select id="asst_type" name="asset_type"
-														style="width: 100%" 
-														class="form-control form-control-sm" required>
-														<option 
-														th:text="${BAMInventorymaster?.asst_type}"></option>
+														style="width: 100%" class="form-control form-control-sm"
+														required>
+														<option th:text="${BAMInventorymaster?.asst_type}"></option>
 														<option value="Tangible">Tangible</option>
 														<option value="Depreciable">Depreciable</option>
 														<option value="Others">Others</option>
@@ -2574,10 +2594,9 @@ function submitaddform(b) {
 
 												<div class="col-sm-3">
 													<input type="date"
-													       th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
-													       id="date_of_purchase" class="form-control form-control-sm"
-													       autocomplete="off" name="date_of_purchase"
-													/>
+														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
+														id="date_of_purchase" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_purchase" />
 
 												</div>
 												<div class="col-sm-1"></div>
@@ -2586,10 +2605,9 @@ function submitaddform(b) {
 												</div>
 												<div class="col-sm-3">
 													<input type="date"
-													    th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
-													       id="year_of_purchase" class="form-control form-control-sm"
-													       autocomplete="off" name="year_of_purchase"
-													/>
+														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
+														id="year_of_purchase" class="form-control form-control-sm"
+														autocomplete="off" name="year_of_purchase" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -2623,7 +2641,7 @@ function submitaddform(b) {
 
 												<div class="col-sm-3">
 													<input type="date"
-														  th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
+														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
 														id="asst_exp_date" class="form-control form-control-sm"
 														name="asst_exp_date" autocomplete="off"
 														required="required" />
@@ -2704,9 +2722,8 @@ function submitaddform(b) {
 
 												<div class="col-sm-3">
 													<select id="depr_method" name="depr_method"
-														style="width: 100%" 
-														
-														class="form-control form-control-sm" required>
+														style="width: 100%" class="form-control form-control-sm"
+														required>
 														<option th:text="${BAMInventorymaster?.depr_method}"></option>
 														<option value="SLM">SLM</option>
 														<option value="WDV">WDV</option>
@@ -2741,8 +2758,8 @@ function submitaddform(b) {
 														Depreciation</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"        th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'yyyy-MM-dd')}"
-													
+													<input type="date"
+														th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'yyyy-MM-dd')}"
 														id="dat_of_last_depr" class="form-control form-control-sm"
 														name="dat_of_last_depr" autocomplete="off"
 														required="required" />
@@ -2756,8 +2773,8 @@ function submitaddform(b) {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"        th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
-													
+													<input type="date"
+														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
 														id="date_of_acqn" class="form-control form-control-sm"
 														name="date_of_acqn" autocomplete="off" required="required" />
 												</div>
@@ -2766,8 +2783,8 @@ function submitaddform(b) {
 													<label for="date_of_tfr">Date of Transfer</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"        th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'yyyy-MM-dd')}"
-													
+													<input type="date"
+														th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'yyyy-MM-dd')}"
 														id="date_of_tfr" class="form-control form-control-sm"
 														name="date_of_tfr" autocomplete="off" required="required" />
 												</div>
@@ -2981,86 +2998,78 @@ function submitaddform(b) {
 											onclick="home();">Home</button>
 
 
-<!-- 
+										<!-- 
 										<button th:if="${formmode}=='edit' AND ${operation} == 'operation'" type="button"
 											btn headerbutton
 											onclick="submiteditform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button> -->
 
 										<button th:if="${formmode}=='verify'" type="button"
-											btn headerbutton
-											onclick="submitverifyform(this);" form="BAMInventorymaster"
-											id="btnSubmit" th:attr="data-formmode='edit'" >Submit</button>
+											class="btn headerbutton" onclick="submitverifyform(this);"
+											form="BAMInventorymaster" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
-																		<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-    <table class="table  no-border-table table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${BAMInventorymaster?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${BAMInventorymaster?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                         th:value="${BAMInventorymaster?.verify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${BAMInventorymaster?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${BAMInventorymaster?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${BAMInventorymaster?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        
-    </table>
-									
-				</div>
+									<!-- Conditionally display the table based on formmode  view-->
+									<div class="table-responsive"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
+										<table
+											class="table  no-border-table table-bordered  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BAMInventorymaster?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BAMInventorymaster?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													th:value="${BAMInventorymaster?.verify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BAMInventorymaster?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BAMInventorymaster?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${BAMInventorymaster?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+
+										</table>
+
+									</div>
 								</div>
 							</div>
 						</form>

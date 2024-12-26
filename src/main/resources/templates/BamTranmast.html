@@ -6,6 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
@@ -509,9 +510,9 @@ function handleSelectChange() {
 						<form action="#" th:object="${BamTransactionmaster}" class="w-100"
 							method="post" autocomplete="off" id="BamTransactionmaster">
 
-							<div class="associateProfileList mt-4">
+							<div class="associateProfileList">
 								<div class="card">
-									<div class="card-header">
+									<div class="card-header p-1">
 										<div class="float-left">
 											<h4 th:if="${formmode}=='add'">Transaction Master</h4>
 											<h4 th:if="${formmode}=='list'">List of Transaction
