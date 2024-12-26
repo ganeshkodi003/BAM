@@ -1705,10 +1705,10 @@ function genflows() {
 										</div>
 										<div class="btn-group nav-buttons float-right"
 											style="padding: 0 1.25rem 1rem 2rem;">
-											<button type="button" class="btn btn-xs btn-primary btns"
+											<button type="button" class="btn btn-xs  headerbutton btns"
 												id="btnAdd" onclick="codeadd();" th:if="${formmode}=='list'"
 												style="font-size: 15px; width: -70px; size: 100px;">Add</button>
-											<button type="button" class="btn btn-xs btn-primary btns"
+											<button type="button" class="btn btn-xs  headerbutton btns"
 												id="btnAdd" onclick="list();"
 												style="font-size: 15px; width: -70px; size: 100px;">List</button>
 										</div>
@@ -1813,7 +1813,7 @@ function genflows() {
 											<h4 class="headerh6 ">INVENTORY MASTER - Add</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right">
-											<button type="button" class="btn btn-xs btn-primary btns"
+											<button type="button" class="btn btn-xs  headerbutton btns"
 												id="btnAdd" onclick="codeadd();" th:if="${formmode}=='list'"
 												style="font-size: 15px; width: -70px; size: 100px;">Add</button>
 
@@ -2617,8 +2617,8 @@ function genflows() {
 
 
 
-										<button th:if="${formmode}=='add'" type="button" btn
-											headerbutton onclick="submitaddform(this);"
+										<button th:if="${formmode}=='add'" type="button" class="btn
+											headerbutton" onclick="submitaddform(this);"
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
