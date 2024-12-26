@@ -309,16 +309,16 @@ legend {
 						<div class="col-sm-12">
 							<div class="container-fluid content">
 								<div class="row">
-									<div class="card w-100">
-
+									<div class="card w-100 panel panel-primary filterable">
+										<div class="card-header d-flex justify-content-between p-0">
+																							<h4 class="btn btn-sm headerbutton "> SALE - LIST</h4>
+																							<button
+																								class="btn text-white  btn-filter headerbutton">Filter</button>
+																						</div>
 										<div class="card-body p-0">
 
 											<div class="panel panel-primary filterable">
-												<div class="card-header d-flex justify-content-between p-1">
-													<h4 class="headerh6 mt-2"> SALE LIST</h4>
-													<button
-														class="btn text-white  btn-filter headerbutton">Filter</button>
-												</div>
+												
 
 												<div class="table-responsive">
 													<table class="table bordered">
@@ -355,7 +355,7 @@ legend {
 									</div>
 										</div>
 
-										<div class="card-footer text-center">
+										<div class="card-footer text-center p-0">
 											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home();">Home</button>
 
@@ -376,9 +376,9 @@ legend {
 							<form action="#" th:object="${S}" method="POST"
 								class="w-100" autocomplete="off" id="mtWorkAssignment">
 								<div class="card">
-									<div class="card-header">
+									<div class="card-header p-1">
 										<div class="float-left">
-											<h3 th:if="${formmode}=='view'">Sale and WriteOff-SALE</h3>
+											<h3 class="btn btn-sm headerbutton " th:if="${formmode}=='view'">SALE AND WRITE OFF-SALE</h3>
 										</div>
 										
 									</div>
@@ -814,7 +814,7 @@ legend {
 									
 										</div>									
 									
-										<div class="card-footer text-center">
+										<div class="card-footer text-center p-0">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
