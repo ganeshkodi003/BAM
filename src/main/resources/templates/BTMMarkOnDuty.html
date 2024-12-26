@@ -1381,13 +1381,10 @@ $(document)
 											</div>
 											
 									</div>
-									<div class="card-footer text-center p-0">
+									<div class="card-footer text-center p-0" th:if="${formmode}== 'view'">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
-
-
-										
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 
