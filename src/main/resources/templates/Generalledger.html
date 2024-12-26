@@ -88,19 +88,19 @@ body {
 	counter-reset: Serial;
 }
 
-table {
+/* table {
 	border-collapse: separate;
-}
+} */
 
 tr td:first-child:before {
 	counter-increment: Serial;
 	content: counter(Serial);
 }
 
-.table thead th {
+/* .table thead th {
 	border: unset !important;
 }
-
+ */
 .filterable .filters input[readonly] {
 	background-color: transparent;
 	border: none;
@@ -666,7 +666,7 @@ tr td:first-child:before {
 										<div class="panel panel-primary filterable"> 
 											<div class="card-body p-0">
 												<div class="table-responsive">
-													<table class="table" id="replist">
+													<table class="table table-bordered" id="replist">
 														<thead>
 															<tr class="filters">
 																<th><input type="text" class="form-control font-weight-bold"

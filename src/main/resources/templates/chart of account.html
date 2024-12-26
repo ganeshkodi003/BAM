@@ -1160,24 +1160,24 @@
 											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
 
-											<button th:if="${formmode}=='view'" type="button" class="btn headerbutton"
-												id="btnAdd" onclick="adduser();">Add</button>
-											<button th:if="${formmode}=='view'" type="button" class="btn headerbutton"
-												id="btnApprove" onclick="approveUser();">Verify</button> <button
+											<a th:if="${formmode}=='view'" type="button" class="btn headerbutton"
+												id="btnAdd" onclick="adduser();">Add</a>
+											<a th:if="${formmode}=='view'" type="button" class="btn headerbutton"
+												id="btnApprove" onclick="approveUser();">Verify</a> <a
 												th:if="${formmode}=='view'" type="button" class="btn headerbutton"
-												id="btnModify" onclick="modifyUser();">Modify</button> <button
+												id="btnModify" onclick="modifyUser();">Modify</a> <a
 												th:if="${formmode}=='view'" class="btn headerbutton" id="btnList"
-												onclick="ListUser();">List</button>
+												onclick="ListUser();">List</a>
 
 
-											<button th:if="${formmode}== 'add'" type="button" class="btn headerbutton"
+											<a th:if="${formmode}== 'add'" type="button" class="btn headerbutton"
 												id="btnAddSubmit" form="mtWorkAssignment"
-												onclick="submitform(this);">Submit</button>
+												onclick="submitform(this);">Submit</a>
 
 
-											<button th:if="${formmode}== 'edit'" type="button" class="btn headerbutton "
+											<a th:if="${formmode}== 'edit'" type="button" class="btn headerbutton "
 												id="btnSubmit" form="mtWorkAssignment"
-												onclick="submitEditform(this);">Submit</button>
+												onclick="submitEditform(this);">Submit</a>
 
 											<!--<button th:if="${formmode}=='view' " type="button"
 												class=" btn btn-xs btn-primary" id="btnSubmit"
@@ -1216,7 +1216,7 @@
 										<div class="card-body p-0"> 
 											<div class="panel panel-primary filterable"> 
 												<div class="table-responsive">
-													<table class="table">
+													<table class="table table-bordered">
 														<thead>
 															<tr class="filters">
 																<th><input type="text"
