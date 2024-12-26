@@ -2494,23 +2494,23 @@ function submitaddform(b) {
 				<!-- **************************edit********************************* -->
 
 
-				<div class="container-fluid content"
+				<div class="container-fluid content"  
 					th:if="${formmode}=='edit' OR ${formmode}=='verify'">
-					<div class="row">
+					<div class="row" style="margin-top: -40px;">
 
 						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
 							method="post" autocomplete="off" id="BAMInventorymaster">
 
 							<div class="associateProfileList mt-4">
 								<div class="card">
-									<div class="card-header">
-										<div class="float-left">
-											<h4 th:if="${formmode}=='edit'" class="headerh6 ">INVENTORY
-												TRANSFER - Edit</h4>
-											<h4 th:if="${formmode}=='verify'" class="headerh6 ">INVENTORY
-												TRANSFER - Edit</h4>
-										</div>
-									</div>
+									<div class="card-header p-1">
+																			<div class="d-flex justify-content-between align-items-center">
+																				<div class="float-left">
+																					<h3 th:if="${formmode}=='edit'" class="btn btn-sm headerbutton ">INVENTORY TRANSFER - EDIT</h3>
+																					<h3 th:if="${formmode}=='verify'" class="btn btn-sm headerbutton ">INVENTORY TRANSFER - VERIFY</h3>
+																				</div>
+																			</div>
+																		</div>
 
 									<div class="card-body">
 										<div class="form-group">
@@ -2992,7 +2992,7 @@ function submitaddform(b) {
 										</div>
 
 									</div>
-									<div class="card-footer text-center">
+									<div class="card-footer text-center p-0" style="margin-top: -20px;">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
