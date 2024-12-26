@@ -14,7 +14,7 @@ public class ConnectionManager {
 				
 		        //conn = DriverManager.getConnection("jdbc:oracle:thin:@43.240.66.155:1521:ORCL","BTM_TEST","btmtest");
 				//conn = DriverManager.getConnection("jdbc:oracle:thin:@43.240.66.158:1600:BTM","btm","btm");
-				conn = DriverManager.getConnection("jdbc:oracle:thin:@103.11.152.132:1521/BAMDB","bam","bam");
+				conn = DriverManager.getConnection("jdbc:oracle:thin:@103.11.152.132:1521/BAMDB","BAM","BAM");
 	    
 				//conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.99:1521:orcl","btm","btm");
                 //conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.3.162:1521:orcl","btm","btm1");
