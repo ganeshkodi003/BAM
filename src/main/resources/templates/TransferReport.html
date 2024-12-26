@@ -80,6 +80,15 @@
 	color: black !important;
 	background-color: unset !important;
 }
+.content-page{
+	margin-left: 16%;
+	overflow: hidden;
+	padding: 0 15px 65px 15px;
+	margin-top: 101px;
+	width: 100vw ;
+
+
+}	
 
 nav {
 	border-bottom: 2px solid grey;
@@ -100,7 +109,7 @@ nav {
 <body>
 	<!-- Your existing header and container setup -->
 	<div th:insert="BTMHeaderMenu :: header"></div>
-	<div class="container content">
+	<div class="content-page content">
 		<div class="row">
 			<form id="transferForm" action="#" method="post" autocomplete="off"
 				style="width: 100%">
@@ -271,15 +280,20 @@ nav {
 								<div class="col-sm-1"></div>
 							</div>
 						</div>
-
-						
-					</div>
-				</div>
 			</form>
 		</div>
+				<div class="card-footer text-center">
+					<button type="button" class="btn headerbutton" id="btnHome"
+						onclick="home();">Home</button>
+					<button type="button" class="btn headerbutton" id="btnGenerate"
+						onclick="Generate();">Generate</button>
+					<button type="button" class="btn headerbutton" id="btnBack"
+						onclick="back();">Back</button>
+				</div>
+		
 		<div class="panel-body mt-4">
 			<div class="p-2"
-				style="background: #dddddd; width: 102.5%; margin-left: -12px;">
+			>
 				<div class="row form-group">
 					<div class="col-sm-2"></div>
 					<div class="col-sm-3" style="font-size: 12px">
@@ -313,6 +327,8 @@ nav {
 			<br>
 		</div>
 	</div>
+		</div>
+		</div>
 
 	<script>
 		function home() {

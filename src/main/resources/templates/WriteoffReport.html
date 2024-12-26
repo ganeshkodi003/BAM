@@ -67,6 +67,15 @@
 #finusertb {
 	width: 460px;
 }
+.content-page{
+	margin-left: 16%;
+	overflow: hidden;
+	padding: 0 15px 65px 15px;
+	margin-top: 101px;
+	width: 100vw ;
+
+
+}	
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
 	padding: 0px;
@@ -101,7 +110,7 @@ nav {
 <title>BAM</title>
 <body>
     <div th:insert="BTMHeaderMenu :: header"></div>
-<div class="container content">
+<div class="content-page content">
     <div class="row">
         <form action="#" method="post" autocomplete="off" style="width: 100%">
             <div class="card">
@@ -157,11 +166,11 @@ nav {
                         <button type="button" class="btn headerbutton" id="btnGenerate" onclick="Generate();">Generate</button>
                         <button type="button" class="btn headerbutton" id="btnBack" onclick="back();">Back</button>
                     </div>
-                </div>
+               
             </form>
-        </div>
+       
         <div class="panel-body mt-4">
-            <div class="p-2" style="background: #dddddd;width: 102.5%;margin-left: -12px;">
+            <div class="p-2" >
                 <div class="row form-group">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-3" style="font-size: 12px">
@@ -195,6 +204,7 @@ nav {
             <br>
         </div>
     </div>
+     </div> </div>
     <script>
         function home() {
             window.location.href = '/home'; // Update the path as necessary
