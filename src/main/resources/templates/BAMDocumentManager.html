@@ -1,263 +1,242 @@
+
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <!-- 
 	CREATED BY : ARANGULAVAN RAJENDRAN
 	USED FOR :Document Master -->
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
-		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
-	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/font-awesome/5.9.0/css/all.min.css"
+	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+<link rel="stylesheet" type="text/css"
+	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
 
-	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
-	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
-	<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
-		th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
-	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+<script src="/webjars/jquery/3.4.1/jquery.min.js"
+	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+<script
+	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
-		<style>
-				.filterable .filters input[disabled] {
-					background-color: transparent;
-					border: none;
-					cursor: auto;
-					box-shadow: none;
-					padding: 0;
-					height: auto;
-				}
+<style>
+.no-border-table {
+	border: none;
+	border-collapse: collapse;
+}
 
-				.filterable .filters input[disabled]::-webkit-input-placeholder {
-					color: #333;
-				}
+.no-border-table td {
+	border: none;
+}
 
-				.filterable .filters input[disabled]::-moz-placeholder {
-					color: #333;
-				}
+.btns {
+	float: right;
+	margin: 5px;
+}
 
-				.filterable .filters input[disabled]:-ms-input-placeholder {
-					color: #333;
-				}
+.col-sm-5 {
+	padding-bottom: 15px;
+}
 
-				.filterable .filters input[disabled]::-webkit-input-placeholder {
-					color: #333;
-				}
-			</style>
-	<style>
-		.no-border-table {
-			border: none;
-			border-collapse: collapse;
-		}
+.form-control-sm {
+	height: calc(1.5em + .5rem + 2px);
+	padding: .25rem .5rem;
+	font-size: .875rem;
+	line-height: 1.1;
+	border-radius: .2rem;
+}
 
-		.no-border-table td {
-			border: none;
-		}
+.list-body {
+	padding: 0px;
+}
 
-		.btns {
-			float: right;
-			margin: 5px;
-		}
+.error {
+	color: red;
+	padding-left: 10px;
+}
 
-		.col-sm-5 {
-			padding-bottom: 15px;
-		}
+.formline {
+	padding-bottom: 4px;
+}
 
-		.form-control-sm {
-			height: calc(1.5em + .5rem + 2px);
-			padding: .25rem .5rem;
-			font-size: .875rem;
-			line-height: 1.1;
-			border-radius: .2rem;
-		}
+#finusertb {
+	width: 460px;
+}
 
-		.list-body {
-			padding: 0px;
-		}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px;
+}
 
-		.error {
-			color: red;
-			padding-left: 10px;
-		}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+	border: 2px solid skyblue !important;
+	border-bottom: unset !important;
+	background-color: unset !important;
+	color: black !important;
+	background-color: unset !important;
+}
 
-		.formline {
-			padding-bottom: 4px;
-		}
+nav {
+	border-bottom: 2px solid grey;
+}
 
-		#finusertb {
-			width: 460px;
-		}
+.filterable .filters input[readonly] {
+	background-color: transparent;
+	border: none;
+	cursor: auto;
+	box-shadow: none;
+	padding: 0;
+	height: auto;
+}
 
-		.dataTables_wrapper .dataTables_paginate .paginate_button {
-			padding: 0px;
-		}
+.filterable .filters input[readonly]::-webkit-input-placeholder {
+	color: #333;
+}
 
-		.nav-tabs .nav-item.show .nav-link,
-		.nav-tabs .nav-link.active {
-			border: 2px solid skyblue !important;
-			border-bottom: unset !important;
-			background-color: unset !important;
-			color: black !important;
-			background-color: unset !important;
-		}
+.filterable .filters input[readonly]::-moz-placeholder {
+	color: #333;
+}
 
-		nav {
-			border-bottom: 2px solid grey;
-		}
+.filterable .filters input[readonly]:-ms-input-placeholder {
+	color: #333;
+}
+</style>
 
-		.filterable .filters input[readonly] {
-			background-color: transparent;
-			border: none;
-			cursor: auto;
-			box-shadow: none;
-			padding: 0;
-			height: auto;
-		}
+<style>
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
 
-		.filterable .filters input[readonly]::-webkit-input-placeholder {
-			color: #333;
-		}
+th, td {
+	padding: 10px;
+	text-align: left;
+}
 
-		.filterable .filters input[readonly]::-moz-placeholder {
-			color: #333;
-		}
+th, td {
+	border: 1px solid #dcdcdc;
+}
 
-		.filterable .filters input[readonly]:-ms-input-placeholder {
-			color: #333;
-		}
-	</style>
+td {
+	border-top: 1px solid #dcdcdc;
+}
+</style>
+<script th:inline="javascript">
+	/*<![CDATA[*/
 
-	<style>
-		table {
-			width: 100%;
-			border-collapse: collapse;
-		}
+	$(function() {
 
-		th,
-		td {
-			padding: 10px;
-			text-align: left;
-		}
+		$("#readonlyate").datepicker({
+			changeMonth : true,
+			changeYear : true,
+			dateFormat : "yyyy",
+			onSelect : function(selected) {
+				var dt = $(this).datepicker('getDate');
+				dt.setDate(dt.getDate());
+				$("#disableenddate").datepicker("option", "minDate", dt);
 
-		th,
-		td {
-			border: 1px solid #dcdcdc;
-		}
+			}
+		});
+		$("#disableenddate").datepicker({
+			changeMonth : true,
+			changeYear : true,
+			minDate : 0,
+			dateFormat : "dd-mm-yy",
+			onSelect : function(selected) {
+				var dt = new Date(selected);
+				dt.setDate(dt.getDate() - 1);
+				//$("#period_start_date").datepicker("option", "maxDate", dt);
+			}
+		});
+		$("#expiryDate,#passExDate").datepicker({
+			minDate : 0,
+			dateFormat : "dd-mm-yy",
+			onSelect : function(selected) {
+				var dt = new Date(selected);
+				dt.setDate(dt.getDate() + 1);
+			}
+		});
 
-		td {
-			border-top: 1px solid #dcdcdc;
-		}
-	</style>
-	<script th:inline="javascript">
-		/*<![CDATA[*/
+	});
 
-		$(function () {
+	$(function() {
 
-			$("#readonlyate").datepicker({
-				changeMonth: true,
-				changeYear: true,
-				dateFormat: "yyyy",
-				onSelect: function (selected) {
-					var dt = $(this).datepicker('getDate');
-					dt.setDate(dt.getDate());
-					$("#disableenddate").datepicker("option", "minDate", dt);
+		$("#disableStartDate,#disableEndDate").datepicker({
+			minDate : new Date(),
+			changeMonth : true,
+			changeYear : true,
+			gotoCurrent : true,
+			dateFormat : "dd-mm-yy"
+		});
 
-				}
-			});
-			$("#disableenddate").datepicker({
-				changeMonth: true,
-				changeYear: true,
-				minDate: 0,
-				dateFormat: "dd-mm-yy",
-				onSelect: function (selected) {
-					var dt = new Date(selected);
-					dt.setDate(dt.getDate() - 1);
-					//$("#period_start_date").datepicker("option", "maxDate", dt);
-				}
-			});
-			$("#expiryDate,#passExDate").datepicker({
-				minDate: 0,
-				dateFormat: "dd-mm-yy",
-				onSelect: function (selected) {
-					var dt = new Date(selected);
-					dt.setDate(dt.getDate() + 1);
-				}
-			});
+	});
+
+	function home() {
+		location.href = 'Dashboard'
+	}
+
+	function back() {
+		window.history.back();
+	}
+
+	function list() {
+		location.href = 'Documentmanager?formmode=list';
+	}
+	function Headcode(a) {
+		var headcode = a.id;
+		alert(headcode)
+		location.href = 'Documentmanager?formmode=edit&headcode=' + headcode;
+	}
+
+	function Headcode1(a) {
+		var headcode = a.id;
+		alert(headcode)
+		location.href = 'Documentmanager?formmode=verify&headcode=' + headcode;
+	}
+
+	function codeadd() {
+
+		location.href = 'Documentmanager?formmode=add';
+	}
+
+	/*]]>*/
+</script>
+<script>
+	$(function() {
+		$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
+			dateFormat : "dd-mm-yy",
+			changeMonth : true,
+			numberOfMonths : 1,
+			gotoCurrent : true
 
 		});
 
-		$(function () {
-
-			$("#disableStartDate,#disableEndDate").datepicker({
-				minDate: new Date(),
-				changeMonth: true,
-				changeYear: true,
-				gotoCurrent: true,
-				dateFormat: "dd-mm-yy"
-			});
-
-		});
-
-		function home() {
-			location.href = 'Dashboard'
-		}
-
-		function back() {
-			window.history.back();
-		}
-
-		function list() {
-			location.href = 'Documentmanager?formmode=list';
-		}
-		function Headcode(a) {
-			var headcode = a.id;
-			alert(headcode)
-			location.href = 'Documentmanager?formmode=edit&headcode=' + headcode;
-		}
-
-		function Headcode1(a) {
-			var headcode = a.id;
-			alert(headcode)
-			location.href = 'Documentmanager?formmode=verify&headcode=' + headcode;
-		}
-
-		function codeadd() {
-
-			location.href = 'Documentmanager?formmode=add';
-		}
-
-		/*]]>*/
-	</script>
-	<script>
-		$(function () {
-			$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
-				dateFormat: "dd-mm-yy",
-				changeMonth: true,
-				numberOfMonths: 1,
-				gotoCurrent: true
-
-			});
-
-			$(".checkToModify").on(
+		$(".checkToModify").on(
 				'click',
-				function () {
+				function() {
 
 					$(this).prop('checked', true);
 
@@ -266,193 +245,193 @@
 					var resId = $(this).val();
 
 					location.href = 'MtAssociateProfile?formmode=' + formMode
-						+ '&resId=' + resId;
+							+ '&resId=' + resId;
 
 				});
 
-		});
+	});
 
-		function submiteditform(a) {
+	function submiteditform(a) {
 
-			if ($("#Bamdocumentmanager").valid()) {
-				$("#loader1").modal("toggle");
-				var formmode = 'edit';
-				alert(formmode);
-				var url = "./DocManageradd?formmode=" + formmode;
+		if ($("#Bamdocumentmanager").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'edit';
+			alert(formmode);
+			var url = "./DocManageradd?formmode=" + formmode;
 
-				$("#Bamdocumentmanager").attr('action', url);
+			$("#Bamdocumentmanager").attr('action', url);
 
-				var options = {
-					success: showResponse
-					// post-submit callback 
-				};
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
 
-				$("#Bamdocumentmanager").ajaxSubmit(options);
+			$("#Bamdocumentmanager").ajaxSubmit(options);
 
-				function showResponse(responseText, statusText, xhr, $form) {
-					$("#loader1").hide();
-					$("#alertmsg").text(responseText);
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
 
-					$('#alert').modal("toggle");
-
-				}
-				;
+				$('#alert').modal("toggle");
 
 			}
+			;
 
 		}
 
-		function submitaddform(a) {
+	}
 
-			if ($("#Bamdocumentmanager").valid()) {
-				//$("#loader1").modal("toggle");
-				var formmode = 'add';
-				alert(formmode);
-				var url = "./DocManageradd?formmode=" + formmode;
+	function submitaddform(a) {
 
-				$("#Bamdocumentmanager").attr('action', url);
+		if ($("#Bamdocumentmanager").valid()) {
+			//$("#loader1").modal("toggle");
+			var formmode = 'add';
+			alert(formmode);
+			var url = "./DocManageradd?formmode=" + formmode;
 
-				var options = {
-					success: showResponse
-					// post-submit callback 
-				};
+			$("#Bamdocumentmanager").attr('action', url);
 
-				$("#Bamdocumentmanager").ajaxSubmit(options);
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
 
-				function showResponse(responseText, statusText, xhr, $form) {
-					//$("#loader1").hide();
-					$("#alertmsg").text(responseText);
+			$("#Bamdocumentmanager").ajaxSubmit(options);
 
-					$('#alert').modal("toggle");
+			function showResponse(responseText, statusText, xhr, $form) {
+				//$("#loader1").hide();
+				$("#alertmsg").text(responseText);
 
-				}
-				;
+				$('#alert').modal("toggle");
 
 			}
+			;
 
 		}
 
-		function submitverifyform(a) {
+	}
 
-			if ($("#Bamdocumentmanager").valid()) {
-				$("#loader1").modal("toggle");
-				var formmode = 'verify';
-				alert(formmode);
-				var url = "./DocManageradd?formmode=" + formmode;
+	function submitverifyform(a) {
 
-				$("#Bamdocumentmanager").attr('action', url);
+		if ($("#Bamdocumentmanager").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'verify';
+			alert(formmode);
+			var url = "./DocManageradd?formmode=" + formmode;
 
-				var options = {
-					success: showResponse
-					// post-submit callback 
-				};
+			$("#Bamdocumentmanager").attr('action', url);
 
-				$("#Bamdocumentmanager").ajaxSubmit(options);
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
 
-				function showResponse(responseText, statusText, xhr, $form) {
-					$("#loader1").hide();
-					$("#alertmsg").text(responseText);
+			$("#Bamdocumentmanager").ajaxSubmit(options);
 
-					$('#alert').modal("toggle");
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
 
-				}
-				;
+				$('#alert').modal("toggle");
 
 			}
+			;
 
 		}
-		//Filter Table
 
-		$(document)
+	}
+	//Filter Table
+
+	$(document)
 			.ready(
-				function () {
+					function() {
 
-					$('.filterable .btn-filter')
-						.click(
-							function (event) {
-								event.preventDefault();
-								var $panel = $(this).parents(
-									'.filterable'), $filters = $panel
-										.find('.filters input'), $tbody = $panel
-											.find('.table tbody');
-								if ($filters.prop('readonly') == true) {
-									$filters
-										.prop('readonly', false);
-									$filters.first().focus();
-								} else {
-									$filters.val('').prop(
-										'readonly', true);
-									$tbody.find('.no-result')
-										.remove();
-									$tbody.find('tr').show();
-								}
-							});
+						$('.filterable .btn-filter')
+								.click(
+										function(event) {
+											event.preventDefault();
+											var $panel = $(this).parents(
+													'.filterable'), $filters = $panel
+													.find('.filters input'), $tbody = $panel
+													.find('.table tbody');
+											if ($filters.prop('readonly') == true) {
+												$filters
+														.prop('readonly', false);
+												$filters.first().focus();
+											} else {
+												$filters.val('').prop(
+														'readonly', true);
+												$tbody.find('.no-result')
+														.remove();
+												$tbody.find('tr').show();
+											}
+										});
 
-					$('.filterable .filters input')
-						.keyup(
-							function (e) {
-								/* Ignore tab key */
-								var code = e.keyCode || e.which;
-								if (code == '9')
-									return;
-								/* Useful DOM data and selectors */
-								var $input = $(this), inputContent = $input
-									.val().toLowerCase(), $panel = $input
-										.parents('.filterable'), column = $panel
-											.find('.filters th')
-											.index($input.parents('th')), $table = $panel
-												.find('.table'), $rows = $table
+						$('.filterable .filters input')
+								.keyup(
+										function(e) {
+											/* Ignore tab key */
+											var code = e.keyCode || e.which;
+											if (code == '9')
+												return;
+											/* Useful DOM data and selectors */
+											var $input = $(this), inputContent = $input
+													.val().toLowerCase(), $panel = $input
+													.parents('.filterable'), column = $panel
+													.find('.filters th')
+													.index($input.parents('th')), $table = $panel
+													.find('.table'), $rows = $table
 													.find('tbody tr');
-								/* Dirtiest filter function ever ;) */
-								var $filteredRows = $rows
-									.filter(function () {
-										var value = $(this)
-											.find('td').eq(
-												column)
-											.text()
-											.toLowerCase();
-										return value
-											.indexOf(inputContent) === -1;
-									});
-								/* Clean previous no-result if exist */
-								$table.find('tbody .no-result')
-									.remove();
-								/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
-								$rows.show();
-								$filteredRows.hide();
-								/* Prepend no-result row if all rows are filtered */
-								if ($filteredRows.length === $rows.length) {
-									$table
-										.find('tbody')
-										.prepend(
-											$('<tr class="no-result text-center"><td colspan="'
-												+ $table
-													.find('.filters th').length
-												+ '">No result found</td></tr>'));
-								}
-							});
+											/* Dirtiest filter function ever ;) */
+											var $filteredRows = $rows
+													.filter(function() {
+														var value = $(this)
+																.find('td').eq(
+																		column)
+																.text()
+																.toLowerCase();
+														return value
+																.indexOf(inputContent) === -1;
+													});
+											/* Clean previous no-result if exist */
+											$table.find('tbody .no-result')
+													.remove();
+											/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+											$rows.show();
+											$filteredRows.hide();
+											/* Prepend no-result row if all rows are filtered */
+											if ($filteredRows.length === $rows.length) {
+												$table
+														.find('tbody')
+														.prepend(
+																$('<tr class="no-result text-center"><td colspan="'
+																		+ $table
+																				.find('.filters th').length
+																		+ '">No result found</td></tr>'));
+											}
+										});
 
-				});
-	</script>
-	<script>
-		$(document).ready(
-			function () {
-				document.getElementById('upload_flg').addEventListener(
-					'change',
-					function () {
-						const uploadInputBox = document
-							.getElementById('doccs');
-						if (this.value === 'Y') {
-							uploadInputBox.style.display = 'block'; // Show the input box
-							uploadInputBox.classList.add('d-flex'); // Ensure flex alignment
-						} else {
-							uploadInputBox.style.display = 'none'; // Hide the input box
-							uploadInputBox.classList.remove('d-flex');
-						}
 					});
+</script>
+<script>
+	$(document).ready(
+			function() {
+				document.getElementById('upload_flg').addEventListener(
+						'change',
+						function() {
+							const uploadInputBox = document
+									.getElementById('doccs');
+							if (this.value === 'Y') {
+								uploadInputBox.style.display = 'block'; // Show the input box
+								uploadInputBox.classList.add('d-flex'); // Ensure flex alignment
+							} else {
+								uploadInputBox.style.display = 'none'; // Hide the input box
+								uploadInputBox.classList.remove('d-flex');
+							}
+						});
 			});
-	</script>
-	
+</script>
+
 </head>
 <title>BAM</title>
 
@@ -468,53 +447,29 @@
 
 				<div class="container-fluid content" th:if="${formmode} == 'list'">
 					<div class="row">
-						<form action="#" method="post" autocomplete="off" style="width: 100%">
-							<div class="card panel panel-primary filterable"> 
-								<div class="card-header p-0">
-														<div class="float-left">
-															<h4 class="btn btn-sm mr-2 headerbutton mt-1">DOCUMENT MANAGER - LIST</h4>
-														</div>
-														<!--<div class="btn-group nav-buttons float-right"> 
-															<button type="button" class="btn btns btn-filter headerbutton">Filter</button>
-														</div>-->
-													</div>
-								<div >
-
+						<form action="#" method="post" autocomplete="off"
+							style="width: 100%">
+							<div class="card">
+								<div class="panel panel-primary filterable">
+									<div class="card-header d-flex justify-content-between">
+										<h4 class="headerh6 ">DOCUMENT MANAGER - List</h4>
+									</div>
 
 									<div class="card-body p-0">
 										<div class="table-responsive">
 											<table class="table">
-												<thead>
-													<tr class="filters">
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Srl No" disabled></th>
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Branch Id" disabled></th>
-														<th style="text-align: center"><input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Branch Name" disabled>
-														</th>
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Asset Srl No" disabled>
-														</th>
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Doc Id" disabled>
-														</th>
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Doc Name" disabled></th>
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Doc Path" disabled>
-														</th>
-														<th style="text-align: center"> <input type="text"
-																class="form-control font-weight-bold"
-																placeholder="Status" disabled></th>
-														 <th class="pb-2 select_th">Select</th> 
+												<thead >
+
+													<tr>
+														<th rowspan="2">Srl NO</th>
+														<th rowspan="2">Branch Id</th>
+														<th rowspan="2">Branch Name</th>
+														<th rowspan="2">Asset Srl No</th>
+														<th rowspan="2">Docuement Id</th>
+														<th rowspan="2">Document Name</th>
+														<th rowspan="2">Document Path</th>
+														<th rowspan="2">Verification Status</th>
+														<th rowspan="2">Select</th>
 													</tr>
 												</thead>
 												<tbody id="associatemonthly">
@@ -535,8 +490,7 @@
 														</th:block>
 														<th:block th:switch="${Bamdocmana?.del_flg}">
 															<td th:case="'Y'"><input type="radio"
-																	th:id="${Bamdocmana?.doc_id}"
-																	onclick="Headcode(this)">
+																th:id="${Bamdocmana?.doc_id}" onclick="Headcode(this)">
 															</td>
 															<td th:case="'N'">
 																<button class="btn btn-secondary dropdown-toggle"
@@ -554,8 +508,7 @@
 																	title="Action"
 																	style="line-height: 0.7; font-size: 11px; color: #3a4550; background: #e3e3e4;"
 																	data-toggle="dropdown" aria-haspopup="true"
-																	aria-expanded="false"
-																	onclick="Headcode(this)">Modify</button>
+																	aria-expanded="false" onclick="Headcode(this)">Modify</button>
 
 															</td>
 														</th:block>
@@ -586,8 +539,9 @@
 				<div class="container-fluid content" th:if="${formmode}=='add'">
 					<div class="row">
 
-						<form action="#" th:object="${Bamdocumentmanager}" class="w-100" method="post"
-							autocomplete="off" id="Bamdocumentmanager" enctype="multipart/form-data">
+						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
+							method="post" autocomplete="off" id="Bamdocumentmanager"
+							enctype="multipart/form-data">
 							<!-- Other fields -->
 							<div class="associateProfileList ">
 								<div class="card">
@@ -605,16 +559,18 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.branch_id}"
-														id="branch_id" class="form-control form-control-sm"
-														autocomplete="off" name="branch_id" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_id}" id="branch_id"
+														class="form-control form-control-sm" autocomplete="off"
+														name="branch_id" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="branch_name">Branch Name</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.branch_name} "
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_name} "
 														id="branch_name" class="form-control form-control-sm"
 														autocomplete="off" name="branch_name" />
 												</div>
@@ -625,7 +581,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.asset_srl_no}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_srl_no}"
 														id="asset_srl_no" class="form-control form-control-sm"
 														name="asset_srl_no" autocomplete="off" />
 												</div>
@@ -634,7 +591,8 @@
 													<label for="category_description">Asset Name</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.asset_name}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_name}"
 														id="asset_name" class="form-control form-control-sm"
 														name="asset_name" autocomplete="off" />
 												</div>
@@ -645,7 +603,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_ref_no}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_ref_no}"
 														id="doc_ref_no" class="form-control form-control-sm"
 														autocomplete="off" name="doc_ref_no" required="required" />
 												</div>
@@ -655,8 +614,8 @@
 												</div>
 												<div class="col-sm-3">
 													<input type="text" th:value="${Bamdocumentmanager.doc_id}"
-														id="doc_id" class="form-control form-control-sm" name="doc_id"
-														autocomplete="off" required="required" />
+														id="doc_id" class="form-control form-control-sm"
+														name="doc_id" autocomplete="off" required="required" />
 												</div>
 											</div>
 
@@ -666,18 +625,20 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_name}"
-														id="doc_name" class="form-control form-control-sm"
-														autocomplete="off" name="doc_name" required="required" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_name}" id="doc_name"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_name" required="required" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="doc_desc">Document Desc</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_desc}"
-														id="doc_desc" class="form-control form-control-sm"
-														autocomplete="off" name="doc_desc" required="required" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_desc}" id="doc_desc"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_desc" required="required" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -716,8 +677,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<select id="access_type" name="access_type" style="width: 100%"
-														th:field="*{access_type}"
+													<select id="access_type" name="access_type"
+														style="width: 100%" th:field="*{access_type}"
 														th:value="${Bamdocumentmanager?.access_type}"
 														class="form-control form-control-sm" required>
 														<option value="">SELECT</option>
@@ -730,8 +691,8 @@
 													<label for="access_group">Access Group</label>
 												</div>
 												<div class="col-sm-3">
-													<select id="access_group" name="access_group" style="width: 100%"
-														th:field="*{access_group}"
+													<select id="access_group" name="access_group"
+														style="width: 100%" th:field="*{access_group}"
 														th:value="${Bamdocumentmanager?.access_group}"
 														class="form-control form-control-sm" required>
 														<option value="">SELECT</option>
@@ -746,7 +707,8 @@
 													<label for="doc_folder">Document Folder</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_folder}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_folder}"
 														id="doc_folder" class="form-control form-control-sm"
 														name="doc_folder" autocomplete="off" readonly />
 												</div>
@@ -755,7 +717,8 @@
 													<label for="doc_location">Document Location Path</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_location}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_location}"
 														id="doc_location" class="form-control form-control-sm"
 														name="doc_location" autocomplete="off" readonly />
 												</div>
@@ -768,7 +731,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_author}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_author}"
 														id="doc_author" class="form-control form-control-sm"
 														name="doc_author" autocomplete="off" />
 												</div>
@@ -777,7 +741,8 @@
 													<label for="doc_reviewer">Approved By</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_reviewer}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_reviewer}"
 														id="doc_reviewer" class="form-control form-control-sm"
 														name="doc_reviewer" autocomplete="off" />
 												</div>
@@ -806,9 +771,10 @@
 													<label for="scan_flg">Scan Flg</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.scan_flg}"
-														id="scan_flg" class="form-control form-control-sm"
-														name="scan_flg" autocomplete="off" />
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_flg}" id="scan_flg"
+														class="form-control form-control-sm" name="scan_flg"
+														autocomplete="off" />
 												</div>
 											</div>
 
@@ -819,7 +785,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.upload_user}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_user}"
 														id="upload_user" class="form-control form-control-sm"
 														name="upload_user" autocomplete="off" />
 												</div>
@@ -828,9 +795,10 @@
 													<label for="scan_user">Scan User</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.scan_user}"
-														id="scan_user" class="form-control form-control-sm"
-														name="scan_user" autocomplete="off" />
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_user}" id="scan_user"
+														class="form-control form-control-sm" name="scan_user"
+														autocomplete="off" />
 												</div>
 											</div>
 
@@ -841,8 +809,8 @@
 
 												<div class="col-sm-3">
 													<input type="file" id="documentFile" name="documentFile"
-														class="form-control form-control-sm" accept=".pdf,.xls,.xlsx"
-														required />
+														class="form-control form-control-sm"
+														accept=".pdf,.xls,.xlsx" required />
 												</div>
 
 
@@ -859,7 +827,7 @@
 
 
 										<button th:if="${formmode}=='add'" type="button"
-											class="btn headerbutton btns" onclick="submitaddform(this);"
+											class="btn headerbutton" onclick="submitaddform(this);"
 											form="Bamdocumentmanager" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
@@ -870,60 +838,56 @@
 									<!-- Conditionally display the table based on formmode  view-->
 									<div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-										<table class="table no-border-table table-bordered  table-hover table-sm"
+										<table
+											class="table no-border-table table-bordered  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
 											<tr>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Entry User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
-														type="text" id="entryuser" name="entry_user"
-														th:value="${BAMInventorymaster?.entry_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Modify User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="modifyuser" name="modify_user"
-														th:value="${BAMInventorymaster?.modify_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Verify User :</B></font>
-												</td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BAMInventorymaster?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BAMInventorymaster?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
 												<!-- 
                          th:value="${BAMInventorymaster?.verify_user}" -->
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="verifyuser" name="verify_user"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">
-													<font size="2"><B>Entry
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="entrytime"
-														name="entry_time" th:value="${BAMInventorymaster?.entry_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Modify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="modifytime"
-														name="modify_time" th:value="${BAMInventorymaster?.modify_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Verify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="verifytime"
-														name="verify_time" th:value="${BAMInventorymaster?.verify_time}"
-														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BAMInventorymaster?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BAMInventorymaster?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${BAMInventorymaster?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
 											</tr>
 
 										</table>
@@ -939,8 +903,8 @@
 				<div class="container-fluid content" th:if="${formmode}=='verify'">
 					<div class="row">
 
-						<form action="#" th:object="${Bamdocumentmanager}" class="w-100" method="post"
-							autocomplete="off" id="Bamdocumentmanager">
+						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
+							method="post" autocomplete="off" id="Bamdocumentmanager">
 
 							<div class="associateProfileList ">
 								<div class="card">
@@ -958,16 +922,18 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.branch_id}"
-														id="branch_id" class="form-control form-control-sm"
-														autocomplete="off" name="branch_id" readonly="readonly" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_id}" id="branch_id"
+														class="form-control form-control-sm" autocomplete="off"
+														name="branch_id" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="branch_name">Branch Name</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.branch_name} "
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_name} "
 														id="branch_name" class="form-control form-control-sm"
 														autocomplete="off" name="branch_name" readonly="readonly" />
 												</div>
@@ -978,7 +944,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.asset_srl_no}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_srl_no}"
 														id="asset_srl_no" class="form-control form-control-sm"
 														name="asset_srl_no" autocomplete="off" readonly="readonly" />
 												</div>
@@ -987,7 +954,8 @@
 													<label for="category_description">Asset Name</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.asset_name}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_name}"
 														id="asset_name" class="form-control form-control-sm"
 														name="asset_name" autocomplete="off" readonly="readonly" />
 												</div>
@@ -998,7 +966,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_ref_no}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_ref_no}"
 														id="doc_ref_no" class="form-control form-control-sm"
 														autocomplete="off" name="doc_ref_no" required="required"
 														readonly="readonly" />
@@ -1009,8 +978,9 @@
 												</div>
 												<div class="col-sm-3">
 													<input type="text" th:value="${Bamdocumentmanager.doc_id}"
-														id="doc_id" class="form-control form-control-sm" name="doc_id"
-														autocomplete="off" required="required" readonly="readonly" />
+														id="doc_id" class="form-control form-control-sm"
+														name="doc_id" autocomplete="off" required="required"
+														readonly="readonly" />
 												</div>
 											</div>
 
@@ -1020,20 +990,20 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_name}"
-														id="doc_name" class="form-control form-control-sm"
-														autocomplete="off" name="doc_name" required="required"
-														readonly="readonly" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_name}" id="doc_name"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_name" required="required" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="doc_desc">Document Desc</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_desc}"
-														id="doc_desc" class="form-control form-control-sm"
-														autocomplete="off" name="doc_desc" required="required"
-														readonly="readonly" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_desc}" id="doc_desc"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_desc" required="required" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -1079,8 +1049,8 @@
 														id="access_type"
 														class="form-control form-control-sm"
 														name="access_type" autocomplete="off" required="required" readonly="readonly"/> -->
-													<select id="access_type" name="access_type" style="width: 100%"
-														th:field="*{access_type}"
+													<select id="access_type" name="access_type"
+														style="width: 100%" th:field="*{access_type}"
 														th:value="${Bamdocumentmanager?.access_type}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
@@ -1098,8 +1068,8 @@
 														id="access_group"
 														class="form-control form-control-sm"
 														name="access_group" autocomplete="off" required="required" readonly="readonly"/> -->
-													<select id="access_group" name="access_group" style="width: 100%"
-														th:field="*{access_group}"
+													<select id="access_group" name="access_group"
+														style="width: 100%" th:field="*{access_group}"
 														th:value="${Bamdocumentmanager?.access_group}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
@@ -1115,7 +1085,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_folder}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_folder}"
 														id="doc_folder" class="form-control form-control-sm"
 														name="doc_folder" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1124,7 +1095,8 @@
 													<label for="doc_location">Document Location Path</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_location}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_location}"
 														id="doc_location" class="form-control form-control-sm"
 														name="doc_location" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1137,7 +1109,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_author}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_author}"
 														id="doc_author" class="form-control form-control-sm"
 														name="doc_author" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1146,7 +1119,8 @@
 													<label for="doc_reviewer">Document Reviewer</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_reviewer}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_reviewer}"
 														id="doc_reviewer" class="form-control form-control-sm"
 														name="doc_reviewer" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1158,7 +1132,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.upload_flg}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_flg}"
 														id="upload_flg" class="form-control form-control-sm"
 														name="upload_flg" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1167,9 +1142,10 @@
 													<label for="scan_flg">Scan Flg</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.scan_flg}"
-														id="scan_flg" class="form-control form-control-sm"
-														name="scan_flg" autocomplete="off" readonly="readonly" />
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_flg}" id="scan_flg"
+														class="form-control form-control-sm" name="scan_flg"
+														autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -1180,7 +1156,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.upload_user}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_user}"
 														id="upload_user" class="form-control form-control-sm"
 														name="upload_user" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1189,9 +1166,10 @@
 													<label for="scan_user">Scan User</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.scan_user}"
-														id="scan_user" class="form-control form-control-sm"
-														name="scan_user" autocomplete="off" readonly="readonly" />
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_user}" id="scan_user"
+														class="form-control form-control-sm" name="scan_user"
+														autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -1206,7 +1184,7 @@
 
 
 										<button th:if="${formmode}=='verify'" type="button"
-											class="btn headerbutton btns"
+											class="btn headerbutton"
 											onclick="submitverifyform(this);" form="Bamdocumentmanager"
 											id="btnSubmit" th:attr="data-formmode='edit'">Verify</button>
 
@@ -1220,57 +1198,52 @@
 										<table class="table  table-bordered  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
 											<tr>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Entry User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
-														type="text" id="entryuser" name="entry_user"
-														th:value="${BAMInventorymaster?.entry_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Modify User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="modifyuser" name="modify_user"
-														th:value="${BAMInventorymaster?.modify_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Verify User :</B></font>
-												</td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BAMInventorymaster?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BAMInventorymaster?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
 												<!-- 
                          th:value="${BAMInventorymaster?.verify_user}" -->
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="verifyuser" name="verify_user"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;">
-													<font size="2"><B>Entry
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="entrytime"
-														name="entry_time" th:value="${BAMInventorymaster?.entry_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Modify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="modifytime"
-														name="modify_time" th:value="${BAMInventorymaster?.modify_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Verify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="verifytime"
-														name="verify_time" th:value="${BAMInventorymaster?.verify_time}"
-														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BAMInventorymaster?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BAMInventorymaster?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${BAMInventorymaster?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
 											</tr>
 
 										</table>
@@ -1288,8 +1261,8 @@
 				<div class="container-fluid content" th:if="${formmode}=='edit'">
 					<div class="row">
 
-						<form action="#" th:object="${Bamdocumentmanager}" class="w-100" method="post"
-							autocomplete="off" id="Bamdocumentmanager">
+						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
+							method="post" autocomplete="off" id="Bamdocumentmanager">
 
 							<div class="associateProfileList ">
 								<div class="card">
@@ -1307,16 +1280,18 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.branch_id}"
-														id="branch_id" class="form-control form-control-sm"
-														autocomplete="off" name="branch_id" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_id}" id="branch_id"
+														class="form-control form-control-sm" autocomplete="off"
+														name="branch_id" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="branch_name">Branch Name</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.branch_name} "
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_name} "
 														id="branch_name" class="form-control form-control-sm"
 														autocomplete="off" name="branch_name" />
 												</div>
@@ -1327,7 +1302,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.asset_srl_no}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_srl_no}"
 														id="asset_srl_no" class="form-control form-control-sm"
 														name="asset_srl_no" autocomplete="off" />
 												</div>
@@ -1336,7 +1312,8 @@
 													<label for="category_description">Asset Name</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.asset_name}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_name}"
 														id="asset_name" class="form-control form-control-sm"
 														name="asset_name" autocomplete="off" />
 												</div>
@@ -1347,7 +1324,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_ref_no}"
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_ref_no}"
 														id="doc_ref_no" class="form-control form-control-sm"
 														autocomplete="off" name="doc_ref_no" required="required" />
 												</div>
@@ -1357,8 +1335,8 @@
 												</div>
 												<div class="col-sm-3">
 													<input type="text" th:value="${Bamdocumentmanager.doc_id}"
-														id="doc_id" class="form-control form-control-sm" name="doc_id"
-														autocomplete="off" required="required" />
+														id="doc_id" class="form-control form-control-sm"
+														name="doc_id" autocomplete="off" required="required" />
 												</div>
 											</div>
 
@@ -1368,18 +1346,20 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_name}"
-														id="doc_name" class="form-control form-control-sm"
-														autocomplete="off" name="doc_name" required="required" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_name}" id="doc_name"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_name" required="required" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="doc_desc">Document Desc</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager.doc_desc}"
-														id="doc_desc" class="form-control form-control-sm"
-														autocomplete="off" name="doc_desc" required="required" />
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_desc}" id="doc_desc"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_desc" required="required" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -1414,8 +1394,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<select id="access_type" name="access_type" style="width: 100%"
-														th:field="*{access_type}"
+													<select id="access_type" name="access_type"
+														style="width: 100%" th:field="*{access_type}"
 														th:value="${Bamdocumentmanager?.access_type}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
@@ -1434,8 +1414,8 @@
 														class="form-control form-control-sm"
 														name="access_group" autocomplete="off" required="required"/> -->
 
-													<select id="access_group" name="access_group" style="width: 100%"
-														th:field="*{access_group}"
+													<select id="access_group" name="access_group"
+														style="width: 100%" th:field="*{access_group}"
 														th:value="${Bamdocumentmanager?.access_group}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
@@ -1451,7 +1431,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_folder}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_folder}"
 														id="doc_folder" class="form-control form-control-sm"
 														name="doc_folder" autocomplete="off" required="required" />
 												</div>
@@ -1460,7 +1441,8 @@
 													<label for="doc_location">Document Location Path</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_location}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_location}"
 														id="doc_location" class="form-control form-control-sm"
 														name="doc_location" autocomplete="off" required="required" />
 												</div>
@@ -1473,7 +1455,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.doc_author}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_author}"
 														id="doc_author" class="form-control form-control-sm"
 														name="doc_author" autocomplete="off" />
 												</div>
@@ -1482,7 +1465,8 @@
 													<label for="doc_reviewer">Document Reviewer</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="number" th:value="${Bamdocumentmanager?.doc_reviewer}"
+													<input type="number"
+														th:value="${Bamdocumentmanager?.doc_reviewer}"
 														id="doc_reviewer" class="form-control form-control-sm"
 														name="doc_reviewer" autocomplete="off" />
 												</div>
@@ -1494,7 +1478,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.upload_flg}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_flg}"
 														id="upload_flg" class="form-control form-control-sm"
 														name="upload_flg" autocomplete="off" />
 												</div>
@@ -1503,9 +1488,10 @@
 													<label for="scan_flg">Scan Flg</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.scan_flg}"
-														id="scan_flg" class="form-control form-control-sm"
-														name="scan_flg" autocomplete="off" />
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_flg}" id="scan_flg"
+														class="form-control form-control-sm" name="scan_flg"
+														autocomplete="off" />
 												</div>
 											</div>
 
@@ -1516,7 +1502,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.upload_user}"
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_user}"
 														id="upload_user" class="form-control form-control-sm"
 														name="upload_user" autocomplete="off" />
 												</div>
@@ -1525,9 +1512,10 @@
 													<label for="scan_user">Scan User</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamdocumentmanager?.scan_user}"
-														id="scan_user" class="form-control form-control-sm"
-														name="scan_user" autocomplete="off" />
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_user}" id="scan_user"
+														class="form-control form-control-sm" name="scan_user"
+														autocomplete="off" />
 												</div>
 											</div>
 
@@ -1542,7 +1530,7 @@
 
 
 										<button th:if="${formmode}=='edit'" type="button"
-											class="btn headerbutton btns"
+											class="btn headerbutton"
 											onclick="submiteditform(this);" form="Bamdocumentmanager"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
@@ -1553,25 +1541,25 @@
 									<!-- Conditionally display the table based on formmode  view-->
 									<div class="table-responsive" th:object="${entryuser}"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-										<table class="table no-border-table table-bordered  table-hover table-sm"
+										<table
+											class="table no-border-table table-bordered  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
 											<tr>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Entry User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
-														type="text" id="entryuser" name="entry_user"
-														th:value="${entryuser?.entry_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Modify User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="modifyuser" name="modify_user"
-														th:value="${entryuser?.modify_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${entryuser?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${entryuser?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
 												<!-- <td class="col-sm-2" style="text-align: right;">
                 <font size="2"><B>Verify User :</B></font>
             </td>
@@ -1584,22 +1572,20 @@
             </td> -->
 											</tr>
 											<tr>
-												<td style="text-align: right;">
-													<font size="2"><B>Entry
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="entrytime"
-														name="entry_time" th:value="${entryuser?.entry_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Modify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="modifytime"
-														name="modify_time" th:value="${entryuser?.modify_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${entryuser?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${entryuser?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
 												<!-- <td style="text-align: right;">
                 <font size="2"><B>Verify Time :</B></font>
             </td>
@@ -1626,30 +1612,33 @@
 
 
 	<div class="modal fade" id="alert">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="menu-title-header">
 					<div class="modal-title" id="exampleModalLabel"
-						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">
-						BANK
+						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">BANK
 						NAME</div>
 				</div>
-				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
+				<div class="modal-body"
+					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
-					<button type="button" class="btn headerbutton btns" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="loader1" data-backdrop="static" data-keyboard="false">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	<div class="modal fade" id="loader1" data-backdrop="static"
+		data-keyboard="false">
+		<div
+			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background: transparent;">
 				<div class="modal-body" style="text-align: center">
 					<div>
-						<img th:src=@{/images/loadingapp.gif} id="bfirelogo" style="width: 153px; margin-left: 18px;"
-							alt="Bornfire">
+						<img th:src=@{/images/loadingapp.gif} id="bfirelogo"
+							style="width: 153px; margin-left: 18px;" alt="Bornfire">
 					</div>
 				</div>
 			</div>
