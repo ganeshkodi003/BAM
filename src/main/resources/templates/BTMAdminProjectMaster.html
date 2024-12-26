@@ -529,7 +529,7 @@ tr td:first-child:before {
 
 											<div class="panel panel-primary filterable">
 												<div class="card-header d-flex justify-content-between"
-													style="background-color:#BBC3CB;">
+													>
 													<h4 th:if="${formmode}=='list'">LIST OF PROJECTS</h4>
 													<h4 th:if="${formmode}=='list1'">LIST OF PROJECTS</h4>
 													<h4 th:if="${formmode}=='deleteList'">LIST OF PROJECTS</h4>
@@ -604,10 +604,10 @@ tr td:first-child:before {
 											</div>
 										</div>
 
-										<div class="card-footer text-center" style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center" >
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
 
@@ -625,7 +625,7 @@ tr td:first-child:before {
 						<form action="#" th:object="${adminprojectMaster}" method="post" class="w-100"
 							autocomplete="off" id="expenseReport">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<div class="float-left">
 										<h4 th:if="${formmode}=='view'">PROJECT MASTER</h4>
 										<h4 th:if="${formmode}=='add'">PROJECT MASTER - Add</h4>
@@ -1929,9 +1929,9 @@ tr td:first-child:before {
 									</div>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
+								<div class="card-footer text-center" >
 
-									<button type="button" class="btn btn-primary" id="btnHome"
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home()">Home</button>
 
 									<a type="button" th:if="${formmode}=='view'"
@@ -1969,7 +1969,7 @@ tr td:first-child:before {
 										class="btn btn-primary text-white" id="btnListUser"
 										onclick="ListUser();">List</a>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 							</div>
@@ -1989,7 +1989,7 @@ tr td:first-child:before {
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="back();">Close</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>

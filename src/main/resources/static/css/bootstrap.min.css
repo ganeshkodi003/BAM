@@ -7932,7 +7932,7 @@ none
 
 .card-footer {
 	padding: 7px;
-	background-color: #f26223;
+	background-color: #f26223 !important ;
 	border-top: 1px solid #36404a;
 }
 

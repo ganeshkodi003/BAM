@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 							<div class="card" style="width: 112%;">
 							
-								<div class="card-header border-bottom-0"style="background-color:#BBC3CB;" >
+								<div class="card-header border-bottom-0" >
 									<div class="">
 										<h3 >TAXATION PARAMETERS</h3>
 									</div>
@@ -762,14 +762,14 @@ document.addEventListener("DOMContentLoaded", function() {
 				<!---------------------parameter List Ends--------------------------------------------------------->
 								<div class="card-footer  text-center" style="background-color:#BBC3CB;width: 112%;">
 
-									<button type="button" class="btn btn-primary" id="btnHome"
+									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
 									<button type="button" class="btn btn-xs btn-primary"
 										id="btnSubmit" style="width: 120px" onclick="addTaxData();">Submit</button>
 
 								
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										style="width: 120px" onclick="back();">Back</button>
 								</div>
 							</div>
@@ -795,7 +795,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 							<div class="card" style="width: 112%;">
 							
-								<div class="card-header border-bottom-0"style="background-color:#BBC3CB;" >
+								<div class="card-header border-bottom-0" >
 									<div class="">
 										<h4 th:if="${formmode}=='view'">TAXATION PARAMETERS - View</h4>
 										<h4 th:if="${formmode}=='edit'">TAXATION PARAMETERS- Edit</h4>
@@ -913,9 +913,9 @@ document.addEventListener("DOMContentLoaded", function() {
 								
 								</div>
 								</div>
-								<div class="card-footer  text-center"style="background-color:#BBC3CB;">
+								<div class="card-footer  text-center">
 
-									<button type="button" class="btn btn-primary" id="btnHome"
+									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
 			<button type="button" class="btn btn-xs btn-primary"  th:if="${formmode}=='edit'"  th:attr="groupn= ${paramview.get(0).group_name}" 
@@ -926,7 +926,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		id="btnSubmit" style="width: 120px" onclick="delParamData(this);">Submit</button>
 
 								
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										style="width: 120px" onclick="back();">Back</button>
 								</div>
 							</div>
@@ -950,7 +950,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						style="width: 120px" onclick="back();">Close</button>
 				</div>
 			</div>

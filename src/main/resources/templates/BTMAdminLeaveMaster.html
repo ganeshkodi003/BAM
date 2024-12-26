@@ -820,7 +820,7 @@
 								<div class="card-body p-0">
 									<div class="panel panel-primary filterable">
 										<div class="card-header d-flex justify-content-between"
-											style="background-color:#BBC3CB;">
+											>
 											<h4>LIST OF LEAVE APPLIED</h4>
 											 <select id="listtype"
 											style="color: black; margin-left: 1000px;" onchange="selectChange()">
@@ -893,11 +893,11 @@
 									</div>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center" >
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home()">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 							</div>
@@ -911,7 +911,7 @@
 						<form action="#" th:object="${leaveMaster}" class="w-100" method="post" autocomplete="off"
 							id="LeaveMaster">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<div class="float-left">
 										<h4>LEAVE MASTER</h4>
 									</div>
@@ -1006,11 +1006,11 @@
 									</div>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button th:if="${formmode}=='view'" type="button" class="btn btn-primary"
+								<div class="card-footer text-center" >
+									<button th:if="${formmode}=='view'" type="button" class="btn headerbutton"
 										id="btnHome" onclick="home()">Home</button>
 
-									<button th:if="${formmode}=='view'" type="button" class="btn btn-primary"
+									<button th:if="${formmode}=='view'" type="button" class="btn headerbutton"
 										id="btnBack" onclick="back()">Back</button>
 								</div>
 							</div>
@@ -1024,7 +1024,7 @@
 						<form action="#" th:object="${leaveMaster}" class="w-100" method="post" autocomplete="off"
 							id="LeaveMaster">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<div class="float-left">
 										<h4>LEAVE MASTER</h4>
 									</div>
@@ -1121,11 +1121,11 @@
 									</div>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button th:if="${formmode}=='view1'" type="button" class="btn btn-primary"
+								<div class="card-footer text-center" >
+									<button th:if="${formmode}=='view1'" type="button" class="btn headerbutton"
 										id="btnHome" onclick="home()">Home</button>
 
-									<button th:if="${formmode}=='view1'" type="button" class="btn btn-primary"
+									<button th:if="${formmode}=='view1'" type="button" class="btn headerbutton"
 										id="btnBack" onclick="back()">Back</button>
 								</div>
 							</div>

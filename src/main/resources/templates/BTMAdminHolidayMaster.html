@@ -317,7 +317,7 @@ color: red;
 							method="post" autocomplete="off" id="AdminAssociateProfile" name="form1">
 
 							<div class="card">
-								<div class="card-header border-bottom-0"style="background-color:#BBC3CB;">
+								<div class="card-header border-bottom-0">
 									<div class="">
 										<h3 th:if="${formmode}=='view' OR ${formmode}=='view1'">HOLIDAY MASTER</h3>
 										<h3 th:if="${formmode}=='add'">HOLIDAY MASTER - ADD</h3>
@@ -555,9 +555,9 @@ color: red;
 									</div>
 								</div>
 								
-								<div class="card-footer  text-center"style="background-color:#BBC3CB;">
+								<div class="card-footer  text-center">
 
-									<button type="button" class="btn btn-primary" id="btnHome"
+									<button type="button" class="btn headerbutton" id="btnHome"
 										style="width: 120px" onclick="home();">Home</button>
 
 									<a class="btn btn-xs btn-primary text-white"
@@ -578,7 +578,7 @@ color: red;
 									<a class="btn btn-xs btn-primary text-white" style="width: 120px"
 										th:if="${formmode}=='view'" id="btnList" onclick="userList();">List</a>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										style="width: 120px" onclick="back();">Back</button>
 								</div>
 							</div>
@@ -596,7 +596,7 @@ color: red;
 								<div class="card">
 										
 											<div class="panel panel-primary filterable">
-											<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+											<div class="card-header d-flex justify-content-between" >
 												<h4 th:if="${formmode}=='list' OR ${formmode}=='list1'">LIST OF HOLIDAYS</h4>
 												<button
 													class="btn text-white   btn-filter btn-primary" style="width: 120px">Filter</button>
@@ -651,11 +651,11 @@ color: red;
 												</div>
 											</div>
 											
-											<div class="card-footer text-center"style="background-color:#BBC3CB;">
-												<button type="button" class="btn btn-primary" id="btnHome"
+											<div class="card-footer text-center">
+												<button type="button" class="btn headerbutton" id="btnHome"
 													style="width: 120px" onclick="home();">Home</button>
 													
-												<button type="button" class="btn btn-primary" id="btnBack"
+												<button type="button" class="btn headerbutton" id="btnBack"
 													style="width: 120px" onclick="back();">Back</button>
 											</div>
 										</div>
@@ -768,7 +768,7 @@ color: red;
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						style="width: 120px" onclick="back();">Close</button>
 				</div>
 			</div>

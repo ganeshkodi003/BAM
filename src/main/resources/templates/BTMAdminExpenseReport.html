@@ -339,7 +339,7 @@
 										<div class="card-body p-0">
 											<div class="panel panel-primary filterable">
 												<div class="card-header d-flex justify-content-between"
-													style="background-color:#BBC3CB;">
+													>
 													<h3 class="panel-title">LIST OF EXPENSES</h3>
 													<button
 														class="btn text-white btn-filter btn-primary">Filter</button>
@@ -390,10 +390,10 @@
 												</div>
 											</div>
 										</div>
-										<div class="card-footer text-center" style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center" >
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home();">Home</button>
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back();">Back</button>
 										</div>
 									</div>
@@ -414,7 +414,7 @@
 								id="expenseReport">
 
 								<div class="card">
-									<div class="card-header" style="background-color:#BBC3CB;">
+									<div class="card-header" >
 										<div class="float-left">
 											<h3 th:if="${formmode}=='view'">EXPENSE REPORT</h3>
 										</div>
@@ -723,7 +723,7 @@
 										<!---------------------Expenses Details Description form Ends-------------------------------------------->
 									</div>
 
-									<div class="card-footer text-center" style="background-color:#BBC3CB;">
+									<div class="card-footer text-center" >
 										<button type="button" th:if=" ${formmode}=='view'"
 											class="btn btn-xs btn-primary" onclick="home();" id="btnHome">Home</button>
 

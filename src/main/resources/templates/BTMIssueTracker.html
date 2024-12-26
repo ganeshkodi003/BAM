@@ -536,7 +536,7 @@ if (document.getElementById("fd").value == "") {
 				<form action="#" th:object="${issueview}" method="post" autocomplete="off" id="issues">
 					<div class="card border">
 
-						<div class="card-header" style="background-color:#BBC3CB;">
+						<div class="card-header" >
 
 							<div class="float-left">
 								<h3 th:if="${formmode}=='view'or ${formmode}=='add'">ISSUE TRACKER</h3>
@@ -1742,7 +1742,7 @@ if (document.getElementById("fd").value == "") {
 		</div>
 
 
-		<div class="card-footer text-center" style="background-color:#BBC3CB;">
+		<div class="card-footer text-center" >
 
 			<button class="btn btn-xs btn-primary" onclick="home(this);" id="btnModify">Home</button>
 			<button class="btn btn-xs btn-primary" th:if="${formmode}=='view'" id="btnpassrst"
@@ -1811,7 +1811,7 @@ if (document.getElementById("fd").value == "") {
 										<div class="card-body p-0">
 											<div class="panel panel-primary filterable">
 
-												<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+												<div class="card-header d-flex justify-content-between">
 													<h4>LIST OF ISSUES</h4>
 
 													<button
@@ -1886,11 +1886,11 @@ if (document.getElementById("fd").value == "") {
 											</div>
 										</div>
 
-										<div class="card-footer text-center"style="background-color:#BBC3CB;">
+										<div class="card-footer text-center">
 
-											<button type="button" class="btn btn-primary" id="btnHome"
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
 									</div>
@@ -1920,7 +1920,7 @@ if (document.getElementById("fd").value == "") {
 									<div class="card w-100">
 										<div class="card-body p-0">
 											<div class="panel panel-primary filterable">
-												<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+												<div class="card-header d-flex justify-content-between">
 													<h4>LIST OF ISSUES</h4>
 													<button
 														class="btn text-white btn-filter btn-primary">Filter</button>
@@ -1986,10 +1986,10 @@ if (document.getElementById("fd").value == "") {
 
 														</tbody>
 													</table>
-													<div class="card-footer text-center"style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+													<div class="card-footer text-center">
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
 												</div>
@@ -2013,7 +2013,7 @@ if (document.getElementById("fd").value == "") {
 			<div class="col-sm-12 finuserapply">
 				<form action="#"  method="post" autocomplete="off" id="uploadissues" enctype="multipart/form-data">
 					<div class="card border">
-						<div class="card-header"style="background-color:#BBC3CB;">
+						<div class="card-header">
 							<div class="float-left">
 								<h3 >ISSUE TRACKER</h3>
 							</div>
@@ -2036,14 +2036,14 @@ if (document.getElementById("fd").value == "") {
  
 
 <br>
-			<div class="card-footer text-center"style="background-color:#BBC3CB;">
+			<div class="card-footer text-center">
                 
-              <button type="button" class="btn btn-primary" id="btnHome"
+              <button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
                  <button type="button" class="btn btn-xs btn-primary" id="btndownload" onclick="downFormat(this);">Download Format</button> 
                  <button type="button" class="btn btn-xs btn-primary" id="btnsubmit" onclick="submituploadform(this);">Submit</button>
                  
-                  <button type="button" class="btn btn-primary" id="btnBack"
+                  <button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>
             
  </div>
@@ -2059,7 +2059,7 @@ if (document.getElementById("fd").value == "") {
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 25px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" style="font-size: 1rem;"
+					<button type="button" class="btn headerbutton" data-dismiss="modal" style="font-size: 1rem;"
 						onclick="back();">Close</button>
 				</div>
 			</div>
@@ -2074,7 +2074,7 @@ if (document.getElementById("fd").value == "") {
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="modifymsg" style="font-size: 25px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" style="font-size: 1rem;"
+					<button type="button" class="btn headerbutton" data-dismiss="modal" style="font-size: 1rem;"
 						onclick="back();">Close</button>
 				</div>
 			</div>

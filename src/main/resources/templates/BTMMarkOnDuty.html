@@ -1033,7 +1033,7 @@ $(document).ready(
 											<h6 class="headerh6 ">DEPRECIATION</h6>
 										</div>
 									</div>
-									<div class="" th:if="${formmode}== 'view'">
+									<div class="card-body" th:if="${formmode}== 'view'">
 										<fieldset>
 											<div class="form-group mb-0">
 												<div class="row formline">
@@ -1322,12 +1322,12 @@ $(document).ready(
 										</table>
 
 
-										<div class="card-footer text-center">
+										<div class="card-footer text-center p-0">
 
-											<button type="button" class="btn btn-primary" id="btnHome"
+											<button type="button" class="btn  headerbutton" id="btnHome"
 												onclick="home()">Home</button>
 
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn btn-primary headerbutton" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
 									</div>
@@ -1412,7 +1412,7 @@ $(document).ready(
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						style="width: 120px" onclick="back();">Close</button>
 				</div>
 			</div>

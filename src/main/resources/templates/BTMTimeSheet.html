@@ -329,7 +329,7 @@ function edittimesheet(a){
 							<form action="#" method="post" autocomplete="off"
 								id="userProfile">
 								<div class="card">
-									<div class="card-header" style="background-color:#BBC3CB;">
+									<div class="card-header" >
 										<div class="float-left">
 											<h3 th:if="${formmode}=='list'">TIME SHEET LIST</h3>
 											<h3 th:if="${formmode}=='list1'">TIME SHEET LIST</h3>
@@ -371,7 +371,7 @@ function edittimesheet(a){
 											</table>
 										</div>
 									</div>
-									<div class="card-footer bg-white border-top-0 text-center" style="background-color:#BBC3CB;">
+									<div class="card-footer bg-white border-top-0 text-center" >
 										<button  th:if="${formmode}=='list' OR ${formmode}=='list1'" class="btn btn-xs btn-primary" 
 										onclick="home(this);" id="btnHome">Home</button>
 										<a type="button"  th:if="${formmode}=='list'"
@@ -669,7 +669,7 @@ function edittimesheet(a){
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="showList();">Close</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="showList();">Close</button>
 				</div>
 			</div>
 		</div>

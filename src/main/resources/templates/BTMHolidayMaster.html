@@ -257,7 +257,7 @@ fieldset {
 
 									<div class="card w-100">
 										<div class="panel panel-primary filterable" >
-											<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+											<div class="card-header d-flex justify-content-between" >
 												<h3>LIST OF HOLIDAYS</h3>
 												<button class="btn text-white btn-filter btn-primary">Filter</button>
 											</div>
@@ -319,10 +319,10 @@ fieldset {
 											</div>
 
 											<div class="card-footer text-center">
-												<button type="button" class="btn btn-primary" id="btnHome"
+												<button type="button" class="btn headerbutton" id="btnHome"
 													th:onclick="home()">Home</button>
 
-												<button type="button" class="btn btn-primary" id="btnBack"
+												<button type="button" class="btn headerbutton" id="btnBack"
 													th:onclick="back()">Back</button>
 											</div>
 										</div>
@@ -340,7 +340,7 @@ fieldset {
 						<form action="#" th:object="${BTMholidayList}" class="w-100"
 							method="post" autocomplete="off" id="BTMholidayList">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<h4>HOLIDAY MASTER</h4>
 								</div>
 
@@ -446,11 +446,11 @@ fieldset {
 									</div>
 
 								</div>
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center" >
+									<button type="button" class="btn headerbutton" id="btnHome"
 										th:onclick="home()">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										th:onclick="back()">Back</button>
 								</div>
 							</div>

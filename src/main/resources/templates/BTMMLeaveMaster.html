@@ -413,7 +413,7 @@ nav {
 
 								<div class="card-body p-0">
 									<div class="panel panel-primary filterable">
-										<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+										<div class="card-header d-flex justify-content-between" >
 											<h3>LIST OF LEAVE APPLIED</h3>
 											<button class="btn text-white btn-filter btn-primary">Filter</button>
 										</div>
@@ -494,11 +494,11 @@ nav {
 									</div>
 
 								</div>
-								<div class="card-footer text-center " style="background-color:#BBC3CB;">
-									<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center p-0" >
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home()">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 							</div>
@@ -516,7 +516,7 @@ nav {
 							<form action="#" th:object="${MtLeaveMaster}" method="POST"
 								autocomplete="off" id="MaintLeaveMaster">
 								<div class="card">
-									<div class="card-header" style="background-color:#BBC3CB;">
+									<div class="card-header" >
 										<div class="float-left">
 											<h3>Leave Master</h3>
 										</div>
@@ -716,7 +716,7 @@ nav {
 												</tbody>
 											</table>
 										</div>
-										<div class="card-footer text-center  " style="background-color:#BBC3CB;">
+										<div class="card-footer text-center  " >
 											<button type="button" class="btn btn-xs btn-primary"
 												id="btnHome" onclick="home();">Home</button>
 
@@ -762,7 +762,7 @@ nav {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>

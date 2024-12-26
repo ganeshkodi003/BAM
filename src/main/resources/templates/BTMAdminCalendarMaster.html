@@ -490,7 +490,7 @@ fieldset {
 
 									<div class="card w-100">
 										<div class="panel panel-primary filterable">
-											<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+											<div class="card-header d-flex justify-content-between">
 												<h4>CALENDAR LIST</h4>
 												<button class="btn text-white  btn-filter btn-primary">Filter</button>
 											</div>
@@ -529,10 +529,10 @@ fieldset {
 												</div>
 											</div>
 
-											<div class="card-footer  text-center"style="background-color:#BBC3CB;">
-												<button type="button" class="btn btn-primary" id="btnHome"
+											<div class="card-footer  text-center">
+												<button type="button" class="btn headerbutton" id="btnHome"
 													th:onclick="home()">Home</button>
-												<button type="button" class="btn btn-primary" id="btnBack"
+												<button type="button" class="btn headerbutton" id="btnBack"
 													th:onclick="back()">Back</button>
 											</div>
 										</div>
@@ -549,7 +549,7 @@ fieldset {
 				<div class="container-fluid content" th:if="${formmode}=='view'">
 					<div class="row">
 						<div class="col-sm-12">
-						<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+						<div class="card-header d-flex justify-content-between">
 						<h4 th:if="${formmode}=='view'"> CALENDAR- VIEW</h4>
 						</div>
 							<form action="#" method="post" autocomplete="off" class="w-100">
@@ -601,10 +601,10 @@ fieldset {
 
 									</div>
 								</div>
-								<div class="card-footer text-center"style="background-color:#BBC3CB;">
-												<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center">
+												<button type="button" class="btn headerbutton" id="btnHome"
 													onclick="home()">Home</button>
-												<button type="button" class="btn btn-primary" id="btnBack"
+												<button type="button" class="btn headerbutton" id="btnBack"
 													onclick="back()">Back</button>
 											</div>
 							</form>

@@ -416,7 +416,7 @@ nav {
 							<div class="card p-0">
 
 								<div class="panel panel-primary filterable">
-									<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+									<div class="card-header d-flex justify-content-between" >
 										<h3>LIST OF OD APPLIED</h3>
 										<button class="btn text-white btn-filter btn-primary">Filter</button>
 									</div>
@@ -480,11 +480,11 @@ nav {
 									</div>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center" >
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home()">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 
@@ -500,7 +500,7 @@ nav {
 							<form action="#" th:object="${MtOnDuty}" method="POST"
 								autocomplete="off" id="OnDuty">
 								<div class="card">
-									<div class="card-header" style="background-color:#BBC3CB;">
+									<div class="card-header" >
 										<div class="float-left">
 											<h3>APPLY ON DUTY</h3>
 										</div>
@@ -687,9 +687,9 @@ nav {
 											</table>
 										</div>
 									</div>
-									<div class="card-footer text-center mt-4" style="background-color:#BBC3CB;">
+									<div class="card-footer text-center mt-4" >
 
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 
 										<button type="button" class="btn btn-xs btn-primary"
@@ -701,7 +701,7 @@ nav {
 											id="btnReject" th:attr="data-ref1 = ${MtOnDuty?.leave_ref}"
 											form="LeaveMaster" onclick="rejectAdd(this);">Reject</button>
 
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>
 									</div>
 								</div>
@@ -725,7 +725,7 @@ nav {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>

@@ -314,7 +314,7 @@ legend {
 										<div class="card-body p-0">
 
 											<div class="panel panel-primary filterable">
-												<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+												<div class="card-header d-flex justify-content-between">
 													<h4> TRANSFER LIST</h4>
 													<button
 														class="btn text-white  btn-filter btn-primary">Filter</button>
@@ -369,11 +369,11 @@ legend {
 											</div>
 										</div>
 
-										<div class="card-footer text-center"style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center">
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home();">Home</button>
 
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back();">Back</button>
 										</div>
 									</div>
@@ -390,7 +390,7 @@ legend {
 							<form action="#" th:object="${TRAN}" method="POST"
 								class="w-100" autocomplete="off" id="mtWorkAssignment">
 								<div class="card">
-									<div class="card-header"style="background-color:#BBC3CB;">
+									<div class="card-header">
 										<div class="float-left">
 											<h3 th:if="${formmode}=='view'">INVENTORY TRANSFER</h3>
 										</div>
@@ -838,17 +838,17 @@ legend {
 									
 									
 									
-										<div class="card-footer text-center"style="background-color:#BBC3CB;">
+										<div class="card-footer text-center">
 
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="add()">Add</button>
 											<div th:if="${formmode}=='submit'">
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Submit</button>
 											</div>
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>
 
 									</div>

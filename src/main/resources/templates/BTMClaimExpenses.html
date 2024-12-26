@@ -273,7 +273,7 @@ input::-webkit-inner-spin-button {
 					autocomplete="off" id="expenseReport">
 
 					<div class="card border-0">
-						<div class="card-header"style="background-color:#BBC3CB;">
+						<div class="card-header">
 							<div class="float-left">
 								<h3 th:if="${formmode}=='view'">EXPENSE REPORT</h3>
 								<h3 th:if="${formmode}=='add'">EXPENSE REPORT - Add</h3>
@@ -734,8 +734,8 @@ input::-webkit-inner-spin-button {
 								</fieldset>
 							</div>
 						</div>
-						<div class="card-footer text-center "
-							style="background-color:#BBC3CB;">
+						<div class="card-footer text-center p-0"
+							>
 							<button th:if="${formmode}=='add'OR ${formmode}=='view'"
 								class="btn btn-xs btn-primary" onclick="home();" id="btnHome">Home</button>
 
@@ -805,7 +805,7 @@ input::-webkit-inner-spin-button {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>

@@ -410,7 +410,7 @@
 
 											<div class="panel panel-primary filterable">
 												<div class="card-header d-flex justify-content-between"
-													style="background-color:#BBC3CB;">
+													>
 
 													<h3 th:if="${formmode}=='list'">LIST OF PROFILES</h3>
 													<h3 th:if="${formmode}=='list1'">LIST OF PROFILES</h3>
@@ -482,11 +482,11 @@
 
 											</div>
 										</div>
-										<div class="card-footer text-center" style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center" >
+											<button type="button" class="btn headerbutton" id="btnHome"
 												style="width: 120px" onclick="home()">Home</button>
 
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												style="width: 120px" onclick="back()">Back</button>
 										</div>
 									</div>
@@ -504,7 +504,7 @@
 						<form action="#" th:object="${AdminProfileManager}" class="w-100" method="post"
 							autocomplete="off" id="AdminProfileManager">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 
 									<div class="float-left">
 										<h3 th:if="${formmode}=='view'">PROFILE MANAGER</h3>
@@ -1691,9 +1691,9 @@
 									</fieldset>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
+								<div class="card-footer text-center" >
 
-									<button type="button" class="btn btn-primary" id="btnHome" style="width: 120px"
+									<button type="button" class="btn headerbutton" id="btnHome" style="width: 120px"
 										onclick="home()">Home</button>
 
 									<a type="button" th:if="${formmode}=='view'" onclick="modifyUser(this);"
@@ -1723,7 +1723,7 @@
 										class="btn btn-primary text-white" id="btnListUser"
 										onclick="ListUser();">List</a>
 
-									<button type="button" class="btn btn-primary" id="btnBack" style="width: 120px"
+									<button type="button" class="btn headerbutton" id="btnBack" style="width: 120px"
 										onclick="back()">Back</button>
 								</div>
 							</div>
@@ -1745,7 +1745,7 @@
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 120px"
+					<button type="button" class="btn headerbutton" data-dismiss="modal" style="width: 120px"
 						onclick="ListUser();">Close</button>
 				</div>
 			</div>

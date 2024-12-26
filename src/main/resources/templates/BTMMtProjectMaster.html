@@ -244,7 +244,7 @@ fieldset {
 								<div class="row">
 									<div class="card ">
 										<div class="panel panel-primary filterable">
-											<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+											<div class="card-header d-flex justify-content-between" >
 												<h3 th:if="${formmode}=='list'">LIST OF PROJECTS</h3>
 												<button class="btn text-white  btn-filter btn-primary">Filter</button>
 											</div>
@@ -304,11 +304,11 @@ fieldset {
 											</div>
 										</div>
 
-										<div class="card-footer text-center" style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center" >
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
 
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
 
@@ -326,7 +326,7 @@ fieldset {
 						<form action="#" th:object="${projectList}" class="w-100"
 							method="post" autocomplete="off" id="projectList">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<div class="float-left">
 										<h3>PROJECT MASTER</h3>
 									</div>
@@ -773,12 +773,12 @@ fieldset {
 								</div>
 
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
+								<div class="card-footer text-center" >
 
-									<button type="button" class="btn btn-primary" id="btnHome"
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home()">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 							</div>

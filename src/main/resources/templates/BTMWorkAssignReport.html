@@ -556,7 +556,7 @@
 																	th:text="${#dates.format(workAssignment?.end_date,'dd-MM-yyyy')}">
 																</td>
 																<td th:text="${workAssignment?.status}"></td>
-																<td><button type="button" class="btn btn-primary" id="btnHome"
+																<td><button type="button" class="btn headerbutton" id="btnHome"
 												onclick="pdfCustomerdown(this);"th:attr="data-emp_id=${workAssignment?.emp_id}">PDF</button></td>
 															</tr></tbody></table></div></div></div></div></div></div></div>
 	
@@ -686,9 +686,9 @@
 					</div>-->
 					
 					<div class="card-footer text-center bg-white border-top-0">
-						<button type="button" class="btn btn-primary" id="btnHome" onclick="home();">Home</button>
-						<button type="button" class="btn btn-primary" id="btnGenerate">Generate</button>
-						<button type="button" class="btn btn-primary" id="btnBack" onclick="back();">Back</button>
+						<button type="button" class="btn headerbutton" id="btnHome" onclick="home();">Home</button>
+						<button type="button" class="btn headerbutton" id="btnGenerate">Generate</button>
+						<button type="button" class="btn headerbutton" id="btnBack" onclick="back();">Back</button>
 					</div>
 				</div>
 			</form>

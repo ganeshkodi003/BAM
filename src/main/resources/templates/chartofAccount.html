@@ -417,7 +417,7 @@ function formatCurrentDate() {
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-									<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+									<div class="card-header d-flex justify-content-between">
 													<h4 th:if="${formmode}=='list'"> Chart of Accounts-LIST</h4>
 													<h4 th:if="${formmode}=='Verifylist'">Chart of Accounts-verify</h4>
 													<h4 th:if="${formmode}=='modifylist'">MODIFY LIST</h4>
@@ -494,9 +494,9 @@ function formatCurrentDate() {
 									</div>
 
 									<div class="card-footer text-center">
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>
 
 									</div>
@@ -511,7 +511,7 @@ function formatCurrentDate() {
 					<div action="#" th:object="${BAMChartOfAccounts}" method="POST"
 								class="w-100" autocomplete="off" id="BAMChartOfAccounts">
 								<div class="card">
-									<div class="card-header"style="background-color:#BBC3CB;">
+									<div class="card-header">
 										<div class="float-left">
 											<h3 th:if="${formmode}=='view'">Chart of Accounts</h3>
 											<h3 th:if="${formmode}=='Verify'">Chart of Accounts-VERIFY</h3>
@@ -723,30 +723,30 @@ function formatCurrentDate() {
 													</div>
 												</div>																				
 												</div>
-										<div class="card-footer text-center"style="background-color:#BBC3CB;">
+										<div class="card-footer text-center">
 
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 										
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="codeadd()">Add</button>
 
-										<button type="button" class="btn btn-primary" id="btnverify"
+										<button type="button" class="btn headerbutton" id="btnverify"
 											onclick="Verifylist()">Verify</button>
 
-										<button type="button" class="btn btn-primary" id="btnModify"
+										<button type="button" class="btn headerbutton" id="btnModify"
 											onclick="modifylist()">Modify</button>
 											
-										<button type="button" class="btn btn-primary" id="btnCancel"
+										<button type="button" class="btn headerbutton" id="btnCancel"
 											onclick="cancellist()">Delete</button>
 
-										<button type="button" class="btn btn-primary" id="btnSubmit"
+										<button type="button" class="btn headerbutton" id="btnSubmit"
 											onclick="submit()">sumbit</button>
 
-										<button type="button" class="btn btn-primary" id="btnList"
+										<button type="button" class="btn headerbutton" id="btnList"
 											onclick="codelist()">List</button>
 
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>
 
 									</div>
@@ -945,7 +945,7 @@ function formatCurrentDate() {
 									</div>
 									<div class="card-footer text-center">
 
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
 
 
@@ -955,7 +955,7 @@ function formatCurrentDate() {
 											form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
@@ -1238,7 +1238,7 @@ function formatCurrentDate() {
 									</div>
 									<div class="card-footer text-center">
 
-										<button type="button" class="btn btn-primary" id="btnHome"
+										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
 
 
@@ -1253,7 +1253,7 @@ function formatCurrentDate() {
 											onclick="submitverifyform(this);" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
-										<button type="button" class="btn btn-primary" id="btnBack"
+										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
@@ -1281,7 +1281,7 @@ function formatCurrentDate() {
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal"
+					<button type="button" class="btn headerbutton" data-dismiss="modal"
 						onclick="back();">Close</button>
 				</div>
 			</div>

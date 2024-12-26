@@ -560,7 +560,7 @@
 																<td th:text="${timeSheet?.rpt_mrg}"></td>
 																<td th:text="${timeSheet?.apr_auth}"></td>
 																<td th:text="${timeSheet?.ts_status}"></td> 
-																<td><button type="button" class="btn btn-primary" id="btnHome"
+																<td><button type="button" class="btn headerbutton" id="btnHome"
 												onclick="pdfCustomerdown(this);"th:attr="data-emp_id=${timeSheet?.timesheetID.emp_id},data-year=${timeSheet?.timesheetID.year},data-month=${timeSheet?.timesheetID.month}">PDF</button></td>
 															</tr></tbody></table></div></div></div></div></div></div></div>
 	
@@ -734,15 +734,15 @@
 						</div>
 					</div>
 					<div class="card-footer text-center bg-white border-top-0">
-						<button type="button" class="btn btn-primary" id="btnHome"
+						<button type="button" class="btn headerbutton" id="btnHome"
 							onclick="home()">Home</button>
-						<button type="button" class="btn btn-primary" id="btnGenerate"
+						<button type="button" class="btn headerbutton" id="btnGenerate"
 							th:attr="data-filetype='pdf',data-emp_id=${TimeSheetReport?.emp_id},data-month=${TimeSheetReport?.month},data-year=${TimeSheetReport?.year}"
 							onclick="pdfCustomerdown(this);">Generate</button>
 						<!--  <a th:href="@{exportPdf}" class="btn btn-success">Generate
  <i class="fa fa-file-excel-o" aria-hidden="true"></i></a>   
 
-						<button type="button" class="btn btn-primary" id="btnBack"
+						<button type="button" class="btn headerbutton" id="btnBack"
 							onclick="back()">Back</button>
 					</div>
 				</div>

@@ -184,7 +184,7 @@ fieldset {
 						<form action="#" method="post" autocomplete="off"
 							style="width: 100%">
 							<div class="card">
-								<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+								<div class="card-header d-flex justify-content-between" >
 									<h3>LIST OF PROFILES</h3>
 									<!--<a class="d-block" href="">Filter</a>-->
 								</div>
@@ -215,9 +215,9 @@ fieldset {
 												</tr>
 											</tbody>
 										</table>
-												<div class="card-footer text-center" style="background-color:#BBC3CB;">
-						<button type="button" class="btn btn-primary" id="btnHome">Home</button>
-						<button type="button" class="btn btn-primary" id="btnBack">Back</button>
+												<div class="card-footer text-center" >
+						<button type="button" class="btn headerbutton" id="btnHome">Home</button>
+						<button type="button" class="btn headerbutton" id="btnBack">Back</button>
 					</div>
 									</div>
 								</div>
@@ -231,7 +231,7 @@ fieldset {
 						<form action="#" th:object="${profileMasterList}" class="w-100"
 							method="post" autocomplete="off" id="profileMasterList">
 							<div class="card">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<h3 th:if="${formmode}=='view'">PROFILE MANAGER</h3>
 								</div>
 
@@ -983,11 +983,11 @@ fieldset {
 									</fieldset>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center" >
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home();">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back();">Back</button>
 								</div>
 

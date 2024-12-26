@@ -1011,7 +1011,7 @@ function fnadd(){
 									<div class="card w-100">
 										<div class="card-body p-0">
 											<div class="panel panel-primary filterable">
-												<div class="card-header d-flex justify-content-between"style="background-color:#BBC3CB;">
+												<div class="card-header d-flex justify-content-between">
 													<h4>TIMESHEET LIST</h4>
 												</div>
 												<div class="table-responsive">
@@ -1051,12 +1051,12 @@ function fnadd(){
 											</div>
 										</div>
 										
-										<div class="card-footer text-center"style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center">
+											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
-												<button type="button" class="btn btn-primary" id="addNew"
+												<button type="button" class="btn headerbutton" id="addNew"
 												onclick="Yes()">Add New</button> 
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back()">Back</button>  
 										</div>
 									</div>
@@ -1074,7 +1074,7 @@ function fnadd(){
 							<form action="#" th:object="${TimesheetList}" method="POST"
 								class="w-100" autocomplete="off" id="timeSheetmaster">
 								<div class="card">
-									<div class="card-header"style="background-color:#BBC3CB;">
+									<div class="card-header">
 										<div class="float-left">
 											<h3>TIME SHEET</h3>
 										</div>
@@ -1287,13 +1287,13 @@ function fnadd(){
 												</div>
 												</div>
 
-											<div class="card-footer text-center"style="background-color:#BBC3CB;">
-												<button type="button" class="btn btn-primary" id="btnHome"
+											<div class="card-footer text-center">
+												<button type="button" class="btn headerbutton" id="btnHome"
 													onclick="home()">Home</button>
-												<button type="button" class="btn btn-primary" id="btnsubmit"
+												<button type="button" class="btn headerbutton" id="btnsubmit"
 												th:attr="data-empid=${TimesheetList?.emp_id},data-month=${TimesheetList?.month},data-year=${TimesheetList?.year}"
 													onclick="submitform(this);">Submit</button>
-												<button type="button" class="btn btn-primary" id="btnBack"
+												<button type="button" class="btn headerbutton" id="btnBack"
 													onclick="back()">Back</button>
 											</div>
 										</div>
@@ -1549,7 +1549,7 @@ function fnadd(){
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="back();">Close</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>
@@ -1564,8 +1564,8 @@ function fnadd(){
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg1" style="font-size: 16px;">Do You Want Change Timesheet Month?</p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="Yes(this);">Yes</button>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" onclick="AddCurrent();">No</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="Yes(this);">Yes</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="AddCurrent();">No</button>
 				</div>
 			</div>
 		</div>

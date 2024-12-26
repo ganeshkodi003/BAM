@@ -404,8 +404,8 @@
 								autocomplete="off" id="AdminDocMaster">
 
 								<div class="card">
-									<div class="card-header border-bottom-0" style="background-color:#BBC3CB;">
-										<div class="" style="background-color:#BBC3CB;">
+									<div class="card-header border-bottom-0" >
+										<div class="" >
 											<h3 th:if="${formmode}=='view' OR ${formmode}=='view1'">DOCUMENT
 												MASTER</h3>
 											<h3 th:if="${formmode}=='add'">DOCUMENT MASTER - ADD</h3>
@@ -781,9 +781,9 @@
 								</div>
 							</form>
 
-							<div class="card-footer  text-center" style="background-color:#BBC3CB;">
+							<div class="card-footer  text-center" >
 
-								<button type="button" class="btn btn-primary" id="btnHome" style="width: 120px"
+								<button type="button" class="btn headerbutton" id="btnHome" style="width: 120px"
 									onclick="home()">Home</button>
 
 								<a class="btn btn-xs btn-primary text-white" onclick="addUser()" style="width: 120px"
@@ -803,7 +803,7 @@
 								<a class="btn btn-xs btn-primary text-white" style="width: 120px"
 									th:if="${formmode}=='view'" id="btnList" onclick="userList();">List</a>
 
-								<button type="button" class="btn btn-primary" id="btnBack" style="width: 120px"
+								<button type="button" class="btn headerbutton" id="btnBack" style="width: 120px"
 									onclick="back()">Back</button>
 							</div>
 						</div>
@@ -821,7 +821,7 @@
 
 										<div class="panel panel-primary filterable">
 											<div class="card-header d-flex justify-content-between"
-												style="background-color:#BBC3CB;">
+												>
 												<h4 th:if="${formmode}=='list' OR ${formmode}=='list1'">LIST
 													OF DOCUMENT</h4>
 												<button class="btn text-white   btn-filter btn-primary">Filter</button>
@@ -878,11 +878,11 @@
 												</div>
 											</div>
 										</div>
-										<div class="card-footer text-center" style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary" id="btnHome"
+										<div class="card-footer text-center" >
+											<button type="button" class="btn headerbutton" id="btnHome"
 												style="width: 120px" onclick="home()">Home</button>
 
-											<button type="button" class="btn btn-primary" id="btnBack"
+											<button type="button" class="btn headerbutton" id="btnBack"
 												style="width: 120px" onclick="back()">Back</button>
 										</div>
 									</div>
@@ -992,7 +992,7 @@
 				</div>
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
-					<button type="button" class="btn btn-primary" data-dismiss="modal" style="width: 120px"
+					<button type="button" class="btn headerbutton" data-dismiss="modal" style="width: 120px"
 						onclick="back();">Close</button>
 				</div>
 			</div>

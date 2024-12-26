@@ -650,7 +650,7 @@ var report_type=h.value;
 		<div class="row" th:if="${formmode}=='list'">
 			<form action="#" method="post" autocomplete="off" style="width: 100%">
 				<div class="card">
-					<div class="card-header"style="background-color:#BBC3CB;">
+					<div class="card-header">
 						<h4>Service Provider</h4>
 					</div>
 					<div class="card-body p-0 mt-3">
@@ -702,10 +702,10 @@ var report_type=h.value;
 							
 						</div>
 					</div>
-					<div class="card-footer text-center"style="background-color:#BBC3CB;">
-						<button type="button" class="btn btn-primary" id="btnHome" onclick="home();">Home</button>
-						<button type="button" class="btn btn-primary" id="navsubmit" onclick="nav()">Submit</button>
-						<button type="button" class="btn btn-primary" id="btnBack"onclick="back();">Back</button>
+					<div class="card-footer text-center">
+						<button type="button" class="btn headerbutton" id="btnHome" onclick="home();">Home</button>
+						<button type="button" class="btn headerbutton" id="navsubmit" onclick="nav()">Submit</button>
+						<button type="button" class="btn headerbutton" id="btnBack"onclick="back();">Back</button>
 					</div>
 				</div>
 			</form>
@@ -832,7 +832,7 @@ var report_type=h.value;
 
 									<div class="card w-100">
 										<div class="panel panel-primary filterable" th:object="${fuc}">
-											<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;" >
+											<div class="card-header d-flex justify-content-between"  >
 												<h3>LIST OF SP</h3>
 												<button class="btn text-white btn-filter btn-primary">Filter</button>
 											</div>
@@ -925,11 +925,11 @@ var report_type=h.value;
 											class="form-control form-control-sm">
 											<input type="hidden" id="todate1" value="" th:value="${fuc2}"
 											class="form-control form-control-sm">
-												<button type="button" class="btn btn-primary" id="btnHome"
+												<button type="button" class="btn headerbutton" id="btnHome"
 													th:onclick="home()">Home</button>
 												<button class="btn btn-xs btn-primary"
 												onclick="mail(this);" id="btnHome">Send Mail</button>
-												<button type="button" class="btn btn-primary" id="btnBack"
+												<button type="button" class="btn headerbutton" id="btnBack"
 													th:onclick="back()">Back</button>
 											</div>
 										</div>

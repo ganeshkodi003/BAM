@@ -250,7 +250,7 @@ legend {
 										<div class="card-body p-0">
 
 											<div class="panel panel-primary filterable">
-												<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+												<div class="card-header d-flex justify-content-between" >
 													<h3>LIST OF TRAVELS</h3>
 													<button
 														class="btn text-white border btn-filter btn-primary">Filter</button>
@@ -306,11 +306,11 @@ legend {
 											</div>
 										</div>
 
-										<div class="card-footer text-center" style="background-color:#BBC3CB;">
-											<button type="button" class="btn btn-primary"
+										<div class="card-footer text-center" >
+											<button type="button" class="btn headerbutton"
 												onclick="home();" id="btnHome">Home</button>
 												
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn headerbutton"
 												onclick="back();" id="btnBack">Back</button>
 										</div>
 									</div>
@@ -327,7 +327,7 @@ legend {
 						<form action="#" method="post" th:object="${adminTravelMaster}"
 							class="w-100" autocomplete="off" id="travelMasterData">
 							<div class="card w-100">
-								<div class="card-header" style="background-color:#BBC3CB;">
+								<div class="card-header" >
 									<div class="float-left">
 										<h3 th:if="${formmode}=='view'">TRAVEL MASTER</h3>
 									</div>
@@ -1122,11 +1122,11 @@ legend {
 									</div>
 								</div>
 
-								<div class="card-footer text-center" style="background-color:#BBC3CB;">
-									<button type="button" class="btn btn-primary" id="btnHome"
+								<div class="card-footer text-center" >
+									<button type="button" class="btn headerbutton" id="btnHome"
 										onclick="home()">Home</button>
 
-									<button type="button" class="btn btn-primary" id="btnBack"
+									<button type="button" class="btn headerbutton" id="btnBack"
 										onclick="back()">Back</button>
 								</div>
 

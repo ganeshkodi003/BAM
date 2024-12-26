@@ -246,7 +246,7 @@ legend {
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-									<div class="card-header d-flex justify-content-between" style="background-color:#BBC3CB;">
+									<div class="card-header d-flex justify-content-between" >
 										<h3>LIST OF EXPENSES</h3>
 										<button class="btn text-white btn-filter btn-primary">Filter</button>
 									</div>
@@ -295,11 +295,11 @@ legend {
 										</div>
 									</div>
 
-									<div class="card-footer text-center" style="background-color:#BBC3CB;">
-										<button type="button" class="btn btn-primary"
+									<div class="card-footer text-center" >
+										<button type="button" class="btn headerbutton"
 											onclick="home();" id="btnHome">Home</button>
 											
-										<button type="button" class="btn btn-primary"
+										<button type="button" class="btn headerbutton"
 											onclick="back();" id="btnBack">Back</button>
 									</div>
 
@@ -317,7 +317,7 @@ legend {
 								autocomplete="off" id="expenseReport">
 
 								<div class="card">
-									<div class="card-header" style="background-color:#BBC3CB;">
+									<div class="card-header" >
 										<div class="float-left">
 											<h3 th:if="${formmode}=='view'">EXPENSE REPORT</h3>
 										</div>
