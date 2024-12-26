@@ -1699,12 +1699,9 @@ function genflows() {
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-									<div class="card-header ">
-										<div class="float-left">
-											<h4 class="headerh6 ">Inventory Master - List</h4>
-										</div>
-										<div class="btn-group nav-buttons float-right"
-											style="padding: 0 1.25rem 1rem 2rem;">
+											<div class="card-header p-1" style="display: flex; justify-content: space-between;">	
+										<h4 class="headerh6 d-flex " style="align-items: center; ">Inventory Master - List</h4>
+										<div class=" float-right p-0">
 											<button type="button" class="btn btn-xs  headerbutton btns"
 												id="btnAdd" onclick="codeadd();" th:if="${formmode}=='list'"
 												style="font-size: 15px; width: -70px; size: 100px;">Add</button>
@@ -1713,6 +1710,7 @@ function genflows() {
 												style="font-size: 15px; width: -70px; size: 100px;">List</button>
 										</div>
 									</div>
+									
 									<div class="">
 										<div class="table-responsive">
 											<table class="table table-bordered">
