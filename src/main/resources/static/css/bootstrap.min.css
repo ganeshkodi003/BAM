@@ -2315,12 +2315,14 @@ pre code {
 .table td, .table th {
 	padding: .85rem;
 	vertical-align: top;
-	border-top: 1px solid #495561
+	/* border-top: 1px solid #495561 */
 }
 
 .table thead th {
 	vertical-align: bottom;
-	border-bottom: 1px solid #495561
+	border-bottom: 1px solid #495561;
+	padding:10px;
+	font-weight:bold;
 }
 
 .table tbody+tbody {
@@ -2336,7 +2338,7 @@ pre code {
 }
 
 .table-bordered td, .table-bordered th {
-	border: 1px solid #495561
+	 border: 1px solid #495561 
 }
 
 .table-bordered thead td, .table-bordered thead th {
@@ -2345,7 +2347,7 @@ pre code {
 
 .table-borderless tbody+tbody, .table-borderless td, .table-borderless th,
 	.table-borderless thead th {
-	border: 0
+	border: 1
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
@@ -7916,7 +7918,7 @@ none
 	font-size: 14px;
 	font-family: sans-serif;
 	font-style: times new roman;
-	color: white;
+	color: white !important;
 	margin-bottom: 0;
 }
 
@@ -14739,12 +14741,9 @@ body {
 	border-collapse: collapse !important
 }
 
-.table td, .table th {
-	background-color: #fff !important
-}
 
 .table-bordered td, .table-bordered th {
-	border: 1px solid #495561 !important
+	/* border: 1px solid #495561 !important */
 }
 
 .table-dark {
@@ -15966,7 +15965,7 @@ b, strong {
 	font-weight: 500;
 	font-size: 15px;
 	font-family: Roboto, sans-serif;
-	color: #1c5186;
+	
 }
 
 .font-13 {
@@ -16046,9 +16045,11 @@ table th {
 }
 
 table td {
-	font-size: 14px;
-	font-weight:400;
+	font-size: 14px !important;
+	font-weight:400 !important;
+	padding :0px;
 }
+
 
 label {
 	font-size : medium !important;
