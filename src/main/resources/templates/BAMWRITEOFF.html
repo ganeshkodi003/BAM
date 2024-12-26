@@ -1,288 +1,289 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/font-awesome/5.9.0/css/all.min.css"
-	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
-<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
+		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"
-	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
-<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
-<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
-	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-<script
-	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+	<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+		th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
-<style>
-.btns {
-	float: right;
-	margin: 5px;
-}
+	<style>
+		.btns {
+			float: right;
+			margin: 5px;
+		}
 
-.col-sm-5 {
-	padding-bottom: 15px;
-}
+		.col-sm-5 {
+			padding-bottom: 15px;
+		}
 
-.list-body {
-	padding: 0px;
-}
+		.list-body {
+			padding: 0px;
+		}
 
-.error {
-	color: red;
-	padding-left: 10px;
-}
+		.error {
+			color: red;
+			padding-left: 10px;
+		}
 
-.formline {
-	padding-bottom: 4px;
-}
+		.formline {
+			padding-bottom: 4px;
+		}
 
-#finusertb {
-	width: 460px;
-}
+		#finusertb {
+			width: 460px;
+		}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-	padding: 0px;
-}
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			padding: 0px;
+		}
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-	border: 2px solid skyblue !important;
-	border-bottom: unset !important;
-	background-color: unset !important;
-	color: black !important;
-	background-color: unset !important;
-}
+		.nav-tabs .nav-item.show .nav-link,
+		.nav-tabs .nav-link.active {
+			border: 2px solid skyblue !important;
+			border-bottom: unset !important;
+			background-color: unset !important;
+			color: black !important;
+			background-color: unset !important;
+		}
 
-nav {
-	border-bottom: 2px solid grey;
-}
+		nav {
+			border-bottom: 2px solid grey;
+		}
 
-fieldset {
-	border: 1px solid #CCC;
-	border-radius: 5px;
-	padding: 10px;
-	margin-top: 10px;
-}
+		fieldset {
+			border: 1px solid #CCC;
+			border-radius: 5px;
+			padding: 10px;
+			margin-top: 10px;
+		}
 
-legend {
-    color: #3C6EAC;
-    font-size: 20px;
-    font-weight: bold !important;
-    text-align: left !important;
-    border-bottom: none;
-}
+		legend {
+			color: #3C6EAC;
+			font-size: 20px;
+			font-weight: bold !important;
+			text-align: left !important;
+			border-bottom: none;
+		}
 
-.filterable .filters input[readonly] {
-	background-color: transparent;
-	border: none;
-	cursor: auto;
-	box-shadow: none;
-	padding: 0;
-	height: auto;
-}
+		.filterable .filters input[readonly] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-.filterable .filters input[readonly]::-webkit-input-placeholder {
-	color: #333;
-}
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-.filterable .filters input[readonly]::-moz-placeholder {
-	color: #333;
-}
+		.filterable .filters input[readonly]::-moz-placeholder {
+			color: #333;
+		}
 
-.filterable .filters input[readonly]:-ms-input-placeholder {
-	color: #333;
-}
-.form-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
+		.filterable .filters input[readonly]:-ms-input-placeholder {
+			color: #333;
+		}
 
-.form-group label, .form-group input, .form-group select {
-    flex: 1;
-    margin-right: 10px;
-}
+		.form-group {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 15px;
+		}
 
-.form-group input, .form-group select {
-    padding: 5px;
-    flex: 2;
-}
+		.form-group label,
+		.form-group input,
+		.form-group select {
+			flex: 1;
+			margin-right: 10px;
+		}
 
-.container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-.red-border {
-            border: 1px solid red;
-            padding: 10px;
-            margin-top: 20px;
-            color: red;
-        }
-        .red-border div {
-            display: flex;
-            justify-content: space-between;
-        }
-</style>
-<script th:inline="javascript">
-	/*<![CDATA[*/
-	//DatePicker
-	$(function() {
+		.form-group input,
+		.form-group select {
+			padding: 5px;
+			flex: 2;
+		}
 
-		$("#startDate,#endDate,#proposalDate").datepicker({
+		.container {
+			width: 100%;
+			margin: 0 auto;
+			background-color: #ffffff;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 8px;
+		}
 
-			changeMonth : true,
-			changeYear : true,
-			dateFormat : "dd-mm-yy"
+		.red-border {
+			border: 1px solid red;
+			padding: 10px;
+			margin-top: 20px;
+			color: red;
+		}
+
+		.red-border div {
+			display: flex;
+			justify-content: space-between;
+		}
+	</style>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+		//DatePicker
+		$(function () {
+
+			$("#startDate,#endDate,#proposalDate").datepicker({
+
+				changeMonth: true,
+				changeYear: true,
+				dateFormat: "dd-mm-yy"
+			});
 		});
-	});
 
-	function home() {
-		location.href = 'Dashboard'
-	}
+		function home() {
+			location.href = 'Dashboard'
+		}
 
-	function back() {
-		window.history.back();
-	}
+		function back() {
+			window.history.back();
+		}
 
-	function adduser() {
-		location.href = 'mtWorkAssignment?formmode=add';
-	}
+		function adduser() {
+			location.href = 'mtWorkAssignment?formmode=add';
+		}
 
-	function ListUser() {
-		location.href = 'mtWorkAssignment?formmode=list';
-	}
+		function ListUser() {
+			location.href = 'mtWorkAssignment?formmode=list';
+		}
 
-	function modifyUser() {
-		location.href = 'mtWorkAssignment?formmode=list1';
-	}
+		function modifyUser() {
+			location.href = 'mtWorkAssignment?formmode=list1';
+		}
 
-	function groupDropdown(a) {
-		$("#hideGroup").hide();
-		$("#showGroup").show();
-	}
+		function groupDropdown(a) {
+			$("#hideGroup").hide();
+			$("#showGroup").show();
+		}
 
-	function teamDropdown(a) {
-		$("#hideTeam").hide();
-		$("#showTeam").show();
-	}
+		function teamDropdown(a) {
+			$("#hideTeam").hide();
+			$("#showTeam").show();
+		}
 
-	$(document).ready(
-			function() {
+		$(document).ready(
+			function () {
 				$(".checkToView").on(
-						'click',
-						function() {
+					'click',
+					function () {
 
-							$(this).prop('checked', true);
+						$(this).prop('checked', true);
 
-							var resId = $(this).val();
+						var resId = $(this).val();
 
-							var formmode = "view";
+						var formmode = "view";
 
-							location.href = 'Writeoff?formmode='
-									+ formmode + '&AssetNo=' + resId;
+						location.href = 'Writeoff?formmode='
+							+ formmode + '&AssetNo=' + resId;
 
-						});
+					});
 			});
 
-	//Filter Table
+		//Filter Table
 
-	$(document)
+		$(document)
 			.ready(
-					function() {
-						$('.filterable .btn-filter')
-								.click(
-										function(event) {
-											event.preventDefault();
-											var $panel = $(this).parents(
-													'.filterable'), $filters = $panel
-													.find('.filters input'), $tbody = $panel
-													.find('.table tbody');
-											if ($filters.prop('readonly') == true) {
-												$filters
-														.prop('readonly', false);
-												$filters.first().focus();
-											} else {
-												$filters.val('').prop(
-														'readonly', true);
-												$tbody.find('.no-result')
-														.remove();
-												$tbody.find('tr').show();
-											}
-										});
+				function () {
+					$('.filterable .btn-filter')
+						.click(
+							function (event) {
+								event.preventDefault();
+								var $panel = $(this).parents(
+									'.filterable'), $filters = $panel
+										.find('.filters input'), $tbody = $panel
+											.find('.table tbody');
+								if ($filters.prop('readonly') == true) {
+									$filters
+										.prop('readonly', false);
+									$filters.first().focus();
+								} else {
+									$filters.val('').prop(
+										'readonly', true);
+									$tbody.find('.no-result')
+										.remove();
+									$tbody.find('tr').show();
+								}
+							});
 
-						$('.filterable .filters input')
-								.keyup(
-										function(e) {
-											/* Ignore tab key */
-											var code = e.keyCode || e.which;
-											if (code == '9')
-												return;
-											/* Useful DOM data and selectors */
-											var $input = $(this), inputContent = $input
-													.val().toLowerCase(), $panel = $input
-													.parents('.filterable'), column = $panel
-													.find('.filters th')
-													.index($input.parents('th')), $table = $panel
-													.find('.table'), $rows = $table
+					$('.filterable .filters input')
+						.keyup(
+							function (e) {
+								/* Ignore tab key */
+								var code = e.keyCode || e.which;
+								if (code == '9')
+									return;
+								/* Useful DOM data and selectors */
+								var $input = $(this), inputContent = $input
+									.val().toLowerCase(), $panel = $input
+										.parents('.filterable'), column = $panel
+											.find('.filters th')
+											.index($input.parents('th')), $table = $panel
+												.find('.table'), $rows = $table
 													.find('tbody tr');
-											/* Dirtiest filter function ever ;) */
-											var $filteredRows = $rows
-													.filter(function() {
-														var value = $(this)
-																.find('td').eq(
-																		column)
-																.text()
-																.toLowerCase();
-														return value
-																.indexOf(inputContent) === -1;
-													});
-											/* Clean previous no-result if exist */
-											$table.find('tbody .no-result')
-													.remove();
-											/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
-											$rows.show();
-											$filteredRows.hide();
-											/* Prepend no-result row if all rows are filtered */
-											if ($filteredRows.length === $rows.length) {
-												$table
-														.find('tbody')
-														.prepend(
-																$('<tr class="no-result text-center"><td colspan="'
-																		+ $table
-																				.find('.filters th').length
-																		+ '">No result found</td></tr>'));
-											}
-										});
-					});
-</script>
+								/* Dirtiest filter function ever ;) */
+								var $filteredRows = $rows
+									.filter(function () {
+										var value = $(this)
+											.find('td').eq(
+												column)
+											.text()
+											.toLowerCase();
+										return value
+											.indexOf(inputContent) === -1;
+									});
+								/* Clean previous no-result if exist */
+								$table.find('tbody .no-result')
+									.remove();
+								/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+								$rows.show();
+								$filteredRows.hide();
+								/* Prepend no-result row if all rows are filtered */
+								if ($filteredRows.length === $rows.length) {
+									$table
+										.find('tbody')
+										.prepend(
+											$('<tr class="no-result text-center"><td colspan="'
+												+ $table
+													.find('.filters th').length
+												+ '">No result found</td></tr>'));
+								}
+							});
+				});
+	</script>
 
 </head>
 <title>BTM</title>
@@ -295,8 +296,7 @@ legend {
 			</div>
 			<div class="col-sm-10">
 
-				<div class="container-fluid"
-					th:if="${formmode}=='list' OR ${formmode}=='list1'">
+				<div class="container-fluid" th:if="${formmode}=='list' OR ${formmode}=='list1'">
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="container-fluid content">
@@ -307,7 +307,7 @@ legend {
 
 											<div class="panel panel-primary filterable">
 												<div class="card-header d-flex justify-content-between p-1 ">
-													<h4 class="headerh6 pt-2"> WRITE OFF LIST</h4>
+													<h4 class="btn btn-sm headerbutton "> WRITE OFF LIST</h4>
 													<button
 														class="btn text-white  btn-filter headerbutton">Filter</button>
 												</div>
@@ -316,31 +316,35 @@ legend {
 													<table class="table bordered">
 														<thead>
 															<tr class="filters">
-																<th>S NO</th>
+																<th style="width: 7%;"><input type="text"
+																		class="form-control font-weight-bold"
+																		placeholder="Srl No" readonly></th>
 																<th><input type="text"
-																	class="form-control font-weight-bold"
-																	placeholder="Asset srl No" readonly></th>
+																		class="form-control font-weight-bold"
+																		placeholder="Asset srl No" readonly></th>
 																<th><input type="text"
-																	class="form-control font-weight-bold"
-																	placeholder="Asset Name" readonly></th>
+																		class="form-control font-weight-bold"
+																		placeholder="Asset Name" readonly></th>
 																<th><input type="text"
-																	class="form-control font-weight-bold"
-																	placeholder="Category" readonly></th>
+																		class="form-control font-weight-bold"
+																		placeholder="Category" readonly></th>
 																<th>Select</th>
 															</tr>
 														</thead>
 
 														<tbody>
-																<tr th:each="InventoryMaster,iterStat: ${InventoryMasterlist}">
+															<tr
+																th:each="InventoryMaster,iterStat: ${InventoryMasterlist}">
 																<td th:text="${iterStat.index + 1}"></td>
 																<td th:text="${InventoryMaster?.asst_srl_no}"></td>
 																<td th:text="${InventoryMaster?.asst_name}"></td>
 																<td th:text="${InventoryMaster?.asst_category}"></td>
 																<td><input th:if="${formmode}=='list'"
-																	class="form-control-md checkToView"
-																	th:value="${InventoryMaster?.asst_srl_no}" type="radio" /></td>
-																</tr>
-										
+																		class="form-control-md checkToView"
+																		th:value="${InventoryMaster?.asst_srl_no}"
+																		type="radio" /></td>
+															</tr>
+
 														</tbody>
 													</table>
 												</div>
@@ -365,411 +369,361 @@ legend {
 				<div class="container-fluid content" th:if="${formmode}=='view'">
 					<div class="row">
 						<div class="col-sm-12 finuserapply">
-							<form action="#" th:object="${W}" method="POST"
-								class="w-100" autocomplete="off" id="mtWorkAssignment">
+							<form action="#" th:object="${W}" method="POST" class="w-100" autocomplete="off"
+								id="mtWorkAssignment">
 								<div class="card">
-									<div class="card-header">
+									<div class="card-header p-1">
 										<div class="float-left">
-											<h3 th:if="${formmode}=='view'">Sales and WriteOff-WRITE</h3>
+											<h3 th:if="${formmode}=='view'" class="btn btn-sm headerbutton ">SALES AND
+												WRITEOFF-WRITE</h3>
 										</div>
 									</div>
-									
+
 									<div class="card-body">
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="employeeId">Asset Serial Number</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeId"
-															th:if="${formmode}=='view'"
-															th:value="${W?.asst_srl_no}"
-															class="form-control form-control-sm" >
-													</div>
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="employeeId">Asset Serial Number</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeId" th:if="${formmode}=='view'"
+													th:value="${W?.asst_srl_no}" class="form-control form-control-sm">
+											</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="employeeName">Asset Name</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.asst_name}"  />
-													</div>
-												</div>
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Description</label>
-													</div>
-													<div class="col-sm-2">
-														
-														<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.category_desc}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Asset Category</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.asst_category}"  />
-													</div>
-												</div>
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Asset Type</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.asst_type}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Asset Currency</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.asst_crncy}"  />
-													</div>
-												</div>
-												
-												
-												
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Date of Purchase</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.date_of_purchase}"  />
-																									</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Year of Purchase</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.year_of_purchase}"  />
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Original Cost</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.org_cost}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Life Span (Months)</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.life_span_mth}"  />
-																									</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Asset Expiry Date</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.asst_exp_date}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Asset Remarks</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.asst_rmks}"  />
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Depreciation Flag</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.depr_flag}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Depreciation Frequency</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.depr_freq}"  />
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Depreciation Method</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.depr_method}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Depreciation Percentage</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.depr_percent}"  />
-													</div>
-												</div>
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Accumulated Depreciation</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.acc_depr}"  />
-																									</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Date of Last Depreciation</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.date_of_last_depr}"  />
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Date of Sale</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.date_of_sale}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Book value on Date sale:</label>
-													</div>
-													<div class="col-sm-2">
-											<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.book_value_sale_date}"  />
-														</div>
-												</div>
-												
-																									
-																					
-																								<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">sale value</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.sale_value}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">ProfIt/Loss</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.profit_loss}"  />
-													</div>
-												</div>
-
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Buyers Name</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.buyer_name}"  />
-													</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Sale Details</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.sale_det}"  />
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Date of scrap</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.date_of_scrap}"  />
-																									</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Book value on date of write off</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.book_value_scrap_date_amount}"  />
-													</div>
-												</div>
-
-
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Scrap value</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.scrap_value}"  />
-																									</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Scrap Remarks</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.scrap_rmks}"  />
-													</div>
-												</div>
-
-
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Location Type</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.loc_type}"  />
-																									</div>
-
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">SOL ID</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.sol_id}"  />
-													</div>
-												</div>
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="employeeName">Asset Name</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.asst_name}" />
+											</div>
+										</div>
 
 
 
-								
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Employee id</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.emp_id}"  />
-																									</div>
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Description</label>
+											</div>
+											<div class="col-sm-2">
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob"> Department/Division Name</label>
-													</div>
-													<div class="col-sm-2">
-												<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${W?.dept_div_name}"  />
-													</div>
-												</div>
-												
-												
-												<!-- div class="row formline">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.category_desc}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Asset Category</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.asst_category}" />
+											</div>
+										</div>
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Asset Type</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.asst_type}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Asset Currency</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.asst_crncy}" />
+											</div>
+										</div>
+
+
+
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Date of Purchase</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.date_of_purchase}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Year of Purchase</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.year_of_purchase}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Original Cost</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.org_cost}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Life Span (Months)</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.life_span_mth}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Asset Expiry Date</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.asst_exp_date}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Asset Remarks</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.asst_rmks}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Depreciation Flag</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.depr_flag}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Depreciation Frequency</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.depr_freq}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Depreciation Method</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.depr_method}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Depreciation Percentage</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.depr_percent}" />
+											</div>
+										</div>
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Accumulated Depreciation</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.acc_depr}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Date of Last Depreciation</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.date_of_last_depr}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Date of Sale</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.date_of_sale}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Book value on Date sale:</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.book_value_sale_date}" />
+											</div>
+										</div>
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">sale value</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.sale_value}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">ProfIt/Loss</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.profit_loss}" />
+											</div>
+										</div>
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Buyers Name</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.buyer_name}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Sale Details</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.sale_det}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Date of scrap</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.date_of_scrap}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Book value on date of write off</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.book_value_scrap_date_amount}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Scrap value</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.scrap_value}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Scrap Remarks</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.scrap_rmks}" />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Location Type</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.loc_type}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">SOL ID</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.sol_id}" />
+											</div>
+										</div>
+
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Employee id</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm" th:value="${W?.emp_id}" />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob"> Department/Division Name</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName" th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${W?.dept_div_name}" />
+											</div>
+										</div>
+
+
+										<!-- div class="row formline">
 													<div class="col-sm-2">
 														<label for="designation">Location Address</label>
 													</div>
@@ -791,26 +745,26 @@ legend {
 															th:value="${W?.locationRemarks}"  />
 													</div>
 												</div>-->
-												
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-										</div>									
-									
-									
-									
-										<div class="card-footer text-center">
+
+
+
+
+
+
+
+
+
+
+
+									</div>
+
+
+
+									<div class="card-footer text-center p-0">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
-									<!-- 	<button type="button" class="btn headerbutton" id="btnBack"
+										<!-- 	<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Submit</button> -->
 
 										<button type="button" class="btn headerbutton" id="btnBack"
@@ -818,71 +772,73 @@ legend {
 
 									</div>
 									<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-    <table class="table  table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${W?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${W?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <!-- 
+									<div class="table-responsive"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
+										<table class="table  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Entry User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px; margin-right: 20px;">
+													<input type="text" id="entryuser" name="entry_user"
+														th:value="${W?.entry_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly>
+												</td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Modify User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px;">
+													<input type="text" id="modifyuser" name="modify_user"
+														th:value="${W?.modify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly>
+												</td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Verify User :</B></font>
+												</td>
+												<!-- 
                          th:value="${W?.verify_user}" -->
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${W?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${W?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${W?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        
-    </table>
-								</div>
-		
+												<td class="col-sm-2" style="width: 112px;">
+													<input type="text" id="verifyuser" name="verify_user"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly>
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: right;">
+													<font size="2"><B>Entry Time :</B></font>
+												</td>
+												<td style="width: 112px">
+													<input type="text" id="entrytime" name="entry_time"
+														th:value="${W?.entry_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly>
+												</td>
+												<td style="text-align: right;">
+													<font size="2"><B>Modify Time :</B></font>
+												</td>
+												<td style="width: 112px">
+													<input type="text" id="modifytime" name="modify_time"
+														th:value="${W?.modify_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly>
+												</td>
+												<td style="text-align: right;">
+													<font size="2"><B>Verify Time :</B></font>
+												</td>
+												<td style="width: 112px">
+													<input type="text" id="verifytime" name="verify_time"
+														th:value="${W?.verify_time}"
+														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly>
+												</td>
+											</tr>
+
+										</table>
+									</div>
+
 								</div>
 							</form>
 						</div>
@@ -893,4 +849,5 @@ legend {
 	</div>
 
 </body>
+
 </html>
