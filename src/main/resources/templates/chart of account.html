@@ -493,28 +493,17 @@
 									<div class="card-header p-0">
 										<div class="d-flex justify-content-between align-items-center">
 											<div>
-												<h3 th:if="${formmode}=='view'"
-													class="btn btn-sm mr-2 headerbutton mt-1">CHART OF ACCOUNT</h3>
-												<h3 th:if="${formmode}=='add'"
-													class="btn btn-sm mr-2 headerbutton mt-1">CHART OF ACCOUNT
-												</h3>
-												<h3 th:if="${formmode}=='edit'"
-													class="btn btn-sm mr-2 headerbutton mt-1">CHART OF ACCOUNT
-												</h3>
-												<h3 th:if="${formmode}=='view1'"
-													class="btn btn-sm mr-2 headerbutton mt-1">CHART OF ACCOUNT
-												</h3>
-												<h3 th:if="${formmode}=='view2'"
-													class="btn btn-sm mr-2 headerbutton mt-1">CHART OF ACCOUNT
-												</h3>
+												<h3 
+													class="btn btn-sm mr-2 headerbutton mt-1 ml-2">CHART OF ACCOUNT</h3>
+												
 											</div>
 										</div>
 									</div>
 
 
 									<div class="card-body">
-										<fieldset class="scheduler-border">
-											<legend class="scheduler-border">Chart of Account Details</legend>
+										<fieldset class="scheduler" style="border: none;">
+										
 											<div class="form-group mb-0">
 												<div class="row formline">
 													<div class="col-sm-2">
@@ -1155,7 +1144,12 @@
 											</div>
 										</fieldset>
 
-										<div class="card-footer text-center p-0">
+										
+
+
+
+									</div>
+									<div class="card-footer text-center p-0">
 
 											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home()">Home</button>
@@ -1186,10 +1180,6 @@
 											<button type="button" class="btn  headerbutton" id="btnBack"
 												onclick="back()">Back</button>
 										</div>
-
-
-
-									</div>
 								</div>
 							</form>
 						</div>
@@ -1216,8 +1206,9 @@
 										<div class="card-body p-0"> 
 											<div class="panel panel-primary filterable"> 
 												<div class="table-responsive">
+													<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 													<table class="table table-bordered	">
-														<thead>
+														<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1; border: 1px solid #000;">
 															<tr class="filters">
 																<th><input type="text"
 																		class="form-control font-weight-bold"
@@ -1257,6 +1248,7 @@
 															</tr>
 														</tbody>
 													</table>
+													</div>
 												</div>
 											</div>
 										</div>

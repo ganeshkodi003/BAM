@@ -33,7 +33,13 @@
 	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 
 	<style>
-		.filterable .filters input[disabled] {
+		.content-page {
+	margin-left: 15%;
+	overflow: hidden;
+	padding: 0 15px 65px 15px;
+	margin-top: 101px;
+}
+				.filterable .filters input[disabled] {
 			background-color: transparent;
 			border: none;
 			cursor: auto;
@@ -57,6 +63,13 @@
 		.filterable .filters input[disabled]::-webkit-input-placeholder {
 			color: #333;
 		}
+		.content-page {
+	margin-left:15%;
+	overflow: hidden;
+	padding: 0 15px 65px 15px;
+	margin-top: 101px;
+	width: 100%;
+}
 	</style>
 
 	<style>
@@ -1169,16 +1182,16 @@
 
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-2">
+			
 				<div th:insert="BTMHeaderMenu :: header"></div>
 			</div>
-			<div class="col-sm-9">
+			
 
-				<div class="container-fluid content"
+				<div class="container-fluid content" style="margin-left: 100px;"
 					th:if="${formmode}=='add' OR ${formmode}=='edit' OR ${formmode}=='delete' ">
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="card">
+							<div class="card ">
 								<form action="#" th:object="${RefCodeMaster}" class="w-100" method="post"
 									autocomplete="off" id="adminRefCodeMaster">
 									<div class="card-header p-0">
@@ -1340,30 +1353,30 @@
 
 									<div class="card-footer  text-center p-0">
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											onclick="home()" id="btnHome">Home</button>
 
 
-										<a class="btn btn-xs headerbutton" id="btnDelete" style="width: 120px"
+										<a class="btn btn-xs headerbutton" id="btnDelete" 
 											th:if="${formmode}=='edit'" onclick=" deleteUserData();">Delete</a>
 
 
 
 										<button th:if="${formmode}== 'add'" type="button"
 											class="btn btn-xs headerbutton" form="RefCodeMaster" id="btnSubmit"
-											onclick="submitform(this);" style="width: 120px"
+											onclick="submitform(this);" 
 											th:attr="data-formmode=${formmode}">Submit</button>
 
 										<button type="button" class="btn btn-xs headerbutton" id="btnEdit"
 											th:if="${formmode}=='edit'" th:attr="data-formmode=${formmode}"
-											style="width: 120px" onclick="modifyUserData(this);">Submit</button>
+											 onclick="modifyUserData(this);">Submit</button>
 
 										<button th:if="${formmode}== 'delete'" type="button"
 											class="btn btn-xs headerbutton" form="AdminAssociateProfile" id="btnSubmit"
-											onclick="deleteUserData(this);" style="width: 120px"
+											onclick="deleteUserData(this);" 
 											th:attr="data-formmode=${formmode}">Submit</button>
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 	
 											id="btnBack" onclick="back();">Back</button>
 									</div>
 
@@ -1861,10 +1874,10 @@
 
 									<div class="card-footer  text-center">
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											onclick="home()" id="btnHome">Home</button>
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											id="btnBack" onclick="back();">Back</button>
 									</div>
 									<!-- Conditionally display the table based on formmode  view-->
@@ -2367,10 +2380,10 @@
 
 									<div class="card-footer  text-center">
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											onclick="home()" id="btnHome">Home</button>
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											id="btnBack" onclick="back();">Back</button>
 									</div>
 
@@ -2498,10 +2511,10 @@
 
 									<div class="card-footer  text-center">
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											onclick="home()" id="btnHome">Home</button>
 
-										<button type="button" class="btn btn-xs headerbutton" style="width: 120px"
+										<button type="button" class="btn btn-xs headerbutton" 
 											id="btnBack" onclick="back();">Back</button>
 									</div>
 
@@ -2583,16 +2596,16 @@
 
 
 
-				<div class="container-fluid"
+				<div class="container-fluid" style="width: 100%;"
 					th:if="${formmode}=='list' OR ${formmode}=='list1' OR ${formmode}=='deleteList'">
 
-					<div class="row">
+					
 
-						<div class="col-sm-12">
-							<div class="container-fluid content">
-								<div class="row">
+						
+							<div class="content-page " >
+								<div class="row" style="width: 100%;">
 
-									<div class="card w-100  panel panel-primary filterable">
+									<div class="card panel panel-primary filterable">
 
 
 										<div >
@@ -2674,16 +2687,16 @@
 
 											<div class="card-footer text-center p-0">
 												<button type="button" class="btn headerbutton" id="btnHome"
-													style="width: 120px" onclick="home()">Home</button>
+													 onclick="home()">Home</button>
 												<button type="button" class="btn headerbutton" id="btnBack"
-													style="width: 120px" onclick="back()">Back</button>
+													 onclick="back()">Back</button>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</div>
+						
+					
 				</div>
 				<br>
 				<!--<div class="container-fluid"
@@ -2782,7 +2795,7 @@
 				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
 					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();"
-						style="width: 120px">Close</button>
+						>Close</button>
 				</div>
 			</div>
 		</div>

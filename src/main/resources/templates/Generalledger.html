@@ -602,38 +602,38 @@ tr td:first-child:before {
 									<div class="card-footer  text-center p-0">
 
 										<button type="button" class="btn btn-sm mr-2 headerbutton"
-											style="width: 120px" onclick="home()" id="btnHome">Home</button>
+											 onclick="home()" id="btnHome">Home</button>
 
-										<a class="btn btn-sm mr-2 headerbutton" style="width: 120px"
+										<a class="btn btn-sm mr-2 headerbutton" 
 											onclick="addUser()" th:if="${formmode}=='view'"
 											id="btnModify">Add</a> <a
-											class="btn btn-sm mr-2 headerbutton" id="btnModify" style="width: 120px"
+											class="btn btn-sm mr-2 headerbutton" id="btnModify" 
 											th:if="${formmode}=='view'" onclick="modifyData();">Modify</a>
 
-										<a class="btn btn-sm mr-2 headerbutton" id="btnDelete" style="width: 120px"
+										<a class="btn btn-sm mr-2 headerbutton" id="btnDelete" 
 											th:if="${formmode}=='view'" onclick="deleteData();">Delete</a>
 
 										<a class="btn btn-sm mr-2 headerbutton"
 											th:if="${formmode}=='view'"  
-											style="width: 120px" onclick="userList();">List</a>
+											 onclick="userList();">List</a>
 
 										<button th:if="${formmode}== 'add'" type="button"
 											class="btn btn-sm mr-2 headerbutton" form="RefCodeMaster"
-											id="btnSubmit" onclick="submitform(this);" style="width: 120px"
+											id="btnSubmit" onclick="submitform(this);" 
 											th:attr="data-formmode=${formmode}">Submit</button>
 
 										<button type="button" class="btn btn-sm mr-2 headerbutton"
 											id="btnEdit" th:if="${formmode}=='edit'"
-											th:attr="data-formmode=${formmode}" style="width: 120px"
+											th:attr="data-formmode=${formmode}" 
 											onclick="modifyUserData(this);">Submit</button>
 
 										<button th:if="${formmode}== 'delete'" type="button"
 											class="btn btn-sm mr-2 headerbutton" form="AdminAssociateProfile"
-											id="btnSubmit" onclick="deleteUserData(this);" style="width: 120px"
+											id="btnSubmit" onclick="deleteUserData(this);" 
 											th:attr="data-formmode=${formmode}">Submit</button>
 
 										<button type="button" class="btn btn-sm mr-2 headerbutton"
-											style="width: 120px" id="btnBack" onclick="back();">Back</button>
+											 id="btnBack" onclick="back();">Back</button>
 									</div>
 
 
@@ -666,8 +666,9 @@ tr td:first-child:before {
 										<div class="panel panel-primary filterable"> 
 											<div class="card-body p-0">
 												<div class="table-responsive">
+													<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 													<table class="table table-bordered" id="replist">
-														<thead>
+														<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 															<tr class="filters">
 																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="Sr.No" readonly></th>
@@ -712,14 +713,15 @@ tr td:first-child:before {
 														</tbody>
 													</table>
 
+</div>
 												</div>
 											</div>
 
 											<div class="card-footer text-center p-0">
 												<button type="button" class="btn headerbutton" id="btnHome"
-													style="width: 120px" onclick="home()">Home</button>
+													 onclick="home()">Home</button>
 												<button type="button" class="btn headerbutton" id="btnBack"
-													style="width: 120px" onclick="back()">Back</button>
+												 onclick="back()">Back</button>
 											</div>
 										</div>
 									</div>
@@ -802,7 +804,6 @@ tr td:first-child:before {
 												class="form-control form-control-sm" autocomplete="off"
 												readonly  />
 										</div>
-<<<<<<< Updated upstream
 										<div class="card-body">
 												<div class="row formline">
 													<div class="col-sm-2">
@@ -930,11 +931,9 @@ tr td:first-child:before {
 			
 							
 							
-=======
 									</div>
 								</div>
 							</div>
->>>>>>> Stashed changes
 						</div>
 					</div>
 					<div align="right" style="margin-left: 870px; font-size: 18px">
@@ -957,7 +956,7 @@ tr td:first-child:before {
 					style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;"></p>
 					<button type="button" class="btn headerbutton" data-dismiss="modal"
-						onclick="back();" style="width: 120px">Close</button>
+						onclick="back();" >Close</button>
 				</div>
 			</div>
 		</div>
