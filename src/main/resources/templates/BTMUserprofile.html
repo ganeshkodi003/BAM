@@ -490,7 +490,7 @@
 		<div th:insert="BTMHeaderMenu :: header"></div>
 	</div>
 	<!---------------------User List Starts------------------------------------------------------->
-	<div th:if="${formmode}=='list'" class="container content">
+	<div th:if="${formmode}=='list'" class="container-fluid" style="width:1400px;margin-left:250px;margin-top:100px">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card panel panel-primary filterable">
@@ -562,7 +562,7 @@
 	<div th:if="${formmode}=='edit' OR ${formmode}=='add'" class="container content">
 		<div class="row">
 			<div class="col-sm-12 finuserapply">
-				<div class="card" style="margin: -20px;"
+				<div class="card" style="margin: -20px;width:1400px">
 					<form action="#" th:object="${userProfile}" method="post" autocomplete="off" id="userProfile"
 						th:fragment="finuserapply">
 						<div class="card-header p-0">

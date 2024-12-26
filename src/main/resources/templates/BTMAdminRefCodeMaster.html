@@ -120,9 +120,9 @@
 			counter-reset: Serial;
 		}
 
-		table {
+		/* table {
 			border-collapse: separate;
-		}
+		} */
 
 		tr td:first-child:before {
 			counter-increment: Serial;
@@ -135,10 +135,11 @@
 			counter-increment: none;
 		}
 
-		.table thead th {
+		/* .table thead th {
 			border: unset !important;
 		}
-
+ */
+		
 		.filterable .filters input[disabled] {
 			background-color: transparent;
 			border: none;
@@ -1181,7 +1182,7 @@
 								<form action="#" th:object="${RefCodeMaster}" class="w-100" method="post"
 									autocomplete="off" id="adminRefCodeMaster">
 									<div class="card-header p-0">
-										<div class="d-flex justify-content-between align-items-center">
+										<div class="d-flex justify-content-between align-items-center" >
 											<div>
 												<h3 th:if="${formmode}=='add'"
 													class="btn btn-sm mr-2 headerbutton mt-1">REFERENCE CODE MASTER -
@@ -2620,7 +2621,7 @@
 											</div>
 											<div class="card-body p-0">
 												<div class="table-responsive">
-													<table class="table" id="replist">
+													<table class="table table-bordered" id="replist">
 														<thead>
 															<tr class="filters">
 																<th style="width: 7%;"><input type="text" class="form-control font-weight-bold"
@@ -2643,7 +2644,7 @@
 														<tbody id="referenceMaster"
 															th:each="refCodeMaster : ${adminRefCodeMaster}">
 															<tr>
-																<td></td>
+																<td style="padding-left:25px"></td>
 																<td th:text="${refCodeMaster?.ref_type}"></td>
 																<td th:text="${refCodeMaster?.ref_type_desc}"></td>
 																<td th:text="${refCodeMaster?.ref_id}"></td>
