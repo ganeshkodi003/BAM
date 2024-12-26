@@ -37,6 +37,7 @@
 <script
 	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
 	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 
 <style>
 .btns {
@@ -372,18 +373,19 @@ tr td:first-child:before {
 							<form action="#" th:object="${GeneralLedger}" class="w-100"
 								method="post" autocomplete="off" id="BamGeneralLedger">
 								<div class="card">
-									<div class="card-header border-bottom-0">
-
+									<div class="card-header p-1">
+										<div class="d-flex justify-content-between align-items-center">
 										<div class="float-left">
-											<h3 th:if="${formmode}=='view'">GENERAL LEDGER</h3>
-											<h3 th:if="${formmode}=='edit'">GENERAL LEDGER-
+											<h3 th:if="${formmode}=='view'"  class="btn btn-sm headerbutton ">GENERAL LEDGER</h3>
+											<h3 th:if="${formmode}=='edit'" class="btn btn-sm headerbutton">GENERAL LEDGER-
 												MODIFY</h3>
-											<h3 th:if="${formmode}=='add'">GENERAL LEDGER-
+											<h3 th:if="${formmode}=='add'" class="btn btn-sm headerbutton ">GENERAL LEDGER-
 												ADD</h3>
 
-											<h3 th:if="${formmode}=='delete'">GENERAL LEDGER
+											<h3 th:if="${formmode}=='delete'" class="btn btn-sm  headerbutton ">GENERAL LEDGER
 												- DELETE</h3>
-											<h3 th:if="${formmode}=='view1'">GENERAL LEDGER</h3>
+											<h3 th:if="${formmode}=='view1'" class="btn btn-sm headerbutton ">GENERAL LEDGER</h3>
+										</div>
 										</div>
 									</div>
 
@@ -597,40 +599,40 @@ tr td:first-child:before {
 										</div>
 									</div>
 
-									<div class="card-footer  text-center">
+									<div class="card-footer  text-center p-0">
 
-										<button type="button" btn headerbutton
+										<button type="button" class="btn btn-sm mr-2 headerbutton"
 											style="width: 120px" onclick="home()" id="btnHome">Home</button>
 
-										<a class="btn btn-xs btn-primary text-white" style="width: 120px"
+										<a class="btn btn-sm mr-2 headerbutton" style="width: 120px"
 											onclick="addUser()" th:if="${formmode}=='view'"
 											id="btnModify">Add</a> <a
-											class="btn btn-xs btn-primary text-white" id="btnModify" style="width: 120px"
+											class="btn btn-sm mr-2 headerbutton" id="btnModify" style="width: 120px"
 											th:if="${formmode}=='view'" onclick="modifyData();">Modify</a>
 
-										<a class="btn btn-xs btn-primary text-white" id="btnDelete" style="width: 120px"
+										<a class="btn btn-sm mr-2 headerbutton" id="btnDelete" style="width: 120px"
 											th:if="${formmode}=='view'" onclick="deleteData();">Delete</a>
 
-										<a class="btn btn-xs btn-primary text-white"
-											th:if="${formmode}=='view'" id="btnList"
+										<a class="btn btn-sm mr-2 headerbutton"
+											th:if="${formmode}=='view'"  
 											style="width: 120px" onclick="userList();">List</a>
 
 										<button th:if="${formmode}== 'add'" type="button"
-											btn headerbutton form="RefCodeMaster"
+											class="btn btn-sm mr-2 headerbutton" form="RefCodeMaster"
 											id="btnSubmit" onclick="submitform(this);" style="width: 120px"
 											th:attr="data-formmode=${formmode}">Submit</button>
 
-										<button type="button" btn headerbutton
+										<button type="button" class="btn btn-sm mr-2 headerbutton"
 											id="btnEdit" th:if="${formmode}=='edit'"
 											th:attr="data-formmode=${formmode}" style="width: 120px"
 											onclick="modifyUserData(this);">Submit</button>
 
 										<button th:if="${formmode}== 'delete'" type="button"
-											btn headerbutton form="AdminAssociateProfile"
+											class="btn btn-sm mr-2 headerbutton" form="AdminAssociateProfile"
 											id="btnSubmit" onclick="deleteUserData(this);" style="width: 120px"
 											th:attr="data-formmode=${formmode}">Submit</button>
 
-										<button type="button" btn headerbutton
+										<button type="button" class="btn btn-sm mr-2 headerbutton"
 											style="width: 120px" id="btnBack" onclick="back();">Back</button>
 									</div>
 
@@ -650,38 +652,38 @@ tr td:first-child:before {
 							<div class="container-fluid content">
 								<div class="row">
 
-									<div class="card w-100">
+									<div class="card w-100  panel panel-primary filterable">
 
-
-										<div class="panel panel-primary filterable">
-											<div class="card-header d-flex justify-content-between">
-												<h3
-													th:if="${formmode}=='list' OR ${formmode}=='list1' OR ${formmode}=='deleteList'">GENERAL LEDGER
-											 - LIST</h3>
-												<button class="btn text-white  btn-filter btn-primary" style="width: 120px">Filter</button>
-
-											</div>
+										<div class="card-header p-0">
+																					<div class="d-flex justify-content-between align-items-center">
+																						<div>
+																							<h3   th:if="${formmode}=='list' OR ${formmode}=='list1' OR ${formmode}=='deleteList'"
+																								class="btn btn-sm mr-2 headerbutton mt-1">GENERAL LEDGER - LIST</h3>
+																						</div>
+																						<button type="button" class="btn btns btn-filter headerbutton">Filter</button>
+																					</div>
+																				</div>
+										<div class="panel panel-primary filterable"> 
 											<div class="card-body p-0">
 												<div class="table-responsive">
 													<table class="table" id="replist">
 														<thead>
 															<tr class="filters">
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="Sr.No" readonly></th>
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="GL Code" readonly></th>
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="GL Description" readonly></th>
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="GL Type" readonly></th>
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="GL Type Desc" readonly></th>
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="Module" readonly></th>
-																<th><input type="text" class="form-control"
+																<th><input type="text" class="form-control font-weight-bold"
 																	placeholder="Remarks" readonly></th>
-																<th><input type="text" class="form-control"
-																	placeholder="Select" readonly></th>
+																<th class="pb-2 " >Select</th>
 															</tr>
 														</thead>
 
@@ -713,7 +715,7 @@ tr td:first-child:before {
 												</div>
 											</div>
 
-											<div class="card-footer text-center">
+											<div class="card-footer text-center p-0">
 												<button type="button" class="btn headerbutton" id="btnHome"
 													style="width: 120px" onclick="home()">Home</button>
 												<button type="button" class="btn headerbutton" id="btnBack"
