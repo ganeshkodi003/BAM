@@ -315,14 +315,14 @@ legend {
 
 											<div class="panel panel-primary filterable ">
 												<div class="card-header d-flex justify-content-between p-1">
-													<h4 class="headerbutton p-2"> DEPRICIATION TRANSACTION LIST</h4>
+													<h4 class="headerbutton p-2"> DEPRECIATION TRANSACTION LIST</h4>
 													<button
 														class="btn text-white  btn-filter headerbutton">Filter</button>
 												</div>
 
-												<div class="table-responsive">
+												<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 													<table class="table bordered table-bordered">
-														<thead>
+														<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 															<tr class="filters">
 																<th><input type="text"
 																	class="form-control font-weight-bold"
@@ -373,7 +373,7 @@ legend {
 															<tr th:each="gettran: ${gettran}">
 																<td th:text="${gettran?.asset_serial_no}"></td>
 																<td th:text="${gettran?.asset_name}"></td>
-																<td th:text="${gettran?.original_cost}"></td>
+																<td th:text="${gettran?.original_cost}" align="right"></td>
 																<td th:text="${gettran?.depreciation_percentage}"></td>
 																<td th:text="${gettran?.depreciation_method}"></td>
 																<td th:text="${gettran?.gen_tran_id}"></td>
