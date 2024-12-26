@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
@@ -55,12 +56,14 @@
 </style>
 <style>
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .table {
 	width: 100%;
 	margin-bottom: 1rem;
@@ -390,107 +393,125 @@ td input {
 			});
 </script>
 <script>
+	function getYearFromISODate(isoDateString) {
+		// Parse the ISO date string into a Date object
+		let date = new Date(isoDateString);
 
-function getYearFromISODate(isoDateString) {
-    // Parse the ISO date string into a Date object
-    let date = new Date(isoDateString);
+		// Extract the year
+		let year = date.getFullYear();
 
-    // Extract the year
-    let year = date.getFullYear();
+		return year;
+	}
+	function formatISODateToDDMMYYYY(isoDateString) {
+		// Parse the ISO date string
+		let date = new Date(isoDateString);
 
-    return year;
-}
-function formatISODateToDDMMYYYY(isoDateString) {
-    // Parse the ISO date string
-    let date = new Date(isoDateString);
+		// Extract day, month, and year
+		let day = date.getDate();
+		let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
+		let year = date.getFullYear();
 
-    // Extract day, month, and year
-    let day = date.getDate();
-    let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
-    let year = date.getFullYear();
+		// Pad day and month with leading zeros if necessary
+		if (day < 10) {
+			day = '0' + day;
+		}
+		if (month < 10) {
+			month = '0' + month;
+		}
 
-    // Pad day and month with leading zeros if necessary
-    if (day < 10) {
-        day = '0' + day;
-    }
-    if (month < 10) {
-        month = '0' + month;
-    }
+		// Format the date as dd/MM/yyyy
+		return `${year}-${month}-${day}`;
+	}
+	function datdate(isoDateString) {
+		// Parse the ISO date string
+		let date = new Date(isoDateString);
 
-    // Format the date as dd/MM/yyyy
-    return `${year}-${month}-${day}`;
-}
-function datdate(isoDateString) {
-    // Parse the ISO date string
-    let date = new Date(isoDateString);
+		// Extract day, month, and year
+		let day = date.getDate();
+		let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
+		let year = date.getFullYear();
 
-    // Extract day, month, and year
-    let day = date.getDate();
-    let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
-    let year = date.getFullYear();
+		// Pad day and month with leading zeros if necessary
+		if (day < 10) {
+			day = '0' + day;
+		}
+		if (month < 10) {
+			month = '0' + month;
+		}
 
-    // Pad day and month with leading zeros if necessary
-    if (day < 10) {
-        day = '0' + day;
-    }
-    if (month < 10) {
-        month = '0' + month;
-    }
+		// Format the date as dd/MM/yyyy
+		return `${day}-${month}-${year}`;
+	}
 
-    // Format the date as dd/MM/yyyy
-    return `${day}-${month}-${year}`;
-}
+	function handleSelectChange() {
+		var assetSerialNumber = document.getElementById('asset_serial_no').value;
+		alert(assetSerialNumber)
+		if (assetSerialNumber) {
+			$
+					.ajax({
+						type : 'GET',
+						url : "./get_serial_Inv",
+						data : {
+							AN : assetSerialNumber
+						},
+						success : function(response) {
+							console.log("Response from server:", response);
 
-function handleSelectChange() {
-    var assetSerialNumber = document.getElementById('asset_serial_no').value;
-    alert(assetSerialNumber)
-    if (assetSerialNumber) {
-        $.ajax({
-            type: 'GET',
-            url: "./get_serial_Inv",
-            data: { AN: assetSerialNumber },
-            success: function(response) {
-                console.log("Response from server:", response);
-              
-                let formattedDate = formatISODateToDDMMYYYY(response.date_of_purchase);
-                let asst_exp_date = formatISODateToDDMMYYYY(response.asst_exp_date);
-                let ACQN = formatISODateToDDMMYYYY(response.date_of_acqn);
-                let date_of_last_depr = formatISODateToDDMMYYYY(response.date_of_last_depr);
-                
-                let year = getYearFromISODate(response.year_of_purchase);
-                console.log(year); 
-                
-                
-                
-                    document.getElementById('asset_name').value = response.asst_name || '';
-                    document.getElementById('asset_type').value = response.asset_type || '';
-                    document.getElementById('asst_ccy').value = response.asst_crncy || '';
-                    document.getElementById('org_cost').value = response.org_cost || '';
-                    document.getElementById('acc_depr_amt').value = response.acc_depr || '';
-                    document.getElementById('date_of_purchase').value = formattedDate || '';
-                    document.getElementById('curr_book_value').value = response.cur_book_value || '';
-                    document.getElementById('Year_of_purchase').value = year || '';
-                    document.getElementById('depreciation_flg').value = response.depr_flag || '';
-                    document.getElementById('asst_exp_date').value = asst_exp_date || '';
+							let formattedDate = formatISODateToDDMMYYYY(response.date_of_purchase);
+							let asst_exp_date = formatISODateToDDMMYYYY(response.asst_exp_date);
+							let ACQN = formatISODateToDDMMYYYY(response.date_of_acqn);
+							let date_of_last_depr = formatISODateToDDMMYYYY(response.date_of_last_depr);
 
-                    document.getElementById('depreciation_method').value = response.depr_method || '';
-                    
-                    document.getElementById('acquis_date').value = ACQN || '';
-                    document.getElementById('depreciation_percentage').value = response.depr_percent || '';
-                    document.getElementById('life_span_months').value = response.life_span_mth || '';
-                    document.getElementById('depreciation_frequency').value = response.depr_freq || '';
-                    document.getElementById('depreciation_start_date').value = formattedDate || '';
-                    document.getElementById('date_of_last_depreciation').value = date_of_last_depr || '';
-               
-            },
-            error: function(error) {
-                console.error("Error fetching asset details:", error);
-              
-            }
-        });
-    } 
-}
+							let year = getYearFromISODate(response.year_of_purchase);
+							console.log(year);
 
+							document.getElementById('asset_name').value = response.asst_name
+									|| '';
+							document.getElementById('asset_type').value = response.asset_type
+									|| '';
+							document.getElementById('asst_ccy').value = response.asst_crncy
+									|| '';
+							document.getElementById('org_cost').value = response.org_cost
+									|| '';
+							document.getElementById('acc_depr_amt').value = response.acc_depr
+									|| '';
+							document.getElementById('date_of_purchase').value = formattedDate
+									|| '';
+							document.getElementById('curr_book_value').value = response.cur_book_value
+									|| '';
+							document.getElementById('Year_of_purchase').value = year
+									|| '';
+							document.getElementById('depreciation_flg').value = response.depr_flag
+									|| '';
+							document.getElementById('asst_exp_date').value = asst_exp_date
+									|| '';
+
+							document.getElementById('depreciation_method').value = response.depr_method
+									|| '';
+
+							document.getElementById('acquis_date').value = ACQN
+									|| '';
+							document.getElementById('depreciation_percentage').value = response.depr_percent
+									|| '';
+							document.getElementById('life_span_months').value = response.life_span_mth
+									|| '';
+							document.getElementById('depreciation_frequency').value = response.depr_freq
+									|| '';
+							document.getElementById('depreciation_start_date').value = formattedDate
+									|| '';
+							document
+									.getElementById('date_of_last_depreciation').value = date_of_last_depr
+									|| '';
+
+						},
+						error : function(error) {
+							console.error("Error fetching asset details:",
+									error);
+
+						}
+					});
+		}
+	}
 </script>
 </head>
 <title>BAM</title>
@@ -512,20 +533,22 @@ function handleSelectChange() {
 
 							<div class="associateProfileList">
 								<div class="card">
-									<div class="card-header p-1">
+									<div class="card-header p-0 ">
 										<div class="float-left">
-											<h4 th:if="${formmode}=='add'">Transaction Master</h4>
-											<h4 th:if="${formmode}=='list'">List of Transaction
+											<h4 th:if="${formmode}=='add'" class="headerh6 p-1 pt-2">Transaction Master</h4>
+											<h4 th:if="${formmode}=='list'"class="headerh6 p-1 pt-2">List of Transaction
 												Master</h4>
-											<h4 th:if="${formmode}=='view'">View of Transaction
+											<h4 th:if="${formmode}=='view'"class="headerh6 p-1 pt-2" >View of Transaction
 												Master</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right">
-											<button type="button" class="btn btn-xs  headerbutton btns"
-												id="btnAdd" onclick="addpara();" th:if="${formmode}=='list'"
+											<button type="button"
+												class="btn btn-xs  headerbutton btns text-white" id="btnAdd"
+												onclick="addpara();" th:if="${formmode}=='list'"
 												style="font-size: 15px; width: -70px; size: 100px;">Add</button>
-											<button type="button" class="btn btn-xs  headerbutton btns"
-												id="btnAdd" onclick="listpara();"
+											<button type="button"
+												class="btn btn-xs  headerbutton btns text-white" id="btnAdd"
+												onclick="listpara();"
 												style="font-size: 15px; width: -70px; size: 100px;">List</button>
 										</div>
 									</div>
@@ -538,13 +561,17 @@ function handleSelectChange() {
 												</div>
 
 												<div class="col-sm-3">
-													
-														
-														
-														<select id="asset_serial_no" class="form-control form-control-sm" name="asset_serial_no" autocomplete="off" onchange="handleSelectChange()">
-												            <option value="">Select Asset Serial Number</option>
-												            <option th:each="assetSN : ${lists}" th:value="${assetSN}" th:text="${assetSN}"></option>
-												        </select>
+
+
+
+													<select id="asset_serial_no"
+														class="form-control form-control-sm"
+														name="asset_serial_no" autocomplete="off"
+														onchange="handleSelectChange()">
+														<option value="">Select Asset Serial Number</option>
+														<option th:each="assetSN : ${lists}" th:value="${assetSN}"
+															th:text="${assetSN}"></option>
+													</select>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -553,7 +580,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<select id="asset_type" name="asset_type"
 														style="width: 100%" class="form-control form-control-sm"
-														readonly >
+														readonly>
 														<option value="">SELECT</option>
 														<option value="Tangible">Tangible</option>
 														<option value="Depreciable">Intangible</option>
@@ -569,7 +596,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="asset_name"
 														class="form-control form-control-sm" name="asset_name"
-														autocomplete="off" readonly/>
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -578,7 +605,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="org_cost"
 														class="form-control form-control-sm" name="original_cost"
-														autocomplete="off" readonly/>
+														autocomplete="off" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -598,7 +625,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="acc_depr_amt"
 														class="form-control form-control-sm" name="accum_depres"
-														autocomplete="off" readonly/>
+														autocomplete="off" readonly />
 												</div>
 											</div>
 
@@ -610,7 +637,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="date" id="date_of_purchase"
 														class="form-control form-control-sm" autocomplete="off"
-														name="date_of_purchase" required readonly/>
+														name="date_of_purchase" required readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -619,7 +646,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="curr_book_value"
 														class="form-control form-control-sm" autocomplete="off"
-														name="curr_book_value" readonly/>
+														name="curr_book_value" readonly />
 												</div>
 											</div>
 											<div class="row formline">
@@ -630,7 +657,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="Year_of_purchase"
 														class="form-control form-control-sm"
-														name="year_of_purchase" autocomplete="off" readonly/>
+														name="year_of_purchase" autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -650,7 +677,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="date" id="asst_exp_date"
 														class="form-control form-control-sm" name="asst_exp_date"
-														autocomplete="off" readonly/>
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -660,7 +687,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="depreciation_method"
 														class="form-control form-control-sm"
-														name="depreciation_method" autocomplete="off" readonly/>
+														name="depreciation_method" autocomplete="off" readonly />
 												</div>
 											</div>
 
@@ -673,7 +700,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="date" id="acquis_date"
 														class="form-control form-control-sm" name="acquis_date"
-														autocomplete="off" readonly/>
+														autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -683,7 +710,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="number" id="depreciation_percentage"
 														class="form-control form-control-sm"
-														name="depreciation_percentage" autocomplete="off" readonly/>
+														name="depreciation_percentage" autocomplete="off" readonly />
 												</div>
 											</div>
 
@@ -696,7 +723,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="number" required id="life_span_months"
 														class="form-control form-control-sm"
-														name="life_span_months" autocomplete="off" readonly/>
+														name="life_span_months" autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -706,7 +733,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="text" id="depreciation_frequency"
 														class="form-control form-control-sm"
-														name="depreciation_frequency" autocomplete="off" readonly/>
+														name="depreciation_frequency" autocomplete="off" readonly />
 												</div>
 											</div>
 
@@ -719,7 +746,7 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="date" id="depreciation_start_date"
 														class="form-control form-control-sm"
-														name="depreciation_start_date" autocomplete="off" readonly/>
+														name="depreciation_start_date" autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -728,7 +755,8 @@ function handleSelectChange() {
 												<div class="col-sm-3">
 													<input type="date" id="date_of_last_depreciation"
 														class="form-control form-control-sm"
-														name="date_of_last_depreciation" autocomplete="off" readonly/>
+														name="date_of_last_depreciation" autocomplete="off"
+														readonly />
 												</div>
 											</div>
 
@@ -771,9 +799,9 @@ function handleSelectChange() {
 										</fieldset>
 
 									</div>
-									<div class="card-body" th:if="${formmode}== 'list'">
+									<div class="" th:if="${formmode}== 'list'">
 										<div class="table-responsive">
-											<table class="table">
+											<table class="table table-bordered">
 												<thead>
 													<tr class="filters">
 														<th>Srl no</th>
@@ -1050,14 +1078,16 @@ function handleSelectChange() {
 													</thead>
 													<tbody>
 														<tr th:each="MtLeaveMaster : ${paramview}">
-														<td  th:text="${MtLeaveMaster?.gen_roll_no}"></td>
-														<td th:text="${MtLeaveMaster?.gen_flow_id}"></td>
-														<td th:text="${MtLeaveMaster?.gen_acc_no}"></td>
-														<td th:text="${MtLeaveMaster?.gen_acc_name}"></td>
-														<td th:text="${MtLeaveMaster?.gen_tran_perticular}"></td>
-														<td style="text-align:right" th:text="${MtLeaveMaster?.gen_debit}"></td>
-														<td style="text-align:right" th:text="${MtLeaveMaster?.gen_credit}"></td>
-													</tr>
+															<td th:text="${MtLeaveMaster?.gen_roll_no}"></td>
+															<td th:text="${MtLeaveMaster?.gen_flow_id}"></td>
+															<td th:text="${MtLeaveMaster?.gen_acc_no}"></td>
+															<td th:text="${MtLeaveMaster?.gen_acc_name}"></td>
+															<td th:text="${MtLeaveMaster?.gen_tran_perticular}"></td>
+															<td style="text-align: right"
+																th:text="${MtLeaveMaster?.gen_debit}"></td>
+															<td style="text-align: right"
+																th:text="${MtLeaveMaster?.gen_credit}"></td>
+														</tr>
 													</tbody>
 												</table>
 											</div>
@@ -1065,82 +1095,73 @@ function handleSelectChange() {
 									</div>
 
 
-									<div class="card-footer text-center">
-										<button type="button" class="btn headerbutton" id="btnHome"
+									<div class="card-footer text-center p-1">
+										<button type="button" class="btn headerbutton text-white" id="btnHome"
 											onclick="home();">Home</button>
 										<button type="button" th:if="${formmode}== 'add'"
 											class="btn headerbutton" onclick="addSubmit();"
 											id="btnSubmit">Submit</button>
-										<button type="button" class="btn headerbutton" id="btnBack"
+										<button type="button" class="btn headerbutton text-white" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
-																											<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-    <table class="table no-border-table table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${BamTransactionmaster?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${BamTransactionmaster?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <!--  th:value="${BamTransactionmaster?.verify_user}" -->
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                        
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${BamTransactionmaster?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${BamTransactionmaster?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${BamTransactionmaster?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        
-    </table>
-									
-				</div>
+									<!-- Conditionally display the table based on formmode  view-->
+									<div class="table-responsive"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
+										<table
+											class="table no-border-table table-bordered  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BamTransactionmaster?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BamTransactionmaster?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
+												<!--  th:value="${BamTransactionmaster?.verify_user}" -->
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BamTransactionmaster?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BamTransactionmaster?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${BamTransactionmaster?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+
+										</table>
+
+									</div>
 
 								</div>
 							</div>

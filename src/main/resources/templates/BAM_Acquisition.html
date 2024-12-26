@@ -12,7 +12,8 @@
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 <link rel="stylesheet" type="text/css"
 	href="/webjars/font-awesome/5.9.0/css/all.min.css"
 	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
@@ -44,14 +45,15 @@
 	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
 <style>
-
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .btns {
 	float: right;
 	margin: 5px;
@@ -216,192 +218,194 @@ td {
 	/*]]>*/
 </script>
 <script>
-		$(function() {
-			$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
-				dateFormat : "dd-mm-yy",
-				changeMonth : true,
-				numberOfMonths : 1,
-				gotoCurrent : true
-	
-			});
-	
-			$(".checkToModify").on(
-					'click',
-					function() {
-	
-						$(this).prop('checked', true);
-	
-						var formMode = "edit";
-	
-						var resId = $(this).val();
-	
-						location.href = 'MtAssociateProfile?formmode=' + formMode
-								+ '&resId=' + resId;
-	
-					});
-	
+	$(function() {
+		$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
+			dateFormat : "dd-mm-yy",
+			changeMonth : true,
+			numberOfMonths : 1,
+			gotoCurrent : true
+
 		});
-	
-		function submiteditform(a) {
-	
-			if ($("#BamAcquisition").valid()) {
-				$("#loader1").modal("toggle");
-				var formmode = 'edit';
-				alert(formmode);
-				var url ="./acquisitionadd?formmode=" + formmode;
-	
-				$("#BamAcquisition").attr('action', url);
-	
-				var options = {
-					success : showResponse
-				// post-submit callback 
-				};
-	
-				$("#BamAcquisition").ajaxSubmit(options);
-	
-				function showResponse(responseText, statusText, xhr, $form) {
-					$("#loader1").hide();
-					$("#alertmsg").text(responseText);
-	
-					$('#alert').modal("toggle");
-	
-				};
-	
+
+		$(".checkToModify").on(
+				'click',
+				function() {
+
+					$(this).prop('checked', true);
+
+					var formMode = "edit";
+
+					var resId = $(this).val();
+
+					location.href = 'MtAssociateProfile?formmode=' + formMode
+							+ '&resId=' + resId;
+
+				});
+
+	});
+
+	function submiteditform(a) {
+
+		if ($("#BamAcquisition").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'edit';
+			alert(formmode);
+			var url = "./acquisitionadd?formmode=" + formmode;
+
+			$("#BamAcquisition").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#BamAcquisition").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
 			}
-			
+			;
+
 		}
-		
-		
-		function submitaddform(a) {
-			
-			if ($("#BamAcquisition").valid()) {
-				$("#loader1").modal("toggle");
-				var formmode = 'add';
-				alert(formmode);
-				var url = "./acquisitionadd?formmode=" + formmode;
-	
-				$("#BamAcquisition").attr('action', url);
-	
-				var options = {
-					success : showResponse
-				// post-submit callback 
-				};
-	
-				$("#BamAcquisition").ajaxSubmit(options);
-	
-				function showResponse(responseText, statusText, xhr, $form) {
-					$("#loader1").hide();
-					$("#alertmsg").text(responseText);
-	
-					$('#alert').modal("toggle");
-	
-				};
-	
+
+	}
+
+	function submitaddform(a) {
+
+		if ($("#BamAcquisition").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'add';
+			alert(formmode);
+			var url = "./acquisitionadd?formmode=" + formmode;
+
+			$("#BamAcquisition").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#BamAcquisition").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
 			}
-			
+			;
+
 		}
-	
-		function submitverifyform(a) {
-			
-			if ($("#Bamdocumentmanager").valid()) {
-				$("#loader1").modal("toggle");
-				var formmode = 'verify';
-				alert(formmode);
-				var url = "./DocManageradd?formmode=" + formmode;
-	
-				$("#Bamdocumentmanager").attr('action', url);
-	
-				var options = {
-					success : showResponse
-				// post-submit callback 
-				};
-	
-				$("#Bamdocumentmanager").ajaxSubmit(options);
-	
-				function showResponse(responseText, statusText, xhr, $form) {
-					$("#loader1").hide();
-					$("#alertmsg").text(responseText);
-	
-					$('#alert').modal("toggle");
-	
-				};
-	
+
+	}
+
+	function submitverifyform(a) {
+
+		if ($("#Bamdocumentmanager").valid()) {
+			$("#loader1").modal("toggle");
+			var formmode = 'verify';
+			alert(formmode);
+			var url = "./DocManageradd?formmode=" + formmode;
+
+			$("#Bamdocumentmanager").attr('action', url);
+
+			var options = {
+				success : showResponse
+			// post-submit callback 
+			};
+
+			$("#Bamdocumentmanager").ajaxSubmit(options);
+
+			function showResponse(responseText, statusText, xhr, $form) {
+				$("#loader1").hide();
+				$("#alertmsg").text(responseText);
+
+				$('#alert').modal("toggle");
+
 			}
-			
+			;
+
 		}
-		//Filter Table
-	
-		$(document)
-				.ready(
-						function() {
-	
-							$('.filterable .btn-filter')
-									.click(
-											function(event) {
-												event.preventDefault();
-												var $panel = $(this).parents(
-														'.filterable'), $filters = $panel
-														.find('.filters input'), $tbody = $panel
-														.find('.table tbody');
-												if ($filters.prop('readonly') == true) {
-													$filters
-															.prop('readonly', false);
-													$filters.first().focus();
-												} else {
-													$filters.val('').prop(
-															'readonly', true);
-													$tbody.find('.no-result')
-															.remove();
-													$tbody.find('tr').show();
-												}
-											});
-	
-							$('.filterable .filters input')
-									.keyup(
-											function(e) {
-												/* Ignore tab key */
-												var code = e.keyCode || e.which;
-												if (code == '9')
-													return;
-												/* Useful DOM data and selectors */
-												var $input = $(this), inputContent = $input
-														.val().toLowerCase(), $panel = $input
-														.parents('.filterable'), column = $panel
-														.find('.filters th')
-														.index($input.parents('th')), $table = $panel
-														.find('.table'), $rows = $table
-														.find('tbody tr');
-												/* Dirtiest filter function ever ;) */
-												var $filteredRows = $rows
-														.filter(function() {
-															var value = $(this)
-																	.find('td').eq(
-																			column)
-																	.text()
-																	.toLowerCase();
-															return value
-																	.indexOf(inputContent) === -1;
-														});
-												/* Clean previous no-result if exist */
-												$table.find('tbody .no-result')
+
+	}
+	//Filter Table
+
+	$(document)
+			.ready(
+					function() {
+
+						$('.filterable .btn-filter')
+								.click(
+										function(event) {
+											event.preventDefault();
+											var $panel = $(this).parents(
+													'.filterable'), $filters = $panel
+													.find('.filters input'), $tbody = $panel
+													.find('.table tbody');
+											if ($filters.prop('readonly') == true) {
+												$filters
+														.prop('readonly', false);
+												$filters.first().focus();
+											} else {
+												$filters.val('').prop(
+														'readonly', true);
+												$tbody.find('.no-result')
 														.remove();
-												/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
-												$rows.show();
-												$filteredRows.hide();
-												/* Prepend no-result row if all rows are filtered */
-												if ($filteredRows.length === $rows.length) {
-													$table
-															.find('tbody')
-															.prepend(
-																	$('<tr class="no-result text-center"><td colspan="'
-																			+ $table
-																					.find('.filters th').length
-																			+ '">No result found</td></tr>'));
-												}
-											});
-	
-						});
-	</script>
+												$tbody.find('tr').show();
+											}
+										});
+
+						$('.filterable .filters input')
+								.keyup(
+										function(e) {
+											/* Ignore tab key */
+											var code = e.keyCode || e.which;
+											if (code == '9')
+												return;
+											/* Useful DOM data and selectors */
+											var $input = $(this), inputContent = $input
+													.val().toLowerCase(), $panel = $input
+													.parents('.filterable'), column = $panel
+													.find('.filters th')
+													.index($input.parents('th')), $table = $panel
+													.find('.table'), $rows = $table
+													.find('tbody tr');
+											/* Dirtiest filter function ever ;) */
+											var $filteredRows = $rows
+													.filter(function() {
+														var value = $(this)
+																.find('td').eq(
+																		column)
+																.text()
+																.toLowerCase();
+														return value
+																.indexOf(inputContent) === -1;
+													});
+											/* Clean previous no-result if exist */
+											$table.find('tbody .no-result')
+													.remove();
+											/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+											$rows.show();
+											$filteredRows.hide();
+											/* Prepend no-result row if all rows are filtered */
+											if ($filteredRows.length === $rows.length) {
+												$table
+														.find('tbody')
+														.prepend(
+																$('<tr class="no-result text-center"><td colspan="'
+																		+ $table
+																				.find('.filters th').length
+																		+ '">No result found</td></tr>'));
+											}
+										});
+
+					});
+</script>
 
 </head>
 <title>BAM</title>
@@ -414,17 +418,16 @@ td {
 				<div th:insert="BTMHeaderMenu :: header"></div>
 			</div>
 			<div class="col-sm-10">
-			
-			
-			<div class="container-fluid content" th:if="${formmode} == 'list'">
+
+
+				<div class="container-fluid content" th:if="${formmode} == 'list'">
 					<div class="row">
 						<form action="#" method="post" autocomplete="off"
 							style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
 									<div class="card-header d-flex justify-content-between">
-										<h4
-											class="headerh6 ">ACQUISTION- List</h4>
+										<h4 class="headerh6 ">ACQUISTION- List</h4>
 									</div>
 
 									<div class="card-body p-0">
@@ -448,9 +451,11 @@ td {
 														<td th:text="${iterStat.index + 1}"></td>
 														<td th:text="${Bamdocmana?.assetName}"></td>
 														<td th:text="${Bamdocmana?.assetType}"></td>
-														<td th:text="${Bamdocmana?.originalCost}"style="text-align: right;"></td>
+														<td th:text="${Bamdocmana?.originalCost}"
+															style="text-align: right;"></td>
 														<td th:text="${Bamdocmana?.depreciationMethod}"></td>
-														<td th:text="${Bamdocmana?.depreciationPercentage}"style="text-align: right;"></td>
+														<td th:text="${Bamdocmana?.depreciationPercentage}"
+															style="text-align: right;"></td>
 														<td><input type="radio"
 															th:id="${Bamdocmana?.assetName}" onclick="Headcode(this)">
 														</td>
@@ -475,7 +480,7 @@ td {
 						</form>
 					</div>
 				</div>
-			
+
 
 				<div class="container-fluid content" th:if="${formmode}=='add'">
 					<div class="row">
@@ -508,9 +513,9 @@ td {
 													<label for="assetType">Asset Type</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														id="assetType" class="form-control form-control-sm"
-														autocomplete="off" name="assetType" />
+													<input type="text" id="assetType"
+														class="form-control form-control-sm" autocomplete="off"
+														name="assetType" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -519,17 +524,16 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														id="originalCost" class="form-control form-control-sm"
-														name="originalCost" autocomplete="off" />
+													<input type="text" id="originalCost"
+														class="form-control form-control-sm" name="originalCost"
+														autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="depreciationMethod">Dep Method</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														id="depreciationMethod"
+													<input type="text" id="depreciationMethod"
 														class="form-control form-control-sm"
 														name="depreciationMethod" autocomplete="off" />
 												</div>
@@ -540,24 +544,23 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														id="depreciationPercentage"
+													<input type="text" id="depreciationPercentage"
 														class="form-control form-control-sm" autocomplete="off"
-														name="depreciationPercentage" required="required"/>
+														name="depreciationPercentage" required="required" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="dateOfAcquisition">dateOfAcquisition</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="DATE"
-														id="dateOfAcquisition"
+													<input type="DATE" id="dateOfAcquisition"
 														class="form-control form-control-sm"
-														name="dateOfAcquisition" autocomplete="off" required="required"/>
+														name="dateOfAcquisition" autocomplete="off"
+														required="required" />
 												</div>
 											</div>
 
-										
+
 										</div>
 
 									</div>
@@ -568,10 +571,10 @@ td {
 
 
 
-										<button th:if="${formmode}=='add'" type="button"
-											btn headerbutton
-											onclick="submitaddform(this);" form="BamAcquisition"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='add'" type="button" btn
+											headerbutton onclick="submitaddform(this);"
+											form="BamAcquisition" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
@@ -582,9 +585,9 @@ td {
 						</form>
 					</div>
 				</div>
-				
+
 				<!-- ************************* verify ****************************** -->
-				
+
 				<div class="container-fluid content" th:if="${formmode}=='verify'">
 					<div class="row">
 						<form action="#" th:object="${BamAcquisition}" class="w-100"
@@ -615,9 +618,9 @@ td {
 													<label for="assetType">Asset Type</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														id="assetType" class="form-control form-control-sm"
-														autocomplete="off" name="assetType" />
+													<input type="text" id="assetType"
+														class="form-control form-control-sm" autocomplete="off"
+														name="assetType" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -626,17 +629,16 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														id="originalCost" class="form-control form-control-sm"
-														name="originalCost" autocomplete="off" />
+													<input type="text" id="originalCost"
+														class="form-control form-control-sm" name="originalCost"
+														autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="depreciationMethod">Dep Method</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														id="depreciationMethod"
+													<input type="text" id="depreciationMethod"
 														class="form-control form-control-sm"
 														name="depreciationMethod" autocomplete="off" />
 												</div>
@@ -647,24 +649,23 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														id="DEPRECIATION_PERCENTAGE"
+													<input type="text" id="DEPRECIATION_PERCENTAGE"
 														class="form-control form-control-sm" autocomplete="off"
-														name="DEPRECIATION_PERCENTAGE" required="required"/>
+														name="DEPRECIATION_PERCENTAGE" required="required" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="dateOfAcquisition">dateOfAcquisition</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="DATE"
-														id="dateOfAcquisition"
+													<input type="DATE" id="dateOfAcquisition"
 														class="form-control form-control-sm"
-														name="dateOfAcquisition" autocomplete="off" required="required"/>
+														name="dateOfAcquisition" autocomplete="off"
+														required="required" />
 												</div>
 											</div>
 
-										
+
 										</div>
 
 									</div>
@@ -675,10 +676,10 @@ td {
 
 
 
-										<button th:if="${formmode}=='add'" type="button"
-											btn headerbutton
-											onclick="submitaddform(this);" form="BamAcquisition"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='add'" type="button" btn
+											headerbutton onclick="submitaddform(this);"
+											form="BamAcquisition" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
@@ -687,14 +688,14 @@ td {
 								</div>
 							</div>
 						</form>
-						
+
 					</div>
 				</div>
-				
-				
-				
+
+
+
 				<!-- ********************** edit ************************* -->
-				
+
 				<div class="container-fluid content" th:if="${formmode}=='edit'">
 					<div class="row">
 
@@ -738,7 +739,8 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${BamAcquisition.originalCost}"
+													<input type="text"
+														th:value="${BamAcquisition.originalCost}"
 														id="originalCost" class="form-control form-control-sm"
 														name="originalCost" autocomplete="off" />
 												</div>
@@ -747,7 +749,8 @@ td {
 													<label for="depreciationMethod">Depreciation Method</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${BamAcquisition.depreciationMethod}"
+													<input type="text"
+														th:value="${BamAcquisition.depreciationMethod}"
 														id="depreciationMethod"
 														class="form-control form-control-sm"
 														name="depreciationMethod" autocomplete="off" />
@@ -759,26 +762,27 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														id="depreciationPercentage" th:value="${BamAcquisition.depreciationPercentage}"
+													<input type="text" id="depreciationPercentage"
+														th:value="${BamAcquisition.depreciationPercentage}"
 														class="form-control form-control-sm" autocomplete="off"
-														name="depreciationPercentage" required="required"/>
+														name="depreciationPercentage" required="required" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="dateOfAcquisition">dateOfAcquisition</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" th:value="${BamAcquisition.dateOfAcquisition}"
+													<input type="text"
+														th:value="${BamAcquisition.dateOfAcquisition}"
 														id="dateOfAcquisition"
 														class="form-control form-control-sm"
-														name="dateOfAcquisition" autocomplete="off" required="required"/>
+														name="dateOfAcquisition" autocomplete="off"
+														required="required" />
 												</div>
 											</div>
 
-										
-										</div>
 
+										</div>
 									</div>
 									<div class="card-footer text-center">
 
@@ -787,88 +791,80 @@ td {
 
 
 
-										<button th:if="${formmode}=='edit'" type="button"
-											btn headerbutton
-											onclick="submitaddform(this);" form="BamAcquisition"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='edit'" type="button"class="btn
+											headerbutton"  onclick="submitaddform(this);"
+											form="BamAcquisition" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 
 									</div>
-																																								<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-    <table class="table no-border-table table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${BamAcquisition?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${BamAcquisition?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td><!-- th:value="${BamAcquisition?.verify_user}" -->
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                         
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${BamAcquisition?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${BamAcquisition?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${BamAcquisition?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        
-    </table>
-									
-				</div>
-		
+									<!-- Conditionally display the table based on formmode  view-->
+									<div class="table-responsive"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
+										<table
+											class="table no-border-table table-bordered  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${BamAcquisition?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${BamAcquisition?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
+												<!-- th:value="${BamAcquisition?.verify_user}" -->
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${BamAcquisition?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${BamAcquisition?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${BamAcquisition?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+
+										</table>
+
+									</div>
+
 								</div>
 							</div>
 						</form>
 					</div>
 				</div>
-				
-				
+
+
 			</div>
 		</div>
 	</div>
@@ -880,8 +876,8 @@ td {
 			<div class="modal-content">
 				<div class="menu-title-header">
 					<div class="modal-title" id="exampleModalLabel"
-						style="text-align: center; color: black;font-family: verdana;font-size: medium;
-						font-weight: bold;">BANK NAME</div>
+						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">BANK
+						NAME</div>
 				</div>
 				<div class="modal-body"
 					style="text-align: center; background-color: #c6ccd2">

@@ -16115,7 +16115,8 @@ input {
 	background-color: #f26223;
 	border-color: #f26223;
 	font-size: 17px;
-	font-weight: bold
+	font-weight: bold;
+	color:white !important;
    }
 
 .select_th{
@@ -16147,4 +16148,5 @@ input {
 	font-style: times new roman;
 	color: white !important;
 	margin-bottom: 0;
+	
 }

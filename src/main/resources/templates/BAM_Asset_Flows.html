@@ -6,6 +6,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
+
 <link rel="stylesheet" type="text/css"
 	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
 	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
@@ -48,18 +51,20 @@
 }
 </style>
 <style>
-        .table-responsive {
-            overflow-x: auto;
-        }
-    </style>
+.table-responsive {
+	overflow-x: auto;
+}
+</style>
 <style>
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .table {
 	width: 129%;
 	margin-bottom: 1rem;
@@ -136,7 +141,9 @@ fieldset {
 	color: #333;
 }
 
-td input{border: 1px solid #ced4da;}
+td input {
+	border: 1px solid #ced4da;
+}
 </style>
 
 
@@ -1121,9 +1128,9 @@ function handleSelectChange() {
 								autocomplete="off" id="asset_flows">
 								<div class="card">
 
-									<div class="card-header" style="background-color: #BBC3CB;">
+									<div class="card-header p-2">
 										<div class="float-left">
-											<h3> ASSET FLOW</h3>
+											<h3 class="headerh6">ASSET FLOW</h3>
 										</div>
 									</div>
 									<div class="card-body">
@@ -1131,17 +1138,20 @@ function handleSelectChange() {
 											<div class="form-group mb-0">
 												<div class="row formline">
 													<div class="col-sm-3">
-														<label for="srlNo" style="text-align: right;">Asset Serial No</label>
+														<label for="srlNo" style="text-align: right;">Asset
+															Serial No</label>
 													</div>
 													<div class="col-sm-3">
 
-															
-															<select id="asset_serial_no" class="form-control form-control-sm"
-														name="asset_serial_no" autocomplete="off" onchange="handleSelectChange()">
-														<option value="">Select Serial No</option>
-														<option th:each="assetName : ${lists}"
-															th:value="${assetName}" th:text="${assetName}"></option>
-													</select>
+
+														<select id="asset_serial_no"
+															class="form-control form-control-sm"
+															name="asset_serial_no" autocomplete="off"
+															onchange="handleSelectChange()">
+															<option value="">Select Serial No</option>
+															<option th:each="assetName : ${lists}"
+																th:value="${assetName}" th:text="${assetName}"></option>
+														</select>
 
 													</div>
 													<div class="col-sm-3">
@@ -1150,7 +1160,7 @@ function handleSelectChange() {
 													<div class="col-sm-3">
 														<input type="text" name="asset_type" id="asset_type"
 															class="form-control form-control-sm" autocomplete="false"
-															 readonly/>
+															readonly />
 													</div>
 												</div>
 											</div>
@@ -1163,16 +1173,16 @@ function handleSelectChange() {
 
 														<input type="text" id="asset_name" name="asset_name"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
 														<label for="employeeName">Original Cost</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="number" name="original_cost" 
+														<input type="number" name="original_cost"
 															id="original_cost" class="form-control form-control-sm"
-															autocomplete="false" readonly/>
+															autocomplete="false" readonly />
 													</div>
 												</div>
 											</div>
@@ -1183,18 +1193,19 @@ function handleSelectChange() {
 													</div>
 													<div class="col-sm-3">
 
-														<input type="text" id="asset_currency" name="asset_currency"
+														<input type="text" id="asset_currency"
+															name="asset_currency"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly />
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
 														<label for="employeeName">Accumulated Depreciation</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="number" name="accum_depres" 
-															id="accum_depres" class="form-control form-control-sm"
-															autocomplete="false" readonly />
+														<input type="number" name="accum_depres" id="accum_depres"
+															class="form-control form-control-sm" autocomplete="false"
+															readonly />
 													</div>
 												</div>
 											</div>
@@ -1205,18 +1216,20 @@ function handleSelectChange() {
 													</div>
 													<div class="col-sm-3">
 
-														<input type="text" id="date_of_purchase" name="date_of_purchase"
+														<input type="text" id="date_of_purchase"
+															name="date_of_purchase"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
 														<label for="employeeName">current book value</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="number" name="curr_book_value" 
-															id="current_book_value" class="form-control form-control-sm"
-															autocomplete="false"  readonly/>
+														<input type="number" name="curr_book_value"
+															id="current_book_value"
+															class="form-control form-control-sm" autocomplete="false"
+															readonly />
 													</div>
 												</div>
 											</div>
@@ -1227,18 +1240,20 @@ function handleSelectChange() {
 													</div>
 													<div class="col-sm-3">
 
-														<input type="number" id="year_of_purchase" name="year_of_purchase"
+														<input type="number" id="year_of_purchase"
+															name="year_of_purchase"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
 														<label for="employeeName">Depreciation flag</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" name="depreciation_flg" id="depreciation_flg"
+														<input type="text" name="depreciation_flg"
+															id="depreciation_flg"
 															class="form-control form-control-sm" autocomplete="false"
-															 readonly/>
+															readonly />
 													</div>
 												</div>
 											</div>
@@ -1251,7 +1266,7 @@ function handleSelectChange() {
 
 														<input type="text" id="asst_exp_date" name="asst_exp_date"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
@@ -1276,16 +1291,16 @@ function handleSelectChange() {
 
 														<input type="text" id="DATE_OF_ACQN" name="acquis_date"
 															class="form-control form-control-sm" autocomplete="off"
-													 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
 														<label for="employeeName">Depreciation Percentage</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" name="depreciation_percentage"  id="dep_percentge"
-															class="form-control form-control-sm" autocomplete="false"
-															 readonly/>
+														<input type="text" name="depreciation_percentage"
+															id="dep_percentge" class="form-control form-control-sm"
+															autocomplete="false" readonly />
 													</div>
 												</div>
 											</div>
@@ -1298,16 +1313,17 @@ function handleSelectChange() {
 
 														<input type="text" id="lifeofyear" name="life_span_months"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
 														<label for="employeeName">Depreciation Frequency</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" name="depreciation_frequency" id="depreciation_frequency"
+														<input type="text" name="depreciation_frequency"
+															id="depreciation_frequency"
 															class="form-control form-control-sm" autocomplete="false"
-															 readonly />
+															readonly />
 													</div>
 												</div>
 											</div>
@@ -1318,9 +1334,10 @@ function handleSelectChange() {
 													</div>
 													<div class="col-sm-3">
 
-														<input type="text" id="depreciation_start_date" name="depreciation_start_date"
+														<input type="text" id="depreciation_start_date"
+															name="depreciation_start_date"
 															class="form-control form-control-sm" autocomplete="off"
-															 readonly/>
+															readonly />
 
 													</div>
 													<div class="col-sm-3">
@@ -1328,47 +1345,48 @@ function handleSelectChange() {
 															Depreciation</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text" name="date_of_last_depreciation" id="date_of_last_depreciation"
+														<input type="text" name="date_of_last_depreciation"
+															id="date_of_last_depreciation"
 															class="form-control form-control-sm" autocomplete="false"
-															 readonly/>
+															readonly />
 													</div>
 												</div>
 											</div>
 											<div class="card-footer text-center"
 												style="background-color: #BBC3CB;">
-												<button type="button" class="btn btn-sm btn-primary"
+												<button type="button" class="btn btn-sm headerbutton"
 													style="text-align: center;" id="genflow"
 													onclick="genflows();">GENERATE FLOWS</button>
 											</div>
 										</fieldset>
 
 
-										<fieldset id="tableset" style="display:none">
-										<div class="table-responsive mt-3">
-			 <table class="table table-bordered mt-3" id="flowsTable" >
-            <thead>
-                <tr>
-                    <!-- Generating 13 columns -->
-                    <th style="font-weight: 500;">SRL</th>
-                    <th style="font-weight: 500;">FLOW ID</th>
-                    <th style="font-weight: 500;">FLOW START DATE</th>
-                    <th style="font-weight: 500;">FREQUENCY</th>
-                    <th style="font-weight: 500;">METHOD</th>
-                    <th style="font-weight: 500;">PERCENTAGE</th>
-                    <th style="font-weight: 500;">ORGINAL COST</th>
-                    <th style="font-weight: 500;" >DEPRECIATION</th>
-                    <th style="font-weight: 500;">BOOK VALUE</th>
-                    <th style="font-weight: 500;">AMOUNT</th>
-                    <th style="font-weight: 500;">TRAN DATE</th>
-                    <th style="font-weight: 500;">TRAN ID</th>
-                    <th style="font-weight: 500;">REMARKS</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Rows will be appended here by JavaScript -->
-            </tbody>
-        </table>
-        </div>
+										<fieldset id="tableset" style="display: none">
+											<div class="table-responsive mt-3">
+												<table class="table table-bordered mt-3" id="flowsTable">
+													<thead>
+														<tr>
+															<!-- Generating 13 columns -->
+															<th style="font-weight: 500;">SRL</th>
+															<th style="font-weight: 500;">FLOW ID</th>
+															<th style="font-weight: 500;">FLOW START DATE</th>
+															<th style="font-weight: 500;">FREQUENCY</th>
+															<th style="font-weight: 500;">METHOD</th>
+															<th style="font-weight: 500;">PERCENTAGE</th>
+															<th style="font-weight: 500;">ORGINAL COST</th>
+															<th style="font-weight: 500;">DEPRECIATION</th>
+															<th style="font-weight: 500;">BOOK VALUE</th>
+															<th style="font-weight: 500;">AMOUNT</th>
+															<th style="font-weight: 500;">TRAN DATE</th>
+															<th style="font-weight: 500;">TRAN ID</th>
+															<th style="font-weight: 500;">REMARKS</th>
+														</tr>
+													</thead>
+													<tbody>
+														<!-- Rows will be appended here by JavaScript -->
+													</tbody>
+												</table>
+											</div>
 										</fieldset>
 									</div>
 									<div class="card-footer text-center"
@@ -1377,76 +1395,67 @@ function handleSelectChange() {
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
 
-										<button type="button" btn headerbutton
-											id="btnSubmit1" onclick="addSubmit();">Submit</button>
+										<button type="button" class="btn headerbutton" id="btnSubmit1"
+											onclick="addSubmit();">Submit</button>
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back()">Back</button>
 									</div>
-																											<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:object="${entryuser}" >
-    <table class="table no-border-table table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${entryuser?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${entryuser?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                         th:value="${entryuser?.verify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${entryuser?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${entryuser?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${entryuser?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        
-    </table>
-									
-				</div>
+									<!-- Conditionally display the table based on formmode  view-->
+									<div class="table-responsive" th:object="${entryuser}">
+										<table
+											class="table no-border-table table-bordered  table-hover table-sm"
+											style="margin-bottom: 10px; font-size: initial;">
+											<tr>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Entry User :</B></font></td>
+												<td class="col-sm-2"
+													style="width: 112px; margin-right: 20px;"><input
+													type="text" id="entryuser" name="entry_user"
+													th:value="${entryuser?.entry_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Modify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="modifyuser" name="modify_user"
+													th:value="${entryuser?.modify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td class="col-sm-2" style="text-align: right;"><font
+													size="2"><B>Verify User :</B></font></td>
+												<td class="col-sm-2" style="width: 112px;"><input
+													type="text" id="verifyuser" name="verify_user"
+													th:value="${entryuser?.verify_user}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+											<tr>
+												<td style="text-align: right;"><font size="2"><B>Entry
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="entrytime" name="entry_time"
+													th:value="${entryuser?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Modify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="modifytime" name="modify_time"
+													th:value="${entryuser?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+												<td style="text-align: right;"><font size="2"><B>Verify
+															Time :</B></font></td>
+												<td style="width: 112px"><input type="text"
+													id="verifytime" name="verify_time"
+													th:value="${entryuser?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly></td>
+											</tr>
+
+										</table>
+
+									</div>
 								</div>
 							</form>
 						</div>

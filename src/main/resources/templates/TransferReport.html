@@ -18,6 +18,8 @@
 	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 
 <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
@@ -84,7 +86,6 @@ nav {
 }
 </style>
 <script>
-
 	function home() {
 		location.href = 'Dashboard'
 	}
@@ -92,232 +93,255 @@ nav {
 	function back() {
 		window.history.back();
 	}
-
-
 </script>
 
 </head>
 <title>BAM</title>
 <body>
-    <!-- Your existing header and container setup -->
-    <div th:insert="BTMHeaderMenu :: header"></div>
-    <div class="container content">
-        <div class="row">
-            <form id="transferForm" action="#" method="post" autocomplete="off" style="width: 100%">
-                <div class="card">
-                    <div class="card-header" >
-                        <h4>INVENTORY TRANSFER REPORT</h4>
-                    </div>
-                    <div class="card-body p-0 mt-3">
-                        <div class="form-group" style="margin-left: 10px;">
-                            <div class="row mb-3">
-                                <div class="col-sm-2">
-                                    <label for="from_location_type">From Location Type</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="from_location_type" name="from_location_type" class="form-control form-control-sm" autocomplete="off" required>
-                                        <option value="" readonly selected>Select From Location Type</option>
-                                        <option value="type1">Office</option>
-                                        <option value="type2">General</option>
-                                        <option value="type3">Branch</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-2">
-                                    <label for="to_location_type">To Location Type</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="to_location_type" name="to_location_type" class="form-control form-control-sm" autocomplete="off" required>
-                                        <option value="" readonly selected>Select To Location Type</option>
-                                        <option value="type1">Office</option>
-                                        <option value="type2">General</option>
-                                        <option value="type3">Branch</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                            </div>
+	<!-- Your existing header and container setup -->
+	<div th:insert="BTMHeaderMenu :: header"></div>
+	<div class="container content">
+		<div class="row">
+			<form id="transferForm" action="#" method="post" autocomplete="off"
+				style="width: 100%">
+				<div class="card">
+					<div class="card-header">
+						<h4>INVENTORY TRANSFER REPORT</h4>
+					</div>
+					<div class="card-body p-0 mt-3">
+						<div class="form-group" style="margin-left: 10px;">
+							<div class="row mb-3">
+								<div class="col-sm-2">
+									<label for="from_location_type">From Location Type</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="from_location_type" name="from_location_type"
+										class="form-control form-control-sm" autocomplete="off"
+										required>
+										<option value="" readonly selected>Select From
+											Location Type</option>
+										<option value="type1">Office</option>
+										<option value="type2">General</option>
+										<option value="type3">Branch</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="to_location_type">To Location Type</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="to_location_type" name="to_location_type"
+										class="form-control form-control-sm" autocomplete="off"
+										required>
+										<option value="" readonly selected>Select To Location
+											Type</option>
+										<option value="type1">Office</option>
+										<option value="type2">General</option>
+										<option value="type3">Branch</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+							</div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-2">
-                                    <label for="from_sol_id">From SOL ID</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" id="from_sol_id" class="form-control" placeholder="051">
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-2">
-                                    <label for="to_sol_id">To SOL ID</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="text" id="to_sol_id" class="form-control" placeholder="051">
-                                </div>
-                                <div class="col-sm-1"></div>
-                            </div>
+							<div class="row mb-3">
+								<div class="col-sm-2">
+									<label for="from_sol_id">From SOL ID</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="text" id="from_sol_id" class="form-control"
+										placeholder="051">
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="to_sol_id">To SOL ID</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="text" id="to_sol_id" class="form-control"
+										placeholder="051">
+								</div>
+								<div class="col-sm-1"></div>
+							</div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-2">
-                                    <label for="from_employee_id">From Employee Id</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="from_employee_id" name="from_employee_id" class="form-control form-control-sm" autocomplete="off" required>
-                                        <option value="" readonly selected>Select From Employee Id</option>
-                                        <option value="emp1">Employee 1</option>
-                                        <option value="emp2">Employee 2</option>
-                                        <option value="emp3">Employee 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-2">
-                                    <label for="to_employee_id">To Employee Id</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="to_employee_id" name="to_employee_id" class="form-control form-control-sm" autocomplete="off" required>
-                                        <option value="" readonly selected>Select To Employee Id</option>
-                                        <option value="emp1">Employee 1</option>
-                                        <option value="emp2">Employee 2</option>
-                                        <option value="emp3">Employee 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                            </div>
+							<div class="row mb-3">
+								<div class="col-sm-2">
+									<label for="from_employee_id">From Employee Id</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="from_employee_id" name="from_employee_id"
+										class="form-control form-control-sm" autocomplete="off"
+										required>
+										<option value="" readonly selected>Select From
+											Employee Id</option>
+										<option value="emp1">Employee 1</option>
+										<option value="emp2">Employee 2</option>
+										<option value="emp3">Employee 3</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="to_employee_id">To Employee Id</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="to_employee_id" name="to_employee_id"
+										class="form-control form-control-sm" autocomplete="off"
+										required>
+										<option value="" readonly selected>Select To Employee
+											Id</option>
+										<option value="emp1">Employee 1</option>
+										<option value="emp2">Employee 2</option>
+										<option value="emp3">Employee 3</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+							</div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-2">
-                                    <label for="from_location_address">From Location Address</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="from_location_address" name="from_location_address" class="form-control form-control-sm" autocomplete="off" required>
-                                        <option value="" readonly selected>Select From Location Address</option>
-                                        <option value="address1">Address 1</option>
-                                        <option value="address2">Address 2</option>
-                                        <option value="address3">Address 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-2">
-                                    <label for="to_location_address">To Location Address</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="to_location_address" name="to_location_address" class="form-control form-control-sm" autocomplete="off" required>
-                                        <option value="" readonly selected>Select To Location Address</option>
-                                        <option value="address1">Address 1</option>
-                                        <option value="address2">Address 2</option>
-                                        <option value="address3">Address 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                            </div>
+							<div class="row mb-3">
+								<div class="col-sm-2">
+									<label for="from_location_address">From Location
+										Address</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="from_location_address" name="from_location_address"
+										class="form-control form-control-sm" autocomplete="off"
+										required>
+										<option value="" readonly selected>Select From
+											Location Address</option>
+										<option value="address1">Address 1</option>
+										<option value="address2">Address 2</option>
+										<option value="address3">Address 3</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="to_location_address">To Location Address</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="to_location_address" name="to_location_address"
+										class="form-control form-control-sm" autocomplete="off"
+										required>
+										<option value="" readonly selected>Select To Location
+											Address</option>
+										<option value="address1">Address 1</option>
+										<option value="address2">Address 2</option>
+										<option value="address3">Address 3</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+							</div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-2">
-                                    <label for="from_date">From Date</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="date" id="from_date" name="from_date" class="form-control form-control-sm" autocomplete="off" required />
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-2">
-                                    <label for="to_date">To Date</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="date" id="to_date" name="to_date" class="form-control form-control-sm" autocomplete="off" required />
-                                </div>
-                                <div class="col-sm-1"></div>
-                            </div>
+							<div class="row mb-3">
+								<div class="col-sm-2">
+									<label for="from_date">From Date</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="date" id="from_date" name="from_date"
+										class="form-control form-control-sm" autocomplete="off"
+										required />
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="to_date">To Date</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="date" id="to_date" name="to_date"
+										class="form-control form-control-sm" autocomplete="off"
+										required />
+								</div>
+								<div class="col-sm-1"></div>
+							</div>
 
-                            <div class="row mb-3">
-                                <div class="col-sm-2">
-                                    <label for="report_date">Report Date</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <input type="date" id="report_date" class="form-control">
-                                </div>
-                                <div class="col-sm-1"></div>
-                                <div class="col-sm-2">
-                                    <label for="report_type">Report Type</label>
-                                </div>
-                                <div class="col-sm-2">
-                                    <select id="report_type" class="form-control">
-                                        <option value="Select">Select</option>
-                                        <option value="PDF">PDF</option>
-                                        <option value="Excel">Excel</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-1"></div>
-                            </div>
-                        </div>
+							<div class="row mb-3">
+								<div class="col-sm-2">
+									<label for="report_date">Report Date</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="date" id="report_date" class="form-control">
+								</div>
+								<div class="col-sm-1"></div>
+								<div class="col-sm-2">
+									<label for="report_type">Report Type</label>
+								</div>
+								<div class="col-sm-2">
+									<select id="report_type" class="form-control">
+										<option value="Select">Select</option>
+										<option value="PDF">PDF</option>
+										<option value="Excel">Excel</option>
+									</select>
+								</div>
+								<div class="col-sm-1"></div>
+							</div>
+						</div>
 
-                        <div class="card-footer text-center" >
-                            <button type="button" class="btn headerbutton" id="btnHome" onclick="home();">Home</button>
-                            <button type="button" class="btn headerbutton" id="btnGenerate" onclick="generate();">Generate</button>
-                            <button type="button" class="btn headerbutton" id="btnBack" onclick="back();">Back</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="panel-body mt-4">
-            <div class="p-2" style="background: #dddddd;width: 102.5%;margin-left: -12px;">
-                <div class="row form-group">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-3" style="font-size: 12px">
-                        <label>Entry User :</label> <font>BFI0070</font>
-                    </div>
-                    <div class="col-sm-3" style="font-size: 12px">
-                        <label>Modify User :</label> <font>BFI0070</font>
-                    </div>
-                    <div class="col-sm-3" style="font-size: 12px">
-                        <label>Verify User :</label> <font>BFI0070</font>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
-                <div class="row form-group mb-0">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-3" style="font-size: 12px">
-                        <label>Entry Date :</label> <font>2023-12-04 18:03:25</font>
-                    </div>
-                    <div class="col-sm-3" style="font-size: 12px">
-                        <label>Modify Date :</label> <font>2023-12-04 18:03:25</font>
-                    </div>
-                    <div class="col-sm-3" style="font-size: 12px">
-                        <label>Verify Date :</label> <font>2023-12-04 18:03:25</font>
-                    </div>
-                    <div class="col-sm-2"></div>
-                </div>
-            </div>
-            <div class="" align="right">
-                Status : <font color="green">Active</font>
-            </div>
-            <br>
-        </div>
-    </div>
+						
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="panel-body mt-4">
+			<div class="p-2"
+				style="background: #dddddd; width: 102.5%; margin-left: -12px;">
+				<div class="row form-group">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-3" style="font-size: 12px">
+						<label>Entry User :</label> <font>BFI0070</font>
+					</div>
+					<div class="col-sm-3" style="font-size: 12px">
+						<label>Modify User :</label> <font>BFI0070</font>
+					</div>
+					<div class="col-sm-3" style="font-size: 12px">
+						<label>Verify User :</label> <font>BFI0070</font>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+				<div class="row form-group mb-0">
+					<div class="col-sm-2"></div>
+					<div class="col-sm-3" style="font-size: 12px">
+						<label>Entry Date :</label> <font>2023-12-04 18:03:25</font>
+					</div>
+					<div class="col-sm-3" style="font-size: 12px">
+						<label>Modify Date :</label> <font>2023-12-04 18:03:25</font>
+					</div>
+					<div class="col-sm-3" style="font-size: 12px">
+						<label>Verify Date :</label> <font>2023-12-04 18:03:25</font>
+					</div>
+					<div class="col-sm-2"></div>
+				</div>
+			</div>
+			<div class="" align="right">
+				Status : <font color="green">Active</font>
+			</div>
+			<br>
+		</div>
+	</div>
 
-    <script>
-        function home() {
-            window.location.href = '/home'; // Adjust the URL as needed
-        }
- function back() {
-            window.history.back();
-        }
-function generate() {
-    var from_sol_id = document.getElementById("from_sol_id").value;
-    var report_date = document.getElementById("report_date").value;
-    var report_type = document.getElementById("report_type").value;
+	<script>
+		function home() {
+			window.location.href = '/home'; // Adjust the URL as needed
+		}
+		function back() {
+			window.history.back();
+		}
+		function generate() {
+			var from_sol_id = document.getElementById("from_sol_id").value;
+			var report_date = document.getElementById("report_date").value;
+			var report_type = document.getElementById("report_type").value;
 
-    if (from_sol_id && report_date && report_type && report_type !== "Select") {
-        location.href = './transferReportDownload?from_sol_id=' + from_sol_id + '&report_date=' + report_date + '&report_type=' + report_type;
-    }
-    else if (report_date && report_type && report_type !== "Select") {
-        location.href = './transferReportDownload1?report_date=' + report_date + '&report_type=' + report_type;
-    } 
-    else if (from_sol_id && report_type && report_type !== "Select") {
-        location.href = './transferReportDownload2?from_sol_id=' + from_sol_id + '&report_type=' + report_type;
-    }
-    else {
-        alert("Please fill all the required fields.");
-    }
-}
-    </script>
+			if (from_sol_id && report_date && report_type
+					&& report_type !== "Select") {
+				location.href = './transferReportDownload?from_sol_id='
+						+ from_sol_id + '&report_date=' + report_date
+						+ '&report_type=' + report_type;
+			} else if (report_date && report_type && report_type !== "Select") {
+				location.href = './transferReportDownload1?report_date='
+						+ report_date + '&report_type=' + report_type;
+			} else if (from_sol_id && report_type && report_type !== "Select") {
+				location.href = './transferReportDownload2?from_sol_id='
+						+ from_sol_id + '&report_type=' + report_type;
+			} else {
+				alert("Please fill all the required fields.");
+			}
+		}
+	</script>
 </body>
 
 </html>
