@@ -80,7 +80,7 @@
 	top: 50%;
 	left: 40%;
 	height: 50px;
-	color: black;
+	color: #f26223;
 	position: absolute;
 	text-align: center;
 	margin: -20px 0 0 -0px;
@@ -230,11 +230,13 @@ a {
 <body>
 	<input type="hidden" id="activemenu" th:value="${menu}" />
 	<nav class="navbar fixed-top navbar-expand-md navbar-dark  mb-3"
-		style="box-shadow: 6px 6px 12px #888888; height: 70px">
+		style="box-shadow: 6px 6px 12px #f26223; height: 70px">
 
 		<div class="col-sm-12">
+			<div class="float-left">
 			<img th:src=@{/images/Bornfire.png}
 				style="width: 100px; height: 60px" id="showmenu" alt="Bornfire">
+			</div>
 			<div id="headerdiv">
 				<h3 style="font-weight: bold;">BORNFIRE ASSET MANAGER</h3>
 			</div>
@@ -252,13 +254,53 @@ a {
 			</button>	
 			
 		</div>
-	</nav>
+		
+		
+		<!-- <div class="col-sm-12" style="border-color: red ; display: flex; justify-content: space-between;" >
+			<div class="float-left">
+				<img th:src=@{/images/banklogo.jpeg} id="showmenu" style="width: 350px; height: 70px" alt="Bornfire">
+			</div>
+			<div style=" display: flex; justify-content: center;align-items: center; color: #f26223; font-size: 24; font-weight: bold;">
+				 QR PAYMENT BANK ADMIN PORTAL
+				</div>
+				<div>
+			<div class="btn float-right" id="userdtl" title="Profile" style="margin-top: 20px;">
+				<img th:if="${session.IMAGEUSER} == null" style="width: 30px; height: 30px; cursor: pointer;"
+					th:src="@{/Image/userProfile.png}" class="imageround">
+				<font style="font-family: calibri; color: #162b75; font-size: 20px; cursor: pointer;"
+					th:text="'&nbsp;&nbsp;' + ${session.USERNAME}"></font> <img th:if="${session.IMAGEUSER} != null"
+					th:src="*{'data:image/png;base64,' + session.IMAGEUSER}" class="imageround"
+					style="color: blue; font-size: 20px;">
+			</div>
+			<div class="btn float-right" onclick="docEmb()" id="Manual"
+				style="margin-top: 23px; width: 4px; margin-left: 17px; margin-right: 32px;">
+				<img th:src="@{/Image/userManualIcon.png}" style="width: 30px; height: 30px; cursor: pointer;"
+					onclick="docEmb();cursor:pointer;" title="Manual" id="Manual" alt="Manual">
+			</div>
+			<input type="text" id="pdate" autocomplete="off"
+				th:value="${#dates.format(RoleMenu?.password_expiry_date,'yyyy-MM-dd')}" hidden="true" /> <input
+				type="text" id="pdatebank" autocomplete="off"
+				th:value="${#dates.format(RoleMenuss?.password_expiry_date,'yyyy-MM-dd')}" hidden="true" />
+			<div class="btn btn-default float-right"
+				style="margin-top: 23px; width: 4px; margin-left: 17px; margin-right: 32px;">
+				<img th:src=@{/Image/homePage.png} style="width: 30px; height: 30px; cursor: pointer;"
+					onclick="contentLoad(this)" title="Dashboard" id="IPSDashboard" alt="Dashboard">
+			</div>
+			<div class="btn btn-default float-right"
+				style="margin-top: 23px; width: 4px; margin-left: 17px; margin-right: 32px;">
+				<img th:src=@{/Image/transactionIcon.png} style="width: 30px; height: 30px; cursor: pointer;"
+					onclick="contentLoad(this)" title="Snapshot" id="snapShot" alt="Snapshot">
+			</div>
+			</div>
+		</div>
+ -->	
+ </nav>
 
 	<div id="menu"
-		style="box-shadow: 6px 6px 12px #888888; z-index: 1000px">
+		style="box-shadow: 6px 6px 12px #888888; z-index: 1000px;background-color:#f26223;">
 		<ul class="navbar-nav mr-auto sidenav" id="navAccordion">
-			<li class="nav-item"><a class="nav-link pl-3 pt-5"
-				id="Dashboard" href="#" onclick="contentLoad(this)">Home</a></li>
+			<li class="nav-item"><a class="nav-link pl-3 pt-5" 
+				id="Dashboard" href="#" onclick="contentLoad(this)" style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Home</a></li>
 
 			<!-- <li class="nav-item active"><a class="nav-link pl-3" data-toggle="collapse" href="#Dashboard" id="home"
 					onclick="contentLoad(this)">Home</a></li> -->
@@ -266,26 +308,31 @@ a {
 			<li class="nav-item"><a th:if="${RoleMenu?.role=='ADM'}"
 				class="nav-link nav-link-collapse pl-3" href="#" id="hasSubItems"
 				data-toggle="collapse" data-target="#collapseSubItems1"
-				aria-controls="collapseSubItems1" aria-expanded="false">Admin</a>
+				aria-controls="collapseSubItems1" aria-expanded="false" style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Admin</a>
 
 				<ul class="nav-second-level collapse" id="collapseSubItems1"
-					data-parent="#navAccordion">
+					data-parent="#navAccordion" style="background-color: #ff751a;">
 					<li class="nav-item"><a class="nav-link"
-						id="UserProfile" href="#" onclick="contentLoad(this)">User Profile</a></li>
+						id="UserProfile" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">User Profile</a></li>
 					<!-- <li class="nav-item"><a class="nav-link"
 						id="organizationMaster" href="#" onclick="contentLoad(this)">Parameters</a></li>-->
 
 					<li class="nav-item"><a class="nav-link"
-						id="adminReferenceMaster" href="#" onclick="contentLoad(this)">Reference Code Master</a></li>
+						id="adminReferenceMaster" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Reference Code Master</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						id="dashboardMaster" href="#" onclick="contentLoad(this)">Dashboard Master</a></li>
+						id="dashboardMaster" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Dashboard Master</a></li>
 
 					<li class="nav-item"><a class="nav-link"
-						id="chartofaccount" href="#" onclick="contentLoad(this)">Chart of Accounts</a></li>
+						id="chartofaccount" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Chart of Accounts</a></li>
 						
 					<li class="nav-item"><a class="nav-link"
-						id="GeneralLedger" href="#" onclick="contentLoad(this)">General Ledger</a></li>
+						id="GeneralLedger" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">General Ledger</a></li>
 					<!--<li class="nav-item"><a class="nav-link"
 						id="attendanceRegister" href="#" onclick="contentLoad(this)">Attendance
 							Register </a></li>
@@ -392,26 +439,35 @@ a {
 			<li class="nav-item"><a th:if="${RoleMenu?.role=='ADM'}"
 				class="nav-link nav-link-collapse pl-3" href="#" id="hasSubItems"
 				data-toggle="collapse" data-target="#collapseSubItems10"
-				aria-controls="collapseSubItems10" aria-expanded="false">Maintenance</a>
+				aria-controls="collapseSubItems10" aria-expanded="false"
+				style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Maintenance</a>
+				
+				
+				
 
 				<ul class="nav-second-level collapse" id="collapseSubItems10"
-					data-parent="#navAccordion">
+					data-parent="#navAccordion" style="background-color: #ff751a;">
 					
 					<li class="nav-item"><a class="nav-link"
-						id="Catcodemaintain" href="#" onclick="contentLoad(this)">Category Code maintenance
+						id="Catcodemaintain" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Category maintenance
 							</a></li>
 							
 					<li class="nav-item"><a class="nav-link"
-						id="Documentmanager" href="#" onclick="contentLoad(this)">Document Manager
+						id="Documentmanager" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Document Manager
 							</a></li>
 					<li class="nav-item"><a class="nav-link"
-						id="InventoryMaster_2" href="#" onclick="contentLoad(this)">Inventory Master
+						id="InventoryMaster_2" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Inventory Master
 							</a></li>
 					<li class="nav-item"><a class="nav-link"
-						id="Batchjobs" href="#" onclick="contentLoad(this)">Batch Jobs
+						id="Batchjobs" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Batch Jobs
 							</a></li>
 					<li class="nav-item"><a class="nav-link"
-						id="assets_flows" href="#" onclick="contentLoad(this)">Depreciation 
+						id="assets_flows" href="#" onclick="contentLoad(this)"
+						style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation 
 							</a></li>
 <!--					<li class="nav-item"><a class="nav-link"
 						id="MtAssociateProfile" href="#" onclick="contentLoad(this)">Associate
@@ -447,24 +503,25 @@ a {
 			<li class="nav-item"><a class="nav-link nav-link-collapse pl-3"
 				href="#" id="hasSubItems" data-toggle="collapse"
 				data-target="#collapseSubItems3" aria-controls="collapseSubItems3"
-				aria-expanded="false">Operation</a>
+				aria-expanded="false"
+				style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Operation</a>
 
 				<ul class="nav-second-level collapse" id="collapseSubItems3"
-					data-parent="#navAccordion">
+					data-parent="#navAccordion" style="background-color: #ff751a;">
 					<li class="nav-item"><a class="nav-link" id="InventoryMaster1"
-						href="#" onclick="contentLoad(this)">Inventory Master</a></li>
+						href="#" onclick="contentLoad(this)"style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Inventory Master</a></li>
 					<li class="nav-item"><a class="nav-link" id="InventoryTransfer1"
-						href="#" onclick="contentLoad(this)">Inventory Transfer</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Inventory Transfer</a></li>
 					<li class="nav-item"><a class="nav-link" id="Salesandwriteoff"
-						href="#" onclick="contentLoad(this)">Sales and Write off</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Sales and Write off</a></li>
 					<li class="nav-item"><a class="nav-link" id="Transactionmaster"
-						href="#" onclick="contentLoad(this)">Transaction Master</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Transaction Master</a></li>
 					<!-- <li class="nav-item"><a class="nav-link" id="changePassword"
 						href="#" onclick="contentLoad(this)">Transaction Master</a></li> -->
 					<li class="nav-item"><a class="nav-link" id="assets_flows"
-						href="#" onclick="contentLoad(this)">Depreciation</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation</a></li>
 						<li class="nav-item"><a class="nav-link" id="asset_flows"
-							href="#" onclick="contentLoad(this)">Asset Flows</a></li>
+							href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Asset Flows</a></li>
 					<!--<li class="nav-item"><a class="nav-link" id="travelMaster"
 						href="#" onclick="contentLoad(this)">Apply Travel Plan</a></li>
 					<li class="nav-item"><a class="nav-link" id="claimExpenses"
@@ -549,9 +606,10 @@ a {
 			<li class="nav-item"><a class="nav-link nav-link-collapse pl-3"
 				href="#" id="hasSubItems" data-toggle="collapse"
 				data-target="#collapseSubItems5" aria-controls="collapseSubItems5"
-				aria-expanded="false">Inquiries</a>
+				aria-expanded="false"
+				style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Inquiries</a>
 				<ul class="nav-second-level collapse" id="collapseSubItems5"
-					data-parent="#navAccordion">
+					data-parent="#navAccordion" style="background-color: #ff751a;">
 			<!-- 		<li class="nav-item"><a class="nav-link"
 						id="attendanceRegisterInquries" href="#"
 						onclick="contentLoad(this)">Attendance Register </a></li>
@@ -583,42 +641,43 @@ a {
 					<li class="nav-item"><a class="nav-link" id="solutionDocument"
 						href="#" onclick="contentLoad(this)">Depreciation</a></li>-->
 					<li class="nav-item"><a class="nav-link" id="InventoryMaster_2"
-						href="#" onclick="contentLoad(this)">Inventory Master</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Inventory Master</a></li>
 					<li class="nav-item"><a class="nav-link" id="acquisition"
-						href="#" onclick="contentLoad(this)">Acquisition</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Acquisition</a></li>
 					<li class="nav-item"><a class="nav-link" id="InventoryTransferlist"
-						href="#" onclick="contentLoad(this)">Transfers</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Transfers</a></li>
 					<li class="nav-item"><a class="nav-link" id="Sales"
-						href="#" onclick="contentLoad(this)">Sales</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Sales</a></li>
 					<li class="nav-item"><a class="nav-link" id="Writeoff"
-						href="#" onclick="contentLoad(this)">Write off</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Write off</a></li>
 					<li class="nav-item"><a class="nav-link" id="assets_flows"
-						href="#" onclick="contentLoad(this)">Depreciation</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation</a></li>
 					<li class="nav-item"><a class="nav-link" id="DepreciationTransaction"
-						href="#" onclick="contentLoad(this)">Depreciation Transaction</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation Transaction</a></li>
 				</ul></li>
 
 			<li class="nav-item"><a class="nav-link nav-link-collapse pl-3"
 				href="#" id="hasSubItems" data-toggle="collapse"
 				data-target="#collapseSubItems6" aria-controls="collapseSubItems6"
-				aria-expanded="false">Reports</a>
+				aria-expanded="false"
+				style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Reports</a>
 
 				<ul class="nav-second-level collapse" id="collapseSubItems6"
-					data-parent="#navAccordion">
+					data-parent="#navAccordion" style="background-color: #ff751a;">
                     <li class="nav-item"><a class="nav-link" id="inventoryReport" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Inventory Register</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Inventory Register</a></li>
 					<li class="nav-item"><a class="nav-link" id="transferReport" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Transfer Report</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Transfer Report</a></li>
 					<li class="nav-item"><a class="nav-link" id="saleReport" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Sale Register</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Sale Register</a></li>
 					<li class="nav-item"><a class="nav-link" id="writeoffReport" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Write Off Register</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Write Off Register</a></li>
 					<li class="nav-item"><a class="nav-link" id="depreciationReport" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Depreciation Report</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation Report</a></li>
 					<li class="nav-item"><a class="nav-link" id="Depreciationtran" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Depreciation Transaction Report</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation Transaction Report</a></li>
 					<li class="nav-item"><a class="nav-link" id="printReport" th:if="${RoleMenu?.role=='ADM'}"
-						href="#" onclick="contentLoad(this)">Print Master</a></li>
+						href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Print Master</a></li>
 						
 				</ul></li>
 			<!--<li class="nav-item"><a class="nav-link nav-link-collapse pl-3" th:if="${RoleMenu?.role=='ADM'}"
@@ -674,18 +733,19 @@ a {
 			<li class="nav-item"><a th:if="${RoleMenu?.role=='ADM'}" class="nav-link nav-link-collapse pl-3" 
 				href="#" id="hasSubItems" data-toggle="collapse"
 				data-target="#collapseSubItems11" aria-controls="collapseSubItems11"
-				aria-expanded="false">Graphs</a>
+				aria-expanded="false"
+				style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Graphs</a>
 
 				
-					<ul class="nav-second-level collapse" id="collapseSubItems11" data-parent="#navAccordion">
+					<ul class="nav-second-level collapse" id="collapseSubItems11" data-parent="#navAccordion" style="background-color: #ff751a;">
 						<li class="nav-item"><a class="nav-link" id="Graphs"
-							href="#" onclick="contentLoad(this)">Inventories</a></li>
+							href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Inventories</a></li>
 						<li class="nav-item"><a class="nav-link" id="Dep_Graphs"
-							href="#" onclick="contentLoad(this)">Depreciation</a></li>
+							href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Depreciation</a></li>
 						<li class="nav-item"><a class="nav-link" id="Categ_Graphs" href="#"
-							onclick="contentLoad(this)">Categories</a></li>
+							onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Categories</a></li>
 						<li class="nav-item"><a class="nav-link" id="Location_Graphs"
-							href="#" onclick="contentLoad(this)">Locations</a></li>
+							href="#" onclick="contentLoad(this)" style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Locations</a></li>
 							<!--<li class="nav-item"><a class="nav-link" id="salary_parameters"
 							href="#" onclick="contentLoad(this)">Salary Parameters</a></li>
 							<li class="nav-item"><a class="nav-link" id="Taxation_parameters"
@@ -697,18 +757,22 @@ a {
 				<li class="nav-item"><a th:if="${RoleMenu?.role=='ADM'}" class="nav-link nav-link-collapse pl-3" 
 				href="#" id="hasaudItems" data-toggle="collapse"
 				data-target="#collapseSubItems12" aria-controls="collapseSubItems12"
-				aria-expanded="false">Audit</a>
+				aria-expanded="false"
+				style="border-bottom: 3px solid white; background-color:#f26223;font-weight: bold">Audit</a>
 
 				
-					<ul class="nav-second-level collapse" id="collapseSubItems12" data-parent="#navAccordion">
+					<ul class="nav-second-level collapse" id="collapseSubItems12" data-parent="#navAccordion"
+					style="background-color: #ff751a;">
 						<li class="nav-item"><a class="nav-link" id="Audit"
-							href="#" onclick="contentLoad(this)">Audit</a></li>
+							href="#" onclick="contentLoad(this)"
+							style="color: white; padding-left: 50px; font-weight: bold; background-color: #ff751a;">Audit</a></li>
 					</ul>
 				</li>
 
 			<li class="nav-item"><a class="nav-link pl-3"
 				data-toggle="collapse" href="#logout" id="logout"
-				onclick="contentLoad(this)">Logout</a></li>
+				onclick="contentLoad(this)"
+				style="border-bottom: 3px solid white; background-color:#f26223;color:white;font-weight: bold">Logout</a></li>
 		</ul>
 	</div>
 
