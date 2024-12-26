@@ -114,12 +114,12 @@ nav {
 			<form id="transferForm" action="#" method="post" autocomplete="off"
 				style="width: 100%">
 				<div class="card">
-					<div class="card-header">
-						<h4>INVENTORY TRANSFER REPORT</h4>
+					<div class="card-header p-1">
+						<h4  class="btn btn-sm mr-2 headerbutton">INVENTORY TRANSFER REPORT</h4>
 					</div>
 					<div class="card-body p-0 mt-3">
-						<div class="form-group" style="margin-left: 10px;">
-							<div class="row mb-3">
+						<div class="form-group" style="margin-left: 20px;">
+							<div class="row mb-1">
 								<div class="col-sm-2">
 									<label for="from_location_type">From Location Type</label>
 								</div>
@@ -152,12 +152,12 @@ nav {
 								<div class="col-sm-1"></div>
 							</div>
 
-							<div class="row mb-3">
+							<div class="row mb-1">
 								<div class="col-sm-2">
 									<label for="from_sol_id">From SOL ID</label>
 								</div>
 								<div class="col-sm-2">
-									<input type="text" id="from_sol_id" class="form-control"
+									<input type="text" id="from_sol_id" class="form-control form-control-sm commonBackground"
 										placeholder="051">
 								</div>
 								<div class="col-sm-1"></div>
@@ -165,13 +165,13 @@ nav {
 									<label for="to_sol_id">To SOL ID</label>
 								</div>
 								<div class="col-sm-2">
-									<input type="text" id="to_sol_id" class="form-control"
+									<input type="text" id="to_sol_id" class="form-control form-control-sm commonBackground"
 										placeholder="051">
 								</div>
 								<div class="col-sm-1"></div>
 							</div>
 
-							<div class="row mb-3">
+							<div class="row mb-1">
 								<div class="col-sm-2">
 									<label for="from_employee_id">From Employee Id</label>
 								</div>
@@ -204,7 +204,7 @@ nav {
 								<div class="col-sm-1"></div>
 							</div>
 
-							<div class="row mb-3">
+							<div class="row mb-1">
 								<div class="col-sm-2">
 									<label for="from_location_address">From Location
 										Address</label>
@@ -238,7 +238,7 @@ nav {
 								<div class="col-sm-1"></div>
 							</div>
 
-							<div class="row mb-3">
+							<div class="row mb-1">
 								<div class="col-sm-2">
 									<label for="from_date">From Date</label>
 								</div>
@@ -264,14 +264,14 @@ nav {
 									<label for="report_date">Report Date</label>
 								</div>
 								<div class="col-sm-2">
-									<input type="date" id="report_date" class="form-control">
+									<input type="date" id="report_date" class="form-control form-control-sm commonBackground">
 								</div>
 								<div class="col-sm-1"></div>
 								<div class="col-sm-2">
 									<label for="report_type">Report Type</label>
 								</div>
 								<div class="col-sm-2">
-									<select id="report_type" class="form-control">
+									<select id="report_type" class="form-control form-control-sm commonBackground">
 										<option value="Select">Select</option>
 										<option value="PDF">PDF</option>
 										<option value="Excel">Excel</option>
@@ -282,7 +282,7 @@ nav {
 						</div>
 			</form>
 		</div>
-				<div class="card-footer text-center">
+				<div class="card-footer text-center p-0">
 					<button type="button" class="btn headerbutton" id="btnHome"
 						onclick="home();">Home</button>
 					<button type="button" class="btn headerbutton" id="btnGenerate"
@@ -290,8 +290,46 @@ nav {
 					<button type="button" class="btn headerbutton" id="btnBack"
 						onclick="back();">Back</button>
 				</div>
-		
-		<div class="panel-body mt-4">
+				<div class="content m-2 " style="padding: 15px;">
+								<div class="row formline">
+									<label class="col-sm-2">Entry User</label>
+									<div class="col-sm-2">
+										<input type="text"   id="entry_user" name="entry_user"
+											class="form-control form-control-sm" autocomplete="off" readonly />
+									</div>
+									<label class="col-sm-2">Modify User</label>
+									<div class="col-sm-2">
+										<input type="text"   id="modify_user" name="modify_user"
+											class="form-control form-control-sm" autocomplete="off" readonly />
+									</div>
+									<label class="col-sm-2">Verify User</label>
+									<div class="col-sm-2">
+										<input type="text"   id="auth_user" name="auth_user"
+											class="form-control form-control-sm" autocomplete="off" readonly />
+									</div>
+								</div>
+								<div class="row formline mt-2">
+									<label class="col-sm-2">Entry Time</label>
+									<div class="col-sm-2">
+										<input type="text"  
+											id="entry_date" name="entry_time" class="form-control form-control-sm" autocomplete="off"
+											readonly />
+									</div>
+									<label class="col-sm-2">Modify Time</label>
+									<div class="col-sm-2">
+										<input type="text"  
+											id="modify_time" name="modify_time" class="form-control form-control-sm" autocomplete="off"
+											readonly />
+									</div>
+									<label class="col-sm-2">Verify Time</label>
+									<div class="col-sm-2">
+										<input type="text" id="auth_time" name="auth_time"
+											 
+											class="form-control form-control-sm" autocomplete="off" readonly />
+									</div> 
+								</div>
+							</div>
+		<!--<div class="panel-body mt-4">
 			<div class="p-2"
 			>
 				<div class="row form-group">
@@ -325,7 +363,7 @@ nav {
 				Status : <font color="green">Active</font>
 			</div>
 			<br>
-		</div>
+		</div>-->
 	</div>
 		</div>
 		</div>

@@ -1,217 +1,251 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/font-awesome/5.9.0/css/all.min.css"
-	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
-<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
-	type="text/css">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
+		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"
-	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
 
-<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
 
-<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
-	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+	<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+		th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
 
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-<script
-	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
-<style>
-.btns {
-	float: right;
-	margin: 5px;
-}
+	<style>
+		.btns {
+			float: right;
+			margin: 5px;
+		}
 
-.col-sm-5 {
-	padding-bottom: 15px;
-}
+		.col-sm-5 {
+			padding-bottom: 15px;
+		}
 
-.list-body {
-	padding: 0px;
-}
+		.list-body {
+			padding: 0px;
+		}
 
-.error {
-	color: red;
-	padding-left: 10px;
-}
+		.error {
+			color: red;
+			padding-left: 10px;
+		}
 
-.formline {
-	padding-bottom: 4px;
-}
+		.formline {
+			padding-bottom: 4px;
+		}
 
-#finusertb {
-	width: 460px;
-}
+		#finusertb {
+			width: 460px;
+		}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-	padding: 0px;
-}
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			padding: 0px;
+		}
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-	border: 2px solid skyblue !important;
-	border-bottom: unset !important;
-	background-color: unset !important;
-	color: black !important;
-	background-color: unset !important;
-}
+		.nav-tabs .nav-item.show .nav-link,
+		.nav-tabs .nav-link.active {
+			border: 2px solid skyblue !important;
+			border-bottom: unset !important;
+			background-color: unset !important;
+			color: black !important;
+			background-color: unset !important;
+		}
 
-nav {
-	border-bottom: 2px solid grey;
-}
-.content-page{
-	margin-left: 16%;
-	overflow: hidden;
-	padding: 0 15px 65px 15px;
-	margin-top: 101px;
-	width: 100vw ;
+		nav {
+			border-bottom: 2px solid grey;
+		}
+
+		.content-page {
+			margin-left: 16%;
+			overflow: hidden;
+			padding: 0 15px 65px 15px;
+			margin-top: 101px;
+			width: 100vw;
 
 
-}
+		}
+	</style>
+	<script>
+		function home() {
+			location.href = 'Dashboard'
+		}
 
-</style>
-<script>
-	function home() {
-		location.href = 'Dashboard'
-	}
-
-	function back() {
-		window.history.back();
-	}
-</script>
+		function back() {
+			window.history.back();
+		}
+	</script>
 
 </head>
 <title>BAM</title>
+
 <body>
 	<div th:insert="BTMHeaderMenu :: header"></div>
-	
+
 	<div class="content-page content ">
-		
-			
-				<div class="card " style="width: 100%;">
-					<div class="card-header">
-						<h4>INVENTORY REPORT</h4>
-					</div>
-					<div class="card-body p-0 mt-3">
-						<div class="panel-heading text-center">
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-3"></div>
-									<div class="col-sm-2">
-										<label>Sol ID</label>
-									</div>
-									<div class="col-sm-2">
-										<input type="text" id="sol_id" class="form-control"
-											placeholder="051">
-									</div>
-									<div class="col-sm-3"></div>
-								</div>
+
+
+		<div class="card " style="width: 100%;">
+			<div class="card-header p-1">
+				<h4 class="btn btn-sm headerbutton ">INVENTORY REPORT</h4>
+			</div>
+			<div class="card-body p-0 mt-3">
+				<div class="panel-heading text-center">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-2 text-left">
+								<label for="sol_id">Sol ID</label>
 							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-sm-3"></div>
-									<div class="col-sm-2">
-										<label>Date of Report</label>
-									</div>
-									<div class="col-sm-2">
-										<input type="date" id="report_date" class="form-control">
-									</div>
-								</div>
-								<div class="col-sm-3"></div>
+							<div class="col-sm-2">
+								<input type="text" id="sol_id" class="form-control" placeholder="051">
 							</div>
-						</div>
-						<div class="form-group">
-							<div class="row">
-								<div class="col-sm-3"></div>
-								<div class="col-sm-2">
-									<label>Report Type</label>
-								</div>
-								<div class="col-sm-3">
-									<select id="report_type" class="form-control">
-										<option value="Select">Select</option>
-										<option value="PDF">PDF</option>
-										<option value="Excel">Excel</option>
-									</select>
-								</div>
-								<div class="col-sm-3"></div>
-							</div>
+							<div class="col-sm-3"></div>
 						</div>
 					</div>
-				
-				<div class="card-footer text-center">
-					<button type="button" class="btn headerbutton" id="btnHome"
-						onclick="home();">Home</button>
-					<button type="button" class="btn headerbutton" id="btnGenerate"
-						onclick="Generate();">Generate</button>
-					<button type="button" class="btn headerbutton" id="btnBack"
-						onclick="back();">Back</button>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-2 text-left">
+								<label for="report_date">Date of Report</label>
+							</div>
+							<div class="col-sm-2">
+								<input type="date" id="report_date" class="form-control">
+							</div>
+							<div class="col-sm-3"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-2 text-left">
+								<label for="report_type">Report Type</label>
+							</div>
+							<div class="col-sm-2">
+								<select id="report_type" class="form-control">
+									<option value="Select">Select</option>
+									<option value="PDF">PDF</option>
+									<option value="Excel">Excel</option>
+								</select>
+							</div>
+							<div class="col-sm-3"></div>
+						</div>
+					</div>
 				</div>
-		
-		<div class="panel-body mt-4">
-		<div class="p-2"
-			>
-			<div class="row form-group">
-				<div class="col-sm-2"></div>
-				<div class="col-sm-3" style="font-size: 12px">
-					<label>Entry User :</label> <font>BFI0070</font>
-				</div>
-				<div class="col-sm-3" style="font-size: 12px">
-					<label>Modify User :</label> <font>BFI0070</font>
-				</div>
-				<div class="col-sm-3" style="font-size: 12px">
-					<label>Verify User :</label> <font>BFI0070</font>
-				</div>
-				<div class="col-sm-2"></div>
 			</div>
-			<div class="row form-group mb-0">
-				<div class="col-sm-2"></div>
-				<div class="col-sm-3" style="font-size: 12px">
-					<label>Entry Date :</label> <font>10-08-2021 11:20:26</font>
-				</div>
-				<div class="col-sm-3" style="font-size: 12px">
-					<label>Modify Date :</label> <font>10-08-2021 11:20:26</font>
-				</div>
-				<div class="col-sm-3" style="font-size: 12px">
-					<label>Verify Date :</label> <font>10-08-2021 11:20:26</font>
-				</div>
-				<div class="col-sm-2"></div>
+
+
+			<div class="card-footer text-center p-0">
+				<button type="button" class="btn headerbutton" id="btnHome" onclick="home();">Home</button>
+				<button type="button" class="btn headerbutton" id="btnGenerate" onclick="Generate();">Generate</button>
+				<button type="button" class="btn headerbutton" id="btnBack" onclick="back();">Back</button>
 			</div>
-		</div>
-		<div class="" align="right">
-			Status : <font color="green">Active</font>
-		</div>
-		<br>
+			<div class="content m-2 " style="padding: 15px;">
+				<div class="row formline">
+					<label class="col-sm-2">Entry User</label>
+					<div class="col-sm-2">
+						<input type="text"   id="entry_user" name="entry_user"
+							class="form-control form-control-sm" autocomplete="off" readonly />
+					</div>
+					<label class="col-sm-2">Modify User</label>
+					<div class="col-sm-2">
+						<input type="text"   id="modify_user" name="modify_user"
+							class="form-control form-control-sm" autocomplete="off" readonly />
+					</div>
+					<label class="col-sm-2">Verify User</label>
+					<div class="col-sm-2">
+						<input type="text"   id="auth_user" name="auth_user"
+							class="form-control form-control-sm" autocomplete="off" readonly />
+					</div>
+				</div>
+				<div class="row formline mt-2">
+					<label class="col-sm-2">Entry Time</label>
+					<div class="col-sm-2">
+						<input type="text"  
+							id="entry_date" name="entry_time" class="form-control form-control-sm" autocomplete="off"
+							readonly />
+					</div>
+					<label class="col-sm-2">Modify Time</label>
+					<div class="col-sm-2">
+						<input type="text"  
+							id="modify_time" name="modify_time" class="form-control form-control-sm" autocomplete="off"
+							readonly />
+					</div>
+					<label class="col-sm-2">Verify Time</label>
+					<div class="col-sm-2">
+						<input type="text" id="auth_time" name="auth_time"
+							 
+							class="form-control form-control-sm" autocomplete="off" readonly />
+					</div> 
+				</div>
+			</div>
+
+			<!--<div class="panel-body mt-4">
+				<div class="p-2">
+					<div class="row form-group">
+						<div class="col-sm-2"></div>
+						<div class="col-sm-3" style="font-size: 12px">
+							<label>Entry User :</label>
+							<font>BFI0070</font>
+						</div>
+						<div class="col-sm-3" style="font-size: 12px">
+							<label>Modify User :</label>
+							<font>BFI0070</font>
+						</div>
+						<div class="col-sm-3" style="font-size: 12px">
+							<label>Verify User :</label>
+							<font>BFI0070</font>
+						</div>
+						<div class="col-sm-2"></div>
+					</div>
+					<div class="row form-group mb-0">
+						<div class="col-sm-2"></div>
+						<div class="col-sm-3" style="font-size: 12px">
+							<label>Entry Date :</label>
+							<font>10-08-2021 11:20:26</font>
+						</div>
+						<div class="col-sm-3" style="font-size: 12px">
+							<label>Modify Date :</label>
+							<font>10-08-2021 11:20:26</font>
+						</div>
+						<div class="col-sm-3" style="font-size: 12px">
+							<label>Verify Date :</label>
+							<font>10-08-2021 11:20:26</font>
+						</div>
+						<div class="col-sm-2"></div>
+					</div>
+				</div>
+				<br>
+			</div>-->
+
 		</div>
 	</div>
+
 	</div>
-	
-	</div>
-	
+
 	<script>
 		function home() {
 			window.location.href = '/home'; // Update the path as necessary
@@ -227,16 +261,16 @@ nav {
 			var report_type = document.getElementById("report_type").value;
 
 			if (sol_id && report_date && report_type
-					&& report_type !== "Select") {
+				&& report_type !== "Select") {
 				location.href = './inventoryReportDownload?sol_id=' + sol_id
-						+ '&report_date=' + report_date + '&report_type='
-						+ report_type;
+					+ '&report_date=' + report_date + '&report_type='
+					+ report_type;
 			} else if (sol_id && report_type && report_type !== "Select") {
 				location.href = './inventoryReportDownload1?sol_id=' + sol_id
-						+ '&report_type=' + report_type;
+					+ '&report_type=' + report_type;
 			} else if (report_date && report_type && report_type !== "Select") {
 				location.href = './inventoryReportDownload2?report_date='
-						+ report_date + '&report_type=' + report_type;
+					+ report_date + '&report_type=' + report_type;
 			} else {
 				alert("Please fill all the required fields.");
 			}
@@ -244,7 +278,7 @@ nav {
 
 		function submitdata() {
 			var domainids = [];
-			$.each($("input[name='dom']:checked"), function() {
+			$.each($("input[name='dom']:checked"), function () {
 				domainids.push($(this).val());
 			});
 			$("#getDomain").modal('hide');
@@ -252,4 +286,5 @@ nav {
 		}
 	</script>
 </body>
+
 </html>
