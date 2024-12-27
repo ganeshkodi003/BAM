@@ -12304,6 +12304,18 @@ if (MAR != 0) {
 			    
 			    return "Audit";  // Return the view name
 			}
+			
+			
+			@RequestMapping(value = "AccountLedger", method = { RequestMethod.GET, RequestMethod.POST })
+			public String AccountLedger(@RequestParam(required = false) String formmode,
+					 Model md, HttpServletRequest req) throws ParseException {
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+				
+
+				return "AccountLedger";
+			}
 
 		
 }
