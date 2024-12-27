@@ -10376,7 +10376,7 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 			    String userId = (String) req.getSession().getAttribute("USERID");
 			    String username = (String) req.getSession().getAttribute("USERNAME");
 			    md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
-			    md.addAttribute("RoleMenu", resourceMasterRepo.getrole(username));
+			    //md.addAttribute("RoleMenu", resourceMasterRepo.getrole(username));
 			    md.addAttribute("menu", "BTMHeaderMenu");
 
 			    if (formmode == null || formmode.equals("view")) {
