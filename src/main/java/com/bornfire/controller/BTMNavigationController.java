@@ -12293,6 +12293,10 @@ if (MAR != 0) {
 			                    @RequestParam(value = "size", required = false) Optional<Integer> size, 
 			                    Model md, HttpServletRequest req) {
 
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+				
 			    // Fetch the logged-in user
 			    String loginuserid = (String) req.getSession().getAttribute("USERID");
 			    List<UserProfile> list = loginServices.getUsersListone(loginuserid);
