@@ -1731,9 +1731,9 @@
 															<td th:text="${Bamdocmana?.asst_name}"></td>
 															<td th:text="${Bamdocmana?.asst_category}"></td>
 															<td th:text="${Bamdocmana?.from_emp_id}"></td>
-															<td th:text="${Bamdocmana?.cur_book_value_xfr_date}"
+															<td class="cur_book_value" th:text="${Bamdocmana?.cur_book_value_xfr_date}"
 																style="text-align: right;"></td>
-															<td th:text="${Bamdocmana?.market_value}"
+															<td class="mkt_value" th:text="${Bamdocmana?.market_value}"
 																style="text-align: right;"></td>
 															<td th:text="${Bamdocmana?.transaction_detail}"></td>
 															<th:block th:switch="${Bamdocmana?.del_flg}">
@@ -3207,6 +3207,55 @@
 
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+	// Format all cells with class "cur-book-value"
+	const curBookValues = document.querySelectorAll('.cur_book_value');
+	curBookValues.forEach(cell => {
+		formatTableValue(cell);
+	});
+
+	// Format all cells with class "mkt-value"
+	const mktValues = document.querySelectorAll('.mkt_value');
+	mktValues.forEach(cell => {
+		formatTableValue(cell);
+	});
+});
+
+function formatTableValue(element) {
+	if (element && element.innerText) {
+		let amount = element.innerText.replace(/,/g, ''); // Remove existing commas
+
+		if (isNaN(amount) || amount === '') {
+			return; // Return if the value is not a number or is empty
+		}
+
+		let formattedAmount = '';
+		let afterDecimal = '';
+
+		// Split integer and decimal parts
+		if (amount.includes('.')) {
+			[amount, afterDecimal] = amount.split('.');
+			afterDecimal = '.' + afterDecimal;
+		}
+
+		// Format the integer part using the Indian system
+		let lastThree = amount.slice(-3);
+		let otherNumbers = amount.slice(0, -3);
+
+		if (otherNumbers !== '') {
+			// Add commas for every two digits in the part before the last three digits
+			formattedAmount = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + ',' + lastThree;
+		} else {
+			formattedAmount = lastThree;
+		}
+
+		// Set the formatted value back to the element
+		element.innerText = formattedAmount + afterDecimal;
+	}
+}
+
+</script>
 
 </body>
 
