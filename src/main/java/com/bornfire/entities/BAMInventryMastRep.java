@@ -96,10 +96,9 @@ public interface BAMInventryMastRep extends JpaRepository<BAMInventorymaster, St
 
 	 @Query(value = "SELECT count(*) FROM BAM_INVENTORY_MASTER WHERE (TO_CHAR(date_of_purchase, 'MM') = '03') AND (TO_CHAR(date_of_purchase, 'YYYY') BETWEEN ?1 AND ?2)", nativeQuery = true)
 	 int getMAR(String startYear, String endYear);
-
-	
 	 
-	 
+	 @Query(value = "SELECT * from BAM_INVENTORY_MASTER where verify_flg = 'N'AND DEL_FLG ='N'",nativeQuery = true) 
+	 List<BAMInventorymaster> getunverified();
 
 	 
 	 

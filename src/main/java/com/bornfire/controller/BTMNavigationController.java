@@ -12377,5 +12377,84 @@ if (MAR != 0) {
 				}
 				return "OrganizationDetails";
 			}
+			
+			@RequestMapping(value = "InventMast", method = { RequestMethod.GET, RequestMethod.POST })
+			public String InventMast(@RequestParam(required = false) String formmode,String headcode, Model md, HttpServletRequest req)
+					throws ParseException {
+
+				
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+				if (formmode == null || formmode.equals("view")) {
+					
+					List<BAMInventorymaster> BAMInventorymaster = BAMInvmastrep.findAll(); // Fetch your data
+			       // md.addAttribute("BAMInventorymaster", BAMInventorymaster);
+					md.addAttribute("formmode", "list");
+					md.addAttribute("BAMInventorymaster", BAMInvmastrep.getunverified());
+
+				} else if (formmode.equals("edit")) {
+
+					md.addAttribute("formmode", "edit");
+					md.addAttribute("BAMInventorymaster", BAMInvmastrep.findById(headcode).get());
+
+				}else if (formmode.equals("verify")) {
+
+					md.addAttribute("formmode", "verify");
+					md.addAttribute("BAMInventorymaster", BAMInvmastrep.findById(headcode).get());
+
+				}  else {
+
+					md.addAttribute("formmode", formmode);
+				}
+
+				return "BAMInventMast";
+				
+			}
+			
+			@RequestMapping(value = "DocMan", method = { RequestMethod.GET, RequestMethod.POST })
+			public String DocMan(@RequestParam(required = false) String formmode,String headcode, Model md, HttpServletRequest req)
+					throws ParseException {
+	//	String EmpId = "U72900TN2017PTC115892";
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+				
+				Bamdocumentmanager newInventory = new Bamdocumentmanager();
+		        newInventory.setEntry_user(userId);  // Set ENTRY_USER as the logged-in user
+		        newInventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
+		        md.addAttribute("entryuser", newInventory);
+		        
+				if (formmode == null || formmode.equals("view")) {
+					
+					List<Bamdocumentmanager> Bamdocumentmanager = BAMDocmastrep.findAll(); // Fetch your data
+			        md.addAttribute("Bamdocumentmanager", Bamdocumentmanager);
+					md.addAttribute("formmode", "list");
+				
+
+				} else if (formmode.equals("edit")) {
+
+					md.addAttribute("formmode", "edit");
+					
+					md.addAttribute("Bamdocumentmanager", BAMDocmastrep.findById(headcode).get());
+
+				} else if (formmode.equals("verify")) {
+
+					md.addAttribute("formmode", "verify");
+					
+					md.addAttribute("Bamdocumentmanager", BAMDocmastrep.findById(headcode).get());
+
+				}else if (formmode.equals("add")) {
+
+					md.addAttribute("formmode", "add");
+					md.addAttribute("Bamdocumentmanager", new Bamdocumentmanager());
+
+				} else {
+
+					md.addAttribute("formmode", formmode);
+				}
+
+				return "BAMDocMan";
+			}
 		
 }
