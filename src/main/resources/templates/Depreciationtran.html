@@ -253,17 +253,25 @@ nav {
             window.history.back();
         }
 
-function Generate() {
-    var asset_serial_no = document.getElementById("asset_serial_no").value;
-    var report_date = document.getElementById("report_date").value;
-    var report_type = document.getElementById("report_type").value;
+        function Generate() {
+            var asset_serial_no = document.getElementById("asset_serial_no").value;
+            var report_date = document.getElementById("report_date").value;
+            var report_type = document.getElementById("report_type").value;
 
-    if (asset_serial_no && report_date && report_type && report_type !== "Select") {
-        location.href = './writeoffReportDownload?asset_serial_no=' + asset_serial_no + '&report_date=' + report_date + '&report_type=' + report_type;
-    } else {
-        alert("Please fill all the required fields.");
-    }
-}
+            if (asset_serial_no && report_date && report_type && report_type !== "Select") {
+                location.href = './DepreciationReportDownload?asset_serial_no=' + asset_serial_no + '&report_date=' + report_date + '&report_type=' + report_type;
+            } 
+            else if (asset_serial_no && report_type && report_type !== "Select") {
+                location.href = './DepreciationReportDownload1?asset_serial_no=' + asset_serial_no + '&report_type=' + report_type;
+            }
+            else if (report_date && report_type && report_type !== "Select") {
+                location.href = './DepreciationReportDownload2?report_date=' + report_date + '&report_type=' + report_type;
+            }
+            else {
+                alert("Please fill all the required fields.");
+            }
+        }
+
 
         function submitdata() {
             var domainids = [];
