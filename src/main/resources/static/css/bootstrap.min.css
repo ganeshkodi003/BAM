@@ -2313,8 +2313,9 @@ pre code {
 }
 
 .table td {
-	padding: .55rem;
+	padding: .40rem;
 	vertical-align: top;
+	
 	/* border-top: 1px solid #495561 */
 }
 

@@ -1126,7 +1126,8 @@ $(document)
 											<div>
 												<h3 class="btn btn-sm mr-2 headerbutton mt-1">DEPRECIATION</h3>
 											</div>
-											<div class="mx-auto" th:if="${formmode}== 'view'">
+											<div class="flex-grow-1 d-flex justify-content-center"
+												th:if="${formmode}== 'view'" style="margin-right:10%">
 												<button type="button"
 													class="btn btn-sm headerbutton text-center"
 													style="text-align: center;" id="genflow"
@@ -1136,6 +1137,7 @@ $(document)
 												class="btn btns btn-filter headerbutton">Filter</button>
 										</div>
 									</div>
+
 									<div class="card-body" th:if="${formmode}== 'view'">
 
 										<div class="form-group mb-0">
@@ -1351,14 +1353,14 @@ $(document)
 												</div>
 											</div>
 										</div>
-											
-										
+
+
 
 
 										<fieldset id="tableset">
-											<div class="table-responsive mt-3 ">
+											<div class="table-responsive mt-1 "style="overflow-y: auto; height: 35vh; border: 1px solid #dee2e6;">
 												<table class="table table-bordered " id="flowsTable">
-													<thead>
+													<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;background-color: #f2f2f2;">
 														<tr>
 															<!-- Generating 13 columns -->
 															<th style="font-weight: 500;">SRL</th>
@@ -1381,9 +1383,9 @@ $(document)
 													</tbody>
 												</table>
 											</div>
-											
 									</div>
-									<div class="card-footer text-center p-0" th:if="${formmode}== 'view'">
+									<div class="card-footer text-center p-0"
+										th:if="${formmode}== 'view'">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
@@ -1444,7 +1446,7 @@ $(document)
 											</table>
 										</div>
 
-										<div class="card-footer text-center p-0" >
+										<div class="card-footer text-center p-0">
 											<button type="button" class="btn  headerbutton" id="btnHome"
 												onclick="home()">Home</button>
 											<button type="button" class="btn btn-primary headerbutton"
