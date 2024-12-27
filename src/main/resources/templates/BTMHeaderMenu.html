@@ -221,6 +221,15 @@ a {
 		location.href = "/BAM/logoutsub";
 
 	}
+	function docEmb() {
+		url = /*[[@{/document/Intranet-UserManual.pdf}]]*/null;
+		var element = document.getElementById('Manual');
+		var Record = element.getAttribute('data-record');
+		console.log(Record);
+		var pageNum = null;
+		
+		window.open(url + "#page=" + pageNum, "_blank", "width=600, height=500");
+	}
 </script>
 
 </head>
