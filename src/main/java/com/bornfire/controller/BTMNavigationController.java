@@ -12430,7 +12430,7 @@ if (MAR != 0) {
 					List<Bamdocumentmanager> Bamdocumentmanager = BAMDocmastrep.findAll(); // Fetch your data
 			        md.addAttribute("Bamdocumentmanager", Bamdocumentmanager);
 					md.addAttribute("formmode", "list");
-				
+					md.addAttribute("Bamdocumentmanager", BAMDocmastrep.getunverified());
 
 				} else if (formmode.equals("edit")) {
 
