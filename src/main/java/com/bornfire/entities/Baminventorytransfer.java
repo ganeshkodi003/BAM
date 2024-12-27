@@ -64,8 +64,11 @@ public class Baminventorytransfer {
 	private String	entry_user;
 	private String	modify_user;
 	private String	verify_user;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date	entry_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date	modify_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date	verify_time;
 	private String	del_flg;
 	private String	entity_flg;
