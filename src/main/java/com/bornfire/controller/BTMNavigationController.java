@@ -10331,7 +10331,7 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 		        
 				if (formmode == null || formmode.equals("view")) {
 					
-					List<Bamdocumentmanager> Bamdocumentmanager = BAMDocmastrep.findAll(); // Fetch your data
+					List<Bamdocumentmanager> Bamdocumentmanager = BAMDocmastrep.getverified(); // Fetch your data
 			        md.addAttribute("Bamdocumentmanager", Bamdocumentmanager);
 					md.addAttribute("formmode", "list");
 				
@@ -10353,7 +10353,13 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 					md.addAttribute("formmode", "add");
 					md.addAttribute("Bamdocumentmanager", new Bamdocumentmanager());
 
-				} else {
+				}  else if (formmode.equals("viewdoc")) {
+
+					md.addAttribute("formmode", "viewdoc");
+					
+					md.addAttribute("Bamdocumentmanager", BAMDocmastrep.findById(headcode).get());
+
+				}else {
 
 					md.addAttribute("formmode", formmode);
 				}
@@ -12455,6 +12461,12 @@ if (MAR != 0) {
 
 					md.addAttribute("formmode", "add");
 					md.addAttribute("Bamdocumentmanager", new Bamdocumentmanager());
+
+				}else if (formmode.equals("viewdoc")) {
+
+					md.addAttribute("formmode", "viewdoc");
+					
+					md.addAttribute("Bamdocumentmanager", BAMDocmastrep.findById(headcode).get());
 
 				} else {
 

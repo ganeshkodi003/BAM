@@ -11,5 +11,8 @@ public interface BamDocumentMasRep extends JpaRepository<Bamdocumentmanager, Str
 
 	 @Query(value = "SELECT * from BAM_DOCUMENT_MANAGER where DEL_FLG ='N'",nativeQuery = true) 
 	 List<Bamdocumentmanager> getunverified();
+	 
+	 @Query(value = "SELECT * from BAM_DOCUMENT_MANAGER where DEL_FLG ='Y'",nativeQuery = true) 
+	 List<Bamdocumentmanager> getverified();
 	
 }

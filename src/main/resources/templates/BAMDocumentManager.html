@@ -434,6 +434,14 @@ td {
 										});
 					});
 </script>
+<script>
+	function clicktoview(a) {
+
+		var headcode = a.getAttribute("data");
+		
+		location.href = 'Documentmanager?formmode=viewdoc&headcode=' + headcode;
+	}
+</script>
 </head>
 <title>BAM</title>
 
@@ -456,7 +464,7 @@ td {
 									<div class="card-header p-0 d-flex justify-content-between">
 										<div class="float-left">
 											<h4 class="btn btn-sm mr-2 headerbutton mt-1">DOCUMENT
-												MANAGER - List</h4>
+												MANAGER - LIST</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right">
 											<button type="button" class="btn headerbutton" id="btnHome"
@@ -508,7 +516,9 @@ td {
 														<td th:text="${Bamdocmana?.branch_id}"></td>
 														<td th:text="${Bamdocmana?.branch_name}"></td>
 														<td th:text="${Bamdocmana?.asset_srl_no}"></td>
-														<td th:text="${Bamdocmana?.doc_id}"></td>
+														<td th:text="${Bamdocmana?.doc_id}"
+															th:attr="data=${Bamdocmana?.doc_id}" class="text-primary"
+															onclick="clicktoview(this)"></td>
 														<td th:text="${Bamdocmana?.doc_name}"></td>
 														<td th:text="${Bamdocmana?.doc_location}"></td>
 
@@ -916,7 +926,8 @@ td {
 
 				<!-- ************************* verify ****************************** -->
 
-				<div class="container-fluid content" th:if="${formmode}=='verify'">
+				<div class="container-fluid content"
+					th:if="${formmode}=='verify' OR ${formmode}=='view'  ">
 					<div class="row">
 
 						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
@@ -925,7 +936,7 @@ td {
 							<div class="associateProfileList ">
 								<div class="card">
 									<div class="card-header">
-										<div class="float-left">
+										<div class="float-left" th:if="${formmode}=='verify'">
 											<h4>DOCUMENT MANAGER - VERIFY</h4>
 										</div>
 									</div>
@@ -1535,10 +1546,10 @@ td {
 
 
 
-										<button th:if="${formmode}=='edit'" type="button"
-											class="btn headerbutton" onclick="submiteditform(this);"
-											form="Bamdocumentmanager" id="btnSubmit"
-											th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='edit' OR ${formmode}=='verify'"
+											type="button" class="btn headerbutton"
+											onclick="submiteditform(this);" form="Bamdocumentmanager"
+											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
@@ -1596,7 +1607,330 @@ td {
 					</div>
 				</div>
 
+				<div class="container-fluid content" th:if="${formmode}=='viewdoc'">
+					<div class="row">
 
+						<form action="#" th:object="${Bamdocumentmanager}" class="w-100"
+							method="post" autocomplete="off" id="Bamdocumentmanager">
+
+							<div class="associateProfileList ">
+								<div class="card">
+									<div class="card-header">
+										<div class="float-left">
+											<h4>DOCUMENT MANAGER - VIEW</h4>
+										</div>
+									</div>
+
+									<div class="card-body">
+										<div class="form-group">
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="branch_id">Branch Id</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_id}" id="branch_id"
+														class="form-control form-control-sm" autocomplete="off"
+														name="branch_id" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="branch_name">Branch Name</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.branch_name} "
+														id="branch_name" class="form-control form-control-sm"
+														autocomplete="off" name="branch_name" />
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="asset_srl_no">Asset Srl No</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_srl_no}"
+														id="asset_srl_no" class="form-control form-control-sm"
+														name="asset_srl_no" autocomplete="off" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="category_description">Asset Name</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.asset_name}"
+														id="asset_name" class="form-control form-control-sm"
+														name="asset_name" autocomplete="off" />
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="doc_ref_no">Document Ref No</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_ref_no}"
+														id="doc_ref_no" class="form-control form-control-sm"
+														autocomplete="off" name="doc_ref_no" required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="doc_id">Document Id</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text" th:value="${Bamdocumentmanager.doc_id}"
+														id="doc_id" class="form-control form-control-sm"
+														name="doc_id" autocomplete="off" required="required" />
+												</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="doc_name">Document Name</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_name}" id="doc_name"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_name" required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="doc_desc">Document Desc</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager.doc_desc}" id="doc_desc"
+														class="form-control form-control-sm" autocomplete="off"
+														name="doc_desc" required="required" />
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="doc_type">Document Type</label>
+												</div>
+
+												<div class="col-sm-3">
+													<select id="doc_type" name="doc_type" style="width: 100%"
+														class="form-control form-control-sm" required>
+														<option value="">SELECT</option>
+														<option value="pdf">PDF</option>
+														<option value="Xls">XLS</option>
+													</select>
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="doc_group">Document Group</label>
+												</div>
+												<div class="col-sm-3">
+													<select id="doc_group" name="doc_group" style="width: 100%"
+														class="form-control form-control-sm" required>
+														<option value="">SELECT</option>
+														<option value="Manager">Manager</option>
+														<option value="Team">Team</option>
+													</select>
+												</div>
+											</div>
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="access_type">Access Type</label>
+												</div>
+
+												<div class="col-sm-3">
+													<select id="access_type" name="access_type"
+														style="width: 100%" th:field="*{access_type}"
+														th:value="${Bamdocumentmanager?.access_type}"
+														class="form-control form-control-sm">
+														<option value="">SELECT</option>
+														<option value="pdf">PDF</option>
+														<option value="Xls">XLS</option>
+													</select>
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="access_group">Access Group</label>
+												</div>
+												<div class="col-sm-3">
+													<!-- <input type="number"
+														th:value="${Bamdocumentmanager?.access_group}"
+														id="access_group"
+														class="form-control form-control-sm"
+														name="access_group" autocomplete="off" required="required"/> -->
+
+													<select id="access_group" name="access_group"
+														style="width: 100%" th:field="*{access_group}"
+														th:value="${Bamdocumentmanager?.access_group}"
+														class="form-control form-control-sm">
+														<option value="">SELECT</option>
+														<option value="Manager">Manager</option>
+														<option value="Team">Team</option>
+													</select>
+												</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="doc_folder">Document Folder</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_folder}"
+														id="doc_folder" class="form-control form-control-sm"
+														name="doc_folder" autocomplete="off" required="required" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="doc_location">Document Location Path</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_location}"
+														id="doc_location" class="form-control form-control-sm"
+														name="doc_location" autocomplete="off" required="required" />
+												</div>
+											</div>
+
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="doc_author">Document Author</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.doc_author}"
+														id="doc_author" class="form-control form-control-sm"
+														name="doc_author" autocomplete="off" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="doc_reviewer">Document Reviewer</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="number"
+														th:value="${Bamdocumentmanager?.doc_reviewer}"
+														id="doc_reviewer" class="form-control form-control-sm"
+														name="doc_reviewer" autocomplete="off" />
+												</div>
+											</div>
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="upload_flg">Upload Flg</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_flg}"
+														id="upload_flg" class="form-control form-control-sm"
+														name="upload_flg" autocomplete="off" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="scan_flg">Scan Flg</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_flg}" id="scan_flg"
+														class="form-control form-control-sm" name="scan_flg"
+														autocomplete="off" />
+												</div>
+											</div>
+
+
+											<div class="row formline">
+												<div class="col-sm-2">
+													<label for="upload_user">Upload User</label>
+												</div>
+
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.upload_user}"
+														id="upload_user" class="form-control form-control-sm"
+														name="upload_user" autocomplete="off" />
+												</div>
+												<div class="col-sm-1"></div>
+												<div class="col-sm-2">
+													<label for="scan_user">Scan User</label>
+												</div>
+												<div class="col-sm-3">
+													<input type="text"
+														th:value="${Bamdocumentmanager?.scan_user}" id="scan_user"
+														class="form-control form-control-sm" name="scan_user"
+														autocomplete="off" />
+												</div>
+											</div>
+
+										</div>
+
+									</div>
+									<div class="card-footer text-center">
+
+										<button type="button" class="btn headerbutton" id="btnHome"
+											onclick="home();">Home</button>
+
+										<button type="button" class="btn headerbutton" id="btnBack"
+											onclick="back();">Back</button>
+
+									</div>
+									<!-- Conditionally display the table based on formmode  view-->
+									<div class="table-responsive" th:object="${entryuser}"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='viewdoc' OR ${formmode}=='add'OR ${formmode}=='view' ">
+										<div class="content m-2 " style="padding: 15px;">
+											<div class="row formline">
+												<label class="col-sm-2">Entry User</label>
+												<div class="col-sm-2">
+													<input type="text" id="entry_user" name="entry_user"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Modify User</label>
+												<div class="col-sm-2">
+													<input type="text" id="modify_user" name="modify_user"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Verify User</label>
+												<div class="col-sm-2">
+													<input type="text" id="auth_user" name="auth_user"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+											</div>
+											<div class="row formline mt-2">
+												<label class="col-sm-2">Entry Time</label>
+												<div class="col-sm-2">
+													<input type="text" id="entry_date" name="entry_time"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Modify Time</label>
+												<div class="col-sm-2">
+													<input type="text" id="modify_time" name="modify_time"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+												<label class="col-sm-2">Verify Time</label>
+												<div class="col-sm-2">
+													<input type="text" id="auth_time" name="auth_time"
+														class="form-control form-control-sm" autocomplete="off"
+														readonly />
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

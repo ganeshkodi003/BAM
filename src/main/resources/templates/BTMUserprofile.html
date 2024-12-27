@@ -112,19 +112,19 @@
 	width: 460px;
 }
 
-		.dataTables_wrapper .dataTables_paginate .paginate_button {
-			padding: 0px;
-		}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	padding: 0px;
+}
+
 .content-page {
 	margin-left: 15%;
 	overflow: hidden;
 	padding: 0 15px 65px 15px;
 	margin-top: 101px;
 }
-
-	</style>
-	<script th:inline="javascript">
-		/*<![CDATA[*/
+</style>
+<script th:inline="javascript">
+	/*<![CDATA[*/
 
 	$(function() {
 
@@ -184,9 +184,9 @@
 
 		$
 				.ajax({
-					type: 'get',
-					url: '/XBRL/Finuserdata?userid=' + a.id,
-					success: function (data) {
+					type : 'get',
+					url : '/XBRL/Finuserdata?userid=' + a.id,
+					success : function(data) {
 
 						/*<![CDATA[*/
 
@@ -504,7 +504,7 @@
 		<div th:insert="BTMHeaderMenu :: header"></div>
 	</div>
 	<!---------------------User List Starts------------------------------------------------------->
-	<div th:if="${formmode}=='list'" class="content-page" >
+	<div th:if="${formmode}=='list'" class="content-page">
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card panel panel-primary filterable">
@@ -518,51 +518,58 @@
 							<button type="button" class="btn btns btn-filter headerbutton">Filter</button>
 						</div>
 					</div>
-					<div class="card-body" style="padding:0px">
-						<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
-											
-												
-						<table class="table  table-bordered  table-hover table-sm" style="margin-bottom: 0px;">
-							<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
-								<tr class="filters">
-									<th style="text-align: center"> <input type="text"
-											class="form-control font-weight-bold" placeholder="User ID" disabled></th>
-									<th style="text-align: center"> <input type="text"
-											class="form-control font-weight-bold" placeholder="User Name" disabled></th>
-									<th style="text-align: center"><input type="text"
-											class="form-control font-weight-bold" placeholder="Employee ID" disabled>
-									</th>
-									<th style="text-align: center"> <input type="text"
-											class="form-control font-weight-bold" placeholder="Branch code" disabled>
-									</th>
-									<th style="text-align: center"> <input type="text"
-											class="form-control font-weight-bold" placeholder="Branch Name" disabled>
-									</th>
-									<th style="text-align: center"> <input type="text"
-											class="form-control font-weight-bold" placeholder="Status" disabled></th>
-									<!--<th class="pb-2 select_th">Select</th>-->
-								</tr>
-							</thead>
-							<tbody>
-								<tr th:each="userProfile : ${userProfiles}" th:attr="data-userid=${userProfile.userid}"
-									onclick="fnClick(this);" th:id="${userProfile.userid}" class="userlist"
-									onmouseover="" style="cursor: pointer;">
-									<!-- <td><a href="#" data-toggle="tooltip" class="editrec"
+					<div class="card-body" style="padding: 0px">
+						<div class="table-responsive"
+							style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
+
+
+							<table class="table  table-bordered  table-hover table-sm"
+								style="margin-bottom: 0px;">
+								<thead
+									style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
+									<tr class="filters">
+										<th style="text-align: center"><input type="text"
+											class="form-control font-weight-bold" placeholder="User ID"
+											disabled></th>
+										<th style="text-align: center"><input type="text"
+											class="form-control font-weight-bold" placeholder="User Name"
+											disabled></th>
+										<th style="text-align: center"><input type="text"
+											class="form-control font-weight-bold"
+											placeholder="Employee ID" disabled></th>
+										<th style="text-align: center"><input type="text"
+											class="form-control font-weight-bold"
+											placeholder="Branch code" disabled></th>
+										<th style="text-align: center"><input type="text"
+											class="form-control font-weight-bold"
+											placeholder="Branch Name" disabled></th>
+										<th style="text-align: center"><input type="text"
+											class="form-control font-weight-bold" placeholder="Status"
+											disabled></th>
+										<!--<th class="pb-2 select_th">Select</th>-->
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="userProfile : ${userProfiles}"
+										th:attr="data-userid=${userProfile.userid}"
+										onclick="fnClick(this);" th:id="${userProfile.userid}"
+										class="userlist" onmouseover="" style="cursor: pointer;">
+										<!-- <td><a href="#" data-toggle="tooltip" class="editrec"
 										title="Click to Edit this Record"><i class="fas fa-edit"
 											th:attr="data-userid=${userProfile.userid}"
 											onclick="fnClick(this);"></i></a></td> -->
-									<td style="width: 125px" th:text="${userProfile.userid}">456</td>
-									<td style="width: 250px" th:text="${userProfile.username}">TEST</td>
-									<td th:text="${userProfile.empid}">123</td>
-									<td th:text="${userProfile.branch_code}">123</td>
-									<td style="width: 250px" th:text="${userProfile.branch_name}">CHENNAI</td>
-									<th:block th:switch="${userProfile.entity_flg}">
-										<td th:case="'Y'" style="color: green;">Verified</td>
-										<td th:case="'N'" style="color: red;">UnVerified</td>
-									</th:block>
-								</tr>
-							</tbody>
-						</table>
+										<td style="width: 125px" th:text="${userProfile.userid}">456</td>
+										<td style="width: 250px" th:text="${userProfile.username}">TEST</td>
+										<td th:text="${userProfile.empid}">123</td>
+										<td th:text="${userProfile.branch_code}">123</td>
+										<td style="width: 250px" th:text="${userProfile.branch_name}">CHENNAI</td>
+										<th:block th:switch="${userProfile.entity_flg}">
+											<td th:case="'Y'" style="color: green;">Verified</td>
+											<td th:case="'N'" style="color: red;">UnVerified</td>
+										</th:block>
+									</tr>
+								</tbody>
+							</table>
 						</div>
 					</div>
 
@@ -579,21 +586,24 @@
 
 	<!---------------------User List Ends--------------------------------------------------------->
 	<!---------------------User Edit form Starts-------------------------------------------------->
-	<div th:if="${formmode}=='edit' OR ${formmode}=='add'" class="content-page ">
+	<div th:if="${formmode}=='edit' OR ${formmode}=='add'"
+		class="content-page ">
 		<div class="row">
 			<div class="col-sm-12 finuserapply">
-				<div class="card" >
-					<form action="#" th:object="${userProfile}" method="post" autocomplete="off" id="userProfile"
-						th:fragment="finuserapply">
+				<div class="card">
+					<form action="#" th:object="${userProfile}" method="post"
+						autocomplete="off" id="userProfile" th:fragment="finuserapply">
 						<div class="card-header p-0">
 							<div class="d-flex justify-content-between align-items-center">
 								<div>
 									<h3 th:if="${formmode}=='add'"
 										class="btn btn-sm mr-2 headerbutton mt-1">USER PROFILE -
 										ADD</h3>
+									<h3 th:if="${formmode}=='edit'"
+										class="btn btn-sm mr-2 headerbutton mt-1">USER PROFILE -
+										EDIT</h3>
 								</div>
-								<button type="button" class="btn btn-xs headerbutton"
-									id="btnInq" onclick="list();">List</button>
+
 							</div>
 						</div>
 						<div class="card-body">
@@ -958,7 +968,7 @@
 						<button
 							th:if="${formmode}=='edit' AND ${userProfile.entity_flg}=='Y'"
 							type="button" class="btn btn-xs mr-2 headerbutton"
-							id="btnpassrst" onclick="passwordReset();">PasswordReset</button>
+							id="btnpassrst" onclick="passwordReset();">Password Reset</button>
 						<button
 							th:if="${userProfile.entity_flg}!='N' OR ${userProfile.entity_flg}==null"
 							type="button" class="btn btn-xs mr-2 headerbutton"
