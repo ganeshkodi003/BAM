@@ -10700,7 +10700,17 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 			public String Batchjobs(@RequestParam(required = false) String formmode,String headcode, Model md, HttpServletRequest req)
 					throws ParseException {
 
-				LocalDate currentDate = LocalDate.now();
+				
+				 LocalDate currentDate = LocalDate.now();
+				 
+				 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+			        String formattedDate = currentDate.format(formatter);
+			        
+			      
+			        // Parse the string into a LocalDate
+			        //LocalDate localDate = LocalDate.parse(toString(), formatter);
+				 
+				System.out.println("Current date is : " + formattedDate );
 				Date dd =new Date();
 
 				String userId = (String) req.getSession().getAttribute("USERID");
@@ -10716,7 +10726,7 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 		        
 				if (formmode == null || formmode.equals("view")) {
 					List<BAM_AssetFlows_Entity> list= new ArrayList<BAM_AssetFlows_Entity>();
-					List<BAM_AssetFlows_Entity> BAMBatchjobs=BAM_AssetFlows_rep.getDep(currentDate);
+					List<BAM_AssetFlows_Entity> BAMBatchjobs=BAM_AssetFlows_rep.getDep(formattedDate);
 					if(BAMBatchjobs.size()>0) {
 					System.out.println("date is :"+BAMBatchjobs.get(0).getAsst_exp_date());
 					
@@ -10767,7 +10777,7 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 				else if(formmode.equals("prev")){
 					
 					md.addAttribute("formmode", "prev");
-					md.addAttribute("BAMBatchjobs",BAM_AssetFlows_rep.getprevbatchjobs(currentDate));
+					md.addAttribute("BAMBatchjobs",BAM_AssetFlows_rep.getprevbatchjobs(formattedDate));
 				}
 										
 				else {
