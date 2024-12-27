@@ -60,9 +60,13 @@ public class BAMInventorymaster {
 	private String	entry_user;
 	private String	modify_user;
 	private String	auth_user;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	verify_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	entry_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	modify_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	auth_time;
 	private String	del_flg;
 	private String	entity_flg;
