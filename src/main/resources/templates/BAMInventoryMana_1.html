@@ -412,6 +412,11 @@ td {
 										});
 
 					});
+					
+					function viewinvent(a) {
+							var headcode = a.getAttribute('data-id'); 
+							location.href = 'InventoryMaster1?formmode=viewnew&headcode=' + headcode;
+						}
 </script>
 <script>
   // Override the alert function globally to do nothing
@@ -488,13 +493,16 @@ td {
 														<th><input type="text"
 															class="form-control font-weight-bold"
 															placeholder="Status" readonly></th>
-														<th class="pb-2 ">Select</th>
+														<!--<th class="pb-2 ">Select</th>-->
 													</tr>
 												</thead>
 												<tbody id="associatemonthly">
 
 													<tr th:each="Bamdocmana : ${BAMInventorymaster}">
-														<td th:text="${Bamdocmana?.asst_srl_no}"></td>
+														<td th:text="${Bamdocmana?.asst_srl_no}"
+																													onclick="viewinvent(this)"
+																													th:attr="data-id=${Bamdocmana?.asst_srl_no}"
+																													style="color: blue;"></td>
 														<td th:text="${Bamdocmana?.asst_name}"></td>
 														<td th:text="${Bamdocmana?.asset_category}"></td>
 														<td th:text="${Bamdocmana?.emp_id}"></td>
@@ -507,7 +515,7 @@ td {
 															<td th:case="'N'" style="color: red;">Unverified</td>
 															<td th:case="null" style="color: red;">Unknown</td>
 														</th:block>
-														<th:block th:switch="${Bamdocmana?.verify_flg}">
+														<!--<th:block th:switch="${Bamdocmana?.verify_flg}">
 															<td th:case="'Y'"><input type="radio"
 																th:id="${Bamdocmana?.asst_srl_no}"
 																onclick="Headcode(this)"></td>
@@ -527,7 +535,7 @@ td {
 																	onclick="Headcode(this)">VIEW</button>
 
 															</td>
-														</th:block>
+														</th:block>-->
 
 
 													</tr>
@@ -578,21 +586,22 @@ td {
 
 
 				<div class="container-fluid content"
-					th:if="${formmode}=='edit' OR ${formmode}=='verify' ">
+					th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='viewnew'">
 					<div class="row">
 
-						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
-							method="post" autocomplete="off" id="BAMInventorymaster">
+						<form action="#" th:object="${BAMInventorymaster}" class="w-100" method="post"
+							autocomplete="off" id="BAMInventorymaster">
 
-							<div class="associateProfileList ">
+							<div class="associateProfileList">
 								<div class="card">
 									<div class="card-header p-1">
 										<div class="float-left">
-											<h4 th:if="${formmode}=='edit'"
-												class="btn btn-sm headerbutton">INVENTORY MASTER</h4>
-											<h4 th:if="${formmode}=='verify'"
-												class="btn btn-sm headerbutton">INVENTORY MASTER -
-												VERIFY</h4>
+											<h4 th:if="${formmode}=='edit'" class="btn btn-sm headerbutton mr-2">INVENTORY
+												MASTER - EDIT</h4>
+											<h4 th:if="${formmode}=='verify'" class="btn btn-sm headerbutton mr-2">INVENTORY
+												MASTER - VERIFY</h4>
+											<h4 th:if="${formmode}=='viewnew'" class="btn btn-sm headerbutton mr-2">INVENTORY
+												MASTER - VIEW</h4>
 										</div>
 									</div>
 
@@ -604,34 +613,32 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_srl_no}"
+													<input type="text" th:value="${BAMInventorymaster.asst_srl_no}"
 														id="asst_srl_no" class="form-control form-control-sm"
 														autocomplete="off" name="asst_srl_no" readonly />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_srl_no}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster.asst_srl_no}"
 														id="asst_srl_no" class="form-control form-control-sm"
-														autocomplete="off" name="asst_srl_no" readonly />
+														autocomplete="off" name="asst_srl_no" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="branch_name">Asset Name</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_name} " id="asst_name"
-														class="form-control form-control-sm" autocomplete="off"
-														name="asst_name" required="required" readonly />
+													<input type="text" th:value="${BAMInventorymaster.asst_name} "
+														id="asst_name" class="form-control form-control-sm"
+														autocomplete="off" name="asst_name" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_name} " id="asst_name"
-														class="form-control form-control-sm" autocomplete="off"
-														name="asst_name" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster.asst_name} "
+														id="asst_name" class="form-control form-control-sm"
+														autocomplete="off" name="asst_name" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -640,15 +647,14 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asset_category}"
+													<input type="text" th:value="${BAMInventorymaster.asset_category}"
 														id="asset_category" class="form-control form-control-sm"
 														name="asset_category" autocomplete="off" readonly />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asset_category}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster.asset_category}"
 														id="asset_category" class="form-control form-control-sm"
 														name="asset_category" autocomplete="off" readonly />
 												</div>
@@ -657,18 +663,16 @@ td {
 													<label for="category_desc">Description</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.category_desc}"
+													<input type="text" th:value="${BAMInventorymaster.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
-														name="category_desc" autocomplete="off" readonly />
+														name="category_desc" autocomplete="off" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.category_desc}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
-														name="category_desc" autocomplete="off"
-														readonly="readonly" />
+														name="category_desc" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -677,23 +681,26 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													
-													<input type="text"
-													th:value="${BAMInventorymaster?.asset_type}"
-													 id="depr_freq" name="depr_freq" 
-													 style="width: 100%" class="form-control form-control-sm"
-														autocomplete="off" required="required" readonly/>
-														
+													<select id="asset_type" name="asset_type" style="width: 100%"
+														th:field="*{asset_type}"
+														th:value="${BAMInventorymaster?.asset_type}"
+														class="form-control form-control-sm" required>
+														<option value="">SELECT</option>
+														<option value="Tangible">Tangible</option>
+														<option value="Depreciable">Intangible</option>
+														<option value="Others">Others</option>
+													</select>
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<select id="asset_type" name="asset_type"
-														style="width: 100%" th:field="*{asset_type}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<select id="asset_type" name="asset_type" style="width: 100%"
+														th:field="*{asset_type}"
 														th:value="${BAMInventorymaster?.asset_type}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
 														<option value="Tangible">Tangible</option>
-														<option value="Depreciable">Depreciable</option>
+														<option value="Depreciable">Intangible</option>
 														<option value="Others">Others</option>
 													</select>
 												</div>
@@ -701,16 +708,16 @@ td {
 												<div class="col-sm-2">
 													<label for="asst_crncy">Asset Currency</label>
 												</div>
-												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_crncy}"
+												<div th:if="${formmode}=='edit'" class="col-sm-3"
+													onchange="handleCurrencyChange()">
+													<input type="text" th:value="${BAMInventorymaster.asst_crncy}"
 														id="asst_crncy" class="form-control form-control-sm"
-														name="asst_crncy" autocomplete="off" required="required" readonly />
+														name="asst_crncy" autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_crncy}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster.asst_crncy}"
 														id="asst_crncy" class="form-control form-control-sm"
 														name="asst_crncy" autocomplete="off" readonly="readonly" />
 												</div>
@@ -725,16 +732,15 @@ td {
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
 														id="date_of_purchase" class="form-control form-control-sm"
-														autocomplete="off" name="date_of_purchase"
-														required="required" readonly />
+														autocomplete="off" name="date_of_purchase" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
 														id="date_of_purchase" class="form-control form-control-sm"
-														autocomplete="off" name="date_of_purchase"
-														readonly="readonly" />
+														autocomplete="off" name="date_of_purchase" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -744,16 +750,15 @@ td {
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
 														id="year_of_purchase" class="form-control form-control-sm"
-														autocomplete="off" name="year_of_purchase"
-														required="required" readonly />
+														autocomplete="off" name="year_of_purchase" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
 														id="year_of_purchase" class="form-control form-control-sm"
-														autocomplete="off" name="year_of_purchase"
-														readonly="readonly" />
+														autocomplete="off" name="year_of_purchase" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -762,36 +767,36 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
+													<input type="text" oninput="formatAmount(this)"
+														onblur="removeFormatting(this)"
+														onfocus="restoreFormatting(this)"
 														th:value="${BAMInventorymaster.org_cost}" id="org_cost"
 														class="form-control form-control-sm" name="org_cost"
-														autocomplete="off" required="required" readonly />
+														autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" oninput="formatIndianAmount(this)"
 														th:value="${BAMInventorymaster.org_cost}" id="org_cost"
 														class="form-control form-control-sm" name="org_cost"
 														autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
-													<label for="life_span_mth">Life Span (Years)</label>
+													<label for="life_span_mth">Life Span</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="number"
-														th:value="${BAMInventorymaster.life_span_mth}"
+													<input type="number" th:value="${BAMInventorymaster.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
-														autocomplete="off" name="life_span_mth"
-														required="required"  readonly/>
+														autocomplete="off" name="life_span_mth" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.life_span_mth}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
-														autocomplete="off" name="life_span_mth"
-														readonly="readonly" />
+														autocomplete="off" name="life_span_mth" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -803,33 +808,31 @@ td {
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
 														id="asst_exp_date" class="form-control form-control-sm"
-														name="asst_exp_date" autocomplete="off"
-														required="required" readonly/>
+														autocomplete="off" name="asst_exp_date" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
 														id="asst_exp_date" class="form-control form-control-sm"
-														name="asst_exp_date" autocomplete="off"
-														readonly="readonly" />
+														autocomplete="off" name="asst_exp_date" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="asst_rmks">Asset Remarks</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-														class="form-control form-control-sm" name="asst_rmks"
-														autocomplete="off" required="required" readonly />
+													<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
+														id="asst_rmks" class="form-control form-control-sm"
+														name="asst_rmks" autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-														class="form-control form-control-sm" name="asst_rmks"
-														autocomplete="off" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
+														id="asst_rmks" class="form-control form-control-sm"
+														name="asst_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -839,17 +842,18 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-													th:value="${BAMInventorymaster?.depr_flag}"
-													 id="depr_freq" name="depr_freq" 
-													 style="width: 100%" class="form-control form-control-sm"
-														autocomplete="off" required="required" readonly/>
-														
+													<select id="depr_flagS" name="depr_flag" style="width: 100%"
+														class="form-control form-control-sm" required>
+														<option th:text="${BAMInventorymaster?.depr_flag}"></option>
+														<option value="Y">Y</option>
+														<option value="N">N</option>
+													</select>
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<select id="depr_flag" name="depr_flag" style="width: 100%"
-														th:readonly="${formmode}=='verify'"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<select id="depr_flagS" name="depr_flag" style="width: 100%"
+														th:readonly="${formmode}=='verify' OR ${formmode}=='viewnew'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.depr_flag}"></option>
 														<option value="Y">Y</option>
@@ -861,21 +865,22 @@ td {
 													<label for="depr_freq">Depreciation Frequency</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-													th:value="${BAMInventorymaster?.depr_freq}"
-													 id="depr_freq" name="depr_freq" 
-													 style="width: 100%" class="form-control form-control-sm"
-														autocomplete="off" required="required" readonly/>
-														
+													<select id="depr_freq" name="depr_freq" style="width: 100%"
+														class="form-control form-control-sm" required>
+														<option th:text="${BAMInventorymaster?.depr_freq}"></option>
+														<option value="Yearly">Yearly</option>
+														<option value="Monthly">Monthly</option>
+														<option value="Quarterly">Quarterly</option>
+														<option value="Daily">Daily</option>
+													</select>
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<select id="depr_freq" name="depr_freq" style="width: 100%"
-														th:field="*{depr_freq}"
-														th:readonly="${formmode}=='verify'"
-														th:value="${BAMInventorymaster?.depr_freq}"
+														th:readonly="${formmode}=='verify' OR ${formmode}=='viewnew'"
 														class="form-control form-control-sm">
-														<option value="">SELECT</option>
+														<option th:text="${BAMInventorymaster?.depr_freq}"></option>
 														<option value="Yearly">Yearly</option>
 														<option value="Monthly">Monthly</option>
 														<option value="Quarterly">Quarterly</option>
@@ -891,20 +896,23 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-													 th:value="${BAMInventorymaster?.depr_method}" 
-													 id="depr_method" name="depr_method"
-														style="width: 100%" class="form-control form-control-sm"
-														autocomplete="off" required="required" readonly/>
-														
+													<select id="depr_method" name="depr_method" style="width: 100%"
+														class="form-control form-control-sm" required>
+														<option th:text="${BAMInventorymaster?.depr_method}"></option>
+														<option value="">SELECT</option>
+														<option value="SLM">SLM</option>
+														<option value="WDV">WDV</option>
+													</select>
 												</div>
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<select id="depr_method" name="depr_method"
-														style="width: 100%" th:readonly="${formmode}=='verify'"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<select id="depr_method" name="depr_method" style="width: 100%"
+														th:readonly="${formmode}=='verify' OR ${formmode}=='viewnew'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.depr_method}"></option>
-														<option value="Straight">Straight line method</option>
-														<option value="Written">Written down value</option>
+														<option value="">SELECT</option>
+														<option value="SLM">SLM</option>
+														<option value="WDV">WDV</option>
 													</select>
 												</div>
 												<div class="col-sm-1"></div>
@@ -912,14 +920,13 @@ td {
 													<label for="depr_percent">Depreciation Percentage</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_percent}"
+													<input type="text" th:value="${BAMInventorymaster?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
-														name="depr_percent" autocomplete="off" required="required" readonly/>
+														name="depr_percent" autocomplete="off" required="required" />
 												</div>
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_percent}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
 														name="depr_percent" autocomplete="off" readonly="readonly" />
 												</div>
@@ -931,17 +938,16 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" required="required" readonly />
+													<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -951,19 +957,16 @@ td {
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm"
-														name="date_of_last_depr" autocomplete="off"
-														required="required" readonly />
+														id="date_of_last_depr" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_last_depr" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm"
-														name="date_of_last_depr" autocomplete="off"
-														readonly="readonly" />
+														id="date_of_last_depr" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_last_depr" />
 												</div>
 											</div>
 
@@ -972,19 +975,19 @@ td {
 												<div class="col-sm-2">
 													<label for="date_of_acqn">Date of Acquisition</label>
 												</div>
-
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
 														id="date_of_acqn" class="form-control form-control-sm"
-														name="date_of_acqn" autocomplete="off" required="required" readonly />
+														autocomplete="off" name="date_of_acqn" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
 														id="date_of_acqn" class="form-control form-control-sm"
-														name="date_of_acqn" autocomplete="off" readonly="readonly" />
+														autocomplete="off" name="date_of_acqn" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -994,15 +997,14 @@ td {
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_last_tfr, 'yyyy-MM-dd')}"
 														id="date_of_last_tfr" class="form-control form-control-sm"
-														name="date_of_last_tfr" autocomplete="off"
-														required="required" readonly />
+														autocomplete="off" name="date_of_last_tfr" />
 												</div>
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_last_tfr, 'yyyy-MM-dd')}"
 														id="date_of_last_tfr" class="form-control form-control-sm"
-														name="date_of_last_tfr" autocomplete="off"
-														readonly="readonly" />
+														autocomplete="off" name="date_of_last_tfr" />
 												</div>
 											</div>
 
@@ -1013,60 +1015,68 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="number"
+													<input type="text" oninput="formatAmount(this)"
+														onblur="removeFormatting(this)"
+														onfocus="restoreFormatting(this)"
 														th:value="${BAMInventorymaster?.cur_book_value}"
 														id="cur_book_value" class="form-control form-control-sm"
-														name="cur_book_value" autocomplete="off"
-														required="required" readonly />
+														name="cur_book_value" autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" oninput="formatIndianAmount(this)"
 														th:value="${BAMInventorymaster?.cur_book_value}"
 														id="cur_book_value" class="form-control form-control-sm"
-														name="cur_book_value" autocomplete="off"
-														readonly="readonly" />
+														name="cur_book_value" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="mkt_value">Market Value</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
+													<input type="number" oninput="formatAmount(this)"
+														onblur="removeFormatting(this)"
+														onfocus="restoreFormatting(this)"
 														th:value="${BAMInventorymaster?.mkt_value}" id="mkt_value"
 														class="form-control form-control-sm" name="mkt_value"
-														autocomplete="off" required="required" readonly/>
+														autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.mkt_value}" id="mkt_value"
-														class="form-control form-control-sm" name="mkt_value"
-														autocomplete="off" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.mkt_value}"
+														id="mkt_value" class="form-control form-control-sm"
+														name="mkt_value" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
 											<div class="row formline">
 												<div class="col-sm-2">
-													<label for="loc_type">Location Type1</label>
+													<label for="loc_type">Location Type</label>
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													
-													<input type="text" th:value="${BAMInventorymaster?.loc_type}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly="readonly" />
+													<select id="loc_type" name="loc_type" style="width: 100%"
+														class="form-control form-control-sm" required>
+														<option th:text="${BAMInventorymaster?.loc_type}"></option>
+														<option value="OFF">Office</option>
+														<option value="BRAN">Branch</option>
+														<option value="QUA">Quarters</option>
+														<option value="GEN">General</option>
+													</select>
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<select id="loc_type" name="loc_type" style="width: 100%"
 														th:readonly="${formmode}=='verify'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.loc_type}"></option>
-														<option value="Office">Office</option>
-														<option value="Branch">Branch</option>
-														<option value="Quarters">Quarters</option>
-														<option value="General">General</option>
+														<option value="OFF">Office</option>
+														<option value="BRAN">Branch</option>
+														<option value="QUA">Quarters</option>
+														<option value="GEN">General</option>
 													</select>
 												</div>
 												<div class="col-sm-1"></div>
@@ -1075,14 +1085,15 @@ td {
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" required="required" readonly />
+														id="sol_id" class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly="readonly" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly="readonly" />
+														id="sol_id" class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -1093,32 +1104,31 @@ td {
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.emp_id}"
-														id="emp_id" class="form-control form-control-sm"
-														name="emp_id" autocomplete="off" required="required" readonly/>
+														id="emp_id" class="form-control form-control-sm" name="emp_id"
+														autocomplete="off" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.emp_id}"
-														id="emp_id" class="form-control form-control-sm"
-														name="emp_id" autocomplete="off" readonly="readonly" />
+														id="emp_id" class="form-control form-control-sm" name="emp_id"
+														autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="dept_div_name">Department/Division Name</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.dept_div_name}"
+													<input type="text" th:value="${BAMInventorymaster?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
-														name="dept_div_name" autocomplete="off" readonly/>
+														name="dept_div_name" autocomplete="off" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.dept_div_name}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
-														name="dept_div_name" autocomplete="off"
-														readonly="readonly" />
+														name="dept_div_name" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -1129,41 +1139,39 @@ td {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loca_addr}" id="loca_addr"
-														class="form-control form-control-sm" name="loca_addr"
-														autocomplete="off" required="required" readonly/>
+													<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
+														id="loca_addr" class="form-control form-control-sm"
+														name="loca_addr" autocomplete="off" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loca_addr}" id="loca_addr"
-														class="form-control form-control-sm" name="loca_addr"
-														autocomplete="off" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
+														id="loca_addr" class="form-control form-control-sm"
+														name="loca_addr" autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="loc_rmks">Location Remarks</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-														class="form-control form-control-sm" name="loc_rmks"
-														autocomplete="off" required="required" readonly />
+													<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+														id="loc_rmks" class="form-control form-control-sm"
+														name="loc_rmks" autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-														class="form-control form-control-sm" name="loc_rmks"
-														autocomplete="off" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+														id="loc_rmks" class="form-control form-control-sm"
+														name="loc_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
 
 											<div class="row formline">
 												<div class="col-sm-2">
-													<label for="gtee_amt">Guarantee Amt Flag</label>
+													<label for="gtee_amt">Guarantee Amount Flag</label>
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
@@ -1180,10 +1188,11 @@ td {
 														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
 														th:value="${BAMInventorymaster?.gtee_amt}" id="gtee_amt"
 														class="form-control form-control-sm" name="gtee_amt"
-														autocomplete="off" required="required" readonly/>
+														autocomplete="off" required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<!-- <select id="gtee_amt" name="gtee_amt" style="width: 100%"
 														th:field="*{gtee_amt}"
 														th:value="${BAMInventorymaster?.gtee_amt}"
@@ -1193,10 +1202,9 @@ td {
 														<option value="N">N</option>
 													</select> -->
 
-													<input type="text"
-														th:value="${BAMInventorymaster?.gtee_amt}" id="gtee_amt"
-														class="form-control form-control-sm" name="gtee_amt"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.gtee_amt}"
+														id="gtee_amt" class="form-control form-control-sm"
+														name="gtee_amt" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1209,10 +1217,11 @@ td {
 														th:value="${BAMInventorymaster?.gtee_amt_percent}"
 														id="gtee_amt_percent" class="form-control form-control-sm"
 														name="gtee_amt_percent" autocomplete="off"
-														required="required" readonly/>
+														required="required" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
 													<input type="text"
 														th:value="${BAMInventorymaster?.gtee_amt_percent}"
 														id="gtee_amt_percent" class="form-control form-control-sm"
@@ -1230,14 +1239,14 @@ td {
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text"
 														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-														th:value="${BAMInventorymaster?.nom_depr_amt}"
-														id="nom_depr_amt" class="form-control form-control-sm"
-														name="nom_depr_amt" autocomplete="off" readonly />
+														th:value="${BAMInventorymaster?.nom_depr_amt}" id="nom_depr_amt"
+														class="form-control form-control-sm" name="nom_depr_amt"
+														autocomplete="off" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.nom_depr_amt}"
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.nom_depr_amt}"
 														id="nom_depr_amt" class="form-control form-control-sm"
 														name="nom_depr_amt" autocomplete="off" readonly="readonly" />
 												</div>
@@ -1250,14 +1259,14 @@ td {
 														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
 														th:value="${BAMInventorymaster?.depr_rmks}" id="depr_rmks"
 														class="form-control form-control-sm" name="depr_rmks"
-														autocomplete="off" readonly/>
+														autocomplete="off" />
 												</div>
 
-												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_rmks}" id="depr_rmks"
-														class="form-control form-control-sm" name="depr_rmks"
-														autocomplete="off" readonly="readonly" />
+												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
+													class="col-sm-3">
+													<input type="text" th:value="${BAMInventorymaster?.depr_rmks}"
+														id="depr_rmks" class="form-control form-control-sm"
+														name="depr_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 

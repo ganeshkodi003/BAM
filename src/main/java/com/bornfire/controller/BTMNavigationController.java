@@ -10451,9 +10451,9 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 				md.addAttribute("menu", "BTMHeaderMenu");
 				if (formmode == null || formmode.equals("view")) {
 					
-					List<BAMInventorymaster> BAMInventorymaster = BAMInvmastrep.findAll(); // Fetch your data
-			        md.addAttribute("BAMInventorymaster", BAMInventorymaster);
-					md.addAttribute("formmode", "list");
+					 List<BAMInventorymaster> BAMInventorymaster = BAMInvmastrep.getall(); // Fetch your data
+				        md.addAttribute("BAMInventorymaster", BAMInventorymaster);
+				        md.addAttribute("formmode", "list");
 				
 
 				} else if (formmode.equals("edit")) {
