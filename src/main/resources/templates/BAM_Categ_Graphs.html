@@ -176,20 +176,20 @@
                         <div class="col-sm-12">
                             <form action="#" th:object="${asset_flows}" method="POST" autocomplete="off" id="asset_flows">
                                 <div class="card">
-                                    <div class="card-header" style="background-color: #BBC3CB;">
+                                    <div class="card-header p-0" >
                                         <div class="float-left">
-                                            <h3>Categories -pie chart</h3>
+                                            <h3 class="btn btn-sm mr-2 headerbutton mt-1">CATEGORIES -PIE CHART</h3>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <fieldset>
-    									<div class="form-inline">
+    									<div class="form-inline" style="margin-top: -20px;">
     									<div class="col-sm-2"></div>
     									<div class="col-sm-2">
-        								<label for="month" class="mr-2">Select Year:</label>
+        								<label for="month" >Select Year:</label>
         								</div>
         								 <div class="col-sm-3">
-        								<select name="year" id="year" class="form-control form-control-sm" style="margin-left:100px; width:250px;">
+        								<select name="year" id="year" class="form-control form-control-sm" style="margin-left:100px; width:230px;">
 								            <option value="">Select</option>
 								            <option value="2015">2015</option>
 								            <option value="2016">2016</option>
@@ -208,15 +208,15 @@
                                         
                                         <fieldset style="width: 55%; transform: translateX(280px);">
                                             <canvas id="myPieChart"></canvas>
-                                            <div class="total">
-                                                <p><b>total Value:
+                                            <div class="total"  style="margin-top: -20px;">
+                                                <p><b>Total Value:
                                                         <input class="inp" type="text" id="total" />
                                                     </b></p>
                                             </div>
                                         </fieldset>
                                        
                                     </div>
-                                    <div class="card-footer text-center" style="background-color: #BBC3CB;">
+                                    <div class="card-footer text-center p-0" style="margin-top: -30px;">
                                             <button type="button" class="btn headerbutton" id="btnHome" onclick="home()">Home</button>
                                             <button type="button" class="btn headerbutton" id="btnBack" onclick="back()">Back</button>
                                         </div>
