@@ -18,7 +18,8 @@
 	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
 
 <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
@@ -39,14 +40,15 @@
 	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
 <style>
-
 .no-border-table {
-        border: none;
-        border-collapse: collapse; 
-    }
-    .no-border-table td {
-        border: none;
-    }
+	border: none;
+	border-collapse: collapse;
+}
+
+.no-border-table td {
+	border: none;
+}
+
 .btns {
 	float: right;
 	margin: 5px;
@@ -97,11 +99,11 @@ fieldset {
 }
 
 legend {
-    color: #3C6EAC;
-    font-size: 20px;
-    font-weight: bold !important;
-    text-align: left !important;
-    border-bottom: none;
+	color: #3C6EAC;
+	font-size: 20px;
+	font-weight: bold !important;
+	text-align: left !important;
+	border-bottom: none;
 }
 
 .filterable .filters input[readonly] {
@@ -124,40 +126,43 @@ legend {
 .filterable .filters input[readonly]:-ms-input-placeholder {
 	color: #333;
 }
+
 .form-group {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
 }
 
 .form-group label, .form-group input, .form-group select {
-    flex: 1;
-    margin-right: 10px;
+	flex: 1;
+	margin-right: 10px;
 }
 
 .form-group input, .form-group select {
-    padding: 5px;
-    flex: 2;
+	padding: 5px;
+	flex: 2;
 }
 
 .container {
-    width: 100%;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: #ffffff;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
 }
+
 .red-border {
-            border: 1px solid black;
-            padding: 10px;
-            margin-top: 20px;
-            color: #A52A2A;
-        }
-        .red-border div {
-            display: flex;
-            justify-content: space-between;
-        }
+	border: 1px solid black;
+	padding: 10px;
+	margin-top: 20px;
+	color: #A52A2A;
+}
+
+.red-border div {
+	display: flex;
+	justify-content: space-between;
+}
 </style>
 <script th:inline="javascript">
 	/*<![CDATA[*/
@@ -315,14 +320,16 @@ legend {
 
 											<div class="panel panel-primary filterable ">
 												<div class="card-header d-flex justify-content-between p-1">
-													<h4 class="headerbutton p-2"> DEPRECIATION TRANSACTION LIST</h4>
-													<button
-														class="btn text-white  btn-filter headerbutton">Filter</button>
+													<h4 class="headerbutton p-2">DEPRECIATION TRANSACTION
+														LIST</h4>
+													<button class="btn text-white  btn-filter headerbutton">Filter</button>
 												</div>
 
-												<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
+												<div class="table-responsive"
+													style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 													<table class="table bordered table-bordered">
-														<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
+														<thead
+															style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 															<tr class="filters">
 																<th><input type="text"
 																	class="form-control font-weight-bold"
@@ -336,13 +343,13 @@ legend {
 																<th><input type="text"
 																	class="form-control font-weight-bold"
 																	placeholder="Depreciation percentage" readonly></th>
-																<th><input type="text"style="width:200px;"
+																<th><input type="text" style="width: 200px;"
 																	class="form-control font-weight-bold"
 																	placeholder="Depreciation method" readonly></th>
-																<th><input type="text"style="width:200px;"
+																<th><input type="text" style="width: 200px;"
 																	class="form-control font-weight-bold"
 																	placeholder="Tran ID" readonly></th>
-																<th><input type="text"style="width:200px;"
+																<th><input type="text" style="width: 200px;"
 																	class="form-control font-weight-bold"
 																	placeholder="Tran Date" readonly></th>
 																<th>Select</th>
@@ -377,13 +384,14 @@ legend {
 																<td th:text="${gettran?.depreciation_percentage}"></td>
 																<td th:text="${gettran?.depreciation_method}"></td>
 																<td th:text="${gettran?.gen_tran_id}"></td>
-																<td th:text="${#dates.format(gettran?.gen_tran_date,'dd-MM-yyyy')}"></td>
-																
+																<td
+																	th:text="${#dates.format(gettran?.gen_tran_date,'dd-MM-yyyy')}"></td>
+
 																<td><input th:if="${formmode}=='list'"
 																	class="form-control-md checkToView"
 																	th:value="${gettran?.gen_tran_id}" type="radio" /></td>
-																</tr>
-										
+															</tr>
+
 														</tbody>
 													</table>
 												</div>
@@ -415,270 +423,272 @@ legend {
 										<div class="float-left">
 											<h3 th:if="${formmode}=='view'">Depreciation Transaction</h3>
 										</div>
+									</div>
+									<div class="card-body">
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="Assno">Asset Serial Number</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="Assno" th:if="${formmode}=='view'"
+													th:value="${gettranview?.asset_serial_no}"
+													class="form-control form-control-sm" readonly>
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="employeeName">Asset Name</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName"
+													th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${gettranview?.asset_name}" readonly />
+											</div>
 										</div>
-										<div class="card-body">
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="Assno">Asset Serial Number</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="Assno"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.asset_serial_no}"
-															class="form-control form-control-sm"readonly >
-													</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="employeeName">Asset Name</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${gettranview?.asset_name}" readonly />
-													</div>
-												</div>
-												
-												
-												
-											 	<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Asset Type</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeName"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${gettranview?.asset_type}" readonly />
-													</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Original Cost</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeName"
-															th:value="${gettranview?.original_cost}"
-															class="form-control form-control-sm" readonly/>
-													</div>
-												</div>
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Asset Currency</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="employeeName"
-															th:value="${gettranview?.asset_currency}"
-															class="form-control form-control-sm" readonly/>
-													
-													</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Accumulated Depreciation</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															th:value="${gettranview?.accum_depres}"
-															class="form-control form-control-sm"readonly/>
-													</div>
-												</div>
-												
-												
-												
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Date of Purchase</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															th:if="${formmode}=='view'"
-															th:value="${#dates.format(gettranview?.date_of_purchase,'dd-MM-yyyy')}"
-															class="form-control form-control-sm" readonly/>
-													</div>
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Asset Type</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName"
+													th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${gettranview?.asset_type}" readonly />
+											</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Year of Purchase</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.year_of_purchase}"
-															class="form-control form-control-sm" readonly/>
-												
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Current Book value</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.curr_book_value}" readonly/>
-													</div>
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Original Cost</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName"
+													th:value="${gettranview?.original_cost}"
+													class="form-control form-control-sm" readonly />
+											</div>
+										</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Asset Expiry Date</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:if="${formmode}=='view'"
-															th:value="${#dates.format(gettranview?.asst_exp_date,'dd-MM-yyyy')}" readonly/>
-													</div>
-												</div>
-												
-												
-										
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Depreciation Flag</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.depreciation_flg}" readonly/>
-													
-													</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Depreciation Percentage</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.depreciation_percentage}" readonly />
-													</div>
-												</div>
-												 
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Depreciation Method</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.depreciation_method}" readonly />
-													</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Date of Last Depreciation</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															 th:value="${#dates.format(gettranview?.date_of_last_depreciation,'dd-MM-yyyy')}"readonly/>
-													</div>
-												</div>
-												
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">Depreciation Frequency</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.depreciation_frequency}"
-															class="form-control form-control-sm" readonly />
-													</div>
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Asset Currency</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="employeeName"
+													th:value="${gettranview?.asset_currency}"
+													class="form-control form-control-sm" readonly />
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">Date of Acquisition</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${#dates.format(gettranview?.acquis_date,'dd-MM-yyyy')}"readonly/>
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">TRAN ID</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															th:if="${formmode}=='view'"
-															class="form-control form-control-sm"
-															th:value="${gettranview?.gen_tran_id}"readonly/>
-													</div>
+											</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">TRAN DATE</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:if="${formmode}=='view'"
-															th:value="${gettranview?.gen_tran_id}"  readonly/>
-													</div>
-												</div>
-												
-												
-												<div class="row formline">
-													<div class="col-sm-2">
-														<label for="designation">AMOUNT</label>
-													</div>
-													<div class="col-sm-2">
-														<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:value="${gettranview?.gen_amount}"  readonly />
-													</div>
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Accumulated Depreciation</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													th:value="${gettranview?.accum_depres}"
+													class="form-control form-control-sm" readonly />
+											</div>
+										</div>
 
-													<div class="col-sm-2"></div>
-													<div class="col-sm-2">
-														<label for="dob">REMARKS</label>
-													</div>
-													<div class="col-sm-2">
-															<input type="text" id="designation"
-															class="form-control form-control-sm"
-															th:value="${gettranview?.gen_remarks}"  readonly />
-													</div>
-																								
-													</div>
-												
-																				
-												
-												
-												
-												
-												
-												
-												
-										
-												</div>
-												
-										
-									
-									
-									
-										<div class="card-footer text-center">
+
+
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Date of Purchase</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													th:if="${formmode}=='view'"
+													th:value="${#dates.format(gettranview?.date_of_purchase,'dd-MM-yyyy')}"
+													class="form-control form-control-sm" readonly />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Year of Purchase</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.year_of_purchase}"
+													class="form-control form-control-sm" readonly />
+
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Current Book value</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.curr_book_value}" readonly />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Asset Expiry Date</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:if="${formmode}=='view'"
+													th:value="${#dates.format(gettranview?.asst_exp_date,'dd-MM-yyyy')}"
+													readonly />
+											</div>
+										</div>
+
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Depreciation Flag</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.depreciation_flg}" readonly />
+
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Depreciation Percentage</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.depreciation_percentage}" readonly />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Depreciation Method</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.depreciation_method}" readonly />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Date of Last Depreciation</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:value="${#dates.format(gettranview?.date_of_last_depreciation,'dd-MM-yyyy')}"
+													readonly />
+											</div>
+										</div>
+
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">Depreciation Frequency</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.depreciation_frequency}"
+													class="form-control form-control-sm" readonly />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">Date of Acquisition</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${#dates.format(gettranview?.acquis_date,'dd-MM-yyyy')}"
+													readonly />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">TRAN ID</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													th:if="${formmode}=='view'"
+													class="form-control form-control-sm"
+													th:value="${gettranview?.gen_tran_id}" readonly />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">TRAN DATE</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:if="${formmode}=='view'"
+													th:value="${gettranview?.gen_tran_id}" readonly />
+											</div>
+										</div>
+
+
+										<div class="row formline">
+											<div class="col-sm-2">
+												<label for="designation">AMOUNT</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:value="${gettranview?.gen_amount}" readonly />
+											</div>
+
+											<div class="col-sm-2"></div>
+											<div class="col-sm-2">
+												<label for="dob">REMARKS</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="text" id="designation"
+													class="form-control form-control-sm"
+													th:value="${gettranview?.gen_remarks}" readonly />
+											</div>
+
+										</div>
+
+
+
+
+
+
+
+
+
+
+									</div>
+
+
+
+
+
+									<div class="card-footer text-center">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
@@ -687,82 +697,61 @@ legend {
 											onclick="back()">Back</button>
 
 									</div>
-									
-							
+
+
 									<!-- Conditionally display the table based on formmode  view-->
-<div class="table-responsive" th:object="${gettranview1}" th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
-    <table class="table no-border-table  table-bordered  table-hover table-sm" style="margin-bottom: 10px; font-size: initial;">
-        <tr>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Entry User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-                <input type="text" id="entryuser" name="entry_user" 
-                       th:value="${gettranview1?.entry_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Modify User :</B></font>
-            </td>
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="modifyuser" name="modify_user" 
-                          th:value="${gettranview1?.modify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td class="col-sm-2" style="text-align: right;">
-                <font size="2"><B>Verify User :</B></font>
-            </td>
-            <!-- 
-                          -->
-            <td class="col-sm-2" style="width: 112px;">
-                <input type="text" id="verifyuser" name="verify_user" 
-                th:value="${gettranview1?.verify_user}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        <tr>
-            <td style="text-align: right;">
-                <font size="2"><B>Entry Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="entrytime" name="entry_time"
-                       th:value="${gettranview1?.entry_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Modify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="modifytime" name="modify_time"
-                          th:value="${gettranview1?.modify_time}"
-                       style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-            <td style="text-align: right;">
-                <font size="2"><B>Verify Time :</B></font>
-            </td>
-            <td style="width: 112px">
-                <input type="text" id="verifytime" name="verify_time"
-                       th:value="${gettranview1?.verify_time}"
-                       style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-                       readonly>
-            </td>
-        </tr>
-        
-    </table>
-								</div>
-									
+									<div class="table-responsive" th:object="${gettranview1}"
+										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'OR ${formmode}=='view' ">
+								
+											<div class="content m-2 " style="padding: 15px;">
+										<div class="row formline">
+											<label class="col-sm-2">Entry User</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_user" name="entry_user"
+												th:value="${gettranview1?.entry_user}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Modify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_user" name="modify_user"
+												th:value="${gettranview1?.modify_user}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Verify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_user" name="auth_user"
+												th:value="${gettranview1?.verify_user}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+										</div>
+										<div class="row formline mt-2">
+											<label class="col-sm-2">Entry Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_date" name="entry_time" th:value="${gettranview1?.entry_time}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Modify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_time" name="modify_time" th:value="${gettranview1?.modify_time}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Verify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_time" name="auth_time" th:value="${gettranview1?.verify_time}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+										</div>
+									</div>
+										
+									</div>
+
 								</div>
 							</form>
-							
-							
-				
-							
-							
+
+
+
+
+
 						</div>
 					</div>
 				</div>

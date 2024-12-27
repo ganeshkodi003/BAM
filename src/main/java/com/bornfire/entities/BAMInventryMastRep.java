@@ -15,7 +15,7 @@ public interface BAMInventryMastRep extends JpaRepository<BAMInventorymaster, St
 	 BAMInventorymaster  getview(String asst_srl_no);
 	
 
-	 @Query(value = "SELECT * from BAM_INVENTORY_MASTER where del_flg = 'N' and sale_flg is null ",nativeQuery = true) 
+	 @Query(value = "SELECT * from BAM_INVENTORY_MASTER where del_flg = 'N' and sale_flg is null AND verify_flg ='Y'",nativeQuery = true) 
 	 List<BAMInventorymaster>   getall();
 
 
