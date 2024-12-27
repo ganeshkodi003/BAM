@@ -64,9 +64,7 @@
 .no-border-table td {
 	border: none;
 }
-.form-control{
-	border: 1px solid #495561 !important;
-}
+
 .table {
 	width: 129%;
 	margin-bottom: 1rem;
@@ -116,6 +114,7 @@ nav {
 }
 
 fieldset {
+	
 	border-radius: 5px;
 	padding: 10px;
 	margin-top: 10px;
@@ -910,8 +909,16 @@ if (j === 8 && i > 0) {
 </script>
 
 <script>
+function removeCommas(value) {
+    // Ensure the input is a string
+    const stringValue = value.toString();
+
+    // Replace all commas with an empty string
+    return stringValue.replace(/,/g, '');
+}
+
 function addSubmit() {
-		
+		alert("hi");
 		var value = $('#input_0_1').val();
 
 		if (!value) {
@@ -931,13 +938,18 @@ function addSubmit() {
 		    var life_span_months1 = $("input[name='life_span_months']").val();
 		    var depreciation_start_date1 = $("input[name='depreciation_start_date']").val();
 		    var asset_type1 = $("input[name='asset_type']").val();
+		    
 		    var original_cost1 = $("input[name='original_cost']").val();
+		    
 		    var accum_depres1 = $("input[name='accum_depres']").val();
+		    
 		    var curr_book_value1 = $("input[name='curr_book_value']").val();
+		    
 		    var depreciation_flg1 = $("input[name='depreciation_flg']").val();
 		    var depreciation_method1 = $('#dep_method').val();
 		    var depreciation_percentage1 = $("input[name='depreciation_percentage']").val();
 		    var depreciation_frequency1 = $("input[name='depreciation_frequency']").val();
+		   
 		    var date_of_last_depreciation1 = $("input[name='date_of_last_depreciation']").val();
 		    
 		    
@@ -953,9 +965,15 @@ function addSubmit() {
     var input_rows3 = row.find('input[name="input_rows3"]').val() || 0;
     var input_rows4 = row.find('input[name="input_rows4"]').val() || 0;
     var input_rows5 = row.find('input[name="input_rows5"]').val() || 0;
-    var input_rows6 = row.find('input[name="input_rows6"]').val() || 0;
-    var input_rows7 = row.find('input[name="input_rows7"]').val() || 0;
-    var input_rows8 = row.find('input[name="input_rows8"]').val() || 0;
+    var input_rows6s = row.find('input[name="input_rows6"]').val() || 0;
+    var input_rows6 = removeCommas(input_rows6s);
+    
+    var input_rows7s = row.find('input[name="input_rows7"]').val() || 0;
+    var input_rows7 = removeCommas(input_rows7s);
+    var input_rows8s = row.find('input[name="input_rows8"]').val() || 0;
+    var input_rows8 = removeCommas(input_rows8s);
+    
+    
     var input_rows9 = row.find('input[name="input_rows9"]').val() || 0;
     var input_rows10 = row.find('input[name="input_rows10"]').val() || 0;
     var input_rows11 = row.find('input[name="input_rows11"]').val() || 0;
@@ -1126,12 +1144,8 @@ function handleSelectChange() {
 }
 
 </script>
-<script>
-		// Override the alert function globally to do nothing
-		window.alert = function () { };
-	</script>
 </head>
-<title>BAM</title>
+<title>BTM</title>
 
 <body>
 
@@ -1150,14 +1164,15 @@ function handleSelectChange() {
 								<div class="card">
 
 									<div class="card-header p-1">
-										<div class="float-left ">
-											<h3 class="headerbutton pl-4 pt-2">ASSET FLOW</h3>
+										<div class="float-left mt-3">
+											<h3 class="headerh6">ASSET FLOW</h3>
 										</div>
-										<div class=" text-center">
-											<button type="button" class="btn  headerbutton"
-												style="text-align: center;" id="genflow"
-												onclick="genflows();">GENERATE FLOWS</button>
-										</div>
+										<div class="card-footer text-center"
+												style="background-color: #BBC3CB;">
+												<button type="button" class="btn btn-sm headerbutton"
+													style="text-align: center;" id="genflow"
+													onclick="genflows();">GENERATE FLOWS</button>
+											</div>
 									</div>
 									<div class="card-body">
 										<fieldset>
@@ -1378,7 +1393,7 @@ function handleSelectChange() {
 													</div>
 												</div>
 											</div>
-
+											
 										</fieldset>
 
 
@@ -1487,52 +1502,55 @@ function handleSelectChange() {
 
 									</div> -->
 
-									
 									<div class="content m-2 " style="padding: 15px;">
 										<div class="row formline">
 											<label class="col-sm-2">Entry User</label>
 											<div class="col-sm-2">
-												<input type="text" id="entry_user" name="entry_user"
+												<input type="text" id="entryuser" name="entry_user"
 													th:value="${entryuser?.entry_user}"
-													class="form-control form-control-sm" autocomplete="off"
-													readonly />
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
 											</div>
 											<label class="col-sm-2">Modify User</label>
 											<div class="col-sm-2">
-												<input type="text" id="modify_user" name="modify_user"
+												<input type="text" id="modifyuser" name="modify_user"
 													th:value="${entryuser?.modify_user}"
-													class="form-control form-control-sm" autocomplete="off"
-													readonly />
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
 											</div>
 											<label class="col-sm-2">Verify User</label>
 											<div class="col-sm-2">
-												<input type="text" id="auth_user" name="auth_user"
+												<input type="text" id="verifyuser" name="verify_user"
 													th:value="${entryuser?.verify_user}"
-													class="form-control form-control-sm" autocomplete="off"
-													readonly />
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
 											</div>
 										</div>
 										<div class="row formline mt-2">
 											<label class="col-sm-2">Entry Time</label>
 											<div class="col-sm-2">
-												<input type="text" id="entry_date" name="entry_time"
-													class="form-control form-control-sm" autocomplete="off"
-													th:value="${entryuser?.entry_time}" readonly />
+												<input type="text" id="entrytime" name="entry_time"
+													th:value="${entryuser?.entry_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
 											</div>
 											<label class="col-sm-2">Modify Time</label>
 											<div class="col-sm-2">
-												<input type="text" id="modify_time" name="modify_time"
-													class="form-control form-control-sm" autocomplete="off"
-													th:value="${entryuser?.modify_time}" readonly />
+												<input type="text" id="modifytime" name="modify_time"
+													th:value="${entryuser?.modify_time}"
+													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
 											</div>
 											<label class="col-sm-2">Verify Time</label>
 											<div class="col-sm-2">
-												<input type="text" id="auth_time" name="auth_time"
-													class="form-control form-control-sm" autocomplete="off"
-													th:value="${entryuser?.verify_time}" readonly />
+												<input type="text" id="verifytime" name="verify_time"
+													th:value="${entryuser?.verify_time}"
+													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+													readonly>
 											</div>
 										</div>
 									</div>
+
 								</div>
 							</form>
 						</div>
