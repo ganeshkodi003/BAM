@@ -15,11 +15,13 @@
 	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.js}"></script>
 <script src="/webjars/jquery/3.4.1/jquery.js"
 	th:src="@{/webjars/jquery/3.4.1/jquery.js}"></script>
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
 
 <link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
 <script>
         // Prevent going back to the previous page
         history.pushState(null, null, location.href);
@@ -400,7 +402,7 @@ body {
 }
 
 body {
-	background-image: url("images/bodyBG.jpg");
+	background-image: url("images/background.jpg");	
 	background-size: cover;
 }
 </style>
@@ -429,7 +431,7 @@ body {
  * Card component
  */
 .card {
-	background-color: #F7F7F7;
+	background-color: white;
 	/* just in case there no content*/
 	padding: 20px 25px 30px;
 	margin: 0 auto 25px;
@@ -507,26 +509,29 @@ body {
 }
 
 .btn.btn-signin {
-	/*background-color: #4d90fe; */
-	background-color: rgb(104, 145, 162);
-	/* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+	background-color: #ff5722;
 	padding: 0px;
 	font-weight: 700;
 	font-size: 14px;
 	height: 36px;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
 	border-radius: 3px;
 	border: none;
-	-o-transition: all 0.218s;
-	-moz-transition: all 0.218s;
-	-webkit-transition: all 0.218s;
 	transition: all 0.218s;
 }
 
-.btn.btn-signin:hover, .btn.btn-signin:active, .btn.btn-signin:focus {
-	background-color: rgb(12, 97, 33);
+.btn {
+	font-weight: 700;
+	height: 36px;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: default;
 }
+
+.btn.btn-signin:hover, .btn.btn-signin:active, .btn.btn-signin:focus {
+	background-color: rgb(238, 51, 36);
+}
+
 
 .forgot-password {
 	color: rgb(104, 145, 162);
@@ -547,10 +552,10 @@ body {
 			<div th:if="${message != null}" class="m-3">
 				<p class="text-danger">[[${message}]]</p>
 			</div>
-			<img id="profile-img" class="profile-img-card"
-				th:src=@{/images/Bornfire.png} />
+			<img id="profile-img" class=""
+				th:src=@{/images/banklogo.jpeg} />
 
-			<p id="profile-name" class="profile-name-card">BAM Login</p>
+			<p id="profile-name" class="profile-name-card" style="color: #ff5722;">BAM Login</p>
 			<form th:action="@{/login}" method="post" name="Login_Form"
 				class="form-signin">
 				<input type="text" class="form-control" name="userid"
@@ -562,10 +567,11 @@ body {
 						th:text="${param.error}">test</span> <span style="color: #34af32;"
 						th:if="${param.logout}">You have been logged out.</span>
 				</div>
-				<button class="btn btn-lg btn-primary btn-block btn-signin"
+				<button class="btn btn-lg btn-primary btn-block btn-signin headerbutton"
 					type="submit">Sign in</button>
-				<p class="btn btn-lg btn-primary btn-block btn-signin" style="padding-top:7px;"
-					onclick="openForm()">Change Password</p>
+				<!-- <p class="btn btn-lg btn-primary btn-block btn-signin headerbutton" style="padding-top:7px;"
+					onclick="openForm()">Change Password</p> -->
+					<a onclick="openForm()" style="cursor: pointer" id="forgetPassword"><u><i>Forget password ?</i></u></a>
 
 
 
