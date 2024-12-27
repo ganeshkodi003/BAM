@@ -238,7 +238,8 @@ input:hover+.password-info {
 
 .subtablinks.active {
 	background-color: #2084a9;
-	color: white;
+	color: #f26222 !important;
+	font-weight: bolder;
 }
 
 .hover-underline:hover {
@@ -468,6 +469,13 @@ input:hover+.password-info {
 		// Show selected main tab and set as active
 		document.getElementById(tabName).style.display = "block";
 		evt.currentTarget.className += " active";
+	
+		const addButton = document.getElementById("addButton");
+    if (tabName === "tab2") {
+        addButton.style.display = "inline-block";
+    } else {
+        addButton.style.display = "none";
+    }
 	}
 
 	function openSubTab(evt, subTabName) {
@@ -486,14 +494,7 @@ input:hover+.password-info {
 		}
 
 		// Show selected sub-tab and set as active
-		document.getElementById(subTabName).style.display = "block";
-		evt.currentTarget.className += " active";
-		const addButton = document.getElementById("addButton");
-    if (tabName === "tab2") {
-        addButton.style.display = "display";
-    } else {
-        addButton.style.display = "none";
-    }
+
 	}
 </script>
 <script>
@@ -919,16 +920,16 @@ input:hover+.password-info {
 
 						</div>
 						<div id="tabCalendar" class="tabcontent" style="display: none;">
-							<div class="tab mt-2"
+							<div class=" mt-2"
 								style="padding: 4px 4px; position: relative; display: flex; justify-content: space-around; margin-top: 10px; width: 100%; height: 43px">
 								<!-- Submodule Tab buttons for Calendar Maintenance -->
-								<button class="subtablinks"
+								<button class="subtablinks "
 									onclick="openSubTab(event, 'tabCalendarMaster')"
-									style="font-size: 16px; padding: 4px 8px; height: 32px;">Calendar
+									style="font-size: 16px; padding: 4px 8px; height: 32px; background-color: white;">Calendar
 									Master</button>
 								<button class="subtablinks"
 									onclick="openSubTab(event, 'tabHolidayMaster')"
-									style="font-size: 16px; padding: 4px 8px; height: 32px;">Holiday
+									style="font-size: 16px; padding: 4px 8px; height: 32px;background-color: white;">Holiday
 									Master</button>
 							</div>
 
