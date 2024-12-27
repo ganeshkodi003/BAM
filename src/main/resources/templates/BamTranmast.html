@@ -112,7 +112,9 @@
 	float: right;
 	margin: 5px;
 }
-
+.table-bordered td, .table-bordered th {
+border: 1px solid black !important;
+}
 .col-sm-5 {
 	padding-bottom: 15px;
 }
@@ -654,12 +656,11 @@ td input {
 								<div class="card panel panel-primary filterable">
 									<div class="card-header p-0 ">
 										<div class="float-left">
-											<h4 th:if="${formmode}=='add'" class="headerh6 p-1 pl-3 pt-2">Transaction
-												Master</h4>
+											<h4 th:if="${formmode}=='add'" class="headerbutton p-1 pl-3 pt-2">TRANSACATION MASTER
+												</h4>
 											<h4 th:if="${formmode}=='list'"
-												class="headerh6 p-1 pl-2 pt-2">List of Transaction
-												Master</h4>
-											<h4 th:if="${formmode}=='view'" class="headerh6 p-1 pt-2">View
+												class="headerbutton p-1 pl-2 pt-3">LIST OF TRANSACATION MASTER</h4>
+											<h4 th:if="${formmode}=='view'" class="headerbutton p-1 pt-2">View
 												of Transaction Master</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right">
@@ -927,7 +928,7 @@ td input {
 									</div>
 									<div class="" th:if="${formmode}== 'list'">
 										<div class="table-responsive">
-											<table class="table table-bordered">
+											<table class="table table-bordered bord">
 												<thead>
 													<tr class="filters">
 
