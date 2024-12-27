@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name ="BAM_CATEGORY_CODE_MAINTAINANCE")
 public class Bamcategorycodemain {
@@ -32,8 +34,11 @@ public class Bamcategorycodemain {
 	private String	entry_user;
 	private String	modify_user;
 	private String	verify_user;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	entry_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	modify_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date	verify_time;
 	
 	
