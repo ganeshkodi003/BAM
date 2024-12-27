@@ -116,8 +116,7 @@ nav {
 fieldset {
 	
 	border-radius: 5px;
-	padding: 10px;
-	margin-top: 10px;
+	
 }
 
 .filterable .filters input[readonly] {
@@ -1128,9 +1127,9 @@ function handleSelectChange() {
 								autocomplete="off" id="asset_flows">
 								<div class="card">
 
-									<div class="card-header p-1">
+									<!-- <div class="card-header p-1">
 										<div class="float-left mt-3">
-											<h3 class="headerh6">ASSET FLOW</h3>
+											<h3 class="btn btn-sm headerbutton ">ASSET FLOW</h3>
 										</div>
 										<div class="card-footer text-center"
 												style="background-color: #BBC3CB;">
@@ -1138,6 +1137,15 @@ function handleSelectChange() {
 													style="text-align: center;" id="genflow"
 													onclick="genflows();">GENERATE FLOWS</button>
 											</div>
+									</div> -->
+									<div class="card-header p-0">
+										<div class="d-flex justify-content-between align-items-center">
+											<div>
+												<h3 class="btn btn-sm mr-2 headerbutton mt-2 " style="font-weight:bolder;">ASSET FLOW</h3>
+											</div>
+											<button type="button"
+												class="btn btns headerbutton" style="margin-right:600px">GENERATE FLOWS</button>
+										</div>
 									</div>
 									<div class="card-body">
 										<fieldset>
@@ -1363,7 +1371,7 @@ function handleSelectChange() {
 
 
 										<fieldset id="tableset" style="display: none">
-											<div class="table-responsive mt-3">
+											<div class="table-responsive">
 												<table class="table table-bordered mt-3" id="flowsTable">
 													<thead>
 														<tr>

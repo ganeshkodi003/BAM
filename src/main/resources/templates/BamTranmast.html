@@ -542,7 +542,7 @@ td input {
 											<h4 th:if="${formmode}=='view'" class="headerh6 p-1 pt-2">View
 												of Transaction Master</h4>
 										</div>
-										<div class="btn-group nav-buttons float-right">
+										<div class="btn-group nav-buttons float-right" >
 											<button type="button"
 												class="btn btn-xs  headerbutton btns text-white" id="btnAdd"
 												onclick="addpara();" th:if="${formmode}=='list'"
@@ -553,7 +553,7 @@ td input {
 												style="font-size: 15px; width: -70px; size: 100px;">List</button>
 										</div>
 										<div class="col-sm-2"
-											style="margin-left: 500px; margin-top: 7px">
+											style="margin-left: 500px; margin-top: 7px" th:if="${formmode}=='add'">
 											<select style="width: 100%" onchange="genflows(this)"
 												name="process" id="process"
 												class="form-control form-control-sm" required>
