@@ -903,7 +903,7 @@ public class ReportServices {
 
 		    String fileName = "Transfer_Report" + from_sol_id + "_" + new SimpleDateFormat("yyyy-MM-dd").format(report_date);
 		    File outputFile = null;
-
+		    System.out.println("came to services");
 		    try {
 		        InputStream jasperFile = this.getClass().getResourceAsStream("/static/jasper/InventoryTransfer.jrxml");
 		        JasperReport jr = JasperCompileManager.compileReport(jasperFile);
@@ -938,7 +938,7 @@ public class ReportServices {
 
 		    String fileName = "Transfer_Report" +"_" + new SimpleDateFormat("yyyy-MM-dd").format(report_date);
 		    File outputFile = null;
-
+		    System.out.println("came to services ony date");
 		    try {
 		        InputStream jasperFile = this.getClass().getResourceAsStream("/static/jasper/InventoryTransfer.jrxml");
 		        JasperReport jr = JasperCompileManager.compileReport(jasperFile);
@@ -973,7 +973,7 @@ public class ReportServices {
 
 		    String fileName = "Transfer_Report" + from_sol_id;
 		    File outputFile = null;
-
+		    System.out.println("came to services only sol");
 		    try {
 		        InputStream jasperFile = this.getClass().getResourceAsStream("/static/jasper/InventoryTransfer.jrxml");
 		        JasperReport jr = JasperCompileManager.compileReport(jasperFile);

@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InventoryReport" pageWidth="2000" pageHeight="2000" columnWidth="1960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="34a61233-321f-4de3-97f9-c01c335d15eb">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bam.jrdax"/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InventoryReport" pageWidth="1500" pageHeight="2000" columnWidth="1460" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="34a61233-321f-4de3-97f9-c01c335d15eb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BAM.jrdax"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="DATE_OF_PURCHASE" class="java.util.Date"/>
 	<parameter name="SOL ID" class="java.lang.String"/>
@@ -137,7 +128,7 @@
 		<property name="com.jaspersoft.studio.field.name" value="LOC_RMKS"/>
 		<property name="com.jaspersoft.studio.field.label" value="LOC_RMKS"/>
 	</field>
-	<field name="GTEE_AMT" class="java.math.BigDecimal">
+	<field name="GTEE_AMT" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="GTEE_AMT"/>
 		<property name="com.jaspersoft.studio.field.label" value="GTEE_AMT"/>
 	</field>
@@ -200,6 +191,26 @@
 	<field name="VERIFY_FLG" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.name" value="VERIFY_FLG"/>
 		<property name="com.jaspersoft.studio.field.label" value="VERIFY_FLG"/>
+	</field>
+	<field name="ACC_NUMBER" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ACC_NUMBER"/>
+		<property name="com.jaspersoft.studio.field.label" value="ACC_NUMBER"/>
+	</field>
+	<field name="VENDER_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VENDER_NAME"/>
+		<property name="com.jaspersoft.studio.field.label" value="VENDER_NAME"/>
+	</field>
+	<field name="PURCHASE_DETAILS" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="PURCHASE_DETAILS"/>
+		<property name="com.jaspersoft.studio.field.label" value="PURCHASE_DETAILS"/>
+	</field>
+	<field name="VERIFY_TIME" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="VERIFY_TIME"/>
+		<property name="com.jaspersoft.studio.field.label" value="VERIFY_TIME"/>
+	</field>
+	<field name="VERIFY_USER" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="VERIFY_USER"/>
+		<property name="com.jaspersoft.studio.field.label" value="VERIFY_USER"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
