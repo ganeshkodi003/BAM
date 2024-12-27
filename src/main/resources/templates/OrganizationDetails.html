@@ -55,9 +55,7 @@ body {
 	font-size: 0.8rem;
 }
 
-.btn {
-	line-height: 0.5rem;
-}
+
 
 .table-bordered td, .table-bordered th {
 	font-size: smaller;
@@ -248,6 +246,7 @@ input:hover+.password-info {
 	cursor: pointer;
 	/* Sets underline color to blue */
 }
+
 </style>
 
 
@@ -494,6 +493,8 @@ input:hover+.password-info {
 		}
 
 		// Show selected sub-tab and set as active
+document.getElementById(subTabName).style.display = "block";
+		evt.currentTarget.className += " active";
 
 	}
 </script>
