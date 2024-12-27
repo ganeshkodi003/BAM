@@ -7354,7 +7354,8 @@ none
 }
 
 .nav-tabs .nav-item {
-	margin-bottom: -1px
+	margin-bottom: -1px;
+	padding:2px;
 }
 
 .nav-tabs .nav-link {
@@ -16151,4 +16152,18 @@ input {
 	color: white !important;
 	margin-bottom: 0;
 	
+}
+.nav-item{
+	padding: 2px;
+	
+}
+.nav-link{
+	font-size: 12pt;
+	font-weight: bold;
+	color: white;
+	
+}
+.nav-link:hover {
+    color: orange; /* Change this to your desired hover color */
+    text-decoration: underline; /* Optional: Adds underline on hover */
 }
