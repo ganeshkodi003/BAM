@@ -370,6 +370,10 @@
 
 
 	</script>
+	<script>
+				// Override the alert function globally to do nothing
+				window.alert = function () { };
+			</script>
 
 
 </head>
@@ -691,16 +695,16 @@
 
 
 
-											<button th:if="${formmode}=='edit'" type="button"
+										<!--	<button th:if="${formmode}=='edit'" type="button"
 												class="btn btn-xs headerbutton" onclick="submiteditform(this);"
 												form="Bamcategorycodemain" id="btnSubmit"
-												th:attr="data-formmode='edit'">Submit</button>
+												th:attr="data-formmode='edit'">Submit</button>-->
 
-
+<!--
 											<button th:if="${formmode}=='edit'" type="button"
 												class="btn btn-xs headerbutton" th:value="${Bamcategorycodemain?.sl_no}"
 												onclick="Deleteform(this);" id="deleteSubmit"
-												th:attr="data-formmode='edit'">Delete</button>
+												th:attr="data-formmode='edit'">Delete</button>-->
 
 											<button type="button" class="btn headerbutton" id="btnBack"
 												onclick="back();">Back</button>
@@ -993,9 +997,9 @@
 									<div class="card-footer text-center">
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
-										<button th:if="${formmode}=='add'" type="button" class="btn btn-xs headerbutton"
+										<!--<button th:if="${formmode}=='add'" type="button" class="btn btn-xs headerbutton"
 											onclick="submitaddform(this);" form="Bamcategorycodemain" id="btnSubmit"
-											th:attr="data-formmode='edit'">Submit</button>
+											th:attr="data-formmode='edit'">Submit</button>-->
 										<button type="button" class="btn headerbutton" id="btnBack"
 											onclick="back();">Back</button>
 									</div>

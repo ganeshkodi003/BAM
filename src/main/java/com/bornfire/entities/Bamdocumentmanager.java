@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="BAM_DOCUMENT_MANAGER")
 public class Bamdocumentmanager {
@@ -36,8 +38,11 @@ public class Bamdocumentmanager {
 	private String	entry_user;
 	private String	modify_user;
 	private String	auth_user;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date	entry_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date	modify_time;
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date	auth_time;
 	private String	del_flg;
 	private String	entity_flg;
