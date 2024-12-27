@@ -1,200 +1,220 @@
-
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <!-- 
 	CREATED BY : ARANGULAVAN RAJENDRAN
 	USED FOR :Document Master -->
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/font-awesome/5.9.0/css/all.min.css"
-	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
-	type="text/css">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
-<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
+		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
 
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"
-	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
-<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
-<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
-	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-<script
-	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+	<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+		th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
-<style>
-.no-border-table {
-	border: none;
-	border-collapse: collapse;
-}
+		<style>
+		.filterable .filters input[disabled] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-.no-border-table td {
-	border: none;
-}
+		.filterable .filters input[disabled]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-.btns {
-	float: right;
-	margin: 5px;
-}
+		.filterable .filters input[disabled]::-moz-placeholder {
+			color: #333;
+		}
 
-.col-sm-5 {
-	padding-bottom: 15px;
-}
+		.filterable .filters input[disabled]:-ms-input-placeholder {
+			color: #333;
+		}
 
-.list-body {
-	padding: 0px;
-}
+		.filterable .filters input[disabled]::-webkit-input-placeholder {
+			color: #333;
+		}
+		</style>
+	<style>
+		.no-border-table {
+			border: none;
+			border-collapse: collapse;
+		}
 
-.error {
-	color: red;
-	padding-left: 10px;
-}
+		.no-border-table td {
+			border: none;
+		}
 
-.formline {
-	padding-bottom: 4px;
-}
+		.btns {
+			float: right;
+			margin: 5px;
+		}
 
-#finusertb {
-	width: 460px;
-}
+		.col-sm-5 {
+			padding-bottom: 15px;
+		}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-	padding: 0px;
-}
+		.list-body {
+			padding: 0px;
+		}
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-	border: 2px solid skyblue !important;
-	border-bottom: unset !important;
-	background-color: unset !important;
-	color: black !important;
-	background-color: unset !important;
-}
+		.error {
+			color: red;
+			padding-left: 10px;
+		}
 
-nav {
-	border-bottom: 2px solid grey;
-}
+		.formline {
+			padding-bottom: 4px;
+		}
 
-.filterable .filters input[readonly] {
-	background-color: transparent;
-	border: none;
-	cursor: auto;
-	box-shadow: none;
-	padding: 0;
-	height: auto;
-}
+		#finusertb {
+			width: 460px;
+		}
 
-.filterable .filters input[readonly]::-webkit-input-placeholder {
-	color: #333;
-}
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			padding: 0px;
+		}
 
-.filterable .filters input[readonly]::-moz-placeholder {
-	color: #333;
-}
+		.nav-tabs .nav-item.show .nav-link,
+		.nav-tabs .nav-link.active {
+			border: 2px solid skyblue !important;
+			border-bottom: unset !important;
+			background-color: unset !important;
+			color: black !important;
+			background-color: unset !important;
+		}
 
-.filterable .filters input[readonly]:-ms-input-placeholder {
-	color: #333;
-}
-</style>
+		nav {
+			border-bottom: 2px solid grey;
+		}
 
-<style>
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
+		.filterable .filters input[readonly] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-th, td {
-	padding: 10px;
-	text-align: left;
-}
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-th, td {
-	border: 1px solid #dcdcdc;
-}
+		.filterable .filters input[readonly]::-moz-placeholder {
+			color: #333;
+		}
 
-td {
-	border-top: 1px solid #dcdcdc;
-}
-</style>
-<script th:inline="javascript">
-	/*<![CDATA[*/
+		.filterable .filters input[readonly]:-ms-input-placeholder {
+			color: #333;
+		}
+	</style>
 
-	$(function() {
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-		$("#disableStartDate,#disableEndDate").datepicker({
-			minDate : new Date(),
-			changeMonth : true,
-			changeYear : true,
-			gotoCurrent : true,
-			dateFormat : "dd-mm-yy"
-		});
+		th,
+		td {
+			padding: 10px;
+			text-align: left;
+		}
 
-	});
+		th,
+		td {
+			border: 1px solid #dcdcdc;
+		}
 
-	function home() {
-		location.href = 'Dashboard'
-	}
+		td {
+			border-top: 1px solid #dcdcdc;
+		}
+	</style>
+	<script th:inline="javascript">
+		/*<![CDATA[*/
 
-	function back() {
-		window.history.back();
-	}
+		$(function () {
 
-	function list() {
-		location.href = 'Salesandwriteoff?formmode=list';
-	}
-	function Headcode(a) {
-		var headcode = a.id;
-		alert(headcode)
-		location.href = 'Salesandwriteoff?formmode=edit&headcode=' + headcode;
-	}
-
-	function Headcode1(a) {
-		var headcode = a.id;
-		alert(headcode)
-		location.href = 'Salesandwriteoff?formmode=verify&headcode=' + headcode;
-	}
-
-	function codeadd() {
-
-		location.href = 'Salesandwriteoff?formmode=add';
-	}
-
-	/*]]>*/
-</script>
-<script>
-	$(function() {
-		$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
-			dateFormat : "dd-mm-yy",
-			changeMonth : true,
-			numberOfMonths : 1,
-			gotoCurrent : true
+			$("#disableStartDate,#disableEndDate").datepicker({
+				minDate: new Date(),
+				changeMonth: true,
+				changeYear: true,
+				gotoCurrent: true,
+				dateFormat: "dd-mm-yy"
+			});
 
 		});
 
-		$(".checkToModify").on(
+		function home() {
+			location.href = 'Dashboard'
+		}
+
+		function back() {
+			window.history.back();
+		}
+
+		function list() {
+			location.href = 'Salesandwriteoff?formmode=list';
+		}
+		function Headcode(a) {
+			var headcode = a.id;
+			alert(headcode)
+			location.href = 'Salesandwriteoff?formmode=edit&headcode=' + headcode;
+		}
+
+		function Headcode1(a) {
+			var headcode = a.id;
+			alert(headcode)
+			location.href = 'Salesandwriteoff?formmode=verify&headcode=' + headcode;
+		}
+
+		function codeadd() {
+
+			location.href = 'Salesandwriteoff?formmode=add';
+		}
+
+		/*]]>*/
+	</script>
+	<script>
+		$(function () {
+			$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
+				dateFormat: "dd-mm-yy",
+				changeMonth: true,
+				numberOfMonths: 1,
+				gotoCurrent: true
+
+			});
+
+			$(".checkToModify").on(
 				'click',
-				function() {
+				function () {
 
 					$(this).prop('checked', true);
 
@@ -203,274 +223,274 @@ td {
 					var resId = $(this).val();
 
 					location.href = 'MtAssociateProfile?formmode=' + formMode
-							+ '&resId=' + resId;
+						+ '&resId=' + resId;
 
 				});
 
-	});
+		});
 
-	function submiteditform(a) {
+		function submiteditform(a) {
 
-		if ($("#Bamsaleandwrite").valid()) {
-			$("#loader1").modal("toggle");
-			var formmode = 'edit';
-			var Invtype = 'SaleandWriteadd';
-			alert(formmode);
-			var url = "./SaleandWriteadd?formmode=" + formmode;
+			if ($("#Bamsaleandwrite").valid()) {
+				$("#loader1").modal("toggle");
+				var formmode = 'edit';
+				var Invtype = 'SaleandWriteadd';
+				alert(formmode);
+				var url = "./SaleandWriteadd?formmode=" + formmode;
 
-			$("#Bamsaleandwrite").attr('action', url);
+				$("#Bamsaleandwrite").attr('action', url);
 
-			var options = {
-				success : showResponse
-			// post-submit callback 
-			};
+				var options = {
+					success: showResponse
+					// post-submit callback 
+				};
 
-			$("#Bamsaleandwrite").ajaxSubmit(options);
+				$("#Bamsaleandwrite").ajaxSubmit(options);
 
-			function showResponse(responseText, statusText, xhr, $form) {
-				$("#loader1").hide();
-				$("#alertmsg").text(responseText);
+				function showResponse(responseText, statusText, xhr, $form) {
+					$("#loader1").hide();
+					$("#alertmsg").text(responseText);
 
-				$('#alert').modal("toggle");
+					$('#alert').modal("toggle");
+
+				}
+				;
 
 			}
-			;
 
 		}
 
-	}
+		function submitverifyform(a) {
 
-	function submitverifyform(a) {
-
-		if ($("#Bamsaleandwrite").valid()) {
-			$("#loader1").modal("toggle");
-			var formmode = 'verify';
-			var Invtype = 'SaleandWriteadd';
-			alert(formmode);
-			var url = "./SaleandWriteadd?formmode=" + formmode + "&Invtype="
+			if ($("#Bamsaleandwrite").valid()) {
+				$("#loader1").modal("toggle");
+				var formmode = 'verify';
+				var Invtype = 'SaleandWriteadd';
+				alert(formmode);
+				var url = "./SaleandWriteadd?formmode=" + formmode + "&Invtype="
 					+ Invtype;
 
-			$("#Bamsaleandwrite").attr('action', url);
+				$("#Bamsaleandwrite").attr('action', url);
 
-			var options = {
-				success : showResponse
-			// post-submit callback 
-			};
+				var options = {
+					success: showResponse
+					// post-submit callback 
+				};
 
-			$("#Bamsaleandwrite").ajaxSubmit(options);
+				$("#Bamsaleandwrite").ajaxSubmit(options);
 
-			function showResponse(responseText, statusText, xhr, $form) {
-				$("#loader1").hide();
-				$("#alertmsg").text(responseText);
+				function showResponse(responseText, statusText, xhr, $form) {
+					$("#loader1").hide();
+					$("#alertmsg").text(responseText);
 
-				$('#alert').modal("toggle");
+					$('#alert').modal("toggle");
+
+				}
+				;
 
 			}
-			;
 
 		}
 
-	}
+		function submitaddform(a) {
 
-	function submitaddform(a) {
-
-		if ($("#Bamsaleandwrite").valid()) {
-			//$("#loader1").modal("toggle");
-			var formmode = 'add';
-			var Invtype = 'SaleandWriteadd';
-			alert(formmode);
-			var url = "./SaleandWriteadd?formmode=" + formmode + "&Invtype="
+			if ($("#Bamsaleandwrite").valid()) {
+				//$("#loader1").modal("toggle");
+				var formmode = 'add';
+				var Invtype = 'SaleandWriteadd';
+				alert(formmode);
+				var url = "./SaleandWriteadd?formmode=" + formmode + "&Invtype="
 					+ Invtype;
 
-			$("#Bamsaleandwrite").attr('action', url);
+				$("#Bamsaleandwrite").attr('action', url);
 
-			var options = {
-				success : showResponse
-			// post-submit callback 
-			};
+				var options = {
+					success: showResponse
+					// post-submit callback 
+				};
 
-			$("#Bamsaleandwrite").ajaxSubmit(options);
+				$("#Bamsaleandwrite").ajaxSubmit(options);
 
-			function showResponse(responseText, statusText, xhr, $form) {
-				//	$("#loader1").hide();
-				$("#alertmsg").text(responseText);
+				function showResponse(responseText, statusText, xhr, $form) {
+					//	$("#loader1").hide();
+					$("#alertmsg").text(responseText);
 
-				$('#alert').modal("toggle");
+					$('#alert').modal("toggle");
+
+				}
+				;
 
 			}
-			;
 
 		}
 
-	}
+		function submiteditform(a) {
 
-	function submiteditform(a) {
-
-		if ($("#Bamsaleandwrite").valid()) {
-			$("#loader1").modal("toggle");
-			var formmode = 'edit';
-			var Invtype = 'SaleandWriteadd';
-			alert(formmode);
-			var url = "./SaleandWriteadd?formmode=" + formmode + "&Invtype="
+			if ($("#Bamsaleandwrite").valid()) {
+				$("#loader1").modal("toggle");
+				var formmode = 'edit';
+				var Invtype = 'SaleandWriteadd';
+				alert(formmode);
+				var url = "./SaleandWriteadd?formmode=" + formmode + "&Invtype="
 					+ Invtype;
 
-			$("#Bamsaleandwrite").attr('action', url);
+				$("#Bamsaleandwrite").attr('action', url);
 
-			var options = {
-				success : showResponse
-			// post-submit callback 
-			};
+				var options = {
+					success: showResponse
+					// post-submit callback 
+				};
 
-			$("#Bamsaleandwrite").ajaxSubmit(options);
+				$("#Bamsaleandwrite").ajaxSubmit(options);
 
-			function showResponse(responseText, statusText, xhr, $form) {
-				$("#loader1").hide();
-				$("#alertmsg").text(responseText);
+				function showResponse(responseText, statusText, xhr, $form) {
+					$("#loader1").hide();
+					$("#alertmsg").text(responseText);
 
-				$('#alert').modal("toggle");
+					$('#alert').modal("toggle");
+
+				}
+				;
 
 			}
-			;
 
 		}
+		//Filter Table
 
-	}
-	//Filter Table
-
-	$(document)
+		$(document)
 			.ready(
-					function() {
+				function () {
 
-						$('.filterable .btn-filter')
-								.click(
-										function(event) {
-											event.preventDefault();
-											var $panel = $(this).parents(
-													'.filterable'), $filters = $panel
-													.find('.filters input'), $tbody = $panel
-													.find('.table tbody');
-											if ($filters.prop('readonly') == true) {
-												$filters
-														.prop('readonly', false);
-												$filters.first().focus();
-											} else {
-												$filters.val('').prop(
-														'readonly', true);
-												$tbody.find('.no-result')
-														.remove();
-												$tbody.find('tr').show();
-											}
-										});
+					$('.filterable .btn-filter')
+						.click(
+							function (event) {
+								event.preventDefault();
+								var $panel = $(this).parents(
+									'.filterable'), $filters = $panel
+										.find('.filters input'), $tbody = $panel
+											.find('.table tbody');
+								if ($filters.prop('readonly') == true) {
+									$filters
+										.prop('readonly', false);
+									$filters.first().focus();
+								} else {
+									$filters.val('').prop(
+										'readonly', true);
+									$tbody.find('.no-result')
+										.remove();
+									$tbody.find('tr').show();
+								}
+							});
 
-						$('.filterable .filters input')
-								.keyup(
-										function(e) {
-											/* Ignore tab key */
-											var code = e.keyCode || e.which;
-											if (code == '9')
-												return;
-											/* Useful DOM data and selectors */
-											var $input = $(this), inputContent = $input
-													.val().toLowerCase(), $panel = $input
-													.parents('.filterable'), column = $panel
-													.find('.filters th')
-													.index($input.parents('th')), $table = $panel
-													.find('.table'), $rows = $table
+					$('.filterable .filters input')
+						.keyup(
+							function (e) {
+								/* Ignore tab key */
+								var code = e.keyCode || e.which;
+								if (code == '9')
+									return;
+								/* Useful DOM data and selectors */
+								var $input = $(this), inputContent = $input
+									.val().toLowerCase(), $panel = $input
+										.parents('.filterable'), column = $panel
+											.find('.filters th')
+											.index($input.parents('th')), $table = $panel
+												.find('.table'), $rows = $table
 													.find('tbody tr');
-											/* Dirtiest filter function ever ;) */
-											var $filteredRows = $rows
-													.filter(function() {
-														var value = $(this)
-																.find('td').eq(
-																		column)
-																.text()
-																.toLowerCase();
-														return value
-																.indexOf(inputContent) === -1;
-													});
-											/* Clean previous no-result if exist */
-											$table.find('tbody .no-result')
-													.remove();
-											/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
-											$rows.show();
-											$filteredRows.hide();
-											/* Prepend no-result row if all rows are filtered */
-											if ($filteredRows.length === $rows.length) {
-												$table
-														.find('tbody')
-														.prepend(
-																$('<tr class="no-result text-center"><td colspan="'
-																		+ $table
-																				.find('.filters th').length
-																		+ '">No result found</td></tr>'));
-											}
-										});
+								/* Dirtiest filter function ever ;) */
+								var $filteredRows = $rows
+									.filter(function () {
+										var value = $(this)
+											.find('td').eq(
+												column)
+											.text()
+											.toLowerCase();
+										return value
+											.indexOf(inputContent) === -1;
+									});
+								/* Clean previous no-result if exist */
+								$table.find('tbody .no-result')
+									.remove();
+								/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+								$rows.show();
+								$filteredRows.hide();
+								/* Prepend no-result row if all rows are filtered */
+								if ($filteredRows.length === $rows.length) {
+									$table
+										.find('tbody')
+										.prepend(
+											$('<tr class="no-result text-center"><td colspan="'
+												+ $table
+													.find('.filters th').length
+												+ '">No result found</td></tr>'));
+								}
+							});
 
-					});
-</script>
-<script>
-	function getYearFromISODate(isoDateString) {
-		// Parse the ISO date string into a Date object
-		let date = new Date(isoDateString);
+				});
+	</script>
+	<script>
+		function getYearFromISODate(isoDateString) {
+			// Parse the ISO date string into a Date object
+			let date = new Date(isoDateString);
 
-		// Extract the year
-		let year = date.getFullYear();
+			// Extract the year
+			let year = date.getFullYear();
 
-		return year;
-	}
-	function formatISODateToDDMMYYYY(isoDateString) {
-		// Parse the ISO date string
-		let date = new Date(isoDateString);
-
-		// Extract day, month, and year
-		let day = date.getDate();
-		let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
-		let year = date.getFullYear();
-
-		// Pad day and month with leading zeros if necessary
-		if (day < 10) {
-			day = '0' + day;
+			return year;
 		}
-		if (month < 10) {
-			month = '0' + month;
+		function formatISODateToDDMMYYYY(isoDateString) {
+			// Parse the ISO date string
+			let date = new Date(isoDateString);
+
+			// Extract day, month, and year
+			let day = date.getDate();
+			let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
+			let year = date.getFullYear();
+
+			// Pad day and month with leading zeros if necessary
+			if (day < 10) {
+				day = '0' + day;
+			}
+			if (month < 10) {
+				month = '0' + month;
+			}
+
+			// Format the date as dd/MM/yyyy
+			return `${year}-${month}-${day}`;
+		}
+		function datdate(isoDateString) {
+			// Parse the ISO date string
+			let date = new Date(isoDateString);
+
+			// Extract day, month, and year
+			let day = date.getDate();
+			let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
+			let year = date.getFullYear();
+
+			// Pad day and month with leading zeros if necessary
+			if (day < 10) {
+				day = '0' + day;
+			}
+			if (month < 10) {
+				month = '0' + month;
+			}
+
+			// Format the date as dd/MM/yyyy
+			return `${day}-${month}-${year}`;
 		}
 
-		// Format the date as dd/MM/yyyy
-		return `${year}-${month}-${day}`;
-	}
-	function datdate(isoDateString) {
-		// Parse the ISO date string
-		let date = new Date(isoDateString);
-
-		// Extract day, month, and year
-		let day = date.getDate();
-		let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
-		let year = date.getFullYear();
-
-		// Pad day and month with leading zeros if necessary
-		if (day < 10) {
-			day = '0' + day;
-		}
-		if (month < 10) {
-			month = '0' + month;
-		}
-
-		// Format the date as dd/MM/yyyy
-		return `${day}-${month}-${year}`;
-	}
-
-	function handleSelectChange() {
-		var assetSerialNumber = document.getElementById('asst_srl_no').value;
-		alert(assetSerialNumber)
-		if (assetSerialNumber) {
-			$
+		function handleSelectChange() {
+			var assetSerialNumber = document.getElementById('asst_srl_no').value;
+			alert(assetSerialNumber)
+			if (assetSerialNumber) {
+				$
 					.ajax({
-						type : 'GET',
-						url : "./get_serial_Inv",
-						data : {
-							AN : assetSerialNumber
+						type: 'GET',
+						url: "./get_serial_Inv",
+						data: {
+							AN: assetSerialNumber
 						},
-						success : function(response) {
+						success: function (response) {
 							console.log("Response from server:", response);
 
 							let formattedDate = formatISODateToDDMMYYYY(response.date_of_purchase);
@@ -482,69 +502,138 @@ td {
 							//alert(year)
 
 							document.getElementById('asst_name').value = response.asst_name
-									|| '';
+								|| '';
 							document.getElementById('asset_type').value = response.asset_type
-									|| '';
+								|| '';
 							document.getElementById('asst_crncy').value = response.asst_crncy
-									|| '';
+								|| '';
 							document.getElementById('org_cost').value = response.org_cost
-									|| '';
+								|| '';
 							document.getElementById('acc_depr').value = response.acc_depr
-									|| '';
+								|| '';
 							document.getElementById('date_of_purchase').value = formattedDate
-									|| '';
+								|| '';
 							document.getElementById('book_value_sale_date').value = response.cur_book_value
-									|| '';
+								|| '';
 
 							document.getElementById('year_of_purchase').value = year
-									|| '';
+								|| '';
 							document.getElementById('depr_flag').value = response.depr_flag
-									|| '';
+								|| '';
 							document.getElementById('asst_exp_date').value = asst_exp_date
-									|| '';
+								|| '';
 
 							document.getElementById('asst_rmks').value = response.asst_rmks
-									|| '';
+								|| '';
 
 							document.getElementById('depr_method').value = response.depr_method
-									|| '';
+								|| '';
 							document.getElementById('asst_category').value = response.asset_category
-									|| '';
+								|| '';
 							// alert(response.life_span_mth )
 							// document.getElementById('acquis_date').value = ACQN || '';
 
 							document.getElementById('depr_percent').value = response.depr_percent
-									|| '';
+								|| '';
 
 							document.getElementById('life_span_mth').value = response.life_span_mth
-									|| '';
+								|| '';
 							document.getElementById('depr_freq').value = response.depr_freq
-									|| '';
+								|| '';
 							document.getElementById('sol_id').value = response.sol_id
-									|| '';
+								|| '';
 							//  document.getElementById('depreciation_start_date').value = formattedDate || '';
 							document.getElementById('date_of_last_depr').value = date_of_last_depr
-									|| '';
+								|| '';
 							document.getElementById('emp_id').value = response.emp_id
-									|| '';
+								|| '';
 
 							document.getElementById('loc_type').value = response.loc_type
-									|| '';
+								|| '';
 							document.getElementById('dept_div_name').value = response.dept_div_name
-									|| '';
+								|| '';
 							document.getElementById('category_desc').value = response.category_desc
-									|| '';
+								|| '';
 
 						},
-						error : function(error) {
+						error: function (error) {
 							console.error("Error fetching asset details:",
-									error);
+								error);
 
 						}
 					});
+			}
 		}
-	}
-</script>
+	</script>
+	<script type="text/javascript">
+		$(document)
+				.ready(
+						function() {
+							$('.filterable .btn-filter')
+									.click(
+											function() {
+												var $panel = $(this).parents(
+														'.filterable'), $filters = $panel
+														.find('.filters input'), $tbody = $panel
+														.find('.table tbody');
+												if ($filters.prop('disabled') == true) {
+													$filters
+															.prop('disabled', false);
+													$filters.first().focus();
+												} else {
+													$filters.val('').prop(
+															'disabled', true);
+													$tbody.find('.no-result')
+															.remove();
+													$tbody.find('tr').show();
+												}
+											});
+
+							$('.filterable .filters input')
+									.keyup(
+											function(e) {
+												/* Ignore tab key */
+												var code = e.keyCode || e.which;
+												if (code == '9')
+													return;
+												/* Useful DOM data and selectors */
+												var $input = $(this), inputContent = $input
+														.val().toLowerCase(), $panel = $input
+														.parents('.filterable'), column = $panel
+														.find('.filters th')
+														.index($input.parents('th')), $table = $panel
+														.find('.table'), $rows = $table
+														.find('tbody tr');
+												/* Dirtiest filter function ever ;) */
+												var $filteredRows = $rows
+														.filter(function() {
+															var value = $(this)
+																	.find('td').eq(
+																			column)
+																	.text()
+																	.toLowerCase();
+															return value
+																	.indexOf(inputContent) === -1;
+														});
+												/* Clean previous no-result if exist */
+												$table.find('tbody .no-result')
+														.remove();
+												/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+												$rows.show();
+												$filteredRows.hide();
+												/* Prepend no-result row if all rows are filtered */
+												if ($filteredRows.length === $rows.length) {
+													$table
+															.find('tbody')
+															.prepend(
+																	$('<tr class="no-result text-center"><td colspan="'
+																			+ $table
+																					.find('.filters th').length
+																			+ '">No Record found</td></tr>'));
+												}
+											});
+						});
+	</script>
 </head>
 <title>BAM</title>
 
@@ -559,28 +648,48 @@ td {
 
 				<div class="container-fluid content" th:if="${formmode} == 'list'">
 					<div class="row">
-						<form action="#" method="post" autocomplete="off"
-							style="width: 100%">
-							<div class="card">
+						<form action="#" method="post" autocomplete="off" style="width: 100%">
+							<div class="card panel panel-primary filterable">
 								<div class="panel panel-primary filterable">
-									<div class="card-header d-flex justify-content-between">
-										<h4 class="headerh6 ">Sale and writeoff - List</h4>
+									<div class="card-header p-0">
+										<div class="d-flex justify-content-between align-items-center">
+											<div>
+												<h3 class="btn btn-sm mr-2 headerbutton mt-1">SALE AND WRITE - LIST
+												</h3>
+											</div>
+											<button type="button"
+												class="btn btns btn-filter headerbutton">Filter</button>
+										</div>
 									</div>
 
 									<div class="card-body p-0">
 										<div class="table-responsive">
-											<table class="table table-bordered">
-												<thead>
-
-													<tr>
-														<th rowspan="2">Asset Srl Num</th>
-														<th rowspan="2">Asset Name</th>
-														<th rowspan="2">Category</th>
-														<th rowspan="2">Employee Id</th>
-														<th rowspan="2">Current Book Value</th>
-														<th rowspan="2">Purchase Date</th>
-														<!-- <th rowspan="2">Verification Status</th> -->
-														<th rowspan="2">Select</th>
+											<table class="table table-bordered"> 
+												<thead
+													style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
+													<tr class="filters">
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Asset Srl Num" disabled></th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Asset Name" disabled></th>
+														<th style="text-align: center"><input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Category" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Employee Id" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Current Book Val" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Purchase Date" disabled></th>
+														 <th class="pb-2 select_th">Select</th> 
 													</tr>
 												</thead>
 												<tbody id="associatemonthly">
@@ -593,7 +702,8 @@ td {
 														<td th:text="${Bamdocmana?.sale_value}"
 															style="text-align: right;"></td>
 														<td
-															th:text="${#dates.format(Bamdocmana?.date_of_purchase, 'dd-MM-yyyy')}"></td>
+															th:text="${#dates.format(Bamdocmana?.date_of_purchase, 'dd-MM-yyyy')}">
+														</td>
 														<!--  <td th:text="${Bamdocmana?.date_of_purchase}"></td>-->
 														<!-- <th:block th:switch="${Bamdocmana?.del_flg}">
 															<td th:case="'Y'" style="color: green;">Verified</td>
@@ -601,9 +711,8 @@ td {
 															<td th:case="null" style="color: red;">Unknown</td>
 														</th:block> -->
 														<!-- <th:block > -->
-														<td><input type="radio"
-															th:id="${Bamdocmana?.asst_srl_no}"
-															onclick="Headcode(this)"></td>
+														<td><input type="radio" th:id="${Bamdocmana?.asst_srl_no}"
+																onclick="Headcode(this)"></td>
 														<!-- <td th:case="'N'">
 																<button class="btn btn-secondary dropdown-toggle"
 																	type="button" th:id="${Bamdocmana?.asst_srl_no}" title="Action"
@@ -648,8 +757,8 @@ td {
 				<div class="container-fluid content" th:if="${formmode}=='add'">
 					<div class="row">
 
-						<form action="#" th:object="${Bamsaleandwrite}" class="w-100"
-							method="post" autocomplete="off" id="Bamsaleandwrite">
+						<form action="#" th:object="${Bamsaleandwrite}" class="w-100" method="post" autocomplete="off"
+							id="Bamsaleandwrite">
 
 							<div class="associateProfileList ">
 								<div class="card">
@@ -667,9 +776,9 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<select id="asst_srl_no"
-														class="form-control form-control-sm" name="asst_srl_no"
-														autocomplete="off" onchange="handleSelectChange()">
+													<select id="asst_srl_no" class="form-control form-control-sm"
+														name="asst_srl_no" autocomplete="off"
+														onchange="handleSelectChange()">
 														<option value="">Select Asset Serial Number</option>
 														<option th:each="assetSN : ${lists}" th:value="${assetSN}"
 															th:text="${assetSN}"></option>
@@ -693,8 +802,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite.category_desc}"
+													<input type="text" th:value="${Bamsaleandwrite.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
 														name="category_desc" autocomplete="off" readonly />
 												</div>
@@ -703,8 +811,7 @@ td {
 													<label for="asst_category">Asset Category</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite.asst_category}"
+													<input type="text" th:value="${Bamsaleandwrite.asst_category}"
 														id="asst_category" class="form-control form-control-sm"
 														name="asst_category" autocomplete="off" readonly />
 												</div>
@@ -736,8 +843,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${Bamsaleandwrite.date_of_purchase}"
+													<input type="date" th:value="${Bamsaleandwrite.date_of_purchase}"
 														id="date_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_purchase" readonly />
 												</div>
@@ -746,8 +852,7 @@ td {
 													<label for="year_of_purchase">Year Of Purchase</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${Bamsaleandwrite.year_of_purchase}"
+													<input type="date" th:value="${Bamsaleandwrite.year_of_purchase}"
 														id="year_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="year_of_purchase" readonly />
 												</div>
@@ -767,8 +872,7 @@ td {
 													<label for="life_span_mth">Life Span (Months)</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite.life_span_mth}"
+													<input type="text" th:value="${Bamsaleandwrite.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
 														autocomplete="off" name="life_span_mth" readonly />
 												</div>
@@ -779,8 +883,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${Bamsaleandwrite?.asst_exp_date}"
+													<input type="date" th:value="${Bamsaleandwrite?.asst_exp_date}"
 														id="asst_exp_date" class="form-control form-control-sm"
 														name="asst_exp_date" autocomplete="off" readonly />
 												</div>
@@ -821,8 +924,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite?.depr_method}"
+													<input type="text" th:value="${Bamsaleandwrite?.depr_method}"
 														id="depr_method" class="form-control form-control-sm"
 														name="depr_method" autocomplete="off" readonly />
 												</div>
@@ -831,8 +933,7 @@ td {
 													<label for="depr_percent">Depreciation Percentage</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="number"
-														th:value="${Bamsaleandwrite?.depr_percent}"
+													<input type="number" th:value="${Bamsaleandwrite?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
 														name="depr_percent" autocomplete="off" readonly />
 												</div>
@@ -845,10 +946,9 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="number"
-														th:value="${Bamsaleandwrite?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" readonly />
+													<input type="number" th:value="${Bamsaleandwrite?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -856,10 +956,8 @@ td {
 														Depreciation</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${Bamsaleandwrite?.date_of_last_depr}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm"
+													<input type="date" th:value="${Bamsaleandwrite?.date_of_last_depr}"
+														id="date_of_last_depr" class="form-control form-control-sm"
 														name="date_of_last_depr" autocomplete="off" readonly />
 												</div>
 											</div>
@@ -883,8 +981,7 @@ td {
 												<div class="col-sm-3">
 													<input type="number"
 														th:value="${Bamsaleandwrite?.book_value_sale_date}"
-														id="book_value_sale_date"
-														class="form-control form-control-sm"
+														id="book_value_sale_date" class="form-control form-control-sm"
 														name="book_value_sale_date" autocomplete="off" readonly />
 												</div>
 											</div>
@@ -895,18 +992,16 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="number"
-														th:value="${Bamsaleandwrite?.sale_value}" id="sale_value"
-														class="form-control form-control-sm" name="sale_value"
-														autocomplete="off" />
+													<input type="number" th:value="${Bamsaleandwrite?.sale_value}"
+														id="sale_value" class="form-control form-control-sm"
+														name="sale_value" autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="profit_loss">Profit/Loss</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="number"
-														th:value="${Bamsaleandwrite?.profit_loss}"
+													<input type="number" th:value="${Bamsaleandwrite?.profit_loss}"
 														id="profit_loss" class="form-control form-control-sm"
 														name="profit_loss" autocomplete="off" />
 												</div>
@@ -918,10 +1013,9 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite?.buyer_name}" id="buyer_name"
-														class="form-control form-control-sm" name="buyer_name"
-														autocomplete="off" />
+													<input type="text" th:value="${Bamsaleandwrite?.buyer_name}"
+														id="buyer_name" class="form-control form-control-sm"
+														name="buyer_name" autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -941,8 +1035,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${Bamsaleandwrite?.date_of_scrap}"
+													<input type="date" th:value="${Bamsaleandwrite?.date_of_scrap}"
 														id="date_of_scrap" class="form-control form-control-sm"
 														name="date_of_scrap" autocomplete="off" />
 												</div>
@@ -952,8 +1045,7 @@ td {
 														Write off</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="number"
-														th:value="${Bamsaleandwrite?.date_of_scrap}"
+													<input type="number" th:value="${Bamsaleandwrite?.date_of_scrap}"
 														id="date_of_scrap" class="form-control form-control-sm"
 														name="date_of_scrap" autocomplete="off" />
 												</div>
@@ -966,8 +1058,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="number"
-														th:value="${Bamsaleandwrite?.scrap_value}"
+													<input type="number" th:value="${Bamsaleandwrite?.scrap_value}"
 														id="scrap_value" class="form-control form-control-sm"
 														name="scrap_value" autocomplete="off" />
 												</div>
@@ -976,10 +1067,9 @@ td {
 													<label for="scrap_rmks">Scrap Remarks</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite?.scrap_rmks}" id="scrap_rmks"
-														class="form-control form-control-sm" name="scrap_rmks"
-														autocomplete="off" />
+													<input type="text" th:value="${Bamsaleandwrite?.scrap_rmks}"
+														id="scrap_rmks" class="form-control form-control-sm"
+														name="scrap_rmks" autocomplete="off" />
 												</div>
 											</div>
 
@@ -999,9 +1089,9 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text" th:value="${Bamsaleandwrite?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly />
+													<input type="text" th:value="${Bamsaleandwrite?.sol_id}" id="sol_id"
+														class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly />
 												</div>
 												<!-- 	<div class="col-sm-2">
 													<label for="to_category">To Category</label>
@@ -1022,9 +1112,8 @@ td {
 													<label for="emp_id">Employee Id</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="text" id="emp_id"
-														class="form-control form-control-sm" name="emp_id"
-														autocomplete="off" readonly />
+													<input type="text" id="emp_id" class="form-control form-control-sm"
+														name="emp_id" autocomplete="off" readonly />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1032,8 +1121,7 @@ td {
 												</div>
 
 												<div class="col-sm-3">
-													<input type="text"
-														th:value="${Bamsaleandwrite?.dept_div_name}"
+													<input type="text" th:value="${Bamsaleandwrite?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
 														name="dept_div_name" autocomplete="off" readonly />
 												</div>
@@ -1091,9 +1179,8 @@ td {
 
 
 
-										<button th:if="${formmode}=='add'" type="button"
-											class="btn headerbutton" onclick="submitaddform(this);"
-											form="Bamsaleandwrite" id="btnSubmit"
+										<button th:if="${formmode}=='add'" type="button" class="btn headerbutton"
+											onclick="submitaddform(this);" form="Bamsaleandwrite" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
@@ -1103,55 +1190,59 @@ td {
 									<!-- Conditionally display the table based on formmode  view-->
 									<div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-										<table
-											class="table no-border-table  table-bordered  table-hover table-sm"
+										<table class="table no-border-table  table-bordered  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
 											<tr>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Entry User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="entryuser" name="entry_user"
-													th:value="${Bamsaleandwrite?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Modify User :</B></font></td>
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="modifyuser" name="modify_user"
-													th:value="${Bamsaleandwrite?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Verify User :</B></font></td>
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="verifyuser" name="verify_user"
-													th:value="${Bamsaleandwrite?.verify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Entry User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
+														type="text" id="entryuser" name="entry_user"
+														th:value="${Bamsaleandwrite?.entry_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Modify User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px;"><input type="text"
+														id="modifyuser" name="modify_user"
+														th:value="${Bamsaleandwrite?.modify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Verify User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px;"><input type="text"
+														id="verifyuser" name="verify_user"
+														th:value="${Bamsaleandwrite?.verify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;"><font size="2"><B>Entry
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="entrytime" name="entry_time"
-													th:value="${Bamsaleandwrite?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Modify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="modifytime" name="modify_time"
-													th:value="${Bamsaleandwrite?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Verify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${BBamsaleandwrite?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Entry
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="entrytime"
+														name="entry_time" th:value="${Bamsaleandwrite?.entry_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Modify
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="modifytime"
+														name="modify_time" th:value="${Bamsaleandwrite?.modify_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Verify
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="verifytime"
+														name="verify_time" th:value="${BBamsaleandwrite?.verify_time}"
+														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
 											</tr>
 
 										</table>
@@ -1168,12 +1259,11 @@ td {
 	</div>
 	<!-- **************************edit********************************* -->
 
-	<div class="container-fluid content"
-		th:if="${formmode}=='edit' OR ${formmode}=='verify'">
+	<div class="container-fluid content" th:if="${formmode}=='edit' OR ${formmode}=='verify'">
 		<div class="row">
 
-			<form action="#" th:object="${Bamsaleandwrite}" class="w-100"
-				method="post" autocomplete="off" id="Bamsaleandwrite">
+			<form action="#" th:object="${Bamsaleandwrite}" class="w-100" method="post" autocomplete="off"
+				id="Bamsaleandwrite">
 
 				<div class="associateProfileList ">
 					<div class="card" style="margin-left: 317px; width: 83%;">
@@ -1191,18 +1281,17 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite.asst_srl_no}"
-											id="asst_srl_no" class="form-control form-control-sm"
-											autocomplete="off" name="asst_srl_no" />
+										<input type="text" th:value="${Bamsaleandwrite.asst_srl_no}" id="asst_srl_no"
+											class="form-control form-control-sm" autocomplete="off"
+											name="asst_srl_no" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="asst_name">Asst Name</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite.asst_name} "
-											id="asst_name" class="form-control form-control-sm"
-											autocomplete="off" name="asst_name" />
+										<input type="text" th:value="${Bamsaleandwrite.asst_name} " id="asst_name"
+											class="form-control form-control-sm" autocomplete="off" name="asst_name" />
 									</div>
 								</div>
 								<div class="row formline">
@@ -1212,8 +1301,8 @@ td {
 
 									<div class="col-sm-3">
 										<input type="text" th:value="${Bamsaleandwrite.category_desc}"
-											id="category_desc" class="form-control form-control-sm"
-											name="category_desc" autocomplete="off" />
+											id="category_desc" class="form-control form-control-sm" name="category_desc"
+											autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1221,8 +1310,8 @@ td {
 									</div>
 									<div class="col-sm-3">
 										<input type="text" th:value="${Bamsaleandwrite.asst_category}"
-											id="asst_category" class="form-control form-control-sm"
-											name="asst_category" autocomplete="off" />
+											id="asst_category" class="form-control form-control-sm" name="asst_category"
+											autocomplete="off" />
 									</div>
 								</div>
 								<div class="row formline">
@@ -1231,18 +1320,16 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite.asst_type}"
-											id="asset_type" class="form-control form-control-sm"
-											autocomplete="off" name="asst_type" />
+										<input type="text" th:value="${Bamsaleandwrite.asst_type}" id="asset_type"
+											class="form-control form-control-sm" autocomplete="off" name="asst_type" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="asst_crncy">Asset Currency</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite.asst_crncy}"
-											id="asst_crncy" class="form-control form-control-sm"
-											name="asst_crncy" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite.asst_crncy}" id="asst_crncy"
+											class="form-control form-control-sm" name="asst_crncy" autocomplete="off" />
 									</div>
 								</div>
 
@@ -1274,9 +1361,8 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="number" th:value="${Bamsaleandwrite.org_cost}"
-											id="org_cost" class="form-control form-control-sm"
-											name="org_cost" autocomplete="off" />
+										<input type="number" th:value="${Bamsaleandwrite.org_cost}" id="org_cost"
+											class="form-control form-control-sm" name="org_cost" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1284,8 +1370,8 @@ td {
 									</div>
 									<div class="col-sm-3">
 										<input type="text" th:value="${Bamsaleandwrite.life_span_mth}"
-											id="life_span_mth" class="form-control form-control-sm"
-											autocomplete="off" name="life_span_mth" />
+											id="life_span_mth" class="form-control form-control-sm" autocomplete="off"
+											name="life_span_mth" />
 									</div>
 								</div>
 								<div class="row formline">
@@ -1296,17 +1382,16 @@ td {
 									<div class="col-sm-3">
 										<input type="date"
 											th:value="${#dates.format(Bamsaleandwrite.asst_exp_date, 'yyyy-MM-dd')}"
-											id="asst_exp_date" class="form-control form-control-sm"
-											name="asst_exp_date" autocomplete="off" />
+											id="asst_exp_date" class="form-control form-control-sm" name="asst_exp_date"
+											autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="asst_rmks">Asset Remarks</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.asst_rmks}"
-											id="asst_rmks" class="form-control form-control-sm"
-											name="asst_rmks" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.asst_rmks}" id="asst_rmks"
+											class="form-control form-control-sm" name="asst_rmks" autocomplete="off" />
 									</div>
 								</div>
 								<div class="row formline">
@@ -1315,18 +1400,16 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.depr_flag}"
-											id="depr_flag" class="form-control form-control-sm"
-											name="depr_flag" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.depr_flag}" id="depr_flag"
+											class="form-control form-control-sm" name="depr_flag" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="depr_freq">Depreciation Frequency</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.depr_freq}"
-											id="depr_freq" class="form-control form-control-sm"
-											name="depr_freq" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.depr_freq}" id="depr_freq"
+											class="form-control form-control-sm" name="depr_freq" autocomplete="off" />
 									</div>
 								</div>
 
@@ -1336,18 +1419,17 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.depr_method}"
-											id="depr_method" class="form-control form-control-sm"
-											name="depr_method" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.depr_method}" id="depr_method"
+											class="form-control form-control-sm" name="depr_method"
+											autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="depr_percent">Depreciation Percentage</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="number"
-											th:value="${Bamsaleandwrite?.depr_percent}" id="depr_percent"
-											class="form-control form-control-sm" name="depr_percent"
+										<input type="number" th:value="${Bamsaleandwrite?.depr_percent}"
+											id="depr_percent" class="form-control form-control-sm" name="depr_percent"
 											autocomplete="off" />
 									</div>
 								</div>
@@ -1359,9 +1441,8 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="number" th:value="${Bamsaleandwrite?.acc_depr}"
-											id="acc_depr" class="form-control form-control-sm"
-											name="acc_depr" autocomplete="off" />
+										<input type="number" th:value="${Bamsaleandwrite?.acc_depr}" id="acc_depr"
+											class="form-control form-control-sm" name="acc_depr" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1385,8 +1466,8 @@ td {
 									<div class="col-sm-3">
 										<input type="date"
 											th:value="${#dates.format(Bamsaleandwrite.date_of_sale, 'yyyy-MM-dd')}"
-											id="date_of_sale" class="form-control form-control-sm"
-											name="date_of_sale" autocomplete="off" />
+											id="date_of_sale" class="form-control form-control-sm" name="date_of_sale"
+											autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1394,10 +1475,8 @@ td {
 											Sale</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="number"
-											th:value="${Bamsaleandwrite?.book_value_sale_date}"
-											id="book_value_sale_date"
-											class="form-control form-control-sm"
+										<input type="number" th:value="${Bamsaleandwrite?.book_value_sale_date}"
+											id="book_value_sale_date" class="form-control form-control-sm"
 											name="book_value_sale_date" autocomplete="off" />
 									</div>
 								</div>
@@ -1408,17 +1487,15 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="number" th:value="${Bamsaleandwrite?.sale_value}"
-											id="sale_value" class="form-control form-control-sm"
-											name="sale_value" autocomplete="off" />
+										<input type="number" th:value="${Bamsaleandwrite?.sale_value}" id="sale_value"
+											class="form-control form-control-sm" name="sale_value" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="profit_loss">Profit/Loss</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="number"
-											th:value="${Bamsaleandwrite?.profit_loss}" id="profit_loss"
+										<input type="number" th:value="${Bamsaleandwrite?.profit_loss}" id="profit_loss"
 											class="form-control form-control-sm" name="profit_loss"
 											autocomplete="off" />
 									</div>
@@ -1430,18 +1507,16 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.buyer_name}"
-											id="buyer_name" class="form-control form-control-sm"
-											name="buyer_name" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.buyer_name}" id="buyer_name"
+											class="form-control form-control-sm" name="buyer_name" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
 										<label for="sale_det">Sale Details</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.sale_det}"
-											id="sale_det" class="form-control form-control-sm"
-											name="sale_det" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.sale_det}" id="sale_det"
+											class="form-control form-control-sm" name="sale_det" autocomplete="off" />
 									</div>
 								</div>
 
@@ -1454,8 +1529,8 @@ td {
 									<div class="col-sm-3">
 										<input type="date"
 											th:value="${#dates.format(Bamsaleandwrite.date_of_scrap, 'yyyy-MM-dd')}"
-											id="date_of_scrap" class="form-control form-control-sm"
-											name="date_of_scrap" autocomplete="off" />
+											id="date_of_scrap" class="form-control form-control-sm" name="date_of_scrap"
+											autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1463,10 +1538,9 @@ td {
 											off</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="number"
-											th:value="${Bamsaleandwrite?.date_of_scrap}"
-											id="date_of_scrap" class="form-control form-control-sm"
-											name="date_of_scrap" autocomplete="off" />
+										<input type="number" th:value="${Bamsaleandwrite?.date_of_scrap}"
+											id="date_of_scrap" class="form-control form-control-sm" name="date_of_scrap"
+											autocomplete="off" />
 									</div>
 								</div>
 
@@ -1477,8 +1551,7 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="number"
-											th:value="${Bamsaleandwrite?.scrap_value}" id="scrap_value"
+										<input type="number" th:value="${Bamsaleandwrite?.scrap_value}" id="scrap_value"
 											class="form-control form-control-sm" name="scrap_value"
 											autocomplete="off" />
 									</div>
@@ -1487,9 +1560,8 @@ td {
 										<label for="scrap_rmks">Scrap Remarks</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.scrap_rmks}"
-											id="scrap_rmks" class="form-control form-control-sm"
-											name="scrap_rmks" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.scrap_rmks}" id="scrap_rmks"
+											class="form-control form-control-sm" name="scrap_rmks" autocomplete="off" />
 									</div>
 								</div>
 
@@ -1499,9 +1571,8 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.loc_type}"
-											id="loc_type" class="form-control form-control-sm"
-											name="loc_type" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.loc_type}" id="loc_type"
+											class="form-control form-control-sm" name="loc_type" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1509,9 +1580,8 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.sol_id}"
-											id="sol_id" class="form-control form-control-sm"
-											name="sol_id" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.sol_id}" id="sol_id"
+											class="form-control form-control-sm" name="sol_id" autocomplete="off" />
 									</div>
 									<!-- 	<div class="col-sm-2">
 													<label for="to_category">To Category</label>
@@ -1532,9 +1602,8 @@ td {
 										<label for="emp_id">Employee Id</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="text" th:value="${Bamsaleandwrite?.emp_id}"
-											id="emp_id" class="form-control form-control-sm"
-											name="emp_id" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.emp_id}" id="emp_id"
+											class="form-control form-control-sm" name="emp_id" autocomplete="off" />
 									</div>
 									<div class="col-sm-1"></div>
 									<div class="col-sm-2">
@@ -1542,10 +1611,9 @@ td {
 									</div>
 
 									<div class="col-sm-3">
-										<input type="text"
-											th:value="${Bamsaleandwrite?.dept_div_name}"
-											id="dept_div_name" class="form-control form-control-sm"
-											name="dept_div_name" autocomplete="off" />
+										<input type="text" th:value="${Bamsaleandwrite?.dept_div_name}"
+											id="dept_div_name" class="form-control form-control-sm" name="dept_div_name"
+											autocomplete="off" />
 									</div>
 								</div>
 
@@ -1596,8 +1664,7 @@ td {
 						</div>
 						<div class="card-footer text-center">
 
-							<button type="button" class="btn headerbutton" id="btnHome"
-								onclick="home();">Home</button>
+							<button type="button" class="btn headerbutton" id="btnHome" onclick="home();">Home</button>
 
 
 
@@ -1611,61 +1678,64 @@ td {
 											onclick="submitverifyform(this);" form="Bamsaleandwrite"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button> -->
 
-							<button type="button" class="btn headerbutton" id="btnBack"
-								onclick="back();">Back</button>
+							<button type="button" class="btn headerbutton" id="btnBack" onclick="back();">Back</button>
 
 						</div>
 						<!-- Conditionally display the table based on formmode  view-->
 						<div class="table-responsive"
 							th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-							<table
-								class="table no-border-table table-bordered  table-hover table-sm"
+							<table class="table no-border-table table-bordered  table-hover table-sm"
 								style="margin-bottom: 10px; font-size: initial;">
 								<tr>
-									<td class="col-sm-2" style="text-align: right;"><font
-										size="2"><B>Entry User :</B></font></td>
+									<td class="col-sm-2" style="text-align: right;">
+										<font size="2"><B>Entry User :</B></font>
+									</td>
 									<td class="col-sm-2" style="width: 112px; margin-right: 20px;">
 										<input type="text" id="entryuser" name="entry_user"
-										th:value="${Bamsaleandwrite?.entry_user}"
-										style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-										readonly>
+											th:value="${Bamsaleandwrite?.entry_user}"
+											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+											readonly>
 									</td>
-									<td class="col-sm-2" style="text-align: right;"><font
-										size="2"><B>Modify User :</B></font></td>
-									<td class="col-sm-2" style="width: 112px;"><input
-										type="text" id="modifyuser" name="modify_user"
-										th:value="${Bamsaleandwrite?.modify_user}"
-										style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-										readonly></td>
-									<td class="col-sm-2" style="text-align: right;"><font
-										size="2"><B>Verify User :</B></font></td>
-									<td class="col-sm-2" style="width: 112px;"><input
-										type="text" id="verifyuser" name="verify_user"
-										th:value="${Bamsaleandwrite?.verify_user}"
-										style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-										readonly></td>
+									<td class="col-sm-2" style="text-align: right;">
+										<font size="2"><B>Modify User :</B></font>
+									</td>
+									<td class="col-sm-2" style="width: 112px;"><input type="text" id="modifyuser"
+											name="modify_user" th:value="${Bamsaleandwrite?.modify_user}"
+											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+											readonly></td>
+									<td class="col-sm-2" style="text-align: right;">
+										<font size="2"><B>Verify User :</B></font>
+									</td>
+									<td class="col-sm-2" style="width: 112px;"><input type="text" id="verifyuser"
+											name="verify_user" th:value="${Bamsaleandwrite?.verify_user}"
+											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+											readonly></td>
 								</tr>
 								<tr>
-									<td style="text-align: right;"><font size="2"><B>Entry
-												Time :</B></font></td>
-									<td style="width: 112px"><input type="text" id="entrytime"
-										name="entry_time" th:value="${Bamsaleandwrite?.entry_time}"
-										style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-										readonly></td>
-									<td style="text-align: right;"><font size="2"><B>Modify
-												Time :</B></font></td>
-									<td style="width: 112px"><input type="text"
-										id="modifytime" name="modify_time"
-										th:value="${Bamsaleandwrite?.modify_time}"
-										style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-										readonly></td>
-									<td style="text-align: right;"><font size="2"><B>Verify
-												Time :</B></font></td>
-									<td style="width: 112px"><input type="text"
-										id="verifytime" name="verify_time"
-										th:value="${Bamsaleandwrite?.verify_time}"
-										style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-										readonly></td>
+									<td style="text-align: right;">
+										<font size="2"><B>Entry
+												Time :</B></font>
+									</td>
+									<td style="width: 112px"><input type="text" id="entrytime" name="entry_time"
+											th:value="${Bamsaleandwrite?.entry_time}"
+											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+											readonly></td>
+									<td style="text-align: right;">
+										<font size="2"><B>Modify
+												Time :</B></font>
+									</td>
+									<td style="width: 112px"><input type="text" id="modifytime" name="modify_time"
+											th:value="${Bamsaleandwrite?.modify_time}"
+											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+											readonly></td>
+									<td style="text-align: right;">
+										<font size="2"><B>Verify
+												Time :</B></font>
+									</td>
+									<td style="width: 112px"><input type="text" id="verifytime" name="verify_time"
+											th:value="${Bamsaleandwrite?.verify_time}"
+											style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+											readonly></td>
 								</tr>
 
 							</table>
@@ -1684,33 +1754,29 @@ td {
 
 
 	<div class="modal fade" id="alert">
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="menu-title-header">
 					<div class="modal-title" id="exampleModalLabel"
-						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">BANK
+						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">
+						BANK
 						NAME</div>
 				</div>
-				<div class="modal-body"
-					style="text-align: center; background-color: #c6ccd2">
+				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
-						onclick="back();">Close</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="loader1" data-backdrop="static"
-		data-keyboard="false">
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	<div class="modal fade" id="loader1" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background: transparent;">
 				<div class="modal-body" style="text-align: center">
 					<div>
-						<img th:src=@{/images/loadingapp.gif} id="bfirelogo"
-							style="width: 153px; margin-left: 18px;" alt="Bornfire">
+						<img th:src=@{/images/loadingapp.gif} id="bfirelogo" style="width: 153px; margin-left: 18px;"
+							alt="Bornfire">
 					</div>
 				</div>
 			</div>

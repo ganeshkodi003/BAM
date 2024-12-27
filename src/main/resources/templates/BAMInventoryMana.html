@@ -2,148 +2,169 @@
 <!-- 
 	CREATED BY : RUKMANI J
 	USED FOR :Inventory Master -->
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/font-awesome/5.9.0/css/all.min.css"
-	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
-<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
-	type="text/css">
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"
-	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
-<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
-<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
-	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-<script
-	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
+		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+	<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+		th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
-<style>
-.no-border-table {
-	border: none;
-	border-collapse: collapse;
-}
+		<style>
+		.filterable .filters input[disabled] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-.no-border-table td {
-	border: none;
-}
+		.filterable .filters input[disabled]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-.btns {
-	float: right;
-	margin: 5px;
-}
+		.filterable .filters input[disabled]::-moz-placeholder {
+			color: #333;
+		}
 
-.col-sm-5 {
-	padding-bottom: 15px;
-}
+		.filterable .filters input[disabled]:-ms-input-placeholder {
+			color: #333;
+		}
 
-.list-body {
-	padding: 0px;
-}
+		.filterable .filters input[disabled]::-webkit-input-placeholder {
+			color: #333;
+		}
+		</style>
+	<style>
+		.no-border-table {
+			border: none;
+			border-collapse: collapse;
+		}
 
-.error {
-	color: red;
-	padding-left: 10px;
-}
+		.no-border-table td {
+			border: none;
+		}
 
-.formline {
-	padding-bottom: 4px;
-}
+		.btns {
+			float: right;
+			margin: 5px;
+		}
 
-#finusertb {
-	width: 460px;
-}
+		.col-sm-5 {
+			padding-bottom: 15px;
+		}
 
-.card-header {
-	padding: 1.75rem 1.25rem;
-}
+		.list-body {
+			padding: 0px;
+		}
 
-.card-header1 {
-	padding: 2.75rem 1.25rem;
-}
+		.error {
+			color: red;
+			padding-left: 10px;
+		}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-	padding: 0px;
-}
+		.formline {
+			padding-bottom: 4px;
+		}
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-	border: 2px solid skyblue !important;
-	border-bottom: unset !important;
-	background-color: unset !important;
-	color: black !important;
-	background-color: unset !important;
-}
+		#finusertb {
+			width: 460px;
+		}
 
-nav {
-	border-bottom: 2px solid grey;
-}
+		.card-header {
+			padding: 1.75rem 1.25rem;
+		}
 
-.filterable .filters input[readonly] {
-	background-color: transparent;
-	border: none;
-	cursor: auto;
-	box-shadow: none;
-	padding: 0;
-	height: auto;
-}
+		.card-header1 {
+			padding: 2.75rem 1.25rem;
+		}
 
-.filterable .filters input[readonly]::-webkit-input-placeholder {
-	color: #333;
-}
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			padding: 0px;
+		}
 
-.filterable .filters input[readonly]::-moz-placeholder {
-	color: #333;
-}
+		.nav-tabs .nav-item.show .nav-link,
+		.nav-tabs .nav-link.active {
+			border: 2px solid skyblue !important;
+			border-bottom: unset !important;
+			background-color: unset !important;
+			color: black !important;
+			background-color: unset !important;
+		}
 
-.filterable .filters input[readonly]:-ms-input-placeholder {
-	color: #333;
-}
-</style>
+		nav {
+			border-bottom: 2px solid grey;
+		}
 
-<style>
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
+		.filterable .filters input[readonly] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-th, td {
-	padding: 10px;
-	text-align: left;
-}
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-th, td {
-	border: 1px solid #dcdcdc;
-}
+		.filterable .filters input[readonly]::-moz-placeholder {
+			color: #333;
+		}
 
-td {
-	border-top: 1px solid #dcdcdc;
-}
-</style>
-<script th:inline="javascript">
+		.filterable .filters input[readonly]:-ms-input-placeholder {
+			color: #333;
+		}
+	</style>
+
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		th,
+		td {
+			padding: 10px;
+			text-align: left;
+		}
+
+		th,
+		td {
+			border: 1px solid #dcdcdc;
+		}
+
+		td {
+			border-top: 1px solid #dcdcdc;
+		}
+	</style>
+	<script th:inline="javascript">
 		/*<![CDATA[*/
 
 		$(function () {
@@ -189,7 +210,7 @@ td {
 
 		/*]]>*/
 	</script>
-<script>
+	<script>
 		$(function () {
 			$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
 				dateFormat: "dd-mm-yy",
@@ -279,39 +300,39 @@ td {
 
 		}
 
-function submitaddform(b) {
+		function submitaddform(b) {
 
-		if ($("#BAMInventorymaster").valid()) {
-			$("#loader1").modal("toggle");
-			var formmode = 'add';
-			var Invtype = 'InvTranadd';
-			alert(formmode);
-			var url = "./InvTranadd?formmode=" + formmode + "&Invtype="
+			if ($("#BAMInventorymaster").valid()) {
+				$("#loader1").modal("toggle");
+				var formmode = 'add';
+				var Invtype = 'InvTranadd';
+				alert(formmode);
+				var url = "./InvTranadd?formmode=" + formmode + "&Invtype="
 					+ Invtype;
 
-			$("#BAMInventorymaster").attr('action', url);
+				$("#BAMInventorymaster").attr('action', url);
 
-			var options = {
-				success : showResponse
-			// post-submit callback 
-			};
+				var options = {
+					success: showResponse
+					// post-submit callback 
+				};
 
-			$("#BAMInventorymaster").ajaxSubmit(options);
+				$("#BAMInventorymaster").ajaxSubmit(options);
 
-			function showResponse(responseText, statusText, xhr, $form) {
-				$("#loader1").hide();
-				$("#alertmsg").text(responseText);
+				function showResponse(responseText, statusText, xhr, $form) {
+					$("#loader1").hide();
+					$("#alertmsg").text(responseText);
 
-				$('#alert').modal("toggle");
+					$('#alert').modal("toggle");
+
+				}
+				;
 
 			}
-			;
 
 		}
-
-	}
-</script>
-<script>
+	</script>
+	<script>
 		function handleSelectChanges() {
 			var asset_code = document.getElementById('asset_category').value;
 			var asset_category = asset_code.split(' - ')[0];
@@ -352,7 +373,7 @@ function submitaddform(b) {
 		}
 
 	</script>
-<script>
+	<script>
 		$(document).ready(function () {
 			// Function to update the expiry date
 			function updateExpiryDate() {
@@ -375,7 +396,7 @@ function submitaddform(b) {
 			document.getElementById('date_of_purchase').addEventListener('input', updateExpiryDate);
 		});
 	</script>
-<script>
+	<script>
 
 
 		$(document).ready(function () {
@@ -464,7 +485,7 @@ function submitaddform(b) {
 
 		});
 	</script>
-<script>
+	<script>
 
 
 		function submitaddform(a) {
@@ -611,35 +632,35 @@ function submitaddform(b) {
 		});
 
 		//for locaton type handling
-		$(document).ready(function() {
-			const loctype = $('#loc_type'); 
-			const empid = $('#emp_id'); 
-			const deptdivname = $('#dept_div_name'); 
-			const loca_addr = $('#loca_addr'); 
-		
+		$(document).ready(function () {
+			const loctype = $('#loc_type');
+			const empid = $('#emp_id');
+			const deptdivname = $('#dept_div_name');
+			const loca_addr = $('#loca_addr');
+
 			function updateempid() {
-				const loctypeValue = loctype.val(); 
-		
+				const loctypeValue = loctype.val();
+
 				if (loctypeValue === "QUA") {
 					empid.prop('readonly', false); // Make the field editable
 					loca_addr.prop('readonly', false); // Make the field editable
 					deptdivname.prop('readonly', true); // Make other fields read-only if necessary
-					deptdivname.removeAttr('required'); 
-				    
+					deptdivname.removeAttr('required');
+
 				} else if (loctypeValue === "OFF") {
 					deptdivname.prop('readonly', false); // Make the field editable
 					empid.prop('readonly', true); // Make other fields read-only if necessary
 					loca_addr.prop('readonly', true); // Make other fields read-only if necessary
-					loca_addr.removeAttr('required'); 
-					empid.removeAttr('required'); 
-				    
+					loca_addr.removeAttr('required');
+					empid.removeAttr('required');
+
 				} else if (loctypeValue === "BRAN") {
 					deptdivname.prop('readonly', true); // Make the field editable
 					empid.prop('readonly', true); // Make other fields read-only if necessary
 					loca_addr.prop('readonly', false); // Make other fields read-only if necessary
-					deptdivname.removeAttr('required'); 
-					empid.removeAttr('required'); 
-				    
+					deptdivname.removeAttr('required');
+					empid.removeAttr('required');
+
 				} else {
 					empid.val(''); // Clear the value if not matching any condition
 					empid.prop('readonly', true); // Make the field read-only
@@ -650,86 +671,86 @@ function submitaddform(b) {
 					deptdivname.removeAttr('required');
 					loca_addr.removeAttr('required');
 					empid.removeAttr('required');
-				} 
+				}
 			}
-		
+
 			// Call the function on page load to set the correct state
 			updateempid();
-		
+
 			// Add event listener to the select field to update the state when the value changes
-			loctype.change(function() {
+			loctype.change(function () {
 				updateempid();
 			});
 		});
-		
-		 
+
+
 		//below is for indian standard amount generation(with ,)
 
-function handleCurrencyChange() {
-    const inputs = document.querySelectorAll('input[type="text"]');
-    inputs.forEach(input => {
-        formatAmount(input);
-    });
-}
+		function handleCurrencyChange() {
+			const inputs = document.querySelectorAll('input[type="text"]');
+			inputs.forEach(input => {
+				formatAmount(input);
+			});
+		}
 
-function formatAmount(inputElement) {
-    const currency = document.getElementById('asset_currency').value;
-    let amount = inputElement.value.replace(/,/g, '').replace(/\./g, '').replace(/[^0-9.]/g, '');
+		function formatAmount(inputElement) {
+			const currency = document.getElementById('asset_currency').value;
+			let amount = inputElement.value.replace(/,/g, '').replace(/\./g, '').replace(/[^0-9.]/g, '');
 
-    if (isNaN(amount) || amount === '') {
-        return; // Return if input is not a number or is empty
-    }
+			if (isNaN(amount) || amount === '') {
+				return; // Return if input is not a number or is empty
+			}
 
-    if (currency === 'INR') {
-        formatIndianAmount(inputElement, amount);
-    } else {
-        formatInternationalAmount(inputElement, amount);
-    }
-}
+			if (currency === 'INR') {
+				formatIndianAmount(inputElement, amount);
+			} else {
+				formatInternationalAmount(inputElement, amount);
+			}
+		}
 
-function formatIndianAmount(inputElement, amount) {
-    let formattedAmount = '';
-    let afterDecimal = '';
+		function formatIndianAmount(inputElement, amount) {
+			let formattedAmount = '';
+			let afterDecimal = '';
 
-    if (amount.includes('.')) {
-        [amount, afterDecimal] = amount.split('.');
-        afterDecimal = '.' + afterDecimal.slice(0, 2); // Limit to 2 decimal places
-    }
+			if (amount.includes('.')) {
+				[amount, afterDecimal] = amount.split('.');
+				afterDecimal = '.' + afterDecimal.slice(0, 2); // Limit to 2 decimal places
+			}
 
-    let lastThree = amount.slice(-3);
-    let otherNumbers = amount.slice(0, -3);
+			let lastThree = amount.slice(-3);
+			let otherNumbers = amount.slice(0, -3);
 
-    if (otherNumbers !== '') {
-        formattedAmount = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + ',' + lastThree;
-    } else {
-        formattedAmount = lastThree;
-    }
+			if (otherNumbers !== '') {
+				formattedAmount = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + ',' + lastThree;
+			} else {
+				formattedAmount = lastThree;
+			}
 
-    inputElement.value = formattedAmount + afterDecimal;
-}
+			inputElement.value = formattedAmount + afterDecimal;
+		}
 
-function formatInternationalAmount(inputElement, amount) {
-    let formattedAmount = '';
-    let afterDecimal = '';
+		function formatInternationalAmount(inputElement, amount) {
+			let formattedAmount = '';
+			let afterDecimal = '';
 
-    if (amount.includes('.')) {
-        [amount, afterDecimal] = amount.split('.');
-        afterDecimal = ',' + afterDecimal.slice(0, 2); // Use comma for decimal separator in international format
-    }
+			if (amount.includes('.')) {
+				[amount, afterDecimal] = amount.split('.');
+				afterDecimal = ',' + afterDecimal.slice(0, 2); // Use comma for decimal separator in international format
+			}
 
-    let formattedNumber = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    formattedAmount = formattedNumber + afterDecimal;
+			let formattedNumber = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+			formattedAmount = formattedNumber + afterDecimal;
 
-    inputElement.value = formattedAmount;
-}
+			inputElement.value = formattedAmount;
+		}
 
-function removeFormatting(inputElement) {
-    inputElement.value = inputElement.value.replace(/,/g, '').replace(/\./g, '').replace(/[^0-9.]/g, '');
-}
+		function removeFormatting(inputElement) {
+			inputElement.value = inputElement.value.replace(/,/g, '').replace(/\./g, '').replace(/[^0-9.]/g, '');
+		}
 
-function restoreFormatting(inputElement) {
-    formatAmount(inputElement);
-}
+		function restoreFormatting(inputElement) {
+			formatAmount(inputElement);
+		}
 
 
 		function submitaddforms(c) {
@@ -973,611 +994,611 @@ function restoreFormatting(inputElement) {
 
 			return formattedDate;
 		}
-function countDaysBetween(startDateString, endDateString) {
-    // Parse the start date string into a Date object
-    let startDate = new Date(startDateString);
-    let endDate = new Date(endDateString);
+		function countDaysBetween(startDateString, endDateString) {
+			// Parse the start date string into a Date object
+			let startDate = new Date(startDateString);
+			let endDate = new Date(endDateString);
 
-    // Check if both dates are valid
-    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
-        console.error("Invalid date(s):", startDateString, endDateString);
-        return null;
-    }
+			// Check if both dates are valid
+			if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+				console.error("Invalid date(s):", startDateString, endDateString);
+				return null;
+			}
 
-    // Check if the start date is after March 31st
-    let march31ThisYear = new Date(startDate.getFullYear(), 2, 31); // March is month 2 (zero-based)
+			// Check if the start date is after March 31st
+			let march31ThisYear = new Date(startDate.getFullYear(), 2, 31); // March is month 2 (zero-based)
 
-    if (startDate > march31ThisYear) {
-        // Set the end date to March 31st of the next year
-        endDate = new Date(startDate.getFullYear() + 1, 2, 31);
-    }
+			if (startDate > march31ThisYear) {
+				// Set the end date to March 31st of the next year
+				endDate = new Date(startDate.getFullYear() + 1, 2, 31);
+			}
 
-    // Calculate the difference in milliseconds
-    let timeDifference = endDate.getTime() - startDate.getTime();
+			// Calculate the difference in milliseconds
+			let timeDifference = endDate.getTime() - startDate.getTime();
 
-    // Convert milliseconds to days
-    let dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+			// Convert milliseconds to days
+			let dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
-    return dayDifference + 1 ;
-}
-function lastcountDaysBetween(startDateString, endDateString) {
-    // Parse the start date string into a Date object
-    let startDate = new Date(startDateString);
-    let endDate = new Date(endDateString);
+			return dayDifference + 1;
+		}
+		function lastcountDaysBetween(startDateString, endDateString) {
+			// Parse the start date string into a Date object
+			let startDate = new Date(startDateString);
+			let endDate = new Date(endDateString);
 
-    // Check if both dates are valid
-    if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
-        console.error("Invalid date(s):", startDateString, endDateString);
-        return null;
-    }
+			// Check if both dates are valid
+			if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
+				console.error("Invalid date(s):", startDateString, endDateString);
+				return null;
+			}
 
-    // Check if the start date is after March 31st
-    let march31ThisYear = new Date(startDate.getFullYear(), 2, 31); // March is month 2 (zero-based)
+			// Check if the start date is after March 31st
+			let march31ThisYear = new Date(startDate.getFullYear(), 2, 31); // March is month 2 (zero-based)
 
-    if (startDate > march31ThisYear) {
-        // Set the end date to March 31st of the next year
-        endDate = new Date(startDate.getFullYear() + 1, 2, 31);
-    }
+			if (startDate > march31ThisYear) {
+				// Set the end date to March 31st of the next year
+				endDate = new Date(startDate.getFullYear() + 1, 2, 31);
+			}
 
-    // Calculate the difference in milliseconds
-    let timeDifference = endDate.getTime() - startDate.getTime();
+			// Calculate the difference in milliseconds
+			let timeDifference = endDate.getTime() - startDate.getTime();
 
-    // Convert milliseconds to days
-    let dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+			// Convert milliseconds to days
+			let dayDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 
-    return dayDifference;
-}
-
-
-function genflows() {
-    var dep = document.getElementById('dep_method').value;
-    alert(dep);
-    
-    if (dep == 'SLM') {
-        // Get the number of years input
-        var yearsInput = document.getElementById('lifeofyear').value;
-        var years = parseInt(yearsInput);
-        var acquisitionDateInput = document.getElementById('DATE_OF_ACQN').value;
-        let acquisitionDate = parseDateString(acquisitionDateInput);
-        
-        var dep_method = document.getElementById('dep_method').value;
-        var flowStartDates = calculateFlowStartDates(acquisitionDate);
-        
-        //var result = getMonthDayDifference(acquisitionDate, flowStartDates[0]);
-        var result = countDaysBetween(acquisitionDate, flowStartDates[0]);
-        
-        alert('result is : ' + result)
-        var deppercent = document.getElementById('dep_percentge').value;
-        var percent = parseInt(deppercent);
-        var original_cost = document.getElementById('original_cost').value;
-
-        var rm = original_cost;
-        
-       var lastdep =0;
-
-        // Show the fieldset
-        var fieldset = document.getElementById('tableset');
-        fieldset.style.display = 'block';
-        
-        // Get the table body
-        var tbody = document.getElementById('flowsTable').getElementsByTagName('tbody')[0];
-
-        // Clear any existing rows
-        tbody.innerHTML = '';
-
-        // Initialize total variables
-        var totalPercent = 0;
-        var totalOriginalCost = 0;
-        var totalDepreciation = 0;
-        var totalBookValue = 0;
-        var srl=0;
-        
-        // Generate rows based on the number of years
-        for (var i = 0; i <= years; i++) {
-            var row = document.createElement('tr');
-
-            // Create 13 columns for each row
-            for (var j = 0; j < 13; j++) {
-                var cell = document.createElement('td');
-                var input = document.createElement('input');
-                input.type = 'text';
-
-                if (j === 0) {
-                	srl=i+1;
-                    input.value = i + 1; // Display the row number
-                    input.readOnly = true; // Make it read-only
-                }
-                if (j === 1) {
-                    input.value = "DEPR"; // Display the year
-                    input.readOnly = true; // Make it read-only
-                }
-                if (j === 1 && i === 0) {
-                    input.value = "ACQN";
-                    input.readOnly = true;
-                }
-                if (j === 2 && i < flowStartDates.length) {
-                    input.value = formatDate(flowStartDates[i]);
-                    input.readOnly = true;
-                    if (j === 2 && i === 0) {
-                        input.value = acquisitionDateInput;
-                        input.readOnly = true;
-                    }
-                }
-                if (j === 3) {
-                    input.value = "YEARLY"; // Display the year
-                    input.readOnly = true; // Make it read-only
-                }
-                if (j === 4) {
-                    input.value = dep_method; // Display the year
-                    input.readOnly = true; // Make it read-only
-                }
-                if (j === 5) {
-                    input.value = deppercent; // Display the year
-                    input.readOnly = true; // Make it read-only
-                    input.style.textAlign = 'right';
-                    totalPercent = parseFloat(deppercent);
-                }
-                if (j === 6) {
-                    input.value = original_cost; // Display the year
-                    input.readOnly = true; 
-                    totalOriginalCost = parseFloat(original_cost);
-                    input.style.textAlign = 'right';
-                }
-                
-                if (j === 7 && i === 1) {
-                    var cl = original_cost * (percent / 100);
-                    var a = (cl / 365 * result).toFixed(2);
-                    input.value=Math.round(a).toFixed(2);  //rounding the value
-                    var dp = parseFloat(input.value);
-                    input.readOnly = true; // Make it read-only
-                    input.style.textAlign = 'right';
-                    totalDepreciation += dp;
-                }
-                
-                if (j === 7 && i > 1) {
-                    var a = (original_cost * (percent / 100)).toFixed(2);
-                    input.value=Math.round(a).toFixed(2);  //rounding the value
-                    dp = parseFloat(input.value);
-                    input.readOnly = true; // Make it read-only
-                    input.style.textAlign = 'right';
-                    totalDepreciation += dp;
-                }
-                
-                // For Book value
-                if (j === 8 && i === 0) {
-                    input.value = original_cost;
-                    input.readOnly = true;
-                    input.style.textAlign = 'right';
-                    totalBookValue += parseFloat(input.value);
-                }
-                if (j === 8 && i > 0) {
-                    if (remainingValue != null) {
-                        rm = remainingValue;
-                    }
-                    var remainingValue = rm - dp;
-                    input.value = remainingValue.toFixed(2);
-                    lastdep = input.value; 					// for last monthly depreciation.
-                    input.readOnly = true; 
-                    input.style.textAlign = 'right';
-                    totalBookValue += parseFloat(input.value);
-                }
-                
-                // Set id and class for input cells
-                input.id = 'input_' + i + '_' + j; // Example: input_1_2
-                input.name = 'input_rows' + j;
-
-                // Append the input element to the cell
-                cell.appendChild(input);
-                // Append the cell to the row
-                row.appendChild(cell);
-            }
-
-            // Append the row to the table body
-            tbody.appendChild(row);
-        }
-        				        // Initialize previous book value
-    let previousBookValue = parseFloat(lastdep);
-	    // Retrieve the asset expiry date from the input field 
-	    console.log('last dep month:', previousBookValue);
-			// Retrieve the asset expiry date from the input field 
-			var assetExpiryDateInput = document.getElementById('asstexp_date').value;
-			let assetExpiryDate = parseDateString(assetExpiryDateInput);
-
-			console.log('assetExpiryDate is : ' , assetExpiryDate);
-			
-			// Get the lifespan in years from the input field
-			var lifespanInput = document.getElementById('lifeofyear').value;
-			var lifespan = parseInt(lifespanInput);
-			console.log('life span is : ', lifespan);
-			
-			// Determine the last flow start date based on lifespan
-			
-        console.log('flowStartDates length  is: ', flowStartDates.length);
-			const lastFlowStartDate = flowStartDates[Math.min(lifespan, flowStartDates.length) - 0]; // Adjust for 0-indexing
-			console.log('last flow start date is : ', lastFlowStartDate);
-			
-			// Calculate the month and day difference using the provided function
-			const DayDifference = lastcountDaysBetween(lastFlowStartDate, assetExpiryDate);
-			console.log('last day difference is : ', DayDifference );
-			// Extract the total months from the result
-			//const [months, days] = monthDayDifference.split('.').map(Number); // Split into months and days
-			
-			
-			    // Calculate depreciation for the 5-month period
-		    const DayDepreciation = (original_cost * (percent / 100) / 365) * DayDifference;
-			console.log('DayDepreciation is : ', DayDepreciation);
-        // Add a fifth row for specific calculations
-        var calcRow = document.createElement('tr');
-        for (var j = 0; j < 13; j++) {
-            var cell = document.createElement('td');
-            var input = document.createElement('input');
-            input.type = 'text';
-
-            if (j === 0) {
-                input.value = srl+1; // Row number for the 5-month period
-                input.readOnly = true;
-            }
-            if (j === 1) {
-                input.value = "DEPR"; // Label for the period
-                input.readOnly = true;
-            }
-            if (j === 2) { // Flow start date
-                input.value = assetExpiryDateInput; // Set to the asset expiry date
-                input.readOnly = true;
-            }
-            if (j === 3) {
-                input.value = "MONTHLY"; // Frequency
-                input.readOnly = true;
-            }
-            if (j === 4) {
-                input.value = dep_method; // Method from previous inputs
-                input.readOnly = true;
-            }
-            if (j === 5) {
-                input.value = deppercent; // Percentage from previous inputs
-                input.readOnly = true;
-                input.style.textAlign = 'right';
-            }
-            if (j === 6) { // Original cost
-                input.value = original_cost; // Original cost
-                input.readOnly = true;
-                input.style.textAlign = 'right';
-            }
-            if (j === 7) { // Depreciation for days
-                var a = DayDepreciation.toFixed(2); // Depreciation value days
-                input.value=Math.round(a).toFixed(2);  //rounding the value
-                var dp = parseFloat(input.value);
-                input.readOnly = true;
-                input.style.textAlign = 'right';
-                totalDepreciation += dp;
-            }
-            if (j === 8) { // Book value after 5 months depreciation
-                const bookValueAfterDepreciation = previousBookValue - DayDepreciation;
-                var a = bookValueAfterDepreciation.toFixed(2); // Book value after depreciation
-                input.value=Math.round(a).toFixed(2);  //rounding the value
-                input.readOnly = true; 
-                input.style.textAlign = 'right';
-            }
-
-            // Set id and class for input cells
-            input.id = 'calc_input_' + j; // Example: calc_input_2
-            input.name = 'calc_input_' + j;  // Set the name attribute
-
-            // Append the input element to the cell
-            cell.appendChild(input);
-            // Append the cell to the calculation row
-            calcRow.appendChild(cell);
-        }
-        tbody.appendChild(calcRow); // Append calculation row to the table
-
-        // Add total row at the end
-        var totalRow = document.createElement('tr');
-        for (var j = 0; j < 13; j++) {
-            var totalCell = document.createElement('td');
-            var totalInput = document.createElement('input');
-            totalInput.type = 'text';
-            totalInput.readOnly = true;
+			return dayDifference;
+		}
 
 
-            if (j === 7) {
-                totalInput.value = totalDepreciation.toFixed(2);
-                totalInput.style.textAlign = 'right';
-            }
+		function genflows() {
+			var dep = document.getElementById('dep_method').value;
+			alert(dep);
+
+			if (dep == 'SLM') {
+				// Get the number of years input
+				var yearsInput = document.getElementById('lifeofyear').value;
+				var years = parseInt(yearsInput);
+				var acquisitionDateInput = document.getElementById('DATE_OF_ACQN').value;
+				let acquisitionDate = parseDateString(acquisitionDateInput);
+
+				var dep_method = document.getElementById('dep_method').value;
+				var flowStartDates = calculateFlowStartDates(acquisitionDate);
+
+				//var result = getMonthDayDifference(acquisitionDate, flowStartDates[0]);
+				var result = countDaysBetween(acquisitionDate, flowStartDates[0]);
+
+				alert('result is : ' + result)
+				var deppercent = document.getElementById('dep_percentge').value;
+				var percent = parseInt(deppercent);
+				var original_cost = document.getElementById('original_cost').value;
+
+				var rm = original_cost;
+
+				var lastdep = 0;
+
+				// Show the fieldset
+				var fieldset = document.getElementById('tableset');
+				fieldset.style.display = 'block';
+
+				// Get the table body
+				var tbody = document.getElementById('flowsTable').getElementsByTagName('tbody')[0];
+
+				// Clear any existing rows
+				tbody.innerHTML = '';
+
+				// Initialize total variables
+				var totalPercent = 0;
+				var totalOriginalCost = 0;
+				var totalDepreciation = 0;
+				var totalBookValue = 0;
+				var srl = 0;
+
+				// Generate rows based on the number of years
+				for (var i = 0; i <= years; i++) {
+					var row = document.createElement('tr');
+
+					// Create 13 columns for each row
+					for (var j = 0; j < 13; j++) {
+						var cell = document.createElement('td');
+						var input = document.createElement('input');
+						input.type = 'text';
+
+						if (j === 0) {
+							srl = i + 1;
+							input.value = i + 1; // Display the row number
+							input.readOnly = true; // Make it read-only
+						}
+						if (j === 1) {
+							input.value = "DEPR"; // Display the year
+							input.readOnly = true; // Make it read-only
+						}
+						if (j === 1 && i === 0) {
+							input.value = "ACQN";
+							input.readOnly = true;
+						}
+						if (j === 2 && i < flowStartDates.length) {
+							input.value = formatDate(flowStartDates[i]);
+							input.readOnly = true;
+							if (j === 2 && i === 0) {
+								input.value = acquisitionDateInput;
+								input.readOnly = true;
+							}
+						}
+						if (j === 3) {
+							input.value = "YEARLY"; // Display the year
+							input.readOnly = true; // Make it read-only
+						}
+						if (j === 4) {
+							input.value = dep_method; // Display the year
+							input.readOnly = true; // Make it read-only
+						}
+						if (j === 5) {
+							input.value = deppercent; // Display the year
+							input.readOnly = true; // Make it read-only
+							input.style.textAlign = 'right';
+							totalPercent = parseFloat(deppercent);
+						}
+						if (j === 6) {
+							input.value = original_cost; // Display the year
+							input.readOnly = true;
+							totalOriginalCost = parseFloat(original_cost);
+							input.style.textAlign = 'right';
+						}
+
+						if (j === 7 && i === 1) {
+							var cl = original_cost * (percent / 100);
+							var a = (cl / 365 * result).toFixed(2);
+							input.value = Math.round(a).toFixed(2);  //rounding the value
+							var dp = parseFloat(input.value);
+							input.readOnly = true; // Make it read-only
+							input.style.textAlign = 'right';
+							totalDepreciation += dp;
+						}
+
+						if (j === 7 && i > 1) {
+							var a = (original_cost * (percent / 100)).toFixed(2);
+							input.value = Math.round(a).toFixed(2);  //rounding the value
+							dp = parseFloat(input.value);
+							input.readOnly = true; // Make it read-only
+							input.style.textAlign = 'right';
+							totalDepreciation += dp;
+						}
+
+						// For Book value
+						if (j === 8 && i === 0) {
+							input.value = original_cost;
+							input.readOnly = true;
+							input.style.textAlign = 'right';
+							totalBookValue += parseFloat(input.value);
+						}
+						if (j === 8 && i > 0) {
+							if (remainingValue != null) {
+								rm = remainingValue;
+							}
+							var remainingValue = rm - dp;
+							input.value = remainingValue.toFixed(2);
+							lastdep = input.value; 					// for last monthly depreciation.
+							input.readOnly = true;
+							input.style.textAlign = 'right';
+							totalBookValue += parseFloat(input.value);
+						}
+
+						// Set id and class for input cells
+						input.id = 'input_' + i + '_' + j; // Example: input_1_2
+						input.name = 'input_rows' + j;
+
+						// Append the input element to the cell
+						cell.appendChild(input);
+						// Append the cell to the row
+						row.appendChild(cell);
+					}
+
+					// Append the row to the table body
+					tbody.appendChild(row);
+				}
+				// Initialize previous book value
+				let previousBookValue = parseFloat(lastdep);
+				// Retrieve the asset expiry date from the input field 
+				console.log('last dep month:', previousBookValue);
+				// Retrieve the asset expiry date from the input field 
+				var assetExpiryDateInput = document.getElementById('asstexp_date').value;
+				let assetExpiryDate = parseDateString(assetExpiryDateInput);
+
+				console.log('assetExpiryDate is : ', assetExpiryDate);
+
+				// Get the lifespan in years from the input field
+				var lifespanInput = document.getElementById('lifeofyear').value;
+				var lifespan = parseInt(lifespanInput);
+				console.log('life span is : ', lifespan);
+
+				// Determine the last flow start date based on lifespan
+
+				console.log('flowStartDates length  is: ', flowStartDates.length);
+				const lastFlowStartDate = flowStartDates[Math.min(lifespan, flowStartDates.length) - 0]; // Adjust for 0-indexing
+				console.log('last flow start date is : ', lastFlowStartDate);
+
+				// Calculate the month and day difference using the provided function
+				const DayDifference = lastcountDaysBetween(lastFlowStartDate, assetExpiryDate);
+				console.log('last day difference is : ', DayDifference);
+				// Extract the total months from the result
+				//const [months, days] = monthDayDifference.split('.').map(Number); // Split into months and days
 
 
-            totalCell.appendChild(totalInput);
-            totalRow.appendChild(totalCell);
-        }
-        tbody.appendChild(totalRow);
-    }
+				// Calculate depreciation for the 5-month period
+				const DayDepreciation = (original_cost * (percent / 100) / 365) * DayDifference;
+				console.log('DayDepreciation is : ', DayDepreciation);
+				// Add a fifth row for specific calculations
+				var calcRow = document.createElement('tr');
+				for (var j = 0; j < 13; j++) {
+					var cell = document.createElement('td');
+					var input = document.createElement('input');
+					input.type = 'text';
 
-	if(dep=='WDV'){
+					if (j === 0) {
+						input.value = srl + 1; // Row number for the 5-month period
+						input.readOnly = true;
+					}
+					if (j === 1) {
+						input.value = "DEPR"; // Label for the period
+						input.readOnly = true;
+					}
+					if (j === 2) { // Flow start date
+						input.value = assetExpiryDateInput; // Set to the asset expiry date
+						input.readOnly = true;
+					}
+					if (j === 3) {
+						input.value = "MONTHLY"; // Frequency
+						input.readOnly = true;
+					}
+					if (j === 4) {
+						input.value = dep_method; // Method from previous inputs
+						input.readOnly = true;
+					}
+					if (j === 5) {
+						input.value = deppercent; // Percentage from previous inputs
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+					}
+					if (j === 6) { // Original cost
+						input.value = original_cost; // Original cost
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+					}
+					if (j === 7) { // Depreciation for days
+						var a = DayDepreciation.toFixed(2); // Depreciation value days
+						input.value = Math.round(a).toFixed(2);  //rounding the value
+						var dp = parseFloat(input.value);
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+						totalDepreciation += dp;
+					}
+					if (j === 8) { // Book value after 5 months depreciation
+						const bookValueAfterDepreciation = previousBookValue - DayDepreciation;
+						var a = bookValueAfterDepreciation.toFixed(2); // Book value after depreciation
+						input.value = Math.round(a).toFixed(2);  //rounding the value
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+					}
 
-	    // Get the number of years input
-	    var yearsInput = document.getElementById('lifeofyear').value;
-	    var years = parseInt(yearsInput);
-	   
-	    var acquisitionDateInput = document.getElementById('DATE_OF_ACQN').value;
-	   // var acquisitionDate = new Date(acquisitionDateInput);  
-	    let acquisitionDate = parseDateString(acquisitionDateInput);
-	    
-	    var dep_method = document.getElementById('dep_method').value;
-	     var flowStartDates = calculateFlowStartDates(acquisitionDate);
-	     var result = countDaysBetween(acquisitionDate,flowStartDates[0]);
-	     console.log('days between from date of purchse to next march is : ' ,result);
-	     var deppercent = document.getElementById('dep_percentge').value;
-	     var percent = parseInt(deppercent);
-	     var cur_book = document.getElementById('current_book_value').value;
-	 	
+					// Set id and class for input cells
+					input.id = 'calc_input_' + j; // Example: calc_input_2
+					input.name = 'calc_input_' + j;  // Set the name attribute
 
-	     var original_cost = document.getElementById('original_cost').value;
-	     var rm=original_cost;
-	     
-	 	var lastdep =0;
+					// Append the input element to the cell
+					cell.appendChild(input);
+					// Append the cell to the calculation row
+					calcRow.appendChild(cell);
+				}
+				tbody.appendChild(calcRow); // Append calculation row to the table
 
-	    // Show the fieldset
-	    var fieldset = document.getElementById('tableset');
-	    fieldset.style.display = 'block';
-	    
-	    // Get the table body
-	    var tbody = document.getElementById('flowsTable').getElementsByTagName('tbody')[0];
-
-	    // Clear any existing rows
-	    tbody.innerHTML = '';
-
- // Initialize total variables
-        var totalPercent = 0;
-        var totalOriginalCost = 0;
-        var totalDepreciation = 0;
-        var totalBookValue = 0;
-
-	    // Generate rows based on the number of years
-	    for (var i = 0; i <= years; i++) {
-	        var row = document.createElement('tr');
-
-	        // Create 13 columns for each row
-	        for (var j = 0; j < 13; j++) {
-	            var cell = document.createElement('td');
-	            // Create an input element for each cell
-	            var input = document.createElement('input');
-	            input.type = 'text';
-	            
-	            // Set the text content for the first column only
-	            if (j === 0) {
-	                input.value = i + 1; // Display the row number
-	                input.readOnly = true; // Make it read-only
-	            }
-	            // Set the year value in the second column
-	            if (j === 1) {
-	                input.value = "DEPR"; // Display the year
-	                input.readOnly = true; // Make it read-only
-	            }
-	         // Set the acquisition date in the third column first cell
-	             if (j === 1 && i === 0) {
-	                input.value = "ACQN";
-	                input.readOnly = true;
-	            }
-	            // Set the flow start dates in the third column
-	             if (j === 2 && i < flowStartDates.length) {
-                input.value = formatDate(flowStartDates[i]);
-                input.readOnly = true;
-                if (j === 2 && i === 0) {
-                    input.value = acquisitionDateInput;
-                    input.readOnly = true;
-                }
-            }
-	             if (j === 3) {
-	                 input.value = "YEARLY"; // Display the year
-	                 input.readOnly = true; // Make it read-only
-	             }
-	            if (j === 4) {
-	                input.value = dep_method; // Display the year
-	                input.readOnly = true; // Make it read-only
-	            }
-	             if (j === 5) {
-	                 input.value = deppercent; // Display the year
-	                 input.readOnly = true; // Make it read-only
-	                 input.style.textAlign = 'right';
-	                 totalPercent = parseFloat(deppercent);
-	                 
-	             }
-	             if (j === 6) {
-	                 input.value = original_cost; // Display the year
-	                 input.readOnly = true; 
-	                 totalOriginalCost = parseFloat(original_cost);
-	                 input.style.textAlign = 'right';
-	             }
-	             
-	             //Depretiation
-	             if (j === 7 && i===1) {
-	            	 
-	            	 var prevBookValueElement = document.getElementById('input_' + (i - 1) + '_8');
-	            	 console.log(prevBookValueElement)
-	                 if (prevBookValueElement) {
-	                     var prevBookValue = parseFloat(prevBookValueElement.value);
-	                    // alert(prevBookValue)
-	                     cl= (prevBookValue * (percent / 100)).toFixed(2);
-	                     var a = (cl / 365 * result).toFixed(2);		//365 for days calculation
-	                     input.value=Math.round(a).toFixed(2);  //rounding the value
-	                     var dp = parseFloat(input.value);
-	                 input.readOnly = true;// Make it read-only
-	                 input.style.textAlign = 'right';
-	                 totalDepreciation += dp;
-	             }
-	             
-	             }
-	             
-					if (j === 7 && i>1) {
-	            	 
-	            	 var prevBookValueElement = document.getElementById('input_' + (i - 1) + '_8');
-	                 if (prevBookValueElement) {
-	                     var prevBookValue = parseFloat(prevBookValueElement.value);
-	                    // alert(prevBookValue)
-	                     var a =(prevBookValue * (percent / 100)).toFixed(2);
-	                     input.value=Math.round(a).toFixed(2);  //rounding the value 
-	                    var dp = parseFloat(input.value);
-	                 input.readOnly = true;// Make it read-only
-	                 input.style.textAlign = 'right';
-	                 totalDepreciation += dp;
-	                 
-	             }
-	             
-	             }
-	             //For Book value
-	             if (j === 8 && i === 0) {
-	                 input.value = original_cost;
-	                 input.readOnly = true;
-	                 input.style.textAlign = 'right';
-	                 totalBookValue += parseFloat(input.value);
-	             }
-	             if (j === 8 && i>0) {
-	            	 if(remainingValue!=null){
-	            	 rm=remainingValue;
-	            	 }
-	             var remainingValue = rm-dp;
-	             input.value = remainingValue.toFixed(2); 
-	             lastdep = input.value; 					// for last depreciation.
-	             input.readOnly = true; 
-	             input.style.textAlign = 'right';
-	             totalBookValue += parseFloat(input.value);
-	             
-	        }
-	             if (j === 9 && i === 0) {
-	                input.value = acquisitionDateInput;
-	                 input.readOnly = true;
-	             }
-	             if (j === 10 && i === 0) {
-		                input.value = '124/1';
-		                 input.readOnly = true;
-		             }
-	             if (j === 11 && i === 0) {
-		                input.value = original_cost;
-		                 input.readOnly = true;
-		             }
-	             
-	             
-	             input.id = 'input_' + i + '_' + j;
-	             input.name = 'input_rows' + j;  // Set the name attribute	            
-	            // Append the input element to the cell
-	            cell.appendChild(input);
-	            // Append the cell to the row
-	            row.appendChild(cell);
-	        }
-
-	        // Append the row to the table body
-	        tbody.appendChild(row);
-	    }	    
-	        // Initialize previous book value
-    let previousBookValue = parseFloat(lastdep);
-	    // Retrieve the asset expiry date from the input field 
-	    console.log('last dep month:', previousBookValue);
-
-			var assetExpiryDateInput = document.getElementById('asstexp_date').value;
-			let assetExpiryDate = parseDateString(assetExpiryDateInput);
-
-			// Get the lifespan in years from the input field
-			var lifespanInput = document.getElementById('lifeofyear').value;
-			var lifespan = parseInt(lifespanInput);
-			
-			// Determine the last flow start date based on lifespan
-			const lastFlowStartDate = flowStartDates[Math.min(lifespan, flowStartDates.length) - 0]; // Adjust for 0-indexing
-			
-			const DayDifference = lastcountDaysBetween(lastFlowStartDate, assetExpiryDate);
-			
-			// Extract the total months from the result
-			//const [months, days] = monthDayDifference.split('.').map(Number); // Split into months and days
-			
-			console.log('last day difference: ', DayDifference);
-			
-			    // Calculate depreciation for the 5-month period
-			const DayDepreciation = (previousBookValue * (percent / 100) / 365) * DayDifference;
-
-        // Add a fifth row for specific calculations
-        var calcRow = document.createElement('tr');
-        for (var j = 0; j < 13; j++) {
-            var cell = document.createElement('td');
-            var input = document.createElement('input');
-            input.type = 'text';
-
-            if (j === 0) {
-                input.value = i+1; // Row number for the 5-month period
-                input.readOnly = true;
-            }
-            if (j === 1) {
-                input.value = "DEPR"; // Label for the period
-                input.readOnly = true;
-            }
-            if (j === 2) { // Flow start date
-                input.value = assetExpiryDateInput; // Set to the asset expiry date
-                input.readOnly = true;
-            }
-            if (j === 3) {
-                input.value = "MONTHLY"; // Frequency
-                input.readOnly = true;
-            }
-            if (j === 4) {
-                input.value = dep_method; // Method from previous inputs
-                input.readOnly = true;
-            }
-            if (j === 5) {
-                input.value = deppercent; // Percentage from previous inputs
-                input.readOnly = true;
-                input.style.textAlign = 'right';
-            }
-            if (j === 6) { // Original cost
-                input.value = original_cost; // Original cost
-                input.readOnly = true;
-                input.style.textAlign = 'right';
-            }
-            if (j === 7) { // Depreciation
-               	var a = DayDepreciation.toFixed(2); // Depreciation for days
-               	input.value=Math.round(a).toFixed(2);  //rounding the value
-				var dp = parseFloat(input.value);
-               	input.readOnly = true;
-                input.style.textAlign = 'right';
-                totalDepreciation += dp;                    
-            }
-            if (j === 8) { // Book value after day depreciation
-                const bookValueAfterDepreciation = previousBookValue - DayDepreciation;
-                var a = bookValueAfterDepreciation.toFixed(2); // Book value after depreciation
-                input.value=Math.round(a).toFixed(2);  //rounding the value
-                input.readOnly = true; 
-                input.style.textAlign = 'right';
-            }
-
-            // Set id and class for input cells
-            input.id = 'calc_input_' + j; // Example: calc_input_2
-            input.name = 'calc_input_' + j;  // Set the name attribute
-
-            // Append the input element to the cell
-            cell.appendChild(input);
-            // Append the cell to the calculation row
-            calcRow.appendChild(cell);
-        }
-        tbody.appendChild(calcRow); // Append calculation row to the table
-		
-		// Add total row at the end
-        var totalRow = document.createElement('tr');
-        for (var j = 0; j < 13; j++) {
-            var totalCell = document.createElement('td');
-            var totalInput = document.createElement('input');
-            totalInput.type = 'text';
-            totalInput.readOnly = true;
+				// Add total row at the end
+				var totalRow = document.createElement('tr');
+				for (var j = 0; j < 13; j++) {
+					var totalCell = document.createElement('td');
+					var totalInput = document.createElement('input');
+					totalInput.type = 'text';
+					totalInput.readOnly = true;
 
 
-            if (j === 7) {
-                totalInput.value = totalDepreciation.toFixed(2);
-                totalInput.style.textAlign = 'right';
-            }
+					if (j === 7) {
+						totalInput.value = totalDepreciation.toFixed(2);
+						totalInput.style.textAlign = 'right';
+					}
 
 
-            totalCell.appendChild(totalInput);
-            totalRow.appendChild(totalCell);
-        }
-        tbody.appendChild(totalRow);
-		
-	}
-}
+					totalCell.appendChild(totalInput);
+					totalRow.appendChild(totalCell);
+				}
+				tbody.appendChild(totalRow);
+			}
+
+			if (dep == 'WDV') {
+
+				// Get the number of years input
+				var yearsInput = document.getElementById('lifeofyear').value;
+				var years = parseInt(yearsInput);
+
+				var acquisitionDateInput = document.getElementById('DATE_OF_ACQN').value;
+				// var acquisitionDate = new Date(acquisitionDateInput);  
+				let acquisitionDate = parseDateString(acquisitionDateInput);
+
+				var dep_method = document.getElementById('dep_method').value;
+				var flowStartDates = calculateFlowStartDates(acquisitionDate);
+				var result = countDaysBetween(acquisitionDate, flowStartDates[0]);
+				console.log('days between from date of purchse to next march is : ', result);
+				var deppercent = document.getElementById('dep_percentge').value;
+				var percent = parseInt(deppercent);
+				var cur_book = document.getElementById('current_book_value').value;
+
+
+				var original_cost = document.getElementById('original_cost').value;
+				var rm = original_cost;
+
+				var lastdep = 0;
+
+				// Show the fieldset
+				var fieldset = document.getElementById('tableset');
+				fieldset.style.display = 'block';
+
+				// Get the table body
+				var tbody = document.getElementById('flowsTable').getElementsByTagName('tbody')[0];
+
+				// Clear any existing rows
+				tbody.innerHTML = '';
+
+				// Initialize total variables
+				var totalPercent = 0;
+				var totalOriginalCost = 0;
+				var totalDepreciation = 0;
+				var totalBookValue = 0;
+
+				// Generate rows based on the number of years
+				for (var i = 0; i <= years; i++) {
+					var row = document.createElement('tr');
+
+					// Create 13 columns for each row
+					for (var j = 0; j < 13; j++) {
+						var cell = document.createElement('td');
+						// Create an input element for each cell
+						var input = document.createElement('input');
+						input.type = 'text';
+
+						// Set the text content for the first column only
+						if (j === 0) {
+							input.value = i + 1; // Display the row number
+							input.readOnly = true; // Make it read-only
+						}
+						// Set the year value in the second column
+						if (j === 1) {
+							input.value = "DEPR"; // Display the year
+							input.readOnly = true; // Make it read-only
+						}
+						// Set the acquisition date in the third column first cell
+						if (j === 1 && i === 0) {
+							input.value = "ACQN";
+							input.readOnly = true;
+						}
+						// Set the flow start dates in the third column
+						if (j === 2 && i < flowStartDates.length) {
+							input.value = formatDate(flowStartDates[i]);
+							input.readOnly = true;
+							if (j === 2 && i === 0) {
+								input.value = acquisitionDateInput;
+								input.readOnly = true;
+							}
+						}
+						if (j === 3) {
+							input.value = "YEARLY"; // Display the year
+							input.readOnly = true; // Make it read-only
+						}
+						if (j === 4) {
+							input.value = dep_method; // Display the year
+							input.readOnly = true; // Make it read-only
+						}
+						if (j === 5) {
+							input.value = deppercent; // Display the year
+							input.readOnly = true; // Make it read-only
+							input.style.textAlign = 'right';
+							totalPercent = parseFloat(deppercent);
+
+						}
+						if (j === 6) {
+							input.value = original_cost; // Display the year
+							input.readOnly = true;
+							totalOriginalCost = parseFloat(original_cost);
+							input.style.textAlign = 'right';
+						}
+
+						//Depretiation
+						if (j === 7 && i === 1) {
+
+							var prevBookValueElement = document.getElementById('input_' + (i - 1) + '_8');
+							console.log(prevBookValueElement)
+							if (prevBookValueElement) {
+								var prevBookValue = parseFloat(prevBookValueElement.value);
+								// alert(prevBookValue)
+								cl = (prevBookValue * (percent / 100)).toFixed(2);
+								var a = (cl / 365 * result).toFixed(2);		//365 for days calculation
+								input.value = Math.round(a).toFixed(2);  //rounding the value
+								var dp = parseFloat(input.value);
+								input.readOnly = true;// Make it read-only
+								input.style.textAlign = 'right';
+								totalDepreciation += dp;
+							}
+
+						}
+
+						if (j === 7 && i > 1) {
+
+							var prevBookValueElement = document.getElementById('input_' + (i - 1) + '_8');
+							if (prevBookValueElement) {
+								var prevBookValue = parseFloat(prevBookValueElement.value);
+								// alert(prevBookValue)
+								var a = (prevBookValue * (percent / 100)).toFixed(2);
+								input.value = Math.round(a).toFixed(2);  //rounding the value 
+								var dp = parseFloat(input.value);
+								input.readOnly = true;// Make it read-only
+								input.style.textAlign = 'right';
+								totalDepreciation += dp;
+
+							}
+
+						}
+						//For Book value
+						if (j === 8 && i === 0) {
+							input.value = original_cost;
+							input.readOnly = true;
+							input.style.textAlign = 'right';
+							totalBookValue += parseFloat(input.value);
+						}
+						if (j === 8 && i > 0) {
+							if (remainingValue != null) {
+								rm = remainingValue;
+							}
+							var remainingValue = rm - dp;
+							input.value = remainingValue.toFixed(2);
+							lastdep = input.value; 					// for last depreciation.
+							input.readOnly = true;
+							input.style.textAlign = 'right';
+							totalBookValue += parseFloat(input.value);
+
+						}
+						if (j === 9 && i === 0) {
+							input.value = acquisitionDateInput;
+							input.readOnly = true;
+						}
+						if (j === 10 && i === 0) {
+							input.value = '124/1';
+							input.readOnly = true;
+						}
+						if (j === 11 && i === 0) {
+							input.value = original_cost;
+							input.readOnly = true;
+						}
+
+
+						input.id = 'input_' + i + '_' + j;
+						input.name = 'input_rows' + j;  // Set the name attribute	            
+						// Append the input element to the cell
+						cell.appendChild(input);
+						// Append the cell to the row
+						row.appendChild(cell);
+					}
+
+					// Append the row to the table body
+					tbody.appendChild(row);
+				}
+				// Initialize previous book value
+				let previousBookValue = parseFloat(lastdep);
+				// Retrieve the asset expiry date from the input field 
+				console.log('last dep month:', previousBookValue);
+
+				var assetExpiryDateInput = document.getElementById('asstexp_date').value;
+				let assetExpiryDate = parseDateString(assetExpiryDateInput);
+
+				// Get the lifespan in years from the input field
+				var lifespanInput = document.getElementById('lifeofyear').value;
+				var lifespan = parseInt(lifespanInput);
+
+				// Determine the last flow start date based on lifespan
+				const lastFlowStartDate = flowStartDates[Math.min(lifespan, flowStartDates.length) - 0]; // Adjust for 0-indexing
+
+				const DayDifference = lastcountDaysBetween(lastFlowStartDate, assetExpiryDate);
+
+				// Extract the total months from the result
+				//const [months, days] = monthDayDifference.split('.').map(Number); // Split into months and days
+
+				console.log('last day difference: ', DayDifference);
+
+				// Calculate depreciation for the 5-month period
+				const DayDepreciation = (previousBookValue * (percent / 100) / 365) * DayDifference;
+
+				// Add a fifth row for specific calculations
+				var calcRow = document.createElement('tr');
+				for (var j = 0; j < 13; j++) {
+					var cell = document.createElement('td');
+					var input = document.createElement('input');
+					input.type = 'text';
+
+					if (j === 0) {
+						input.value = i + 1; // Row number for the 5-month period
+						input.readOnly = true;
+					}
+					if (j === 1) {
+						input.value = "DEPR"; // Label for the period
+						input.readOnly = true;
+					}
+					if (j === 2) { // Flow start date
+						input.value = assetExpiryDateInput; // Set to the asset expiry date
+						input.readOnly = true;
+					}
+					if (j === 3) {
+						input.value = "MONTHLY"; // Frequency
+						input.readOnly = true;
+					}
+					if (j === 4) {
+						input.value = dep_method; // Method from previous inputs
+						input.readOnly = true;
+					}
+					if (j === 5) {
+						input.value = deppercent; // Percentage from previous inputs
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+					}
+					if (j === 6) { // Original cost
+						input.value = original_cost; // Original cost
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+					}
+					if (j === 7) { // Depreciation
+						var a = DayDepreciation.toFixed(2); // Depreciation for days
+						input.value = Math.round(a).toFixed(2);  //rounding the value
+						var dp = parseFloat(input.value);
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+						totalDepreciation += dp;
+					}
+					if (j === 8) { // Book value after day depreciation
+						const bookValueAfterDepreciation = previousBookValue - DayDepreciation;
+						var a = bookValueAfterDepreciation.toFixed(2); // Book value after depreciation
+						input.value = Math.round(a).toFixed(2);  //rounding the value
+						input.readOnly = true;
+						input.style.textAlign = 'right';
+					}
+
+					// Set id and class for input cells
+					input.id = 'calc_input_' + j; // Example: calc_input_2
+					input.name = 'calc_input_' + j;  // Set the name attribute
+
+					// Append the input element to the cell
+					cell.appendChild(input);
+					// Append the cell to the calculation row
+					calcRow.appendChild(cell);
+				}
+				tbody.appendChild(calcRow); // Append calculation row to the table
+
+				// Add total row at the end
+				var totalRow = document.createElement('tr');
+				for (var j = 0; j < 13; j++) {
+					var totalCell = document.createElement('td');
+					var totalInput = document.createElement('input');
+					totalInput.type = 'text';
+					totalInput.readOnly = true;
+
+
+					if (j === 7) {
+						totalInput.value = totalDepreciation.toFixed(2);
+						totalInput.style.textAlign = 'right';
+					}
+
+
+					totalCell.appendChild(totalInput);
+					totalRow.appendChild(totalCell);
+				}
+				tbody.appendChild(totalRow);
+
+			}
+		}
 		function openTab(evt, tabName) {
 			let currentTab = 'tab1';
 			tablinks = document.getElementsByClassName("tablinks");
@@ -1681,6 +1702,75 @@ function genflows() {
 			}
 		}
 	</script>
+	<script type="text/javascript">
+		$(document)
+				.ready(
+						function() {
+							$('.filterable .btn-filter')
+									.click(
+											function() {
+												var $panel = $(this).parents(
+														'.filterable'), $filters = $panel
+														.find('.filters input'), $tbody = $panel
+														.find('.table tbody');
+												if ($filters.prop('disabled') == true) {
+													$filters
+															.prop('disabled', false);
+													$filters.first().focus();
+												} else {
+													$filters.val('').prop(
+															'disabled', true);
+													$tbody.find('.no-result')
+															.remove();
+													$tbody.find('tr').show();
+												}
+											});
+
+							$('.filterable .filters input')
+									.keyup(
+											function(e) {
+												/* Ignore tab key */
+												var code = e.keyCode || e.which;
+												if (code == '9')
+													return;
+												/* Useful DOM data and selectors */
+												var $input = $(this), inputContent = $input
+														.val().toLowerCase(), $panel = $input
+														.parents('.filterable'), column = $panel
+														.find('.filters th')
+														.index($input.parents('th')), $table = $panel
+														.find('.table'), $rows = $table
+														.find('tbody tr');
+												/* Dirtiest filter function ever ;) */
+												var $filteredRows = $rows
+														.filter(function() {
+															var value = $(this)
+																	.find('td').eq(
+																			column)
+																	.text()
+																	.toLowerCase();
+															return value
+																	.indexOf(inputContent) === -1;
+														});
+												/* Clean previous no-result if exist */
+												$table.find('tbody .no-result')
+														.remove();
+												/* Show all rows, hide filtered ones (never do that outside of a demo ! xD) */
+												$rows.show();
+												$filteredRows.hide();
+												/* Prepend no-result row if all rows are filtered */
+												if ($filteredRows.length === $rows.length) {
+													$table
+															.find('tbody')
+															.prepend(
+																	$('<tr class="no-result text-center"><td colspan="'
+																			+ $table
+																					.find('.filters th').length
+																			+ '">No Record found</td></tr>'));
+												}
+											});
+						});
+	</script>
 </head>
 <title>BAM</title>
 
@@ -1695,37 +1785,58 @@ function genflows() {
 
 				<div class="container-fluid content" th:if="${formmode} == 'list'">
 					<div class="row">
-						<form action="#" method="post" autocomplete="off"
-							style="width: 100%">
+						<form action="#" method="post" autocomplete="off" style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-											<div class="card-header p-1" style="display: flex; justify-content: space-between;">	
-										<h4 class="headerbutton d-flex " style="align-items: center; "> INVENTORY MASTER - LIST</h4>
-										<div class=" float-right p-0">
-											<button type="button" class="btn btn-xs  headerbutton btns"
-												id="btnAdd" onclick="codeadd();" th:if="${formmode}=='list'"
-												style="font-size: 15px; width: -70px; size: 100px;">Add</button>
-											<!--<button type="button" class="btn btn-xs  headerbutton btns"
-												id="btnAdd" onclick="list();"
-												style="font-size: 15px; width: -70px; size: 100px;">List</button>-->
+									<div class="card-header p-0" style="display: flex; justify-content: space-between;">
+										<h4 class="btn btn-sm mr-2 headerbutton mt-1" style="align-items: center; ">
+											INVENTORY MASTER
+											- LIST</h4>
+										<div class="btn-group nav-buttons float-right">
+											<button type="button" class="btn btn-sm mr-2 headerbutton" id="btnAdd"
+												th:if="${formmode}=='list'" onclick="codeadd();">Add</button>
+											<button type="button"
+												class="btn btns btn-filter headerbutton">Filter</button>
 										</div>
 									</div>
-									
+								
 									<div class="">
-										<div class="table-responsive">
+										<div class="table-responsive" style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 											<table class="table table-bordered">
-												<thead >
-
-													<tr>
-														<th rowspan="2">Asset Srl Num</th>
-														<th rowspan="2">Asset Name</th>
-														<th rowspan="2">Account Number</th>
-														<th rowspan="2">Category</th>
-														<th rowspan="2">Employee Id</th>
-														<th rowspan="2">Current Book Value</th>
-														<th rowspan="2">Market Value</th>
-														<th rowspan="2">Status</th>
-														<th rowspan="2">Select</th>
+												 
+												<thead
+													style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
+													<tr class="filters">
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Asset Srl Num" disabled></th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Asset Name" disabled></th>
+														<th style="text-align: center"><input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Account Number" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Category" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Employee Id" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Current Book Val" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Market Value" disabled>
+														</th>
+														<th style="text-align: center"> <input type="text"
+																class="form-control font-weight-bold"
+																placeholder="Status" disabled></th>
+														 <th class="pb-2 select_th">Select</th> 
 													</tr>
 												</thead>
 												<tbody id="associatemonthly">
@@ -1750,8 +1861,8 @@ function genflows() {
 														</th:block>
 														<th:block th:switch="${Bamdocmana?.verify_flg}">
 															<td th:case="'Y'"><input type="radio"
-																th:attr="data-id=${Bamdocmana?.asst_srl_no}"
-																onclick="Headcode(this)"></td>
+																	th:attr="data-id=${Bamdocmana?.asst_srl_no}"
+																	onclick="Headcode(this)"></td>
 															<td th:case="'N'">
 																<div class="dropdown">
 																	<button class="btn btn-secondary dropdown-toggle"
@@ -1800,8 +1911,8 @@ function genflows() {
 				<div class="container-fluid content" th:if="${formmode}=='add'">
 					<div class="row">
 
-						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
-							method="post" autocomplete="off" id="BAMInventorymaster">
+						<form action="#" th:object="${BAMInventorymaster}" class="w-100" method="post"
+							autocomplete="off" id="BAMInventorymaster">
 
 							<div class="associateProfileList mt-4">
 								<div class="card">
@@ -1811,8 +1922,8 @@ function genflows() {
 											<h4 class="headerh6 ">INVENTORY MASTER - Add</h4>
 										</div>
 										<div class="btn-group nav-buttons float-right">
-											<button type="button" class="btn btn-xs  headerbutton btns"
-												id="btnAdd" onclick="codeadd();" th:if="${formmode}=='list'"
+											<button type="button" class="btn btn-xs  headerbutton btns" id="btnAdd"
+												onclick="codeadd();" th:if="${formmode}=='list'"
 												style="font-size: 15px; width: -70px; size: 100px;">Add</button>
 
 										</div>
@@ -1822,8 +1933,7 @@ function genflows() {
 											<button type="button" class="tablinks active"
 												onclick="openTab(event, 'tab1')"
 												style="transform: translateY(-35px);">Inventory-View</button>
-											<button type="button" class="tablinks"
-												onclick="openTab(event, 'tab2')"
+											<button type="button" class="tablinks" onclick="openTab(event, 'tab2')"
 												style="transform: translateY(-35px)">Depreciation</button>
 
 
@@ -1854,8 +1964,7 @@ function genflows() {
 														<label for="branch_name">Asset Name</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster.asst_name} "
+														<input type="text" th:value="${BAMInventorymaster.asst_name} "
 															id="asst_name" class="form-control form-control-sm"
 															autocomplete="off" name="asst_name" required="required" />
 													</div>
@@ -1899,8 +2008,8 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<select id="asset_type" name="asset_type"
-															style="width: 100%" th:field="*{asset_type}"
+														<select id="asset_type" name="asset_type" style="width: 100%"
+															th:field="*{asset_type}"
 															th:value="${BAMInventorymaster?.asset_type}"
 															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
@@ -1924,8 +2033,7 @@ function genflows() {
 														<label for="asset_currency">Asset Currency</label>
 													</div>
 													<div class="col-sm-3">
-														<select id="asset_currency"
-															class="form-control form-control-sm"
+														<select id="asset_currency" class="form-control form-control-sm"
 															onchange="handleCurrencyChange()">
 															<option value="INR" selected>INR</option>
 															<option value="Others">Others</option>
@@ -1941,9 +2049,9 @@ function genflows() {
 													<div class="col-sm-3">
 														<input type="date"
 															th:value="${BAMInventorymaster.date_of_purchase}"
-															id="date_of_purchase"
-															class="form-control form-control-sm" autocomplete="off"
-															name="date_of_purchase" required="required" />
+															id="date_of_purchase" class="form-control form-control-sm"
+															autocomplete="off" name="date_of_purchase"
+															required="required" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -1952,9 +2060,9 @@ function genflows() {
 													<div class="col-sm-3">
 														<input type="date"
 															th:value="${BAMInventorymaster.year_of_purchase}"
-															id="year_of_purchase"
-															class="form-control form-control-sm" autocomplete="off"
-															name="year_of_purchase" required="required" />
+															id="year_of_purchase" class="form-control form-control-sm"
+															autocomplete="off" name="year_of_purchase"
+															required="required" />
 													</div>
 												</div>
 												<div class="row formline">
@@ -1976,10 +2084,9 @@ function genflows() {
 													</div>
 													<div class="col-sm-3">
 														<input type="text" onfocus="restoreFormatting(this)"
-															onblur="removeFormatting(this)"
-															oninput="formatAmount(this)" id="org_cost"
-															class="form-control form-control-sm" name="org_cost"
-															autocomplete="off" required="required" />
+															onblur="removeFormatting(this)" oninput="formatAmount(this)"
+															id="org_cost" class="form-control form-control-sm"
+															name="org_cost" autocomplete="off" required="required" />
 													</div>
 
 													<div class="col-sm-1"></div>
@@ -2009,8 +2116,7 @@ function genflows() {
 														<label for="asst_rmks">Asset Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.asst_rmks}"
+														<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
 															id="asst_rmks" class="form-control form-control-sm"
 															name="asst_rmks" autocomplete="off" required="required" />
 													</div>
@@ -2022,8 +2128,7 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.vender_name}"
+														<input type="text" th:value="${BAMInventorymaster?.vender_name}"
 															id="vender_name" class="form-control form-control-sm"
 															name="vender_name" autocomplete="off" required="required" />
 													</div>
@@ -2047,9 +2152,8 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<select id="depr_flag" name="depr_flag"
-															style="width: 100%" class="form-control form-control-sm"
-															required>
+														<select id="depr_flag" name="depr_flag" style="width: 100%"
+															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
 															<option value="Y">Y</option>
 															<option value="N">N</option>
@@ -2060,8 +2164,8 @@ function genflows() {
 														<label for="depr_freq">Depreciation Frequency</label>
 													</div>
 													<div class="col-sm-3">
-														<select id="depr_freq" name="depr_freq"
-															style="width: 100%" th:field="*{depr_freq}"
+														<select id="depr_freq" name="depr_freq" style="width: 100%"
+															th:field="*{depr_freq}"
 															th:value="${BAMInventorymaster?.depr_freq}"
 															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
@@ -2080,9 +2184,8 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<select id="depr_method" name="depr_method"
-															style="width: 100%" class="form-control form-control-sm"
-															required>
+														<select id="depr_method" name="depr_method" style="width: 100%"
+															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
 															<option value="SLM">SLM</option>
 															<option value="WDV">WDV</option>
@@ -2096,8 +2199,8 @@ function genflows() {
 														<input type="number"
 															th:value="${BAMInventorymaster?.depr_percent}"
 															id="depr_percent" class="form-control form-control-sm"
-															name="depr_percent" autocomplete="off"
-															required="required" readonly />
+															name="depr_percent" autocomplete="off" required="required"
+															readonly />
 													</div>
 												</div>
 
@@ -2109,9 +2212,8 @@ function genflows() {
 													<div class="col-sm-3">
 														<input type="date"
 															th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-															id="date_of_last_depr"
-															class="form-control form-control-sm" autocomplete="off"
-															name="date_of_last_depr" />
+															id="date_of_last_depr" class="form-control form-control-sm"
+															autocomplete="off" name="date_of_last_depr" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2119,11 +2221,10 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-															class="form-control form-control-sm" name="acc_depr"
-															autocomplete="off" required="required" readonly /> <input
-															type="hidden" id="server_acc_depr"
+														<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+															id="acc_depr" class="form-control form-control-sm"
+															name="acc_depr" autocomplete="off" required="required"
+															readonly /> <input type="hidden" id="server_acc_depr"
 															th:value="${BAMInventorymaster.acc_depr}" />
 
 													</div>
@@ -2152,8 +2253,7 @@ function genflows() {
 													<div class="col-sm-3">
 														<input type="date"
 															th:value="${BAMInventorymaster?.date_of_last_tfr}"
-															id="date_of_last_tfr"
-															class="form-control form-control-sm"
+															id="date_of_last_tfr" class="form-control form-control-sm"
 															name="date_of_last_tfr" autocomplete="off"
 															required="required" />
 													</div>
@@ -2178,9 +2278,8 @@ function genflows() {
 													</div>
 													<div class="col-sm-3">
 														<input type="text" onfocus="restoreFormatting(this)"
-															onblur="removeFormatting(this)"
-															oninput="formatAmount(this)" id="cur_book_value"
-															class="form-control form-control-sm"
+															onblur="removeFormatting(this)" oninput="formatAmount(this)"
+															id="cur_book_value" class="form-control form-control-sm"
 															name="cur_book_value" autocomplete="off"
 															required="required" />
 													</div>
@@ -2191,10 +2290,9 @@ function genflows() {
 													</div>
 													<div class="col-sm-3">
 														<input type="text" onfocus="restoreFormatting(this)"
-															onblur="removeFormatting(this)"
-															oninput="formatAmount(this)" id="mkt_value"
-															class="form-control form-control-sm" name="mkt_value"
-															autocomplete="off" required="required" />
+															onblur="removeFormatting(this)" oninput="formatAmount(this)"
+															id="mkt_value" class="form-control form-control-sm"
+															name="mkt_value" autocomplete="off" required="required" />
 													</div>
 
 												</div>
@@ -2219,10 +2317,9 @@ function genflows() {
 														<label for="sol_id">Sol Id</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.sol_id}" id="sol_id"
-															class="form-control form-control-sm" name="sol_id"
-															autocomplete="off" required="required" />
+														<input type="text" th:value="${BAMInventorymaster?.sol_id}"
+															id="sol_id" class="form-control form-control-sm"
+															name="sol_id" autocomplete="off" required="required" />
 													</div>
 												</div>
 
@@ -2232,10 +2329,9 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.emp_id}" id="emp_id"
-															class="form-control form-control-sm" name="emp_id"
-															autocomplete="off" readonly />
+														<input type="text" th:value="${BAMInventorymaster?.emp_id}"
+															id="emp_id" class="form-control form-control-sm"
+															name="emp_id" autocomplete="off" readonly />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2257,8 +2353,7 @@ function genflows() {
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.loca_addr}"
+														<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
 															id="loca_addr" class="form-control form-control-sm"
 															name="loca_addr" autocomplete="off" readonly />
 													</div>
@@ -2267,10 +2362,9 @@ function genflows() {
 														<label for="loc_rmks">Location Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-															class="form-control form-control-sm" name="loc_rmks"
-															autocomplete="off" required="required" />
+														<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+															id="loc_rmks" class="form-control form-control-sm"
+															name="loc_rmks" autocomplete="off" required="required" />
 													</div>
 												</div>
 
@@ -2306,8 +2400,7 @@ function genflows() {
 														<input type="text"
 															oninput="this.value=this.value.replace(/[^0-9]/g,'');"
 															th:value="${BAMInventorymaster?.gtee_amt_percent}"
-															id="gtee_amt_percent"
-															class="form-control form-control-sm"
+															id="gtee_amt_percent" class="form-control form-control-sm"
 															name="gtee_amt_percent" autocomplete="off"
 															required="required" readonly />
 													</div>
@@ -2330,8 +2423,7 @@ function genflows() {
 														<label for="depr_rmks">Depreciation Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.depr_rmks}"
+														<input type="text" th:value="${BAMInventorymaster?.depr_rmks}"
 															id="depr_rmks" class="form-control form-control-sm"
 															name="depr_rmks" autocomplete="off" />
 													</div>
@@ -2407,8 +2499,7 @@ function genflows() {
 														</div>
 														<div class="col-sm-3">
 
-															<input type="text" id="asset_currency"
-																name="asset_currency"
+															<input type="text" id="asset_currency" name="asset_currency"
 																class="form-control form-control-sm" autocomplete="off"
 																readonly />
 
@@ -2528,8 +2619,7 @@ function genflows() {
 														</div>
 														<div class="col-sm-3">
 
-															<input type="text" id="lifeofyear"
-																name="life_span_months"
+															<input type="text" id="lifeofyear" name="life_span_months"
 																class="form-control form-control-sm" autocomplete="off"
 																style="text-align: right" readonly />
 
@@ -2570,8 +2660,7 @@ function genflows() {
 														</div>
 													</div>
 												</div>
-												<div class="card-footer text-center"
-													style="background-color: #BBC3CB;">
+												<div class="card-footer text-center" style="background-color: #BBC3CB;">
 													<button type="button" class="btn btn-sm btn-primary"
 														style="text-align: center;" id="genflow"
 														onclick="genflows();">GENERATE FLOWS</button>
@@ -2616,8 +2705,7 @@ function genflows() {
 
 
 										<button th:if="${formmode}=='add'" type="button" class="btn
-											headerbutton" onclick="submitaddform(this);"
-											form="BAMInventorymaster" id="btnSubmit"
+											headerbutton" onclick="submitaddform(this);" form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
 
@@ -2629,58 +2717,61 @@ function genflows() {
 									<!-- Conditionally display the table based on formmode  view-->
 									<div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-										<table
-											class="table  table-bordered no-border-table  table-hover table-sm"
+										<table class="table  table-bordered no-border-table  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
 											<tr>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Entry User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="entryuser" name="entry_user"
-													th:value="${BAMInventorymaster?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Modify User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="modifyuser" name="modify_user"
-													th:value="${BAMInventorymaster?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Verify User :</B></font></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Entry User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
+														type="text" id="entryuser" name="entry_user"
+														th:value="${BAMInventorymaster?.entry_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Modify User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
+														type="text" id="modifyuser" name="modify_user"
+														th:value="${BAMInventorymaster?.modify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Verify User :</B></font>
+												</td>
 												<!-- 
                          th:value="${BAMInventorymaster?.verify_user}" -->
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="verifyuser" name="verify_user"
-													th:value="${BAMInventorymaster?.verify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td class="col-sm-2" style="width: 112px;"><input type="text"
+														id="verifyuser" name="verify_user"
+														th:value="${BAMInventorymaster?.verify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;"><font size="2"><B>Entry
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="entrytime" name="entry_time"
-													th:value="${BAMInventorymaster?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Modify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="modifytime" name="modify_time"
-													th:value="${BAMInventorymaster?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Verify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${BAMInventorymaster?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Entry
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="entrytime"
+														name="entry_time" th:value="${BAMInventorymaster?.entry_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Modify
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="modifytime"
+														name="modify_time" th:value="${BAMInventorymaster?.modify_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Verify
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="verifytime"
+														name="verify_time" th:value="${BAMInventorymaster?.verify_time}"
+														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
 											</tr>
 
 										</table>
@@ -2697,12 +2788,11 @@ function genflows() {
 				<!-- **************************edit********************************* -->
 
 
-				<div class="container-fluid content"
-					th:if="${formmode}=='edit' OR ${formmode}=='verify'">
+				<div class="container-fluid content" th:if="${formmode}=='edit' OR ${formmode}=='verify'">
 					<div class="row">
 
-						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
-							method="post" autocomplete="off" id="BAMInventorymaster">
+						<form action="#" th:object="${BAMInventorymaster}" class="w-100" method="post"
+							autocomplete="off" id="BAMInventorymaster">
 
 							<div class="associateProfileList">
 								<div class="card">
@@ -2723,15 +2813,13 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_srl_no}"
+													<input type="text" th:value="${BAMInventorymaster.asst_srl_no}"
 														id="asst_srl_no" class="form-control form-control-sm"
 														autocomplete="off" name="asst_srl_no" readonly />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_srl_no}"
+													<input type="text" th:value="${BAMInventorymaster.asst_srl_no}"
 														id="asst_srl_no" class="form-control form-control-sm"
 														autocomplete="off" name="asst_srl_no" readonly="readonly" />
 												</div>
@@ -2740,17 +2828,15 @@ function genflows() {
 													<label for="branch_name">Asset Name</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_name} " id="asst_name"
-														class="form-control form-control-sm" autocomplete="off"
-														name="asst_name" required="required" />
+													<input type="text" th:value="${BAMInventorymaster.asst_name} "
+														id="asst_name" class="form-control form-control-sm"
+														autocomplete="off" name="asst_name" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_name} " id="asst_name"
-														class="form-control form-control-sm" autocomplete="off"
-														name="asst_name" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster.asst_name} "
+														id="asst_name" class="form-control form-control-sm"
+														autocomplete="off" name="asst_name" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -2759,15 +2845,13 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asset_category}"
+													<input type="text" th:value="${BAMInventorymaster.asset_category}"
 														id="asset_category" class="form-control form-control-sm"
 														name="asset_category" autocomplete="off" readonly />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asset_category}"
+													<input type="text" th:value="${BAMInventorymaster.asset_category}"
 														id="asset_category" class="form-control form-control-sm"
 														name="asset_category" autocomplete="off" readonly />
 												</div>
@@ -2776,18 +2860,15 @@ function genflows() {
 													<label for="category_desc">Description</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.category_desc}"
+													<input type="text" th:value="${BAMInventorymaster.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
 														name="category_desc" autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.category_desc}"
+													<input type="text" th:value="${BAMInventorymaster.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
-														name="category_desc" autocomplete="off"
-														readonly="readonly" />
+														name="category_desc" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -2796,8 +2877,8 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<select id="asset_type" name="asset_type"
-														style="width: 100%" th:field="*{asset_type}"
+													<select id="asset_type" name="asset_type" style="width: 100%"
+														th:field="*{asset_type}"
 														th:value="${BAMInventorymaster?.asset_type}"
 														class="form-control form-control-sm" required>
 														<option value="">SELECT</option>
@@ -2808,8 +2889,8 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<select id="asset_type" name="asset_type"
-														style="width: 100%" th:field="*{asset_type}"
+													<select id="asset_type" name="asset_type" style="width: 100%"
+														th:field="*{asset_type}"
 														th:value="${BAMInventorymaster?.asset_type}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
@@ -2824,15 +2905,13 @@ function genflows() {
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3"
 													onchange="handleCurrencyChange()">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_crncy}"
+													<input type="text" th:value="${BAMInventorymaster.asst_crncy}"
 														id="asst_crncy" class="form-control form-control-sm"
 														name="asst_crncy" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_crncy}"
+													<input type="text" th:value="${BAMInventorymaster.asst_crncy}"
 														id="asst_crncy" class="form-control form-control-sm"
 														name="asst_crncy" autocomplete="off" readonly="readonly" />
 												</div>
@@ -2899,19 +2978,15 @@ function genflows() {
 													<label for="life_span_mth">Life Span</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="number"
-														th:value="${BAMInventorymaster.life_span_mth}"
+													<input type="number" th:value="${BAMInventorymaster.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
-														autocomplete="off" name="life_span_mth"
-														required="required" />
+														autocomplete="off" name="life_span_mth" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.life_span_mth}"
+													<input type="text" th:value="${BAMInventorymaster.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
-														autocomplete="off" name="life_span_mth"
-														readonly="readonly" />
+														autocomplete="off" name="life_span_mth" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -2937,17 +3012,15 @@ function genflows() {
 													<label for="asst_rmks">Asset Remarks</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-														class="form-control form-control-sm" name="asst_rmks"
-														autocomplete="off" required="required" />
+													<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
+														id="asst_rmks" class="form-control form-control-sm"
+														name="asst_rmks" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-														class="form-control form-control-sm" name="asst_rmks"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
+														id="asst_rmks" class="form-control form-control-sm"
+														name="asst_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -2957,9 +3030,8 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<select id="depr_flagS" name="depr_flag"
-														style="width: 100%" class="form-control form-control-sm"
-														required>
+													<select id="depr_flagS" name="depr_flag" style="width: 100%"
+														class="form-control form-control-sm" required>
 														<option th:text="${BAMInventorymaster?.depr_flag}"></option>
 														<option value="Y">Y</option>
 														<option value="N">N</option>
@@ -2967,8 +3039,8 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<select id="depr_flagS" name="depr_flag"
-														style="width: 100%" th:readonly="${formmode}=='verify'"
+													<select id="depr_flagS" name="depr_flag" style="width: 100%"
+														th:readonly="${formmode}=='verify'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.depr_flag}"></option>
 														<option value="Y">Y</option>
@@ -3010,9 +3082,8 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<select id="depr_method" name="depr_method"
-														style="width: 100%" class="form-control form-control-sm"
-														required>
+													<select id="depr_method" name="depr_method" style="width: 100%"
+														class="form-control form-control-sm" required>
 														<option th:text="${BAMInventorymaster?.depr_method}"></option>
 														<option value="">SELECT</option>
 														<option value="SLM">SLM</option>
@@ -3020,8 +3091,8 @@ function genflows() {
 													</select>
 												</div>
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<select id="depr_method" name="depr_method"
-														style="width: 100%" th:readonly="${formmode}=='verify'"
+													<select id="depr_method" name="depr_method" style="width: 100%"
+														th:readonly="${formmode}=='verify'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.depr_method}"></option>
 														<option value="">SELECT</option>
@@ -3034,14 +3105,12 @@ function genflows() {
 													<label for="depr_percent">Depreciation Percentage</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_percent}"
+													<input type="text" th:value="${BAMInventorymaster?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
 														name="depr_percent" autocomplete="off" required="required" />
 												</div>
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_percent}"
+													<input type="text" th:value="${BAMInventorymaster?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
 														name="depr_percent" autocomplete="off" readonly="readonly" />
 												</div>
@@ -3053,17 +3122,15 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" required="required" />
+													<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -3073,17 +3140,15 @@ function genflows() {
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm" autocomplete="off"
-														name="date_of_last_depr" />
+														id="date_of_last_depr" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_last_depr" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
 													<input type="date"
 														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm" autocomplete="off"
-														name="date_of_last_depr" />
+														id="date_of_last_depr" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_last_depr" />
 												</div>
 											</div>
 
@@ -3135,16 +3200,14 @@ function genflows() {
 														onfocus="restoreFormatting(this)"
 														th:value="${BAMInventorymaster?.cur_book_value}"
 														id="cur_book_value" class="form-control form-control-sm"
-														name="cur_book_value" autocomplete="off"
-														required="required" />
+														name="cur_book_value" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
 													<input type="text" oninput="formatIndianAmount(this)"
 														th:value="${BAMInventorymaster?.cur_book_value}"
 														id="cur_book_value" class="form-control form-control-sm"
-														name="cur_book_value" autocomplete="off"
-														readonly="readonly" />
+														name="cur_book_value" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -3160,10 +3223,9 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.mkt_value}" id="mkt_value"
-														class="form-control form-control-sm" name="mkt_value"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.mkt_value}"
+														id="mkt_value" class="form-control form-control-sm"
+														name="mkt_value" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3200,14 +3262,14 @@ function genflows() {
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly="readonly" />
+														id="sol_id" class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly="readonly" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly="readonly" />
+														id="sol_id" class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3218,32 +3280,29 @@ function genflows() {
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.emp_id}"
-														id="emp_id" class="form-control form-control-sm"
-														name="emp_id" autocomplete="off" />
+														id="emp_id" class="form-control form-control-sm" name="emp_id"
+														autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.emp_id}"
-														id="emp_id" class="form-control form-control-sm"
-														name="emp_id" autocomplete="off" />
+														id="emp_id" class="form-control form-control-sm" name="emp_id"
+														autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="dept_div_name">Department/Division Name</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.dept_div_name}"
+													<input type="text" th:value="${BAMInventorymaster?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
 														name="dept_div_name" autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.dept_div_name}"
+													<input type="text" th:value="${BAMInventorymaster?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
-														name="dept_div_name" autocomplete="off"
-														readonly="readonly" />
+														name="dept_div_name" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3254,34 +3313,30 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loca_addr}" id="loca_addr"
-														class="form-control form-control-sm" name="loca_addr"
-														autocomplete="off" />
+													<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
+														id="loca_addr" class="form-control form-control-sm"
+														name="loca_addr" autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loca_addr}" id="loca_addr"
-														class="form-control form-control-sm" name="loca_addr"
-														autocomplete="off" />
+													<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
+														id="loca_addr" class="form-control form-control-sm"
+														name="loca_addr" autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="loc_rmks">Location Remarks</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-														class="form-control form-control-sm" name="loc_rmks"
-														autocomplete="off" required="required" />
+													<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+														id="loc_rmks" class="form-control form-control-sm"
+														name="loc_rmks" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-														class="form-control form-control-sm" name="loc_rmks"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+														id="loc_rmks" class="form-control form-control-sm"
+														name="loc_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3318,10 +3373,9 @@ function genflows() {
 														<option value="N">N</option>
 													</select> -->
 
-													<input type="text"
-														th:value="${BAMInventorymaster?.gtee_amt}" id="gtee_amt"
-														class="form-control form-control-sm" name="gtee_amt"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.gtee_amt}"
+														id="gtee_amt" class="form-control form-control-sm"
+														name="gtee_amt" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -3355,14 +3409,13 @@ function genflows() {
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text"
 														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-														th:value="${BAMInventorymaster?.nom_depr_amt}"
-														id="nom_depr_amt" class="form-control form-control-sm"
-														name="nom_depr_amt" autocomplete="off" />
+														th:value="${BAMInventorymaster?.nom_depr_amt}" id="nom_depr_amt"
+														class="form-control form-control-sm" name="nom_depr_amt"
+														autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.nom_depr_amt}"
+													<input type="text" th:value="${BAMInventorymaster?.nom_depr_amt}"
 														id="nom_depr_amt" class="form-control form-control-sm"
 														name="nom_depr_amt" autocomplete="off" readonly="readonly" />
 												</div>
@@ -3379,10 +3432,9 @@ function genflows() {
 												</div>
 
 												<div th:if="${formmode}=='verify'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_rmks}" id="depr_rmks"
-														class="form-control form-control-sm" name="depr_rmks"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.depr_rmks}"
+														id="depr_rmks" class="form-control form-control-sm"
+														name="depr_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3398,13 +3450,11 @@ function genflows() {
 
 
 										<button th:if="${formmode}=='edit'" type="button" class=" btn
-											headerbutton" onclick="submiteditform(this);"
-											form="BAMInventorymaster" id="btnSubmit"
+											headerbutton" onclick="submiteditform(this);" form="BAMInventorymaster" id="btnSubmit"
 											th:attr="data-formmode='edit'">Submit</button>
 
-										<button th:if="${formmode}=='verify'" type="button"
-											class="btn headerbutton" onclick="submitverifyform(this);"
-											form="BAMInventorymaster" id=""
+										<button th:if="${formmode}=='verify'" type="button" class="btn headerbutton"
+											onclick="submitverifyform(this);" form="BAMInventorymaster" id=""
 											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
@@ -3414,58 +3464,61 @@ function genflows() {
 									<!-- Conditionally display the table based on formmode  view-->
 									<div class="table-responsive"
 										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-										<table
-											class="table  no-border-table table-bordered  table-hover table-sm"
+										<table class="table  no-border-table table-bordered  table-hover table-sm"
 											style="margin-bottom: 10px; font-size: initial;">
 											<tr>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Entry User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="entryuser" name="entry_user"
-													th:value="${BAMInventorymaster?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Modify User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="modifyuser" name="modify_user"
-													th:value="${BAMInventorymaster?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Verify User :</B></font></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Entry User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
+														type="text" id="entryuser" name="entry_user"
+														th:value="${BAMInventorymaster?.entry_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Modify User :</B></font>
+												</td>
+												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
+														type="text" id="modifyuser" name="modify_user"
+														th:value="${BAMInventorymaster?.modify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td class="col-sm-2" style="text-align: right;">
+													<font size="2"><B>Verify User :</B></font>
+												</td>
 												<!-- 
                          th:value="${BAMInventorymaster?.verify_user}" -->
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="verifyuser" name="verify_user"
-													th:value="${BAMInventorymaster?.verify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td class="col-sm-2" style="width: 112px;"><input type="text"
+														id="verifyuser" name="verify_user"
+														th:value="${BAMInventorymaster?.verify_user}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
 											</tr>
 											<tr>
-												<td style="text-align: right;"><font size="2"><B>Entry
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="entrytime" name="entry_time"
-													th:value="${BAMInventorymaster?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Modify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="modifytime" name="modify_time"
-													th:value="${BAMInventorymaster?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Verify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${BAMInventorymaster?.modify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Entry
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="entrytime"
+														name="entry_time" th:value="${BAMInventorymaster?.entry_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Modify
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="modifytime"
+														name="modify_time" th:value="${BAMInventorymaster?.modify_time}"
+														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
+												<td style="text-align: right;">
+													<font size="2"><B>Verify
+															Time :</B></font>
+												</td>
+												<td style="width: 112px"><input type="text" id="verifytime"
+														name="verify_time" th:value="${BAMInventorymaster?.modify_time}"
+														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
+														readonly></td>
 											</tr>
 
 										</table>
@@ -3487,33 +3540,29 @@ function genflows() {
 
 	<br>
 	<div class="modal fade" id="alert">
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="menu-title-header">
 					<div class="modal-title" id="exampleModalLabel"
-						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">BANK
+						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">
+						BANK
 						NAME</div>
 				</div>
-				<div class="modal-body"
-					style="text-align: center; background-color: #c6ccd2">
+				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
-						onclick="back();">Close</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="loader1" data-backdrop="static"
-		data-keyboard="false">
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	<div class="modal fade" id="loader1" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background: transparent;">
 				<div class="modal-body" style="text-align: center">
 					<div>
-						<img th:src=@{/images/loadingapp.gif} id="bfirelogo"
-							style="width: 153px; margin-left: 18px;" alt="Bornfire">
+						<img th:src=@{/images/loadingapp.gif} id="bfirelogo" style="width: 153px; margin-left: 18px;"
+							alt="Bornfire">
 					</div>
 				</div>
 			</div>
