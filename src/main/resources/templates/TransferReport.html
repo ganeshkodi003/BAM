@@ -375,10 +375,11 @@ nav {
 		function back() {
 			window.history.back();
 		}
-		function generate() {
+		function Generate() {
 			var from_sol_id = document.getElementById("from_sol_id").value;
 			var report_date = document.getElementById("report_date").value;
 			var report_type = document.getElementById("report_type").value;
+			console.log("came to generate function in js");
 
 			if (from_sol_id && report_date && report_type
 					&& report_type !== "Select") {
