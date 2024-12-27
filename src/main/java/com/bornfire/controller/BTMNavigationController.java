@@ -10414,6 +10414,13 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 			        md.addAttribute("formmode", "edit");
 			        md.addAttribute("BAMInventorymaster", inventory);
 
+			    } else if (formmode.equals("viewnew")) {
+			        BAMInventorymaster inventory = BAMInvmastrep.findById(headcode).get();
+			        inventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
+
+			        md.addAttribute("formmode", "viewnew");
+			        md.addAttribute("BAMInventorymaster", inventory);
+
 			    } else if (formmode.equals("verify")) {
 			        BAMInventorymaster inventory = BAMInvmastrep.findById(headcode).get();
 			        inventory.setVerify_user(userId); // Set VERIFY_USER as the logged-in user
