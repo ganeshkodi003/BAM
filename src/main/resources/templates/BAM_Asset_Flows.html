@@ -64,7 +64,9 @@
 .no-border-table td {
 	border: none;
 }
-
+.form-control{
+	border: 1px solid #495561 !important;
+}
 .table {
 	width: 129%;
 	margin-bottom: 1rem;
@@ -114,7 +116,6 @@ nav {
 }
 
 fieldset {
-	
 	border-radius: 5px;
 	padding: 10px;
 	margin-top: 10px;
@@ -1130,7 +1131,7 @@ function handleSelectChange() {
 		window.alert = function () { };
 	</script>
 </head>
-<title>BTM</title>
+<title>BAM</title>
 
 <body>
 
@@ -1149,15 +1150,14 @@ function handleSelectChange() {
 								<div class="card">
 
 									<div class="card-header p-1">
-										<div class="float-left mt-3">
-											<h3 class="headerh6">ASSET FLOW</h3>
+										<div class="float-left ">
+											<h3 class="headerbutton pl-4 pt-2">ASSET FLOW</h3>
 										</div>
-										<div class="card-footer text-center"
-												style="background-color: #BBC3CB;">
-												<button type="button" class="btn btn-sm headerbutton"
-													style="text-align: center;" id="genflow"
-													onclick="genflows();">GENERATE FLOWS</button>
-											</div>
+										<div class=" text-center">
+											<button type="button" class="btn  headerbutton"
+												style="text-align: center;" id="genflow"
+												onclick="genflows();">GENERATE FLOWS</button>
+										</div>
 									</div>
 									<div class="card-body">
 										<fieldset>
@@ -1378,7 +1378,7 @@ function handleSelectChange() {
 													</div>
 												</div>
 											</div>
-											
+
 										</fieldset>
 
 
@@ -1487,55 +1487,52 @@ function handleSelectChange() {
 
 									</div> -->
 
+									
 									<div class="content m-2 " style="padding: 15px;">
 										<div class="row formline">
 											<label class="col-sm-2">Entry User</label>
 											<div class="col-sm-2">
-												<input type="text" id="entryuser" name="entry_user"
+												<input type="text" id="entry_user" name="entry_user"
 													th:value="${entryuser?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly>
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
 											</div>
 											<label class="col-sm-2">Modify User</label>
 											<div class="col-sm-2">
-												<input type="text" id="modifyuser" name="modify_user"
+												<input type="text" id="modify_user" name="modify_user"
 													th:value="${entryuser?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly>
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
 											</div>
 											<label class="col-sm-2">Verify User</label>
 											<div class="col-sm-2">
-												<input type="text" id="verifyuser" name="verify_user"
+												<input type="text" id="auth_user" name="auth_user"
 													th:value="${entryuser?.verify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly>
+													class="form-control form-control-sm" autocomplete="off"
+													readonly />
 											</div>
 										</div>
 										<div class="row formline mt-2">
 											<label class="col-sm-2">Entry Time</label>
 											<div class="col-sm-2">
-												<input type="text" id="entrytime" name="entry_time"
-													th:value="${entryuser?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly>
+												<input type="text" id="entry_date" name="entry_time"
+													class="form-control form-control-sm" autocomplete="off"
+													th:value="${entryuser?.entry_time}" readonly />
 											</div>
 											<label class="col-sm-2">Modify Time</label>
 											<div class="col-sm-2">
-												<input type="text" id="modifytime" name="modify_time"
-													th:value="${entryuser?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly>
+												<input type="text" id="modify_time" name="modify_time"
+													class="form-control form-control-sm" autocomplete="off"
+													th:value="${entryuser?.modify_time}" readonly />
 											</div>
 											<label class="col-sm-2">Verify Time</label>
 											<div class="col-sm-2">
-												<input type="text" id="verifytime" name="verify_time"
-													th:value="${entryuser?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly>
+												<input type="text" id="auth_time" name="auth_time"
+													class="form-control form-control-sm" autocomplete="off"
+													th:value="${entryuser?.verify_time}" readonly />
 											</div>
 										</div>
 									</div>
-
 								</div>
 							</form>
 						</div>
