@@ -26,7 +26,7 @@ public interface BAM_AssetFlows_Rep extends CrudRepository<BAM_AssetFlows_Entity
 	  @Query(value = "SELECT * from FLOW_ASSETS where srl_no = ?1 ",nativeQuery = true) 
 	  BAM_AssetFlows_Entity srl_noget(String srl_no);
 	  
-	  @Query(value = "SELECT * from FLOW_ASSETS where gen_tran_id = ?1 ",nativeQuery = true) 
+	  @Query(value = "SELECT * FROM FLOW_ASSETS WHERE gen_tran_id = ?1 FETCH FIRST 1 ROW ONLY", nativeQuery = true)
 	  BAM_AssetFlows_Entity gettranview(String gen_tran_id);
 	  
 	  
