@@ -10435,6 +10435,9 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 			        md.addAttribute("assetsrlno", assetsrlno);
 			        String assetsrlno1 = BAMInvmastrep.findLatestAssetSerialNumber();
 			        md.addAttribute("assetsrlno1", assetsrlno1);
+			        
+			        List<Bamcategorycodemain> Bamcategorycodemain = Bamcatcodemain.findAllOrderedBySlNo(); // Fetch your data
+			        md.addAttribute("Bamcategorycodemain", Bamcategorycodemain);
 
 			    } else if (formmode.equals("edit")) {
 			        BAMInventorymaster inventory = BAMInvmastrep.findById(headcode).get();
