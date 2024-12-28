@@ -33,6 +33,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.bornfire.entities.GeneralLedgerWork_Entity;
+import com.bornfire.entities.GeneralLedgerWork_Rep;
 import com.bornfire.entities.InvoiceMaster;
 import com.bornfire.entities.InvoiceMasterRep;
 import com.bornfire.entities.IssueTracker;
@@ -538,5 +540,141 @@ public class ExcelUploadService {
 			}
 		}
 		return isEmpty;
+	}
+	
+	
+	@Autowired
+	GeneralLedgerWork_Rep generalLedgerWork_Rep;
+
+	public String Uploadgstservicetwo(String screenId, MultipartFile file, String userid,
+			GeneralLedgerWork_Entity GeneralLedgerWork_Entity)
+			throws SQLException, FileNotFoundException, IOException, NullPointerException {
+		System.out.println("Entering third Service Succesfully of GST EXCEL UPLOAD");
+
+		String fileName = file.getOriginalFilename();
+
+		String fileExt = "";
+		String msg = "";
+
+		int i = fileName.lastIndexOf('.');
+		if (i > 0) {
+			fileExt = fileName.substring(i + 1);
+		}
+
+		if (fileExt.equals("xlsx") || fileExt.equals("xls")) {
+
+			try {
+				Workbook workbook = WorkbookFactory.create(file.getInputStream());
+
+				List<HashMap<Integer, String>> mapList = new ArrayList<HashMap<Integer, String>>();
+				for (Sheet s : workbook) {
+					for (Row r : s) {
+
+						if (!isRowEmpty(r)) {
+							if (r.getRowNum() == 0) {
+								continue;
+							}
+
+							HashMap<Integer, String> map = new HashMap<>();
+
+							for (int j = 0; j < 100; j++) {
+
+								Cell cell = r.getCell(j);
+								DataFormatter formatter = new DataFormatter();
+								String text = formatter.formatCellValue(cell);
+								map.put(j, text);
+							}
+							mapList.add(map);
+
+						}
+
+					}
+
+				}
+
+				for (HashMap<Integer, String> item : mapList) {
+
+					GeneralLedgerWork_Entity PO = new GeneralLedgerWork_Entity();
+
+					/* String ORGANISATION = item.get(0); */
+
+					// System.out.println("ORGANISATION" +ORGANISATION);
+
+					String gl_code = item.get(0);
+					System.out.println("gl_code: " + gl_code); //
+
+					String gl_description = item.get(1);
+					System.out.println("gl_description: " + gl_description);
+
+					String branch_id = item.get(2);
+					System.out.println("branch_id: " + branch_id);
+
+					String branch_description = item.get(3);
+					System.out.println("branch_description: " + branch_description);
+
+					String glsh_code = item.get(4);
+					System.out.println("glsh_code: " + glsh_code);
+
+					String glsh_description = item.get(5);
+					System.out.println("glsh_description: " + glsh_description);
+
+					String crncy_code = item.get(6);
+					System.out.println("crncy_code: " + crncy_code);
+
+					String bal_sheet_grp = item.get(7);
+					System.out.println("bal_sheet_grp: " + bal_sheet_grp);
+
+					String seq_order = item.get(8);
+					System.out.println("seq_order: " + seq_order);
+
+					String gl_type = item.get(9);
+					System.out.println("gl_type: " + gl_type);
+
+					String gl_type_description = item.get(10);
+					System.out.println("gl_type_description: " + gl_type_description);
+
+					String module = item.get(11);
+					System.out.println("module: " + module);
+
+					String remarks = item.get(12);
+					System.out.println("remarks: " + remarks);
+
+					String no_of_acct_closed = item.get(13);
+					System.out.println("no_of_acct_closed: " + no_of_acct_closed);
+
+					String no_of_acct_opened = item.get(14);
+					System.out.println("no_of_acct_opened: " + no_of_acct_opened);
+
+					String total_balance = item.get(15);
+					System.out.println("no_of_acct_opened: " + no_of_acct_opened);
+
+					PO.setGlCode(gl_code);
+					PO.setGlDescription(gl_description);
+					PO.setBranch_id(branch_id);
+					PO.setBranch_desc(branch_description);
+					PO.setGlsh_code(glsh_code);
+					PO.setGlsh_desc(glsh_description);
+					PO.setCrncy_code(crncy_code);
+					PO.setBal_sheet_group(bal_sheet_grp);
+					PO.setSeq_order(seq_order);
+					PO.setGl_type(gl_type);
+					PO.setGl_type_description(gl_type_description);
+					PO.setModule(module);
+					PO.setRemarks(remarks);
+					PO.setNo_acct_closed(no_of_acct_closed);
+					PO.setNo_acct_opened(no_of_acct_opened);
+					PO.setTotal_balance(total_balance);
+
+					generalLedgerWork_Rep.save(PO);
+
+					msg = "Excel Data Uploaded Successfully";
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				msg = "File has not been successfully uploaded";
+			}
+		}
+		return msg;
+
 	}
 }

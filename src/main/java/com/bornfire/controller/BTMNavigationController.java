@@ -12944,6 +12944,26 @@ if (MAR != 0) {
 			}
 
 			
+			@PostMapping(value = "gluploadexcel")
+			@ResponseBody
+			public String gluploadexcel(@RequestParam("file") MultipartFile file, String screenId,
+					@ModelAttribute GeneralLedgerWork_Entity GeneralLedgerWork_Entity, Model md, HttpServletRequest rq)
+					throws FileNotFoundException, SQLException, IOException, NullPointerException {
+
+				System.out.println("the testing   GST EXCEL UPLOAD");
+
+				System.out.println("fileSize" + file.getSize());
+
+				if (file.getSize() < 50000000) {
+					String userid = (String) rq.getSession().getAttribute("USERID");
+					String msg = DocFileUploadServices.Uploadgstserviceone(screenId, file, userid, GeneralLedgerWork_Entity);
+					return msg;
+				} else {
+					return "File has not been successfully uploaded. Requires less than 128 KB size.";
+				}
+
+			}
+			
 
 
 }

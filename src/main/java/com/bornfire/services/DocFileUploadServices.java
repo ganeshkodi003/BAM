@@ -35,6 +35,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.bornfire.entities.BAMInventorymaster;
 import com.bornfire.entities.BAMInventryMastRep;
 import com.bornfire.entities.BTMDocumentMaster;
+import com.bornfire.entities.GeneralLedgerWork_Entity;
 
 @Service
 @Transactional
@@ -49,6 +50,9 @@ public class DocFileUploadServices {
 	
 	@Autowired
 	BAMInventryMastRep BAMInventryMastRep;
+	
+	@Autowired
+	ExcelUploadService excelUploadService;
 	
 	private static String UPLOAD_FOLDER = "C://test//";
 	
@@ -273,5 +277,20 @@ public class DocFileUploadServices {
 		}
 		return isEmpty;
 	}
+	
+	public String Uploadgstserviceone(String screenId, MultipartFile file, String userid, GeneralLedgerWork_Entity GeneralLedgerWork_Entity)
+	        throws FileNotFoundException, SQLException, IOException, NullPointerException {
+	    System.out.println("first tservice testing GST EXCEL UPLOAD");
+	    
+	    // Create an instance of FileUploadServices
+	 //   FileUploadServices fileUploadServices = new FileUploadServices();
+	    
+	    // Call the non-static UploadPO method on the instance
+	    String msg = excelUploadService.Uploadgstservicetwo(screenId, file, userid, GeneralLedgerWork_Entity);
+	    
+	    return msg;
+	}
+	
+	
 	
 }
