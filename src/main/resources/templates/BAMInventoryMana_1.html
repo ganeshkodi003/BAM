@@ -1379,11 +1379,11 @@ td {
 											</div>
 											<div class="row formline mt-2">
 												<label class="col-sm-2">Entry Time</label>
-												<div class="col-sm-2">
-													<input type="text" id="entry_date" name="entry_time"
-														class="form-control form-control-sm" autocomplete="off" th:value="${BAMInventorymaster?.entry_time}"
-														readonly />
-												</div>
+        <div class="col-sm-2">
+            <input type="text" id="entry_date" name="entry_time"
+                   th:value="${#dates.format(BAMInventorymaster?.entry_time, 'yyyy-MM-dd HH:mm:ss')}"
+                   class="form-control form-control-sm" autocomplete="off" readonly />
+        </div>
 												<label class="col-sm-2">Modify Time</label>
 												<div class="col-sm-2">
 													<input type="text" id="modify_time" name="modify_time"
