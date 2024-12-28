@@ -815,7 +815,7 @@ function funcall() {
 		<div class="row">
 
 
-			<div class="col-sm-11 ml-5 mt-2" style="font-size: 0.8rem;">
+			<div class="col-sm-11 " style="font-size: 0.8rem;">
 
 
 				<!-- ------------------------------------Account Ledger List---------------------------------- -->
@@ -831,7 +831,7 @@ function funcall() {
 								</div>
 								<div class="float-right">
 									<button type="button"
-										class="btn btn-primary btns p-2 btn-filter">Filter</button>
+										class="btn headerbtn btn-filter">Filter</button>
 								</div>
 							</div>
 
@@ -864,10 +864,12 @@ function funcall() {
 
 							<div class="card-body">
 								<div class="table-responsive">
+								<div class="table-responsive"
+							style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 									<table class="table  table-bordered table-hover table-sm"
 										style="margin-bottom: 0px; font-size: initial;" id="usertable">
-										<thead class="thead-light">
-											<tr class="filters">
+										<thead class="" >
+											<tr class="filters" style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 												<th><input type="text"
 													class="form-control font-weight-bold"
 													placeholder="HEAD" disabled></th>
@@ -947,14 +949,15 @@ function funcall() {
 											</tr>
 										</tbody>
 									</table>
+									</div>
 								</div>
 							</div>
 							<div class="card-footer text-center"
 								style="background-color: #e9ecef">
 
 
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn headerbtn" onclick="Home();">Home</button>
+								<button class="btn headerbtn " onclick="Back();">Back</button>
 
 							</div>
 
@@ -971,13 +974,13 @@ function funcall() {
 						<div class="card-header"
 							style="background-color: #e9ecef; height: 50px">
 							<div class="float-left">
-								<h6 style="font-size: 1.2rem; color: black;">ACCOUNT LEDGER</h6>
+								<h6 style="font-size: 1.2rem; color: white;">ACCOUNT LEDGER</h6>
 							</div>
-							<div class="btn-group nav-buttons float-right">
+							<!-- <div class="btn-group nav-buttons float-right">
 								<button type="button" class="btn btn-xs btn-primary btns p-2"
 									id="btnAdd" onclick="pdfCustomerdown()">Download</button>
 
-							</div>
+							</div> -->
 
 
 
@@ -1133,7 +1136,7 @@ function funcall() {
 
 									<table class="table table-bordered table-hover table-sm"
 										style="margin-bottom: 0px; font-size: initial;" id="usertable">
-										<thead class="thead-light">
+										<thead >
 											<tr>
 												<th style="text-align: left; width: 10%">TRAN DATE</th>
 												<th style="text-align: left; width: 10%">TRAN ID</th>
@@ -1177,9 +1180,9 @@ function funcall() {
 
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button type="button" class="btn btn-xs btn-primary" id="btnHome"
+							<button type="button" class="btn headerbtn" id="btnHome"
 								onclick="Home();">Home</button>
-							<button type="button" class="btn btn-xs btn-primary" id="btnBack"
+							<button type="button" class="btn headerbtn" id="btnBack"
 								onclick="Back();">Back</button>
 						</div>
 

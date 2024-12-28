@@ -414,20 +414,20 @@ function verifysubmit(a) {
 	<!-- Start Content-->
 	<div class="container-manager">
 		<div class="row">
-			<div class="col-sm-11 ml-5 mt-2">
+			<div class="col-sm-11 ">
 
 				<div th:if="${formmode}=='list'">
 					<div class="panel panel-primary filterable">
 						<div class="card w-100 border panel panel-primary filterable">
 							<div class="card-header" style="background-color: #e9ecef">
 								<div class="float-left">
-									<h6 style="font-size: 1.2rem; color: black;">CHART OF
+									<h6 style="font-size: 1.2rem; color:white;">CHART OF
 										ACCOUNTS</h6>
 								</div>
 								<div class="float-right">
 									<button type="button"
-										class="btn btn-primary btns p-2 btn-filter">Filter</button>
-									<button type="button" class="btn btn-primary p-2" id="btnadd"
+										class="btn headerbtn btn-filter">Filter</button>
+									<button type="button" class="btn headerbtn" id="btnadd"
 										style="text-align: center;" onclick="adduser(this);">Add</button>
 								</div>
 							</div>
@@ -460,10 +460,13 @@ function verifysubmit(a) {
 
 							<div class="card-body">
 								<div class="table-responsive">
+								<div class="table-responsive"
+							style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
+								
 									<table class="table  table-bordered  table-hover table-sm"
 										style="margin-bottom: 0px; font-size: initial;" id="usertable">
-										<thead class="thead-light">
-											<tr class="filters">
+										<thead class="" style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
+											<tr class="filters" >
 												<th style="width: 6%"><input type="text"
 													class="form-control font-weight-bold"
 													placeholder="HEAD" disabled></th>
@@ -471,7 +474,7 @@ function verifysubmit(a) {
 													class="form-control font-weight-bold" placeholder="GL"
 													disabled></th>
 													<th style="width: 9%"><input type="text"
-													class="form-control font-weight-bold" placeholder="SCHEME CODE"
+													class="form-control font-weight-bold" placeholder="SCHE CODE"
 													disabled></th>
 												<th><input type="text"
 													class="form-control font-weight-bold"
@@ -481,7 +484,7 @@ function verifysubmit(a) {
 													placeholder="ACCT NAME" disabled></th>
 												<th style="width: 7%"><input type="text"
 													class="form-control font-weight-bold"
-													placeholder="CURRENCY" disabled></th>
+													placeholder="CUR" disabled></th>
 												<th><input type="text" style="text-align: right"
 													class="form-control font-weight-bold" placeholder="CREDITS"
 													disabled></th>
@@ -553,13 +556,14 @@ function verifysubmit(a) {
 											</tr>
 										</tbody>
 									</table>
+									</div>
 								</div>
 							</div>
 							<div class="card-footer text-center border-top-0"
 								style="background-color: #e9ecef">
-								<button type="button" class="btn btn-primary p-2" id="btnHome"
+								<button type="button" class="btn headerbtn" id="btnHome"
 									onclick="home();">Home</button>
-								<button type="button" class="btn btn-primary p-2" id="btnBack"
+								<button type="button" class="btn headerbtn" id="btnBack"
 									onclick="Back();">Back</button>
 							</div>
 						</div>
