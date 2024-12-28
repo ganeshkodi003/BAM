@@ -27,5 +27,9 @@ public interface UserProfileRep extends CrudRepository<UserProfile, String> {
 	UserProfile getUserDetails(String userid);
 	@Query(value = "SELECT * FROM BAM_USER_PROFILE", nativeQuery = true)
 	List<UserProfile> getUserList();
+	
+	
+	@Query(value = "SELECT * FROM BGLS_USER_PROFILE_TABLE WHERE DEL_FLG='N' and role_id ='ADM'", nativeQuery = true)
+	List<UserProfile> getUserId();
 
 }
