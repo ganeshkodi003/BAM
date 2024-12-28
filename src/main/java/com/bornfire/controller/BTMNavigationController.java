@@ -401,6 +401,29 @@ public class BTMNavigationController {
 	Organization_Repo organization_Repo;
 	String pagesize;
 
+	@Autowired
+	Reference_code_Rep reference_code_Rep;
+
+	@Autowired
+	TRAN_MAIN_TRM_WRK_REP tRAN_MAIN_TRM_WRK_REP;
+
+	@Autowired
+	GeneralLedgerRep generalLedgerRep;
+
+	@Autowired
+	GeneralLedgerWork_Rep generalLedgerWork_Rep;
+
+	@Autowired
+	ParameterRep parameterrep;
+
+	@Autowired
+	UserProfileRep userProfileRep;
+
+	@Autowired
+	Chart_Acc_Rep chart_Acc_Rep;
+
+
+
 	public String getPagesize() {
 		return pagesize;
 	}
@@ -12336,17 +12359,7 @@ if (MAR != 0) {
 			    return "Audit";  // Return the view name
 			}
 			
-			
-			@RequestMapping(value = "AccountLedger", method = { RequestMethod.GET, RequestMethod.POST })
-			public String AccountLedger(@RequestParam(required = false) String formmode,
-					 Model md, HttpServletRequest req) throws ParseException {
-				String userId = (String) req.getSession().getAttribute("USERID");
-				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
-				md.addAttribute("menu", "BTMHeaderMenu");
-				
 
-				return "AccountLedger";
-			}
 
 			@RequestMapping(value = "organizationDetails", method = { RequestMethod.GET, RequestMethod.POST })
 			public String organizationDetails(@RequestParam(required = false) String formmode,
@@ -12486,4 +12499,349 @@ if (MAR != 0) {
 				return "BAMDocMan";
 			}
 		
+			@RequestMapping(value = "chartOfAccounts", method = RequestMethod.GET)
+			public String chartOfAccounts(@RequestParam(required = false) String formmode,
+					@RequestParam(required = false) String acct_num, String keyword, Model md, HttpServletRequest req) {
+
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+
+				if (formmode == null || formmode.equals("list")) {
+					md.addAttribute("formmode", "list");
+					md.addAttribute("chartaccount", chart_Acc_Rep.getListoffice());
+				} else if (formmode.equals("add")) {
+					md.addAttribute("formmode", "add");
+					md.addAttribute("Chart1", reference_code_Rep.getReferenceCode("COA_01"));
+					md.addAttribute("Chart2", reference_code_Rep.getReferenceCode("COA_02"));
+					md.addAttribute("Chart3", reference_code_Rep.getReferenceCode("COA_03"));
+					md.addAttribute("Chart4", reference_code_Rep.getReferenceCode("COA_04"));
+					md.addAttribute("Chart5", reference_code_Rep.getReferenceCode("COA_05"));
+					md.addAttribute("Chart6", reference_code_Rep.getReferenceCode("COA_06"));
+					md.addAttribute("Chart7", reference_code_Rep.getReferenceCode("COA_07"));
+					md.addAttribute("Chart8", reference_code_Rep.getReferenceCode("COA_08"));
+				} else if (formmode.equals("modify")) {
+					md.addAttribute("formmode", "modify");
+					md.addAttribute("chartaccount", chart_Acc_Rep.getaedit(acct_num));
+				} else if (formmode.equals("verify")) {
+					md.addAttribute("chartaccount", chart_Acc_Rep.getaedit(acct_num));
+					md.addAttribute("formmode", "verify");
+				} else if (formmode.equals("view")) {
+					md.addAttribute("formmode", "view");
+					md.addAttribute("chartaccount", chart_Acc_Rep.getaedit(acct_num));
+					md.addAttribute("Chart1", reference_code_Rep.getReferenceCode("COA_01"));
+					md.addAttribute("Chart2", reference_code_Rep.getReferenceCode("COA_02"));
+					md.addAttribute("Chart3", reference_code_Rep.getReferenceCode("COA_03"));
+					md.addAttribute("Chart4", reference_code_Rep.getReferenceCode("COA_04"));
+					md.addAttribute("Chart5", reference_code_Rep.getReferenceCode("COA_05"));
+					md.addAttribute("Chart6", reference_code_Rep.getReferenceCode("COA_06"));
+					md.addAttribute("Chart7", reference_code_Rep.getReferenceCode("COA_07"));
+					md.addAttribute("Chart8", reference_code_Rep.getReferenceCode("COA_08"));
+
+				}
+
+				return "ChartOfAccounts";
+			}
+
+			@RequestMapping(value = "accountLedger1", method = { RequestMethod.GET, RequestMethod.POST })
+			public String accountLedger1(@RequestParam(required = false) String formmode,
+					@RequestParam(required = false) String acct_num, String keyword, Model md, HttpServletRequest req) {
+
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+
+				if (formmode == null || formmode.equals("list")) {
+					md.addAttribute("formmode", "list");
+					md.addAttribute("chartaccount", chart_Acc_Rep.getListoffice());
+				} else if (formmode.equals("view")) {
+					md.addAttribute("formmode", "view");
+					md.addAttribute("dataList", tRAN_MAIN_TRM_WRK_REP.getList(acct_num));
+					md.addAttribute("chartaccount", chart_Acc_Rep.getaedit(acct_num));
+
+				}
+				return "AccountLedger1.html";
+			}
+
+			@RequestMapping(value = "glcode", method = { RequestMethod.GET, RequestMethod.POST })
+			public String glcode(@RequestParam(required = false) String formmode,
+					@RequestParam(required = false) String glcode,
+					Model md, HttpServletRequest request, @RequestParam(required = false) String glsh_Code,
+					HttpServletRequest req) {
+
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+
+				if (formmode == null || formmode.equals("view")) {
+
+					md.addAttribute("formmode", "view");
+
+				} else if (formmode.equals("list")) {
+
+					md.addAttribute("formmode", "list");
+					md.addAttribute("getvaluelist", generalLedgerRep.getlistvalue());
+
+				} else if (formmode.equals("view1")) {
+
+					md.addAttribute("formmode", "view1");
+					// md.addAttribute("GeneralLedger", adminOperServices.getGeneralLedger(glcode));
+
+					md.addAttribute("GeneralLedger", chart_Acc_Rep.getaedit(glcode));
+					System.out.println(chart_Acc_Rep.getaedit(glcode) + "GLCODE" + glcode);
+				} else if (formmode.equals("list1")) {
+
+					md.addAttribute("formmode", "list1");
+					md.addAttribute("BamGeneralLedger", generalLedgerRep.getRefCodelist());
+
+				} else if (formmode.equals("edit")) {
+
+					md.addAttribute("formmode", "edit");
+					md.addAttribute("GeneralLedger", adminOperServices.getGeneralLedger(glcode));
+
+				} else if (formmode.equals("add")) {
+
+					md.addAttribute("formmode", formmode);
+
+				} else if (formmode.equals("deleteList")) {
+
+					md.addAttribute("formmode", "deleteList");
+					md.addAttribute("BamGeneralLedger", generalLedgerRep.getRefCodelist());
+
+				} else if (formmode.equals("delete")) {
+
+					md.addAttribute("formmode", "delete");
+					md.addAttribute("GeneralLedger", adminOperServices.getGeneralLedger(glcode));
+
+				} else if (formmode.equals("upload")) {
+
+					md.addAttribute("formmode", "upload");
+
+				} else if (formmode.equals("uploadlist")) {
+
+					md.addAttribute("formmode", "uploadlist");
+					md.addAttribute("Listofvalues", generalLedgerWork_Rep.getlistvalue());
+				} else if (formmode.equals("viewusinglsh")) {
+
+					md.addAttribute("formmode", "viewusinglsh");
+					md.addAttribute("singlerecord", generalLedgerRep.getsinglevalue(glsh_Code));
+				}
+
+				return "GeneralLedger2.html";
+			}
+
+			@RequestMapping(value = "Parameter", method = { RequestMethod.GET, RequestMethod.POST })
+			public String Parameter(@RequestParam(required = false) String formmode,
+					@RequestParam(required = false) String refnumber,
+					@RequestParam(value = "page", required = false) Optional<Integer> page,
+					@RequestParam(value = "size", required = false) Optional<Integer> size, Model md, HttpServletRequest req,
+					String Sort, String acct_open_form, String acc_temp, String cus_temp) {
+
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+
+				if (formmode == null || formmode.equals("list")) {
+					System.out.println("Value=======================>>> " + refnumber);
+					md.addAttribute("OtherServices", parameterrep.listofvalue());
+					md.addAttribute("menu", "AMLCustomerKYC");
+					md.addAttribute("menuname", "CustomerKYC");
+					md.addAttribute("formmode", "list"); // to set which form - valid values are "edit" , "add" & "list"
+					// md.addAttribute("CustomerKYC",CMGrepository.findAll(PageRequest.of(currentPage,
+					// pageSize)));
+
+				} else if (formmode.equals("add")) {
+					md.addAttribute("formmode", "add");
+					md.addAttribute("branch_id", reference_code_Rep.getBranch_Id());
+					md.addAttribute("schme_type", reference_code_Rep.getSchme_Type());
+					md.addAttribute("schme_code", reference_code_Rep.getSchme_Code());
+					md.addAttribute("gl_code", reference_code_Rep.getGL_CODE());
+					md.addAttribute("glsh", reference_code_Rep.getGLSH());
+					md.addAttribute("curr", reference_code_Rep.getCurr());
+					md.addAttribute("multi_curr", reference_code_Rep.getMulti_Curr());
+					/*
+					 * md.addAttribute("userId", userProfileRep.getUserId());
+					 * 
+					 * String paramRef = parameterrep.getParamRef(); String ParamReference; if
+					 * (paramRef != null) { ParamReference = "REF" + (Integer.valueOf(paramRef) +
+					 * 1); } else { ParamReference = "REF1"; } md.addAttribute("ParamRef",
+					 * ParamReference); System.out.println("PARAM " + ParamReference);
+					 */
+
+				} else if (formmode.equals("workflow")) {
+					md.addAttribute("formmode", "workflow");
+					md.addAttribute("acc_temp", acc_temp);
+					md.addAttribute("userId", userId);
+				} else if (formmode.equals("view")) {
+					md.addAttribute("formmode", formmode);
+
+					md.addAttribute("formmode", "view");
+					System.out.println("Value========>>>" + refnumber);
+					md.addAttribute("OtherServicess", parameterrep.findbyId(refnumber));
+					md.addAttribute("parameterslist", parameterrep.findAll());
+					ParametersDetails check = parameterrep.findbyId(refnumber);
+
+					String checklist = check.getCheck_list();
+					List<String> valuesList = checklist != null ? Arrays.asList(checklist.split(",")) : new ArrayList<>();
+					md.addAttribute("valuesList", valuesList);
+
+					// Check and split the approval values
+					String appr1 = check.getApproval1();
+					List<String> valappr1 = appr1 != null ? Arrays.asList(appr1.split(",")) : new ArrayList<>();
+					md.addAttribute("appr1", valappr1);
+
+					String appr2 = check.getApproval2();
+					List<String> valappr2 = appr2 != null ? Arrays.asList(appr2.split(",")) : new ArrayList<>();
+					md.addAttribute("appr2", valappr2);
+
+					String appr3 = check.getApproval3();
+					List<String> valappr3 = appr3 != null ? Arrays.asList(appr3.split(",")) : new ArrayList<>();
+					md.addAttribute("appr3", valappr3);
+
+					// Check and split the alert values
+					String alr1 = check.getAlert1();
+					List<String> valalr1 = alr1 != null ? Arrays.asList(alr1.split(",")) : new ArrayList<>();
+					md.addAttribute("alr1", valalr1);
+
+					String alr2 = check.getAlert2();
+					List<String> valalr2 = alr2 != null ? Arrays.asList(alr2.split(",")) : new ArrayList<>();
+					md.addAttribute("alr2", valalr2);
+
+					String alr3 = check.getAlert3();
+					List<String> valalr3 = alr3 != null ? Arrays.asList(alr3.split(",")) : new ArrayList<>();
+					md.addAttribute("alr3", valalr3);
+
+				} else if (formmode.equals("verify")) {
+					md.addAttribute("formmode", formmode);
+
+					md.addAttribute("formmode", "verify");
+					System.out.println("Value========>>>" + refnumber);
+					md.addAttribute("OtherServicess", parameterrep.findbyId(refnumber));
+					md.addAttribute("parameterslist", parameterrep.findAll());
+					// for check list
+					ParametersDetails check = parameterrep.findbyId(refnumber);
+
+					String checklist = check.getCheck_list();
+					List<String> valuesList = checklist != null ? Arrays.asList(checklist.split(",")) : new ArrayList<>();
+					md.addAttribute("valuesList", valuesList);
+
+					// Check and split the approval values
+					String appr1 = check.getApproval1();
+					List<String> valappr1 = appr1 != null ? Arrays.asList(appr1.split(",")) : new ArrayList<>();
+					md.addAttribute("appr1", valappr1);
+
+					String appr2 = check.getApproval2();
+					List<String> valappr2 = appr2 != null ? Arrays.asList(appr2.split(",")) : new ArrayList<>();
+					md.addAttribute("appr2", valappr2);
+
+					String appr3 = check.getApproval3();
+					List<String> valappr3 = appr3 != null ? Arrays.asList(appr3.split(",")) : new ArrayList<>();
+					md.addAttribute("appr3", valappr3);
+
+					// Check and split the alert values
+					String alr1 = check.getAlert1();
+					List<String> valalr1 = alr1 != null ? Arrays.asList(alr1.split(",")) : new ArrayList<>();
+					md.addAttribute("alr1", valalr1);
+
+					String alr2 = check.getAlert2();
+					List<String> valalr2 = alr2 != null ? Arrays.asList(alr2.split(",")) : new ArrayList<>();
+					md.addAttribute("alr2", valalr2);
+
+					String alr3 = check.getAlert3();
+					List<String> valalr3 = alr3 != null ? Arrays.asList(alr3.split(",")) : new ArrayList<>();
+					md.addAttribute("alr3", valalr3);
+
+					md.addAttribute("userId", userId);
+
+				} else if (formmode.equals("new")) {
+					md.addAttribute("formmode", "new");
+					/*
+					 * md.addAttribute("acc_temp", acc_temp); md.addAttribute("tran_date",
+					 * TRANDATE); md.addAttribute("userId", userId);
+					 */
+				} else if (formmode.equals("move")) {
+					md.addAttribute("formmode", "move");
+					/*
+					 * md.addAttribute("cus_temp", cus_temp); md.addAttribute("tran_date",
+					 * TRANDATE); md.addAttribute("userId", userId);
+					 */
+				} else if (formmode.equals("with")) {
+					md.addAttribute("formmode", "with");
+					/*
+					 * md.addAttribute("acct_open_form", acct_open_form); md.addAttribute("userId",
+					 * userId);
+					 */
+				} else if (formmode.equals("modify")) {
+					md.addAttribute("formmode", "modify");
+					md.addAttribute("OtherServicess", parameterrep.findbyId(refnumber));
+					md.addAttribute("parameterslist", parameterrep.findAll());
+					md.addAttribute("branch_id", reference_code_Rep.getBranch_Id());
+					md.addAttribute("schme_type", reference_code_Rep.getSchme_Type());
+					md.addAttribute("schme_code", reference_code_Rep.getSchme_Code());
+					md.addAttribute("gl_code", reference_code_Rep.getGL_CODE());
+					md.addAttribute("glsh", reference_code_Rep.getGLSH());
+					md.addAttribute("curr", reference_code_Rep.getCurr());
+					md.addAttribute("multi_curr", reference_code_Rep.getMulti_Curr());
+					// for check list
+					// for check list
+					ParametersDetails check = parameterrep.findbyId(refnumber);
+					String checklist = check.getCheck_list();
+					List<String> valuesList = checklist != null ? Arrays.asList(checklist.split(",")) : new ArrayList<>();
+					md.addAttribute("valuesList", valuesList);
+
+					// Check and split the approval values
+					String appr1 = check.getApproval1();
+					List<String> valappr1 = appr1 != null ? Arrays.asList(appr1.split(",")) : new ArrayList<>();
+					md.addAttribute("appr1", valappr1);
+
+					String appr2 = check.getApproval2();
+					List<String> valappr2 = appr2 != null ? Arrays.asList(appr2.split(",")) : new ArrayList<>();
+					md.addAttribute("appr2", valappr2);
+
+					String appr3 = check.getApproval3();
+					List<String> valappr3 = appr3 != null ? Arrays.asList(appr3.split(",")) : new ArrayList<>();
+					md.addAttribute("appr3", valappr3);
+
+					// Check and split the alert values
+					String alr1 = check.getAlert1();
+					List<String> valalr1 = alr1 != null ? Arrays.asList(alr1.split(",")) : new ArrayList<>();
+					md.addAttribute("alr1", valalr1);
+
+					String alr2 = check.getAlert2();
+					List<String> valalr2 = alr2 != null ? Arrays.asList(alr2.split(",")) : new ArrayList<>();
+					md.addAttribute("alr2", valalr2);
+
+					String alr3 = check.getAlert3();
+					List<String> valalr3 = alr3 != null ? Arrays.asList(alr3.split(",")) : new ArrayList<>();
+					md.addAttribute("alr3", valalr3);
+				}
+
+				md.addAttribute("riskmgntflag", "riskmgntflag");
+				md.addAttribute("riskcatflag", "riskcatflag");
+
+				return "Parameter.html";
+			}
+
+			@RequestMapping(value = "AccountLedger", method = { RequestMethod.GET, RequestMethod.POST })
+			public String AccountLedger(@RequestParam(required = false) String formmode, Model md, HttpServletRequest req)
+					throws ParseException {
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
+				if (formmode == null || formmode.equals("list")) {
+
+					md.addAttribute("formmode", "list");
+					md.addAttribute("refList", reference_code_Rep.getRefList());
+				} else if (formmode.equals("nav")) {
+
+					md.addAttribute("formmode", "nav");
+					md.addAttribute("refType", reference_code_Rep.getReferenceType());
+				}
+
+				return "AccountLedger";
+			}
+
+
+
+
 }
