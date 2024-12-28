@@ -217,14 +217,19 @@ a {
 			<button type="button" class="btn btn-default float-right" id="userdtl"
 				style="margin-top: 5px;color:black">
 				
-					 
+					
 					 <font style="font-family: Verdana;font-size: smaller;" th:text="'USER ID :'+'&nbsp&nbsp'+${session.USERID}"> </font>
 					 <br>  <font style="font-family: Verdana;font-size: smaller;" th:text="'USER NAME :'+'&nbsp&nbsp'+${session.USERNAME}"> </font>
 					
 					<!-- <h6 style="font-family: verdana;font-size: medium;font-weight: bold;">LOGINTIME:<span style="margin-left: 145px;"></span></h6>
 				 --><!-- </i> -->
 			</button>	
-
+ 
+ 	<div class="btn btn-default float-right"
+				style="margin-top: 23px; width: 5px; margin-left: 17px; margin-right: 32px;">
+				<img th:src=@{/images/user.png} style="width: 30px; height: 30px; cursor: pointer;"
+					title="User" id="User" alt="User">
+			</div>
 			<div class="btn btn-default float-right"
 				style="margin-top: 23px; width: 4px; margin-left: 17px; margin-right: 32px;">
 				<img th:src=@{/images/homePage.png} style="width: 30px; height: 30px; cursor: pointer;"
