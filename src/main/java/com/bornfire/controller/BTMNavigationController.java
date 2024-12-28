@@ -12889,6 +12889,7 @@ if (MAR != 0) {
 			public List<TRAN_MAIN_TRM_WRK_ENTITY> getTransactionRecords(@RequestParam(required = false) String acctnum,
 					@RequestParam(required = false) String fromdate, @RequestParam(required = false) String todate) {
 
+				System.out.println("Acctnum"+acctnum+"fromdate"+fromdate+"todate"+todate);
 				SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");/* 08-12-2024 */
 				SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd-MMM-yyyy");/* 08-DEC-2024 */
 
@@ -12912,8 +12913,8 @@ if (MAR != 0) {
 
 				System.out.println("Formatted Dates: From = " + formattedFromDate + ", To = " + formattedToDate);
 
-				List<TRAN_MAIN_TRM_WRK_ENTITY> records = tRAN_MAIN_TRM_WRK_REP.getTranList(acctnum, formattedFromDate,
-						formattedToDate);
+				List<TRAN_MAIN_TRM_WRK_ENTITY> records = tRAN_MAIN_TRM_WRK_REP.getTranList(acctnum, formattedFromDate,formattedToDate);
+				System.out.println("records"+records);
 				for (TRAN_MAIN_TRM_WRK_ENTITY i : records) {
 					System.out.println(i + "records");
 				}
@@ -12926,6 +12927,7 @@ if (MAR != 0) {
 					@ModelAttribute BAMInventorymaster BAMInventorymaster, Model md,
 					HttpServletRequest rq)
 					throws FileNotFoundException, SQLException, IOException, NullPointerException {
+
 
 				System.out.println("the testing   GST EXCEL UPLOAD");
 
@@ -12940,5 +12942,8 @@ if (MAR != 0) {
 					return "File has not been successfully uploaded. Requires less than 128 KB size.";
 				}
 			}
+
+			
+
 
 }

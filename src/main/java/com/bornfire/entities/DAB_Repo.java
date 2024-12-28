@@ -28,8 +28,10 @@ public interface DAB_Repo extends CrudRepository<DAB_Entity, String> {
 	 * accountNum, @Param("today") LocalDate today);
 	 * 
 	 */
-
-	@Query(value = "SELECT TRAN_DATE_BAL FROM BAM_DAILY_ACCT_BAL WHERE ACCT_NUM = ?1 AND DATEADD(day, -1, CAST(?2 AS DATE)) BETWEEN TRAN_DATE AND END_TRAN_DATE", nativeQuery = true)
+	@Query(value = "SELECT TRAN_DATE_BAL FROM BAM_DAILY_ACCT_BAL " +
+            "WHERE ACCT_NUM = ?1 " +
+            "AND (TO_DATE(?2, 'dd-MM-YYYY') - 1) BETWEEN TRAN_DATE AND END_TRAN_DATE", 
+    nativeQuery = true)
 	BigDecimal getTranDateBAlance(String acct_num, String fromdateref);
 
 	@Query(value = "SELECT gl_desc AS primary_gl_desc, gl_code, gl_desc AS secondary_gl_desc, glsh_code, glsh_desc, COUNT(GLSH_CODE) as sum, acct_crncy, "

@@ -331,8 +331,14 @@ List<TRAN_MAIN_TRM_WRK_ENTITY> set_dab_acc_num(@Param("acctnum") List<String> ac
 
 
 	
-	@Query(value = "SELECT * FROM BAM_TRM_WRK_TRANSACTIONS WHERE ACCT_NUM = ?1 AND TRAN_DATE BETWEEN CAST(?2 AS DATE) AND CAST(?3 AS DATE) AND TRAN_STATUS='POSTED' ORDER BY TRAN_ID", nativeQuery = true)
-	List<TRAN_MAIN_TRM_WRK_ENTITY> getTranList(String acct_num, String fromdate, String todate);
+	@Query(value = "SELECT * FROM BAM_TRM_WRK_TRANSACTIONS " +
+            "WHERE ACCT_NUM = ?1 " +
+            "AND TRAN_DATE BETWEEN TO_DATE(?2, 'dd-MM-yyyy') AND TO_DATE(?3, 'dd-MM-yyyy') " +
+            "AND TRAN_STATUS = 'POSTED' " +
+            "ORDER BY TRAN_ID", 
+    nativeQuery = true)
+List<TRAN_MAIN_TRM_WRK_ENTITY> getTranList(String acctNum, String fromDate, String toDate);
+
 	
 	@Query(value = "SELECT TRAN_DATE_BAL FROM BAM_TRM_WRK_TRANSACTIONS " +
             "WHERE ACCT_NUM = ?1 " +
