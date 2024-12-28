@@ -1207,7 +1207,7 @@ function modifyTab(evt, tabName) {
 								</h6>
 							</div>
 							<div class="float-right">
-								<button class="btn headerbtn" onclick="addparam()">Add</button>
+								<button class="btn btn-xs headerbutton " onclick="addparam()">Add</button>
 							</div>
 
 
@@ -1243,10 +1243,10 @@ function modifyTab(evt, tabName) {
 						<div class="card-body">
 							<div class="panel panel-primary filterable">
 								<div
-									class="mb-3 ml-4 d-flex justify-content-between align-items-center panel panel-primary filterable">
-									<h4 class="mb-0" style="font-size: 1.2rem; color: black;">LIST
+									class="mb-3 d-flex justify-content-between align-items-center panel panel-primary filterable">
+									<h4 class="mb-0" style="font-size: 1.0rem; font-weight: bold;">LIST
 										OF PARAMETER</h4>
-									<button class="btn btn-xs btn-primary p-2 mr-4  btn-filter">Filter</button>
+									<button type="button" class="btn btns btn-filter headerbutton p-1">Filter</button>
 								</div>
 
 								<div class="">
@@ -1297,7 +1297,7 @@ function modifyTab(evt, tabName) {
 												<td>
 													<div class="dropdown" style="text-align: center;">
 
-														<button class="btn btn-primary p-2" type="button"
+														<button class="btn btn-xs headerbutton " type="button"
 															id="dropdownMenuButton" data-toggle="dropdown"
 															style="background-color: #B2BEB5; color: white; border: none; outline: none;"
 															aria-haspopup="true" aria-expanded="false">
@@ -1338,10 +1338,10 @@ function modifyTab(evt, tabName) {
 							style="background-color: #e9ecef">
 
 
-							<button class="btn headerbtn" onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
 
-							<button class="btn headerbtn" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 
 						</div>
 
@@ -1357,13 +1357,13 @@ function modifyTab(evt, tabName) {
 						style="padding: 4px 4px; position: relative; display: flex; justify-content: space-around; margin-top: 10px; width: 100%; height: 43px">
 						<!-- Tab buttons -->
 						<button class="tablinks active " onclick="openTab(event, 'tab1')"
-							style="font-size: 16px; padding: 4px 8px; height: 32px;">MAIN
+							style="font-size: 16px; padding: 4px 8px; height: 32px;font-weight:bold">MAIN
 							PARAMETER</button>
 						<!-- <button class="tablinks" onclick="openTab(event, 'tab2')"
 							style="font-size: 16px; padding: 4px 8px; height: 32px;">DEPOSIT
 							PARAMETER</button> -->
 						<button class="tablinks" onclick="openTab(event, 'tab3')"
-							style="font-size: 16px; padding: 4px 8px; height: 32px;">LOAN
+							style="font-size: 16px; padding: 4px 8px; height: 32px;font-weight:bold">LOAN
 							PARAMETER</button>
 
 					</div>
@@ -1914,9 +1914,9 @@ function modifyTab(evt, tabName) {
 									</div>
 									<!-- Modal footer -->
 									<div class="modal-footer">
-										<button type="button" class="btn btn-primary"
+										<button type="button" class="btn btn-xs headerbutton "
 											data-dismiss="modal" onclick="closeModal();">Close</button>
-										<button type="button" class="btn btn-primary"
+										<button type="button" class="btn btn-xs headerbutton "
 											data-dismiss="modal" onclick="submitfordocument()">Submit</button>
 									</div>
 								</div>
@@ -2086,9 +2086,9 @@ function modifyTab(evt, tabName) {
 											</tbody>
 										</table>
 										<div class="modal-footer ">
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn btn-xs headerbutton "
 												data-dismiss="modal" onclick="Close();">Close</button>
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn btn-xs headerbutton "
 												data-dismiss="modal" onclick="submitforapproval()">Submit</button>
 										</div>
 									</div>
@@ -2269,9 +2269,9 @@ function modifyTab(evt, tabName) {
 
 										</div>
 										<div class="modal-footer bg-white">
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn btn-xs headerbutton "
 												data-dismiss="modal" onclick="Close();">Close</button>
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn btn-xs headerbutton "
 												data-dismiss="modal" onclick="submitforalert()">Submit</button>
 										</div>
 									</div>
@@ -2282,11 +2282,11 @@ function modifyTab(evt, tabName) {
 
 
 						<!-- -------------------------------------------------------------------------------------------------------------------------- -->
-						<div class="card-footer text-center"
+						<div class="card-footer text-center p-0"
 							style="background-color: #e9ecef">
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="nextdeposit()">Submit</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="nextdeposit()">Submit</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<div class="table-responsive">
 							<table class="table  table-bordered  table-hover table-sm"
@@ -2543,9 +2543,9 @@ function modifyTab(evt, tabName) {
 							<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 							<div class="card-footer text-center"
 								style="background-color: #e9ecef">
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-								<button class="btn btn-primary p-2" onclick="nextloan()">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="nextloan()">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 
 							<div class="table-responsive">
@@ -2815,9 +2815,9 @@ function modifyTab(evt, tabName) {
 						<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="submitform()">Submit</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="submitform()">Submit</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<!-- <div class="table-responsive">
 
@@ -3319,9 +3319,9 @@ function modifyTab(evt, tabName) {
 							style="background-color: #e9ecef">
 
 
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="ClickToVerify();">Verify</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="ClickToVerify();">Verify</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<div class="mt-4 ml-4 mb-4">
 
@@ -3728,10 +3728,10 @@ function modifyTab(evt, tabName) {
 								style="background-color: #e9ecef">
 
 
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
-								<button class="btn btn-primary p-2" onclick="modify();">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="modify();">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 							<!-- 	<div class="table-responsive">
 							<table class="table  table-bordered  table-hover table-sm"
@@ -4042,9 +4042,9 @@ function modifyTab(evt, tabName) {
 							<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 							<div class="card-footer text-center"
 								style="background-color: #e9ecef">
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-								<button class="btn btn-primary p-2" onclick="nextloan()">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="nextloan()">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 
 							<div class="table-responsive">
@@ -4314,9 +4314,9 @@ function modifyTab(evt, tabName) {
 						<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="submitform()">Submit</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="submitform()">Submit</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<!-- <div class="table-responsive">
 
@@ -5714,10 +5714,10 @@ function modifyTab(evt, tabName) {
 								style="background-color: #e9ecef">
 
 
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
-								<button class="btn btn-primary p-2" onclick="modify();">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="modify();">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 							<!-- 	<div class="table-responsive">
 							<table class="table  table-bordered  table-hover table-sm"
@@ -6591,10 +6591,10 @@ function modifyTab(evt, tabName) {
 								style="background-color: #e9ecef">
 
 
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
-								<button class="btn btn-primary p-2" onclick="modify();">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="modify();">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 							<div class="table-responsive">
 							<table class="table  table-bordered  table-hover table-sm"
@@ -6896,9 +6896,9 @@ function modifyTab(evt, tabName) {
 							<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 							<div class="card-footer text-center"
 								style="background-color: #e9ecef">
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-								<button class="btn btn-primary p-2" onclick="nextloan()">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="nextloan()">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 
 							<div class="table-responsive">
@@ -7168,9 +7168,9 @@ function modifyTab(evt, tabName) {
 						<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="submitform()">Submit</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="submitform()">Submit</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<!-- <div class="table-responsive">
 
@@ -7987,10 +7987,10 @@ function modifyTab(evt, tabName) {
 							style="background-color: #e9ecef">
 
 
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
 
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 
 						</div>
 
@@ -8124,10 +8124,10 @@ function modifyTab(evt, tabName) {
 							style="background-color: #e9ecef">
 
 
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
 
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 
 						</div>
 
@@ -8261,10 +8261,10 @@ function modifyTab(evt, tabName) {
 							style="background-color: #e9ecef">
 
 
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
 
 
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 
 						</div>
 
@@ -8409,9 +8409,9 @@ function modifyTab(evt, tabName) {
 									</div>
 									<div class="card-footer text-center"
 										style="background-color: #e9ecef">
-										<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-										<button class="btn btn-primary p-2" onclick="workflowsub();">Submit</button>
-										<button class="btn btn-primary p-2" data-dismiss="modal">Close</button>
+										<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+										<button class="btn btn-xs headerbutton " onclick="workflowsub();">Submit</button>
+										<button class="btn btn-xs headerbutton " data-dismiss="modal">Close</button>
 									</div>
 								</div>
 							</div>
@@ -9342,9 +9342,9 @@ function modifyTab(evt, tabName) {
 
 										</div>
 										<div class="modal-footer bg-white">
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn btn-xs headerbutton "
 												data-dismiss="modal" onclick="Close();">Close</button>
-											<button type="button" class="btn btn-primary"
+											<button type="button" class="btn btn-xs headerbutton "
 												data-dismiss="modal" onclick="submitforalert()">Submit</button>
 										</div>
 									</div>
@@ -9355,11 +9355,11 @@ function modifyTab(evt, tabName) {
 
 
 						<!-- -------------------------------------------------------------------------------------------------------------------------- -->
-						<div class="card-footer text-center"
+						<div class="card-footer text-center "
 							style="background-color: #e9ecef">
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="nextdeposit()">Submit</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="nextdeposit()">Submit</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<!-- <div class="table-responsive">
 
@@ -9402,7 +9402,47 @@ function modifyTab(evt, tabName) {
 							</div>
 
 						</div> -->
-						<div class="table-responsive">
+						<div class="content m-2 " style="padding: 15px;">
+															<div class="row formline">
+																<label class="col-sm-2">Entry User</label>
+																<div class="col-sm-2">
+																	<input type="text"   id="entry_user" name="entry_user" th:value="${Services?.entry_user}"
+																		class="form-control form-control-sm" autocomplete="off" readonly />
+																</div>
+																<label class="col-sm-2">Modify User</label>
+																<div class="col-sm-2">
+																	<input type="text"   id="modify_user" name="modify_user"
+																		class="form-control form-control-sm" autocomplete="off" readonly />
+																</div>
+																<label class="col-sm-2">Verify User</label>
+																<div class="col-sm-2">
+																	<input type="text"   id="auth_user" name="auth_user"
+																	th:value="${parameterslist?.verify_user}"
+																		class="form-control form-control-sm" autocomplete="off" readonly />
+																</div>
+															</div>
+															<div class="row formline mt-2">
+																<label class="col-sm-2">Entry Time</label>
+																<div class="col-sm-2">
+																	<input type="text"   th:value="${paramdetails?.refnumber}"
+																		id="entry_date" name="entry_time" class="form-control form-control-sm" autocomplete="off"
+																		readonly />
+																</div>
+																<label class="col-sm-2">Modify Time</label>
+																<div class="col-sm-2">
+																	<input type="text"  th:value="${parameterslist?.modify_time}"
+																		id="modify_time" name="modify_time" class="form-control form-control-sm" autocomplete="off"
+																		readonly />
+																</div>
+																<label class="col-sm-2">Verify Time</label>
+																<div class="col-sm-2">
+																	<input type="text" id="auth_time" name="auth_time"
+																	th:value="${parameterslist?.verify_time}"
+																		class="form-control form-control-sm" autocomplete="off" readonly />
+																</div> 
+															</div>
+														</div>
+						<!--<div class="table-responsive">
 							<table class="table  table-bordered  table-hover table-sm"
 								style="margin-bottom: 0px; font-size: initial;">
 								<tr>
@@ -9454,7 +9494,7 @@ function modifyTab(evt, tabName) {
 										disabled></td>
 								</tr>
 							</table>
-						</div>
+						</div>-->
 					</div>
 					<div id="tab2" class="tabcontent">
 						<div class="card ">
@@ -9655,9 +9695,9 @@ function modifyTab(evt, tabName) {
 							<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 							<div class="card-footer text-center"
 								style="background-color: #e9ecef">
-								<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-								<button class="btn btn-primary p-2" onclick="nextloan()">Submit</button>
-								<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+								<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+								<button class="btn btn-xs headerbutton " onclick="nextloan()">Submit</button>
+								<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 							</div>
 
 							<div class="table-responsive">
@@ -9927,9 +9967,9 @@ function modifyTab(evt, tabName) {
 						<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button class="btn btn-primary p-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary p-2" onclick="submitform()">Submit</button>
-							<button class="btn btn-primary p-2" onclick="Back();">Back</button>
+							<button class="btn btn-xs headerbutton " onclick="Home();">Home</button>
+							<button class="btn btn-xs headerbutton " onclick="submitform()">Submit</button>
+							<button class="btn btn-xs headerbutton " onclick="Back();">Back</button>
 						</div>
 						<!-- <div class="table-responsive">
 
@@ -10145,9 +10185,9 @@ function modifyTab(evt, tabName) {
 							</div>
 							<!-- Modal footer -->
 							<div class="modal-footer mb-3 ">
-								<button type="button" class="btn btn-primary"
+								<button type="button" class="btn btn-xs headerbutton "
 									data-dismiss="modal" onclick="Close();">Close</button>
-								<button type="button" class="btn btn-primary"
+								<button type="button" class="btn btn-xs headerbutton "
 									data-dismiss="modal" id="handleCheckListForm_id"
 									onclick="submitforchecklist(this)">Submit</button>
 							</div>
@@ -10190,7 +10230,7 @@ function modifyTab(evt, tabName) {
 
 					<!-- Footer with Close Button -->
 					<div class="modal-footer">
-						<button type="button" class="btn btn-primary" data-dismiss="modal"
+						<button type="button" class="btn btn-xs headerbutton " data-dismiss="modal"
 							onclick="goBack();">Close</button>
 						<!-- Calls goBack function -->
 					</div>
@@ -10207,7 +10247,7 @@ function modifyTab(evt, tabName) {
 			<div class="modal-content">
 				<div class="modal-header">
 					<h5 class="modal-title" id="alertLabel">Alert</h5>
-					<button type="button" class="close" data-dismiss="modal"
+					<button type="button" class="btn btn-xs headerbutton " data-dismiss="modal"
 						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -10216,7 +10256,7 @@ function modifyTab(evt, tabName) {
 					<!-- Message will be inserted here -->
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-xs headerbutton " data-dismiss="modal">Close</button>
 				</div>
 			</div>
 		</div>
