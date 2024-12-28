@@ -313,7 +313,7 @@ padding-right: 800px !important;
 		}
 
 		function submitaddform(b) {
-
+			alert("this is b function");
 			if ($("#BAMInventorymaster").valid()) {
 				$("#loader1").modal("toggle");
 				var formmode = 'add';
@@ -506,7 +506,7 @@ padding-right: 800px !important;
 
 
 		function submitaddform(a) {
-
+			alert("this is a function");
 			var asset = document.getElementById('asset_category').value;
 			var asset_category = asset.split(' - ')[0];
 			// alert(asset_category)
@@ -1084,7 +1084,7 @@ padding-right: 800px !important;
 				//var result = getMonthDayDifference(acquisitionDate, flowStartDates[0]);
 				var result = countDaysBetween(acquisitionDate, flowStartDates[0]);
 
-				alert('result is : ' + result)
+				alert('result in days : ' + result)
 				var deppercent = document.getElementById('dep_percentge').value;
 				var percent = parseInt(deppercent);
 				var original_cost = document.getElementById('original_cost').value;
@@ -1156,7 +1156,7 @@ padding-right: 800px !important;
 							totalPercent = parseFloat(deppercent);
 						}
 						if (j === 6) {
-							input.value = original_cost; // Display the year
+							input.value = formatWithCommas(original_cost); // Display the year
 							input.readOnly = true;
 							totalOriginalCost = parseFloat(original_cost);
 							input.style.textAlign = 'right';
@@ -1165,17 +1165,20 @@ padding-right: 800px !important;
 						if (j === 7 && i === 1) {
 							var cl = original_cost * (percent / 100);
 							var a = (cl / 365 * result).toFixed(2);
-							input.value = Math.round(a).toFixed(2);  //rounding the value
-							var dp = parseFloat(input.value);
+							input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+							input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
+							var dp = parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 							input.readOnly = true; // Make it read-only
 							input.style.textAlign = 'right';
 							totalDepreciation += dp;
 						}
 
+
 						if (j === 7 && i > 1) {
 							var a = (original_cost * (percent / 100)).toFixed(2);
-							input.value = Math.round(a).toFixed(2);  //rounding the value
-							dp = parseFloat(input.value);
+							input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+							input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
+							dp = parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 							input.readOnly = true; // Make it read-only
 							input.style.textAlign = 'right';
 							totalDepreciation += dp;
@@ -1183,21 +1186,23 @@ padding-right: 800px !important;
 
 						// For Book value
 						if (j === 8 && i === 0) {
-							input.value = original_cost;
+							input.value = formatWithCommas(original_cost); // Display formatted value
+							input.setAttribute('data-value', original_cost); // Store raw value
 							input.readOnly = true;
 							input.style.textAlign = 'right';
-							totalBookValue += parseFloat(input.value);
+							totalBookValue += parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 						}
 						if (j === 8 && i > 0) {
 							if (remainingValue != null) {
 								rm = remainingValue;
 							}
 							var remainingValue = rm - dp;
-							input.value = remainingValue.toFixed(2);
-							lastdep = input.value; 					// for last monthly depreciation.
+							input.value = formatWithCommas(remainingValue.toFixed(2)); // Display formatted value
+							input.setAttribute('data-value', remainingValue.toFixed(2)); // Store raw value
+							lastdep = input.getAttribute('data-value'); // Store raw value for last monthly depreciation
 							input.readOnly = true;
 							input.style.textAlign = 'right';
-							totalBookValue += parseFloat(input.value);
+							totalBookValue += parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 						}
 
 						// Set id and class for input cells
@@ -1219,6 +1224,8 @@ padding-right: 800px !important;
 				console.log('last dep month:', previousBookValue);
 				// Retrieve the asset expiry date from the input field 
 				var assetExpiryDateInput = document.getElementById('asstexp_date').value;
+																	
+				console.log("asset expiry date input : ", assetExpiryDateInput );
 				let assetExpiryDate = parseDateString(assetExpiryDateInput);
 
 				console.log('assetExpiryDate is : ', assetExpiryDate);
@@ -1277,22 +1284,25 @@ padding-right: 800px !important;
 						input.style.textAlign = 'right';
 					}
 					if (j === 6) { // Original cost
-						input.value = original_cost; // Original cost
+						input.value = formatWithCommas(original_cost); // Original cost
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 					}
 					if (j === 7) { // Depreciation for days
 						var a = DayDepreciation.toFixed(2); // Depreciation value days
-						input.value = Math.round(a).toFixed(2);  //rounding the value
-						var dp = parseFloat(input.value);
+						input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+						input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
+						var dp = parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 						totalDepreciation += dp;
 					}
+
 					if (j === 8) { // Book value after 5 months depreciation
 						const bookValueAfterDepreciation = previousBookValue - DayDepreciation;
 						var a = bookValueAfterDepreciation.toFixed(2); // Book value after depreciation
-						input.value = Math.round(a).toFixed(2);  //rounding the value
+						input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+						input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 					}
@@ -1318,7 +1328,9 @@ padding-right: 800px !important;
 
 
 					if (j === 7) {
-						totalInput.value = totalDepreciation.toFixed(2);
+						totalInput.value = formatWithCommas(totalDepreciation.toFixed(2)); // Display formatted value
+						totalInput.setAttribute('data-value', totalDepreciation.toFixed(2)); // Store raw value
+
 						totalInput.style.textAlign = 'right';
 					}
 
@@ -1420,7 +1432,7 @@ padding-right: 800px !important;
 
 						}
 						if (j === 6) {
-							input.value = original_cost; // Display the year
+							input.value = formatWithCommas(original_cost);
 							input.readOnly = true;
 							totalOriginalCost = parseFloat(original_cost);
 							input.style.textAlign = 'right';
@@ -1428,68 +1440,66 @@ padding-right: 800px !important;
 
 						//Depretiation
 						if (j === 7 && i === 1) {
-
 							var prevBookValueElement = document.getElementById('input_' + (i - 1) + '_8');
-							console.log(prevBookValueElement)
 							if (prevBookValueElement) {
-								var prevBookValue = parseFloat(prevBookValueElement.value);
-								// alert(prevBookValue)
+								var prevBookValue = parseFloat(prevBookValueElement.getAttribute('data-value')); // Use raw value
 								cl = (prevBookValue * (percent / 100)).toFixed(2);
-								var a = (cl / 365 * result).toFixed(2);		//365 for days calculation
-								input.value = Math.round(a).toFixed(2);  //rounding the value
-								var dp = parseFloat(input.value);
-								input.readOnly = true;// Make it read-only
+								var a = (cl / 365 * result).toFixed(2); // 365 for days calculation
+								input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+								input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
+								var dp = parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
+								input.readOnly = true; // Make it read-only
 								input.style.textAlign = 'right';
 								totalDepreciation += dp;
 							}
-
 						}
 
 						if (j === 7 && i > 1) {
-
 							var prevBookValueElement = document.getElementById('input_' + (i - 1) + '_8');
 							if (prevBookValueElement) {
-								var prevBookValue = parseFloat(prevBookValueElement.value);
-								// alert(prevBookValue)
+								var prevBookValue = parseFloat(prevBookValueElement.getAttribute('data-value')); // Use raw value
 								var a = (prevBookValue * (percent / 100)).toFixed(2);
-								input.value = Math.round(a).toFixed(2);  //rounding the value 
-								var dp = parseFloat(input.value);
-								input.readOnly = true;// Make it read-only
+								input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+								input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
+								var dp = parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
+								input.readOnly = true; // Make it read-only
 								input.style.textAlign = 'right';
 								totalDepreciation += dp;
-
 							}
-
 						}
-						//For Book value
+
+						// For Book value
 						if (j === 8 && i === 0) {
-							input.value = original_cost;
+							input.value = formatWithCommas(original_cost); // Display formatted value
+							input.setAttribute('data-value', original_cost); // Store raw value
 							input.readOnly = true;
 							input.style.textAlign = 'right';
-							totalBookValue += parseFloat(input.value);
+							totalBookValue += parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 						}
+
 						if (j === 8 && i > 0) {
 							if (remainingValue != null) {
 								rm = remainingValue;
 							}
 							var remainingValue = rm - dp;
-							input.value = remainingValue.toFixed(2);
-							lastdep = input.value; 					// for last depreciation.
+							input.value = formatWithCommas(remainingValue.toFixed(2)); // Display formatted value
+							input.setAttribute('data-value', remainingValue.toFixed(2)); // Store raw value
+							lastdep = input.getAttribute('data-value'); // Store raw value for last depreciation
 							input.readOnly = true;
 							input.style.textAlign = 'right';
-							totalBookValue += parseFloat(input.value);
-
+							totalBookValue += parseFloat(input.getAttribute('data-value')); // Use raw value for calculations
 						}
+
 						if (j === 9 && i === 0) {
-							input.value = acquisitionDateInput;
+							/* input.value = acquisitionDateInput; */
 							input.readOnly = true;
 						}
 						if (j === 10 && i === 0) {
-							input.value = '124/1';
+							/* input.value = '124/1'; */
 							input.readOnly = true;
 						}
 						if (j === 11 && i === 0) {
-							input.value = original_cost;
+							/* input.value = original_cost; */
 							input.readOnly = true;
 						}
 
@@ -1510,8 +1520,9 @@ padding-right: 800px !important;
 				// Retrieve the asset expiry date from the input field 
 				console.log('last dep month:', previousBookValue);
 
-				var assetExpiryDateInput = document.getElementById('asstexp_date').value;
+				var assetExpiryDateInput = document.getElementById('asst_exp_date').value;
 				let assetExpiryDate = parseDateString(assetExpiryDateInput);
+				
 
 				// Get the lifespan in years from the input field
 				var lifespanInput = document.getElementById('lifeofyear').value;
@@ -1563,13 +1574,14 @@ padding-right: 800px !important;
 						input.style.textAlign = 'right';
 					}
 					if (j === 6) { // Original cost
-						input.value = original_cost; // Original cost
+						input.value = formatWithCommas(original_cost); // Original cost
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 					}
 					if (j === 7) { // Depreciation
 						var a = DayDepreciation.toFixed(2); // Depreciation for days
-						input.value = Math.round(a).toFixed(2);  //rounding the value
+						input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+						input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
 						var dp = parseFloat(input.value);
 						input.readOnly = true;
 						input.style.textAlign = 'right';
@@ -1578,7 +1590,9 @@ padding-right: 800px !important;
 					if (j === 8) { // Book value after day depreciation
 						const bookValueAfterDepreciation = previousBookValue - DayDepreciation;
 						var a = bookValueAfterDepreciation.toFixed(2); // Book value after depreciation
-						input.value = Math.round(a).toFixed(2);  //rounding the value
+						input.value = formatWithCommas(Math.round(a).toFixed(2)); // Display formatted value
+						input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
+						input.setAttribute('data-value', Math.round(a).toFixed(2)); // Store raw value
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 					}
@@ -1604,7 +1618,8 @@ padding-right: 800px !important;
 
 
 					if (j === 7) {
-						totalInput.value = totalDepreciation.toFixed(2);
+						totalInput.value = formatWithCommas(totalDepreciation.toFixed(2)); // Display formatted value
+						totalInput.setAttribute('data-value', totalDepreciation.toFixed(2)); // Store raw value
 						totalInput.style.textAlign = 'right';
 					}
 
@@ -1616,6 +1631,18 @@ padding-right: 800px !important;
 
 			}
 		}
+		
+		function formatWithCommas(number) {
+			return Number(number).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+		}
+		function removeCommas(value) {
+			// Ensure the input is a string
+			const stringValue = value.toString();
+
+			// Replace all commas with an empty string
+			return stringValue.replace(/,/g, '');
+		}
+		
 		function openTab(evt, tabName) {
 			let currentTab = 'tab1';
 			tablinks = document.getElementsByClassName("tablinks");
@@ -1837,6 +1864,150 @@ padding-right: 800px !important;
 		}
 	}
 </script>
+<script> //below is for Depreciation Submitting
+		function removeCommas(value) {
+			// Ensure the input is a string
+			const stringValue = value.toString();
+
+			// Replace all commas with an empty string
+			return stringValue.replace(/,/g, '');
+		}
+
+		function addSubmit() {
+			alert("hi");
+			var value = $('#input_0_1').val();
+
+			if (!value) {
+				alert("Please Generate the flow !!!");
+			} else {
+
+				var assetflowslist = [];
+
+				var assetserialno1 = $("#asset_serial_no").val();
+				var dep_method1 = $('input[name="dep_method"]:checked').val();
+				var assetName1 = $("input[name='asset_name']").val();
+				var asset_currency1 = $("input[name='asset_currency']").val();
+				var date_of_purchase1 = $("input[name='date_of_purchase']").val();
+				var year_of_purchase1 = $("input[name='year_of_purchase']").val();
+				var asst_exp_date1 = $("input[name='asst_exp_date']").val();
+				var acquis_date1 = $("input[name='acquis_date']").val();
+				var life_span_months1 = $("input[name='life_span_months']").val();
+				var depreciation_start_date1 = $("input[name='depreciation_start_date']").val();
+				var asset_type1 = $("input[name='asset_type']").val();
+
+				var original_cost1 = $("input[name='original_cost']").val();
+
+				var accum_depres1 = $("input[name='accum_depres']").val();
+
+				var curr_book_value1 = $("input[name='curr_book_value']").val();
+
+				var depreciation_flg1 = $("input[name='depreciation_flg']").val();
+				var depreciation_method1 = $('#dep_method').val();
+				var depreciation_percentage1 = $("input[name='depreciation_percentage']").val();
+				var depreciation_frequency1 = $("input[name='depreciation_frequency']").val();
+
+				var date_of_last_depreciation1 = $("input[name='date_of_last_depreciation']").val();
+
+
+
+				$('#flowsTable tbody tr').each(function (index) {
+
+					var row = $(this);
+
+					var input_rows0 = row.find('input[name="input_rows0"]').val() || 0;
+					// alert(input_rows0);
+					var input_rows1 = row.find('input[name="input_rows1"]').val() || 0;
+					var input_rows2 = row.find('input[name="input_rows2"]').val() || 0;
+					var input_rows3 = row.find('input[name="input_rows3"]').val() || 0;
+					var input_rows4 = row.find('input[name="input_rows4"]').val() || 0;
+					var input_rows5 = row.find('input[name="input_rows5"]').val() || 0;
+					var input_rows6s = row.find('input[name="input_rows6"]').val() || 0;
+					var input_rows6 = removeCommas(input_rows6s);
+
+					var input_rows7s = row.find('input[name="input_rows7"]').val() || 0;
+					var input_rows7 = removeCommas(input_rows7s);
+					var input_rows8s = row.find('input[name="input_rows8"]').val() || 0;
+					var input_rows8 = removeCommas(input_rows8s);
+
+
+					var input_rows9 = row.find('input[name="input_rows9"]').val() || 0;
+					var input_rows10 = row.find('input[name="input_rows10"]').val() || 0;
+					var input_rows11 = row.find('input[name="input_rows11"]').val() || 0;
+					var input_rows12 = row.find('input[name="input_rows12"]').val() || "NA";
+
+					if (input_rows0) {
+						var taxtable = {
+							gen_roll_no: input_rows0,
+							gen_flow_id: input_rows1,
+							gen_flow_strt_date: input_rows2,
+							gen_frequncy: input_rows3,
+							gen_method: input_rows4,
+							gen_percentage: input_rows5,
+							gen_original_cost: input_rows6,
+							gen_depreciation: input_rows7,
+							gen_book_value: input_rows8,
+							gen_tran_date: input_rows9,
+							gen_tran_id: input_rows10,
+							gen_amount: input_rows11,
+							gen_remarks: input_rows12,
+
+							asset_serial_no: assetserialno1,
+							dep_method: dep_method1,
+							asset_name: assetName1,
+							asset_currency: asset_currency1,
+							date_of_purchase: date_of_purchase1,
+							year_of_purchase: year_of_purchase1,
+							asst_exp_date: asst_exp_date1,
+							acquis_date: acquis_date1,
+							life_span_months: life_span_months1,
+							depreciation_start_date: depreciation_start_date1,
+							asset_type: asset_type1,
+							original_cost: original_cost1,
+							accum_depres: accum_depres1,
+							curr_book_value: curr_book_value1,
+							depreciation_flg: depreciation_flg1,
+							depreciation_method: depreciation_method1,
+							depreciation_percentage: depreciation_percentage1,
+							depreciation_frequency: depreciation_frequency1,
+							date_of_last_depreciation: date_of_last_depreciation1
+
+						};
+
+						assetflowslist.push(taxtable);
+					} else {
+						console.warn("Row " + index + " is missing data and will be skipped.");
+					}
+				});
+
+				// console.log("Final assetflowslist:", assetflowslist);
+
+				if (assetflowslist.length > 0) {
+					$.ajax({
+						type: 'POST',
+						url: './addAssets?formmode=add',
+						contentType: 'application/json',
+						data: JSON.stringify(assetflowslist),
+						success: function (response) {
+							//alert(response);
+							//window.location.reload();
+							$("#alertmsg").text(response);
+							$('#alert').modal("toggle");
+						},
+						error: function (xhr, status, error) {
+							console.error("AJAX error:", status, error);
+							alert("An error occurred while sending the data.");
+						}
+					});
+				} else {
+					alert("No data to send.");
+				}
+
+			}
+
+		}
+
+	</script>
+
 </head>
 <title>BAM</title>
 
@@ -2208,7 +2379,7 @@ padding-right: 800px !important;
 
 												<div class="row formline">
 													<div class="col-sm-2">
-														<label for="asst_exp_date">Vendor Name</label>
+														<label for="vendorname">Vendor Name</label>
 													</div>
 
 													<div class="col-sm-3">
@@ -2534,7 +2705,25 @@ padding-right: 800px !important;
 
 											</div>
 
-										</div>
+										</div><div class="card-footer text-center">
+
+										<button type="button" class="btn headerbutton" id="btnHome"
+											onclick="home();">Home</button>
+
+
+
+										<button th:if="${formmode}=='add'" type="button"
+											class="btn
+											headerbutton"
+											onclick="submitaddform(this);" form="BAMInventorymaster"
+											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+
+
+
+										<button type="button" class="btn headerbutton" id="btnBack"
+											onclick="back();">Back</button>
+
+									</div>
 									</div>
 
 
@@ -2800,8 +2989,7 @@ padding-right: 800px !important;
 												</div>
 											</fieldset>
 										</div>
-									</div>
-									<div class="card-footer text-center">
+										<div class="card-footer text-center">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
@@ -2811,7 +2999,7 @@ padding-right: 800px !important;
 										<button th:if="${formmode}=='add'" type="button"
 											class="btn
 											headerbutton"
-											onclick="submitaddform(this);" form="BAMInventorymaster"
+											onclick="addSubmit();" form="BAMInventorymaster"
 											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
 
 
@@ -2820,6 +3008,8 @@ padding-right: 800px !important;
 											onclick="back();">Back</button>
 
 									</div>
+									</div>
+									
 									<div class="content m-2 " style="padding: 15px;">
 									    <div class="row formline">
 									        <label class="col-sm-2">Entry User</label>
