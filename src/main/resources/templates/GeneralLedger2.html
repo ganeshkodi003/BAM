@@ -698,7 +698,7 @@ tr td:first-child:before {
 				<div class="container-fluid content"
 					th:if="${formmode}=='add' OR ${formmode}=='view' OR ${formmode}=='edit' OR ${formmode}=='view1' OR ${formmode}=='delete'">
 					<div class="row">
-						<div class="col-sm-11 ml-5">
+						<div class="col-sm-11 ">
 
 
 							<div class="card">
@@ -1139,44 +1139,46 @@ tr td:first-child:before {
 
 											</div>
 										</div>
+										
 									</form>
-								</div>
-							</div>
-							<div class="card-footer  text-center"
-								style="background-color: #e9ecef;">
+									<div class="card-footer  text-center"
+								style="background-color: #e9ecef;color:white;font-weight: bolder">
 
-								<button type="button" class="btn btn-primary " onclick="home()"
+								<button type="button" class="btn btnheader " onclick="home()"
 									id="btnHome">Home</button>
 
-								<a class="btn btn-primary  text-white" onclick="addUser()"
+								<a class=" btn btnheader" onclick="addUser()"
 									th:if="${formmode}=='view'" id="btnModify">Add</a> <a
-									class="btn btn-primary  text-white" onclick="upload()"
+									class=" btn btnheader" onclick="upload()"
 									id="btnupload">Upload</a> <a
-									class="btn btn-primary  text-white" id="btnModify"
+									class=" btn btnheader" id="btnModify"
 									th:if="${formmode}=='view'" onclick="modifyData();">Modify</a>
 
-								<a class="btn btn-primary  text-white" id="btnDelete"
+								<a class=" btn btnheader" id="btnDelete"
 									th:if="${formmode}=='view'" onclick="deleteData();">Delete</a>
 
-								<a class="btn btn-primary  text-white"
+								<a class=" btn btnheader"
 									th:if="${formmode}=='view'" id="btnList" onclick="userList();">List</a>
 
 								<button th:if="${formmode}== 'add'" type="button"
-									class="btn btn-primary " form="RefCodeMaster" id="btnSubmit"
+									class="btn btnheader" form="RefCodeMaster" id="btnSubmit"
 									onclick="submitform(this);" th:attr="data-formmode=${formmode}">Submit</button>
 
-								<button type="button" class="btn btn-primary " id="btnEdit"
+								<button type="button" class="btn btnheader" id="btnEdit"
 									th:if="${formmode}=='edit'" th:attr="data-formmode=${formmode}"
 									onclick="modifyUserData(this);">Submit</button>
 
 								<button th:if="${formmode}== 'delete'" type="button"
-									class="btn btn-primary " form="AdminAssociateProfile"
+									class=" btn btnheader" form="AdminAssociateProfile"
 									id="btnSubmit" onclick="deleteUserData(this);"
 									th:attr="data-formmode=${formmode}">Submit</button>
 
-								<button type="button" class="btn btn-primary " id="btnBack"
+								<button type="button" class="btn btnheader" id="btnBack"
 									onclick="back();">Back</button>
 							</div>
+								</div>
+							</div>
+							
 
 
 						</div>

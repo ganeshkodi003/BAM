@@ -332,7 +332,7 @@ input:hover+.password-info {
 	<!-- Start Content-->
 	<div class="container-manager">
 		<div class="row">
-			<div class="col-sm-11  mt-2">
+			<div class="col-sm-11">
 
 				<div th:if="${formmode}=='list'">
 
@@ -341,12 +341,12 @@ input:hover+.password-info {
 							style="background-color: #e9ecef; height: 50px">
 
 							<div class="float-left">
-								<h6 style="font-size: 1.2rem; color: black;">REFERENCE CODE
+								<h6 style="font-size: 1.2rem; color: white;">REFERENCE CODE
 									MAINTENANCE</h6>
 							</div>
 
-							<div class="float-right">
-								<button class="btn btn-primary P-2" onclick="add();">Add</button>
+							<div class="float-right mb-2">
+								<button class="btn headerbutton " onclick="add();">Add</button>
 
 
 
@@ -380,11 +380,13 @@ input:hover+.password-info {
 						</div>
 
 						<div class="card-body">
-
+						
+							<div class="table-responsive"
+							style="overflow-y: auto; height: 85vh; border: 1px solid #dee2e6;">
 							<table class="table table-bordered  table-hover table-sm"
 								style="margin-bottom: 0px; font-size: initial;"
 								id="AssosiateTable">
-								<thead class="thead-light">
+								<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 
 									<tr>
 										<th>REF TYPE</th>
@@ -412,12 +414,13 @@ input:hover+.password-info {
 								</tbody>
 
 							</table>
+							</div>
 							<div class="card-footer text-center"
 								style="background-color: #e9ecef;">
 
 
-								<button class="btn btn-primary P-2" onclick="Home();">Home</button>
-								<button class="btn btn-primary P-2" onclick="Back();">Back</button>
+								<button class="btn headerbutton" onclick="Home();">Home</button>
+								<button class="btn headerbutton " onclick="Back();">Back</button>
 
 							</div>
 						</div>
