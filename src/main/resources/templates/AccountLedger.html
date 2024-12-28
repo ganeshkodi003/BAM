@@ -58,7 +58,7 @@
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-	margin-left: 17.3%;
+	margin-left: 16.3%;
 	margin-top: 80px;
 	margin-top: 80px;
 }
@@ -330,22 +330,22 @@ input:hover+.password-info {
 	</div>
 	<!---------------------User List Starts------------------------------------------------------->
 	<!-- Start Content-->
-	<div class="container-manager">
+	<div class="container-manager pt-3">
 		<div class="row">
-			<div class="col-sm-11">
+			<div class="col-sm-12">
 
-				<div th:if="${formmode}=='list'">
+				<div  th:if="${formmode}=='list'">
 
-					<div class="card" style="width:1300px;">
-						<div class="card-header "
-							style="background-color: #e9ecef; height: 50px">
+					<div class="card " >
+						<div class="card-header p-0 "
+							>
 
 							<div class="float-left">
-								<h6 style="font-size: 1.2rem; color: white;">REFERENCE CODE
+								<h6 class="headerbutton pt-2 pl-2">REFERENCE CODE
 									MAINTENANCE</h6>
 							</div>
 
-							<div class="float-right mb-2">
+							<div class="float-right ">
 								<button class="btn headerbutton " onclick="add();">Add</button>
 
 
@@ -432,10 +432,10 @@ input:hover+.password-info {
 				<div th:if="${formmode}=='nav'">
 					<div class="card">
 						<div class="card-header "
-							style="background-color: #e9ecef; height: 50px">
+							>
 
 							<div class="float-left">
-								<h6 style="font-size: 1.2rem; color: black;">REFERENCE CODE
+								<h6 class="headerbutton pt-1">REFERENCE CODE
 									MAINTENANCE - ADD</h6>
 							</div>
 						</div>
@@ -530,9 +530,9 @@ input:hover+.password-info {
 							style="background-color: #e9ecef;">
 
 
-							<button class="btn btn-primary P-2" onclick="Home();">Home</button>
-							<button class="btn btn-primary P-2" onclick="Submit();">Submit</button>
-							<button class="btn btn-primary P-2" onclick="Back();">Back</button>
+							<button class="btn headerbutton P-2" onclick="Home();">Home</button>
+							<button class="btn headerbutton P-2" onclick="Submit();">Submit</button>
+							<button class="btn headerbutton P-2" onclick="Back();">Back</button>
 
 						</div>
 
@@ -551,7 +551,7 @@ input:hover+.password-info {
 
 				<div class="modal-body" style="text-align: center;">
 					<h6 id="alertmsg"></h6>
-					<button type="button" class="btn btn-primary" onclick="list()">Close</button>
+					<button type="button" class="btn headerbutton" onclick="list()">Close</button>
 				</div>
 			</div>
 		</div>
@@ -565,7 +565,7 @@ input:hover+.password-info {
 
 				<div class="modal-body" style="text-align: center;">
 					<h6 id="alertmsg1"></h6>
-					<button type="button" class="btn btn-primary"
+					<button type="button" class="btn headerbutton"
 						onclick="$('#alert1').modal('hide')">Close</button>
 				</div>
 			</div>

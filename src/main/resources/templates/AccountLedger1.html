@@ -70,9 +70,8 @@ body {
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-	margin-left: 17.3%;
-	margin-top: 80px;
-	margin-top: 80px;
+	margin-left: 15.3%;
+	
 }
 
 .table .thead-light th {
@@ -815,23 +814,22 @@ function funcall() {
 		<div class="row">
 
 
-			<div class="col-sm-11 " style="font-size: 0.8rem;">
-
+			<div class="col-sm-12 " style="font-size: 0.8rem;">
 
 				<!-- ------------------------------------Account Ledger List---------------------------------- -->
-				<div th:if="${formmode}=='list'">
+				<div   th:if="${formmode}=='list'">
 
-					<div class="panel panel-primary filterable">
-						<div class="card w-100 border panel panel-primary filterable">
-							<div class="card-header"
-								style="background-color: #e9ecef; height: 50px">
+					<div class=" col-sm-12 panel panel-primary filterable container-fluid content">
+						<div class="card  w-100 border panel panel-primary filterable">
+							<div class="card-header p-1"
+								>
 								<div class="float-left">
-									<h6 style="font-size: 1.2rem; color: black;">ACCOUNT
+									<h6 class="headerbutton pt-2">ACCOUNT
 										LEDGER</h6>
 								</div>
 								<div class="float-right">
 									<button type="button"
-										class="btn headerbtn btn-filter">Filter</button>
+										class="btn headerbutton btn-filter">Filter</button>
 								</div>
 							</div>
 
@@ -1180,9 +1178,9 @@ function funcall() {
 
 						<div class="card-footer text-center"
 							style="background-color: #e9ecef">
-							<button type="button" class="btn headerbtn" id="btnHome"
+							<button type="button" class="btn headerbutton" id="btnHome"
 								onclick="Home();">Home</button>
-							<button type="button" class="btn headerbtn" id="btnBack"
+							<button type="button" class="btn headerbutton" id="btnBack"
 								onclick="Back();">Back</button>
 						</div>
 

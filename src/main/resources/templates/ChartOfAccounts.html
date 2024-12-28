@@ -54,13 +54,13 @@
 }
 
 .container-manager {
-	width: 83.5%;
+	
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-right: auto;
-	margin-left: 17.3%;
-	margin-top: 80px;
-	margin-top: 80px;
+	margin-left: 16%;
+	margin-top: 90px;
+	margin-top: 90px;
 }
 
 .table .thead-light th {
@@ -412,22 +412,22 @@ function verifysubmit(a) {
 	</div>
 	<!---------------------User List Starts------------------------------------------------------->
 	<!-- Start Content-->
-	<div class="container-manager">
+	<div class="container-manager ">
 		<div class="row">
-			<div class="col-sm-11 ">
+			<div class="col-sm-12 mt-2">
 
 				<div th:if="${formmode}=='list'">
 					<div class="panel panel-primary filterable">
 						<div class="card w-100 border panel panel-primary filterable">
-							<div class="card-header" style="background-color: #e9ecef">
+							<div class="card-header p-1" style="background-color: #e9ecef">
 								<div class="float-left">
-									<h6 style="font-size: 1.2rem; color:white;">CHART OF
+									<h6 class="headerbutton pt-2">CHART OF
 										ACCOUNTS</h6>
 								</div>
 								<div class="float-right">
 									<button type="button"
-										class="btn headerbtn btn-filter">Filter</button>
-									<button type="button" class="btn headerbtn" id="btnadd"
+										class="btn headerbutton btn-filter">Filter</button>
+									<button type="button" class="btn headerbutton" id="btnadd"
 										style="text-align: center;" onclick="adduser(this);">Add</button>
 								</div>
 							</div>
@@ -527,7 +527,7 @@ function verifysubmit(a) {
 												</th:block>
 												<td>
 													<div class="dropdown" style="text-align: center;">
-														<button class="btn btn-primary p-2" type="button"
+														<button class="btn headerbutton p-2" type="button"
 															id="dropdownMenuButton" data-toggle="dropdown"
 															style="background-color: #B2BEB5; color: white; border: none; outline: none;"
 															aria-haspopup="true" aria-expanded="false">Action</button>
@@ -561,9 +561,9 @@ function verifysubmit(a) {
 							</div>
 							<div class="card-footer text-center border-top-0"
 								style="background-color: #e9ecef">
-								<button type="button" class="btn headerbtn" id="btnHome"
+								<button type="button" class="btn headerbutton" id="btnHome"
 									onclick="home();">Home</button>
-								<button type="button" class="btn headerbtn" id="btnBack"
+								<button type="button" class="btn headerbutton" id="btnBack"
 									onclick="Back();">Back</button>
 							</div>
 						</div>
@@ -576,9 +576,9 @@ function verifysubmit(a) {
 
 
 						<div class="card-header"
-							style="height: 50px; background-color: #e9ecef;">
+							>
 
-							<h6 style="font-size: 1.2rem; color: black;">CHART OF
+							<h6 class="headerbutton ">CHART OF
 								ACCOUNTS - ADD</h6>
 
 						</div>
@@ -835,13 +835,13 @@ function verifysubmit(a) {
 
 							</form>
 						</div>
-						<div class="card-footer text-center"
+						<div class="card-footer text-center p-0"
 							style="background-color: #e9ecef">
-							<button type="button" class="btn btn-primary p-2" id="btnHome"
+							<button type="button" class="btn headerbutton p-2" id="btnHome"
 								onclick="home();">Home</button>
-							<button type="button" class="btn btn-primary p-2"
+							<button type="button" class="btn headerbutton p-2"
 								onclick="addsubmit(this);">Submit</button>
-							<button type="button" class="btn btn-primary p-2" id="btnBack"
+							<button type="button" class="btn headerbutton p-2" id="btnBack"
 								onclick="Back();">Back</button>
 						</div>
 
@@ -853,9 +853,9 @@ function verifysubmit(a) {
 
 
 						<div class="card-header"
-							style="height: 50px; background-color: #e9ecef;">
+							>
 
-							<h6 style="font-size: 1.2rem; color: black;">CHART OF
+							<h6 class="headerbutton ">CHART OF
 								ACCOUNTS</h6>
 						</div>
 						<div class="card-body">
@@ -1103,12 +1103,12 @@ function verifysubmit(a) {
 
 							</form>
 						</div>
-						<div class="card-footer text-center"
+						<div class="card-footer text-center p-0"
 							style="background-color: #e9ecef">
-							<button type="button" class="btn btn-xs btn-primary mr-2"
+							<button type="button" class="btn btn-xs headerbutton mr-2"
 								id="btnHome" onclick="home();">Home</button>
 
-							<button type="button" class="btn btn-xs btn-primary ml-2"
+							<button type="button" class="btn btn-xs headerbutton ml-2"
 								id="btnBack" onclick="Back();">Back</button>
 						</div>
 					</div>
@@ -1119,9 +1119,9 @@ function verifysubmit(a) {
 
 
 						<div class="card-header"
-							style="height: 50px; background-color: #e9ecef;">
+							>
 
-							<h6 style="font-size: 1.2rem; color: black;">CHART OF
+							<h6 class="headerbutton ">CHART OF
 								ACCOUNTS</h6>
 						</div>
 						<div class="card-body">
@@ -1372,13 +1372,13 @@ function verifysubmit(a) {
 
 							</form>
 						</div>
-						<div class="card-footer text-center"
+						<div class="card-footer text-center p-0"
 							style="background-color: #e9ecef">
-							<button type="button" class="btn btn-primary p-2" id="btnHome"
+							<button type="button" class="btn headerbutton p-2" id="btnHome"
 								onclick="home();">Home</button>
-							<button type="button" class="btn btn-primary p-2" id=""
+							<button type="button" class="btn headerbutton p-2" id=""
 								onclick="verifysubmit(this);">Verify</button>
-							<button type="button" class="btn btn-primary p-2" id="btnBack"
+							<button type="button" class="btn headerbutton p-2" id="btnBack"
 								onclick="Back();">Back</button>
 						</div>
 					</div>
@@ -1635,13 +1635,13 @@ function verifysubmit(a) {
 
 							</form>
 						</div>
-						<div class="card-footer text-center"
+						<div class="card-footer text-center p-0"
 							style="background-color: #e9ecef">
-							<button type="button" class="btn btn-primary p-2" id="btnHome"
+							<button type="button" class="btn headerbutton p-2" id="btnHome"
 								onclick="home();">Home</button>
-							<button type="button" class="btn btn-primary p-2"
+							<button type="button" class="btn headerbutton p-2"
 								onclick="addsubmit(this);">Submit</button>
-							<button type="button" class="btn btn-primary p-2" id="btnBack"
+							<button type="button" class="btn headerbutton p-2" id="btnBack"
 								onclick="Back();">Back</button>
 						</div>
 
