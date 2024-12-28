@@ -659,8 +659,15 @@
 												</div>
 												<div class="col-sm-1"></div>
 
-												<div class="col-sm-2"></div>
-
+												<div class="col-sm-2"><label for="Remarks">Remarks</label></div>
+<div class="col-sm-3">
+												<input type="text"
+														
+														id="remarks"
+														class="form-control form-control-sm"
+														name="remarks" autocomplete="off" />
+												
+												</div>
 												<!-- 
 											</div>
 											
@@ -688,6 +695,11 @@
 
 
 										</div>
+										
+										<!-- Conditionally display the table based on formmode  view-->
+						
+
+									</div>
 										<div class="card-footer text-center">
 
 											<button type="button" class="btn headerbutton" id="btnHome"
@@ -710,7 +722,6 @@
 												onclick="back();">Back</button>
 
 										</div>
-										<!-- Conditionally display the table based on formmode  view-->
 										<div class="table-responsive"
 											th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
 											<div class="content m-2 " style="padding: 15px;">
@@ -762,11 +773,13 @@
 												</div>
 											</div>
 										</div>
-
-									</div>
 								</div>
+										
+								
 						</form>
+				
 					</div>
+							
 				</div>
 
 
