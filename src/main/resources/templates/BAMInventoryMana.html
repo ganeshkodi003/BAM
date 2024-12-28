@@ -755,7 +755,7 @@ padding-right: 800px !important;
 				afterDecimal = ',' + afterDecimal.slice(0, 2); // Use comma for decimal separator in international format
 			}
 
-			let formattedNumber = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+			let formattedNumber = amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 			formattedAmount = formattedNumber + afterDecimal;
 
 			inputElement.value = formattedAmount;
@@ -2068,7 +2068,9 @@ padding-right: 800px !important;
 														<select id="asset_currency"
 															class="form-control form-control-sm"
 															onchange="handleCurrencyChange()">
-															<option value="INR" selected>INR</option>
+															<option value="INR">INR</option>
+															<option value="SYC">SYC</option>
+															
 															<option value="Others">Others</option>
 														</select>
 													</div>
