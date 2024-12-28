@@ -482,7 +482,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DEPR_FLAG}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="#,##0.00">
 				<reportElement x="1200" y="0" width="100" height="20" uuid="2069faf2-2604-45ff-96ec-8e992e536db0">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -550,7 +550,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DATE_OF_PURCHASE}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="#,##0.00">
 				<reportElement x="1300" y="0" width="100" height="20" uuid="2ee2a343-1e6d-438e-805b-1e5df5a2278f">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -652,7 +652,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DATE_OF_SALE}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField pattern="#,##0.00">
 				<reportElement x="1500" y="0" width="100" height="20" uuid="874518df-be85-4c24-a090-fcdfdd5711a0">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
