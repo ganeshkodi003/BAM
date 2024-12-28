@@ -1191,16 +1191,18 @@
 											</div>
 										</div>
 										<div class="row formline mt-2">
-											<label class="col-sm-2">Entry Time</label>
-											<div class="col-sm-2">
-												<input type="text" id="entry_date" name="entry_time" th:value="${Bamsaleandwrite?.entry_time}"
-													class="form-control form-control-sm" autocomplete="off" readonly />
-											</div>
-											<label class="col-sm-2">Modify Time</label>
-											<div class="col-sm-2">
-												<input type="text" id="modify_time" name="modify_time" th:value="${Bamsaleandwrite?.modify_user}"
-													class="form-control form-control-sm" autocomplete="off" readonly />
-											</div>
+        <label class="col-sm-2">Entry Time</label>
+        <div class="col-sm-2">
+            <input type="text" id="entry_date" name="entry_time"
+                   th:value="${#dates.format(Bamsaleandwrite?.entry_time, 'yyyy-MM-dd HH:mm:ss')}"
+                   class="form-control form-control-sm" autocomplete="off" readonly />
+        </div>
+        <label class="col-sm-2">Modify Time</label>
+        <div class="col-sm-2">
+            <input type="text" id="modify_time" name="modify_time"
+                   th:value="${#dates.format(Bamsaleandwrite?.modify_time, 'yyyy-MM-dd HH:mm:ss')}"
+                   class="form-control form-control-sm" autocomplete="off" readonly />
+        </div>
 											<label class="col-sm-2">Verify Time</label>
 											<div class="col-sm-2">
 												<input type="text" id="auth_time" name="auth_time" th:value="${BBamsaleandwrite?.verify_time}"
