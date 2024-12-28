@@ -12366,8 +12366,9 @@ if (MAR != 0) {
 					@RequestParam(required = false) String branch_name, Model md, HttpServletRequest req,
 					@RequestParam(required = false) BigDecimal record_srl) {
 
-				String userid = (String) req.getSession().getAttribute("USERID");
-				md.addAttribute("menu", "BAJHeaderMenu");
+				String userId = (String) req.getSession().getAttribute("USERID");
+				md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
+				md.addAttribute("menu", "BTMHeaderMenu");
 
 				if (formmode == null || formmode.equals("add")) {
 					md.addAttribute("formmode", "add");

@@ -558,9 +558,9 @@
 										title="Click to Edit this Record"><i class="fas fa-edit"
 											th:attr="data-userid=${userProfile.userid}"
 											onclick="fnClick(this);"></i></a></td> -->
-										<td style="width: 125px" th:text="${userProfile.userid}">456</td>
+										<td style="width: 125px;color: blue;" th:text="${userProfile.userid}">456</td>
 										<td style="width: 250px" th:text="${userProfile.username}">TEST</td>
-										<td th:text="${userProfile.empid}">123</td>
+										<td th:text="${userProfile.empid}" style="color: blue;">123</td>
 										<td th:text="${userProfile.branch_code}">123</td>
 										<td style="width: 250px" th:text="${userProfile.branch_name}">CHENNAI</td>
 										<th:block th:switch="${userProfile.entity_flg}">
