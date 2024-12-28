@@ -422,7 +422,8 @@ public class BTMNavigationController {
 	@Autowired
 	Chart_Acc_Rep chart_Acc_Rep;
 
-
+	@Autowired
+	DAB_Repo dab_Repo;
 
 	public String getPagesize() {
 		return pagesize;
@@ -12844,7 +12845,77 @@ if (MAR != 0) {
 
 				return "AccountLedger";
 			}
+			
+			
+			@GetMapping("/getTransactionBalance")
+			@ResponseBody
+			public BigDecimal getTransactionBalance(@RequestParam(required = false) String acctnum,
+					@RequestParam(required = false) String fromdate, Model md) {
 
+				System.out.println("Acct number: " + acctnum + " From date: " + fromdate);
+
+				SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+				SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd-MMM-yyyy");
+
+				Date fromDateParsed = null;
+				String formattedDate = null;
+
+				try {
+
+					if (fromdate != null) {
+						fromDateParsed = inputDateFormat.parse(fromdate);/* 08-12-2024 */
+					}
+
+					if (fromDateParsed != null) {
+
+						formattedDate = outputDateFormat.format(fromDateParsed); /* 08-DEC-2024 */
+					}
+				} catch (ParseException e) {
+					e.printStackTrace();
+					System.out.println("Error parsing 'fromdate': " + e.getMessage());
+				}
+
+				// Now pass the formatted date to the repository query
+				BigDecimal tranDateBal = dab_Repo.getTranDateBAlance(acctnum, formattedDate);
+				System.out.println("THE VALUE OF tran_date_bal: " + tranDateBal);
+
+				return tranDateBal;
+			}
+
+			@GetMapping("/getTransactionRecords")
+			public List<TRAN_MAIN_TRM_WRK_ENTITY> getTransactionRecords(@RequestParam(required = false) String acctnum,
+					@RequestParam(required = false) String fromdate, @RequestParam(required = false) String todate) {
+
+				SimpleDateFormat inputDateFormat = new SimpleDateFormat("dd-MM-yyyy");/* 08-12-2024 */
+				SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd-MMM-yyyy");/* 08-DEC-2024 */
+
+				Date fromDateParsed = null;
+				Date toDateParsed = null;
+
+				try {
+					if (fromdate != null) {
+						fromDateParsed = inputDateFormat.parse(fromdate);
+					}
+					if (todate != null) {
+						toDateParsed = inputDateFormat.parse(todate);
+					}
+				} catch (ParseException e) {
+					e.printStackTrace();
+
+				}
+
+				String formattedFromDate = (fromDateParsed != null) ? outputDateFormat.format(fromDateParsed) : null;
+				String formattedToDate = (toDateParsed != null) ? outputDateFormat.format(toDateParsed) : null;
+
+				System.out.println("Formatted Dates: From = " + formattedFromDate + ", To = " + formattedToDate);
+
+				List<TRAN_MAIN_TRM_WRK_ENTITY> records = tRAN_MAIN_TRM_WRK_REP.getTranList(acctnum, formattedFromDate,
+						formattedToDate);
+				for (TRAN_MAIN_TRM_WRK_ENTITY i : records) {
+					System.out.println(i + "records");
+				}
+				return records;
+			}
 
 
 
