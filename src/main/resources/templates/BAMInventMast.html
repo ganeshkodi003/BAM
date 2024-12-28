@@ -547,24 +547,25 @@
 					</div>
 				</div>
 				<script>
-					document.addEventListener("DOMContentLoaded", function () {
-						// Function to format numbers with commas and no decimals
-						function formatWithCommas(number) {
-							return Number(number).toLocaleString('en-US', {
-								minimumFractionDigits: 0,
-								maximumFractionDigits: 0
-							});
-						}
+				document.addEventListener("DOMContentLoaded", function() {
+				    // Function to format numbers with commas and two decimals
+				    function formatWithCommasAndDecimals(number) {
+				        return Number(number).toLocaleString('en-US', {
+				            minimumFractionDigits: 2,
+				            maximumFractionDigits: 2
+				        });
+				    }
 
-						// Loop through all cur_book_value and mkt_value cells and apply formatting
-						document.querySelectorAll('[id^="cur_book_value_"]').forEach(function (element) {
-							element.textContent = formatWithCommas(element.textContent);
-						});
+				    // Loop through all cur_book_value and mkt_value cells and apply formatting
+				    document.querySelectorAll('[id^="cur_book_value_"]').forEach(function(element) {
+				        element.textContent = formatWithCommasAndDecimals(element.textContent);
+				    });
 
-						document.querySelectorAll('[id^="mkt_value_"]').forEach(function (element) {
-							element.textContent = formatWithCommas(element.textContent);
-						});
-					});
+				    document.querySelectorAll('[id^="mkt_value_"]').forEach(function(element) {
+				        element.textContent = formatWithCommasAndDecimals(element.textContent);
+				    });
+				});
+
 				</script>
 
 				<!-- *********************************************************************************************************************************************** -->
