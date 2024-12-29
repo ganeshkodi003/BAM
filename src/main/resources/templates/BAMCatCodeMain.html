@@ -488,7 +488,7 @@
 								<div class="card">
 									<div class="card-header">
 										<div class="float-left">
-											<h4>Category Code Maintenance - Edit</h4>
+											<h4>Category Code Maintenance - View</h4>
 										</div>
 									</div>
 
@@ -510,7 +510,7 @@
 												</div>
 												<div class="col-sm-3">
 													<input type="text" th:value="${Bamcategorycodemain.solid}"
-														class="form-control form-control-sm" id="solid" name="solid">
+														class="form-control form-control-sm" id="solid" name="solid" readonly>
 
 
 												</div>
@@ -568,11 +568,17 @@
 												</div>
 
 												<div class="col-sm-3">
-													<select id="dynamicSelect2" name="sub_category_code"
-														class="form-control form-control-sm" readonly>
+												
+												<input type="text" class="form-control form-control-sm"
+														id="dynamicTextBox11" name="sub_category_code"
+														th:value="${Bamcategorycodemain.sub_category_code}" readonly>
+													
+													
+													<!-- <select id="dynamicSelect2" name="sub_category_code"
+														class="form-control form-control-sm">
 														<option th:text="${Bamcategorycodemain.sub_category_code}">
 														</option>
-													</select>
+													</select> -->
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -642,7 +648,7 @@
 														id="depreciation_fund_account"
 														class="form-control form-control-sm"
 														name="depreciation_fund_account" autocomplete="off"
-														required="required" />
+														required="required"  readonly/>
 												</div>
 											</div>
 											<div class="row formline ">
@@ -655,7 +661,7 @@
 														th:value="${Bamcategorycodemain?.depreciation_pandl_account}"
 														id="depreciation_pandl_account"
 														class="form-control form-control-sm"
-														name="depreciation_pandl_account" autocomplete="off" />
+														name="depreciation_pandl_account" autocomplete="off" readonly/>
 												</div>
 												<div class="col-sm-1"></div>
 
@@ -665,7 +671,7 @@
 														
 														id="remarks"
 														class="form-control form-control-sm"
-														name="remarks" autocomplete="off" />
+														name="remarks" autocomplete="off" readonly/>
 												
 												</div>
 												<!-- 

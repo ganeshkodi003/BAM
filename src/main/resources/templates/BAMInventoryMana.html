@@ -2113,7 +2113,21 @@ padding-right: 800px !important;
 		}
 
 	</script>
-
+	<script>
+	// below is for update year of purchase automatically by date of purchase
+    function updateYearOfPurchase() {
+        const dateInput = document.getElementById('date_of_purchase').value;
+        const yearInput = document.getElementById('year_of_purchase');
+        
+        if (dateInput) {
+            const selectedDate = new Date(dateInput);
+            const year = selectedDate.getFullYear();
+            yearInput.value = year; // Set the year in the Year of Purchase field
+        } else {
+            yearInput.value = ''; // Clear the Year of Purchase field if no date is selected
+        }
+    }
+</script>
 </head>
 <title>BAM</title>
 
@@ -2394,14 +2408,14 @@ padding-right: 800px !important;
 															class="form-control form-control-sm"
 															onchange="handleCurrencyChange() required">
 															<option value="INR">INR</option>
-															<option value="SYC">SYC</option>
+															<option value="SCR">SCR</option>
 															<option value="Others">Others</option>
 														</select>
 													</div>
 												</div>
 
 												<div class="row formline">
-													<div class="col-sm-2">
+													<!-- <div class="col-sm-2">
 														<label for="date_of_purchase">Date of Purchase</label>
 													</div>
 
@@ -2411,9 +2425,23 @@ padding-right: 800px !important;
 															id="date_of_purchase"
 															class="form-control form-control-sm" autocomplete="off"
 															name="date_of_purchase" required="required" />
-													</div>
-													<div class="col-sm-1"></div>
+													</div> -->
 													<div class="col-sm-2">
+    <label for="date_of_purchase">Date of Purchase</label>
+</div>
+<div class="col-sm-3">
+    <input type="date"
+        th:value="${BAMInventorymaster.date_of_purchase}"
+        id="date_of_purchase"
+        class="form-control form-control-sm" 
+        autocomplete="off"
+        name="date_of_purchase" 
+        required="required" 
+        onchange="updateYearOfPurchase()" />
+</div>
+													
+													<div class="col-sm-1"></div>
+													<!-- <div class="col-sm-2">
 														<label for="year_of_purchase">Year Of Purchase</label>
 													</div>
 													<div class="col-sm-3">
@@ -2422,7 +2450,20 @@ padding-right: 800px !important;
 															id="year_of_purchase"
 															class="form-control form-control-sm" autocomplete="off"
 															name="year_of_purchase" required="required" />
-													</div>
+													</div> -->
+													<div class="col-sm-2">
+    <label for="year_of_purchase">Year Of Purchase</label>
+</div>
+<div class="col-sm-3">
+    <input type="text"
+        th:value="${BAMInventorymaster.year_of_purchase}"
+        id="year_of_purchase"
+        class="form-control form-control-sm" 
+        autocomplete="off"
+        name="year_of_purchase" 
+        required="required" 
+        readonly />
+</div>
 												</div>
 												<div class="row formline">
 													<!-- <div class="col-sm-2">
