@@ -1424,7 +1424,8 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 	    if (InvMastadd.equals("InvMastadd")) {
 
 	        if (formmode.equals("add")) {
-
+	        		
+	        	System.out.println("Asset Currency is : " +BAMInventorymaster.getAsst_crncy());
 	            Session hs = sessionFactory.getCurrentSession();
 	            DecimalFormat numformate = new DecimalFormat("000000");
 	            String cate_code = "0";

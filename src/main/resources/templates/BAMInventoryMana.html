@@ -2389,12 +2389,12 @@ padding-right: 800px !important;
 														<label for="asset_currency">Asset Currency</label>
 													</div>
 													<div class="col-sm-3">
-														<select id="asset_currency"
+														<select id="asset_currency" name="asst_crncy"
+														th:value="${BAMInventorymaster.asst_crncy}"
 															class="form-control form-control-sm"
-															onchange="handleCurrencyChange()">
+															onchange="handleCurrencyChange() required">
 															<option value="INR">INR</option>
 															<option value="SYC">SYC</option>
-															
 															<option value="Others">Others</option>
 														</select>
 													</div>
@@ -2896,8 +2896,7 @@ padding-right: 800px !important;
 														</div>
 														<div class="col-sm-3">
 
-															<input type="text" id="asset_currency"
-																name="asset_currency"
+															<input type="text" name="asst_crncy" id="asst_crncy"
 																class="form-control form-control-sm" autocomplete="off"
 																readonly />
 
