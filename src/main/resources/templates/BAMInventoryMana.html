@@ -1119,15 +1119,20 @@ padding-right: 800px !important;
 						var cell = document.createElement('td');
 						var input = document.createElement('input');
 						input.type = 'text';
-
 						if (j === 0) {
 							srl = i + 1;
 							input.value = i + 1; // Display the row number
 							input.readOnly = true; // Make it read-only
+							 
+					         input.style.width = '50px'; // Adjust the width of the input
+					         input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 1) {
 							input.value = "DEPR"; // Display the year
 							input.readOnly = true; // Make it read-only
+							cell.style.width = '100px'; // Set smaller width for the cell
+					        input.style.width = '100px'; // Adjust the width of the input
+					        input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 1 && i === 0) {
 							input.value = "ACQN";
@@ -1144,16 +1149,26 @@ padding-right: 800px !important;
 						if (j === 3) {
 							input.value = "YEARLY"; // Display the year
 							input.readOnly = true; // Make it read-only
+							cell.style.width = '100px'; // Set smaller width for the cell
+				            input.style.width = '100px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 4) {
 							input.value = dep_method; // Display the year
 							input.readOnly = true; // Make it read-only
+							cell.style.width = '100px'; // Set smaller width for the cell
+				            input.style.width = '100px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 5) {
 							input.value = deppercent; // Display the year
 							input.readOnly = true; // Make it read-only
 							input.style.textAlign = 'right';
 							totalPercent = parseFloat(deppercent);
+							cell.style.width = '100px'; // Set smaller width for the cell
+				            input.style.width = '110px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
+				            input.style.paddingLeft = '1px';
 						}
 						if (j === 6) {
 							input.value = formatWithCommas(original_cost); // Display the year
@@ -1224,8 +1239,6 @@ padding-right: 800px !important;
 				console.log('last dep month:', previousBookValue);
 				// Retrieve the asset expiry date from the input field 
 				var assetExpiryDateInput = document.getElementById('asstexp_date').value;
-																	
-				console.log("asset expiry date input : ", assetExpiryDateInput );
 				let assetExpiryDate = parseDateString(assetExpiryDateInput);
 
 				console.log('assetExpiryDate is : ', assetExpiryDate);
@@ -1261,10 +1274,16 @@ padding-right: 800px !important;
 					if (j === 0) {
 						input.value = srl + 1; // Row number for the 5-month period
 						input.readOnly = true;
+						 cell.style.width = '80px'; // Set smaller width for the cell
+				            input.style.width = '50px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 1) {
 						input.value = "DEPR"; // Label for the period
 						input.readOnly = true;
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '100px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 2) { // Flow start date
 						input.value = assetExpiryDateInput; // Set to the asset expiry date
@@ -1273,15 +1292,24 @@ padding-right: 800px !important;
 					if (j === 3) {
 						input.value = "MONTHLY"; // Frequency
 						input.readOnly = true;
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '100px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 4) {
 						input.value = dep_method; // Method from previous inputs
 						input.readOnly = true;
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '100px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 5) {
 						input.value = deppercent; // Percentage from previous inputs
 						input.readOnly = true;
 						input.style.textAlign = 'right';
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '110px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 6) { // Original cost
 						input.value = formatWithCommas(original_cost); // Original cost
@@ -1326,7 +1354,31 @@ padding-right: 800px !important;
 					totalInput.type = 'text';
 					totalInput.readOnly = true;
 
-
+					if(j === 0){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '50px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 1){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '100px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 3){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '100px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 4){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '100px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 5){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '110px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
 					if (j === 7) {
 						totalInput.value = formatWithCommas(totalDepreciation.toFixed(2)); // Display formatted value
 						totalInput.setAttribute('data-value', totalDepreciation.toFixed(2)); // Store raw value
@@ -1396,11 +1448,16 @@ padding-right: 800px !important;
 						if (j === 0) {
 							input.value = i + 1; // Display the row number
 							input.readOnly = true; // Make it read-only
+							  input.style.width = '50px'; // Adjust the width of the input
+						         input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						// Set the year value in the second column
 						if (j === 1) {
 							input.value = "DEPR"; // Display the year
 							input.readOnly = true; // Make it read-only
+							cell.style.width = '100px'; // Set smaller width for the cell
+					        input.style.width = '100px'; // Adjust the width of the input
+					        input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						// Set the acquisition date in the third column first cell
 						if (j === 1 && i === 0) {
@@ -1419,16 +1476,26 @@ padding-right: 800px !important;
 						if (j === 3) {
 							input.value = "YEARLY"; // Display the year
 							input.readOnly = true; // Make it read-only
+							cell.style.width = '100px'; // Set smaller width for the cell
+				            input.style.width = '100px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 4) {
 							input.value = dep_method; // Display the year
 							input.readOnly = true; // Make it read-only
+							cell.style.width = '100px'; // Set smaller width for the cell
+				            input.style.width = '100px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 5) {
 							input.value = deppercent; // Display the year
 							input.readOnly = true; // Make it read-only
 							input.style.textAlign = 'right';
 							totalPercent = parseFloat(deppercent);
+							cell.style.width = '100px'; // Set smaller width for the cell
+				            input.style.width = '110px'; // Adjust the width of the input
+				            input.style.boxSizing = 'border-box'; // Include padding in the width
+				            input.style.paddingLeft = '1px';
 
 						}
 						if (j === 6) {
@@ -1520,9 +1587,8 @@ padding-right: 800px !important;
 				// Retrieve the asset expiry date from the input field 
 				console.log('last dep month:', previousBookValue);
 
-				var assetExpiryDateInput = document.getElementById('asst_exp_date').value;
+				var assetExpiryDateInput = document.getElementById('asstexp_date').value;
 				let assetExpiryDate = parseDateString(assetExpiryDateInput);
-				
 
 				// Get the lifespan in years from the input field
 				var lifespanInput = document.getElementById('lifeofyear').value;
@@ -1551,27 +1617,43 @@ padding-right: 800px !important;
 					if (j === 0) {
 						input.value = i + 1; // Row number for the 5-month period
 						input.readOnly = true;
+						cell.style.width = '80px'; // Set smaller width for the cell
+			            input.style.width = '50px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 1) {
 						input.value = "DEPR"; // Label for the period
 						input.readOnly = true;
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '100px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 2) { // Flow start date
 						input.value = assetExpiryDateInput; // Set to the asset expiry date
 						input.readOnly = true;
+						
 					}
 					if (j === 3) {
 						input.value = "MONTHLY"; // Frequency
 						input.readOnly = true;
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '100px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 4) {
 						input.value = dep_method; // Method from previous inputs
 						input.readOnly = true;
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '100px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 5) {
 						input.value = deppercent; // Percentage from previous inputs
 						input.readOnly = true;
 						input.style.textAlign = 'right';
+						cell.style.width = '100px'; // Set smaller width for the cell
+			            input.style.width = '110px'; // Adjust the width of the input
+			            input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 6) { // Original cost
 						input.value = formatWithCommas(original_cost); // Original cost
@@ -1616,7 +1698,31 @@ padding-right: 800px !important;
 					totalInput.type = 'text';
 					totalInput.readOnly = true;
 
-
+					if(j === 0){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '50px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 1){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '100px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 3){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '100px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 4){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '100px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
+					if (j === 5){
+						 totalCell.style.width = '80px'; // Set smaller width for the cell
+				         totalInput.style.width = '110px'; // Adjust the width of the input
+				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					}
 					if (j === 7) {
 						totalInput.value = formatWithCommas(totalDepreciation.toFixed(2)); // Display formatted value
 						totalInput.setAttribute('data-value', totalDepreciation.toFixed(2)); // Store raw value
