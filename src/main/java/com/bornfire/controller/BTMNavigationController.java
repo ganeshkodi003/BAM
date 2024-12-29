@@ -1,7 +1,6 @@
 package com.bornfire.controller;
 
 import java.io.BufferedReader;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -46,7 +45,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -81,6 +79,7 @@ import com.bornfire.entities.*;
 import com.bornfire.services.AdminOperServices;
 import com.bornfire.services.AttendanceRegisterService;
 import com.bornfire.services.BankDetailService;
+import com.bornfire.services.DocFileUploadServices;
 import com.bornfire.services.ExcelUploadService;
 import com.bornfire.services.FileUploadServices;
 import com.bornfire.services.InquiriesServices;
@@ -111,7 +110,9 @@ public class BTMNavigationController {
 	@Autowired
 	BAM_AssetFlows_Rep  BAM_AssetFlows_rep;
 
-
+	@Autowired
+	DocFileUploadServices DocFileUploadServices;
+	
 	@Autowired
 	perfomance_evaluation_REP perfomance_evaluation_rep;
 	
@@ -10461,7 +10462,9 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 			        md.addAttribute("formmode", "verify");
 			        md.addAttribute("BAMInventorymaster", inventory);
 
-			    } else {
+			    } else if (formmode.equals("UploadFile")) {
+					md.addAttribute("formmode", "UploadFile");
+				} else {
 			        md.addAttribute("formmode", formmode);
 			    }
 
@@ -12917,6 +12920,25 @@ if (MAR != 0) {
 				return records;
 			}
 
+			@PostMapping(value = "invenuploadexcel")
+			@ResponseBody
+			public String leaseuploadexcel(@RequestParam("file") MultipartFile file, String screenId,
+					@ModelAttribute BAMInventorymaster BAMInventorymaster, Model md,
+					HttpServletRequest rq)
+					throws FileNotFoundException, SQLException, IOException, NullPointerException {
 
+				System.out.println("the testing   GST EXCEL UPLOAD");
+
+				System.out.println("fileSize" + file.getSize());
+
+				if (file.getSize() < 50000000) {
+					String userid = (String) rq.getSession().getAttribute("USERID");
+					String msg = DocFileUploadServices.UploadserviceCOLLECTION(screenId, file, userid,
+							BAMInventorymaster);
+					return msg;
+				} else {
+					return "File has not been successfully uploaded. Requires less than 128 KB size.";
+				}
+			}
 
 }

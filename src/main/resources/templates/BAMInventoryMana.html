@@ -1788,10 +1788,55 @@ padding-right: 800px !important;
 							});
 				});
 	</script>
-	<script>
-	  // Override the alert function globally to do nothing
-	  window.alert = function() {};
-	</script>
+<script>
+	// Override the alert function globally to do nothing
+	window.alert = function () { };
+
+	function Uploadclick(a) {
+		location.href = './InventoryMaster1?formmode=UploadFile';
+	}
+	function submitexcelgst() {
+		event.preventDefault(); // Prevent default form submission behavior
+
+		var fileInput = document.getElementById('fileval');
+		//alert(fileInput);
+		console.log(fileInput);
+
+		// Check if a file is selected
+		if (fileInput && fileInput.files.length > 0) {
+			var file = fileInput.files[0];
+			//alert(file.name); // Alert with the file name
+
+			var formData = new FormData();
+			formData.append('file', file);
+
+			$.ajax({
+				url: './invenuploadexcel',
+				data: formData,
+				type: 'POST',
+				contentType: false,
+				processData: false,
+				cache: false, // Disable cache to avoid potential issues
+				success: function (response) {
+					console.log(response);
+					$('#myModalupload').modal("toggle");
+					$('#myModalupload1').text(response);
+					//$('#successMessage2').modal('show');
+				},
+				error: function (xhr, status, error) {
+					console.error("AJAX Error:");
+					console.error("Status:", status);
+					console.error("Error:", error);
+					console.error("Response Text:", xhr.responseText); // Logs the server response if available
+					console.error("XHR Object:", xhr);
+					//$('#failureMessage2').modal('show');
+				}
+			});
+		} else {
+			alert('Please select a file before uploading.');
+		}
+	}
+</script>
 </head>
 <title>BAM</title>
 
@@ -1817,6 +1862,8 @@ padding-right: 800px !important;
 										<div class="btn-group nav-buttons float-right">
 											<button type="button" class="btn btn-sm mr-2 headerbutton"
 												id="btnAdd" th:if="${formmode}=='list'" onclick="codeadd();">Add</button>
+											<button type="button" class="btn btn-sm mr-2 headerbutton"  
+											    id="btnAdd" th:if="${formmode}=='list'" onclick="Uploadclick();">Upload</button>
 											<button type="button"
 												class="btn btns btn-filter headerbutton">Filter</button>
 										</div>
@@ -3695,18 +3742,44 @@ padding-right: 800px !important;
 								</div>
 							</div>
 						</form>
-
 					</div>
-
 				</div>
-
+<!----------------------------------------------------------------Upload---------------------------------------------------------->
+	<div class="content" th:if="${formmode}=='UploadFile'">
+		<form action="#" method="post" autocomplete="off" style="width: 100%">
+			<div class="card" style="margin-top: 90px;">
+				<div class="card-header">
+					<div class="float-right"></div>
+					<h4 class="headerh6">INVENTORY MASTER - FILE UPLOAD</h4>
+				</div>
+				<div class="card-body p-0 mt-3" style="background-color: #ffffff;">
+					<div class="panel-heading text-center">
+						<div class="form-group ">
+							<div class="row">
+								<div class="col-sm-3">
+									<label class="">Upload</label>
+								</div>
+								<div class="col-sm-2">
+									<input type="file" id="fileval" name="fileval" accept=".xlsx,.xls,.csv"
+										class="form-control form-control-sm">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer text-center">
+					<button type="button" class="btn btn-sm  headerbutton  " id="addBtn" onclick="home();">Home</button>
+					<button type="button" class="btn  btn-sm  headerbutton" id="nav"
+						onclick="submitexcelgst(this)">Upload</button>
+					<button type="button" class="btn btn-sm  headerbutton " id="" onclick="back();">Back</button>
+				</div>
 			</div>
-
-
+		</form>
+	</div>
+<!----------------------------------------------------------------foot---------------------------------------------------------->
+			</div>
 		</div>
 	</div>
-
-
 	<br>
 	<div class="modal fade" id="alert">
 		<div
@@ -3737,6 +3810,17 @@ padding-right: 800px !important;
 						<img th:src=@{/images/loadingapp.gif} id="bfirelogo"
 							style="width: 153px; margin-left: 18px;" alt="Bornfire">
 					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+		<div class="modal fade" id="myModalupload" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content" style="background: transparent;">
+				<div class="modal-body" style="text-align: center;background-color: #c6ccd2">
+					<p id="myModalupload1"></p>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>
@@ -3827,7 +3911,7 @@ padding-right: 800px !important;
 									<td th:text="${Bamcatcode?.depreciation_method}"></td>
 								    <td th:text="${Bamcatcode?.depreciation_percentage}"></td>
 									<td th:text="${Bamcatcode?.asset_account_number}"></td>
-									--->
+									-->
 
 								
 									<td><input type="radio" th:attr="data-asset_code=${Bamcatcode?.asset_code},
