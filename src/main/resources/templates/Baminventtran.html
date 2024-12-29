@@ -275,7 +275,7 @@
 		}
 
 		function submitaddform(a) {
-
+                alert("hii");
 			if ($("#BAMInventorymaster").valid()) {
 				$("#loader1").modal("toggle");
 				var formmode = 'add';
@@ -1460,7 +1460,7 @@
 	</script>
 
 	<script>
-		function submitaddform(b) {
+		function submitaddforms(b) {
 
 			var value = $('#input_0_1').val();
 
@@ -1650,11 +1650,25 @@
 							});
 				});
 
+				
+				window.onload = function() {
+				    // Manually set the date for demonstration
+				    const manualDate = "2024-12-29";  // Change this to any date you want to show
+				    
+				    // Set the value of the date input field (it will display in the frontend)
+				    const dateField = document.getElementById('date_of_acqn');
+				    dateField.value = manualDate;
+
+				    // Optionally log it for debugging
+				    console.log("Manually set date:", manualDate);
+				};
+
 	</script>
 	<script>
 			// Override the alert function globally to do nothing
 			window.alert = function () { };
 		</script>
+		
 </head>
 <title>BAM</title>
 
@@ -1909,8 +1923,8 @@
 													</div>
 
 													<div class="col-sm-3">
-														<input type="date" readonly
-															th:value="${BAMInventorymaster.date_of_purchase}"
+														<input type="text" readonly
+															th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
 															id="date_of_purchase" class="form-control form-control-sm"
 															autocomplete="off" name="date_of_purchase"
 															required="required" />
@@ -1921,7 +1935,7 @@
 													</div>
 													<div class="col-sm-3">
 														<input type="text" readonly
-															th:value="${BAMInventorymaster.year_of_purchase}"
+															th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
 															id="year_of_purchase" class="form-control form-control-sm"
 															autocomplete="off" name="year_of_purchase"
 															required="required" />
@@ -1957,8 +1971,8 @@
 													</div>
 
 													<div class="col-sm-3">
-														<input type="date" readonly
-															th:value="${BAMInventorymaster?.asst_exp_date}"
+														<input type="text" readonly
+															th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
 															id="asst_exp_date" class="form-control form-control-sm"
 															name="asst_exp_date" autocomplete="off"
 															required="required" />
@@ -2058,8 +2072,8 @@
 															Depreciation</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="date" readonly
-															th:value="${BAMInventorymaster?.dat_of_last_depr}"
+														<input type="text" readonly
+														th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'yyyy-MM-dd')}"
 															id="dat_of_last_depr" class="form-control form-control-sm"
 															name="dat_of_last_depr" autocomplete="off"
 															required="required" />
@@ -2073,19 +2087,19 @@
 													</div>
 
 													<div class="col-sm-3">
-														<input type="date" readonly
-															th:value="${BAMInventorymaster?.date_of_acqn}"
+														<input type="text" readonly
+														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
 															id="date_of_acqn" class="form-control form-control-sm"
 															name="date_of_acqn" autocomplete="off"
-															required="required" />
+														/>
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
 														<label for="date_of_tfr">Date of Transfer</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="date" readonly
-															th:value="${BAMInventorymaster?.date_of_tfr}"
+														<input type="text" readonly
+														th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'yyyy-MM-dd')}"
 															id="date_of_tfr" class="form-control form-control-sm"
 															name="date_of_tfr" autocomplete="off" required="required" />
 													</div>
@@ -2291,6 +2305,22 @@
 											</div>
 
 										</div>
+										
+										<div class="card-footer text-center">
+
+																			<button type="button" class="btn headerbutton" id="btnHome"
+																				onclick="home();">Home</button>
+
+
+																			<button th:if="${formmode}=='add'" type="button" class="btn headerbutton"
+																				onclick="submitaddform(this);" form="BAMInventorymaster" id="btnSubmit"
+																				th:attr="data-formmode='edit'">Submit</button>
+
+
+																			<button type="button" class="btn headerbutton" id="btnBack"
+																				onclick="back();">Back</button>
+
+																		</div>
 									</div>
 									<div id="tab2" class="tabcontent" style="display: none;">
 										<div class="card-body">
@@ -2551,22 +2581,23 @@
 												</div>
 											</fieldset>
 										</div>
+										<div class="card-footer text-center">
+
+																			<button type="button" class="btn headerbutton" id="btnHome"
+																				onclick="home();">Home</button>
+
+
+																			<button th:if="${formmode}=='add'" type="button" class="btn headerbutton"
+																				onclick="submitaddforms(this);" form="BAMInventorymaster" id="btnSubmit"
+																				th:attr="data-formmode='edit'">Submits</button>
+
+
+																			<button type="button" class="btn headerbutton" id="btnBack"
+																				onclick="back();">Back</button>
+
+																		</div>
 									</div>
-									<div class="card-footer text-center">
-
-										<button type="button" class="btn headerbutton" id="btnHome"
-											onclick="home();">Home</button>
-
-
-										<button th:if="${formmode}=='add'" type="button" class="btn headerbutton"
-											onclick="submitaddform(this);" form="BAMInventorymaster" id="btnSubmit"
-											th:attr="data-formmode='edit'">Submit</button>
-
-
-										<button type="button" class="btn headerbutton" id="btnBack"
-											onclick="back();">Back</button>
-
-									</div>
+								
 								</div>
 							</div>
 						</form>

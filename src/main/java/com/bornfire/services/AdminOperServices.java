@@ -1703,8 +1703,8 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				
 				
 				BAMInventorymaster up=Baminvmasrep.getview(BAMInventorytransfer.getAsst_srl_npo());
-				up.setDel_flg("Y");
-				Baminvmasrep.save(up);
+				//up.setDel_flg("Y");
+				//Baminvmasrep.save(up);
 				
 				Baminventorytransfer bamcat = BAMInvms.get();
 				bamcat.setDel_flg("Y");
