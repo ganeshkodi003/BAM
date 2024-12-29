@@ -500,34 +500,25 @@
 
 			return year;
 		}
-		function formatISODateToDDMMYYYY(isoDateString) {
-			// Parse the ISO date string
-			let date = new Date(isoDateString);
-			let datelive = new Date();
+		function formatISODateToYYYYMMDD(isoDateString) {
+		    // Parse the ISO date string
+		    let date = new Date(isoDateString);
 
-			// Extract day, month, year, hours, and minutes
-			let day = date.getDate();
-			let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
-			let year = date.getFullYear();
-			let hours = datelive.getHours();
-			let minutes = datelive.getMinutes();
+		    // Extract day, month, and year
+		    let day = date.getDate();
+		    let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
+		    let year = date.getFullYear();
 
-			// Pad day, month, hours, and minutes with leading zeros if necessary
-			if (day < 10) {
-				day = '0' + day;
-			}
-			if (month < 10) {
-				month = '0' + month;
-			}
-			if (hours < 10) {
-				hours = '0' + hours;
-			}
-			if (minutes < 10) {
-				minutes = '0' + minutes;
-			}
+		    // Pad day and month with leading zeros if necessary
+		    if (day < 10) {
+		        day = '0' + day;
+		    }
+		    if (month < 10) {
+		        month = '0' + month;
+		    }
 
-			// Format the date as dd-MM-yyyy HH:mm
-			return `${day}-${month}-${year}`;
+		    // Return the date in yyyy-MM-dd format
+		    return `${year}-${month}-${day}`;
 		}
 
 		function handleSelectChanges() {
@@ -1650,24 +1641,35 @@
 							});
 				});
 
-				
-				window.onload = function() {
-				    // Manually set the date for demonstration
-				    const manualDate = "2024-12-29";  // Change this to any date you want to show
-				    
-				    // Set the value of the date input field (it will display in the frontend)
-				    const dateField = document.getElementById('date_of_acqn');
-				    dateField.value = manualDate;
-
-				    // Optionally log it for debugging
-				    console.log("Manually set date:", manualDate);
-				};
-
 	</script>
 	<script>
 			// Override the alert function globally to do nothing
 			window.alert = function () { };
 		</script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+		<script>
+			$(document).ready(function() {
+			        // Simulate receiving a date from an API in MM/dd/yyyy format
+			        var apiDate = "12/29/2024"; // Example date format coming from the API (MM/dd/yyyy)
+
+			        // Function to convert date from MM/dd/yyyy to yyyy-MM-dd
+			        function formatDate(inputDate) {
+			            var parts = inputDate.split('/'); // Split the input into parts (MM, dd, yyyy)
+			            var formattedDate = parts[2] + '-' + parts[0] + '-' + parts[1]; // Format as yyyy-MM-dd
+			            return formattedDate;
+			        }
+
+			        // Convert the API date to yyyy-MM-dd
+			        var formattedApiDate = formatDate(apiDate);
+
+			        // Set the date to the input field (ensure the format is yyyy-MM-dd)
+			        $('#date_of_acqn').val(formattedApiDate);
+			    });
+		</script>
+
 		
 </head>
 <title>BAM</title>
@@ -2087,11 +2089,14 @@
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text" readonly
-														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
-															id="date_of_acqn" class="form-control form-control-sm"
-															name="date_of_acqn" autocomplete="off"
-														/>
+														<input 
+														      type="date" 
+														      id="date_of_acqn" 
+														      class="form-control form-control-sm" 
+														      name="date_of_acqn" 
+														      autocomplete="off" 
+														      value="2024-12-29">  <!-- Example initial date -->
+														  
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
