@@ -511,8 +511,8 @@ td {
 												</thead>
 												<tbody id="associatemonthly">
 
-													<tr th:each="Bamdocmana : ${Bamdocumentmanager}">
-														<td th:text="${Bamdocmana?.asset_srl_no}"></td>
+													<tr th:each="Bamdocmana,iterStat : ${Bamdocumentmanager}">
+														<td th:text="${iterStat.index + 1}"></td>
 														<td th:text="${Bamdocmana?.branch_id}"></td>
 														<td th:text="${Bamdocmana?.branch_name}"></td>
 														<td th:text="${Bamdocmana?.asset_srl_no}"></td>
