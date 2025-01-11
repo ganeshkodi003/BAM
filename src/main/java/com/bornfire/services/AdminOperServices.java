@@ -1523,6 +1523,10 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 			Optional<BAMInventorymaster> BAMInvms = Baminvmasrep.findById(BAMInventorymaster.getAsst_srl_no());
 			if(BAMInvms.isPresent()) {
 				BAMInventorymaster bamcat = BAMInvms.get();
+				if (!bamcat.getEntry_user().equals(userId)) {
+				    // If the logged-in user is not the entry user, do not allow modification
+				    msg = "Modification allowed only by the user who made the entry.";
+				} else {
 				bamcat.setAsst_name(BAMInventorymaster.getAsst_name());
 
 				bamcat.setAsset_head(BAMInventorymaster.getAsset_head());
@@ -1569,7 +1573,7 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				bamcat.setNom_depr_amt(BAMInventorymaster.getNom_depr_amt());
 				bamcat.setDepr_rmks(BAMInventorymaster.getDepr_rmks());
 				
-				bamcat.setModify_user(BAMInventorymaster.getAsset_head());
+				bamcat.setModify_user(userId);
 				bamcat.setModify_time(new Date());
 				bamcat.setDel_flg("N");
 				bamcat.setModify_flg("Y");
@@ -1578,7 +1582,7 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				msg = "Modified Successfully";
 				// After updating, log the audit entry
 	            auditService.logAudit("EDIT","Modified Successfully", userId, username);
-
+				}
 			}else {
 				msg="Not a valid id";
 			}
@@ -1590,10 +1594,19 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 			Optional<BAMInventorymaster> BAMInvms = Baminvmasrep.findById(BAMInventorymaster.getAsst_srl_no());
 			if(BAMInvms.isPresent()) {
 				BAMInventorymaster bamcat = BAMInvms.get();
+				if (bamcat.getEntry_user().equals(userId)) {
+	    		    // If the logged-in user is the same as the entry user, do not verify
+	    		    msg = "Verification not allowed by the same user who made the entry.";
+	    		} else {
+	    		    // If the logged-in user is different, perform the verification
+	    			
+bamcat.setVerify_user(userId);
+bamcat.setVerify_time(new Date());
 				bamcat.setVerify_flg("Y");
 				Baminvmasrep.save(bamcat);
 				msg = "Verified Successfully";
 	            auditService.logAudit("VERIFY","Verified Successfully",userId,username);
+	    		}
 			}else {
 				msg="Error Occured !!!";
 			}
@@ -1637,6 +1650,10 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 			Optional<Baminventorytransfer> BAMInvms = BamInvtrnrep.findById(BAMInventorytransfer.getAsst_srl_npo());
 			if(BAMInvms.isPresent()) {
 				Baminventorytransfer bamcat = BAMInvms.get();
+				if (!bamcat.getEntry_user().equals(userId)) {
+				    // If the logged-in user is not the entry user, do not allow modification
+				    msg = "Modification allowed only by the user who made the entry.";
+				} else {
 				bamcat.setAsst_name(BAMInventorytransfer.getAsst_name());
 				
 				bamcat.setAsst_xfr_ref_no(BAMInventorytransfer.getAsst_xfr_ref_no()); 		
@@ -1683,14 +1700,14 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				bamcat.setTo_loc_rmks(BAMInventorytransfer.getTo_loc_rmks());
 				bamcat.setTo_dept_div_name(BAMInventorytransfer.getTo_dept_div_name());
 				
-				bamcat.setModify_user(BAMInventorytransfer.getAsst_head());
+				bamcat.setModify_user(userId);
 				bamcat.setModify_time(new Date());
 				bamcat.setDel_flg("N");
 				bamcat.setModify_flg("Y");
 				BamInvtrnrep.save(bamcat);
 				msg = "Modified Successfully";
 	            auditService.logAudit("EDIT","Modified Successfully", userId, username);
-
+				}
 			}else {
 				msg="Not a valid id";
 			}
@@ -1708,6 +1725,14 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				//Baminvmasrep.save(up);
 				
 				Baminventorytransfer bamcat = BAMInvms.get();
+				if (bamcat.getEntry_user().equals(userId)) {
+	    		    // If the logged-in user is the same as the entry user, do not verify
+	    		    msg = "Verification not allowed by the same user who made the entry.";
+	    		} else {
+	    		    // If the logged-in user is different, perform the verification
+	    			
+bamcat.setVerify_user(userId);
+bamcat.setVerify_time(new Date());
 				bamcat.setDel_flg("Y");
 				bamcat.setTransaction_detail("Transfered");
 				BamInvtrnrep.save(bamcat);
@@ -1719,7 +1744,7 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				}
 				msg = "Verified Successfully";
 	            auditService.logAudit("VERIFY","Verified Successfully",userId,username);
-			}
+			}}
 			
 		}else {
 			msg = "Invalid Option Please contact Administrator";
@@ -1781,6 +1806,10 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 			Optional<Bamsaleandwrite> BAMInvms = bamsalerep.findById(BAMsaleandwrite.getAsst_srl_no());
 			if(BAMInvms.isPresent()) {
 				Bamsaleandwrite bamcat = BAMInvms.get();
+				if (!bamcat.getEntry_user().equals(userId)) {
+				    // If the logged-in user is not the entry user, do not allow modification
+				    msg = "Modification allowed only by the user who made the entry.";
+				} else {
 				bamcat.setAsst_name(BAMsaleandwrite.getAsst_name());
 				bamcat.setAsst_head(BAMsaleandwrite.getAsst_head());
 				bamcat.setAsst_category(BAMsaleandwrite.getAsst_category());
@@ -1817,13 +1846,14 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 				bamcat.setEmp_id(BAMsaleandwrite.getEmp_id());
 				bamcat.setDept_div_name(BAMsaleandwrite.getDept_div_name());
 				
-				bamcat.setModify_user(BAMsaleandwrite.getAsst_head());
+				bamcat.setModify_user(userId);
 				bamcat.setModify_time(new Date());
 				bamcat.setDel_flg("N");
 				bamcat.setModify_flg("Y");
 				bamsalerep.save(bamcat);
 	            auditService.logAudit("EDIT","Modified Successfully", userId, username);
 				msg = "Modified Successfully";
+				}
 			}else {
 				msg="Not a valid id";
 			}
@@ -1835,10 +1865,20 @@ if(btmDocumentMaster.getDoc_id().equals(user.getDoc_id()) && btmDocumentMaster.g
 			Optional<Bamsaleandwrite> BAMInvms = bamsalerep.findById(BAMsaleandwrite.getAsst_srl_no());
 			if(BAMInvms.isPresent()) {
 				Bamsaleandwrite bamcat = BAMInvms.get();
+				if (bamcat.getEntry_user().equals(userId)) {
+	    		    // If the logged-in user is the same as the entry user, do not verify
+	    		    msg = "Verification not allowed by the same user who made the entry.";
+	    		} else {
+	    		    // If the logged-in user is different, perform the verification
+	    			
+	    	    bamcat.setVerify_user(userId);	
+	    	    bamcat.setVerify_time(new Date());
 				bamcat.setDel_flg("Y");
 				bamsalerep.save(bamcat);
+    		    msg = "Verified Successfully";
 	            auditService.logAudit("VERIFY","Verified Successfully",userId,username);
-			}
+	            
+			}}
 			
 		}else {
 			msg = "Invalid Option Please contact Administrator";
