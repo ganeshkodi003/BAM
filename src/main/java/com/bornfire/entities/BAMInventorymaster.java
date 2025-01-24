@@ -22,13 +22,13 @@ public class BAMInventorymaster {
 	private String	category_desc;
 	private String	asset_type;
 	private String	asst_crncy;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_purchase;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	year_of_purchase;
 	private BigDecimal	org_cost;
 	private BigDecimal	life_span_mth;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	asst_exp_date;
 	private String	asst_rmks;
 	private String vender_name;
@@ -38,11 +38,11 @@ public class BAMInventorymaster {
 	private String	depr_method;
 	private BigDecimal	depr_percent;
 	private BigDecimal	acc_depr;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_last_depr;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_acqn;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_last_tfr;
 	private BigDecimal	cur_book_value;
 	private BigDecimal	mkt_value;
@@ -60,13 +60,13 @@ public class BAMInventorymaster {
 	private String	entry_user;
 	private String	modify_user;
 	private String	auth_user;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	verify_time;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	entry_time;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	modify_time;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	auth_time;
 	private String	del_flg;
 	private String	entity_flg;

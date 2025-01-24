@@ -10424,10 +10424,7 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 			        System.out.println("Formmode :" + formmode);
 
 			        BAMInventorymaster newInventory = new BAMInventorymaster();
-			        newInventory.setEntry_user(userId);  // Set ENTRY_USER as the logged-in user
-			        newInventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
-			        newInventory.setVerify_user(userId); // Set VERIFY_USER as the logged-in user (optional for add)
-
+			        
 			        md.addAttribute("formmode", "add");
 			        md.addAttribute("BAMInventorymaster", newInventory);
 
@@ -10443,21 +10440,18 @@ md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 
 			    } else if (formmode.equals("edit")) {
 			        BAMInventorymaster inventory = BAMInvmastrep.findById(headcode).get();
-			        inventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
 
 			        md.addAttribute("formmode", "edit");
 			        md.addAttribute("BAMInventorymaster", inventory);
 
 			    } else if (formmode.equals("viewnew")) {
 			        BAMInventorymaster inventory = BAMInvmastrep.findById(headcode).get();
-			        inventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
 
 			        md.addAttribute("formmode", "viewnew");
 			        md.addAttribute("BAMInventorymaster", inventory);
 
 			    } else if (formmode.equals("verify")) {
 			        BAMInventorymaster inventory = BAMInvmastrep.findById(headcode).get();
-			        inventory.setVerify_user(userId); // Set VERIFY_USER as the logged-in user
 
 			        md.addAttribute("formmode", "verify");
 			        md.addAttribute("BAMInventorymaster", inventory);

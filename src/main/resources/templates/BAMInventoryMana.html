@@ -2,190 +2,180 @@
 <!-- 
 	CREATED BY : RUKMANI J
 	USED FOR :Inventory Master -->
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
-	th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/font-awesome/5.9.0/css/all.min.css"
-	th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
-	th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
-<link rel="stylesheet" type="text/css"
-	href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
-	th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
-<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
-<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"
-	type="text/css">
-<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
-	th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
-<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
-	th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
-<script src="/webjars/jquery/3.4.1/jquery.min.js"
-	th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
-<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
-	th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
-<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
-	th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
-<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
-	th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
-<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
-<script
-	src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
-	th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"
+		th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/font-awesome/5.9.0/css/all.min.css"
+		th:href="@{/webjars/font-awesome/5.9.0/css/all.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css"
+		th:href="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.css}">
+	<link rel="stylesheet" type="text/css" href="/webjars/datatables/1.10.19/css/jquery.dataTables.min.css"
+		th:href="@{/webjars/datatables/1.10.19/css/jquery.dataTables.min.css}">
+	<link rel="shortcut icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link rel="icon" th:href="@{/favicon.ico}" type="image/x-icon">
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+	<script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"
+		th:src="@{/webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+	<script src="/webjars/popper.js/1.14.7/umd/popper.min.js"
+		th:src="@{/webjars/popper.js/1.14.7/umd/popper.min.js}"></script>
+	<script src="/webjars/jquery/3.4.1/jquery.min.js" th:src="@{/webjars/jquery/3.4.1/jquery.min.js}"></script>
+	<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"
+		th:src="@{/webjars/jquery-ui/1.12.1/jquery-ui.min.js}"></script>
+	<script src="/webjars/jquery-form/4.2.2/jquery.form.min.js"
+		th:src="@{/webjars/jquery-form/4.2.2/jquery.form.min.js}"></script>
+	<script src="/webjars/jquery-validation/1.19.0/jquery.validate.min.js"
+		th:src="@{/webjars/jquery-validation/1.19.0/jquery.validate.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/jquery.dataTables.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/jquery.dataTables.min.js}"></script>
+	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
+		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
-<style>
-.filterable .filters input[disabled] {
-	background-color: transparent;
-	border: none;
-	cursor: auto;
-	box-shadow: none;
-	padding: 0;
-	height: auto;
-}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
-	color: #333;
-}
 
-.filterable .filters input[disabled]::-moz-placeholder {
-	color: #333;
-}
+	<style>
+		.filterable .filters input[disabled] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-.filterable .filters input[disabled]:-ms-input-placeholder {
-	color: #333;
-}
+		.filterable .filters input[disabled]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-.filterable .filters input[disabled]::-webkit-input-placeholder {
-	color: #333;
-}
-</style>
-<style>
-.no-border-table {
-	border: none;
-	border-collapse: collapse;
-}
+		.filterable .filters input[disabled]::-moz-placeholder {
+			color: #333;
+		}
 
-.no-border-table td {
-	border: none;
-}
+		.filterable .filters input[disabled]:-ms-input-placeholder {
+			color: #333;
+		}
 
-.btns {
-	float: right;
-	margin: 5px;
-}
+		.filterable .filters input[disabled]::-webkit-input-placeholder {
+			color: #333;
+		}
+	</style>
+	<style>
+		.no-border-table {
+			border: none;
+			border-collapse: collapse;
+		}
 
-.col-sm-5 {
-	padding-bottom: 15px;
-}
+		.no-border-table td {
+			border: none;
+		}
 
-.list-body {
-	padding: 0px;
-}
+		.btns {
+			float: right;
+			margin: 5px;
+		}
 
-.error {
-	color: red;
-	padding-left: 10px;
-}
+		.col-sm-5 {
+			padding-bottom: 15px;
+		}
 
-.formline {
-	padding-bottom: 4px;
-}
+		.list-body {
+			padding: 0px;
+		}
 
-#finusertb {
-	width: 460px;
-}
+		.error {
+			color: red;
+			padding-left: 10px;
+		}
 
-.card-header {
-	padding: 1.75rem 1.25rem;
-}
+		.formline {
+			padding-bottom: 4px;
+		}
 
-.card-header1 {
-	padding: 2.75rem 1.25rem;
-}
+		#finusertb {
+			width: 460px;
+		}
 
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-	padding: 0px;
-}
+		.card-header {
+			padding: 1.75rem 1.25rem;
+		}
 
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-	border: 2px solid skyblue !important;
-	border-bottom: unset !important;
-	background-color: unset !important;
-	color: black !important;
-	background-color: unset !important;
-}
+		.card-header1 {
+			padding: 2.75rem 1.25rem;
+		}
 
-nav {
-	border-bottom: 2px solid grey;
-}
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			padding: 0px;
+		}
 
-.filterable .filters input[readonly] {
-	background-color: transparent;
-	border: none;
-	cursor: auto;
-	box-shadow: none;
-	padding: 0;
-	height: auto;
-}
+		.nav-tabs .nav-item.show .nav-link,
+		.nav-tabs .nav-link.active {
+			border: 2px solid skyblue !important;
+			border-bottom: unset !important;
+			background-color: unset !important;
+			color: black !important;
+			background-color: unset !important;
+		}
 
-.filterable .filters input[readonly]::-webkit-input-placeholder {
-	color: #333;
-}
+		nav {
+			border-bottom: 2px solid grey;
+		}
 
-.filterable .filters input[readonly]::-moz-placeholder {
-	color: #333;
-}
+		.filterable .filters input[readonly] {
+			background-color: transparent;
+			border: none;
+			cursor: auto;
+			box-shadow: none;
+			padding: 0;
+			height: auto;
+		}
 
-.filterable .filters input[readonly]:-ms-input-placeholder {
-	color: #333;
-}
-</style>
+		.filterable .filters input[readonly]::-webkit-input-placeholder {
+			color: #333;
+		}
 
-<style>
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
+		.filterable .filters input[readonly]::-moz-placeholder {
+			color: #333;
+		}
 
-th, td {
-	padding: 10px;
-	text-align: left;
-}
+		.filterable .filters input[readonly]:-ms-input-placeholder {
+			color: #333;
+		}
+	</style>
 
-th, td {
-	border: 1px solid #dcdcdc;
-}
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+		}
 
-td {
-	border-top: 1px solid #dcdcdc;
-}
-#getAssetCate{
-padding-right: 800px !important;
-}
-</style>
-<script th:inline="javascript">
+		th,
+		td {
+			padding: 10px;
+			text-align: left;
+		}
+
+		th,
+		td {
+			border: 1px solid #dcdcdc;
+		}
+
+		td {
+			border-top: 1px solid #dcdcdc;
+		}
+
+		#getAssetCate {
+			padding-right: 800px !important;
+		}
+	</style>
+	<script th:inline="javascript">
 		/*<![CDATA[*/
 
-		$(function () {
 
-			$("#disableStartDate,#disableEndDate").datepicker({
-				minDate: new Date(),
-				changeMonth: true,
-				changeYear: true,
-				gotoCurrent: true,
-				dateFormat: "dd-mm-yy"
-			});
-
-		});
 
 		function home() {
 			location.href = 'Dashboard'
@@ -210,7 +200,7 @@ padding-right: 800px !important;
 			location.href = 'InventoryMaster1?formmode=verify&headcode=' + headcode;
 		}
 		function viewinvent(a) {
-			var headcode = a.getAttribute('data-id'); 
+			var headcode = a.getAttribute('data-id');
 			location.href = 'InventoryMaster1?formmode=viewnew&headcode=' + headcode;
 		}
 
@@ -222,32 +212,8 @@ padding-right: 800px !important;
 
 		/*]]>*/
 	</script>
-<script>
-		$(function () {
-			$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
-				dateFormat: "dd-mm-yy",
-				changeMonth: true,
-				numberOfMonths: 1,
-				gotoCurrent: true
+	<script>
 
-			});
-
-			$(".checkToModify").on(
-				'click',
-				function () {
-
-					$(this).prop('checked', true);
-
-					var formMode = "edit";
-
-					var resId = $(this).val();
-
-					location.href = 'MtAssociateProfile?formmode=' + formMode
-						+ '&resId=' + resId;
-
-				});
-
-		});
 
 		function submiteditform(a) {
 
@@ -344,15 +310,15 @@ padding-right: 800px !important;
 
 		}
 	</script>
-<script>
-		function handleSelectChanges(a) {	
+	<script>
+		function handleSelectChanges(a) {
 			/* th:value="${asset.asset_code} + ' - ' + ${asset.head_description}" */
-			
+
 			var asset_category = a.getAttribute("data-asset_code");
 			$("#getAssetCate").modal("hide");
-			
+
 			var head_desc = a.getAttribute("data-head_desc");
-			
+
 			$("#asset_category").val(asset_category + ' - ' + head_desc);
 			if (asset_category) {
 				$.ajax({
@@ -390,7 +356,7 @@ padding-right: 800px !important;
 		}
 
 	</script>
-<script>
+	<script>
 		$(document).ready(function () {
 			// Function to update the expiry date
 			function updateExpiryDate() {
@@ -403,8 +369,14 @@ padding-right: 800px !important;
 					expiryDate.setFullYear(expiryDate.getFullYear() + lifespan);
 					// Subtract one day from the expiry date
 					expiryDate.setDate(expiryDate.getDate() - 1);
-					// Setting the expiry date in the desired format (YYYY-MM-DD)
-					document.getElementById('asst_exp_date').value = expiryDate.toISOString().split('T')[0];
+
+					// Formatting the expiry date as dd-MM-yyyy
+					let day = String(expiryDate.getDate()).padStart(2, '0');
+					let month = String(expiryDate.getMonth() + 1).padStart(2, '0');  // Months are zero-based
+					let year = expiryDate.getFullYear();
+
+					// Setting the expiry date in the desired format (dd-MM-yyyy)
+					document.getElementById('asst_exp_date').value = `${day}-${month}-${year}`;
 				}
 			}
 
@@ -413,7 +385,7 @@ padding-right: 800px !important;
 			document.getElementById('date_of_purchase').addEventListener('input', updateExpiryDate);
 		});
 	</script>
-<script>
+	<script>
 
 
 		$(document).ready(function () {
@@ -502,7 +474,7 @@ padding-right: 800px !important;
 
 		});
 	</script>
-<script>
+	<script>
 
 
 		function submitaddform(a) {
@@ -1123,16 +1095,16 @@ padding-right: 800px !important;
 							srl = i + 1;
 							input.value = i + 1; // Display the row number
 							input.readOnly = true; // Make it read-only
-							 
-					         input.style.width = '50px'; // Adjust the width of the input
-					         input.style.boxSizing = 'border-box'; // Include padding in the width
+
+							input.style.width = '50px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 1) {
 							input.value = "DEPR"; // Display the year
 							input.readOnly = true; // Make it read-only
 							cell.style.width = '100px'; // Set smaller width for the cell
-					        input.style.width = '100px'; // Adjust the width of the input
-					        input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '100px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 1 && i === 0) {
 							input.value = "ACQN";
@@ -1150,15 +1122,15 @@ padding-right: 800px !important;
 							input.value = "YEARLY"; // Display the year
 							input.readOnly = true; // Make it read-only
 							cell.style.width = '100px'; // Set smaller width for the cell
-				            input.style.width = '100px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '100px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 4) {
 							input.value = dep_method; // Display the year
 							input.readOnly = true; // Make it read-only
 							cell.style.width = '100px'; // Set smaller width for the cell
-				            input.style.width = '100px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '100px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 5) {
 							input.value = deppercent; // Display the year
@@ -1166,9 +1138,9 @@ padding-right: 800px !important;
 							input.style.textAlign = 'right';
 							totalPercent = parseFloat(deppercent);
 							cell.style.width = '100px'; // Set smaller width for the cell
-				            input.style.width = '110px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
-				            input.style.paddingLeft = '1px';
+							input.style.width = '110px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.paddingLeft = '1px';
 						}
 						if (j === 6) {
 							input.value = formatWithCommas(original_cost); // Display the year
@@ -1274,16 +1246,16 @@ padding-right: 800px !important;
 					if (j === 0) {
 						input.value = srl + 1; // Row number for the 5-month period
 						input.readOnly = true;
-						 cell.style.width = '80px'; // Set smaller width for the cell
-				            input.style.width = '50px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
+						cell.style.width = '80px'; // Set smaller width for the cell
+						input.style.width = '50px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 1) {
 						input.value = "DEPR"; // Label for the period
 						input.readOnly = true;
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '100px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '100px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 2) { // Flow start date
 						input.value = assetExpiryDateInput; // Set to the asset expiry date
@@ -1293,23 +1265,23 @@ padding-right: 800px !important;
 						input.value = "MONTHLY"; // Frequency
 						input.readOnly = true;
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '100px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '100px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 4) {
 						input.value = dep_method; // Method from previous inputs
 						input.readOnly = true;
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '100px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '100px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 5) {
 						input.value = deppercent; // Percentage from previous inputs
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '110px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '110px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 6) { // Original cost
 						input.value = formatWithCommas(original_cost); // Original cost
@@ -1354,30 +1326,30 @@ padding-right: 800px !important;
 					totalInput.type = 'text';
 					totalInput.readOnly = true;
 
-					if(j === 0){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '50px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 0) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '50px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 1){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '100px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 1) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '100px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 3){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '100px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 3) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '100px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 4){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '100px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 4) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '100px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 5){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '110px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 5) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '110px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 7) {
 						totalInput.value = formatWithCommas(totalDepreciation.toFixed(2)); // Display formatted value
@@ -1448,16 +1420,16 @@ padding-right: 800px !important;
 						if (j === 0) {
 							input.value = i + 1; // Display the row number
 							input.readOnly = true; // Make it read-only
-							  input.style.width = '50px'; // Adjust the width of the input
-						         input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '50px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						// Set the year value in the second column
 						if (j === 1) {
 							input.value = "DEPR"; // Display the year
 							input.readOnly = true; // Make it read-only
 							cell.style.width = '100px'; // Set smaller width for the cell
-					        input.style.width = '100px'; // Adjust the width of the input
-					        input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '100px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						// Set the acquisition date in the third column first cell
 						if (j === 1 && i === 0) {
@@ -1477,15 +1449,15 @@ padding-right: 800px !important;
 							input.value = "YEARLY"; // Display the year
 							input.readOnly = true; // Make it read-only
 							cell.style.width = '100px'; // Set smaller width for the cell
-				            input.style.width = '100px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '100px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 4) {
 							input.value = dep_method; // Display the year
 							input.readOnly = true; // Make it read-only
 							cell.style.width = '100px'; // Set smaller width for the cell
-				            input.style.width = '100px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.width = '100px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
 						}
 						if (j === 5) {
 							input.value = deppercent; // Display the year
@@ -1493,9 +1465,9 @@ padding-right: 800px !important;
 							input.style.textAlign = 'right';
 							totalPercent = parseFloat(deppercent);
 							cell.style.width = '100px'; // Set smaller width for the cell
-				            input.style.width = '110px'; // Adjust the width of the input
-				            input.style.boxSizing = 'border-box'; // Include padding in the width
-				            input.style.paddingLeft = '1px';
+							input.style.width = '110px'; // Adjust the width of the input
+							input.style.boxSizing = 'border-box'; // Include padding in the width
+							input.style.paddingLeft = '1px';
 
 						}
 						if (j === 6) {
@@ -1618,42 +1590,42 @@ padding-right: 800px !important;
 						input.value = i + 1; // Row number for the 5-month period
 						input.readOnly = true;
 						cell.style.width = '80px'; // Set smaller width for the cell
-			            input.style.width = '50px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '50px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 1) {
 						input.value = "DEPR"; // Label for the period
 						input.readOnly = true;
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '100px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '100px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 2) { // Flow start date
 						input.value = assetExpiryDateInput; // Set to the asset expiry date
 						input.readOnly = true;
-						
+
 					}
 					if (j === 3) {
 						input.value = "MONTHLY"; // Frequency
 						input.readOnly = true;
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '100px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '100px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 4) {
 						input.value = dep_method; // Method from previous inputs
 						input.readOnly = true;
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '100px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '100px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 5) {
 						input.value = deppercent; // Percentage from previous inputs
 						input.readOnly = true;
 						input.style.textAlign = 'right';
 						cell.style.width = '100px'; // Set smaller width for the cell
-			            input.style.width = '110px'; // Adjust the width of the input
-			            input.style.boxSizing = 'border-box'; // Include padding in the width
+						input.style.width = '110px'; // Adjust the width of the input
+						input.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 6) { // Original cost
 						input.value = formatWithCommas(original_cost); // Original cost
@@ -1698,30 +1670,30 @@ padding-right: 800px !important;
 					totalInput.type = 'text';
 					totalInput.readOnly = true;
 
-					if(j === 0){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '50px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 0) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '50px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 1){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '100px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 1) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '100px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 3){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '100px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 3) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '100px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 4){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '100px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 4) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '100px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
-					if (j === 5){
-						 totalCell.style.width = '80px'; // Set smaller width for the cell
-				         totalInput.style.width = '110px'; // Adjust the width of the input
-				         totalInput.style.boxSizing = 'border-box'; // Include padding in the width
+					if (j === 5) {
+						totalCell.style.width = '80px'; // Set smaller width for the cell
+						totalInput.style.width = '110px'; // Adjust the width of the input
+						totalInput.style.boxSizing = 'border-box'; // Include padding in the width
 					}
 					if (j === 7) {
 						totalInput.value = formatWithCommas(totalDepreciation.toFixed(2)); // Display formatted value
@@ -1737,7 +1709,7 @@ padding-right: 800px !important;
 
 			}
 		}
-		
+
 		function formatWithCommas(number) {
 			return Number(number).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 		}
@@ -1748,7 +1720,7 @@ padding-right: 800px !important;
 			// Replace all commas with an empty string
 			return stringValue.replace(/,/g, '');
 		}
-		
+
 		function openTab(evt, tabName) {
 			let currentTab = 'tab1';
 			tablinks = document.getElementsByClassName("tablinks");
@@ -1852,7 +1824,7 @@ padding-right: 800px !important;
 			}
 		}
 	</script>
-<script type="text/javascript">
+	<script type="text/javascript">
 		$(document)
 			.ready(
 				function () {
@@ -1921,56 +1893,56 @@ padding-right: 800px !important;
 							});
 				});
 	</script>
-<script>
-	// Override the alert function globally to do nothing
-	window.alert = function () { };
+	<script>
+		// Override the alert function globally to do nothing
+		window.alert = function () { };
 
-	function Uploadclick(a) {
-		location.href = './InventoryMaster1?formmode=UploadFile';
-	}
-	function submitexcelgst() {
-		event.preventDefault(); // Prevent default form submission behavior
-
-		var fileInput = document.getElementById('fileval');
-		//alert(fileInput);
-		console.log(fileInput);
-
-		// Check if a file is selected
-		if (fileInput && fileInput.files.length > 0) {
-			var file = fileInput.files[0];
-			//alert(file.name); // Alert with the file name
-
-			var formData = new FormData();
-			formData.append('file', file);
-
-			$.ajax({
-				url: './invenuploadexcel',
-				data: formData,
-				type: 'POST',
-				contentType: false,
-				processData: false,
-				cache: false, // Disable cache to avoid potential issues
-				success: function (response) {
-					console.log(response);
-					$('#myModalupload').modal("toggle");
-					$('#myModalupload1').text(response);
-					//$('#successMessage2').modal('show');
-				},
-				error: function (xhr, status, error) {
-					console.error("AJAX Error:");
-					console.error("Status:", status);
-					console.error("Error:", error);
-					console.error("Response Text:", xhr.responseText); // Logs the server response if available
-					console.error("XHR Object:", xhr);
-					//$('#failureMessage2').modal('show');
-				}
-			});
-		} else {
-			alert('Please select a file before uploading.');
+		function Uploadclick(a) {
+			location.href = './InventoryMaster1?formmode=UploadFile';
 		}
-	}
-</script>
-<script> //below is for Depreciation Submitting
+		function submitexcelgst() {
+			event.preventDefault(); // Prevent default form submission behavior
+
+			var fileInput = document.getElementById('fileval');
+			//alert(fileInput);
+			console.log(fileInput);
+
+			// Check if a file is selected
+			if (fileInput && fileInput.files.length > 0) {
+				var file = fileInput.files[0];
+				//alert(file.name); // Alert with the file name
+
+				var formData = new FormData();
+				formData.append('file', file);
+
+				$.ajax({
+					url: './invenuploadexcel',
+					data: formData,
+					type: 'POST',
+					contentType: false,
+					processData: false,
+					cache: false, // Disable cache to avoid potential issues
+					success: function (response) {
+						console.log(response);
+						$('#myModalupload').modal("toggle");
+						$('#myModalupload1').text(response);
+						//$('#successMessage2').modal('show');
+					},
+					error: function (xhr, status, error) {
+						console.error("AJAX Error:");
+						console.error("Status:", status);
+						console.error("Error:", error);
+						console.error("Response Text:", xhr.responseText); // Logs the server response if available
+						console.error("XHR Object:", xhr);
+						//$('#failureMessage2').modal('show');
+					}
+				});
+			} else {
+				alert('Please select a file before uploading.');
+			}
+		}
+	</script>
+	<script> //below is for Depreciation Submitting
 		function removeCommas(value) {
 			// Ensure the input is a string
 			const stringValue = value.toString();
@@ -2114,20 +2086,20 @@ padding-right: 800px !important;
 
 	</script>
 	<script>
-	// below is for update year of purchase automatically by date of purchase
-    function updateYearOfPurchase() {
-        const dateInput = document.getElementById('date_of_purchase').value;
-        const yearInput = document.getElementById('year_of_purchase');
-        
-        if (dateInput) {
-            const selectedDate = new Date(dateInput);
-            const year = selectedDate.getFullYear();
-            yearInput.value = year; // Set the year in the Year of Purchase field
-        } else {
-            yearInput.value = ''; // Clear the Year of Purchase field if no date is selected
-        }
-    }
-</script>
+		// below is for update year of purchase automatically by date of purchase
+		function updateYearOfPurchase() {
+			const dateInput = document.getElementById('date_of_purchase').value;
+			const yearInput = document.getElementById('year_of_purchase');
+
+			if (dateInput) {
+				const selectedDate = new Date(dateInput);
+				const year = selectedDate.getFullYear();
+				yearInput.value = year; // Set the year in the Year of Purchase field
+			} else {
+				yearInput.value = ''; // Clear the Year of Purchase field if no date is selected
+			}
+		}
+	</script>
 </head>
 <title>BAM</title>
 
@@ -2142,19 +2114,17 @@ padding-right: 800px !important;
 
 				<div class="container-fluid content" th:if="${formmode} == 'list'">
 					<div class="row">
-						<form action="#" method="post" autocomplete="off"
-							style="width: 100%">
+						<form action="#" method="post" autocomplete="off" style="width: 100%">
 							<div class="card">
 								<div class="panel panel-primary filterable">
-									<div class="card-header p-0"
-										style="display: flex; justify-content: space-between;">
-										<h4 class="btn btn-sm mr-2 headerbutton mt-1"
-											style="align-items: center;">INVENTORY MASTER - LIST</h4>
+									<div class="card-header p-0" style="display: flex; justify-content: space-between;">
+										<h4 class="btn btn-sm mr-2 headerbutton mt-1" style="align-items: center;">
+											INVENTORY MASTER - LIST</h4>
 										<div class="btn-group nav-buttons float-right">
-											<button type="button" class="btn btn-sm mr-2 headerbutton"
-												id="btnAdd" th:if="${formmode}=='list'" onclick="codeadd();">Add</button>
-											<button type="button" class="btn btn-sm mr-2 headerbutton"  
-											    id="btnAdd" th:if="${formmode}=='list'" onclick="Uploadclick();">Upload</button>
+											<button type="button" class="btn btn-sm mr-2 headerbutton" id="btnAdd"
+												th:if="${formmode}=='list'" onclick="codeadd();">Add</button>
+											<button type="button" class="btn btn-sm mr-2 headerbutton" id="btnAdd"
+												th:if="${formmode}=='list'" onclick="Uploadclick();">Upload</button>
 											<button type="button"
 												class="btn btns btn-filter headerbutton">Filter</button>
 										</div>
@@ -2169,29 +2139,29 @@ padding-right: 800px !important;
 													style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 													<tr class="filters">
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Asset Srl Num" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Asset Srl Num" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Asset Name" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Asset Name" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Account Number" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Account Number" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Category" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Category" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Employee Id" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Employee Id" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Current Book Val" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Current Book Val" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Market Value" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Market Value" disabled></th>
 														<th style="text-align: center"><input type="text"
-															class="form-control font-weight-bold"
-															placeholder="Status" disabled></th>
+																class="form-control font-weight-bold"
+																placeholder="Status" disabled></th>
 														<th class="pb-2 select_th">Select</th>
 													</tr>
 												</thead>
@@ -2220,8 +2190,8 @@ padding-right: 800px !important;
 														</th:block>
 														<th:block th:switch="${Bamdocmana?.verify_flg}">
 															<td th:case="'Y'"><input type="radio"
-																th:attr="data-id=${Bamdocmana?.asst_srl_no}"
-																onclick="Headcode(this)"></td>
+																	th:attr="data-id=${Bamdocmana?.asst_srl_no}"
+																	onclick="Headcode(this)"></td>
 															<td th:case="'N'">
 																<div class="dropdown">
 																	<button class="btn btn-secondary dropdown-toggle"
@@ -2270,8 +2240,8 @@ padding-right: 800px !important;
 				<div class="container-fluid content" th:if="${formmode}=='add'">
 					<div class="row">
 
-						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
-							method="post" autocomplete="off" id="BAMInventorymaster">
+						<form action="#" th:object="${BAMInventorymaster}" class="w-100" method="post"
+							autocomplete="off" id="BAMInventorymaster">
 
 							<div class="associateProfileList ">
 								<!-- <div class="card">
@@ -2288,18 +2258,20 @@ padding-right: 800px !important;
 												<h4 class="headerh6 p-1 pl-3">INVENTORY MASTER - ADD</h4>
 											</div>
 											<div class="btn-group nav-buttons float-right">
-												<button type="button" class="btn btn-xs headerbutton btns"
-													id="btnAdd" onclick="codeadd();"
-													th:if="${formmode}=='list'" style="font-size: 15px;">Add</button>
+												<button type="button" class="btn btn-xs headerbutton btns" id="btnAdd"
+													onclick="codeadd();" th:if="${formmode}=='list'"
+													style="font-size: 15px;">Add</button>
 											</div>
 											<!-- Tabs Container -->
 											<div class="tab-container"
 												style="display: flex; justify-content: center; margin-top: 15px;">
 												<!-- Tab Buttons -->
 												<button type="button" class="headerbutton active"
-													onclick="openTab(event, 'tab1')" style="margin: 0 10px;">Inventory-View</button>
+													onclick="openTab(event, 'tab1')"
+													style="margin: 0 10px;">Inventory-View</button>
 												<button type="button" class="headerbutton"
-													onclick="openTab(event, 'tab2')" style="margin: 0 10px;">Depreciation</button>
+													onclick="openTab(event, 'tab2')"
+													style="margin: 0 10px;">Depreciation</button>
 											</div>
 										</div>
 									</div>
@@ -2329,8 +2301,7 @@ padding-right: 800px !important;
 														<label for="branch_name">Asset Name</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster.asst_name} "
+														<input type="text" th:value="${BAMInventorymaster.asst_name} "
 															id="asst_name" class="form-control form-control-sm"
 															autocomplete="off" name="asst_name" required="required" />
 													</div>
@@ -2342,8 +2313,8 @@ padding-right: 800px !important;
 
 													<div class="col-sm-3">
 														<input type="text" id="asset_category"
-															class="form-control form-control-sm"
-															name="asset_category" autocomplete="off" readonly />
+															class="form-control form-control-sm" name="asset_category"
+															autocomplete="off" readonly />
 														<!-- 
 														<select id="asset_category" name="asset_category"
 															style="width: 100%" class="form-control form-control-sm"
@@ -2360,8 +2331,8 @@ padding-right: 800px !important;
 													</div>
 													<div class="col-sm-1 mt-2">
 														<a href="#"><i class="fas fa-search searchico"
-															id="domainidsearch" title="Domain Id Details"
-															data-toggle="modal" data-target="#getAssetCate"></i></a>
+																id="domainidsearch" title="Domain Id Details"
+																data-toggle="modal" data-target="#getAssetCate"></i></a>
 													</div>
 													<div class="col-sm-2">
 														<label for="category_desc">Description</label>
@@ -2378,8 +2349,8 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<select id="asset_type" name="asset_type"
-															style="width: 100%" th:field="*{asset_type}"
+														<select id="asset_type" name="asset_type" style="width: 100%"
+															th:field="*{asset_type}"
 															th:value="${BAMInventorymaster?.asset_type}"
 															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
@@ -2404,7 +2375,7 @@ padding-right: 800px !important;
 													</div>
 													<div class="col-sm-3">
 														<select id="asset_currency" name="asst_crncy"
-														th:value="${BAMInventorymaster.asst_crncy}"
+															th:value="${BAMInventorymaster.asst_crncy}"
 															class="form-control form-control-sm"
 															onchange="handleCurrencyChange() required">
 															<option value="INR">INR</option>
@@ -2420,37 +2391,36 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="date"
+														<input type="text"
 															th:value="${BAMInventorymaster.date_of_purchase}"
 															id="date_of_purchase"
 															class="form-control form-control-sm" autocomplete="off"
 															name="date_of_purchase" required="required" />
 													</div> -->
 													<div class="col-sm-2">
-    <label for="date_of_purchase">Date of Purchase</label>
-</div>
-<div class="col-sm-3">
-    <input type="date"
-        th:value="${BAMInventorymaster.date_of_purchase}"
-        id="date_of_purchase"
-        class="form-control form-control-sm" 
-        autocomplete="off"
-        name="date_of_purchase" 
-        required="required" 
-        onchange="updateYearOfPurchase()" />
-</div>
-													
+														<label for="date_of_purchase">Date of Purchase</label>
+													</div>
+													<div class="col-sm-3">
+														<input type="text"
+															th:value="${BAMInventorymaster.date_of_purchase}"
+															id="date_of_purchase" class="form-control form-control-sm"
+															autocomplete="off" name="date_of_purchase"
+															required="required" placeholder="DD-MM-YYYY" />
+													</div>
+
 													<div class="col-sm-1"></div>
-													 <div class="col-sm-2">
+													<div class="col-sm-2">
 														<label for="year_of_purchase">Year Of Purchase</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="date"
+														<input type="hidden" id="hidden_year_of_purchase"
+															name="year_of_purchase" />
+														<input type="text"
 															th:value="${BAMInventorymaster.year_of_purchase}"
-															id="year_of_purchase"
-															class="form-control form-control-sm" autocomplete="off"
-															name="year_of_purchase" required="required" />
-													</div> 
+															id="year_of_purchase" class="form-control form-control-sm"
+															autocomplete="off" name="year_of_purchase"
+															required="required" placeholder="YYYY" />
+													</div>
 													<!-- <div class="col-sm-2">
     <label for="year_of_purchase">Year Of Purchase</label>
 </div>
@@ -2464,7 +2434,8 @@ padding-right: 800px !important;
         required="required" 
         readonly />
 </div>
-		 -->										</div>
+		 -->
+												</div>
 												<div class="row formline">
 													<!-- <div class="col-sm-2">
 													<label for="org_cost">Original Cost</label>
@@ -2484,10 +2455,9 @@ padding-right: 800px !important;
 													</div>
 													<div class="col-sm-3">
 														<input type="text" onfocus="restoreFormatting(this)"
-															onblur="removeFormatting(this)"
-															oninput="formatAmount(this)" id="org_cost"
-															class="form-control form-control-sm" name="org_cost"
-															autocomplete="off" required="required" />
+															onblur="removeFormatting(this)" oninput="formatAmount(this)"
+															id="org_cost" class="form-control form-control-sm"
+															name="org_cost" autocomplete="off" required="required" />
 													</div>
 
 													<div class="col-sm-1"></div>
@@ -2508,17 +2478,17 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="date" id="asst_exp_date"
+														<input type="text" id="asst_exp_date"
 															class="form-control form-control-sm" name="asst_exp_date"
-															autocomplete="off" required="required" readonly />
+															autocomplete="off" required="required" readonly
+															placeholder="DD-MM-YYYY" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
 														<label for="asst_rmks">Asset Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.asst_rmks}"
+														<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
 															id="asst_rmks" class="form-control form-control-sm"
 															name="asst_rmks" autocomplete="off" required="required" />
 													</div>
@@ -2530,8 +2500,7 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.vender_name}"
+														<input type="text" th:value="${BAMInventorymaster?.vender_name}"
 															id="vender_name" class="form-control form-control-sm"
 															name="vender_name" autocomplete="off" required="required" />
 													</div>
@@ -2555,9 +2524,8 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<select id="depr_flag" name="depr_flag"
-															style="width: 100%" class="form-control form-control-sm"
-															required>
+														<select id="depr_flag" name="depr_flag" style="width: 100%"
+															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
 															<option value="Y">Y</option>
 															<option value="N">N</option>
@@ -2568,8 +2536,8 @@ padding-right: 800px !important;
 														<label for="depr_freq">Depreciation Frequency</label>
 													</div>
 													<div class="col-sm-3">
-														<select id="depr_freq" name="depr_freq"
-															style="width: 100%" th:field="*{depr_freq}"
+														<select id="depr_freq" name="depr_freq" style="width: 100%"
+															th:field="*{depr_freq}"
 															th:value="${BAMInventorymaster?.depr_freq}"
 															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
@@ -2588,9 +2556,8 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<select id="depr_method" name="depr_method"
-															style="width: 100%" class="form-control form-control-sm"
-															required>
+														<select id="depr_method" name="depr_method" style="width: 100%"
+															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
 															<option value="SLM">SLM</option>
 															<option value="WDV">WDV</option>
@@ -2604,11 +2571,10 @@ padding-right: 800px !important;
 														<input type="number"
 															th:value="${BAMInventorymaster?.depr_percent}"
 															id="depr_percent" class="form-control form-control-sm"
+															name="depr_percent" autocomplete="off"
+															required="required" />
 
-															name="depr_percent" autocomplete="off" required="required"
-															 />
-															
-															
+
 
 													</div>
 												</div>
@@ -2619,11 +2585,11 @@ padding-right: 800px !important;
 															Depreciation</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="date"
-															th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-															id="date_of_last_depr"
-															class="form-control form-control-sm" autocomplete="off"
-															name="date_of_last_depr" />
+														<input type="text"
+															th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'dd-MM-yyyy')}"
+															id="date_of_last_depr" class="form-control form-control-sm"
+															autocomplete="off" name="date_of_last_depr"
+															placeholder="DD-MM-YYYY" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2631,11 +2597,10 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-															class="form-control form-control-sm" name="acc_depr"
-															autocomplete="off" required="required" readonly /> <input
-															type="hidden" id="server_acc_depr"
+														<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+															id="acc_depr" class="form-control form-control-sm"
+															name="acc_depr" autocomplete="off" required="required"
+															readonly /> <input type="hidden" id="server_acc_depr"
 															th:value="${BAMInventorymaster.acc_depr}" />
 
 													</div>
@@ -2650,11 +2615,11 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="date"
+														<input type="text"
 															th:value="${BAMInventorymaster?.date_of_acqn}"
 															id="date_of_acqn" class="form-control form-control-sm"
-															name="date_of_acqn" autocomplete="off"
-															required="required" />
+															name="date_of_acqn" autocomplete="off" required="required"
+															placeholder="DD-MM-YYYY" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2662,12 +2627,11 @@ padding-right: 800px !important;
 															Transfer</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="date"
+														<input type="text"
 															th:value="${BAMInventorymaster?.date_of_last_tfr}"
-															id="date_of_last_tfr"
-															class="form-control form-control-sm"
+															id="date_of_last_tfr" class="form-control form-control-sm"
 															name="date_of_last_tfr" autocomplete="off"
-															required="required" />
+															required="required" placeholder="DD-MM-YYYY" />
 													</div>
 												</div>
 
@@ -2690,9 +2654,8 @@ padding-right: 800px !important;
 													</div>
 													<div class="col-sm-3">
 														<input type="text" onfocus="restoreFormatting(this)"
-															onblur="removeFormatting(this)"
-															oninput="formatAmount(this)" id="cur_book_value"
-															class="form-control form-control-sm"
+															onblur="removeFormatting(this)" oninput="formatAmount(this)"
+															id="cur_book_value" class="form-control form-control-sm"
 															name="cur_book_value" autocomplete="off"
 															required="required" />
 													</div>
@@ -2703,10 +2666,9 @@ padding-right: 800px !important;
 													</div>
 													<div class="col-sm-3">
 														<input type="text" onfocus="restoreFormatting(this)"
-															onblur="removeFormatting(this)"
-															oninput="formatAmount(this)" id="mkt_value"
-															class="form-control form-control-sm" name="mkt_value"
-															autocomplete="off" required="required" />
+															onblur="removeFormatting(this)" oninput="formatAmount(this)"
+															id="mkt_value" class="form-control form-control-sm"
+															name="mkt_value" autocomplete="off" required="required" />
 													</div>
 
 												</div>
@@ -2731,10 +2693,9 @@ padding-right: 800px !important;
 														<label for="sol_id">Sol Id</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.sol_id}" id="sol_id"
-															class="form-control form-control-sm" name="sol_id"
-															autocomplete="off" required="required" />
+														<input type="text" th:value="${BAMInventorymaster?.sol_id}"
+															id="sol_id" class="form-control form-control-sm"
+															name="sol_id" autocomplete="off" required="required" />
 													</div>
 												</div>
 
@@ -2744,10 +2705,9 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.emp_id}" id="emp_id"
-															class="form-control form-control-sm" name="emp_id"
-															autocomplete="off" readonly />
+														<input type="text" th:value="${BAMInventorymaster?.emp_id}"
+															id="emp_id" class="form-control form-control-sm"
+															name="emp_id" autocomplete="off" readonly />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2769,8 +2729,7 @@ padding-right: 800px !important;
 													</div>
 
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.loca_addr}"
+														<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
 															id="loca_addr" class="form-control form-control-sm"
 															name="loca_addr" autocomplete="off" readonly />
 													</div>
@@ -2779,10 +2738,9 @@ padding-right: 800px !important;
 														<label for="loc_rmks">Location Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-															class="form-control form-control-sm" name="loc_rmks"
-															autocomplete="off" required="required" />
+														<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+															id="loc_rmks" class="form-control form-control-sm"
+															name="loc_rmks" autocomplete="off" required="required" />
 													</div>
 												</div>
 
@@ -2818,8 +2776,7 @@ padding-right: 800px !important;
 														<input type="text"
 															oninput="this.value=this.value.replace(/[^0-9]/g,'');"
 															th:value="${BAMInventorymaster?.gtee_amt_percent}"
-															id="gtee_amt_percent"
-															class="form-control form-control-sm"
+															id="gtee_amt_percent" class="form-control form-control-sm"
 															name="gtee_amt_percent" autocomplete="off"
 															required="required" readonly />
 													</div>
@@ -2842,8 +2799,7 @@ padding-right: 800px !important;
 														<label for="depr_rmks">Depreciation Remarks</label>
 													</div>
 													<div class="col-sm-3">
-														<input type="text"
-															th:value="${BAMInventorymaster?.depr_rmks}"
+														<input type="text" th:value="${BAMInventorymaster?.depr_rmks}"
 															id="depr_rmks" class="form-control form-control-sm"
 															name="depr_rmks" autocomplete="off" />
 													</div>
@@ -2852,25 +2808,24 @@ padding-right: 800px !important;
 
 											</div>
 
-										</div><div class="card-footer text-center">
+										</div>
+										<div class="card-footer text-center">
 
-										<button type="button" class="btn headerbutton" id="btnHome"
-											onclick="home();">Home</button>
-
-
-
-										<button th:if="${formmode}=='add'" type="button"
-											class="btn
-											headerbutton"
-											onclick="submitaddform(this);" form="BAMInventorymaster"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+											<button type="button" class="btn headerbutton" id="btnHome"
+												onclick="home();">Home</button>
 
 
 
-										<button type="button" class="btn headerbutton" id="btnBack"
-											onclick="back();">Back</button>
+											<button th:if="${formmode}=='add'" type="button" class="btn
+											headerbutton" onclick="submitaddform(this);" form="BAMInventorymaster" id="btnSubmit"
+												th:attr="data-formmode='edit'">Submit</button>
 
-									</div>
+
+
+											<button type="button" class="btn headerbutton" id="btnBack"
+												onclick="back();">Back</button>
+
+										</div>
 									</div>
 
 
@@ -2964,7 +2919,7 @@ padding-right: 800px !important;
 															<input type="text" id="dateof_purchase"
 																name="dateof_purchase"
 																class="form-control form-control-sm" autocomplete="off"
-																readonly />
+																readonly placeholder="DD-MM-YYYY" />
 
 														</div>
 														<div class="col-sm-3">
@@ -2984,8 +2939,10 @@ padding-right: 800px !important;
 															<label for="srlNo">Year of Purchase</label>
 														</div>
 														<div class="col-sm-3">
+															<input type="hidden" id="hidden_year_of_purchase"
+																name="year_of_purchase" />
 
-															<input type="number" id="yearof_purchase"
+															<input type="text" id="yearof_purchase"
 																name="yearof_purchase"
 																class="form-control form-control-sm" autocomplete="off"
 																readonly />
@@ -2998,7 +2955,7 @@ padding-right: 800px !important;
 															<input type="text" name="depreciation_flg"
 																id="depreciation_flg"
 																class="form-control form-control-sm"
-																autocomplete="false" readonly />
+																autocomplete="false" placeholder="YYYY" readonly />
 														</div>
 													</div>
 												</div>
@@ -3011,7 +2968,7 @@ padding-right: 800px !important;
 
 															<input type="text" id="asstexp_date" name="asstexp_date"
 																class="form-control form-control-sm" autocomplete="off"
-																readonly />
+																readonly placeholder="DD-MM-YYYY" />
 
 														</div>
 														<div class="col-sm-3">
@@ -3036,7 +2993,7 @@ padding-right: 800px !important;
 
 															<input type="text" id="DATE_OF_ACQN" name="acquis_date"
 																class="form-control form-control-sm" autocomplete="off"
-																readonly />
+																readonly placeholder="DD-MM-YYYY" />
 
 														</div>
 														<div class="col-sm-3">
@@ -3057,8 +3014,7 @@ padding-right: 800px !important;
 														</div>
 														<div class="col-sm-3">
 
-															<input type="text" id="lifeofyear"
-																name="life_span_months"
+															<input type="text" id="lifeofyear" name="life_span_months"
 																class="form-control form-control-sm" autocomplete="off"
 																style="text-align: right" readonly />
 
@@ -3084,7 +3040,7 @@ padding-right: 800px !important;
 															<input type="text" id="depreciation_start_date"
 																name="depreciation_start_date"
 																class="form-control form-control-sm" autocomplete="off"
-																readonly />
+																readonly placeholder="DD-MM-YYYY" />
 
 														</div>
 														<div class="col-sm-3">
@@ -3095,7 +3051,8 @@ padding-right: 800px !important;
 															<input type="text" name="date_of_last_depreciation"
 																id="date_of_last_depreciation"
 																class="form-control form-control-sm"
-																autocomplete="false" readonly />
+																autocomplete="false" placeholder="DD-MM-YYYY"
+																readonly />
 														</div>
 													</div>
 												</div>
@@ -3137,127 +3094,69 @@ padding-right: 800px !important;
 										</div>
 										<div class="card-footer text-center">
 
-										<button type="button" class="btn headerbutton" id="btnHome"
-											onclick="home();">Home</button>
+											<button type="button" class="btn headerbutton" id="btnHome"
+												onclick="home();">Home</button>
 
 
 
-										<button th:if="${formmode}=='add'" type="button"
-											class="btn
-											headerbutton"
-											onclick="addSubmit();" form="BAMInventorymaster"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+											<button th:if="${formmode}=='add'" type="button" class="btn
+											headerbutton" onclick="addSubmit();" form="BAMInventorymaster" id="btnSubmit"
+												th:attr="data-formmode='edit'">Submit</button>
 
 
 
-										<button type="button" class="btn headerbutton" id="btnBack"
-											onclick="back();">Back</button>
+											<button type="button" class="btn headerbutton" id="btnBack"
+												onclick="back();">Back</button>
 
+										</div>
 									</div>
-									</div>
-									
+
 									<div class="content m-2 " style="padding: 15px;">
-									    <div class="row formline">
-									        <label class="col-sm-2">Entry User</label>
-									        <div class="col-sm-2">
-									            <input type="text" id="entry_user" name="entry_user" th:value="${BAMInventorymaster?.entry_user}"
-									                   class="form-control form-control-sm" autocomplete="off" readonly />
-									        </div>
-									        <label class="col-sm-2">Modify User</label>
-									        <div class="col-sm-2">
-									            <input type="text" id="modify_user" name="modify_user" th:value="${BAMInventorymaster?.modify_user}"
-									                   class="form-control form-control-sm" autocomplete="off" readonly />
-									        </div>
-									        <label class="col-sm-2">Verify User</label>
-									        <div class="col-sm-2">
-									            <input type="text" id="auth_user" name="auth_user" th:value="${BAMInventorymaster?.verify_user}"
-									                   class="form-control form-control-sm" autocomplete="off" readonly />
-									        </div>
-									    </div>
-									    <div class="row formline mt-2">
-									        <label class="col-sm-2">Entry Time</label>
-									        <div class="col-sm-2">
-									            <input type="text" id="entry_date" name="entry_time"
-									                   th:value="${#dates.format(BAMInventorymaster?.entry_time, 'yyyy-MM-dd HH:mm:ss')}"
-									                   class="form-control form-control-sm" autocomplete="off" readonly />
-									        </div>
-									        <label class="col-sm-2">Modify Time</label>
-									        <div class="col-sm-2">
-									            <input type="text" id="modify_time" name="modify_time"
-									                   th:value="${#dates.format(BAMInventorymaster?.modify_time, 'yyyy-MM-dd HH:mm:ss')}"
-									                   class="form-control form-control-sm" autocomplete="off" readonly />
-									        </div>
-									        <label class="col-sm-2">Verify Time</label>
-									        <div class="col-sm-2">
-									            <input type="text" id="auth_time" name="auth_time"
-									                   th:value="${#dates.format(BAMInventorymaster?.verify_time, 'yyyy-MM-dd HH:mm:ss')}"
-									                   class="form-control form-control-sm" autocomplete="off" readonly />
-									        </div>
-									    </div>
-
-										
-									</div>
-
-									<!-- Conditionally display the table based on formmode  view-->
-									<!-- <div class="table-responsive"
-										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-										<table
-											class="table  table-bordered no-border-table  table-hover table-sm"
-											style="margin-bottom: 10px; font-size: initial;">
-											<tr>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Entry User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="entryuser" name="entry_user"
+										<div class="row formline">
+											<label class="col-sm-2">Entry User</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_user" name="entry_user"
 													th:value="${BAMInventorymaster?.entry_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Modify User :</B></font></td>
-												<td class="col-sm-2"
-													style="width: 112px; margin-right: 20px;"><input
-													type="text" id="modifyuser" name="modify_user"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Modify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_user" name="modify_user"
 													th:value="${BAMInventorymaster?.modify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td class="col-sm-2" style="text-align: right;"><font
-													size="2"><B>Verify User :</B></font></td>
-												
-                         th:value="${BAMInventorymaster?.verify_user}"
-												<td class="col-sm-2" style="width: 112px;"><input
-													type="text" id="verifyuser" name="verify_user"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Verify User</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_user" name="auth_user"
 													th:value="${BAMInventorymaster?.verify_user}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-											</tr>
-											<tr>
-												<td style="text-align: right;"><font size="2"><B>Entry
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="entrytime" name="entry_time"
-													th:value="${BAMInventorymaster?.entry_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Modify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="modifytime" name="modify_time"
-													th:value="${BAMInventorymaster?.modify_time}"
-													style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-												<td style="text-align: right;"><font size="2"><B>Verify
-															Time :</B></font></td>
-												<td style="width: 112px"><input type="text"
-													id="verifytime" name="verify_time"
-													th:value="${BAMInventorymaster?.verify_time}"
-													style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-													readonly></td>
-											</tr>
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+										</div>
+										<div class="row formline mt-2">
+											<label class="col-sm-2">Entry Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="entry_date" name="entry_time"
+													th:value="${#dates.format(BAMInventorymaster?.entry_time, 'dd-MM-yyyy hh:mm:ss a')}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Modify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="modify_time" name="modify_time"
+													th:value="${#dates.format(BAMInventorymaster?.modify_time, 'dd-MM-yyyy hh:mm:ss a')}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+											<label class="col-sm-2">Verify Time</label>
+											<div class="col-sm-2">
+												<input type="text" id="auth_time" name="auth_time"
+													th:value="${#dates.format(BAMInventorymaster?.verify_time, 'dd-MM-yyyy hh:mm:ss')}"
+													class="form-control form-control-sm" autocomplete="off" readonly />
+											</div>
+										</div>
 
-										</table>
+
 									</div>
- -->
+
+
 
 								</div>
 							</div>
@@ -3273,21 +3172,21 @@ padding-right: 800px !important;
 					th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='viewnew'">
 					<div class="row">
 
-						<form action="#" th:object="${BAMInventorymaster}" class="w-100"
-							method="post" autocomplete="off" id="BAMInventorymaster">
+						<form action="#" th:object="${BAMInventorymaster}" class="w-100" method="post"
+							autocomplete="off" id="BAMInventorymaster">
 
 							<div class="associateProfileList">
 								<div class="card">
 									<div class="card-header p-1">
 										<div class="float-left">
-											<h4 th:if="${formmode}=='edit'"
-												class="btn btn-sm headerbutton mr-2">INVENTORY MASTER -
+											<h4 th:if="${formmode}=='edit'" class="btn btn-sm headerbutton mr-2">
+												INVENTORY MASTER -
 												EDIT</h4>
-											<h4 th:if="${formmode}=='verify'"
-												class="btn btn-sm headerbutton mr-2">INVENTORY MASTER -
+											<h4 th:if="${formmode}=='verify'" class="btn btn-sm headerbutton mr-2">
+												INVENTORY MASTER -
 												VERIFY</h4>
-											<h4 th:if="${formmode}=='viewnew'"
-												class="btn btn-sm headerbutton mr-2">INVENTORY MASTER -
+											<h4 th:if="${formmode}=='viewnew'" class="btn btn-sm headerbutton mr-2">
+												INVENTORY MASTER -
 												VIEW</h4>
 										</div>
 									</div>
@@ -3300,16 +3199,14 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_srl_no}"
+													<input type="text" th:value="${BAMInventorymaster.asst_srl_no}"
 														id="asst_srl_no" class="form-control form-control-sm"
 														autocomplete="off" name="asst_srl_no" readonly />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_srl_no}"
+													<input type="text" th:value="${BAMInventorymaster.asst_srl_no}"
 														id="asst_srl_no" class="form-control form-control-sm"
 														autocomplete="off" name="asst_srl_no" readonly="readonly" />
 												</div>
@@ -3318,18 +3215,16 @@ padding-right: 800px !important;
 													<label for="branch_name">Asset Name</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_name} " id="asst_name"
-														class="form-control form-control-sm" autocomplete="off"
-														name="asst_name" required="required" />
+													<input type="text" th:value="${BAMInventorymaster.asst_name} "
+														id="asst_name" class="form-control form-control-sm"
+														autocomplete="off" name="asst_name" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_name} " id="asst_name"
-														class="form-control form-control-sm" autocomplete="off"
-														name="asst_name" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster.asst_name} "
+														id="asst_name" class="form-control form-control-sm"
+														autocomplete="off" name="asst_name" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -3338,16 +3233,14 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asset_category}"
+													<input type="text" th:value="${BAMInventorymaster.asset_category}"
 														id="asset_category" class="form-control form-control-sm"
 														name="asset_category" autocomplete="off" readonly />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asset_category}"
+													<input type="text" th:value="${BAMInventorymaster.asset_category}"
 														id="asset_category" class="form-control form-control-sm"
 														name="asset_category" autocomplete="off" readonly />
 												</div>
@@ -3356,19 +3249,16 @@ padding-right: 800px !important;
 													<label for="category_desc">Description</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.category_desc}"
+													<input type="text" th:value="${BAMInventorymaster.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
 														name="category_desc" autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.category_desc}"
+													<input type="text" th:value="${BAMInventorymaster.category_desc}"
 														id="category_desc" class="form-control form-control-sm"
-														name="category_desc" autocomplete="off"
-														readonly="readonly" />
+														name="category_desc" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -3377,8 +3267,8 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<select id="asset_type" name="asset_type"
-														style="width: 100%" th:field="*{asset_type}"
+													<select id="asset_type" name="asset_type" style="width: 100%"
+														th:field="*{asset_type}"
 														th:value="${BAMInventorymaster?.asset_type}"
 														class="form-control form-control-sm" required>
 														<option value="">SELECT</option>
@@ -3390,8 +3280,8 @@ padding-right: 800px !important;
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<select id="asset_type" name="asset_type"
-														style="width: 100%" th:field="*{asset_type}"
+													<select id="asset_type" name="asset_type" style="width: 100%"
+														th:field="*{asset_type}"
 														th:value="${BAMInventorymaster?.asset_type}"
 														class="form-control form-control-sm">
 														<option value="">SELECT</option>
@@ -3406,16 +3296,14 @@ padding-right: 800px !important;
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3"
 													onchange="handleCurrencyChange()">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_crncy}"
+													<input type="text" th:value="${BAMInventorymaster.asst_crncy}"
 														id="asst_crncy" class="form-control form-control-sm"
 														name="asst_crncy" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.asst_crncy}"
+													<input type="text" th:value="${BAMInventorymaster.asst_crncy}"
 														id="asst_crncy" class="form-control form-control-sm"
 														name="asst_crncy" autocomplete="off" readonly="readonly" />
 												</div>
@@ -3427,16 +3315,16 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'dd-MM-yyyy')}"
 														id="date_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_purchase" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'dd-MM-yyyy')}"
 														id="date_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_purchase" />
 												</div>
@@ -3445,16 +3333,16 @@ padding-right: 800px !important;
 													<label for="year_of_purchase">Year Of Purchase</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'dd-MM-yyyy')}"
 														id="year_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="year_of_purchase" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'dd-MM-yyyy')}"
 														id="year_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="year_of_purchase" />
 												</div>
@@ -3485,20 +3373,16 @@ padding-right: 800px !important;
 													<label for="life_span_mth">Life Span</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="number"
-														th:value="${BAMInventorymaster.life_span_mth}"
+													<input type="number" th:value="${BAMInventorymaster.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
-														autocomplete="off" name="life_span_mth"
-														required="required" />
+														autocomplete="off" name="life_span_mth" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster.life_span_mth}"
+													<input type="text" th:value="${BAMInventorymaster.life_span_mth}"
 														id="life_span_mth" class="form-control form-control-sm"
-														autocomplete="off" name="life_span_mth"
-														readonly="readonly" />
+														autocomplete="off" name="life_span_mth" readonly="readonly" />
 												</div>
 											</div>
 											<div class="row formline">
@@ -3507,16 +3391,16 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'dd-MM-yyyy')}"
 														id="asst_exp_date" class="form-control form-control-sm"
 														autocomplete="off" name="asst_exp_date" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'dd-MM-yyyy')}"
 														id="asst_exp_date" class="form-control form-control-sm"
 														autocomplete="off" name="asst_exp_date" />
 												</div>
@@ -3525,18 +3409,16 @@ padding-right: 800px !important;
 													<label for="asst_rmks">Asset Remarks</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-														class="form-control form-control-sm" name="asst_rmks"
-														autocomplete="off" required="required" />
+													<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
+														id="asst_rmks" class="form-control form-control-sm"
+														name="asst_rmks" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.asst_rmks}" id="asst_rmks"
-														class="form-control form-control-sm" name="asst_rmks"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
+														id="asst_rmks" class="form-control form-control-sm"
+														name="asst_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3546,9 +3428,8 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<select id="depr_flagS" name="depr_flag"
-														style="width: 100%" class="form-control form-control-sm"
-														required>
+													<select id="depr_flagS" name="depr_flag" style="width: 100%"
+														class="form-control form-control-sm" required>
 														<option th:text="${BAMInventorymaster?.depr_flag}"></option>
 														<option value="Y">Y</option>
 														<option value="N">N</option>
@@ -3557,8 +3438,7 @@ padding-right: 800px !important;
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<select id="depr_flagS" name="depr_flag"
-														style="width: 100%"
+													<select id="depr_flagS" name="depr_flag" style="width: 100%"
 														th:readonly="${formmode}=='verify' OR ${formmode}=='viewnew'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.depr_flag}"></option>
@@ -3602,9 +3482,8 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<select id="depr_method" name="depr_method"
-														style="width: 100%" class="form-control form-control-sm"
-														required>
+													<select id="depr_method" name="depr_method" style="width: 100%"
+														class="form-control form-control-sm" required>
 														<option th:text="${BAMInventorymaster?.depr_method}"></option>
 														<option value="">SELECT</option>
 														<option value="SLM">SLM</option>
@@ -3613,8 +3492,7 @@ padding-right: 800px !important;
 												</div>
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<select id="depr_method" name="depr_method"
-														style="width: 100%"
+													<select id="depr_method" name="depr_method" style="width: 100%"
 														th:readonly="${formmode}=='verify' OR ${formmode}=='viewnew'"
 														class="form-control form-control-sm">
 														<option th:text="${BAMInventorymaster?.depr_method}"></option>
@@ -3628,15 +3506,13 @@ padding-right: 800px !important;
 													<label for="depr_percent">Depreciation Percentage</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_percent}"
+													<input type="text" th:value="${BAMInventorymaster?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
 														name="depr_percent" autocomplete="off" required="required" />
 												</div>
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_percent}"
+													<input type="text" th:value="${BAMInventorymaster?.depr_percent}"
 														id="depr_percent" class="form-control form-control-sm"
 														name="depr_percent" autocomplete="off" readonly="readonly" />
 												</div>
@@ -3648,18 +3524,16 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" required="required" />
+													<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.acc_depr}" id="acc_depr"
-														class="form-control form-control-sm" name="acc_depr"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.acc_depr}"
+														id="acc_depr" class="form-control form-control-sm"
+														name="acc_depr" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -3667,20 +3541,18 @@ padding-right: 800px !important;
 														Depreciation</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm" autocomplete="off"
-														name="date_of_last_depr" />
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'dd-MM-yyyy')}"
+														id="date_of_last_depr" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_last_depr" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'yyyy-MM-dd')}"
-														id="date_of_last_depr"
-														class="form-control form-control-sm" autocomplete="off"
-														name="date_of_last_depr" />
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_last_depr, 'dd-MM-yyyy')}"
+														id="date_of_last_depr" class="form-control form-control-sm"
+														autocomplete="off" name="date_of_last_depr" />
 												</div>
 											</div>
 
@@ -3690,16 +3562,16 @@ padding-right: 800px !important;
 													<label for="date_of_acqn">Date of Acquisition</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'dd-MM-yyyy')}"
 														id="date_of_acqn" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_acqn" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'dd-MM-yyyy')}"
 														id="date_of_acqn" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_acqn" />
 												</div>
@@ -3708,15 +3580,15 @@ padding-right: 800px !important;
 													<label for="date_of_last_tfr">Date of Last Transfer</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_last_tfr, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_last_tfr, 'dd-MM-yyyy')}"
 														id="date_of_last_tfr" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_last_tfr" />
 												</div>
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_last_tfr, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_last_tfr, 'dd-MM-yyyy')}"
 														id="date_of_last_tfr" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_last_tfr" />
 												</div>
@@ -3734,8 +3606,7 @@ padding-right: 800px !important;
 														onfocus="restoreFormatting(this)"
 														th:value="${BAMInventorymaster?.cur_book_value}"
 														id="cur_book_value" class="form-control form-control-sm"
-														name="cur_book_value" autocomplete="off"
-														required="required" />
+														name="cur_book_value" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
@@ -3743,8 +3614,7 @@ padding-right: 800px !important;
 													<input type="text" oninput="formatIndianAmount(this)"
 														th:value="${BAMInventorymaster?.cur_book_value}"
 														id="cur_book_value" class="form-control form-control-sm"
-														name="cur_book_value" autocomplete="off"
-														readonly="readonly" />
+														name="cur_book_value" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -3761,10 +3631,9 @@ padding-right: 800px !important;
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.mkt_value}" id="mkt_value"
-														class="form-control form-control-sm" name="mkt_value"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.mkt_value}"
+														id="mkt_value" class="form-control form-control-sm"
+														name="mkt_value" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3802,15 +3671,15 @@ padding-right: 800px !important;
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly="readonly" />
+														id="sol_id" class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly="readonly" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.sol_id}"
-														id="sol_id" class="form-control form-control-sm"
-														name="sol_id" autocomplete="off" readonly="readonly" />
+														id="sol_id" class="form-control form-control-sm" name="sol_id"
+														autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3821,34 +3690,31 @@ padding-right: 800px !important;
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.emp_id}"
-														id="emp_id" class="form-control form-control-sm"
-														name="emp_id" autocomplete="off" />
+														id="emp_id" class="form-control form-control-sm" name="emp_id"
+														autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
 													<input type="text" th:value="${BAMInventorymaster?.emp_id}"
-														id="emp_id" class="form-control form-control-sm"
-														name="emp_id" autocomplete="off" />
+														id="emp_id" class="form-control form-control-sm" name="emp_id"
+														autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="dept_div_name">Department/Division Name</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.dept_div_name}"
+													<input type="text" th:value="${BAMInventorymaster?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
 														name="dept_div_name" autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.dept_div_name}"
+													<input type="text" th:value="${BAMInventorymaster?.dept_div_name}"
 														id="dept_div_name" class="form-control form-control-sm"
-														name="dept_div_name" autocomplete="off"
-														readonly="readonly" />
+														name="dept_div_name" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3859,36 +3725,32 @@ padding-right: 800px !important;
 												</div>
 
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loca_addr}" id="loca_addr"
-														class="form-control form-control-sm" name="loca_addr"
-														autocomplete="off" />
+													<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
+														id="loca_addr" class="form-control form-control-sm"
+														name="loca_addr" autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loca_addr}" id="loca_addr"
-														class="form-control form-control-sm" name="loca_addr"
-														autocomplete="off" />
+													<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
+														id="loca_addr" class="form-control form-control-sm"
+														name="loca_addr" autocomplete="off" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="loc_rmks">Location Remarks</label>
 												</div>
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-														class="form-control form-control-sm" name="loc_rmks"
-														autocomplete="off" required="required" />
+													<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+														id="loc_rmks" class="form-control form-control-sm"
+														name="loc_rmks" autocomplete="off" required="required" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.loc_rmks}" id="loc_rmks"
-														class="form-control form-control-sm" name="loc_rmks"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
+														id="loc_rmks" class="form-control form-control-sm"
+														name="loc_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -3926,10 +3788,9 @@ padding-right: 800px !important;
 														<option value="N">N</option>
 													</select> -->
 
-													<input type="text"
-														th:value="${BAMInventorymaster?.gtee_amt}" id="gtee_amt"
-														class="form-control form-control-sm" name="gtee_amt"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.gtee_amt}"
+														id="gtee_amt" class="form-control form-control-sm"
+														name="gtee_amt" autocomplete="off" readonly="readonly" />
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -3963,15 +3824,14 @@ padding-right: 800px !important;
 												<div th:if="${formmode}=='edit'" class="col-sm-3">
 													<input type="text"
 														oninput="this.value=this.value.replace(/[^0-9]/g,'');"
-														th:value="${BAMInventorymaster?.nom_depr_amt}"
-														id="nom_depr_amt" class="form-control form-control-sm"
-														name="nom_depr_amt" autocomplete="off" />
+														th:value="${BAMInventorymaster?.nom_depr_amt}" id="nom_depr_amt"
+														class="form-control form-control-sm" name="nom_depr_amt"
+														autocomplete="off" />
 												</div>
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.nom_depr_amt}"
+													<input type="text" th:value="${BAMInventorymaster?.nom_depr_amt}"
 														id="nom_depr_amt" class="form-control form-control-sm"
 														name="nom_depr_amt" autocomplete="off" readonly="readonly" />
 												</div>
@@ -3989,10 +3849,9 @@ padding-right: 800px !important;
 
 												<div th:if="${formmode}=='verify' OR ${formmode}=='viewnew'"
 													class="col-sm-3">
-													<input type="text"
-														th:value="${BAMInventorymaster?.depr_rmks}" id="depr_rmks"
-														class="form-control form-control-sm" name="depr_rmks"
-														autocomplete="off" readonly="readonly" />
+													<input type="text" th:value="${BAMInventorymaster?.depr_rmks}"
+														id="depr_rmks" class="form-control form-control-sm"
+														name="depr_rmks" autocomplete="off" readonly="readonly" />
 												</div>
 											</div>
 
@@ -4007,15 +3866,12 @@ padding-right: 800px !important;
 
 
 
-										<button th:if="${formmode}=='edit'" type="button"
-											class=" btn
-											headerbutton"
-											onclick="submiteditform(this);" form="BAMInventorymaster"
-											id="btnSubmit" th:attr="data-formmode='edit'">Submit</button>
+										<button th:if="${formmode}=='edit'" type="button" class=" btn
+											headerbutton" onclick="submiteditform(this);" form="BAMInventorymaster" id="btnSubmit"
+											th:attr="data-formmode='edit'">Submit</button>
 
-										<button th:if="${formmode}=='verify'" type="button"
-											class="btn headerbutton" onclick="submitverifyform(this);"
-											form="BAMInventorymaster" id=""
+										<button th:if="${formmode}=='verify'" type="button" class="btn headerbutton"
+											onclick="submitverifyform(this);" form="BAMInventorymaster" id=""
 											th:attr="data-formmode='edit'">Submit</button>
 
 										<button type="button" class="btn headerbutton" id="btnBack"
@@ -4054,21 +3910,21 @@ padding-right: 800px !important;
 												<label class="col-sm-2">Entry Time</label>
 												<div class="col-sm-2">
 													<input type="text" id="entry_date" name="entry_time"
-														th:value="${BAMInventorymaster?.entry_time}"
+														th:value="${#dates.format(BAMInventorymaster?.entry_time, 'dd-MM-yyyy hh:mm:ss a')}"
 														class="form-control form-control-sm" autocomplete="off"
 														readonly />
 												</div>
 												<label class="col-sm-2">Modify Time</label>
 												<div class="col-sm-2">
 													<input type="text" id="modify_time" name="modify_time"
-														th:value="${BAMInventorymaster?.modify_time}"
+														th:value="${#dates.format(BAMInventorymaster?.modify_time, 'dd-MM-yyyy hh:mm:ss a')}"
 														class="form-control form-control-sm" autocomplete="off"
 														readonly />
 												</div>
 												<label class="col-sm-2">Verify Time</label>
 												<div class="col-sm-2">
 													<input type="text" id="auth_time" name="auth_time"
-														th:value="${BAMInventorymaster?.verify_time}"
+														th:value="${#dates.format(BAMInventorymaster?.verify_time, 'dd-MM-yyyy hh:mm:ss a')}"
 														class="form-control form-control-sm" autocomplete="off"
 														readonly />
 												</div>
@@ -4080,78 +3936,75 @@ padding-right: 800px !important;
 						</form>
 					</div>
 				</div>
-<!----------------------------------------------------------------Upload---------------------------------------------------------->
-	<div class="content" th:if="${formmode}=='UploadFile'">
-		<form action="#" method="post" autocomplete="off" style="width: 100%">
-			<div class="card" style="margin-top: 90px;">
-				<div class="card-header">
-					<div class="float-right"></div>
-					<h4 class="headerh6">INVENTORY MASTER - FILE UPLOAD</h4>
-				</div>
-				<div class="card-body p-0 mt-3" style="background-color: #ffffff;">
-					<div class="panel-heading text-center">
-						<div class="form-group ">
-							<div class="row">
-								<div class="col-sm-3">
-									<label class="">Upload</label>
-								</div>
-								<div class="col-sm-2">
-									<input type="file" id="fileval" name="fileval" accept=".xlsx,.xls,.csv"
-										class="form-control form-control-sm">
+				<!----------------------------------------------------------------Upload---------------------------------------------------------->
+				<div class="content" th:if="${formmode}=='UploadFile'">
+					<form action="#" method="post" autocomplete="off" style="width: 100%">
+						<div class="card" style="margin-top: 90px;">
+							<div class="card-header">
+								<div class="float-right"></div>
+								<h4 class="headerh6">INVENTORY MASTER - FILE UPLOAD</h4>
+							</div>
+							<div class="card-body p-0 mt-3" style="background-color: #ffffff;">
+								<div class="panel-heading text-center">
+									<div class="form-group ">
+										<div class="row">
+											<div class="col-sm-3">
+												<label class="">Upload</label>
+											</div>
+											<div class="col-sm-2">
+												<input type="file" id="fileval" name="fileval" accept=".xlsx,.xls,.csv"
+													class="form-control form-control-sm">
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
+							<div class="card-footer text-center">
+								<button type="button" class="btn btn-sm  headerbutton  " id="addBtn"
+									onclick="home();">Home</button>
+								<button type="button" class="btn  btn-sm  headerbutton" id="nav"
+									onclick="submitexcelgst(this)">Upload</button>
+								<button type="button" class="btn btn-sm  headerbutton " id=""
+									onclick="back();">Back</button>
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
-				<div class="card-footer text-center">
-					<button type="button" class="btn btn-sm  headerbutton  " id="addBtn" onclick="home();">Home</button>
-					<button type="button" class="btn  btn-sm  headerbutton" id="nav"
-						onclick="submitexcelgst(this)">Upload</button>
-					<button type="button" class="btn btn-sm  headerbutton " id="" onclick="back();">Back</button>
-				</div>
-			</div>
-		</form>
-	</div>
-<!----------------------------------------------------------------foot---------------------------------------------------------->
+				<!----------------------------------------------------------------foot---------------------------------------------------------->
 			</div>
 		</div>
 	</div>
 	<br>
 	<div class="modal fade" id="alert">
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="menu-title-header">
 					<div class="modal-title" id="exampleModalLabel"
 						style="text-align: center; color: black; font-family: verdana; font-size: medium; font-weight: bold;">
 						BANK NAME</div>
 				</div>
-				<div class="modal-body"
-					style="text-align: center; background-color: #c6ccd2">
+				<div class="modal-body" style="text-align: center; background-color: #c6ccd2">
 					<p id="alertmsg" style="font-size: 16px;">BANK NAME</p>
-					<button type="button" class="btn headerbutton" data-dismiss="modal"
-						onclick="back();">Close</button>
+					<button type="button" class="btn headerbutton" data-dismiss="modal" onclick="back();">Close</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="modal fade" id="loader1" data-backdrop="static"
-		data-keyboard="false">
-		<div
-			class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	<div class="modal fade" id="loader1" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background: transparent;">
 				<div class="modal-body" style="text-align: center">
 					<div>
-						<img th:src=@{/images/loadingapp.gif} id="bfirelogo"
-							style="width: 153px; margin-left: 18px;" alt="Bornfire">
+						<img th:src=@{/images/loadingapp.gif} id="bfirelogo" style="width: 153px; margin-left: 18px;"
+							alt="Bornfire">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
-		<div class="modal fade" id="myModalupload" data-backdrop="static" data-keyboard="false">
+
+	<div class="modal fade" id="myModalupload" data-backdrop="static" data-keyboard="false">
 		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content" style="background: transparent;">
 				<div class="modal-body" style="text-align: center;background-color: #c6ccd2">
@@ -4163,49 +4016,79 @@ padding-right: 800px !important;
 	</div>
 
 </body>
+<script>
+	// List of date fields to initialize flatpickr
+	const dateFields = [
+		"#date_of_purchase",
+		"#asst_exp_date",
+		"#date_of_last_depr",
+		"#date_of_acqn",
+		"#date_of_last_tfr"
+	];
+
+	// Loop through each field and apply flatpickr
+	dateFields.forEach(field => {
+		flatpickr(field, {
+			dateFormat: "d-m-Y", // Enforce dd-mm-yyyy format
+			allowInput: false, // Disable manual typing to enforce picker use
+			clickOpens: true, // Ensure the picker opens when clicked
+			onChange: function (selectedDates, dateStr, instance) {
+				// Ensure the selected date is valid
+				if (dateStr.match(/^\d{2}-\d{2}-\d{4}$/)) {
+					// Extract year from the selected date
+					const dateParts = dateStr.split("-");
+					const year = dateParts[2]; // Extract year part from dd-mm-yyyy
+
+					// Special handling for 'date_of_purchase' field
+					if (instance.input.id === "date_of_purchase") {
+						// Update the year field with the selected year
+						document.getElementById('year_of_purchase').value = year;
+						// Update the hidden field with the date in dd-mm-yyyy format
+						document.getElementById('hidden_year_of_purchase').value = dateStr; // 'dd-mm-yyyy'
+					}
+				} else {
+					alert("Please select a valid date in dd-mm-yyyy format.");
+				}
+			}
+		});
+	});
+</script>
 
 <script>
 	//for the list amount(indian standards)
-	document.addEventListener("DOMContentLoaded", function() {
-    // Function to format numbers with commas and two decimals
-    function formatWithCommasAndDecimals(number) {
-        return Number(number).toLocaleString('en-US', {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2
-        });
-    }
+	document.addEventListener("DOMContentLoaded", function () {
+		// Function to format numbers with commas and two decimals
+		function formatWithCommasAndDecimals(number) {
+			return Number(number).toLocaleString('en-US', {
+				minimumFractionDigits: 2,
+				maximumFractionDigits: 2
+			});
+		}
 
-    // Loop through all cur_book_value and mkt_value cells and apply formatting
-    document.querySelectorAll('[id^="cur_book_value_"]').forEach(function(element) {
-        element.textContent = formatWithCommasAndDecimals(element.textContent);
-    });
+		// Loop through all cur_book_value and mkt_value cells and apply formatting
+		document.querySelectorAll('[id^="cur_book_value_"]').forEach(function (element) {
+			element.textContent = formatWithCommasAndDecimals(element.textContent);
+		});
 
-    document.querySelectorAll('[id^="mkt_value_"]').forEach(function(element) {
-        element.textContent = formatWithCommasAndDecimals(element.textContent);
-    });
-});
+		document.querySelectorAll('[id^="mkt_value_"]').forEach(function (element) {
+			element.textContent = formatWithCommasAndDecimals(element.textContent);
+		});
+	});
 </script>
 
 <!--asset model box  -->
-<div class="modal " id="getAssetCate"
-	style="background-color: transparent; "
-	tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-	aria-hidden="true">
+<div class="modal " id="getAssetCate" style="background-color: transparent; " tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
-		<div class="modal-content"
-			style="transform: translate(-3%, 17%); width: 270%;">
-			<div class="card-header p-2"
-				style="text-align:  center; background-color: #e9ecef;">
-				<h4  class="fw-bold ">EMPLOYEE DETAILS</h4>
+		<div class="modal-content" style="transform: translate(-3%, 17%); width: 270%;">
+			<div class="card-header p-2" style="text-align:  center; background-color: #e9ecef;">
+				<h4 class="fw-bold ">EMPLOYEE DETAILS</h4>
 			</div>
-			<div class="card-body"
-				style="background-color: white; overflow-y: auto; ">
+			<div class="card-body" style="background-color: white; overflow-y: auto; ">
 				<div class="">
-					<div class="table-responsive"
-						style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+					<div class="table-responsive" style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 						<table class="table table-bordered">
-							<thead
-								style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
+							<thead style="position: sticky; top: 0; background-color: #f8f9fa; z-index: 1;">
 
 								<tr>
 									<th rowspan="2">Srl. No</th>
@@ -4219,7 +4102,7 @@ padding-right: 800px !important;
 														<th rowspan="2">Asset Account Number</th>
 														
 														-->
-									
+
 									<th rowspan="2">Select</th>
 								</tr>
 								<tr>
@@ -4249,11 +4132,9 @@ padding-right: 800px !important;
 									<td th:text="${Bamcatcode?.asset_account_number}"></td>
 									-->
 
-								
+
 									<td><input type="radio" th:attr="data-asset_code=${Bamcatcode?.asset_code},
-									data-head_desc=${Bamcatcode?.head_description}"
-									          
-										 onchange="handleSelectChanges(this)"></td>
+									data-head_desc=${Bamcatcode?.head_description}" onchange="handleSelectChanges(this)"></td>
 
 
 								</tr>
@@ -4262,12 +4143,12 @@ padding-right: 800px !important;
 					</div>
 				</div>
 			</div>
-			<div class="card-footer text-center"
-				style="background-color: #e9ecef;">
+			<div class="card-footer text-center" style="background-color: #e9ecef;">
 				<button type="button" class="btn headerbutton" data-dismiss="modal"
 					onclick="submitAndCloseModal();">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
+
 </html>
