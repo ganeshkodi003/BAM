@@ -306,7 +306,7 @@
 
 		}
 		function formatDate(dateString) {
-			// Parse the date string (expected format yyyy-MM-ddTHH:mm:ss.sssZ or similar)
+			// Parse the date string (expected format dd-MM-yyyyThh:mm:ss a.sssZ or similar)
 			let date = new Date(dateString);
 
 			// Check if the date is valid
@@ -360,8 +360,8 @@
 			let month = parts[1];
 			let year = parts[2];
 
-			// Format the date as yyyy-MM-dd
-			return `${year}-${month}-${day}`;
+			// Format the date as dd-MM-yyyy
+			return `${day}-${month}-${year}`;
 		}
 		function formatISODateToDDMMYYYY(isoDateString) {
 			// Parse the ISO date string
@@ -381,7 +381,7 @@
 			}
 
 			// Format the date as dd/MM/yyyy
-			return `${year}-${month}-${day}`;
+			return `${day}-${month}-${year}`;
 		}
 
 		function handleSelectChange() {
@@ -527,7 +527,7 @@
 		        month = '0' + month;
 		    }
 
-		    // Return the date in yyyy-MM-dd format
+		    // Return the date in dd-MM-yyyy format
 		    return `${year}-${month}-${day}`;
 		}
 
@@ -1673,24 +1673,24 @@
 		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 		<script>
-			$(document).ready(function() {
-			        // Simulate receiving a date from an API in MM/dd/yyyy format
-			        var apiDate = "12/29/2024"; // Example date format coming from the API (MM/dd/yyyy)
+			$(document).ready(function () {
+					// Simulate receiving a date from an API in MM/dd/yyyy format
+					var apiDate = "12/29/2024"; // Example date format coming from the API (MM/dd/yyyy)
 
-			        // Function to convert date from MM/dd/yyyy to yyyy-MM-dd
-			        function formatDate(inputDate) {
-			            var parts = inputDate.split('/'); // Split the input into parts (MM, dd, yyyy)
-			            var formattedDate = parts[2] + '-' + parts[0] + '-' + parts[1]; // Format as yyyy-MM-dd
-			            return formattedDate;
-			        }
+					// Function to convert date from MM/dd/yyyy to dd-MM-yyyy
+					function formatDate(inputDate) {
+						var parts = inputDate.split('/'); // Split the input into parts (MM, dd, yyyy)
+						var formattedDate = parts[1] + '-' + parts[0] + '-' + parts[2]; // Format as dd-MM-yyyy
+						return formattedDate;
+					}
 
-			        // Convert the API date to yyyy-MM-dd
-			        var formattedApiDate = formatDate(apiDate);
+					// Convert the API date to dd-MM-yyyy
+					var formattedApiDate = formatDate(apiDate);
 
-			        // Set the date to the input field (ensure the format is yyyy-MM-dd)
-			        $('#date_of_acqn').val(formattedApiDate);
-			    });
-		</script>
+					// Set the date to the input field (ensure the format is dd-MM-yyyy)
+					$('#date_of_acqn').val(formattedApiDate);
+				});
+					</script>
 
 		
 </head>
@@ -1948,7 +1948,7 @@
 
 													<div class="col-sm-3">
 														<input type="text" readonly
-															th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
+															th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'dd-MM-yyyy')}"
 															id="date_of_purchase" class="form-control form-control-sm"
 															autocomplete="off" name="date_of_purchase"
 															required="required" />
@@ -1959,7 +1959,7 @@
 													</div>
 													<div class="col-sm-3">
 														<input type="text" readonly
-															th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
+															th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'dd-MM-yyyy')}"
 															id="year_of_purchase" class="form-control form-control-sm"
 															autocomplete="off" name="year_of_purchase"
 															required="required" />
@@ -1996,7 +1996,7 @@
 
 													<div class="col-sm-3">
 														<input type="text" readonly
-															th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
+															th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'dd-MM-yyyy')}"
 															id="asst_exp_date" class="form-control form-control-sm"
 															name="asst_exp_date" autocomplete="off"
 															required="required" />
@@ -2097,7 +2097,7 @@
 													</div>
 													<div class="col-sm-3">
 														<input type="text" readonly
-														th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'yyyy-MM-dd')}"
+														th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'dd-MM-yyyy')}"
 															id="dat_of_last_depr" class="form-control form-control-sm"
 															name="dat_of_last_depr" autocomplete="off"
 															required="required" />
@@ -2124,7 +2124,7 @@
 													</div>
 													<div class="col-sm-3">
 														<input type="text" readonly
-														th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'yyyy-MM-dd')}"
+														th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'dd-MM-yyyy')}"
 															id="date_of_tfr" class="form-control form-control-sm"
 															name="date_of_tfr" autocomplete="off" required="required" />
 													</div>
@@ -2729,8 +2729,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_purchase, 'dd-MM-yyyy')}"
 														id="date_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="date_of_purchase" />
 
@@ -2740,8 +2740,8 @@
 													<label for="year_of_purchase">Year Of Purchasess</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.year_of_purchase, 'dd-MM-yyyy')}"
 														id="year_of_purchase" class="form-control form-control-sm"
 														autocomplete="off" name="year_of_purchase" />
 												</div>
@@ -2774,8 +2774,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.asst_exp_date, 'dd-MM-yyyy')}"
 														id="asst_exp_date" class="form-control form-control-sm"
 														name="asst_exp_date" autocomplete="off" required="required" />
 												</div>
@@ -2885,8 +2885,8 @@
 														Depreciation</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.dat_of_last_depr, 'dd-MM-yyyy')}"
 														id="dat_of_last_depr" class="form-control form-control-sm"
 														name="dat_of_last_depr" autocomplete="off"
 														required="required" />
@@ -2900,8 +2900,8 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_acqn, 'dd-MM-yyyy')}"
 														id="date_of_acqn" class="form-control form-control-sm"
 														name="date_of_acqn" autocomplete="off" required="required" />
 												</div>
@@ -2910,8 +2910,8 @@
 													<label for="date_of_tfr">Date of Transfer</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date"
-														th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'yyyy-MM-dd')}"
+													<input type="text"
+														th:value="${#dates.format(BAMInventorymaster.date_of_tfr, 'dd-MM-yyyy')}"
 														id="date_of_tfr" class="form-control form-control-sm"
 														name="date_of_tfr" autocomplete="off" required="required" />
 												</div>
@@ -3146,19 +3146,19 @@
 											<label class="col-sm-2">Entry Time</label>
 											<div class="col-sm-2">
 												<input type="text" id="entry_date" name="entry_time"
-													th:value="${#dates.format(BAMInventorymaster?.entry_time, 'yyyy-MM-dd HH:mm:ss')}"
+													th:value="${#dates.format(BAMInventorymaster?.entry_time, 'dd-MM-yyyy hh:mm:ss a')}"
 													class="form-control form-control-sm" autocomplete="off" readonly />
 											</div>
 											<label class="col-sm-2">Modify Time</label>
 											<div class="col-sm-2">
 												<input type="text" id="modify_time" name="modify_time"
-													th:value="${#dates.format(BAMInventorymaster?.modify_time, 'yyyy-MM-dd HH:mm:ss')}"
+													th:value="${#dates.format(BAMInventorymaster?.modify_time, 'dd-MM-yyyy hh:mm:ss a')}"
 													class="form-control form-control-sm" autocomplete="off" readonly />
 											</div>
 											<label class="col-sm-2">Verify Time</label>
 											<div class="col-sm-2">
 												<input type="text" id="auth_time" name="auth_time"
-													th:value="${#dates.format(BAMInventorymaster?.verify_time, 'yyyy-MM-dd HH:mm:ss')}"
+													th:value="${#dates.format(BAMInventorymaster?.verify_time, 'dd-MM-yyyy hh:mm:ss a')}"
 													class="form-control form-control-sm" autocomplete="off" readonly />
 											</div>
 										</div>

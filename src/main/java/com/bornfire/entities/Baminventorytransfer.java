@@ -22,13 +22,13 @@ public class Baminventorytransfer {
 	private String	asst_sub_category;
 	private String	asst_type;
 	private String	asst_crncy;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")	
+	@DateTimeFormat(pattern = "dd-MM-yyyy")	
 	private Date	date_of_purchase;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	year_of_purchase;
 	private BigDecimal	org_cost;
 	private BigDecimal	life_span_mth;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	asst_exp_date;
 	private String	asst_rmks;
 	private String	vendor_name;
@@ -38,11 +38,11 @@ public class Baminventorytransfer {
 	private String	depr_method;
 	private BigDecimal	depr_percent;
 	private BigDecimal	acc_depr;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	dat_of_last_depr;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_acqn;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_tfr;
 	private BigDecimal	cur_book_value_xfr_date;
 	private BigDecimal	market_value;
@@ -64,11 +64,11 @@ public class Baminventorytransfer {
 	private String	entry_user;
 	private String	modify_user;
 	private String	verify_user;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	entry_time;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	modify_time;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	verify_time;
 	private String	del_flg;
 	private String	entity_flg;
