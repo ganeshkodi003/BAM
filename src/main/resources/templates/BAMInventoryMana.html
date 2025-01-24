@@ -2100,6 +2100,16 @@
 			}
 		}
 	</script>
+	<script>
+		function capitalizeInput(input) {
+			let value = input.value;
+			// Only change the first letter to uppercase if it's lowercase
+			value = value.replace(/\b[a-z]/g, function (char) {
+				return char.toUpperCase();
+			});
+			input.value = value;
+		}
+	</script>
 </head>
 <title>BAM</title>
 
@@ -2303,7 +2313,7 @@
 													<div class="col-sm-3">
 														<input type="text" th:value="${BAMInventorymaster.asst_name} "
 															id="asst_name" class="form-control form-control-sm"
-															autocomplete="off" name="asst_name" required="required" />
+															autocomplete="off" name="asst_name" required="required" oninput="capitalizeInput(this)" />
 													</div>
 												</div>
 												<div class="row formline">
@@ -2490,7 +2500,7 @@
 													<div class="col-sm-3">
 														<input type="text" th:value="${BAMInventorymaster?.asst_rmks}"
 															id="asst_rmks" class="form-control form-control-sm"
-															name="asst_rmks" autocomplete="off" required="required" />
+															name="asst_rmks" autocomplete="off" required="required" oninput="capitalizeInput(this)"/>
 													</div>
 												</div>
 
@@ -2502,7 +2512,7 @@
 													<div class="col-sm-3">
 														<input type="text" th:value="${BAMInventorymaster?.vender_name}"
 															id="vender_name" class="form-control form-control-sm"
-															name="vender_name" autocomplete="off" required="required" />
+															name="vender_name" autocomplete="off" required="required" oninput="capitalizeInput(this)"/>
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2683,7 +2693,7 @@
 															class="form-control form-control-sm" required>
 															<option value="">SELECT</option>
 															<option value="OFF">Office</option>
-															<option value="BRAN">Branch</option>
+															<option value="BRN">Branch</option>
 															<option value="QUA">Quarters</option>
 															<option value="GEN">General</option>
 														</select>
@@ -2731,7 +2741,7 @@
 													<div class="col-sm-3">
 														<input type="text" th:value="${BAMInventorymaster?.loca_addr}"
 															id="loca_addr" class="form-control form-control-sm"
-															name="loca_addr" autocomplete="off" readonly />
+															name="loca_addr" autocomplete="off" readonly oninput="capitalizeInput(this)" />
 													</div>
 													<div class="col-sm-1"></div>
 													<div class="col-sm-2">
@@ -2740,7 +2750,7 @@
 													<div class="col-sm-3">
 														<input type="text" th:value="${BAMInventorymaster?.loc_rmks}"
 															id="loc_rmks" class="form-control form-control-sm"
-															name="loc_rmks" autocomplete="off" required="required" />
+															name="loc_rmks" autocomplete="off" required="required" oninput="capitalizeInput(this)"/>
 													</div>
 												</div>
 
