@@ -11207,10 +11207,7 @@ public class BTMNavigationController {
 		md.addAttribute("RoleMenu", resourceMasterRepo.getrole(userId));
 
 		BAM_AssetFlows_Entity newInventory = new BAM_AssetFlows_Entity();
-		newInventory.setEntry_user(userId); // Set ENTRY_USER as the logged-in user
-		newInventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
-		newInventory.setVerify_user(userId); // Set VERIFY_USER as the logged-in user (optional for add)
-
+		
 		md.addAttribute("entryuser", newInventory);
 
 		// Fetch the list of serial numbers from BAMInvmastrep
@@ -11270,10 +11267,7 @@ public class BTMNavigationController {
 		System.out.println("Asset is :" + formmode);
 
 		BAM_AssetFlows_Entity newInventory = new BAM_AssetFlows_Entity();
-		newInventory.setEntry_user(userId); // Set ENTRY_USER as the logged-in user
-		newInventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
-		newInventory.setVerify_user(userId); // Set VERIFY_USER as the logged-in user (optional for add)
-
+	
 		if (formmode == null) {
 			md.addAttribute("formmode", "list"); // List
 
