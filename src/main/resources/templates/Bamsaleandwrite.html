@@ -1,7 +1,7 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <!-- 
-	CREATED BY : ARANGULAVAN RAJENDRAN
-	USED FOR :Document Master -->
+	CREATED BY : RUKMANI J 
+	USED FOR :SALE  -->
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
@@ -35,6 +35,9 @@
 	<script src="/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js"
 		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+			<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+		
 	<style>
 		.filterable .filters input[disabled] {
 			background-color: transparent;
@@ -135,22 +138,15 @@
 		td {
 			border-top: 1px solid #dcdcdc;
 		}
+		
+		body {
+				  overflow-X: hidden;
+				}
 	</style>
 	<script th:inline="javascript">
 		/*<![CDATA[*/
 
-		$(function () {
-
-			$("#disableStartDate,#disableEndDate").datepicker({
-				minDate: new Date(),
-				changeMonth: true,
-				changeYear: true,
-				gotoCurrent: true,
-				dateFormat: "dd-mm-yy"
-			});
-
-		});
-
+		
 		function home() {
 			location.href = 'Dashboard'
 		}
@@ -182,31 +178,7 @@
 		/*]]>*/
 	</script>
 	<script>
-		$(function () {
-			$("#dob,#doj,#disableEndDate,#disableStartDate").datepicker({
-				dateFormat: "dd-mm-yy",
-				changeMonth: true,
-				numberOfMonths: 1,
-				gotoCurrent: true
-
-			});
-
-			$(".checkToModify").on(
-				'click',
-				function () {
-
-					$(this).prop('checked', true);
-
-					var formMode = "edit";
-
-					var resId = $(this).val();
-
-					location.href = 'MtAssociateProfile?formmode=' + formMode
-						+ '&resId=' + resId;
-
-				});
-
-		});
+		
 
 		function submiteditform(a) {
 
@@ -418,25 +390,25 @@
 			return year;
 		}
 		function formatISODateToDDMMYYYY(isoDateString) {
-			// Parse the ISO date string
-			let date = new Date(isoDateString);
+					// Parse the ISO date string
+					let date = new Date(isoDateString);
 
-			// Extract day, month, and year
-			let day = date.getDate();
-			let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
-			let year = date.getFullYear();
+					// Extract day, month, and year
+					let day = date.getDate();
+					let month = date.getMonth() + 1; // getMonth() returns 0-11, so add 1
+					let year = date.getFullYear();
 
-			// Pad day and month with leading zeros if necessary
-			if (day < 10) {
-				day = '0' + day;
-			}
-			if (month < 10) {
-				month = '0' + month;
-			}
+					// Pad day and month with leading zeros if necessary
+					if (day < 10) {
+						day = '0' + day;
+					}
+					if (month < 10) {
+						month = '0' + month;
+					}
 
-			// Format the date as dd/MM/yyyy
-			return `${year}-${month}-${day}`;
-		}
+					// Format the date as dd/MM/yyyy
+					return `${day}-${month}-${year}`;
+				}
 		function datdate(isoDateString) {
 			// Parse the ISO date string
 			let date = new Date(isoDateString);
@@ -828,18 +800,18 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date" th:value="${Bamsaleandwrite.date_of_purchase}"
+													<input type="text" th:value="${Bamsaleandwrite.date_of_purchase}"
 														id="date_of_purchase" class="form-control form-control-sm"
-														autocomplete="off" name="date_of_purchase" readonly />
+														autocomplete="off" name="date_of_purchase" readonly placeholder="DD-MM-YYYY"/>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
 													<label for="year_of_purchase">Year Of Purchase</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date" th:value="${Bamsaleandwrite.year_of_purchase}"
+													<input type="text" th:value="${Bamsaleandwrite.year_of_purchase}"
 														id="year_of_purchase" class="form-control form-control-sm"
-														autocomplete="off" name="year_of_purchase" readonly />
+														autocomplete="off" name="year_of_purchase" readonly  placeholder="YYYY"/>
 												</div>
 											</div>
 											<div class="row formline">
@@ -868,9 +840,9 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date" th:value="${Bamsaleandwrite?.asst_exp_date}"
+													<input type="text" th:value="${Bamsaleandwrite?.asst_exp_date}"
 														id="asst_exp_date" class="form-control form-control-sm"
-														name="asst_exp_date" autocomplete="off" readonly />
+														name="asst_exp_date" autocomplete="off" readonly placeholder="DD-MM-YYYY"/>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -941,9 +913,9 @@
 														Depreciation</label>
 												</div>
 												<div class="col-sm-3">
-													<input type="date" th:value="${Bamsaleandwrite?.date_of_last_depr}"
+													<input type="text" th:value="${Bamsaleandwrite?.date_of_last_depr}"
 														id="date_of_last_depr" class="form-control form-control-sm"
-														name="date_of_last_depr" autocomplete="off" readonly />
+														name="date_of_last_depr" autocomplete="off" readonly placeholder="DD-MM-YYYY" />
 												</div>
 											</div>
 
@@ -954,9 +926,9 @@
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date" id="date_of_sale"
+													<input type="text" id="date_of_sale"
 														class="form-control form-control-sm" name="date_of_sale"
-														autocomplete="off" />
+														autocomplete="off" placeholder="DD-MM-YYYY"/>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1016,13 +988,13 @@
 
 											<div class="row formline">
 												<div class="col-sm-2">
-													<label for="date_of_scrap">Date of Scrap</label>
+													<label for="date_of_scrap">Date of Scraps</label>
 												</div>
 
 												<div class="col-sm-3">
-													<input type="date" th:value="${Bamsaleandwrite?.date_of_scrap}"
+													<input type="text" th:value="${Bamsaleandwrite?.date_of_scrap}"
 														id="date_of_scrap" class="form-control form-control-sm"
-														name="date_of_scrap" autocomplete="off" />
+														name="date_of_scrap" autocomplete="off" placeholder="DD-MM-YYYY"/>
 												</div>
 												<div class="col-sm-1"></div>
 												<div class="col-sm-2">
@@ -1194,13 +1166,13 @@
         <label class="col-sm-2">Entry Time</label>
         <div class="col-sm-2">
             <input type="text" id="entry_date" name="entry_time"
-                   th:value="${#dates.format(Bamsaleandwrite?.entry_time, 'yyyy-MM-dd HH:mm:ss')}"
+                   th:value="${#dates.format(Bamsaleandwrite?.entry_time, 'dd-MM-yyyy hh:mm:ss a')}"
                    class="form-control form-control-sm" autocomplete="off" readonly />
         </div>
         <label class="col-sm-2">Modify Time</label>
         <div class="col-sm-2">
             <input type="text" id="modify_time" name="modify_time"
-                   th:value="${#dates.format(Bamsaleandwrite?.modify_time, 'yyyy-MM-dd HH:mm:ss')}"
+                   th:value="${#dates.format(Bamsaleandwrite?.modify_time, 'dd-MM-yyyy hh:mm:ss a')}"
                    class="form-control form-control-sm" autocomplete="off" readonly />
         </div>
 											<label class="col-sm-2">Verify Time</label>
@@ -1362,8 +1334,8 @@
 									</div>
 
 									<div class="col-sm-3">
-										<input type="date"
-											th:value="${#dates.format(Bamsaleandwrite.date_of_purchase, 'yyyy-MM-dd')}"
+										<input type="text"
+											th:value="${#dates.format(Bamsaleandwrite.date_of_purchase, 'dd-MM-yyyy')}"
 											id="date_of_purchase" class="form-control form-control-sm"
 											autocomplete="off" name="date_of_purchase" />
 									</div>
@@ -1372,8 +1344,8 @@
 										<label for="year_of_purchase">Year Of Purchase</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="date"
-											th:value="${#dates.format(Bamsaleandwrite.year_of_purchase, 'yyyy-MM-dd')}"
+										<input type="text"
+											th:value="${#dates.format(Bamsaleandwrite.year_of_purchase, 'dd-MM-yyyy')}"
 											id="year_of_purchase" class="form-control form-control-sm"
 											autocomplete="off" name="year_of_purchase" />
 									</div>
@@ -1403,8 +1375,8 @@
 									</div>
 
 									<div class="col-sm-3">
-										<input type="date"
-											th:value="${#dates.format(Bamsaleandwrite.asst_exp_date, 'yyyy-MM-dd')}"
+										<input type="text"
+											th:value="${#dates.format(Bamsaleandwrite.asst_exp_date, 'dd-MM-yyyy')}"
 											id="asst_exp_date" class="form-control form-control-sm" name="asst_exp_date"
 											autocomplete="off" />
 									</div>
@@ -1473,8 +1445,8 @@
 											Depreciation</label>
 									</div>
 									<div class="col-sm-3">
-										<input type="date"
-											th:value="${#dates.format(Bamsaleandwrite.date_of_last_depr, 'yyyy-MM-dd')}"
+										<input type="text"
+											th:value="${#dates.format(Bamsaleandwrite.date_of_last_depr, 'dd-MM-yyyy')}"
 											id="date_of_last_depr" class="form-control form-control-sm"
 											name="date_of_last_depr" autocomplete="off" />
 									</div>
@@ -1487,8 +1459,8 @@
 									</div>
 
 									<div class="col-sm-3">
-										<input type="date"
-											th:value="${#dates.format(Bamsaleandwrite.date_of_sale, 'yyyy-MM-dd')}"
+										<input type="text"
+											th:value="${#dates.format(Bamsaleandwrite.date_of_sale, 'dd-MM-yyyy')}"
 											id="date_of_sale" class="form-control form-control-sm" name="date_of_sale"
 											autocomplete="off" />
 									</div>
@@ -1550,8 +1522,8 @@
 									</div>
 
 									<div class="col-sm-3">
-										<input type="date"
-											th:value="${#dates.format(Bamsaleandwrite.date_of_scrap, 'yyyy-MM-dd')}"
+										<input type="text"
+											th:value="${#dates.format(Bamsaleandwrite.date_of_scrap, 'dd-MM-yyyy')}"
 											id="date_of_scrap" class="form-control form-control-sm" name="date_of_scrap"
 											autocomplete="off" />
 									</div>
@@ -1869,6 +1841,44 @@ document.addEventListener("DOMContentLoaded", function() {
         element.textContent = formatWithCommasAndDecimals(element.textContent);
     });
 });
+</script>
+
+<script>
+	// List of date fields to initialize flatpickr
+	const dateFields = [
+		"#date_of_purchase",
+		"#asst_exp_date",
+		"#date_of_last_depr",
+		"#date_of_sale",
+		"#date_of_scrap"
+			];
+
+	// Loop through each field and apply flatpickr
+	dateFields.forEach(field => {
+		flatpickr(field, {
+			dateFormat: "d-m-Y", // Enforce dd-mm-yyyy format
+			allowInput: false, // Disable manual typing to enforce picker use
+			clickOpens: true, // Ensure the picker opens when clicked
+			onChange: function (selectedDates, dateStr, instance) {
+				// Ensure the selected date is valid
+				if (dateStr.match(/^\d{2}-\d{2}-\d{4}$/)) {
+					// Extract year from the selected date
+					const dateParts = dateStr.split("-");
+					const year = dateParts[2]; // Extract year part from dd-mm-yyyy
+
+					// Special handling for 'date_of_purchase' field
+					if (instance.input.id === "date_of_purchase") {
+						// Update the year field with the selected year
+						document.getElementById('year_of_purchase').value = year;
+						// Update the hidden field with the date in dd-mm-yyyy format
+						document.getElementById('hidden_year_of_purchase').value = dateStr; // 'dd-mm-yyyy'
+					}
+				} else {
+					alert("Please select a valid date in dd-mm-yyyy format.");
+				}
+			}
+		});
+	});
 </script>
 </body>
 
