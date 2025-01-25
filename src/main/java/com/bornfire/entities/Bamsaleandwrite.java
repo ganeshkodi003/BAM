@@ -22,13 +22,13 @@ public class Bamsaleandwrite {
 	private String	category_desc;
 	private String	asst_type;
 	private String	asst_crncy;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_purchase;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	year_of_purchase;
 	private BigDecimal	org_cost;
 	private BigDecimal	life_span_mth;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	asst_exp_date;
 	private String	asst_rmks;
 	private String	depr_flag;
@@ -36,16 +36,16 @@ public class Bamsaleandwrite {
 	private String	depr_method;
 	private BigDecimal	depr_percent;
 	private BigDecimal	acc_depr;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_last_depr;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_sale;
 	private BigDecimal	book_value_sale_date;
 	private BigDecimal	sale_value;
 	private String	profit_loss;
 	private String	buyer_name;
 	private String	sale_det;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date	date_of_scrap;
 	private BigDecimal	book_value_scrap_date_amount;
 	private BigDecimal	scrap_value;
@@ -57,9 +57,9 @@ public class Bamsaleandwrite {
 	private String	entry_user;
 	private String	modify_user;
 	private String	verify_user;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	entry_time;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date	modify_time;
 	private Date	verify_time;
 	private String	del_flg;
