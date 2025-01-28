@@ -44,6 +44,10 @@
 	type="text/css">
 
 <style>
+	
+	body {
+			  overflow-y: hidden;
+			}
 .filterable .filters input[disabled] {
 	background-color: transparent;
 	border: none;
@@ -606,6 +610,7 @@
 
 							</div>
 						</div>
+						<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 						<div class="card-body">
 
 							<input autocomplete="false" name="hidden" type="text"
@@ -952,8 +957,9 @@
 							</div>
 
 						</div>
+						</div>
 					</form>
-					<div class="card-footer text-center p-1 mt-n40">
+					<div class="card-footer text-center">
 						<button type="button" class="btn btn-xs mr-2 headerbutton"
 							id="btnHome" onclick="home();">Home</button>
 
