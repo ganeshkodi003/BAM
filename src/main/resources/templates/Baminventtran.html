@@ -34,6 +34,10 @@
 		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
 	<style>
+		body {
+				  overflow-y: hidden;
+				}
+				
 		.no-border-table {
 			border: none;
 			border-collapse: collapse;
@@ -1860,6 +1864,8 @@
 											style="transform: translateY(-47px); margin-right: -125px;">Depreciation</button>
 									</div>
 									<div id="tab1" class="tabcontent" style="display: block;">
+										<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+
 										<div class="card-body">
 											<div class="form-group">
 												<div class="row formline">
@@ -2330,6 +2336,7 @@
 											</div>
 
 										</div>
+									</div>
 										
 										<div class="card-footer text-center">
 
@@ -2348,6 +2355,8 @@
 																		</div>
 									</div>
 									<div id="tab2" class="tabcontent" style="display: none;">
+										<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+
 										<div class="card-body">
 											<fieldset>
 												<div class="form-group mb-0">
@@ -2606,6 +2615,7 @@
 												</div>
 											</fieldset>
 										</div>
+										</div>
 										<div class="card-footer text-center">
 
 																			<button type="button" class="btn headerbutton" id="btnHome"
@@ -2654,6 +2664,7 @@
 											</div>
 										</div>
 									</div>
+									<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 
 									<div class="card-body">
 										<div class="form-group">
@@ -3101,7 +3112,8 @@
 										</div>
 
 									</div>
-									<div class="card-footer text-center p-0" style="margin-top: -20px;">
+									</div>
+									<div class="card-footer text-center p-0">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
