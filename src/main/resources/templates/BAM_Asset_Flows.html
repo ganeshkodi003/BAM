@@ -48,6 +48,9 @@
 		}
 	</style>
 	<style>
+		body {
+				  overflow-y: hidden;
+				}
 		.no-border-table {
 			border: none;
 			border-collapse: collapse;
@@ -1265,6 +1268,7 @@
 								id="asset_flows">
 								<div class="card">
 
+									
 									<div class="card-header p-0">
 										<div class="float-left mt-2">
 											<h3 class="btn btn-sm headerbutton ml-2">ASSET FLOW</h3>
@@ -1275,6 +1279,8 @@
 												FLOWS</button>
 										</div>
 									</div>
+									<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+
 									<div class="card-body">
 										<fieldset>
 											<div class="form-group mb-0">
@@ -1520,7 +1526,7 @@
 											</div>
 										</fieldset>
 									</div>
-
+									</div>
 									<div class="card-footer text-center p-0">
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
