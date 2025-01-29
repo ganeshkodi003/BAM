@@ -33,6 +33,9 @@
 		th:src="@{/webjars/datatables/1.10.19/js/dataTables.bootstrap4.min.js}"></script>
 
 	<style>
+		body {
+				  overflow-y: hidden;
+				}
 		.no-border-table {
 			border: none;
 			border-collapse: collapse;
@@ -315,6 +318,8 @@
 											<h4 class="btn btn-sm headerbutton mr-2"> SALE - LIST</h4>
 											<button class="btn text-white  btn-filter headerbutton">Filter</button>
 										</div>
+										<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+
 										<div class="card-body p-0">
 
 											<div class="panel panel-primary filterable">
@@ -356,7 +361,7 @@
 												</div>
 											</div>
 										</div>
-
+										</div>
 										<div class="card-footer text-center p-0">
 											<button type="button" class="btn headerbutton" id="btnHome"
 												onclick="home();">Home</button>
@@ -386,6 +391,7 @@
 
 									</div>
 
+									<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 
 									<div class="card-body">
 										<div class="row formline">
@@ -764,7 +770,7 @@
 
 
 									</div>
-
+									</div>
 									<div class="card-footer text-center p-0">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
