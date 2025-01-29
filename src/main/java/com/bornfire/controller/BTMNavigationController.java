@@ -2376,10 +2376,7 @@ public class BTMNavigationController {
 		md.addAttribute("menu", "BTMHeaderMenu");
 
 		BAM_AssetFlows_Entity newInventory = new BAM_AssetFlows_Entity();
-		newInventory.setEntry_user(userId); // Set ENTRY_USER as the logged-in user
-		newInventory.setModify_user(userId); // Set MODIFY_USER as the logged-in user
-		newInventory.setVerify_user(userId); // Set VERIFY_USER as the logged-in user (optional for add)
-
+		
 		if (formmode == null || formmode.equals("list")) {
 
 			md.addAttribute("formmode", "list");
