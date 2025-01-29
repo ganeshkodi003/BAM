@@ -39,6 +39,10 @@
 			<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 		
 	<style>
+		
+		body {
+				  overflow-y: hidden;
+				}
 		.filterable .filters input[disabled] {
 			background-color: transparent;
 			border: none;
@@ -621,6 +625,8 @@
 										</div>
 									</div>
 
+									<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+
 									<div class="card-body p-0">
 										<div class="table-responsive">
 											<table class="table table-bordered">
@@ -696,7 +702,7 @@
 											</table>
 										</div>
 									</div>
-
+									</div>
 									<div class="card-footer text-center">
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home()">Home</button>
@@ -724,6 +730,7 @@
 											<h4 class="btn btn-sm mr-2 headerbutton mt-1">SALE AND WRITEOFF - ADD</h4>
 										</div>
 									</div>
+									<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 
 									<div class="card-body">
 										<div class="form-group">
@@ -1129,7 +1136,8 @@
 										</div>
 
 									</div>
-									<div class="card-footer text-center p-0" style="margin-top: -20px;">
+									</div>
+									<div class="card-footer text-center p-0">
 
 										<button type="button" class="btn headerbutton" id="btnHome"
 											onclick="home();">Home</button>
@@ -1182,67 +1190,7 @@
 											</div>
 										</div>
 									</div>
-									<!-- Conditionally display the table based on formmode  view-->
-									<!--	<div class="table-responsive"
-										th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-										<table class="table no-border-table  table-bordered  table-hover table-sm"
-											style="margin-bottom: 10px; font-size: initial;">
-											<tr>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Entry User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px; margin-right: 20px;"><input
-														type="text" id="entryuser" name="entry_user"
-														th:value="${Bamsaleandwrite?.entry_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Modify User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="modifyuser" name="modify_user"
-														th:value="${Bamsaleandwrite?.modify_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td class="col-sm-2" style="text-align: right;">
-													<font size="2"><B>Verify User :</B></font>
-												</td>
-												<td class="col-sm-2" style="width: 112px;"><input type="text"
-														id="verifyuser" name="verify_user"
-														th:value="${Bamsaleandwrite?.verify_user}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-											</tr>
-											<tr>
-												<td style="text-align: right;">
-													<font size="2"><B>Entry
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="entrytime"
-														name="entry_time" th:value="${Bamsaleandwrite?.entry_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Modify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="modifytime"
-														name="modify_time" th:value="${Bamsaleandwrite?.modify_time}"
-														style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-												<td style="text-align: right;">
-													<font size="2"><B>Verify
-															Time :</B></font>
-												</td>
-												<td style="width: 112px"><input type="text" id="verifytime"
-														name="verify_time" th:value="${BBamsaleandwrite?.verify_time}"
-														style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-														readonly></td>
-											</tr>
-
-										</table>
-
-									</div>-->
+								
 
 								</div>
 							</div>
@@ -1261,12 +1209,13 @@
 				id="Bamsaleandwrite">
 
 				<div class="associateProfileList ">
-					<div class="card" style="margin-left: 317px; width: 83%;">
+					<div class="card" style="margin-left: 250px; width: 83%;">
 						<div class="card-header p-0">
 							<div class="float-left">
 								<h4 class="btn btn-sm mr-2 headerbutton mt-1">SALE AND WRITE OFF</h4>
 							</div>
 						</div>
+						<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 
 						<div class="card-body">
 							<div class="form-group">
@@ -1657,7 +1606,8 @@
 							</div>
 
 						</div>
-						<div class="card-footer text-center p-0" style="margin-top: -20px;">
+						</div>
+						<div class="card-footer text-center p-0">
 
 							<button type="button" class="btn headerbutton" id="btnHome" onclick="home();">Home</button>
 
@@ -1718,67 +1668,7 @@
 								</div>
 							</div>
 						</div>
-						<!-- Conditionally display the table based on formmode  view-->
-						<!--<div class="table-responsive"
-							th:if="${formmode}=='edit' OR ${formmode}=='verify' OR ${formmode}=='list' OR ${formmode}=='add'">
-							<table class="table no-border-table table-bordered  table-hover table-sm"
-								style="margin-bottom: 10px; font-size: initial;">
-								<tr>
-									<td class="col-sm-2" style="text-align: right;">
-										<font size="2"><B>Entry User :</B></font>
-									</td>
-									<td class="col-sm-2" style="width: 112px; margin-right: 20px;">
-										<input type="text" id="entryuser" name="entry_user"
-											th:value="${Bamsaleandwrite?.entry_user}"
-											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-											readonly>
-									</td>
-									<td class="col-sm-2" style="text-align: right;">
-										<font size="2"><B>Modify User :</B></font>
-									</td>
-									<td class="col-sm-2" style="width: 112px;"><input type="text" id="modifyuser"
-											name="modify_user" th:value="${Bamsaleandwrite?.modify_user}"
-											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-											readonly></td>
-									<td class="col-sm-2" style="text-align: right;">
-										<font size="2"><B>Verify User :</B></font>
-									</td>
-									<td class="col-sm-2" style="width: 112px;"><input type="text" id="verifyuser"
-											name="verify_user" th:value="${Bamsaleandwrite?.verify_user}"
-											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-											readonly></td>
-								</tr>
-								<tr>
-									<td style="text-align: right;">
-										<font size="2"><B>Entry
-												Time :</B></font>
-									</td>
-									<td style="width: 112px"><input type="text" id="entrytime" name="entry_time"
-											th:value="${Bamsaleandwrite?.entry_time}"
-											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-											readonly></td>
-									<td style="text-align: right;">
-										<font size="2"><B>Modify
-												Time :</B></font>
-									</td>
-									<td style="width: 112px"><input type="text" id="modifytime" name="modify_time"
-											th:value="${Bamsaleandwrite?.modify_time}"
-											style="width: 112px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-											readonly></td>
-									<td style="text-align: right;">
-										<font size="2"><B>Verify
-												Time :</B></font>
-									</td>
-									<td style="width: 112px"><input type="text" id="verifytime" name="verify_time"
-											th:value="${Bamsaleandwrite?.verify_time}"
-											style="width: 115px; border: none; outline: none; background-color: transparent; font-size: 12px;"
-											readonly></td>
-								</tr>
-
-							</table>
-
-						</div>-->
-					</div>
+										</div>
 				</div>
 			</form>
 		</div>
