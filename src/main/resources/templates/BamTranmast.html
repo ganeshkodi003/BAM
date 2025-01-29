@@ -90,6 +90,11 @@
 		}
 	</style>
 	<style>
+		
+		body {
+				  overflow-y: hidden;
+				}
+				
 		.no-border-table {
 			border: none;
 			border-collapse: collapse;
@@ -694,6 +699,8 @@
 									</div>
 
 									<div class="card-body" th:if="${formmode}== 'add'">
+										<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
+
 										<div class="form-group">
 											<div class="row formline">
 												<div class="col-sm-2">
@@ -927,6 +934,9 @@
 										</fieldset>
 
 									</div>
+									</div>
+									<div class="table-responsive"style="overflow-y: auto; height: -5vh; border: 1px solid #dee2e6;">
+
 									<div class="" th:if="${formmode}== 'list'">
 										<div class="table-responsive">
 											<table class="table table-bordered bord">
@@ -967,6 +977,8 @@
 											</table>
 										</div>
 									</div>
+									</div>
+									<div class="table-responsive"style="overflow-y: auto; height: 70vh; border: 1px solid #dee2e6;">
 
 									<div class="card-body" th:if="${formmode}== 'view'">
 										<fieldset>
@@ -1225,7 +1237,7 @@
 										</fieldset>
 									</div>
 
-
+									</div>
 									<div class="card-footer text-center p-0">
 										<button type="button" class="btn headerbutton text-white" id="btnHome"
 											onclick="home();">Home</button>
