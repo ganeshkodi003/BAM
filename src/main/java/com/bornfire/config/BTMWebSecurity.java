@@ -265,7 +265,7 @@ public class BTMWebSecurity extends WebSecurityConfigurerAdapter {
 				// login Time
 				 HttpSession session=request.getSession();
 				 String session_value = session.getId();
-				String Msg = attendanceRegisterService.Registersubmit(user, session_value);
+				//String Msg = attendanceRegisterService.Registersubmit(user, session_value);
 				// System.out.println(Msg+"123");
 
 				loginServices.SessionLogging("LOGIN", "M1", request.getSession().getId(), user.getResource_id(),
